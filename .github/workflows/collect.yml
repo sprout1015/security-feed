@@ -1,0 +1,50 @@
+name: collect-security-feed
+
+on:
+  schedule:
+    # 매일 06:30 KST (= 21:30 UTC). GitHub 예약 실행은 몇 분~수십 분 늦을 수 있어 루틴(06:50)보다 앞에 둔다.
+    - cron: "30 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  security-events: read
+
+concurrency:
+  group: collect-security-feed
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install osv-scanner
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSL -o "$HOME/bin/osv-scanner" https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_linux_amd64
+          chmod +x "$HOME/bin/osv-scanner"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Collect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python collector/run.py
+
+      - name: Commit results
+        run: |
+          git config user.name "security-feed-bot"
+          git config user.email "security-feed-bot@users.noreply.github.com"
+          git add state runs
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "collect: $(TZ=Asia/Seoul date +%F)"
+            git push
+          fi

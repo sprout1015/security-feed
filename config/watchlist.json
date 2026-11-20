@@ -1,0 +1,32 @@
+{
+  "_comment": "넓은 레이더(KEV 신규, 새 CVE)에서 '우리와 관련 있음'으로 표시할 제품. CVE/KEV의 vendor·product 칸과 대조한다(설명문은 대조하지 않음: 'PHP로 만든 앱' 같은 오탐 방지). product는 단어 단위로, vendor는 부분 문자열로 비교한다. vendor가 비어 있으면 제품명만 본다. group: inventory(사내 인벤토리) | baseline(어디에나 있는 기반 구성요소).",
+  "rules": {
+    "_comment": "inventory 제품은 CVSS 7.0 이상이거나 점수가 아직 없으면 올린다(Apache 등은 점수 없이 CVE를 공개함). baseline 제품은 9.0 이상만. 둘 다 EPSS 0.5 이상이거나 KEV면 무조건 올린다.",
+    "inventory_min_cvss": 7.0,
+    "inventory_include_unscored": true,
+    "cve_min_cvss": 9.0,
+    "cve_min_epss": 0.5,
+    "kev_window_days": 7
+  },
+  "products": [
+    {"label": "nginx", "group": "inventory", "product": ["nginx"], "vendor": ["f5", "nginx"]},
+    {"label": "Spring", "group": "inventory", "product": ["spring framework", "spring boot", "spring security", "spring cloud", "spring"], "vendor": ["vmware", "broadcom", "spring", "pivotal"]},
+    {"label": "Apache Tomcat", "group": "inventory", "product": ["tomcat"], "vendor": ["apache"]},
+    {"label": "Laravel", "group": "inventory", "product": ["laravel", "framework"], "vendor": ["laravel"]},
+    {"label": "Next.js", "group": "inventory", "product": ["next.js", "nextjs", "next"], "vendor": ["vercel"]},
+    {"label": "Java SE / JDK", "group": "inventory", "product": ["java se", "jdk", "openjdk", "graalvm", "java"], "vendor": ["oracle", "openjdk", "adoptium", "amazon"]},
+    {"label": "PHP", "group": "inventory", "product": ["php"], "vendor": ["php"]},
+    {"label": "Express", "group": "inventory", "product": ["express", "body-parser", "multer", "cookie", "send", "serve-static"], "vendor": ["expressjs", "openjs", "pillarjs", "jshttp"]},
+    {"label": "Node.js", "group": "inventory", "product": ["node.js", "nodejs", "node"], "vendor": ["nodejs", "node.js", "openjs"]},
+    {"label": "OpenSSH", "group": "baseline", "product": ["openssh"], "vendor": []},
+    {"label": "OpenSSL", "group": "baseline", "product": ["openssl"], "vendor": []},
+    {"label": "glibc", "group": "baseline", "product": ["glibc", "gnu c library"], "vendor": []},
+    {"label": "Linux kernel", "group": "baseline", "product": ["linux kernel", "kernel", "linux"], "vendor": ["linux"]},
+    {"label": "curl", "group": "baseline", "product": ["curl", "libcurl"], "vendor": []},
+    {"label": "sudo", "group": "baseline", "product": ["sudo"], "vendor": []},
+    {"label": "systemd", "group": "baseline", "product": ["systemd"], "vendor": []},
+    {"label": "zlib", "group": "baseline", "product": ["zlib"], "vendor": []},
+    {"label": "xz", "group": "baseline", "product": ["xz", "xz utils", "liblzma"], "vendor": []},
+    {"label": "컨테이너 런타임", "group": "baseline", "product": ["runc", "containerd", "docker engine", "moby"], "vendor": []}
+  ]
+}
