@@ -1,0 +1,1448 @@
+This document is for Django's development version, which can be significantly different from previous releases. For older releases, use the version selector floating in the bottom right corner of this page.
+Skip to main content
+Django
+The web framework for perfectionists with deadlines.
+Menu
+Search
+Search
+Toggle theme (current theme: auto)
+Toggle theme (current theme: light)
+Toggle theme (current theme: dark)
+Toggle Light / Dark / Auto color theme
+Read the Docs supports Django
+Built with Django, and hosting documentation for open and closed source projects for 15 years.
+Get live previews for every docs PR →
+Sponsor the Django Software Foundation
+Documentation
+Getting Help
+Language: en
+Documentation version:
+development
+<https://docs.djangoproject.com/en/6.1/releases/security/> 6.1
+<https://docs.djangoproject.com/en/6.0/releases/security/> 6.0
+<https://docs.djangoproject.com/en/5.2/releases/security/> 5.2
+<https://docs.djangoproject.com/en/5.1/releases/security/> 5.1
+<https://docs.djangoproject.com/en/5.0/releases/security/> 5.0
+<https://docs.djangoproject.com/en/4.2/releases/security/> 4.2
+<https://docs.djangoproject.com/en/4.1/releases/security/> 4.1
+<https://docs.djangoproject.com/en/4.0/releases/security/> 4.0
+<https://docs.djangoproject.com/en/3.2/releases/security/> 3.2
+<https://docs.djangoproject.com/en/3.1/releases/security/> 3.1
+<https://docs.djangoproject.com/en/3.0/releases/security/> 3.0
+<https://docs.djangoproject.com/en/2.2/releases/security/> 2.2
+<https://docs.djangoproject.com/en/2.1/releases/security/> 2.1
+<https://docs.djangoproject.com/en/2.0/releases/security/> 2.0
+<https://docs.djangoproject.com/en/1.11/releases/security/> 1.11
+<https://docs.djangoproject.com/en/1.10/releases/security/> 1.10
+<https://docs.djangoproject.com/en/1.9/releases/security/> 1.9
+<https://docs.djangoproject.com/en/1.8/releases/security/> 1.8
+Archive of security issues <#archive-of-security-issues> ¶
+Django’s development team is strongly committed to responsible
+reporting and disclosure of security-related issues, as outlined in
+<../../internals/security/> Django’s security policies.
+As part of that commitment, we maintain the following historical list
+of issues which have been fixed and disclosed. For each issue, the
+list below includes the date, a brief description, the CVE identifier
+if applicable, a list of affected versions, a link to the full
+disclosure and links to the appropriate patch(es).
+Some important caveats apply to this information:
+Lists of affected versions include only those versions of Django
+which had stable, security-supported releases at the time of
+disclosure. This means older versions (whose security support had
+expired) and versions which were in pre-release (alpha/beta/RC)
+states at the time of disclosure may have been affected, but are not
+listed.
+The Django project has on occasion issued security advisories,
+pointing out potential security problems which can arise from
+improper configuration or from other issues outside of Django
+itself. Some of these advisories have received CVEs; when that is
+the case, they are listed here, but as they have no accompanying
+patches or releases, only the description, disclosure and CVE will
+be listed.
+Issues under Django’s security process <#issues-under-django-s-security-process> ¶
+All security issues have been handled under versions of Django’s security
+process. These are listed below.
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-108147> CVE 2026-108147¶
+Potential memory exhaustion in MultiPartParser via base64-encoded file
+upload.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-111211> CVE 2026-111211¶
+Potential log injection via unescaped geometry form values.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-111362> CVE 2026-111362¶
+Server-side request forgery via crs member of GeoJSON geometries.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-113593> CVE 2026-113593¶
+Potential exposure of private data via empty and missing Vary headers.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-113733> CVE 2026-113733¶
+Password hash disclosure to “view only” admin users with custom user models.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+November 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-114582> CVE 2026-114582¶
+Server-side request forgery via SpatialReference string input.
+<https://www.djangoproject.com/weblog/2026/nov/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+October 6, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-77050> CVE 2026-77050¶
+Potential denial-of-service vulnerability in
+get_supported_language_variant().
+<https://www.djangoproject.com/weblog/2026/oct/06/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+October 6, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-84429> CVE 2026-84429¶
+Potential denial-of-service vulnerability in HTTP header parsing.
+<https://www.djangoproject.com/weblog/2026/oct/06/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+October 6, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-87890> CVE 2026-87890¶
+Potential request forgery via spatial lookup byte values.
+<https://www.djangoproject.com/weblog/2026/oct/06/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+October 6, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-87975> CVE 2026-87975¶
+Privilege abuse in model formsets with editable primary keys.
+<https://www.djangoproject.com/weblog/2026/oct/06/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+August 4, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-15307> CVE 2026-15307¶
+Server-side file-write and request forgery via spatial lookups.
+<https://www.djangoproject.com/weblog/2026/aug/04/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+August 4, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-15337> CVE 2026-15337¶
+Potential denial-of-service vulnerability in check_for_language().
+<https://www.djangoproject.com/weblog/2026/aug/04/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+August 4, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-15830> CVE 2026-15830¶
+Potential denial-of-service vulnerability via nested geometry collections.
+<https://www.djangoproject.com/weblog/2026/aug/04/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+There was an additional hardening with new patch releases published on Oct 6,
+2026. <https://www.djangoproject.com/weblog/2026/oct/06/security-releases/> Full description
+Django 6.1.2 (patch)
+Django 6.0.9 (patch)
+Django 5.2.18 (patch)
+August 4, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-15920> CVE 2026-15920¶
+Potential cross-site scripting via URLField values in the admin.
+<https://www.djangoproject.com/weblog/2026/aug/04/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+July 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-48588> CVE 2026-48588¶
+Potential exposure of private data via cached Set-Cookie response.
+<https://www.djangoproject.com/weblog/2026/jul/07/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+July 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-53877> CVE 2026-53877¶
+Heap buffer over-read in GDALRaster.
+<https://www.djangoproject.com/weblog/2026/jul/07/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+July 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-53878> CVE 2026-53878¶
+Header injection possibility since DomainNameValidator accepted newlines in
+input.
+<https://www.djangoproject.com/weblog/2026/jul/07/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+June 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-6873> CVE 2026-6873¶
+Signed cookie salt namespace collision in
+django.http.HttpRequest.get_signed_cookie.
+<https://www.djangoproject.com/weblog/2026/jun/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+June 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-7666> CVE 2026-7666¶
+Potential unencrypted email transmission via STARTTLS in the SMTP backend.
+<https://www.djangoproject.com/weblog/2026/jun/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+June 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-8404> CVE 2026-8404¶
+Potential exposure of private data via case-sensitive Cache-Control
+directives in UpdateCacheMiddleware.
+<https://www.djangoproject.com/weblog/2026/jun/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+June 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-35193> CVE 2026-35193¶
+Potential exposure of private data via missing Vary: Authorization in
+UpdateCacheMiddleware.
+<https://www.djangoproject.com/weblog/2026/jun/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+June 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-48587> CVE 2026-48587¶
+Potential exposure of private data via whitespace padding in Vary header.
+<https://www.djangoproject.com/weblog/2026/jun/03/security-releases/> Full description
+Django 6.1 (patch)
+Django 6.0 (patch)
+Django 5.2 (patch)
+May 5, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-5766> CVE 2026-5766¶
+Potential denial-of-service vulnerability in ASGI requests via file upload
+limit bypass.
+<https://www.djangoproject.com/weblog/2026/may/05/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+May 5, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-35192> CVE 2026-35192¶
+Session fixation via public cached pages and SESSION_SAVE_EVERY_REQUEST.
+<https://www.djangoproject.com/weblog/2026/may/05/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+May 5, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-6907> CVE 2026-6907¶
+Potential exposure of private data due to incorrect handling of Vary: * in
+UpdateCacheMiddleware.
+<https://www.djangoproject.com/weblog/2026/may/05/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+April 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-3902> CVE 2026-3902¶
+ASGI header spoofing via underscore/hyphen conflation.
+<https://www.djangoproject.com/weblog/2026/apr/07/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+April 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-4277> CVE 2026-4277¶
+Privilege abuse in GenericInlineModelAdmin.
+<https://www.djangoproject.com/weblog/2026/apr/07/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+April 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-4292> CVE 2026-4292¶
+Privilege abuse in ModelAdmin.list_editable.
+<https://www.djangoproject.com/weblog/2026/apr/07/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+April 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-33033> CVE 2026-33033¶
+Potential denial-of-service vulnerability in MultiPartParser via
+base64-encoded file upload.
+<https://www.djangoproject.com/weblog/2026/apr/07/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+April 7, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-33034> CVE 2026-33034¶
+Potential denial-of-service vulnerability in ASGI requests via memory upload
+limit bypass.
+<https://www.djangoproject.com/weblog/2026/apr/07/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+March 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-25673> CVE 2026-25673¶
+Potential denial-of-service vulnerability in URLField via Unicode
+normalization on Windows.
+<https://www.djangoproject.com/weblog/2026/mar/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+March 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-25674> CVE 2026-25674¶
+Potential incorrect permissions on newly created file system objects.
+<https://www.djangoproject.com/weblog/2026/mar/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2025-13473> CVE 2025-13473¶
+Username enumeration through timing difference in mod_wsgi authentication
+handler.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2025-14550> CVE 2025-14550¶
+Potential denial-of-service vulnerability via repeated headers when using ASGI.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-1207> CVE 2026-1207¶
+Potential SQL injection via raster lookups on PostGIS.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-1285> CVE 2026-1285¶
+Potential denial-of-service vulnerability in django.utils.text.Truncator
+HTML methods.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-1287> CVE 2026-1287¶
+Potential SQL injection in column aliases via control characters.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+February 3, 2026 - <https://www.cve.org/CVERecord?id=CVE-2026-1312> CVE 2026-1312¶
+Potential SQL injection via QuerySet.order_by and FilteredRelation.
+<https://www.djangoproject.com/weblog/2026/feb/03/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 4.2 (patch)
+December 2, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-13372> CVE 2025-13372¶
+Potential SQL injection in FilteredRelation column aliases on PostgreSQL.
+<https://www.djangoproject.com/weblog/2025/dec/02/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+December 2, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-64460> CVE 2025-64460¶
+Potential denial-of-service vulnerability in XML serializer text extraction.
+<https://www.djangoproject.com/weblog/2025/dec/02/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+November 5, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-64458> CVE 2025-64458¶
+Potential denial-of-service vulnerability in HttpResponseRedirect and
+HttpResponsePermanentRedirect on Windows. <https://www.djangoproject.com/weblog/2025/nov/05/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+November 5, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-64459> CVE 2025-64459¶
+Potential SQL injection via _connector keyword argument in QuerySet and
+Q objects. <https://www.djangoproject.com/weblog/2025/nov/05/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+October 1, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-59681> CVE 2025-59681¶
+Potential SQL injection in QuerySet.annotate(), alias(),
+aggregate(), and extra() on MySQL and MariaDB. <https://www.djangoproject.com/weblog/2025/oct/01/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+October 1, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-59682> CVE 2025-59682¶
+Potential partial directory-traversal via archive.extract().
+<https://www.djangoproject.com/weblog/2025/oct/01/security-releases/> Full description
+Django 6.0 (patch)
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+September 3, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-57833> CVE 2025-57833¶
+Potential SQL injection in FilteredRelation column aliases.
+<https://www.djangoproject.com/weblog/2025/sep/03/security-releases/> Full description
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+June 4, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-48432> CVE 2025-48432¶
+Potential log injection via unescaped request path.
+<https://www.djangoproject.com/weblog/2025/jun/04/security-releases/> Full description
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+There was an additional hardening with new patch releases published on June 10,
+2025. Full description
+Django 5.2.3 (patch)
+Django 5.1.11 (patch)
+Django 4.2.23 (patch)
+May 7, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-32873> CVE 2025-32873¶
+Denial-of-service possibility in strip_tags().
+<https://www.djangoproject.com/weblog/2025/may/07/security-releases/> Full description
+Django 5.2 (patch)
+Django 5.1 (patch)
+Django 4.2 (patch)
+April 2, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-27556> CVE 2025-27556¶
+Potential denial-of-service vulnerability in LoginView, LogoutView, and
+set_language() on Windows. <https://www.djangoproject.com/weblog/2025/apr/02/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+March 6, 2025 - <https://www.cve.org/CVERecord?id=CVE-2025-26699> CVE 2025-26699¶
+Potential denial-of-service in django.utils.text.wrap().
+<https://www.djangoproject.com/weblog/2025/mar/06/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+January 14, 2025 - <https://www.cve.org/CVERecord?id=CVE-2024-56374> CVE 2024-56374¶
+Potential denial-of-service vulnerability in IPv6 validation.
+<https://www.djangoproject.com/weblog/2025/jan/14/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+December 4, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-53907> CVE 2024-53907¶
+Potential denial-of-service in django.utils.html.strip_tags().
+<https://www.djangoproject.com/weblog/2024/dec/04/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+December 4, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-53908> CVE 2024-53908¶
+Potential SQL injection in HasKey(lhs, rhs) on Oracle.
+<https://www.djangoproject.com/weblog/2024/dec/04/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+September 3, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-45231> CVE 2024-45231¶
+Potential user email enumeration via response status on password reset.
+<https://www.djangoproject.com/weblog/2024/sep/03/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+September 3, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-45230> CVE 2024-45230¶
+Potential denial-of-service vulnerability in django.utils.html.urlize().
+<https://www.djangoproject.com/weblog/2024/sep/03/security-releases/> Full description
+Django 5.1 (patch)
+Django 5.0 (patch)
+Django 4.2 (patch)
+August 6, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-42005> CVE 2024-42005¶
+Potential SQL injection in QuerySet.values() and values_list().
+<https://www.djangoproject.com/weblog/2024/aug/06/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+August 6, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-41991> CVE 2024-41991¶
+Potential denial-of-service vulnerability in django.utils.html.urlize() and
+AdminURLFieldWidget. <https://www.djangoproject.com/weblog/2024/aug/06/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+August 6, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-41990> CVE 2024-41990¶
+Potential denial-of-service vulnerability in django.utils.html.urlize().
+<https://www.djangoproject.com/weblog/2024/aug/06/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+August 6, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-41989> CVE 2024-41989¶
+Potential memory exhaustion in django.utils.numberformat.floatformat().
+<https://www.djangoproject.com/weblog/2024/aug/06/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+July 9, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-39614> CVE 2024-39614¶
+Potential denial-of-service in
+django.utils.translation.get_supported_language_variant().
+<https://www.djangoproject.com/weblog/2024/jul/09/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+July 9, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-39330> CVE 2024-39330¶
+Potential directory-traversal in django.core.files.storage.Storage.save().
+<https://www.djangoproject.com/weblog/2024/jul/09/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+July 9, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-39329> CVE 2024-39329¶
+Username enumeration through timing difference for users with unusable
+passwords. <https://www.djangoproject.com/weblog/2024/jul/09/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+July 9, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-38875> CVE 2024-38875¶
+Potential denial-of-service in django.utils.html.urlize().
+<https://www.djangoproject.com/weblog/2024/jul/09/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+March 4, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-27351> CVE 2024-27351¶
+Potential regular expression denial-of-service in
+django.utils.text.Truncator.words(). <https://www.djangoproject.com/weblog/2024/mar/04/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+Django 3.2 (patch)
+February 6, 2024 - <https://www.cve.org/CVERecord?id=CVE-2024-24680> CVE 2024-24680¶
+Potential denial-of-service in intcomma template filter.
+<https://www.djangoproject.com/weblog/2024/feb/06/security-releases/> Full description
+Django 5.0 (patch)
+Django 4.2 (patch)
+Django 3.2 (patch)
+November 1, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-46695> CVE 2023-46695¶
+Potential denial of service vulnerability in UsernameField on Windows.
+<https://www.djangoproject.com/weblog/2023/nov/01/security-releases/> Full description
+Django 4.2 (patch)
+Django 4.1 (patch)
+Django 3.2 (patch)
+October 4, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-43665> CVE 2023-43665¶
+Denial-of-service possibility in django.utils.text.Truncator.
+<https://www.djangoproject.com/weblog/2023/oct/04/security-releases/> Full description
+Django 4.2 (patch)
+Django 4.1 (patch)
+Django 3.2 (patch)
+September 4, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-41164> CVE 2023-41164¶
+Potential denial of service vulnerability in
+django.utils.encoding.uri_to_iri(). <https://www.djangoproject.com/weblog/2023/sep/04/security-releases/> Full description
+Django 4.2 (patch)
+Django 4.1 (patch)
+Django 3.2 (patch)
+July 3, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-36053> CVE 2023-36053¶
+Potential regular expression denial of service vulnerability in
+EmailValidator/URLValidator. <https://www.djangoproject.com/weblog/2023/jul/03/security-releases/> Full description
+Django 4.2 (patch)
+Django 4.1 (patch)
+Django 3.2 (patch)
+May 3, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-31047> CVE 2023-31047¶
+Potential bypass of validation when uploading multiple files using one form
+field. <https://www.djangoproject.com/weblog/2023/may/03/security-releases/> Full description
+Django 4.2 (patch)
+Django 4.1 (patch)
+Django 3.2 (patch)
+February 14, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-24580> CVE 2023-24580¶
+Potential denial-of-service vulnerability in file uploads. <https://www.djangoproject.com/weblog/2023/feb/14/security-releases/> Full description
+Django 4.1 (patch)
+Django 4.0 (patch)
+Django 3.2 (patch)
+February 1, 2023 - <https://www.cve.org/CVERecord?id=CVE-2023-23969> CVE 2023-23969¶
+Potential denial-of-service via Accept-Language headers. <https://www.djangoproject.com/weblog/2023/feb/01/security-releases/> Full description
+Django 4.1 (patch)
+Django 4.0 (patch)
+Django 3.2 (patch)
+October 4, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-41323> CVE 2022-41323¶
+Potential denial-of-service vulnerability in internationalized URLs. <https://www.djangoproject.com/weblog/2022/oct/04/security-releases/> Full
+description
+Django 4.1 (patch)
+Django 4.0 (patch)
+Django 3.2 (patch)
+August 3, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-36359> CVE 2022-36359¶
+Potential reflected file download vulnerability in FileResponse. <https://www.djangoproject.com/weblog/2022/aug/03/security-releases/> Full
+description
+Django 4.0 (patch)
+Django 3.2 (patch)
+July 4, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-34265> CVE 2022-34265¶
+Potential SQL injection via Trunc(kind) and Extract(lookup_name)
+arguments. <https://www.djangoproject.com/weblog/2022/jul/04/security-releases/> Full description
+Django 4.0 (patch)
+Django 3.2 (patch)
+April 11, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-28346> CVE 2022-28346¶
+Potential SQL injection in QuerySet.annotate(), aggregate(), and
+extra(). <https://www.djangoproject.com/weblog/2022/apr/11/security-releases/> Full description
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+April 11, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-28347> CVE 2022-28347¶
+Potential SQL injection via QuerySet.explain(**options) on PostgreSQL.
+<https://www.djangoproject.com/weblog/2022/apr/11/security-releases/> Full description
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+February 1, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-22818> CVE 2022-22818¶
+Possible XSS via {% debug %} template tag. <https://www.djangoproject.com/weblog/2022/feb/01/security-releases/> Full description
+Versions affected¶
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+February 1, 2022 - <https://www.cve.org/CVERecord?id=CVE-2022-23833> CVE 2022-23833¶
+Denial-of-service possibility in file uploads. <https://www.djangoproject.com/weblog/2022/feb/01/security-releases/> Full description
+Versions affected¶
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+January 4, 2022 - <https://www.cve.org/CVERecord?id=CVE-2021-45452> CVE 2021-45452¶
+Potential directory-traversal via Storage.save(). <https://www.djangoproject.com/weblog/2022/jan/04/security-releases/> Full description
+Versions affected¶
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+January 4, 2022 - <https://www.cve.org/CVERecord?id=CVE-2021-45116> CVE 2021-45116¶
+Potential information disclosure in dictsort template filter. <https://www.djangoproject.com/weblog/2022/jan/04/security-releases/> Full
+description
+Versions affected¶
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+January 4, 2022 - <https://www.cve.org/CVERecord?id=CVE-2021-45115> CVE 2021-45115¶
+Denial-of-service possibility in UserAttributeSimilarityValidator. <https://www.djangoproject.com/weblog/2022/jan/04/security-releases/> Full
+description
+Versions affected¶
+Django 4.0 (patch)
+Django 3.2 (patch)
+Django 2.2 (patch)
+December 7, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-44420> CVE 2021-44420¶
+Potential bypass of an upstream access control based on URL paths. <https://www.djangoproject.com/weblog/2021/dec/07/security-releases/> Full
+description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 2.2 (patch)
+July 1, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-35042> CVE 2021-35042¶
+Potential SQL injection via unsanitized QuerySet.order_by() input. <https://www.djangoproject.com/weblog/2021/jul/01/security-releases/> Full
+description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+June 2, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-33203> CVE 2021-33203¶
+Potential directory traversal via admindocs. <https://www.djangoproject.com/weblog/2021/jun/02/security-releases/> Full description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 2.2 (patch)
+June 2, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-33571> CVE 2021-33571¶
+Possible indeterminate SSRF, RFI, and LFI attacks since validators accepted
+leading zeros in IPv4 addresses. <https://www.djangoproject.com/weblog/2021/jun/02/security-releases/> Full description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 2.2 (patch)
+May 6, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-32052> CVE 2021-32052¶
+Header injection possibility since URLValidator accepted newlines in input
+on Python 3.9.5+. <https://www.djangoproject.com/weblog/2021/may/06/security-releases/> Full description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 2.2 (patch)
+May 4, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-31542> CVE 2021-31542¶
+Potential directory-traversal via uploaded files. <https://www.djangoproject.com/weblog/2021/may/04/security-releases/> Full description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 2.2 (patch)
+April 6, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-28658> CVE 2021-28658¶
+Potential directory-traversal via uploaded files. <https://www.djangoproject.com/weblog/2021/apr/06/security-releases/> Full description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 3.0 (patch)
+Django 2.2 (patch)
+February 19, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-23336> CVE 2021-23336¶
+Web cache poisoning via django.utils.http.limited_parse_qsl(). <https://www.djangoproject.com/weblog/2021/feb/19/security-releases/> Full
+description
+Versions affected¶
+Django 3.2 (patch)
+Django 3.1 (patch)
+Django 3.0 (patch)
+Django 2.2 (patch)
+February 1, 2021 - <https://www.cve.org/CVERecord?id=CVE-2021-3281> CVE 2021-3281¶
+Potential directory-traversal via archive.extract(). <https://www.djangoproject.com/weblog/2021/feb/01/security-releases/> Full description
+Versions affected¶
+Django 3.1 (patch)
+Django 3.0 (patch)
+Django 2.2 (patch)
+September 1, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-24584> CVE 2020-24584¶
+Permission escalation in intermediate-level directories of the file system
+cache on Python 3.7+. <https://www.djangoproject.com/weblog/2020/sep/01/security-releases/> Full description
+Versions affected¶
+Django 3.1 (patch)
+Django 3.0 (patch)
+Django 2.2 (patch)
+September 1, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-24583> CVE 2020-24583¶
+Incorrect permissions on intermediate-level directories on Python 3.7+. <https://www.djangoproject.com/weblog/2020/sep/01/security-releases/> Full
+description
+Versions affected¶
+Django 3.1 (patch)
+Django 3.0 (patch)
+Django 2.2 (patch)
+June 3, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-13596> CVE 2020-13596¶
+Possible XSS via admin ForeignKeyRawIdWidget. <https://www.djangoproject.com/weblog/2020/jun/03/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+June 3, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-13254> CVE 2020-13254¶
+Potential data leakage via malformed memcached keys. <https://www.djangoproject.com/weblog/2020/jun/03/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+March 4, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-9402> CVE 2020-9402¶
+Potential SQL injection via tolerance parameter in GIS functions and
+aggregates on Oracle. <https://www.djangoproject.com/weblog/2020/mar/04/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+Django 1.11 (patch)
+February 3, 2020 - <https://www.cve.org/CVERecord?id=CVE-2020-7471> CVE 2020-7471¶
+Potential SQL injection via StringAgg(delimiter). <https://www.djangoproject.com/weblog/2020/feb/03/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+Django 1.11 (patch)
+December 18, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-19844> CVE 2019-19844¶
+Potential account hijack via password reset form. <https://www.djangoproject.com/weblog/2019/dec/18/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+Django 1.11 (patch)
+December 2, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-19118> CVE 2019-19118¶
+Privilege escalation in the Django admin. <https://www.djangoproject.com/weblog/2019/dec/02/security-releases/> Full description
+Versions affected¶
+Django 3.0 (patch)
+Django 2.2 (patch)
+Django 2.1 (patch)
+August 1, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-14235> CVE 2019-14235¶
+Potential memory exhaustion in django.utils.encoding.uri_to_iri(). <https://www.djangoproject.com/weblog/2019/aug/01/security-releases/> Full
+description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+August 1, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-14234> CVE 2019-14234¶
+SQL injection possibility in key and index lookups for
+JSONField/HStoreField. <https://www.djangoproject.com/weblog/2019/aug/01/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+August 1, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-14233> CVE 2019-14233¶
+Denial-of-service possibility in strip_tags(). <https://www.djangoproject.com/weblog/2019/aug/01/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+August 1, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-14232> CVE 2019-14232¶
+Denial-of-service possibility in django.utils.text.Truncator.
+<https://www.djangoproject.com/weblog/2019/aug/01/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+July 1, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-12781> CVE 2019-12781¶
+Incorrect HTTP detection with reverse-proxy connecting via HTTPS.
+<https://www.djangoproject.com/weblog/2019/jul/01/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+June 3, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-12308> CVE 2019-12308¶
+XSS via “Current URL” link generated by AdminURLFieldWidget.
+<https://www.djangoproject.com/weblog/2019/jun/03/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+Django 1.11 (patch)
+June 3, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-11358> CVE 2019-11358¶
+Prototype pollution in bundled jQuery. <https://www.djangoproject.com/weblog/2019/jun/03/security-releases/> Full description
+Versions affected¶
+Django 2.2 (patch)
+Django 2.1 (patch)
+February 11, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-6975> CVE 2019-6975¶
+Memory exhaustion in django.utils.numberformat.format(). <https://www.djangoproject.com/weblog/2019/feb/11/security-releases/> Full description
+Versions affected¶
+Django 2.1 (patch)
+Django 2.0 (patch and
+correction)
+Django 1.11 (patch)
+January 4, 2019 - <https://www.cve.org/CVERecord?id=CVE-2019-3498> CVE 2019-3498¶
+Content spoofing possibility in the default 404 page. <https://www.djangoproject.com/weblog/2019/jan/04/security-releases/> Full description
+Versions affected¶
+Django 2.1 (patch)
+Django 2.0 (patch)
+Django 1.11 (patch)
+October 1, 2018 - <https://www.cve.org/CVERecord?id=CVE-2018-16984> CVE 2018-16984¶
+Password hash disclosure to “view only” admin users. <https://www.djangoproject.com/weblog/2018/oct/01/security-release/> Full description
+Versions affected¶
+Django 2.1 (patch)
+August 1, 2018 - <https://www.cve.org/CVERecord?id=CVE-2018-14574> CVE 2018-14574¶
+Open redirect possibility in CommonMiddleware. <https://www.djangoproject.com/weblog/2018/aug/01/security-releases/> Full description
+Versions affected¶
+Django 2.1 (patch)
+Django 2.0 (patch)
+Django 1.11 (patch)
+March 6, 2018 - <https://www.cve.org/CVERecord?id=CVE-2018-7537> CVE 2018-7537¶
+Denial-of-service possibility in truncatechars_html and
+truncatewords_html template filters. <https://www.djangoproject.com/weblog/2018/mar/06/security-releases/> Full description
+Versions affected¶
+Django 2.0 (patch)
+Django 1.11 (patch)
+Django 1.8 (patch)
+March 6, 2018 - <https://www.cve.org/CVERecord?id=CVE-2018-7536> CVE 2018-7536¶
+Denial-of-service possibility in urlize and urlizetrunc template
+filters. <https://www.djangoproject.com/weblog/2018/mar/06/security-releases/> Full description
+Versions affected¶
+Django 2.0 (patch)
+Django 1.11 (patch)
+Django 1.8 (patch)
+February 1, 2018 - <https://www.cve.org/CVERecord?id=CVE-2018-6188> CVE 2018-6188¶
+Information leakage in AuthenticationForm. <https://www.djangoproject.com/weblog/2018/feb/01/security-releases/> Full description
+Versions affected¶
+Django 2.0 (patch)
+Django 1.11 (patch)
+September 5, 2017 - <https://www.cve.org/CVERecord?id=CVE-2017-12794> CVE 2017-12794¶
+Possible XSS in traceback section of technical 500 debug page.
+<https://www.djangoproject.com/weblog/2017/sep/05/security-releases/> Full description
+Versions affected¶
+Django 1.11 (patch)
+Django 1.10 (patch)
+April 4, 2017 - <https://www.cve.org/CVERecord?id=CVE-2017-7234> CVE 2017-7234¶
+Open redirect vulnerability in django.views.static.serve().
+<https://www.djangoproject.com/weblog/2017/apr/04/security-releases/> Full description
+Versions affected¶
+Django 1.10 (patch)
+Django 1.9 (patch)
+Django 1.8 (patch)
+April 4, 2017 - <https://www.cve.org/CVERecord?id=CVE-2017-7233> CVE 2017-7233¶
+Open redirect and possible XSS attack via user-supplied numeric redirect URLs.
+<https://www.djangoproject.com/weblog/2017/apr/04/security-releases/> Full description
+Versions affected¶
+Django 1.10 (patch)
+Django 1.9 (patch)
+Django 1.8 (patch)
+November 1, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-9014> CVE 2016-9014¶
+DNS rebinding vulnerability when DEBUG=True. <https://www.djangoproject.com/weblog/2016/nov/01/security-releases/> Full description
+Versions affected¶
+Django 1.10 (patch)
+Django 1.9 (patch)
+Django 1.8 (patch)
+November 1, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-9013> CVE 2016-9013¶
+User with hardcoded password created when running tests on Oracle.
+<https://www.djangoproject.com/weblog/2016/nov/01/security-releases/> Full description
+Versions affected¶
+Django 1.10 (patch)
+Django 1.9 (patch)
+Django 1.8 (patch)
+September 26, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-7401> CVE 2016-7401¶
+CSRF protection bypass on a site with Google Analytics. <https://www.djangoproject.com/weblog/2016/sep/26/security-releases/> Full description
+Versions affected¶
+Django 1.9 (patch)
+Django 1.8 (patch)
+July 18, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-6186> CVE 2016-6186¶
+XSS in admin’s add/change related popup. <https://www.djangoproject.com/weblog/2016/jul/18/security-releases/> Full description
+Versions affected¶
+Django 1.9 (patch)
+Django 1.8 (patch)
+March 1, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-2513> CVE 2016-2513¶
+User enumeration through timing difference on password hasher work factor
+upgrade. <https://www.djangoproject.com/weblog/2016/mar/01/security-releases/> Full description
+Versions affected¶
+Django 1.9 (patch)
+Django 1.8 (patch)
+March 1, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-2512> CVE 2016-2512¶
+Malicious redirect and possible XSS attack via user-supplied redirect URLs
+containing basic auth. <https://www.djangoproject.com/weblog/2016/mar/01/security-releases/> Full description
+Versions affected¶
+Django 1.9 (patch)
+Django 1.8 (patch)
+February 1, 2016 - <https://www.cve.org/CVERecord?id=CVE-2016-2048> CVE 2016-2048¶
+User with “change” but not “add” permission can create objects for
+ModelAdmin’s with save_as=True. Full description
+Versions affected¶
+Django 1.9 (patch)
+November 24, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-8213> CVE 2015-8213¶
+Settings leak possibility in date template filter. <https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/> Full description
+Versions affected¶
+Django 1.8 (patch)
+Django 1.7 (patch)
+August 18, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-5963> CVE 2015-5963 / <https://www.cve.org/CVERecord?id=CVE-2015-5964> CVE 2015-5964¶
+Denial-of-service possibility in logout() view by filling session store.
+<https://www.djangoproject.com/weblog/2015/aug/18/security-releases/> Full description
+Versions affected¶
+Django 1.8 (patch)
+Django 1.7 (patch)
+Django 1.4 (patch)
+July 8, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-5145> CVE 2015-5145¶
+Denial-of-service possibility in URL validation. <https://www.djangoproject.com/weblog/2015/jul/08/security-releases/> Full description
+Versions affected¶
+Django 1.8 (patch)
+July 8, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-5144> CVE 2015-5144¶
+Header injection possibility since validators accept newlines in input.
+<https://www.djangoproject.com/weblog/2015/jul/08/security-releases/> Full description
+Versions affected¶
+Django 1.8 (patch)
+Django 1.7 (patch)
+Django 1.4 (patch)
+July 8, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-5143> CVE 2015-5143¶
+Denial-of-service possibility by filling session store.
+<https://www.djangoproject.com/weblog/2015/jul/08/security-releases/> Full description
+Versions affected¶
+Django 1.8 (patch)
+Django 1.7 (patch)
+Django 1.4 (patch)
+May 20, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-3982> CVE 2015-3982¶
+Fixed session flushing in the cached_db backend. <https://www.djangoproject.com/weblog/2015/may/20/security-release/> Full description
+Versions affected¶
+Django 1.8 (patch)
+March 18, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-2317> CVE 2015-2317¶
+Mitigated possible XSS attack via user-supplied redirect URLs.
+<https://www.djangoproject.com/weblog/2015/mar/18/security-releases/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+Django 1.8 (patch)
+March 18, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-2316> CVE 2015-2316¶
+Denial-of-service possibility with strip_tags(). <https://www.djangoproject.com/weblog/2015/mar/18/security-releases/> Full description
+Versions affected¶
+Django 1.6 (patch)
+Django 1.7 (patch)
+Django 1.8 (patch)
+March 9, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-2241> CVE 2015-2241¶
+XSS attack via properties in ModelAdmin.readonly_fields. <https://www.djangoproject.com/weblog/2015/mar/09/security-releases/> Full description
+Versions affected¶
+Django 1.7 (patch)
+Django 1.8 (patch)
+January 13, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-0222> CVE 2015-0222¶
+Database denial-of-service with ModelMultipleChoiceField. <https://www.djangoproject.com/weblog/2015/jan/13/security/> Full description
+Versions affected¶
+Django 1.6 (patch)
+Django 1.7 (patch)
+January 13, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-0221> CVE 2015-0221¶
+Denial-of-service attack against django.views.static.serve(). <https://www.djangoproject.com/weblog/2015/jan/13/security/> Full
+description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+January 13, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-0220> CVE 2015-0220¶
+Mitigated possible XSS attack via user-supplied redirect URLs. <https://www.djangoproject.com/weblog/2015/jan/13/security/> Full
+description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+January 13, 2015 - <https://www.cve.org/CVERecord?id=CVE-2015-0219> CVE 2015-0219¶
+WSGI header spoofing via underscore/dash conflation. <https://www.djangoproject.com/weblog/2015/jan/13/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+August 20, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0483> CVE 2014-0483¶
+Data leakage via querystring manipulation in admin.
+<https://www.djangoproject.com/weblog/2014/aug/20/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+August 20, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0482> CVE 2014-0482¶
+RemoteUserMiddleware session hijacking. <https://www.djangoproject.com/weblog/2014/aug/20/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+August 20, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0481> CVE 2014-0481¶
+File upload denial of service. <https://www.djangoproject.com/weblog/2014/aug/20/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+August 20, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0480> CVE 2014-0480¶
+reverse() can generate URLs pointing to other hosts. <https://www.djangoproject.com/weblog/2014/aug/20/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+May 18, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-3730> CVE 2014-3730¶
+Malformed URLs from user input incorrectly validated. <https://www.djangoproject.com/weblog/2014/may/14/security-releases-issued/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+May 18, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-1418> CVE 2014-1418¶
+Caches may be allowed to store and serve private data. <https://www.djangoproject.com/weblog/2014/may/14/security-releases-issued/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+April 21, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0474> CVE 2014-0474¶
+MySQL typecasting causes unexpected query results. <https://www.djangoproject.com/weblog/2014/apr/21/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+April 21, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0473> CVE 2014-0473¶
+Caching of anonymous pages could reveal CSRF token. <https://www.djangoproject.com/weblog/2014/apr/21/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+April 21, 2014 - <https://www.cve.org/CVERecord?id=CVE-2014-0472> CVE 2014-0472¶
+Unexpected code execution using reverse(). <https://www.djangoproject.com/weblog/2014/apr/21/security/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+Django 1.6 (patch)
+Django 1.7 (patch)
+September 14, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-1443> CVE 2013-1443¶
+Denial-of-service via large passwords. <https://www.djangoproject.com/weblog/2013/sep/15/security/> Full description
+Versions affected¶
+Django 1.4 (patch and
+Python compatibility fix)
+Django 1.5 (patch)
+September 10, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-4315> CVE 2013-4315¶
+Directory-traversal via ssi template tag. <https://www.djangoproject.com/weblog/2013/sep/10/security-releases-issued/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+August 13, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-6044> CVE 2013-6044¶
+Possible XSS via unvalidated URL redirect schemes. <https://www.djangoproject.com/weblog/2013/aug/13/security-releases-issued/> Full description
+Versions affected¶
+Django 1.4 (patch)
+Django 1.5 (patch)
+August 13, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-4249> CVE 2013-4249¶
+XSS via admin trusting URLField values. <https://www.djangoproject.com/weblog/2013/aug/13/security-releases-issued/> Full description
+Versions affected¶
+Django 1.5 (patch)
+February 19, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-0306> CVE 2013-0306¶
+Denial-of-service via formset max_num bypass. <https://www.djangoproject.com/weblog/2013/feb/19/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+February 19, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-0305> CVE 2013-0305¶
+Information leakage via admin history log. <https://www.djangoproject.com/weblog/2013/feb/19/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+February 19, 2013 - <https://www.cve.org/CVERecord?id=CVE-2013-1664> CVE 2013-1664 / <https://www.cve.org/CVERecord?id=CVE-2013-1665> CVE 2013-1665¶
+Entity-based attacks against Python XML libraries. <https://www.djangoproject.com/weblog/2013/feb/19/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+February 19, 2013 - No CVE¶
+Additional hardening of Host header handling. <https://www.djangoproject.com/weblog/2013/feb/19/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+December 10, 2012 - No CVE 2¶
+Additional hardening of redirect validation. <https://www.djangoproject.com/weblog/2012/dec/10/security/> Full description
+Versions affected¶
+Django 1.3: (patch)
+Django 1.4: (patch)
+December 10, 2012 - No CVE 1¶
+Additional hardening of Host header handling. <https://www.djangoproject.com/weblog/2012/dec/10/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+October 17, 2012 - <https://www.cve.org/CVERecord?id=CVE-2012-4520> CVE 2012-4520¶
+Host header poisoning. <https://www.djangoproject.com/weblog/2012/oct/17/security/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+July 30, 2012 - <https://www.cve.org/CVERecord?id=CVE-2012-3444> CVE 2012-3444¶
+Denial-of-service via large image files. <https://www.djangoproject.com/weblog/2012/jul/30/security-releases-issued/> Full description
+Versions affected¶
+Django 1.3 (patch)
+Django 1.4 (patch)
+July 30, 2012 - <https://www.cve.org/CVERecord?id=CVE-2012-3443> CVE 2012-3443¶
+Denial-of-service via compressed image files. <https://www.djangoproject.com/weblog/2012/jul/30/security-releases-issued/> Full description
+Versions affected¶
+Django 1.3: (patch)
+Django 1.4: (patch)
+July 30, 2012 - <https://www.cve.org/CVERecord?id=CVE-2012-3442> CVE 2012-3442¶
+XSS via failure to validate redirect scheme. <https://www.djangoproject.com/weblog/2012/jul/30/security-releases-issued/> Full description
+Versions affected¶
+Django 1.3: (patch)
+Django 1.4: (patch)
+September 9, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-4140> CVE 2011-4140¶
+Potential CSRF via Host header. <https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/> Full description
+Versions affected¶
+This notification was an advisory only, so no patches were issued.
+Django 1.2
+Django 1.3
+September 9, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-4139> CVE 2011-4139¶
+Host header cache poisoning. <https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/> Full description
+Versions affected¶
+Django 1.2 (patch)
+Django 1.3 (patch)
+September 9, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-4138> CVE 2011-4138¶
+Information leakage/arbitrary request issuance via URLField.verify_exists.
+<https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/> Full description
+Versions affected¶
+Django 1.2: (patch)
+Django 1.3: (patch)
+September 9, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-4137> CVE 2011-4137¶
+Denial-of-service via URLField.verify_exists. <https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/> Full description
+Versions affected¶
+Django 1.2 (patch)
+Django 1.3 (patch)
+September 9, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-4136> CVE 2011-4136¶
+Session manipulation when using memory-cache-backed session. <https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/> Full description
+Versions affected¶
+Django 1.2 (patch)
+Django 1.3 (patch)
+February 8, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-0698> CVE 2011-0698¶
+Directory-traversal on Windows via incorrect path-separator handling. <https://www.djangoproject.com/weblog/2011/feb/08/security/> Full
+description
+Versions affected¶
+Django 1.1 (patch)
+Django 1.2 (patch)
+February 8, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-0697> CVE 2011-0697¶
+XSS via unsanitized names of uploaded files. <https://www.djangoproject.com/weblog/2011/feb/08/security/> Full description
+Versions affected¶
+Django 1.1 (patch)
+Django 1.2 (patch)
+February 8, 2011 - <https://www.cve.org/CVERecord?id=CVE-2011-0696> CVE 2011-0696¶
+CSRF via forged HTTP headers. <https://www.djangoproject.com/weblog/2011/feb/08/security/> Full description
+Versions affected¶
+Django 1.1 (patch)
+Django 1.2 (patch)
+December 22, 2010 - <https://www.cve.org/CVERecord?id=CVE-2010-4535> CVE 2010-4535¶
+Denial-of-service in password-reset mechanism. <https://www.djangoproject.com/weblog/2010/dec/22/security/> Full description
+Versions affected¶
+Django 1.1 (patch)
+Django 1.2 (patch)
+December 22, 2010 - <https://www.cve.org/CVERecord?id=CVE-2010-4534> CVE 2010-4534¶
+Information leakage in administrative interface. <https://www.djangoproject.com/weblog/2010/dec/22/security/> Full description
+Versions affected¶
+Django 1.1 (patch)
+Django 1.2 (patch)
+September 8, 2010 - <https://www.cve.org/CVERecord?id=CVE-2010-3082> CVE 2010-3082¶
+XSS via trusting unsafe cookie value. <https://www.djangoproject.com/weblog/2010/sep/08/security-release/> Full description
+Versions affected¶
+Django 1.2 (patch)
+October 9, 2009 - <https://www.cve.org/CVERecord?id=CVE-2009-3695> CVE 2009-3695¶
+Denial-of-service via pathological regular expression performance. <https://www.djangoproject.com/weblog/2009/oct/09/security/> Full
+description
+Versions affected¶
+Django 1.0 (patch)
+Django 1.1 (patch)
+July 28, 2009 - <https://www.cve.org/CVERecord?id=CVE-2009-2659> CVE 2009-2659¶
+Directory-traversal in development server media handler. <https://www.djangoproject.com/weblog/2009/jul/28/security/> Full description
+Versions affected¶
+Django 0.96 (patch)
+Django 1.0 (patch)
+September 2, 2008 - <https://www.cve.org/CVERecord?id=CVE-2008-3909> CVE 2008-3909¶
+CSRF via preservation of POST data during admin login. <https://www.djangoproject.com/weblog/2008/sep/02/security/> Full description
+Versions affected¶
+Django 0.91 (patch)
+Django 0.95 (patch)
+Django 0.96 (patch)
+May 14, 2008 - <https://www.cve.org/CVERecord?id=CVE-2008-2302> CVE 2008-2302¶
+XSS via admin login redirect. <https://www.djangoproject.com/weblog/2008/may/14/security/> Full description
+Versions affected¶
+Django 0.91 (patch)
+Django 0.95 (patch)
+Django 0.96 (patch)
+October 26, 2007 - <https://www.cve.org/CVERecord?id=CVE-2007-5712> CVE 2007-5712¶
+Denial-of-service via arbitrarily-large Accept-Language header. <https://www.djangoproject.com/weblog/2007/oct/26/security-fix/> Full
+description
+Versions affected¶
+Django 0.91 (patch)
+Django 0.95 (patch)
+Django 0.96 (patch)
+Issues prior to Django’s security process <#issues-prior-to-django-s-security-process> ¶
+Some security issues were handled before Django had a formalized
+security process in use. For these, new releases may not have been
+issued at the time and CVEs may not have been assigned.
+January 21, 2007 - <https://www.cve.org/CVERecord?id=CVE-2007-0405> CVE 2007-0405¶
+Apparent “caching” of authenticated user. Full description
+Versions affected¶
+Django 0.95 (patch)
+August 16, 2006 - <https://www.cve.org/CVERecord?id=CVE-2007-0404> CVE 2007-0404¶
+Filename validation issue in translation framework. Full description
+Versions affected¶
+Django 0.90 (patch)
+Django 0.91 (patch)
+Django 0.95 (patch)
+(released January 21 2007)
+Back to Top
+Additional Information
+Support Django!
+Ihar donated to the Django Software Foundation to support Django development. Donate today!
+Contents
+Archive of security issues
+<#issues-under-django-s-security-process> Issues under Django’s security process
+November 3, 2026 - CVE 2026-108147
+November 3, 2026 - CVE 2026-111211
+November 3, 2026 - CVE 2026-111362
+November 3, 2026 - CVE 2026-113593
+November 3, 2026 - CVE 2026-113733
+November 3, 2026 - CVE 2026-114582
+October 6, 2026 - CVE 2026-77050
+October 6, 2026 - CVE 2026-84429
+October 6, 2026 - CVE 2026-87890
+October 6, 2026 - CVE 2026-87975
+August 4, 2026 - CVE 2026-15307
+August 4, 2026 - CVE 2026-15337
+August 4, 2026 - CVE 2026-15830
+August 4, 2026 - CVE 2026-15920
+July 7, 2026 - CVE 2026-48588
+July 7, 2026 - CVE 2026-53877
+July 7, 2026 - CVE 2026-53878
+June 3, 2026 - CVE 2026-6873
+June 3, 2026 - CVE 2026-7666
+June 3, 2026 - CVE 2026-8404
+June 3, 2026 - CVE 2026-35193
+June 3, 2026 - CVE 2026-48587
+May 5, 2026 - CVE 2026-5766
+May 5, 2026 - CVE 2026-35192
+May 5, 2026 - CVE 2026-6907
+April 7, 2026 - CVE 2026-3902
+April 7, 2026 - CVE 2026-4277
+April 7, 2026 - CVE 2026-4292
+April 7, 2026 - CVE 2026-33033
+April 7, 2026 - CVE 2026-33034
+March 3, 2026 - CVE 2026-25673
+March 3, 2026 - CVE 2026-25674
+February 3, 2026 - CVE 2025-13473
+February 3, 2026 - CVE 2025-14550
+February 3, 2026 - CVE 2026-1207
+February 3, 2026 - CVE 2026-1285
+February 3, 2026 - CVE 2026-1287
+February 3, 2026 - CVE 2026-1312
+December 2, 2025 - CVE 2025-13372
+December 2, 2025 - CVE 2025-64460
+November 5, 2025 - CVE 2025-64458
+November 5, 2025 - CVE 2025-64459
+October 1, 2025 - CVE 2025-59681
+October 1, 2025 - CVE 2025-59682
+September 3, 2025 - CVE 2025-57833
+June 4, 2025 - CVE 2025-48432
+May 7, 2025 - CVE 2025-32873
+April 2, 2025 - CVE 2025-27556
+March 6, 2025 - CVE 2025-26699
+January 14, 2025 - CVE 2024-56374
+December 4, 2024 - CVE 2024-53907
+December 4, 2024 - CVE 2024-53908
+September 3, 2024 - CVE 2024-45231
+September 3, 2024 - CVE 2024-45230
+August 6, 2024 - CVE 2024-42005
+August 6, 2024 - CVE 2024-41991
+August 6, 2024 - CVE 2024-41990
+August 6, 2024 - CVE 2024-41989
+July 9, 2024 - CVE 2024-39614
+July 9, 2024 - CVE 2024-39330
+July 9, 2024 - CVE 2024-39329
+July 9, 2024 - CVE 2024-38875
+March 4, 2024 - CVE 2024-27351
+February 6, 2024 - CVE 2024-24680
+November 1, 2023 - CVE 2023-46695
+October 4, 2023 - CVE 2023-43665
+September 4, 2023 - CVE 2023-41164
+July 3, 2023 - CVE 2023-36053
+May 3, 2023 - CVE 2023-31047
+February 14, 2023 - CVE 2023-24580
+February 1, 2023 - CVE 2023-23969
+October 4, 2022 - CVE 2022-41323
+August 3, 2022 - CVE 2022-36359
+July 4, 2022 - CVE 2022-34265
+April 11, 2022 - CVE 2022-28346
+April 11, 2022 - CVE 2022-28347
+February 1, 2022 - CVE 2022-22818
+Versions affected
+February 1, 2022 - CVE 2022-23833
+Versions affected
+January 4, 2022 - CVE 2021-45452
+Versions affected
+January 4, 2022 - CVE 2021-45116
+Versions affected
+January 4, 2022 - CVE 2021-45115
+Versions affected
+December 7, 2021 - CVE 2021-44420
+Versions affected
+July 1, 2021 - CVE 2021-35042
+Versions affected
+June 2, 2021 - CVE 2021-33203
+Versions affected
+June 2, 2021 - CVE 2021-33571
+Versions affected
+May 6, 2021 - CVE 2021-32052
+Versions affected
+May 4, 2021 - CVE 2021-31542
+Versions affected
+April 6, 2021 - CVE 2021-28658
+Versions affected
+February 19, 2021 - CVE 2021-23336
+Versions affected
+February 1, 2021 - CVE 2021-3281
+Versions affected
+September 1, 2020 - CVE 2020-24584
+Versions affected
+September 1, 2020 - CVE 2020-24583
+Versions affected
+June 3, 2020 - CVE 2020-13596
+Versions affected
+June 3, 2020 - CVE 2020-13254
+Versions affected
+March 4, 2020 - CVE 2020-9402
+Versions affected
+February 3, 2020 - CVE 2020-7471
+Versions affected
+December 18, 2019 - CVE 2019-19844
+Versions affected
+December 2, 2019 - CVE 2019-19118
+Versions affected
+August 1, 2019 - CVE 2019-14235
+Versions affected
+August 1, 2019 - CVE 2019-14234
+Versions affected
+August 1, 2019 - CVE 2019-14233
+Versions affected
+August 1, 2019 - CVE 2019-14232
+Versions affected
+July 1, 2019 - CVE 2019-12781
+Versions affected
+June 3, 2019 - CVE 2019-12308
+Versions affected
+June 3, 2019 - CVE 2019-11358
+Versions affected
+February 11, 2019 - CVE 2019-6975
+Versions affected
+January 4, 2019 - CVE 2019-3498
+Versions affected
+October 1, 2018 - CVE 2018-16984
+Versions affected
+August 1, 2018 - CVE 2018-14574
+Versions affected
+March 6, 2018 - CVE 2018-7537
+Versions affected
+March 6, 2018 - CVE 2018-7536
+Versions affected
+February 1, 2018 - CVE 2018-6188
+Versions affected
+September 5, 2017 - CVE 2017-12794
+Versions affected
+April 4, 2017 - CVE 2017-7234
+Versions affected
+April 4, 2017 - CVE 2017-7233
+Versions affected
+November 1, 2016 - CVE 2016-9014
+Versions affected
+November 1, 2016 - CVE 2016-9013
+Versions affected
+September 26, 2016 - CVE 2016-7401
+Versions affected
+July 18, 2016 - CVE 2016-6186
+Versions affected
+March 1, 2016 - CVE 2016-2513
+Versions affected
+March 1, 2016 - CVE 2016-2512
+Versions affected
+February 1, 2016 - CVE 2016-2048
+Versions affected
+November 24, 2015 - CVE 2015-8213
+Versions affected
+August 18, 2015 - CVE 2015-5963 / CVE 2015-5964
+Versions affected
+July 8, 2015 - CVE 2015-5145
+Versions affected
+July 8, 2015 - CVE 2015-5144
+Versions affected
+July 8, 2015 - CVE 2015-5143
+Versions affected
+May 20, 2015 - CVE 2015-3982
+Versions affected
+March 18, 2015 - CVE 2015-2317
+Versions affected
+March 18, 2015 - CVE 2015-2316
+Versions affected
+March 9, 2015 - CVE 2015-2241
+Versions affected
+January 13, 2015 - CVE 2015-0222
+Versions affected
+January 13, 2015 - CVE 2015-0221
+Versions affected
+January 13, 2015 - CVE 2015-0220
+Versions affected
+January 13, 2015 - CVE 2015-0219
+Versions affected
+August 20, 2014 - CVE 2014-0483
+Versions affected
+August 20, 2014 - CVE 2014-0482
+Versions affected
+August 20, 2014 - CVE 2014-0481
+Versions affected
+August 20, 2014 - CVE 2014-0480
+Versions affected
+May 18, 2014 - CVE 2014-3730
+Versions affected
+May 18, 2014 - CVE 2014-1418
+Versions affected
+April 21, 2014 - CVE 2014-0474
+Versions affected
+April 21, 2014 - CVE 2014-0473
+Versions affected
+April 21, 2014 - CVE 2014-0472
+Versions affected
+September 14, 2013 - CVE 2013-1443
+Versions affected
+September 10, 2013 - CVE 2013-4315
+Versions affected
+August 13, 2013 - CVE 2013-6044
+Versions affected
+August 13, 2013 - CVE 2013-4249
+Versions affected
+February 19, 2013 - CVE 2013-0306
+Versions affected
+February 19, 2013 - CVE 2013-0305
+Versions affected
+February 19, 2013 - CVE 2013-1664 / CVE 2013-1665
+Versions affected
+February 19, 2013 - No CVE
+Versions affected
+December 10, 2012 - No CVE 2
+Versions affected
+December 10, 2012 - No CVE 1
+Versions affected
+October 17, 2012 - CVE 2012-4520
+Versions affected
+July 30, 2012 - CVE 2012-3444
+Versions affected
+July 30, 2012 - CVE 2012-3443
+Versions affected
+July 30, 2012 - CVE 2012-3442
+Versions affected
+September 9, 2011 - CVE 2011-4140
+Versions affected
+September 9, 2011 - CVE 2011-4139
+Versions affected
+September 9, 2011 - CVE 2011-4138
+Versions affected
+September 9, 2011 - CVE 2011-4137
+Versions affected
+September 9, 2011 - CVE 2011-4136
+Versions affected
+February 8, 2011 - CVE 2011-0698
+Versions affected
+February 8, 2011 - CVE 2011-0697
+Versions affected
+February 8, 2011 - CVE 2011-0696
+Versions affected
+December 22, 2010 - CVE 2010-4535
+Versions affected
+December 22, 2010 - CVE 2010-4534
+Versions affected
+September 8, 2010 - CVE 2010-3082
+Versions affected
+October 9, 2009 - CVE 2009-3695
+Versions affected
+July 28, 2009 - CVE 2009-2659
+Versions affected
+September 2, 2008 - CVE 2008-3909
+Versions affected
+May 14, 2008 - CVE 2008-2302
+Versions affected
+October 26, 2007 - CVE 2007-5712
+Versions affected
+<#issues-prior-to-django-s-security-process> Issues prior to Django’s security process
+January 21, 2007 - CVE 2007-0405
+Versions affected
+August 16, 2006 - CVE 2007-0404
+Versions affected
+Getting help
+FAQ
+Try the FAQ — it's got answers to many common questions.
+Index, Module Index, or Table of Contents
+Handy when looking for specific information.
+Django Discord Server
+Join the Django Discord Community.
+Official Django Forum
+Join the community on the Django Forum.
+Ticket tracker
+Report bugs with Django or Django documentation in our ticket tracker.
+Download:
+Offline (development version):
+HTML |
+PDF |
+ePub
+Provided by Read the Docs.
+Sponsored Fellow, Diamond and Platinum Members
+Sentry
+Monitor your Django Code
+Resolve performance bottlenecks and errors using monitoring, replays, logs and Seer an AI agent for debugging.
+JetBrains
+JetBrains delivers intelligent software solutions that make developers more productive by simplifying their challenging tasks, automating the routine, and helping them adopt the best development practices. PyCharm is the Python IDE for Professional Developers by JetBrains providing a complete set of tools for productive Python, Web and scientific development.
+Kraken Tech
+Kraken is the most-loved operating system for energy. Powered by our Utility-Grade AI™ and deep industry know-how, we help utilities transform their technology and operations so they can lead the energy transition. Delivering better outcomes from generation through distribution to supply, Kraken powers 70+ million accounts worldwide, and is on a mission to make a big, green dent in the universe.
+PostHog
+PostHog is an all-in-one developer platform for building successful products. We provide product analytics, web analytics, session replay, error tracking, feature flags, experiments, surveys, LLM observability, data warehouse, CDP, workflows, logs, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.
+Become a sponsor

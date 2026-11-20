@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Ruby News</title>
+<link>https://www.ruby-lang.org/en/feeds/news.rss</link>
+<language>en-US</language>
+<ttl>40</ttl>
+<description>The latest news from ruby-lang.org.</description>
+<item>
+<title>Ruby 4.0.10 Released</title>
+<description>
+<p>Ruby 4.0.10 has been released.</p>
+<p>This release includes security fixes.
+Please check the topic below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/">Security advisories: multiple vulnerabilities in Regexp and String case conversion</a>
+</li>
+</ul>
+<p>This release also includes other bugfixes.
+Please see the <a href="https://github.com/ruby/ruby/releases/tag/v4.0.10">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.gz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 23973483
+SHA1: ce0edd32e23f4147573a842d24fd76c68164474a
+SHA256: b53eef3371fa5d3e3b74340edcd015f06d5d8853968d4e539a5264fce41ed9f1
+SHA512: b5a1be1bdad01564a766f2f6f4ec2d7eed6fcbc52b8742640214e8c8272bf62e7144126a45de5271de3bb4855db7e10672af344690af8c168523f9e44d823f00
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.xz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 18133108
+SHA1: 1e1eff5e147c2d74937f6c0c320d8ff6681bd61e
+SHA256: 1537f7a6003c436546ecab6b48b6e7725a9af2328f45a8af7f42f41c5df90ab8
+SHA512: d3fdb00e08165526065ce84a4606cdcfb9fb04ad8cfb0b516a403382cfc25e1aeed9ee4a13abdff98ebfd7241eaf32303fd7c385ef63e58c17689da88b80d847
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.zip">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 29322047
+SHA1: 71a76f0251969d8ab71cdad9a3954064ad2e851b
+SHA256: aaa2003c2dcb2bc18cbc8616c953884c6ccc551d6965d2e27bc6cf826ca3f9e0
+SHA512: e00e60bd31aced35650cdecc6db80eaee53deaba22008066010b721433d50111e49fe31f1a90a90150fa38825a8411b0a37386e16ad93f417a780f41a7704de7
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>k0kubun</strong> on 18 Nov 2026</p>
+</description>
+<pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-4-0-10-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-4-0-10-released/</link>
+</item>
+<item>
+<title>Ruby 3.4.13 Released</title>
+<description>
+<p>Ruby 3.4.13 has been released.</p>
+<p>This release includes security fixes.
+Please check the topic below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/">Security advisories: multiple vulnerabilities in Regexp and String case conversion</a>
+</li>
+</ul>
+<p>This release also includes other bugfixes.
+Please see the <a href="https://github.com/ruby/ruby/releases/tag/v3_4_13">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.gz">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 22523151
+SHA1: 61d6742c35916a965bb50dd6888d5f79c52938d5
+SHA256: d0d3bf3dd8c224a3c3b7ecd816a0f1b2cbcf4f87b5afcbdbe91d3fef177f351a
+SHA512: 0c914e049939f09cfbbbb5b03b427d9525eb3c75830077eb2c07ff0ac8b06770538facdabe6e8c7524874ef30309987bb336e61f97caba65c0983beae1eb51ba
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.xz">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 16860020
+SHA1: cb2473ffd6dda89de200a4056fe82b2511312cc4
+SHA256: 6474dff9c02ea685fc44877a4807a27366bf109b176dad182108bb8c96d09589
+SHA512: 6a2df57f072ea341ce219d2d2c6a719dda976ad53d51f1c344d623bd64a4449642b49a9c81311daf367c19d42a11e2d92ac8bb343ff8bf0697247cc09b4b6eae
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.zip">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 27744286
+SHA1: ac33a67d2386ede95744dcf8bba12880a618322c
+SHA256: 080c7ddd89ab02228a924837bf900310719e3486d7b664578d63a40fd1ea05ea
+SHA512: 19d8350b93d51914e8c49026f3526e892dc31f3e6aee4a85eea20a4d323a2eedcb40d80f0055d4cf4c9f81711f29b45fea1e0076b486e7678a34abe0fb630659
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>nagachika</strong> on 18 Nov 2026</p>
+</description>
+<pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-4-13-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-4-13-released/</link>
+</item>
+<item>
+<title>Ruby 3.3.14 Released</title>
+<description>
+<p>Ruby 3.3.14 has been released.</p>
+<p>This release includes security fixes.
+Please check the topic below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/">Security advisories: multiple vulnerabilities in Regexp and String case conversion</a>
+</li>
+</ul>
+<p>Starting with this release, Ruby 3.3 also receives fixes for bugs that we judge need to be backported, not only security fixes.
+Accordingly, we have renamed this phase from the security maintenance phase to the legacy maintenance phase.
+The support period is unchanged for now, and official support for Ruby 3.3 is still scheduled to end at the end of March 2027.</p>
+<p>Please see the <a href="https://github.com/ruby/ruby/releases/tag/v3_3_14">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.gz">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 21512128
+SHA1: cabe592634c8cc922a3f21792b1603488a3335dc
+SHA256: d0438ee291b0cacaf97c7a71df4c939d7f3265c8c2d1b8ffe27311f71fc680b0
+SHA512: d6c3599266d441b00659c7a6eafdc5cc2b5d5b57daa0aba6a22710a2be75bf9a9de9387b8de3734f40fea6591da0bd957ae0e2363758287bc403fe8006a5b224
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.xz">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 16025548
+SHA1: e058f5782eef876b22e12f00429a36cc16d92719
+SHA256: e24ef6d97095a9c42bf8259a2de33a25aac8d92bb48fefdbdc81724b87784854
+SHA512: 5d690fdb53a0e2f9c0d9c536d037c199e4ea57a41849845c13724059129a895474f7cba4c9c071f3a1ec7aae81ad7560888a64525b24347eca1f2c7e15d0ff9b
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.zip">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 26978726
+SHA1: 146ace29d87719b3b108800b768abf0272cac813
+SHA256: 0c6af18c3998f0133e6b1338c593eeb04c2a78466d9566c8425dc057f0bf5948
+SHA512: e7d1bce838a25aa76b8b96dc4b9b943d6e343c302d3da8a93d341c47fa57c7a7b9ab277b1bea9240adc43c3f73c1aa29b2a9965637b87fd52265e4e1bb83757f
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>hsbt</strong> on 18 Nov 2026</p>
+</description>
+<pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-3-14-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-3-14-released/</link>
+</item>
+<item>
+<title>Security advisories: multiple vulnerabilities in Regexp and String case conversion</title>
+<description>
+<p>Seven vulnerabilities have been discovered in Ruby’s regular expression engine and in the case conversion of strings. We are aware of PoCs that prove some of them can be used to trigger remote code execution. We have released Ruby 4.0.10, 3.4.13 and 3.3.14 to fix them. We strongly recommend upgrading.</p>
+<p>CVE identifiers have been requested for these vulnerabilities but have not been assigned yet, so this advisory refers to them by their GitHub Security Advisory (GHSA) identifiers.</p>
+<h2 id="ghsa-34m4-m9fh-gqp5-heap-buffer-overflow-in-case-conversion-of-strings">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-34m4-m9fh-gqp5">GHSA-34m4-m9fh-gqp5</a>: Heap buffer overflow in case conversion of strings</h2>
+<p>Ruby has a one-byte heap-based buffer overflow in the case conversion of strings. Changing the case of a crafted string may allow remote code execution. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.</p>
+<h2 id="ghsa-7x2q-68qv-6p8x-double-free-in-regular-expression-compilation">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-7x2q-68qv-6p8x">GHSA-7x2q-68qv-6p8x</a>: Double free in regular expression compilation</h2>
+<p>Ruby has a double free in its regular expression engine. Compiling a crafted regular expression pattern may allow remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.</p>
+<h2 id="ghsa-87fm-7w84-j2px-integer-overflow-in-case-conversion-of-strings">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-87fm-7w84-j2px">GHSA-87fm-7w84-j2px</a>: Integer overflow in case conversion of strings</h2>
+<p>Ruby has an integer overflow in the case conversion of strings, which causes a heap-based buffer overflow. Changing the case of a crafted string may allow remote code execution. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.</p>
+<h2 id="ghsa-wpqw-5qxg-m68r-out-of-bounds-read-in-case-insensitive-regular-expression-matching">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-wpqw-5qxg-m68r">GHSA-wpqw-5qxg-m68r</a>: Out-of-bounds read in case-insensitive regular expression matching</h2>
+<p>Ruby has an out-of-bounds read in its regular expression engine. Matching against a crafted regular expression pattern may allow remote code execution in applications that use attacker-controlled patterns. We are aware of PoCs that prove this flaw can lead to memory corruption in an attacker-controlled way.</p>
+<h2 id="ghsa-3p8q-wmhx-vm2w-heap-buffer-overflow-in-regular-expression-compilation">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-3p8q-wmhx-vm2w">GHSA-3p8q-wmhx-vm2w</a>: Heap buffer overflow in regular expression compilation</h2>
+<p>Ruby has an integer overflow in its regular expression engine, which causes a heap-based buffer overflow. Compiling a crafted regular expression pattern may allow remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.</p>
+<h2 id="ghsa-7whj-cfh7-xgm4-heap-buffer-overflow-in-regexpto_s">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-7whj-cfh7-xgm4">GHSA-7whj-cfh7-xgm4</a>: Heap buffer overflow in Regexp#to_s</h2>
+<p>Ruby has a heap-based buffer overflow in <code class="language-plaintext highlighter-rouge">Regexp#to_s</code>. Converting a crafted regular expression to a string may allow information disclosure or remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.</p>
+<h2 id="ghsa-pvgc-g7gj-pv6h-out-of-bounds-read-in-case-insensitive-backreference-matching">
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-pvgc-g7gj-pv6h">GHSA-pvgc-g7gj-pv6h</a>: Out-of-bounds read in case-insensitive backreference matching</h2>
+<p>Ruby has an out-of-bounds read in its regular expression engine. Matching a crafted string may disclose memory contents or crash the process.</p>
+<h2 id="affected-versions">Affected versions</h2>
+<ul>
+<li>Ruby 3.3.13 and earlier</li>
+<li>Ruby 3.4.0 through 3.4.12</li>
+<li>Ruby 4.0.0 through 4.0.9</li>
+</ul>
+<h2 id="recommended-action">Recommended action</h2>
+<p>We strongly recommend upgrading to Ruby 4.0.10, 3.4.13 or 3.3.14.</p>
+<p>Ruby 3.3 is in the security maintenance phase. Ruby 3.2 and earlier have reached their end of life and will not receive these fixes.</p>
+<h2 id="credits">Credits</h2>
+<ul>
+<li>GHSA-34m4-m9fh-gqp5: Stephan Lipp (Ada Logics) and Anthropic</li>
+<li>GHSA-7x2q-68qv-6p8x: Stephan Lipp (Ada Logics) and Anthropic</li>
+<li>GHSA-87fm-7w84-j2px: <a href="https://hackerone.com/baba__yaga">baba__yaga</a>
+</li>
+<li>GHSA-wpqw-5qxg-m68r: Stephan Lipp (Ada Logics) and Anthropic</li>
+<li>GHSA-3p8q-wmhx-vm2w: <a href="https://hackerone.com/aphantom">aphantom</a>
+</li>
+<li>GHSA-7whj-cfh7-xgm4: Stephan Lipp (Ada Logics) and Anthropic</li>
+<li>GHSA-pvgc-g7gj-pv6h: Hiroya Fujinami and Hiroshi SHIBATA</li>
+</ul>
+<h2 id="history">History</h2>
+<ul>
+<li>Originally published at 2026-11-19 00:00:00 (UTC)</li>
+</ul>
+<p>Posted by <strong>mame</strong> on 18 Nov 2026</p>
+</description>
+<pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/</link>
+</item>
+<item>
+<title>Ruby 3.3.13 Released</title>
+<description>
+<p>Ruby 3.3.13 has been released.</p>
+<p>This release includes security fixes.
+Please check the topics below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/08/27/multiple-vulnerabilities-in-resolv/">Security advisories: CVE-2026-80212 and CVE-2026-80213</a>
+</li>
+<li>
+<a href="/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/">Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264</a>
+</li>
+</ul>
+<p>This release updates the default gem resolv to 0.3.2, which fixes CVE-2026-80212 and CVE-2026-80213.</p>
+<p>Ruby 3.3 is in the security maintenance phase. As an exception, this release also includes fixes for bugs in Regexp compilation that GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264 rely on.</p>
+<p>Please see the <a href="https://github.com/ruby/ruby/releases/tag/v3_3_13">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 21497008
+SHA1: e89379c35cd61b23c7fef6cff9c5bbece4e2c391
+SHA256: 4cae72e971bd1cdb20ca87d299111182417c5276c162de8ead0ab0531426cd61
+SHA512: 0536341f6f612a1eb0128f7d18eed081b09264c695e6a159a5456ba3050464849791ae26e33a7ea384406fa9e19b98bf194c89638dfe2940d3dbeed5b3126c92
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.xz">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 15878972
+SHA1: 61e8a88d601ca7a4e9f9c30428fa46be0fdf690d
+SHA256: 6bd764359992373a96556b45fb7dfe6b6170da34a0a2fd0b7e1be7932fea982b
+SHA512: 906e270e2629b44e469265e08d693f996b467a3fc165fbdb9b8f6f7b37effe4fdae9d4968e72a809d1381e35279cb10b6630d40fac31a634981deb4c30ff325c
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.zip">https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 26961541
+SHA1: 4536403d0c1feaa6290fc7d94e65db4bc2b7f0ed
+SHA256: 8cf1c468af6dbcaa2c48270cc4c951325dabe5fd84b609641d4bd7b89c9d5766
+SHA512: 622c8b60b2202aea1aa4caed00cee5984109926793ee57c86a9cc39b1628855f51a26d07258aa85aacc679c6186efc4ebf20b5a51f199de7cdd6fcc98a212d10
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>hsbt</strong> on 23 Oct 2026</p>
+</description>
+<pubDate>Fri, 23 Oct 2026 04:24:46 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-3-13-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-3-13-released/</link>
+</item>
+<item>
+<title>Ruby 3.4.12 Released</title>
+<description>
+<p>Ruby 3.4.12 has been released.</p>
+<p>This release includes fixes for bugs in Regexp compilation that GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264 rely on.
+Please see the topic below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/">Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264</a>
+</li>
+</ul>
+<p>This release also includes other bugfixes.
+Please see the <a href="https://github.com/ruby/ruby/releases/tag/v3_4_12">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.gz">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 22498017
+SHA1: 8ead0b008d7cdeb543282489e7574324ab62939f
+SHA256: 5e5d85ad93b0adcccbad47733680f4892bd0078e3342437f7babce01c1872479
+SHA512: 7d4fcf4b57f94974091df406e159ccfd8460e75bd7593993d9d4172a8ad673388bb8505ddb41377014dce4df6d358e019d4fa4098b535aa705e790f65962f1cd
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.xz">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 16732860
+SHA1: bf42a4909e1517a2fee26eebbd840bbef3181c61
+SHA256: db6c147940d7ad0b706823d42c8e6713c36dec70a1f83f635f1d3a7f0599ec90
+SHA512: 7866ed652921f9f0d601e1e323d29fddee3506cfd89e258cab7601786bffec8a17245468d517d246ecfa7fa9a982b73cfff0aaf6534444753e8b6add297bfbd3
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.zip">https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 27719665
+SHA1: c4381ce52fba1af02944cedb35eac569976bfdb8
+SHA256: b1bec4f3a2b0c47f349a102b013f1c8f345b9991388e75368d1178ac4f9cfc0e
+SHA512: 21573c2ba656984c006c8f499f3498c5208eba17d862d93269221c1e7295ace4e5034a53b23931d6b9585c4fc98ecd9b1196b81c2b58543d83550ea60fdc014e
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>nagachika</strong> on 23 Oct 2026</p>
+</description>
+<pubDate>Fri, 23 Oct 2026 03:50:27 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-4-12-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-4-12-released/</link>
+</item>
+<item>
+<title>Ruby 4.0.9 Released</title>
+<description>
+<p>Ruby 4.0.9 has been released.</p>
+<p>This release includes a fix for a bug in Regexp compilation that GitLab’s CVE-2026-110264 relies on.
+Please see the topic below for details.</p>
+<ul>
+<li>
+<a href="/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/">Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264</a>
+</li>
+</ul>
+<p>Please see the <a href="https://github.com/ruby/ruby/releases/tag/v4.0.9">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 23946524
+SHA1: 39f31360bc0c03bde9eec4177e443f6298481e2e
+SHA256: c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511
+SHA512: 9adb0069a07ee1348a04b627d8af1c9f2b6537bdea5dce0b57423659626d9ae3cc04955eae7167014c56bd0f4c7c9d1aa0e4fcfc666eda738b1b0c35a3674114
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.xz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 17996144
+SHA1: 630cf1e7a4c522f49a2fec383805627691500b54
+SHA256: a8057adb39f51ad6dc3106237504c93dd792bb515837b4fe7817ae21ed7e51f4
+SHA512: 7160b1c6fb61b0e369cddccb29eadae85390d86777c875efc18a56de390b1fe1ff47d6e37ccaf39d2ed477c9811f1224cbb3d2f54a0cbd5d5daf418b1cf2557e
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.zip">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 29263242
+SHA1: 9e2d496d0f3663918c3183b8671c7f4b78aa185e
+SHA256: 8242fbb2354cb71811cb2ff4d5e149b7a0ecb700e6c61a897710204ac36f866b
+SHA512: 29422739ea9b5189c24354f6c689f40485c4dc8945e735c38240094195a637dbc6807f4fe295a1579b27ca930e1eb6b2ad7fe1970dad38d0800e049863e8288b
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>k0kubun</strong> on 23 Oct 2026</p>
+</description>
+<pubDate>Fri, 23 Oct 2026 03:11:22 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-4-0-9-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-4-0-9-released/</link>
+</item>
+<item>
+<title>Regexp compilation fixes related to GitLab's CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264</title>
+<description>
+<p>We have released Ruby 4.0.9, 3.4.12 and 3.3.13. They fix several bugs in Ruby’s regular expression engine (Onigmo) that GitLab found could be used for remote code execution on GitLab servers. GitLab published four CVEs for these issues, and the Ruby releases contain the fixes for the underlying bugs in Ruby.</p>
+<h2 id="background">Background</h2>
+<p>GitLab compiles regular expressions supplied by its users, such as patterns in CI configuration, with <code class="language-plaintext highlighter-rouge">Regexp.new</code>. GitLab found that specially crafted patterns could corrupt memory while Ruby compiles them, and that this could be turned into remote code execution on GitLab servers. GitLab addressed these issues in its own releases by patching the Ruby it ships, and assigned the following CVE identifiers:</p>
+<ul>
+<li>
+<a href="https://www.cve.org/CVERecord?id=CVE-2026-89078">CVE-2026-89078</a>: Double Free issue in Regular Expression Parser (<a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/">GitLab 19.4.1</a>)</li>
+<li>
+<a href="https://www.cve.org/CVERecord?id=CVE-2026-93577">CVE-2026-93577</a>: Integer Overflow issue in Regular Expression Compiler (<a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/">GitLab 19.4.1</a>)</li>
+<li>
+<a href="https://www.cve.org/CVERecord?id=CVE-2026-97229">CVE-2026-97229</a>: Integer Overflow issue in CI/CD Regular Expression Compiler (<a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/">GitLab 19.4.2</a>)</li>
+<li>
+<a href="https://www.cve.org/CVERecord?id=CVE-2026-110264">CVE-2026-110264</a>: Integer Overflow issue in Regular Expression Compiler (<a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/">GitLab 19.5.1</a>)</li>
+</ul>
+<h2 id="fixes-in-ruby">Fixes in Ruby</h2>
+<p>The following table shows the change in Ruby that fixes the bug behind each CVE, and the first release of each series that contains it.</p>
+<table>
+<thead>
+<tr>
+<th>CVE</th>
+<th>Bug in Ruby</th>
+<th>Change</th>
+<th>Ruby advisory</th>
+<th>Ruby 4.0</th>
+<th>Ruby 3.4</th>
+<th>Ruby 3.3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CVE-2026-89078</td>
+<td>Double free when parsing a pattern fails after an alternation</td>
+<td>
+<a href="https://github.com/ruby/ruby/pull/13332">#13332</a>
+</td>
+<td>
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-gfj3-8wj9-qx8p">GHSA-gfj3-8wj9-qx8p</a>
+</td>
+<td>4.0.0</td>
+<td>3.4.12</td>
+<td>3.3.13</td>
+</tr>
+<tr>
+<td>CVE-2026-93577, CVE-2026-97229</td>
+<td>Integer overflow in the size of a compiled pattern</td>
+<td>
+<a href="https://github.com/ruby/ruby/pull/19020">#19020</a>
+</td>
+<td>
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-22mf-ggw7-pxfx">GHSA-22mf-ggw7-pxfx</a>
+</td>
+<td>4.0.8</td>
+<td>3.4.12</td>
+<td>3.3.13</td>
+</tr>
+<tr>
+<td>CVE-2026-110264</td>
+<td>Overflow of internal IDs in a pattern with many repeats</td>
+<td>
+<a href="https://github.com/ruby/ruby/pull/16801">#16801</a>
+</td>
+<td>
+<a href="https://github.com/ruby/ruby/security/advisories/GHSA-qm4g-8pfh-6996">GHSA-qm4g-8pfh-6996</a>
+</td>
+<td>4.0.9</td>
+<td>3.4.12</td>
+<td>3.3.13</td>
+</tr>
+</tbody>
+</table>
+<p>Ruby 4.0.9, 3.4.12 and 3.3.13 contain all of these fixes.</p>
+<h2 id="who-is-affected">Who is affected</h2>
+<p>These bugs are reached only when an application compiles a regular expression from a string that an attacker controls, for example by passing it to <code class="language-plaintext highlighter-rouge">Regexp.new</code>, <code class="language-plaintext highlighter-rouge">Regexp.union</code> or <code class="language-plaintext highlighter-rouge">Regexp.compile</code>, or by interpolating it into a regexp literal such as <code class="language-plaintext highlighter-rouge">/#{input}/</code>. Applications that only use regular expressions written by their own developers are not affected.</p>
+<p>
+<code class="language-plaintext highlighter-rouge">Regexp.timeout</code> does not protect against these bugs. Limiting the length of patterns does not reliably protect against them either, because some of them can be triggered by short patterns.</p>
+<h2 id="recommended-action">Recommended action</h2>
+<p>We recommend upgrading to Ruby 4.0.9, 3.4.12 or 3.3.13 or later.</p>
+<p>If you cannot upgrade, please avoid compiling regular expressions from untrusted input.</p>
+<p>Ruby 3.3 is in the security maintenance phase, in which we normally release only fixes for vulnerabilities. Ruby 3.3.13 includes these fixes as an exception, because GitLab assigned CVEs to issues that rely on them.</p>
+<h2 id="about-cve-identifiers">About CVE identifiers</h2>
+<p>Update (2026-11-20): The CVE identifiers of these vulnerabilities in Ruby are the ones GitLab assigned: CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264. We requested separate identifiers for the Ruby advisories, but the CVE Program assigns a single identifier to a vulnerability in code that several products share, and GitLab is affected through the Ruby it ships. Please use these identifiers, together with the Ruby advisories listed in the table above, when you track these issues, for example in a security scanner. The CVE records currently list only GitLab as the affected product. We have asked GitLab, which maintains the records, to add Ruby to them.</p>
+<p>Update (2026-11-17): We now treat these issues as vulnerabilities in Ruby. We have published a security advisory for each of them in the ruby/ruby repository, listed in the table above.</p>
+<p>When we originally published this page, we had not requested CVE identifiers in Ruby for these fixes, for the following reason.</p>
+<p>Ruby has generally considered it unsafe to compile and use a regular expression created from untrusted input. We stated this in the advisory for <a href="/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/">CVE-2022-28738</a>, where we nevertheless treated a double free in Regexp compilation as a vulnerability after a comprehensive assessment. We did the same for <a href="/en/news/2024/04/23/arbitrary-memory-address-read-regexp-cve-2024-27282/">CVE-2024-27282</a>.</p>
+<p>However, the <a href="https://docs.ruby-lang.org/en/master/Regexp.html#class-Regexp-label-Timeouts">Regexp documentation</a> discussed untrusted patterns only in terms of denial of service, and recommended a timeout for them. It did not clearly say whether compiling an untrusted pattern is a use case that Ruby supports. We have since discussed this and decided that memory corruption reachable by compiling an untrusted pattern is a vulnerability in Ruby, which is why we have published the advisories above.</p>
+<h2 id="credits">Credits</h2>
+<p>Thanks to Johan Carlsson (<a href="https://github.com/joaxcar">joaxcar</a>) for discovering the integer overflow fixed by <a href="https://github.com/ruby/ruby/pull/19020">#19020</a> through GitLab’s bug bounty program, and to GitLab for reporting these issues to us and coordinating the fixes.</p>
+<h2 id="history">History</h2>
+<ul>
+<li>Originally published at 2026-10-23 03:11:22 (UTC)</li>
+<li>Updated at 2026-11-17 04:28:40 (UTC): Added the Ruby security advisories and marked this page as a security announcement</li>
+<li>Updated at 2026-11-20 00:37:50 (UTC): Stated that the CVE identifiers assigned by GitLab are the identifiers of these vulnerabilities in Ruby</li>
+</ul>
+<p>Posted by <strong>k0kubun</strong> on 23 Oct 2026</p>
+</description>
+<pubDate>Fri, 23 Oct 2026 03:11:22 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/</link>
+</item>
+<item>
+<title>Ruby 4.0.8 Released</title>
+<description>
+<p>Ruby 4.0.8 has been released.</p>
+<p>This is a routine update that includes bugfixes.
+Please see the <a href="https://github.com/ruby/ruby/releases/tag/v4.0.8">GitHub releases</a> for further details.</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 23947459
+SHA1: f79bc8217dd0edd7ecc0c1c0cb57e64a906258a5
+SHA256: 0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2
+SHA512: 011b741c8fe3160643739f8fd88f3a69b198260dabcd3cb791c1ffacdfae7b48f6b2ca365ea97198d5dcb13fc839533ec1e83bab76f38c25203a7a3b6e665e8b
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.xz">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 18019152
+SHA1: 24404aa1371a1f5a28bfcc8ac4331bd744810954
+SHA256: 3bd35abc39dce9c682d62cf333fbd8b8f34816dd651f8228b3b59353157b84a4
+SHA512: 79eb57f30a853d6e856ce2df35b8ff20c393d5cacad43420c5caba9ebba53445d1b7b40f0a65a1cd4eee6bfc86abc3eb722e1fa5bef10b41bf56779b566e894a
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.zip">https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 29263079
+SHA1: 40c0e4f791563bc8a24d683547cb3fe08c01da4b
+SHA256: 68e12bb40c9175c2a97f371ff6a76dd93649bb09dc76d757394b7086c881ade4
+SHA512: bee8b619c287530d10779d6527d5e7397b75b74d0abe57d9a12b8d8d0b303064ea6da3fe9a47d1fb9835abfe11701e64a767841658e209cb866ca44aa951ef33
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="release-comment">Release Comment</h2>
+<p>Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.</p>
+<p>Posted by <strong>k0kubun</strong> on 22 Oct 2026</p>
+</description>
+<pubDate>Thu, 22 Oct 2026 06:54:51 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/22/ruby-4-0-8-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/22/ruby-4-0-8-released/</link>
+</item>
+<item>
+<title>Ruby 4.1.0-preview1 Released</title>
+<description>
+<p>We are pleased to announce the release of Ruby 4.1.0-preview1.
+Ruby 4.1 introduces Ractor local GC, Windows support of YJIT, autoload_relative,
+and adds many improvements.</p>
+<h2 id="ractor-improvements">Ractor improvements</h2>
+<p>A lot of work has gone into making Ractors more stable, performant, and usable. These improvements bring Ractor implementation closer to leaving experimental status.</p>
+<ul>
+<li>
+<p>The default GC now runs <strong>per Ractor</strong>: each Ractor collects its own heap
+on its own thread without stopping the others, and a stop-the-world
+collection only runs when it is really needed (explicit full <code class="language-plaintext highlighter-rouge">GC.start</code>,
+shareable-object growth, reclaiming dead Ractors’ heaps). Allocation-heavy
+Ractor programs now scale like forked processes.</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">GC.start(global: false)</code> can be used when multiple Ractors are running to force
+a Ractor-local GC. By default, <code class="language-plaintext highlighter-rouge">GC.start</code> runs a global GC (all Ractors) like
+before. This can also be triggered with <code class="language-plaintext highlighter-rouge">GC.start(global: true)</code>. The <code class="language-plaintext highlighter-rouge">global</code>
+keyword argument has no effect when a single Ractor is running.</p>
+<p>Visible behavior changes:</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Ractor#value</code> returns the value only once; a second call raises
+<code class="language-plaintext highlighter-rouge">Ractor::Error</code>.</li>
+<li>
+<code class="language-plaintext highlighter-rouge">GC.disable</code>/<code class="language-plaintext highlighter-rouge">GC.enable</code> act as per-Ractor holds on a process-wide
+switch: one Ractor’s <code class="language-plaintext highlighter-rouge">GC.enable</code> no longer overrides another Ractor’s
+<code class="language-plaintext highlighter-rouge">GC.disable</code>.</li>
+<li>
+<code class="language-plaintext highlighter-rouge">ObjectSpace.each_object</code> enumerates the calling Ractor’s own objects
+plus other Ractors’ shareable objects (<code class="language-plaintext highlighter-rouge">ObjectSpace.dump_all</code> still
+covers everything).</li>
+<li>
+<code class="language-plaintext highlighter-rouge">ObjectSpace.define_finalizer</code> on another Ractor’s object raises
+<code class="language-plaintext highlighter-rouge">Ractor::IsolationError</code>.</li>
+</ul>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Ractor#monitor</code> now sends an Array naming the Ractor and what happened to
+it, <code class="language-plaintext highlighter-rouge">[ractor, :exited]</code> or <code class="language-plaintext highlighter-rouge">[ractor, :aborted]</code>, where it used to send the
+bare Symbol <code class="language-plaintext highlighter-rouge">:exited</code> or <code class="language-plaintext highlighter-rouge">:aborted</code>. Several Ractors can then report to one
+port and the receiver still knows which one finished. The Array is built for
+the receiving Ractor, so watching many Ractors leaves no shareable objects
+behind.</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>r = Ractor.new { :ok }
+r.monitor(port = Ractor::Port.new)
+port.receive #=&gt; [r, :exited]
+</code>
+</pre>
+</div>
+</div>
+<p>One port can therefore watch a whole group, which is all a supervisor
+needs:</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>workers.each { |r| r.monitor port }
+until workers.empty?
+r, status = port.receive
+workers.delete(r)
+workers &lt;&lt; restart(r) if status == :aborted
+end
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="language-changes">Language changes</h2>
+<ul>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">super</code> in a module method that was called via <code class="language-plaintext highlighter-rouge">super</code> from a refinement
+method now works correctly.
+[<a href="https://bugs.ruby-lang.org/issues/22309">Feature #22309</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Module#clone</code> and <code class="language-plaintext highlighter-rouge">Module#dup</code> no longer rewrite the lexical scope of
+copied methods. Constants and class variables resolve through the
+original class, consistent with inheritance and mixins.
+[<a href="https://bugs.ruby-lang.org/issues/21981">Feature #21981</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">alias</code> and <code class="language-plaintext highlighter-rouge">Module#alias_method</code> in a module emit a deprecation warning
+when the original method is not a method of the module or its ancestors
+and is only found through the fallback to <code class="language-plaintext highlighter-rouge">Object</code>. The fallback will be
+removed in Ruby 4.3, and such an alias will raise a <code class="language-plaintext highlighter-rouge">NameError</code>.
+[<a href="https://bugs.ruby-lang.org/issues/22276">Bug #22276</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">alias</code> and <code class="language-plaintext highlighter-rouge">Module#alias_method</code> emit a deprecation warning when the
+original method is defined in a prepended module. This behavior will
+be removed in Ruby 4.3, and alias lookup will start at the origin
+class (after prepended modules).
+[<a href="https://bugs.ruby-lang.org/issues/22273">Bug #22273</a>]</p>
+</li>
+</ul>
+<h2 id="core-classes-updates">Core classes updates</h2>
+<p>Note: We’re only listing outstanding class updates.</p>
+<ul>
+<li>
+<p>C API</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">RB_NOGVL_PENDING_INTR_FAIL</code> is added as a flag for <code class="language-plaintext highlighter-rouge">rb_nogvl</code>.
+<code class="language-plaintext highlighter-rouge">rb_nogvl</code> does not enter the blocking region (and does not call the
+given function), returning <code class="language-plaintext highlighter-rouge">0</code>, if the current thread has pending
+interrupts, including interrupts masked by <code class="language-plaintext highlighter-rouge">Thread.handle_interrupt</code>.
+As with the existing skip path, <code class="language-plaintext highlighter-rouge">errno</code> is <code class="language-plaintext highlighter-rouge">0</code> because the function was
+never called.</li>
+<li>
+<code class="language-plaintext highlighter-rouge">RHASH_TBL</code> is deprecated. [<a href="https://bugs.ruby-lang.org/issues/22232">Feature #22232</a>]</li>
+</ul>
+</li>
+<li>
+<p>Array</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Array#pack</code> accepts new formats <code class="language-plaintext highlighter-rouge">R</code> and <code class="language-plaintext highlighter-rouge">r</code> for unsigned and signed
+LEB128 encoded integers. [<a href="https://bugs.ruby-lang.org/issues/21785">Feature #21785</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">Array#pack</code> accepts new formats <code class="language-plaintext highlighter-rouge">x!</code> and <code class="language-plaintext highlighter-rouge">@!</code> to align the current
+offset to a byte boundary or to the ABI alignment of another
+directive. [<a href="https://bugs.ruby-lang.org/issues/22185">Feature #22185</a>]</li>
+</ul>
+</li>
+<li>
+<p>Dir</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Dir.glob</code> supports <code class="language-plaintext highlighter-rouge">***/</code> for recursive matching that follows
+directory symbolic links, stopping at links to ancestor directories.
+[<a href="https://bugs.ruby-lang.org/issues/17548">Feature #17548</a>]</li>
+</ul>
+</li>
+<li>
+<p>ENV</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">ENV.fetch_values</code> is added. It returns an array of values for the
+given names, raising <code class="language-plaintext highlighter-rouge">KeyError</code> for missing names unless a block is
+given. [<a href="https://bugs.ruby-lang.org/issues/21781">Feature #21781</a>]</li>
+</ul>
+</li>
+<li>
+<p>Fiber::Scheduler</p>
+<ul>
+<li>The <code class="language-plaintext highlighter-rouge">fiber_interrupt</code> hook is now required. Schedulers which do not
+implement it can no longer be installed with <code class="language-plaintext highlighter-rouge">Fiber.set_scheduler</code>.</li>
+</ul>
+</li>
+<li>
+<p>GC</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">GC.stat</code> accepts <code class="language-plaintext highlighter-rouge">scope: :ractor</code> (the default), <code class="language-plaintext highlighter-rouge">scope: :local</code>
+(a synonym for <code class="language-plaintext highlighter-rouge">:ractor</code>), and <code class="language-plaintext highlighter-rouge">scope: :global</code>.
+With the default collector, the global scope reports cumulative collection
+counts and measured marking/sweeping CPU time across Ractors, including
+history from destroyed object spaces, without requesting a stop-the-world
+snapshot. Unscoped <code class="language-plaintext highlighter-rouge">GC.stat</code>, <code class="language-plaintext highlighter-rouge">GC.count</code>, and <code class="language-plaintext highlighter-rouge">GC.total_time</code> retain their
+current-Ractor behavior.</li>
+<li>
+<code class="language-plaintext highlighter-rouge">GC.stat</code> reports a new key, <code class="language-plaintext highlighter-rouge">:global_gc_count</code>: the number of
+stop-the-world global garbage collection cycles the current Ractor
+initiated. Each global collection is attributed to exactly one Ractor,
+so the values sum across Ractors. <code class="language-plaintext highlighter-rouge">GC.stat(:global_gc_count,
+scope: :global)</code> reports the process total, including the counts of
+terminated Ractors.</li>
+<li>A global garbage collection is not counted in <code class="language-plaintext highlighter-rouge">:major_gc_count</code>.
+<code class="language-plaintext highlighter-rouge">:count</code> equals <code class="language-plaintext highlighter-rouge">:minor_gc_count</code> plus <code class="language-plaintext highlighter-rouge">:major_gc_count</code> plus
+<code class="language-plaintext highlighter-rouge">:global_gc_count</code> in both scopes. When another Ractor’s object space
+exists, including one left by a terminated Ractor that is not yet
+absorbed, or one was absorbed since the last global collection,
+<code class="language-plaintext highlighter-rouge">GC.start</code> runs a global collection by default, so it increments
+<code class="language-plaintext highlighter-rouge">:global_gc_count</code> rather than <code class="language-plaintext highlighter-rouge">:major_gc_count</code>; pass <code class="language-plaintext highlighter-rouge">global: false</code>
+for a local major collection.</li>
+<li>Global compaction no longer counts overlapping CPU intervals in scalar GC
+timing statistics. Profiler wall-time intervals are unchanged.</li>
+</ul>
+</li>
+<li>
+<p>Hash</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Hash.ruby2_keywords_hash?</code> and <code class="language-plaintext highlighter-rouge">Hash.ruby2_keywords_hash</code> are
+deprecated and will be removed in Ruby 4.5. [<a href="https://bugs.ruby-lang.org/issues/22205">Feature #22205</a>]</li>
+</ul>
+</li>
+<li>
+<p>Integer</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Integer#bit_count</code> is added. It returns the number of <code class="language-plaintext highlighter-rouge">1</code> bits in the
+binary representation of a non-negative integer (its population count).
+[<a href="https://bugs.ruby-lang.org/issues/20163">Feature #20163</a>]</li>
+</ul>
+</li>
+<li>
+<p>IO::Buffer</p>
+<ul>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">write</code>, <code class="language-plaintext highlighter-rouge">pread</code>, and <code class="language-plaintext highlighter-rouge">pwrite</code> now perform one IO operation using
+<code class="language-plaintext highlighter-rouge">(offset, length)</code>, where <code class="language-plaintext highlighter-rouge">length</code> is the maximum transfer size. Short
+transfers are returned directly.</p>
+</li>
+<li>
+<p>The corresponding fiber scheduler hooks are no longer experimental and
+now use the same <code class="language-plaintext highlighter-rouge">(offset, length)</code> argument order and single-operation
+semantics.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Kernel</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Kernel#autoload_relative</code> and <code class="language-plaintext highlighter-rouge">Module#autoload_relative</code> are added.
+These methods work like <code class="language-plaintext highlighter-rouge">autoload</code>, but resolve the file path relative
+to the file where the method is called, similar to <code class="language-plaintext highlighter-rouge">require_relative</code>.
+This makes it easier to autoload constants from files in the same
+directory without hardcoding absolute paths or manipulating <code class="language-plaintext highlighter-rouge">$LOAD_PATH</code>.
+[<a href="https://bugs.ruby-lang.org/issues/15330">Feature #15330</a>]</li>
+</ul>
+</li>
+<li>
+<p>MatchData</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">MatchData#integer_at</code> is added. It converts the matched substring to
+integer and return the result. [<a href="https://bugs.ruby-lang.org/issues/21932">Feature #21932</a>]</li>
+</ul>
+</li>
+<li>
+<p>Module</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Module#descendants</code> is added. It returns an array of classes and
+modules that have the receiver in their ancestors. [<a href="https://bugs.ruby-lang.org/issues/9779">Feature #9779</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">Module#ruby2_keywords</code> and top-level <code class="language-plaintext highlighter-rouge">ruby2_keywords</code> are
+deprecated and will be removed in Ruby 4.4. [<a href="https://bugs.ruby-lang.org/issues/22205">Feature #22205</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">Module#method_defined?</code> now accepts a third optional argument to also
+match private methods. [<a href="https://bugs.ruby-lang.org/issues/22297">Feature #22297</a>]</li>
+</ul>
+</li>
+<li>
+<p>ObjectSpace</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">ObjectSpace._id2ref</code> was removed. [<a href="https://bugs.ruby-lang.org/issues/22135">Feature #22135</a>]</li>
+</ul>
+</li>
+<li>
+<p>Proc</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Proc#refined</code> is added. It returns a new <code class="language-plaintext highlighter-rouge">Proc</code> that behaves like the
+receiver but with the refinements activated by the given modules
+in effect inside its body, without affecting the original <code class="language-plaintext highlighter-rouge">Proc</code>.
+[<a href="https://bugs.ruby-lang.org/issues/22097">Feature #22097</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">Proc#ruby2_keywords</code> is deprecated and will be removed in Ruby 4.4.
+[<a href="https://bugs.ruby-lang.org/issues/22205">Feature #22205</a>]</li>
+</ul>
+</li>
+<li>
+<p>Range</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Range#clamp</code> is added. It returns a new <code class="language-plaintext highlighter-rouge">Range</code> instance whose
+begin and end values are clamped to the given bounds. [<a href="https://bugs.ruby-lang.org/issues/22175">Feature #22175</a>]</li>
+</ul>
+</li>
+<li>
+<p>Regexp</p>
+<ul>
+<li>All instances of <code class="language-plaintext highlighter-rouge">Regexp</code> are now frozen, not just literals.
+Subclasses of <code class="language-plaintext highlighter-rouge">Regexp</code> are not frozen for compatibility.
+[<a href="https://bugs.ruby-lang.org/issues/8948">Feature #8948</a>]</li>
+</ul>
+</li>
+<li>
+<p>Set</p>
+<ul>
+<li>A deprecated behavior, <code class="language-plaintext highlighter-rouge">Set#to_set</code>, <code class="language-plaintext highlighter-rouge">Range#to_set</code>, and
+<code class="language-plaintext highlighter-rouge">Enumerable#to_set</code> accepting arguments, was removed. [<a href="https://bugs.ruby-lang.org/issues/21390">Feature #21390</a>]</li>
+</ul>
+</li>
+<li>
+<p>String</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">String#unpack</code> and <code class="language-plaintext highlighter-rouge">String#unpack1</code> accept new formats <code class="language-plaintext highlighter-rouge">R</code> and <code class="language-plaintext highlighter-rouge">r</code>
+for unsigned and signed LEB128 encoded integers. [<a href="https://bugs.ruby-lang.org/issues/21785">Feature #21785</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">String#unpack</code> and <code class="language-plaintext highlighter-rouge">String#unpack1</code> accept a new format <code class="language-plaintext highlighter-rouge">^</code> that
+returns the current offset. Useful when combined with variable
+width formats like LEB128. [<a href="https://bugs.ruby-lang.org/issues/21796">Feature #21796</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">String#unpack</code> and <code class="language-plaintext highlighter-rouge">String#unpack1</code> accept new formats <code class="language-plaintext highlighter-rouge">x!</code> and
+<code class="language-plaintext highlighter-rouge">@!</code> to align the current offset to a byte boundary or to the ABI
+alignment of another directive. [<a href="https://bugs.ruby-lang.org/issues/22185">Feature #22185</a>]</li>
+<li>Basic bit operations are added. <code class="language-plaintext highlighter-rouge">String#bit_get</code>, <code class="language-plaintext highlighter-rouge">String#bit_set?</code>,
+<code class="language-plaintext highlighter-rouge">String#bit_set</code>, <code class="language-plaintext highlighter-rouge">String#bit_clear</code>, <code class="language-plaintext highlighter-rouge">String#bit_flip</code> and
+<code class="language-plaintext highlighter-rouge">String#bit_count</code> handle individual bits, and <code class="language-plaintext highlighter-rouge">String#bitwise_not</code>,
+<code class="language-plaintext highlighter-rouge">String#bitwise_and</code>, <code class="language-plaintext highlighter-rouge">String#bitwise_or</code>, <code class="language-plaintext highlighter-rouge">String#bitwise_xor</code>
+(with their <code class="language-plaintext highlighter-rouge">!</code> variants) handle whole strings. [<a href="https://bugs.ruby-lang.org/issues/22118">Feature #22118</a>]</li>
+<li>
+<code class="language-plaintext highlighter-rouge">String#tr</code> now accept a Hash for multi-character replacement.
+[<a href="https://bugs.ruby-lang.org/issues/22238">Feature #22238</a>]</li>
+</ul>
+</li>
+<li>
+<p>Symbol</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Symbol#to_s</code> now returns a frozen string. [<a href="https://bugs.ruby-lang.org/issues/22137">Feature #22137</a>]</li>
+</ul>
+</li>
+<li>
+<p>Thread</p>
+<ul>
+<li>Assigning <code class="language-plaintext highlighter-rouge">nil</code> with <code class="language-plaintext highlighter-rouge">Thread#thread_variable_set</code> now deletes the
+thread-local variable. [[Feature #19333]]</li>
+</ul>
+</li>
+<li>
+<p>Thread::Backtrace::Location</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Thread::Backtrace::Location#source_range</code> is added. It returns a
+<code class="language-plaintext highlighter-rouge">Ruby::SourceRange</code> for the Ruby expression associated with the frame.</li>
+</ul>
+</li>
+</ul>
+<h2 id="stdlib-updates">Stdlib updates</h2>
+<ul>
+<li>
+<p>Psych</p>
+<ul>
+<li>An experimental libfyaml backend has been added. It is only
+enabled when psych is built with <code class="language-plaintext highlighter-rouge">--enable-libfyaml</code>, and the
+default libyaml backend remains unchanged otherwise. It is not
+supported on Windows. [<a href="https://github.com/ruby/psych/pull/805">GH-psych #805</a>]</li>
+</ul>
+</li>
+<li>
+<p>Ruby::Prism</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">Ruby::Prism</code> is added. It is the prism parser built into the
+interpreter, i.e., the very parser that parsed the running program,
+independent of the prism gem. It is autoloaded.
+<code class="language-plaintext highlighter-rouge">Method#syntax_tree</code> and others return its nodes. Its API may change
+between Ruby minor versions; use the <code class="language-plaintext highlighter-rouge">prism</code> gem unless you need the
+parser of the running interpreter. [<a href="https://bugs.ruby-lang.org/issues/22379">Bug #22379</a>]</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-following-bundled-gems-are-added">The following bundled gems are added.</h3>
+<p>We only list stdlib changes that are notable feature changes.</p>
+<p>Other changes are listed in the following sections. We also listed release
+history from the previous bundled version that is Ruby 4.0.0 if it has GitHub
+releases.</p>
+<h3 id="the-following-bundled-gems-are-promoted-from-default-gems">The following bundled gems are promoted from default gems.</h3>
+<ul>
+<li>prism 1.9.0</li>
+<li>tsort 0.2.0</li>
+<li>win32-registry 0.1.2</li>
+</ul>
+<h3 id="the-following-bundled-gems-are-removed">The following bundled gems are removed.</h3>
+<ul>
+<li>net-ftp 0.3.9</li>
+<li>net-pop 0.1.2</li>
+</ul>
+<p>They are still available on rubygems.org and can be installed with
+<code class="language-plaintext highlighter-rouge">gem install</code>. [<a href="https://bugs.ruby-lang.org/issues/21835">Feature #21835</a>]</p>
+<h3 id="the-following-default-gem-is-added">The following default gem is added.</h3>
+<h3 id="the-following-default-gems-are-updated">The following default gems are updated.</h3>
+<ul>
+<li>RubyGems 4.1.0.beta2
+<ul>
+<li>4.0.3 to <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.4">v4.0.4</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.5">v4.0.5</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.6">v4.0.6</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.7">v4.0.7</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.8">v4.0.8</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.9">v4.0.9</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.10">v4.0.10</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.11">v4.0.11</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.12">v4.0.12</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.13">v4.0.13</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.14">v4.0.14</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.15">v4.0.15</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.16">v4.0.16</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.17">v4.0.17</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.18">v4.0.18</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.19">v4.0.19</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.20">v4.0.20</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.21">v4.0.21</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.0.22">v4.0.22</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.1.0.beta1">v4.1.0.beta1</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/v4.1.0.beta2">v4.1.0.beta2</a>
+</li>
+</ul>
+</li>
+<li>bundler 4.1.0.beta2
+<ul>
+<li>4.0.3 to <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.4">v4.0.4</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.5">v4.0.5</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.6">v4.0.6</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.7">v4.0.7</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.8">v4.0.8</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.9">v4.0.9</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.10">v4.0.10</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.11">v4.0.11</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.12">v4.0.12</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.13">v4.0.13</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.14">v4.0.14</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.15">v4.0.15</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.16">v4.0.16</a>, <a href="https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.17">v4.0.17</a>
+</li>
+</ul>
+</li>
+<li>date 3.6.0
+<ul>
+<li>3.5.1 to <a href="https://github.com/ruby/date/releases/tag/v3.6.0">v3.6.0</a>
+</li>
+</ul>
+</li>
+<li>delegate 0.7.0
+<ul>
+<li>0.6.1 to <a href="https://github.com/ruby/delegate/releases/tag/v0.7.0">v0.7.0</a>
+</li>
+</ul>
+</li>
+<li>digest 3.3.0
+<ul>
+<li>3.2.1 to <a href="https://github.com/ruby/digest/releases/tag/v3.3.0">v3.3.0</a>
+</li>
+</ul>
+</li>
+<li>erb 6.1.0
+<ul>
+<li>6.0.1 to <a href="https://github.com/ruby/erb/releases/tag/v6.0.1.1">v6.0.1.1</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.2">v6.0.2</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.3">v6.0.3</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.4">v6.0.4</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.5">v6.0.5</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.6">v6.0.6</a>, <a href="https://github.com/ruby/erb/releases/tag/v6.0.7">v6.0.7</a>
+</li>
+</ul>
+</li>
+<li>error_highlight 0.7.2</li>
+<li>etc 1.5.0
+<ul>
+<li>1.4.6 to <a href="https://github.com/ruby/etc/releases/tag/v1.5.0">v1.5.0</a>
+</li>
+</ul>
+</li>
+<li>fileutils 1.8.1
+<ul>
+<li>1.8.0 to <a href="https://github.com/ruby/fileutils/releases/tag/v1.8.1">v1.8.1</a>
+</li>
+</ul>
+</li>
+<li>io-console 0.9.4
+<ul>
+<li>0.8.2 to <a href="https://github.com/ruby/io-console/releases/tag/v0.9.0">v0.9.0</a>, <a href="https://github.com/ruby/io-console/releases/tag/v0.9.1">v0.9.1</a>, <a href="https://github.com/ruby/io-console/releases/tag/v0.9.2">v0.9.2</a>, <a href="https://github.com/ruby/io-console/releases/tag/v0.9.3">v0.9.3</a>, <a href="https://github.com/ruby/io-console/releases/tag/v0.9.4">v0.9.4</a>
+</li>
+</ul>
+</li>
+<li>io-wait 999.999.999</li>
+<li>ipaddr 1.2.9
+<ul>
+<li>1.2.8 to <a href="https://github.com/ruby/ipaddr/releases/tag/v1.2.9">v1.2.9</a>
+</li>
+</ul>
+</li>
+<li>json 3.0.2
+<ul>
+<li>2.18.0 to <a href="https://github.com/ruby/json/releases/tag/v2.18.1">v2.18.1</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.0">v2.19.0</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.1">v2.19.1</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.2">v2.19.2</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.3">v2.19.3</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.4">v2.19.4</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.5">v2.19.5</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.6">v2.19.6</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.7">v2.19.7</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.8">v2.19.8</a>, <a href="https://github.com/ruby/json/releases/tag/v2.19.9">v2.19.9</a>, <a href="https://github.com/ruby/json/releases/tag/v2.20.0">v2.20.0</a>, <a href="https://github.com/ruby/json/releases/tag/v2.21.0">v2.21.0</a>, <a href="https://github.com/ruby/json/releases/tag/v2.21.2">v2.21.2</a>, <a href="https://github.com/ruby/json/releases/tag/v3.0.0.rc1">v3.0.0.rc1</a>, <a href="https://github.com/ruby/json/releases/tag/v3.0.0">v3.0.0</a>
+</li>
+</ul>
+</li>
+<li>net-http 0.10.0
+<ul>
+<li>0.9.1 to <a href="https://github.com/ruby/net-http/releases/tag/v0.10.0">v0.10.0</a>
+</li>
+</ul>
+</li>
+<li>net-protocol 0.4.0
+<ul>
+<li>0.2.2 to <a href="https://github.com/ruby/net-protocol/releases/tag/v0.3.0">v0.3.0</a>, <a href="https://github.com/ruby/net-protocol/releases/tag/v0.4.0">v0.4.0</a>
+</li>
+</ul>
+</li>
+<li>open3 0.3.0
+<ul>
+<li>0.2.1 to <a href="https://github.com/ruby/open3/releases/tag/v0.3.0">v0.3.0</a>
+</li>
+</ul>
+</li>
+<li>openssl 4.0.2
+<ul>
+<li>4.0.0 to <a href="https://github.com/ruby/openssl/releases/tag/v4.0.1">v4.0.1</a>, <a href="https://github.com/ruby/openssl/releases/tag/v4.0.2">v4.0.2</a>
+</li>
+</ul>
+</li>
+<li>pp 0.6.4
+<ul>
+<li>0.6.3 to <a href="https://github.com/ruby/pp/releases/tag/v0.6.4">v0.6.4</a>
+</li>
+</ul>
+</li>
+<li>prettyprint 0.2.1
+<ul>
+<li>0.2.0 to <a href="https://github.com/ruby/prettyprint/releases/tag/v0.2.1">v0.2.1</a>
+</li>
+</ul>
+</li>
+<li>psych 5.5.0
+<ul>
+<li>5.3.1 to <a href="https://github.com/ruby/psych/releases/tag/v5.4.0">v5.4.0</a>, <a href="https://github.com/ruby/psych/releases/tag/v5.5.0">v5.5.0</a>
+</li>
+</ul>
+</li>
+<li>resolv 0.8.1
+<ul>
+<li>0.7.0 to <a href="https://github.com/ruby/resolv/releases/tag/v0.7.1">v0.7.1</a>, <a href="https://github.com/ruby/resolv/releases/tag/v0.7.2">v0.7.2</a>, <a href="https://github.com/ruby/resolv/releases/tag/v0.8.0">v0.8.0</a>, <a href="https://github.com/ruby/resolv/releases/tag/v0.8.1">v0.8.1</a>
+</li>
+</ul>
+</li>
+<li>stringio 3.2.1.dev</li>
+<li>strscan 3.1.9.dev
+<ul>
+<li>3.1.6 to <a href="https://github.com/ruby/strscan/releases/tag/v3.1.7">v3.1.7</a>, <a href="https://github.com/ruby/strscan/releases/tag/v3.1.8">v3.1.8</a>
+</li>
+</ul>
+</li>
+<li>syntax_suggest 3.0.0</li>
+<li>tempfile 0.3.2
+<ul>
+<li>0.3.1 to <a href="https://github.com/ruby/tempfile/releases/tag/v0.3.2">v0.3.2</a>
+</li>
+</ul>
+</li>
+<li>time 0.5.0
+<ul>
+<li>0.4.2 to <a href="https://github.com/ruby/time/releases/tag/v0.5.0">v0.5.0</a>
+</li>
+</ul>
+</li>
+<li>timeout 0.6.1
+<ul>
+<li>0.6.0 to <a href="https://github.com/ruby/timeout/releases/tag/v0.6.1">v0.6.1</a>
+</li>
+</ul>
+</li>
+<li>tmpdir 0.3.2
+<ul>
+<li>0.3.1 to <a href="https://github.com/ruby/tmpdir/releases/tag/v0.3.2">v0.3.2</a>
+</li>
+</ul>
+</li>
+<li>uri 1.1.2
+<ul>
+<li>1.1.1 to <a href="https://github.com/ruby/uri/releases/tag/v1.1.2">v1.1.2</a>
+</li>
+</ul>
+</li>
+<li>zlib 3.2.4
+<ul>
+<li>3.2.2 to <a href="https://github.com/ruby/zlib/releases/tag/v3.2.3">v3.2.3</a>, <a href="https://github.com/ruby/zlib/releases/tag/v3.2.4">v3.2.4</a>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-following-bundled-gems-are-updated">The following bundled gems are updated.</h3>
+<ul>
+<li>minitest 6.0.6</li>
+<li>power_assert 3.1.0
+<ul>
+<li>3.0.1 to <a href="https://github.com/ruby/power_assert/releases/tag/v3.1.0">v3.1.0</a>
+</li>
+</ul>
+</li>
+<li>rake 13.4.2
+<ul>
+<li>13.3.1 to <a href="https://github.com/ruby/rake/releases/tag/v13.4.0">v13.4.0</a>, <a href="https://github.com/ruby/rake/releases/tag/v13.4.1">v13.4.1</a>, <a href="https://github.com/ruby/rake/releases/tag/v13.4.2">v13.4.2</a>
+</li>
+</ul>
+</li>
+<li>test-unit 3.7.8
+<ul>
+<li>3.7.5 to <a href="https://github.com/test-unit/test-unit/releases/tag/3.7.6">3.7.6</a>, <a href="https://github.com/test-unit/test-unit/releases/tag/3.7.7">3.7.7</a>, <a href="https://github.com/test-unit/test-unit/releases/tag/3.7.8">3.7.8</a>
+</li>
+</ul>
+</li>
+<li>rss 0.3.3
+<ul>
+<li>0.3.2 to <a href="https://github.com/ruby/rss/releases/tag/0.3.3">0.3.3</a>
+</li>
+</ul>
+</li>
+<li>net-imap 0.6.7
+<ul>
+<li>0.6.2 to <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.3">v0.6.3</a>, <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.4">v0.6.4</a>, <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.4.1">v0.6.4.1</a>, <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.5">v0.6.5</a>, <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.6">v0.6.6</a>, <a href="https://github.com/ruby/net-imap/releases/tag/v0.6.7">v0.6.7</a>
+</li>
+</ul>
+</li>
+<li>net-smtp 0.5.2
+<ul>
+<li>0.5.1 to <a href="https://github.com/ruby/net-smtp/releases/tag/v0.5.2">v0.5.2</a>
+</li>
+</ul>
+</li>
+<li>rbs 4.2.0
+<ul>
+<li>3.10.0 to <a href="https://github.com/ruby/rbs/releases/tag/v3.10.1">v3.10.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v3.10.2">v3.10.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v3.10.3">v3.10.3</a>, <a href="https://github.com/ruby/rbs/releases/tag/v3.10.4">v3.10.4</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.1">v4.0.0.dev.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.2">v4.0.0.dev.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.3">v4.0.0.dev.3</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.4">v4.0.0.dev.4</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.5">v4.0.0.dev.5</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.0">v4.0.0</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.1.dev.1">v4.0.1.dev.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.1.dev.2">v4.0.1.dev.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.1">v4.0.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.2">v4.0.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.0.3">v4.0.3</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.0.pre.1">v4.1.0.pre.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.0.pre.2">v4.1.0.pre.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.0">v4.1.0</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.1.pre.1">v4.1.1.pre.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.1">v4.1.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.2">v4.1.2</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.1.3">v4.1.3</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.2.0.pre.1">v4.2.0.pre.1</a>, <a href="https://github.com/ruby/rbs/releases/tag/v4.2.0">v4.2.0</a>
+</li>
+</ul>
+</li>
+<li>typeprof 0.33.2</li>
+<li>mutex_m 0.3.0</li>
+<li>bigdecimal 4.1.3
+<ul>
+<li>4.0.1 to <a href="https://github.com/ruby/bigdecimal/releases/tag/v4.1.0">v4.1.0</a>, <a href="https://github.com/ruby/bigdecimal/releases/tag/v4.1.1">v4.1.1</a>, <a href="https://github.com/ruby/bigdecimal/releases/tag/v4.1.2">v4.1.2</a>, <a href="https://github.com/ruby/bigdecimal/releases/tag/v4.1.3">v4.1.3</a>
+</li>
+</ul>
+</li>
+<li>resolv-replace 0.2.0
+<ul>
+<li>0.1.1 to <a href="https://github.com/ruby/resolv-replace/releases/tag/v0.2.0">v0.2.0</a>
+</li>
+</ul>
+</li>
+<li>nkf 0.3.0
+<ul>
+<li>0.2.0 to <a href="https://github.com/ruby/nkf/releases/tag/v0.3.0">v0.3.0</a>
+</li>
+</ul>
+</li>
+<li>syslog 0.4.0
+<ul>
+<li>0.3.0 to <a href="https://github.com/ruby/syslog/releases/tag/v0.4.0">v0.4.0</a>
+</li>
+</ul>
+</li>
+<li>csv 3.3.6
+<ul>
+<li>3.3.5 to <a href="https://github.com/ruby/csv/releases/tag/v3.3.6">v3.3.6</a>
+</li>
+</ul>
+</li>
+<li>repl_type_completor 0.1.16
+<ul>
+<li>0.1.12 to <a href="https://github.com/ruby/repl_type_completor/releases/tag/v0.1.13">v0.1.13</a>, <a href="https://github.com/ruby/repl_type_completor/releases/tag/v0.1.14">v0.1.14</a>, <a href="https://github.com/ruby/repl_type_completor/releases/tag/v0.1.15">v0.1.15</a>, <a href="https://github.com/ruby/repl_type_completor/releases/tag/v0.1.16">v0.1.16</a>
+</li>
+</ul>
+</li>
+<li>pstore 0.2.1
+<ul>
+<li>0.2.0 to <a href="https://github.com/ruby/pstore/releases/tag/v0.2.1">v0.2.1</a>
+</li>
+</ul>
+</li>
+<li>rdoc 8.1.0
+<ul>
+<li>7.0.3 to <a href="https://github.com/ruby/rdoc/releases/tag/v7.0.4">v7.0.4</a>, <a href="https://github.com/ruby/rdoc/releases/tag/v7.1.0">v7.1.0</a>, <a href="https://github.com/ruby/rdoc/releases/tag/v7.2.0">v7.2.0</a>, <a href="https://github.com/ruby/rdoc/releases/tag/v8.0.0">v8.0.0</a>, <a href="https://github.com/ruby/rdoc/releases/tag/v8.1.0">v8.1.0</a>
+</li>
+</ul>
+</li>
+<li>win32ole 1.9.3
+<ul>
+<li>1.9.2 to <a href="https://github.com/ruby/win32ole/releases/tag/v1.9.3">v1.9.3</a>
+</li>
+</ul>
+</li>
+<li>irb 1.18.0
+<ul>
+<li>1.16.0 to <a href="https://github.com/ruby/irb/releases/tag/v1.17.0">v1.17.0</a>, <a href="https://github.com/ruby/irb/releases/tag/v1.18.0">v1.18.0</a>
+</li>
+</ul>
+</li>
+<li>reline 0.7.0
+<ul>
+<li>0.6.3 to <a href="https://github.com/ruby/reline/releases/tag/v0.7.0">v0.7.0</a>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rubygems-and-bundler">RubyGems and Bundler</h3>
+<p>Ruby 4.1 bundled RubyGems and Bundler version 4. see the following links for details.</p>
+<h2 id="supported-platforms">Supported platforms</h2>
+<ul>
+<li>
+<p>Support code for the following platforms has been removed. Their
+vendors or distributors have ended support, there is no environment to
+test Ruby on them, and none of them has a platform maintainer.</p>
+<ul>
+<li>AmigaOS</li>
+<li>AtheOS</li>
+<li>BSD/OS (BSDi)</li>
+<li>ESIX</li>
+<li>EWS-UX (NEC EWS4800)</li>
+<li>FreeBSD, NetBSD and OpenBSD with a.out binaries</li>
+<li>GNU/kFreeBSD</li>
+<li>GNU/kOpenSolaris</li>
+<li>HI-UX/MPP</li>
+<li>HP-UX on the HP 9000 Series 300</li>
+<li>Interix (Windows Services for UNIX)</li>
+<li>IRIX</li>
+<li>MirOS BSD</li>
+<li>NeXTSTEP, OpenStep and Rhapsody</li>
+<li>OSF/1 (Tru64 UNIX)</li>
+<li>QNX Neutrino</li>
+<li>SunOS 4 (Solaris, i.e. SunOS 5, is unaffected)</li>
+<li>System V Release 4</li>
+<li>UNICOS/mp (Cray X1)</li>
+<li>UX/PDS</li>
+</ul>
+</li>
+<li>
+<p>Support code for the following old versions has been removed.</p>
+<ul>
+<li>Cygwin 1.3 and earlier</li>
+<li>Solaris 9 and earlier</li>
+<li>Linux 2.6.23 and earlier (RHEL 5)</li>
+</ul>
+</li>
+<li>
+<p>Windows 10 1703 or later no longer needs the <code class="language-plaintext highlighter-rouge">LongPathsEnabled</code> registry
+value to use paths longer than 260 characters. This applies to any process
+running the interpreter, including a program which embeds libruby. Each path
+component is still limited to 255 characters, and a child process still
+starts with the <code class="language-plaintext highlighter-rouge">MAX_PATH</code> limited current directory. [<a href="https://bugs.ruby-lang.org/issues/18947">Bug #18947</a>]</p>
+</li>
+<li>
+<p>Building Ruby with MSVC now requires Visual Studio 2017 version 15.8
+(<code class="language-plaintext highlighter-rouge">_MSC_VER</code> 1915) or later.</p>
+</li>
+<li>
+<p>Ruby built with MSVC now requires Windows 10 version 1809 (build 17763)
+or Windows Server 2019 or later. Earlier Windows 10 releases and Windows
+Server 2016 are no longer supported.</p>
+</li>
+<li>
+<p>Ruby on macOS now requires Mac OS X 10.6 or later. Mac OS X 10.5 and
+PowerPC Macs are no longer supported.</p>
+</li>
+</ul>
+<h2 id="compatibility-issues">Compatibility issues</h2>
+<ul>
+<li>
+<p>A class or module can now be modified only by the Ractor which created it,
+its <em>owner</em>. Defining, removing or undefining methods, <code class="language-plaintext highlighter-rouge">alias</code>, changing
+visibility, <code class="language-plaintext highlighter-rouge">include</code>/<code class="language-plaintext highlighter-rouge">prepend</code>, <code class="language-plaintext highlighter-rouge">Module#refine</code>, defining or removing
+constants, registering an <code class="language-plaintext highlighter-rouge">autoload</code>, writing the class’s own instance
+variables and class variables, <code class="language-plaintext highlighter-rouge">Module#freeze</code> and
+<code class="language-plaintext highlighter-rouge">Module#set_temporary_name</code> raise <code class="language-plaintext highlighter-rouge">Ractor::IsolationError</code> in any other
+Ractor. Reading is unchanged. Everything defined at boot or by the main
+Ractor, <code class="language-plaintext highlighter-rouge">require</code>d libraries included, is owned by the main Ractor, so a
+non-main Ractor can no longer monkey-patch it; and since defining a constant
+in a foreign class is prohibited, it can not define a top-level class or
+module name either. In exchange a Ractor has full use of the classes it
+creates itself, including unshareable constant, instance variable and class
+variable values, which not even the main Ractor could do before. See
+doc/language/ractor.md. [<a href="https://bugs.ruby-lang.org/issues/22226">Feature #22226</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Kernel#at_exit</code> and <code class="language-plaintext highlighter-rouge">END {}</code> now raise <code class="language-plaintext highlighter-rouge">Ractor::IsolationError</code> when called
+in a non-main Ractor. Previously the registered handler ran in the main
+Ractor at process exit, which was confusing. [<a href="https://bugs.ruby-lang.org/issues/22139">Feature #22139</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Ractor.make_shareable</code> now raises <code class="language-plaintext highlighter-rouge">Ractor::Error</code> for an <code class="language-plaintext highlighter-rouge">IO</code> object, and
+<code class="language-plaintext highlighter-rouge">Ractor.shareable?</code> returns <code class="language-plaintext highlighter-rouge">false</code> for it. A frozen <code class="language-plaintext highlighter-rouge">IO</code> used to be
+shareable, but almost all of its methods raise <code class="language-plaintext highlighter-rouge">FrozenError</code> and it can
+still refer to unshareable objects through the members of <code class="language-plaintext highlighter-rouge">rb_io_t</code>.</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Random.urandom</code> now raises <code class="language-plaintext highlighter-rouge">RangeError</code> for every size too large for a
+<code class="language-plaintext highlighter-rouge">long</code>, as <code class="language-plaintext highlighter-rouge">Random#bytes</code> does. A size that still fit in an <code class="language-plaintext highlighter-rouge">unsigned long</code>
+used to raise <code class="language-plaintext highlighter-rouge">ArgumentError</code>. [<a href="https://bugs.ruby-lang.org/issues/22400">Feature #22400</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Struct#[]</code> and <code class="language-plaintext highlighter-rouge">Struct#[]=</code> now raise <code class="language-plaintext highlighter-rouge">IndexError</code> for every out-of-range
+Integer index that fits in a <code class="language-plaintext highlighter-rouge">long</code>. An index past the <code class="language-plaintext highlighter-rouge">int</code> range used to
+raise <code class="language-plaintext highlighter-rouge">RangeError</code>. [<a href="https://bugs.ruby-lang.org/issues/22400">Feature #22400</a>]</p>
+</li>
+</ul>
+<h2 id="stdlib-compatibility-issues">Stdlib compatibility issues</h2>
+<ul>
+<li>
+<p>prism is now a bundled gem. Under Bundler, <code class="language-plaintext highlighter-rouge">require "prism"</code> needs prism
+in the Gemfile. Use <code class="language-plaintext highlighter-rouge">Ruby::Prism</code> for the parser of the running
+interpreter. [<a href="https://bugs.ruby-lang.org/issues/22379">Bug #22379</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">Etc.getlogin</code> on Windows now returns the login name determined when the
+process starts, from the <code class="language-plaintext highlighter-rouge">USER</code> or <code class="language-plaintext highlighter-rouge">USERNAME</code> environment variable or
+<code class="language-plaintext highlighter-rouge">GetUserName()</code>. It used to follow later changes to <code class="language-plaintext highlighter-rouge">ENV['USER']</code>.</p>
+</li>
+<li>
+<p>Socket</p>
+<ul>
+<li>
+<p>On Windows, a connection that is refused or unreachable now raises the
+matching <code class="language-plaintext highlighter-rouge">Errno</code> class as soon as Winsock reports it, instead of
+<code class="language-plaintext highlighter-rouge">Errno::ETIMEDOUT</code> once the whole <code class="language-plaintext highlighter-rouge">connect_timeout</code> has passed. Code
+rescuing <code class="language-plaintext highlighter-rouge">Errno::ETIMEDOUT</code> there has to rescue the real error instead.</p>
+</li>
+<li>
+<p>On Windows, <code class="language-plaintext highlighter-rouge">BasicSocket#getsockopt(:SOCKET, :ERROR)</code> now reports an
+errno as it does on the other platforms, instead of the raw WinSock
+error code. Code comparing it with a <code class="language-plaintext highlighter-rouge">WSAE*</code> value has to compare it
+with the matching <code class="language-plaintext highlighter-rouge">Errno::*::Errno</code> instead.</p>
+</li>
+</ul>
+<p>[<a href="https://bugs.ruby-lang.org/issues/18661">Bug #18661</a>]</p>
+</li>
+</ul>
+<h2 id="c-api-updates">C API updates</h2>
+<h3 id="embedded-typeddata">Embedded TypedData</h3>
+<ul>
+<li>
+<p>The <code class="language-plaintext highlighter-rouge">RUBY_TYPED_EMBEDDABLE</code> flag is now public and documented and can be used by C extensions.
+It allows allocating C structs directly into Ruby object slots, which reduces pointer chasing,
+and in some case memory usage.
+See the C extension documentation for details. [<a href="https://bugs.ruby-lang.org/issues/21853">Feature #21853</a>]</p>
+</li>
+<li>
+<p>Added new C23 inspired allocator functions, that takes the previous memory size.
+This allow the Ruby GC to better keep track of memory usage, improving its heuristics.
+It also improves the performance of system allocators that support C23 <code class="language-plaintext highlighter-rouge">free_sized</code>.</p>
+<p>However, it is important to note that passing an incorrect size to these function is undefined
+behavior and may result in crashes or memory leaks.</p>
+<ul>
+<li>
+<code class="language-plaintext highlighter-rouge">ruby_xfree_sized(void *ptr, size_t size)</code>
+</li>
+<li>
+<code class="language-plaintext highlighter-rouge">ruby_xrealloc_sized(void *ptr, size_t newsiz, size_t oldsiz)</code>
+</li>
+<li>
+<code class="language-plaintext highlighter-rouge">ruby_xrealloc2_sized(void *ptr, size_t newelems, size_t newsiz, size_t oldelems)</code>
+</li>
+</ul>
+<p>[<a href="https://bugs.ruby-lang.org/issues/21861">Feature #21861</a>]</p>
+</li>
+</ul>
+<h3 id="ractor-scoped-gc-address-registration">Ractor-scoped GC address registration</h3>
+<ul>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">rb_gc_register_address</code> and <code class="language-plaintext highlighter-rouge">rb_global_variable</code> now register the address
+with the calling Ractor, and only that Ractor’s GC marks the stored object.</p>
+<p>Any Ractor may register an address, but the value stored through it must be a
+special constant, a shareable object, or an unshareable object owned by the
+registering Ractor. Storing another Ractor’s unshareable object can result in
+the object being freed while the address still refers to it (use-after-free).</p>
+<p>If the address has process lifetime (a static VALUE), register it from the
+main Ractor or keep the stored values shareable.</p>
+<p>When the registering Ractor is joined with <code class="language-plaintext highlighter-rouge">Ractor#value</code>, remaining
+registrations move to the joining Ractor; otherwise they move to the main
+Ractor once the dead Ractor is collected.</p>
+<p>[[Feature #22277]]</p>
+</li>
+</ul>
+<h3 id="type-for-lengths-and-indices">Type for lengths and indices</h3>
+<ul>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">rb_len_t</code> and <code class="language-plaintext highlighter-rouge">rb_ulen_t</code> are added as the types of the lengths and indices
+of String, Array and MatchData, with <code class="language-plaintext highlighter-rouge">LEN2NUM</code>, <code class="language-plaintext highlighter-rouge">NUM2LEN</code>, <code class="language-plaintext highlighter-rouge">ULEN2NUM</code>,
+<code class="language-plaintext highlighter-rouge">rb_len2int</code>, <code class="language-plaintext highlighter-rouge">PRIdLEN</code> and its siblings, <code class="language-plaintext highlighter-rouge">RB_LEN_MAX</code>, <code class="language-plaintext highlighter-rouge">RB_LEN_MIN</code>,
+<code class="language-plaintext highlighter-rouge">RB_ULEN_MAX</code>, <code class="language-plaintext highlighter-rouge">SIZEOF_RB_LEN_T</code> and <code class="language-plaintext highlighter-rouge">HAVE_RB_LEN_T</code>. <code class="language-plaintext highlighter-rouge">RbConfig::SIZEOF["rb_len_t"]</code>
+gives its size to an extconf.rb. They are <code class="language-plaintext highlighter-rouge">long</code> on every platform for now, and
+the C API that carries such lengths, such as <code class="language-plaintext highlighter-rouge">RSTRING_LEN</code> and
+<code class="language-plaintext highlighter-rouge">rb_range_beg_len</code>, uses them. A later change will makes them 64 bits on mswin,
+so extensions should keep these lengths in <code class="language-plaintext highlighter-rouge">rb_len_t</code>. [<a href="https://bugs.ruby-lang.org/issues/22400">Feature #22400</a>]</p>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">rb_len2long</code> is added to convert an <code class="language-plaintext highlighter-rouge">rb_len_t</code> to <code class="language-plaintext highlighter-rouge">long</code>, raising
+<code class="language-plaintext highlighter-rouge">RangeError</code> via the new <code class="language-plaintext highlighter-rouge">rb_out_of_long</code> when it does not fit, for
+extensions that keep a length in <code class="language-plaintext highlighter-rouge">long</code>. [<a href="https://bugs.ruby-lang.org/issues/22400">Feature #22400</a>]</p>
+</li>
+</ul>
+<h3 id="removed-apis">Removed APIs</h3>
+<p>The following APIs, which have been deprecated for many years, are removed.
+[<a href="https://bugs.ruby-lang.org/issues/21768">Feature #21768</a>]</p>
+<ul>
+<li>old postponed job functions,</li>
+<li>untyped data object type/functions,</li>
+<li>old APIs to allocate a data object,</li>
+<li>taintedness/trustedness enums/macros,</li>
+<li>
+<code class="language-plaintext highlighter-rouge">rb_gc_force_recycle</code> function,</li>
+<li>
+<code class="language-plaintext highlighter-rouge">rb_iterate</code> function,</li>
+<li>and some functions and constants for internal use.</li>
+</ul>
+<h2 id="implementation-improvements">Implementation improvements</h2>
+<ul>
+<li>
+<p>The default garbage collector has been switched from a freelist allocator to a bump pointer allocator. [<a href="https://github.com/ruby/ruby/pull/17201">PR #17201</a>]</p>
+</li>
+<li>
+<p>The error_highlight, did_you_mean, and syntax_suggest gems are now
+loaded lazily on the first error display instead of at interpreter
+boot, which reduces startup time. <code class="language-plaintext highlighter-rouge">Process.warmup</code> loads them
+eagerly so that pre-forking servers keep their code in
+copy-on-write shared memory. [<a href="https://bugs.ruby-lang.org/issues/21951">Feature #21951</a>]</p>
+</li>
+</ul>
+<h3 id="mn-thread-scheduler">M:N thread scheduler</h3>
+<ul>
+<li>
+<p>The scheduler scales with the number of waiters and of Ractors, where it
+used to walk a list or take one lock for all of them:</p>
+<ul>
+<li>A timed wait sits in a hierarchical timer wheel rather than on a list
+sorted by deadline, which was inserted into by a linear scan.</li>
+<li>An fd stays armed in the backend between waits, instead of being added
+before each wait and removed after each wake.</li>
+<li>The io-wait bookkeeping is sharded by fd, rather than serialized on one
+lock across every fd.</li>
+<li>A timed wait on an fd rides the scheduler instead of going to a blocking
+region, which cost a native thread handoff per wait.</li>
+<li>A context switch, and leaving or rejoining the shared pool, no longer take
+the scheduler’s global lock.</li>
+</ul>
+</li>
+<li>
+<p>The <code class="language-plaintext highlighter-rouge">RUBY_MN_THREADS</code> environment variable now runs from no M:N scheduling
+at all to all of it. <code class="language-plaintext highlighter-rouge">-1</code> is new: a Ractor’s threads have been M:N since
+the scheduler was added, with no way to turn that off. <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">1</code> are
+unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>
+</th>
+<th>main thread</th>
+<th>the main Ractor’s other threads</th>
+<th>a Ractor’s threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code class="language-plaintext highlighter-rouge">-1</code>
+</td>
+<td>1:1</td>
+<td>1:1</td>
+<td>1:1</td>
+</tr>
+<tr>
+<td>
+<code class="language-plaintext highlighter-rouge">0</code> or unset</td>
+<td>1:1</td>
+<td>1:1</td>
+<td>M:N</td>
+</tr>
+<tr>
+<td>
+<code class="language-plaintext highlighter-rouge">1</code>
+</td>
+<td>1:1</td>
+<td>M:N</td>
+<td>M:N</td>
+</tr>
+<tr>
+<td>
+<code class="language-plaintext highlighter-rouge">2</code>
+</td>
+<td>M:N</td>
+<td>M:N</td>
+<td>M:N</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>
+<code class="language-plaintext highlighter-rouge">RUBY_MN_THREADS=2</code> is new. The main thread is resumed like any other M:N
+thread rather than woken on a native thread of its own, which costs an order
+of magnitude more. It pays off when the main thread drives the work, and
+does nothing for one that only starts other threads and waits.</p>
+<p>The main thread is then no longer bound to one OS thread, which is what the
+M:N scheduler already meant for every other thread:</p>
+<ul>
+<li>A C extension that keeps state per OS thread has to call
+<code class="language-plaintext highlighter-rouge">rb_thread_lock_native_thread()</code>.</li>
+<li>What must run on the process’s initial thread does not work at all,
+pinning included: macOS AppKit and CFRunLoop, and hosts that embed Ruby
+and return into their own main loop.</li>
+</ul>
+</li>
+<li>
+<p>The OS thread name is no longer set from the Ruby thread for M:N threads:
+one native thread runs many of them over its life. <code class="language-plaintext highlighter-rouge">Thread#name=</code> was
+already skipped for the same reason.</p>
+</li>
+</ul>
+<h2 id="jit">JIT</h2>
+<h3 id="yjit">YJIT</h3>
+<ul>
+<li>YJIT now supports Windows (mswin) on x64 CPUs. Configure with
+<code class="language-plaintext highlighter-rouge">win32\configure.bat --enable-yjit</code>, which requires <code class="language-plaintext highlighter-rouge">rustc</code> with the
+<code class="language-plaintext highlighter-rouge">x86_64-pc-windows-msvc</code> target. Only the release build is supported,
+and MinGW is not. [<a href="https://bugs.ruby-lang.org/issues/18439">Feature #18439</a>]</li>
+</ul>
+<p>See <a href="https://docs.ruby-lang.org/en/v4.1.0-preview1/NEWS_md.html">NEWS</a>
+or <a href="https://github.com/ruby/ruby/compare/v4_0_0...v4.1.0-preview1">commit logs</a>
+for more details.</p>
+<p>With those changes, <a href="https://github.com/ruby/ruby/compare/v4_0_0...v4.1.0-preview1#file_bucket">6116 files changed, 311387 insertions(+), 219997 deletions(-)</a>
+since Ruby 4.0.0!</p>
+<h2 id="download">Download</h2>
+<ul>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.gz">https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.gz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 26550186
+SHA1: 4f04a63c2e65945a4f4f7a6d1372783b60e68c5a
+SHA256: fb530bb88e90de3ae91c1310a27ae090e6bd989b8726de50ef12a890a85b88ef
+SHA512: f5628830685d0ce4ffb26294089c31c452e2e5a0bdcc6a5e0c670f335e52fb33eaaea7df3b834778db1fdde89cd2656d94743f6efa672c3bff6e89d64d5b7539
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.xz">https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.xz</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 20218640
+SHA1: 3e6c6919bbdb178fd7d6210e3e960889094fac3c
+SHA256: b81f20bf2bc72aa360785eb77ffa0c9f15343ac7316637fbf347500fc3e2e3a8
+SHA512: b58bc71a8734ceb38c9c301e0201ecd28559c97a3b93caa1d49e07ff34d51565b0b6ed98f05be41868cc09513784bd3e8b5340574fec37116a4ffcb218d396e4
+</code>
+</pre>
+</div>
+</div>
+</li>
+<li>
+<p>
+<a href="https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.zip">https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.zip</a>
+</p>
+<div class="language-plaintext highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>SIZE: 32429495
+SHA1: 199cf5247f7fc55ff225b3fe6928a39a522000d0
+SHA256: 2f1ea85203801c24e64ddf02fc2600f582a2544ef8c84d198111e56b0873b125
+SHA512: fd32a7b544ec73f0e642202531170bf8fa4454b2c7ff069748b2bf8e530fc8ae4124572e570c4c56606cc90aeeb723d35cab152978b28ee36b4bb06c798529df
+</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+<h2 id="what-is-ruby">What is Ruby</h2>
+<p>Ruby was first developed by Matz (Yukihiro Matsumoto) in 1993,
+and is now developed as Open Source. It runs on multiple platforms
+and is used all over the world especially for web development.</p>
+<p>Posted by <strong>naruse</strong> on 12 Oct 2026</p>
+</description>
+<pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+<guid>https://www.ruby-lang.org/en/news/2026/10/12/ruby-4-1-0-preview1-released/</guid>
+<link>https://www.ruby-lang.org/en/news/2026/10/12/ruby-4-1-0-preview1-released/</link>
+</item>
+</channel>
+</rss>

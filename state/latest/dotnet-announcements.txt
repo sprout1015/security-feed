@@ -1,0 +1,110 @@
+Skip to content
+Navigation Menu
+Sign in
+Search/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+{{ message }}
+Repository navigation
+Collapse sidebar
+Issues
+Change the issues type filter
+Issues
+New issue
+Search issues
+is:issue label:Security
+is:issue label:Security
+Clear filter
+Search
+Issues
+307 results
+Author
+Labels
+Projects
+Milestones
+Assignees
+Types
+Newest
+Comfortable display density
+Compact display density
+Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability
+Patch-TuesdaySecurity
+dotnet/announcements#526 · Filter by author bribrothers opened on Nov 11, 2026
+Microsoft Security Advisory CVE-2026-118741 | ASP.NET Core Elevation of Privilege Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#525 · Filter by author bribrothers opened on Nov 11, 2026
+Microsoft Security Advisory CVE-2026-118745 | Visual Studio Remote Code Execution Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#524 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114152 | Visual Studio Remote Code Execution Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#523 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114151 | Visual Studio Remote Code Execution Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#522 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114159 | Visual Studio Remote Code Execution Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#521 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114158 | Visual Studio Remote Code Execution Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#520 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-120778 - Aspire Elevation of Privilege Vulnerability
+Patch-TuesdaySecurity
+dotnet/announcements#519 · Filter by author bribrothers opened on Nov 10, 2026
+Microsoft Security Advisory CVE-2026-120792 - Aspire Information Disclosure Vulnerability
+Patch-TuesdaySecurity
+dotnet/announcements#518 · Filter by author bribrothers opened on Nov 10, 2026
+Microsoft Security Advisory CVE-2026-105544 - .NET Elevation of Privilege Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#517 · Filter by author bribrothers opened on Nov 10, 2026
+Microsoft Security Advisory CVE-2026-118748 - ASP.NET Core Denial of Service Vulnerability
+.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#516 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114154 - ASP.NET Core Denial of Service Vulnerability
+.NET 8.0.NET 9.0.NET 10.0Patch-TuesdaySecurity
+dotnet/announcements#513 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-109478 - ASP.NET Core Denial of Service Vulnerability
+.NET 8.0.NET 9.0Patch-TuesdaySecurity
+dotnet/announcements#515 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114150 - ASP.NET Core Information Disclosure Vulnerability
+.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#514 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-118750 - ASP.NET Core Denial of Service Vulnerability
+Patch-TuesdaySecurity
+dotnet/announcements#512 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114156 - ASP.NET Core Security Feature Bypass Vulnerability
+.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#510 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114149 - ASP.NET Core Denial of Service Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#511 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+November 2026 ASP.NET Core security updates
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#504 · Filter by author bribrothers opened on Nov 10, 2026
+Microsoft Security Advisory CVE-2026-109481 - ASP.NET Core Elevation of Privilege Vulnerability
+.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#506 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114157 - ASP.NET Core Security Feature Bypass Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#507 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-118749 - ASP.NET Core Denial of Service Vulnerability
+.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#505 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-109476 - ASP.NET Core Information Disclosure Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#508 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-114147 - ASP.NET Core Denial of Service Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#509 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+Microsoft Security Advisory CVE-2026-120006 - Aspire Elevation of Privilege Vulnerability
+Patch-TuesdaySecurity
+dotnet/announcements#503 · Filter by author bribrothers opened on Nov 10, 2026
+Microsoft Security Advisory CVE-2026-109475 - .NET Denial of Service Vulnerability
+.NET 8.0.NET 9.0.NET 10.0.NET 11.0Patch-TuesdaySecurity
+dotnet/announcements#500 · by Filter by author bribrothers was closed on Nov 10, 2026 · Duplicate
+You can’t perform that action at this time.

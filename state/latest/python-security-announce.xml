@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security-announce</title><link>https://mail.python.org/archives/list/security-announce@python.org/</link><description>Mailing list for security advisories affecting Python or pip</description><atom:link href="https://mail.python.org/archives/list/security-announce@python.org/feed/" rel="self"/><language>en</language><lastBuildDate>Thu, 12 Nov 2026 16:07:16 +0000</lastBuildDate><item><title>[Security-announce][CVE-2026-16052] Cookie Attribute Injection via Unescaped Semicolons in http.cookies.Morsel</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/IZL4QUFV7PKGT2JYSU2DCBMLTWYJDGKZ/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+The http.cookies.Morsel class allows separator semicolons in attribute
+values
+and includes them verbatim in all output formats. An attacker who can
+control
+these values could use this to relax the cookie's Domain or SameSite
+restrictions.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-16052
+* https://github.com/python/cpython/pull/161711
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Thu, 12 Nov 2026 16:07:16 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/IZL4QUFV7PKGT2JYSU2DCBMLTWYJDGKZ/</guid></item><item><title>[Security-announce][CVE-2026-115559] imaplib STARTTLS serves plaintext bytes buffered before the handshake as if they came over TLS</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/LVAGFOFG26QVXEM6VXXPRMMOZBHM4CVB/</link><description>There is a medium severity vulnerability affecting the imaplib library
+in CPython.
+
+IMAP4.starttls() wraps the socket in TLS but leaves self._readbuf,
+imaplib's own read-ahead buffer, untouched. Any plaintext bytes that
+arrived in the same recv() as the tagged OK to STARTTLS are returned
+by readline() after the handshake, so the client treats them as the
+first responses on the protected channel. A network attacker who
+cannot break TLS can append forged lines after the server's OK, let
+the handshake complete with the real server and a valid certificate,
+and have the client accept the forged CAPABILITY and the forged tagged
+completion of the next command. This is the STARTTLS command/response
+injection class of CVE-2011-0411.
+
+First affected release: 3.14.0. The regression comes from the IMAP4
+IDLE support in gh-55454 (commit 0fef47e), which replaced
+self._file.readline() with the custom _readbuf buffering. Before that,
+starttls() replaced the file object and so discarded buffered
+plaintext; 3.13.13 is not affected.
+
+Please see the linked CVE ID for the latest information on affected versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-115559
+* https://github.com/python/cpython/pull/160370
+
+Thanks to ＠digit50 for reporting this issue.
+</description><author>jelle.zijlstra＠gmail.com (Jelle Zijlstra)</author><pubDate>Tue, 10 Nov 2026 17:41:54 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/LVAGFOFG26QVXEM6VXXPRMMOZBHM4CVB/</guid></item><item><title>[Security-announce][CVE-2026-115791] Prevent shadowing stdlib in gzip/tarfile/zipfile CLI</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/ZKKA4Q7B35JEHSDIJNZ6TYKRDQJUHDAG/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+When tarfile or zipfile command line interface (CLI) is used to
+decompress an archive, a Python script shadowing the stdlib can be
+created. Then if an error occurs during decompressing the next file,
+the newly created Python script is executed. This is especially true
+if the created Python is called traceback.py. The problem is that
+Python adds the current directory to sys.path when python -m MODULE is
+run, and the archive is also decompressed in the current directory.
+
+The fix removes sys.path[0] in gzip, tarfile and zipfile command line
+interface to prevent shadowing standard library modules from extracted
+files.
+
+Please see the linked CVE ID for the latest information on affected versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-115791
+* https://github.com/python/cpython/issues/161705
+</description><author>vstinner＠python.org (Victor Stinner)</author><pubDate>Tue, 10 Nov 2026 16:00:26 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/ZKKA4Q7B35JEHSDIJNZ6TYKRDQJUHDAG/</guid></item><item><title>[Security-announce][CVE-2026-19552] ssl.get_server_certificate(addr, ca_certs=...) verifies the chain but never the identity</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/SXBD6BGHDBTGM4KSUMQEWYIQ5RO4BQ76/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+When ca_certs parameter was supplied to ssl.get_server_certificate()
+function, the identity of the certificate is not checked.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-19552
+* https://github.com/python/cpython/pull/161507
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Mon, 09 Nov 2026 14:12:16 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/SXBD6BGHDBTGM4KSUMQEWYIQ5RO4BQ76/</guid></item><item><title>[Security-announce][CVE-2026-124249] http.cookiejar deletes cookies of other domains via expired Set-Cookie</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/Y6IKNZ2VZUS2L6CLQICSFUEMCLT7OLTY/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+http.cookiejar.CookieJar deleted a stored cookie when a response carried an
+already expired Set-Cookie header for it, using the Domain and Path
+attributes from the header without consulting the cookie policy. A server
+could therefore delete cookies belonging to other domains from a shared
+cookie jar, such as the one used by urllib's HTTPCookieProcessor. The fix
+consults the cookie policy before an expired cookie may delete an existing
+one, as required by RFC 6265 section 5.3.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-124249
+* https://github.com/python/cpython/pull/161570
+
+
+</description><author>kirill.bast＠gmail.com (Kirill Podoprigora)</author><pubDate>Sat, 07 Nov 2026 19:58:34 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/Y6IKNZ2VZUS2L6CLQICSFUEMCLT7OLTY/</guid></item><item><title>[Security-announce][CVE-2026-119170] Regression in FIPS enforcement of hash algorithms affecting only Python 3.14.10</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/PXVTTOBPUMFJSSUXN6XCS7FC5DZOSZXK/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+There was a regression in how FIPS algorithms were enforced for the hashlib
+module. Only users that are using OpenSSL in FIPS mode are affected. Only
+Python 3.14.10 is affected, all other Python versions are unaffected.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-119170
+* https://github.com/python/cpython/pull/160984
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Fri, 06 Nov 2026 14:45:25 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/PXVTTOBPUMFJSSUXN6XCS7FC5DZOSZXK/</guid></item><item><title>[Security-announce][CVE-2026-116566] socket.getaddrinfo() accepts embedded null bytes in host and port</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/HCHE62VYTPYI6WOPJQDWUBR4CINBPSM7/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+socket.getaddrinfo() previously accepted null bytes within *host* and
+*port* parameters which can cause the values to be silently truncated.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-116566
+* https://github.com/python/cpython/pull/160899
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Thu, 29 Oct 2026 17:46:30 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/HCHE62VYTPYI6WOPJQDWUBR4CINBPSM7/</guid></item><item><title>[Security-announce][CVE-2026-103995] Lenient parsing of integers for response body and chunk framing</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/6TLH7YBU4HJIFBTBCEPAAK2I2F4KQBRB/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+Response body and chunk parsing would handle non-hex or negative integers
+incorrectly which could result in misinterpreting HTTP response contents.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-103995
+* https://github.com/python/cpython/pull/150752
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Tue, 27 Oct 2026 19:26:24 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/6TLH7YBU4HJIFBTBCEPAAK2I2F4KQBRB/</guid></item><item><title>[Security-announce][CVE-2026-115557] Distrust compromised intermediate certificates in ssl module</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/FNAJMZV6XQYLVPABNINDMF3VF66AYLW4/</link><description>Python has added a denylist for known compromised certificates to the "ssl"
+module to ensure user safety even without certificate revocation
+configured. Known compromised certificates on this denylist will
+automatically be rejected regardless of the SSLContext policy configuration.
+
+Please see the linked CVE ID for more information:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-115557
+* https://github.com/python/cpython/pull/160042
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Sat, 24 Oct 2026 14:20:01 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/FNAJMZV6XQYLVPABNINDMF3VF66AYLW4/</guid></item><item><title>[Security-announce][CVE-2026-114583] tarfile.tar_filter path traversal bypass allows writing outside the extraction directory</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/43JOWPRAV5DI3VZ4FUEUAZOHCATXXOCK/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+tarfile.tar_filter could be bypassed using crafted link entries, including
+symlinks with empty or directory-like names, to redirect later archive
+members outside the intended extraction directory. This allowed a malicious
+tar archive to cause tarfile.extractall() with filter="tar" to write files
+outside the destination directory, subject to the permissions of the
+extracting process.
+
+This is the tarfile.tar_filter counterpart of CVE-2026-7774, which covered
+tarfile.data_filter.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-114583
+* https://github.com/python/cpython/pull/160098
+
+
+</description><author>stanulbrych＠gmail.com (Stan Ulbrych)</author><pubDate>Thu, 22 Oct 2026 20:35:28 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/43JOWPRAV5DI3VZ4FUEUAZOHCATXXOCK/</guid></item><item><title>[Security-announce][GHSA-6q48-6c7w-9gw2] CRITICAL security update for certifi, removal of emSign root certificate</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/LSEJ6DOJPIHHNNRS43GROPIH2EPJRUDS/</link><description>There is a CRITICAL severity vulnerability affecting certifi.
+
+Certifi 2026.10.19 removes root certificates from "emSign" from the root
+store. These root certificates have intermediates which have been revoked
+due to key compromise. A compromised key for a certificate authority can be
+used to issue certificates to enable MITM attacks.
+Upgrade to certifi 2026.10.19 and rebuild container images to refresh CA
+certificate stores.
+
+Please see the links for the latest information on affected versions:
+
+*
+https://github.com/certifi/python-certifi/security/advisories/GHSA-6q48-6c7w-9gw2
+*
+https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE/m/0XofdebrAAAJ
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Tue, 20 Oct 2026 14:03:26 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/LSEJ6DOJPIHHNNRS43GROPIH2EPJRUDS/</guid></item><item><title>[Security-announce][CVE-2026-19445] Use-after-free of a server-side SSLContext when sni_callback switches contexts</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/QMQIUQB6WGGC3MI7I3WKQXOYOBDSPPS3/</link><description>There is a CRITICAL severity vulnerability affecting CPython.
+
+A remote, unauthenticated TLS client can make a server crash or call
+through a freed pointer if its sni_callback assigns a different context to
+SSLSocket.context (the documented way to select a certificate per server
+name) and nothing else keeps the original ssl.SSLContext alive. Typical
+cases are servers that create an SSLContext per connection or replace it
+while connections are open; servers that wrap their listening socket with
+it are not affected.
+
+Mitigation: keep a reference to every SSLContext that sets sni_callback for
+the lifetime of the server. TLS clients are not affected.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-19445
+* https://github.com/python/cpython/pull/158504
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Wed, 30 Sep 2026 16:10:08 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/QMQIUQB6WGGC3MI7I3WKQXOYOBDSPPS3/</guid></item><item><title>[Security-announce][CVE-2026-19553] SSLContext.wrap_bio() missing validation of server_hostname parameter</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/QNZRG3YOAMTHDCMVCICXGY6YEFPY2VDL/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+`ssl.SSLContext.wrap_bio()` didn't require the `server_hostname` argument
+to not be `None` if `ssl.SSLContext.check_hostname` was set. Due to a
+missing parameter check in `SSLObject`, if the `server_hostname` argument
+isn't supplied then hostname verification would be silently skipped.
+
+This defect could lead to programs where certificate hostname verification
+*appeared* to be succeeding with `SSLContext.check_hostname = True` and no
+`ValueError` being raised due to misconfiguration.
+
+If the program passes a `server_hostname` value that isn't an empty string
+or `None` to any of these APIs then certificate hostname verification
+proceeds as expected and the program is not affected by this vulnerability.
+
+Mitigating this vulnerability doesn't require updating Python or applying
+the patch. To mitigate, pass a valid non-`None` and non-empty
+`server_hostname` value to `SSLContext.wrap_bio()`,
+`asyncio.create_connection()`, or `asyncio.loop.start_tls()` and
+certificate hostname verification will proceed as expected. Upgrading to
+the latest version of Python or applying the patch only changes the
+behavior from silently skipping hostname verification to raising a
+`ValueError`, similar to `SSLContext.wrap_socket()`, when `server_hostname`
+isn't supplied.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-19553
+* https://github.com/python/cpython/pull/158503
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Wed, 30 Sep 2026 16:08:09 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/QNZRG3YOAMTHDCMVCICXGY6YEFPY2VDL/</guid></item><item><title>[Security-announce][CVE-2026-12345] Race condition in tempfile.TemporaryDirectory cleanup allows deleting files outside the temporary directory</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/WBHGJXKKLB7X3ZJF7NYE6M65DCUWW6QT/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+The cleanup of tempfile.TemporaryDirectory is vulnerable to a race
+condition. An attacker who can modify the tree during cleanup can replace a
+directory with a symbolic link, causing files outside of the temporary
+directory to be deleted or have their permissions and file flags reset,
+with the privileges of the process performing the cleanup.
+
+Note that platforms where shutil.rmtree.avoids_symlink_attacks is false,
+remain affected, and file flags may still be reset outside of the tree on
+all platforms.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-12345
+* https://github.com/python/cpython/pull/157580
+
+
+</description><author>stanulbrych＠gmail.com (Stan Ulbrych)</author><pubDate>Tue, 29 Sep 2026 17:28:51 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/WBHGJXKKLB7X3ZJF7NYE6M65DCUWW6QT/</guid></item><item><title>[Security-announce][CVE-2026-82049] tarfile extraction filters allow file modification and content disclosure via hard link to symlink</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/EFJWGAZJA56AKSBR2WHMHQZO7RRLZPRH/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+In CPython 3.13 and earlier, the tarfile module's data and tar extraction
+filters are vulnerable to crafted archives containing a hard link to a
+symbolic link. Such archives may cause extraction to modify the permissions
+or modification time of a file outside the destination directory, or expose
+the contents of that file within the extracted tree.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-82049
+* https://github.com/python/cpython/pull/157192
+
+-- 
+Stan Ulbrych  (https://stan.ulbrych.org)
+
+
+</description><author>stanulbrych＠gmail.com (Stan Ulbrych)</author><pubDate>Mon, 14 Sep 2026 16:59:38 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/EFJWGAZJA56AKSBR2WHMHQZO7RRLZPRH/</guid></item><item><title>[Security-announce][CVE-2026-87910] tarfile hardlink fallback ignores custom extraction filter rejection via None</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/57TBTLL2W6APMZR3A25B2YV7GL3EPTDJ/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+When tarfile extracts a link on a system that doesn't support links, it 
+falls back to extracting a member from the archive. In this case, the 
+filter function is run twice: once for the extracted member, and once 
+with name set to the location of the link.
+For one of the calls, the return value was ignored. Instead, the member 
+should be skipped if either call returns None.
+
+Please see the linked CVE ID for the latest information on affected 
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-87910
+* https://github.com/python/cpython/pull/157266
+</description><author>encukou＠gmail.com (Petr Viktorin)</author><pubDate>Fri, 11 Sep 2026 12:24:10 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/57TBTLL2W6APMZR3A25B2YV7GL3EPTDJ/</guid></item><item><title>[Security-announce][CVE-2026-15310] Memory exhaustion in zipfile in bzip2/LZMA/Zstandard decompression</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/YUHXURX2WZGKGNA4ANYBQS2VZRYQ5JNK/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+When decompressing crafted zip files using the bzip/LZMA/Zstandard 
+compressions, Python could use an attacker-controlled size to 
+pre-allocate memory, possibly resulting in memory exhaustion.
+
+Please see the linked CVE ID for the latest information on affected 
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-15310
+* https://github.com/python/cpython/pull/156003
+
+</description><author>encukou＠gmail.com (Petr Viktorin)</author><pubDate>Tue, 25 Aug 2026 14:51:43 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/YUHXURX2WZGKGNA4ANYBQS2VZRYQ5JNK/</guid></item><item><title>[Security-announce][CVE-2026-19672] tarfile extraction filter bypass allows creation of directories outside the destination</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/J2WT2ALRWEXQJOB3C7Q2HYWUXP3CINWO/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+The tarfile module's tar and data extraction filters created directories
+outside the destination for members whose name leaves the destination and
+returns to it, such as ../evil/../dest/sub/file. The containment check used
+the resolved path, but intermediate directories were created from the name
+as given.
+
+Only empty directories are created outside the destination. Member contents
+are still extracted inside it. To return to the destination the member's
+name must contain the destination directory's own final component, so
+extraction into a secure randomised directory is not affected.
+
+This affects POSIX platforms only. On Windows, .. components are collapsed
+before the path reaches the filesystem, so the directories outside the
+destination are never created.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-19672
+* https://github.com/python/cpython/pull/156000
+
+
+</description><author>stanulbrych＠gmail.com (Stan Ulbrych)</author><pubDate>Wed, 19 Aug 2026 13:56:06 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/J2WT2ALRWEXQJOB3C7Q2HYWUXP3CINWO/</guid></item><item><title>[Security-announce][CVE-2026-15806] urllib.request.HTTPPasswordMgr credentials for one URL scheme sent over another scheme</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/3OKPE5S75KDNA7FY7AI3PL2MXM2X5RB3/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+ 
+The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.
+ 
+Credential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.
+ 
+Users who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.
+ 
+Please see the linked CVE ID for the latest information on affected versions:
+ 
+- https://www.cve.org/CVERecord?id=CVE-2026-15806
+- https://github.com/python/cpython/pull/155696
+</description><author>kirill.bast＠gmail.com (Kirill Podoprigora)</author><pubDate>Tue, 18 Aug 2026 15:38:30 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/3OKPE5S75KDNA7FY7AI3PL2MXM2X5RB3/</guid></item><item><title>[Security-announce][CVE-2026-17084] StringPrep algorithm considered Unicode codepoint attributes outside Unicode 3.2.0</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/EUHHTC6EV7HCLSUHP25C5VHSV4V2MUZN/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+The "stringprep" module didn't process characters from RFC 3454 tables B.2
+or B.3 correctly: the latest Unicode codepoint attributes were used instead
+of the specified Unicode 3.2.0. This behavior would cause mismatches when
+processing domain names using IDNA 2003 (the "idna" codec) and the
+in_table_b2() function of the "stringprep" module. This only affects domain
+names containing characters that were not previously registered or had
+their Unicode attributes such as case-folding behavior updated since
+Unicode 3.2.0.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-17084
+* https://github.com/python/cpython/pull/155293
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Tue, 18 Aug 2026 13:55:39 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/EUHHTC6EV7HCLSUHP25C5VHSV4V2MUZN/</guid></item><item><title>[Security-announce][CVE-2026-18503] Super-linear CPU usage for unbounded input to csv.Sniffer.sniff()</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/KQ7NBMCPAZJHRROQXJQE4GMXGLD5KHBS/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+Attacker-controlled CSV samples can trigger super-linear regular-expression
+work during dialect sniffing and consume significant CPU when applications
+pass unbounded input to csv.Sniffer.sniff().
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-18503
+* https://github.com/python/cpython/pull/153694
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Mon, 10 Aug 2026 13:42:11 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/KQ7NBMCPAZJHRROQXJQE4GMXGLD5KHBS/</guid></item><item><title>[Security-announce][CVE-2026-13346] pip absolute path traversal during download from malicious package indexes</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX/</link><description>There is a  MEDIUM severity vulnerability affecting pip.
+
+pip would incorrectly handle doubly-encoded package URLs from indexes
+allowing for files to be installed to arbitrary locations on disk even when
+installing wheels.
+
+This vulnerability requires downloading or installing a package from a
+malicious package index to succeed, malicious packages alone are not able
+to exploit this vulnerability. Note that this vulnerability only materially
+impacts users running `pip download` with the `--only-binary` option as
+installing source distributions from an untrusted index is already an
+unsafe operation that executes code during install time.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-13346
+* https://github.com/pypa/pip/pull/14110
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Wed, 29 Jul 2026 18:35:14 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/L2BNQGGVQCEV7DROOORQ7WFKKFF2OOQX/</guid></item><item><title>[Security-announce]CVE-2026-6879 Quadratic Behavior in xml.etree.ElementPath Index Predicates</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/7YMZ6DDZVR26TJJBVO3RDNBAVGHNYAKR/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+`Element.findall()` and fully-consumed `Element.iterfind()` exhibit 
+`O(n^2)` time complexity when using XPath index predicates (e.g. `[1]`, 
+`[last()]`, `[last()-N]`) on XML documents with many same-tag siblings. 
+`Element.find()` is only affected when the first match is near the end 
+of the sibling list, such as with `[last()]` or `[last()-N]`; 
+`.//item[1]` short-circuits after the first match.
+
+Please see the linked CVE ID for the latest information on affected 
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-6879
+* https://github.com/python/cpython/pull/152676
+</description><author>encukou＠gmail.com (Petr Viktorin)</author><pubDate>Tue, 28 Jul 2026 11:41:28 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/7YMZ6DDZVR26TJJBVO3RDNBAVGHNYAKR/</guid></item><item><title>[Security-announce][CVE-2026-15308] Incremental HTMLParser allows CPU-exhaustion DoS via repeated unterminated markup declarations</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/F6453LWKSHKCTWFLCOURWPLETNUIW2Z5/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+The incremental HTML parser (html.parser.HTMLParser) allows for CPU
+denial-of-service through repeated unterminated markup declarations when
+processing uncontrolled data.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-15308
+* https://github.com/python/cpython/pull/153031
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Thu, 09 Jul 2026 17:08:21 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/F6453LWKSHKCTWFLCOURWPLETNUIW2Z5/</guid></item><item><title>[Security-announce][CVE-2026-4360] Tarfile.extract doesn't fully respect filter parameter</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/TWZW2PC2AZOV6FENIHFSRC63OM7MBGSB/</link><description>There is a LOW severity vulnerability affecting CPython.
+
+In the Tarfile.extract function, the filter parameter is not passed 
+properly called when extracting hardlinks. An affected system that 
+extracts content from untrusted tar files could end up writing files 
+with an unexpected uid/gid despite the user passing filter='data' to the 
+extract function.
+
+Please see the linked CVE ID for the latest information on affected 
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-4360
+* https://github.com/python/cpython/pull/151988
+</description><author>encukou＠gmail.com (Petr Viktorin)</author><pubDate>Tue, 30 Jun 2026 11:45:44 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/TWZW2PC2AZOV6FENIHFSRC63OM7MBGSB/</guid></item><item><title>[Security-announce][CVE-2026-11972] tarfile opened in streaming mode mishandles EOF</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/AXPSKKTSRKXTTJULW3XSIC74WZNAAPPB/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+When using the "tarfile" module with a file opened in "streaming mode"
+(mode="r|") the tarfile module did not properly handle EOF, meaning an
+archive could be parsed in an infinite loop.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-11972
+* https://github.com/python/cpython/pull/151982
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Tue, 23 Jun 2026 22:01:35 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/AXPSKKTSRKXTTJULW3XSIC74WZNAAPPB/</guid></item><item><title>[Security-announce][CVE-2026-0864] Configparser newline injection in write() method</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/CV4NE6AFCRJL7XQOHX7J5TSDHUWVWGJS/</link><description>There is a MEDIUM severity vulnerability affecting CPython.
+
+When using the "configparser" module to write configuration files
+containing multi-line text values with carriage return characters (\r) the
+resulting file could be injected with unexpected keys and values if the
+attacker controls the written value.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-0864
+* https://github.com/python/cpython/pull/143929
+
+
+</description><author>seth＠python.org (Seth Larson)</author><pubDate>Tue, 23 Jun 2026 17:40:15 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/CV4NE6AFCRJL7XQOHX7J5TSDHUWVWGJS/</guid></item><item><title>[Security-announce][CVE-2026-11940] tarfile extraction filter bypass allows escaping the destination directory</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/LD6QIISNQFQYOIEPJNEUIPV7S3V76FZH/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+tarfile.extractall() with the 'data' or 'tar' filter could be bypassed by a
+crafted archive where a hardlink references a symlink stored at a deeper
+name than the hardlink itself.  The extraction fallback validated the
+symlink at it's archived location but recreated it at the hardlink's
+shallower
+path, letting a relative target the filter judged contained escape the
+destination directory.  This allowed a malicious tar archive to create a
+symlink pointing outside the destination, enabling out-of-destination file
+reads or writes. This was an incomplete fix of CVE-2025-4330.
+
+Please see the linked CVE ID for the latest information on affected
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-11940
+* https://github.com/python/cpython/pull/151559
+
+
+</description><author>stanulbrych＠gmail.com (Stan Ulbrych)</author><pubDate>Tue, 23 Jun 2026 15:55:19 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/LD6QIISNQFQYOIEPJNEUIPV7S3V76FZH/</guid></item><item><title>[Security-announce][CVE-2026-12003] In-tree (development) search paths can be enabled without modifying install directory</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/JIFOBO7UX3LY4VJKJUOKYJV62CFR2IRH/</link><description>There is a MODERATE (CVSSv4 5.3) severity vulnerability affecting 
+CPython up to (and including) 3.11.15, 3.12.13, 3.13.14, 3.14.6 and 
+3.15.0b2.
+
+To allow builds of Python to be run from an in-tree layout (rather than 
+an installed file layout), the VPATH variable is defined at build time 
+and used to locate certain landmarks - specifically, 
+Modules/setup.local. When this landmark is found relative to VPATH 
+relative to the executable, Python assumes it is running in a source 
+tree and generates a different default sys.path. This code remains in 
+release builds, so that release-ready builds can be built in-tree.
+
+On Windows, since builds are written to 'PCbuild/&lt;arch&gt;', the value of 
+VPATH is set to '..\..', which results in a landmark of 
+'..\..\Modules\setup.local'. This path is outside the install directory 
+of Python, and may have different permissions, potentially allowing a 
+low-privilege user to create the landmark and an alternative `Lib` 
+folder that will be discovered by an otherwise restricted install.
+
+Such a setup occurs with the legacy default install location for all 
+users (in the now superseded EXE installer), due to how Windows allows 
+all users to create folders in the root directory of their OS drive.
+
+**Our recommended mitigation** on Windows is to migrate away from the 
+legacy installer and use the new [Python install 
+manager](https://www.python.org/downloads/latest/pymanager/) to install 
+for the current user. Installs where the directory two levels above the 
+Python installation directory have equivalent permissions are unaffected 
+(in general, a per-user install cannot be modified at all by other 
+users, removing any escalation of privilege risk, and could be directly 
+modified by a privileged user, making the potential tampering 
+irrelevant). Alternative mitigations might include preemptively creating 
+and restricting access to a `Modules` directory. Be aware that only 3.13 
+and 3.14 will receive updated legacy installers - earlier fixes are only 
+provided as sources.
+
+Platforms other than Windows allow VPATH to be overridden, but as they 
+don't usually use a separated directory in the build for binaries, are 
+unlikely to have a landmark reference outside of the install directory.
+
+The landmark detection involving VPATH is a fallback for when a more 
+specific landmark - .\pybuilddir.txt - is absent, and was included for 
+compatibility. Future releases of Python will no longer include the 
+fallback, and so builds will need to generate or preserve the 
+pybuilddir.txt file in order to work in-tree. This landmark file has 
+been generated on Windows since 3.11, and on other platforms for longer.
+
+Reported by Jake Yamaki, Senior Consultant, Bishop Fox.
+
+Please see the linked CVE ID for the latest information on affected 
+versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-12003
+* https://github.com/python/cpython/pull/151545
+</description><author>steve.dower＠python.org (Steve Dower)</author><pubDate>Tue, 16 Jun 2026 15:01:03 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/JIFOBO7UX3LY4VJKJUOKYJV62CFR2IRH/</guid></item><item><title>[Security-announce][CVE-2026-9669] bz2.BZ2Decompressor reuse after error can cause a stack buffer overflow</title><link>https://mail.python.org/archives/list/security-announce@python.org/message/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/</link><description>There is a HIGH severity vulnerability affecting CPython.
+
+bz2.BZ2Decompressor objects could be reused after a decompression error.
+If an application caught the resulting OSError and retried with the
+same decompressor,
+crafted input could cause the decompressor to resume from an invalid
+internal state
+and perform out-of-bounds writes to a stack buffer. This could crash the process
+when processing untrusted data.
+
+Please see the linked CVE ID for the latest information on affected versions:
+
+* https://www.cve.org/CVERecord?id=CVE-2026-9669
+* https://github.com/python/cpython/pull/150600
+
+
+</description><author>emma＠emmatyping.dev (Emma Smith)</author><pubDate>Mon, 08 Jun 2026 20:07:31 +0000</pubDate><guid>https://mail.python.org/archives/list/security-announce@python.org/message/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/</guid></item></channel></rss>

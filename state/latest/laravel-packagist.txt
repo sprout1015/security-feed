@@ -1,0 +1,207 @@
+Active filters
+Search by
+laravel/framework
+Security Advisories
+(31)
+[LOW] <https://github.com/advisories/GHSA-63hm-g96r-2m2q> Laravel: Task Output Injection - Concurrency Process
+</security-advisories/PKSA-yxbx-3c9s-cjt9> PKSA-yxbx-3c9s-cjt9
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-128083> CVE-2026-128083
+<https://github.com/advisories/GHSA-63hm-g96r-2m2q> GHSA-63hm-g96r-2m2q
+Affected version: >=13.0.0,<13.40.0|<12.71.0
+Reported by:
+GitHub
+[CRITICAL] <https://github.com/advisories/GHSA-f9x3-7vq9-cph6> Laravel TokenGuard authentication bypass through non-string API credentials
+</security-advisories/PKSA-b41t-wbzk-9q51> PKSA-b41t-wbzk-9q51
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114509> CVE-2026-114509
+<https://github.com/advisories/GHSA-f9x3-7vq9-cph6> GHSA-f9x3-7vq9-cph6
+Affected version: <10.50.4|>=11.0.0,<11.56.1|>=12.0.0,<12.68.0|>=13.0.0,<13.27.0
+Reported by:
+GitHub
+[MEDIUM] <https://github.com/advisories/GHSA-5wcm-3v2w-8362> Laravel relationship inclusion can trigger unauthorized data destruction
+</security-advisories/PKSA-4hy6-m98j-dz9f> PKSA-4hy6-m98j-dz9f
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114508> CVE-2026-114508
+<https://github.com/advisories/GHSA-5wcm-3v2w-8362> GHSA-5wcm-3v2w-8362
+Affected version: >=13.0.0,<13.27.0|>=12.45.0,<12.68.0
+Reported by:
+GitHub
+[LOW] <https://github.com/advisories/GHSA-jh5r-qr3c-85q8> Laravel: XSS in Debug Page Information
+</security-advisories/PKSA-d5tc-s1qs-h781> PKSA-d5tc-s1qs-h781
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102279> CVE-2026-102279
+<https://github.com/advisories/GHSA-jh5r-qr3c-85q8> GHSA-jh5r-qr3c-85q8
+Affected version: >=13.0.0,<13.30.0|<12.69.0
+Reported by:
+GitHub
+[MEDIUM] <https://github.com/advisories/GHSA-crmm-hgp2-wgrp> Laravel Framework: Temporary Signed URL Path Confusion
+</security-advisories/PKSA-m5cs-t1y6-qpcs> PKSA-m5cs-t1y6-qpcs
+<https://github.com/advisories/GHSA-crmm-hgp2-wgrp> GHSA-crmm-hgp2-wgrp
+Affected version: <12.61.1|>=13.0.0,<13.12.0
+Reported by:
+GitHub
+[HIGH] <https://github.com/advisories/GHSA-5vg9-5847-vvmq> Laravel Framework: CRLF injection in default email rule
+</security-advisories/PKSA-3r5d-mb8f-1qw9> PKSA-3r5d-mb8f-1qw9
+<https://github.com/advisories/GHSA-5vg9-5847-vvmq> GHSA-5vg9-5847-vvmq
+Affected version: <12.60.0|>=13.0.0,<=13.9.0
+Reported by:
+GitHub
+<https://github.com/laravel/framework/security/advisories/GHSA-5vg9-5847-vvmq> Laravel CRLF injection in default email rule
+</security-advisories/PKSA-mdq4-51ck-6kdq> PKSA-mdq4-51ck-6kdq
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48019> CVE-2026-48019
+Affected version: >=9.0.0,<10.0.0|>=10.0.0,<11.0.0|>=11.0.0,<12.0.0|>=12.0.0,<12.60.0|>=13.0.0,<13.10.0
+Reported by:
+FriendsOfPHP/security-advisories
+[MEDIUM] <https://github.com/advisories/GHSA-78fx-h6xr-vch4> Laravel has a File Validation Bypass
+</security-advisories/PKSA-8qx3-n5y5-vvnd> PKSA-8qx3-n5y5-vvnd
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-27515> CVE-2025-27515
+<https://github.com/advisories/GHSA-78fx-h6xr-vch4> GHSA-78fx-h6xr-vch4
+Affected version: <10.48.29|>=11.0.0,<11.44.1|>=12.0.0,<12.1.1
+Reported by:
+GitHub
+[MEDIUM] <https://github.com/sbaresearch/advisories/tree/public/2024/SBA-ADV-20241209-02_Laravel_Reflected_XSS_via_Route_Parameter_in_Debug-Mode_Error_Page> Laravel Reflected XSS via Route Parameter in Debug-Mode Error Page
+</security-advisories/PKSA-q46n-4fdk-zjr4> PKSA-q46n-4fdk-zjr4
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13919> CVE-2024-13919
+<https://github.com/advisories/GHSA-83wp-f5c3-hqqr> GHSA-83wp-f5c3-hqqr
+Affected version: >=11.9.0,<11.36.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] <https://github.com/sbaresearch/advisories/tree/public/2024/SBA-ADV-20241209-01_Laravel_Reflected_XSS_via_Request_Parameter_in_Debug-Mode_Error_Page> Laravel Reflected XSS via Request Parameter in Debug-Mode Error Page
+</security-advisories/PKSA-qzrn-rnz3-85w1> PKSA-qzrn-rnz3-85w1
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13918> CVE-2024-13918
+<https://github.com/advisories/GHSA-546h-56qp-8jmw> GHSA-546h-56qp-8jmw
+Affected version: >=11.9.0,<11.36.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] <https://github.com/advisories/GHSA-gv7v-rgg6-548h> Laravel environment manipulation via query string
+</security-advisories/PKSA-w7xr-vk7n-rstm> PKSA-w7xr-vk7n-rstm
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-52301> CVE-2024-52301
+<https://github.com/advisories/GHSA-gv7v-rgg6-548h> GHSA-gv7v-rgg6-548h
+Affected version: <6.20.45|>=7.0.0,<7.30.7|>=8.0.0,<8.83.28|>=9.0.0,<9.52.17|>=10.0.0,<10.48.23|>=11.0.0,<11.31.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] <https://github.com/advisories/GHSA-p62r-7637-3wwc> Laravel Hijacked authentication cookies vulnerability
+</security-advisories/PKSA-6wgv-k7p1-h4fg> PKSA-6wgv-k7p1-h4fg
+<https://github.com/advisories/GHSA-p62r-7637-3wwc> GHSA-p62r-7637-3wwc
+Affected version: >=4.0.0,<4.1.26
+Reported by:
+GitHub
+[MEDIUM] <https://github.com/advisories/GHSA-rj3w-99gc-8j58> Laravel Risk of mass-assignment vulnerabilities
+</security-advisories/PKSA-11c9-dxsr-yqjb> PKSA-11c9-dxsr-yqjb
+<https://github.com/advisories/GHSA-rj3w-99gc-8j58> GHSA-rj3w-99gc-8j58
+Affected version: >=4.0.0,<4.1.29
+Reported by:
+GitHub
+[CRITICAL] <https://github.com/advisories/GHSA-pfg4-p438-p874> Laravel Framework Deserialization Vulnerability
+</security-advisories/PKSA-dpt9-7cmv-dk65> PKSA-dpt9-7cmv-dk65
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9081> CVE-2019-9081
+<https://github.com/advisories/GHSA-pfg4-p438-p874> GHSA-pfg4-p438-p874
+Affected version: >=5.7.0,<6.20.44
+Reported by:
+GitHub
+[HIGH] <https://github.com/advisories/GHSA-qvqm-h22r-4cp9> Laravel Framework RCE Vulnerability
+</security-advisories/PKSA-3qhw-gzjt-j63j> PKSA-3qhw-gzjt-j63j
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15133> CVE-2018-15133
+<https://github.com/advisories/GHSA-qvqm-h22r-4cp9> GHSA-qvqm-h22r-4cp9
+Affected version: >=5.6.0,<=5.6.29|<=5.5.40
+Reported by:
+GitHub
+[HIGH] <https://github.com/advisories/GHSA-w2pm-r78h-4m7v> OS Command Injection in Laravel Framework
+</security-advisories/PKSA-17kp-jm2n-vxzz> PKSA-17kp-jm2n-vxzz
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-19316> CVE-2020-19316
+<https://github.com/advisories/GHSA-w2pm-r78h-4m7v> GHSA-w2pm-r78h-4m7v
+Affected version: <5.8.17
+Reported by:
+GitHub
+Image upload bypass
+</security-advisories/PKSA-p3rx-dfwp-73ny> PKSA-p3rx-dfwp-73ny
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43617> CVE-2021-43617
+Affected version: >=8.0.0,<8.71.0
+Reported by:
+FriendsOfPHP/security-advisories
+[HIGH] <https://github.com/advisories/GHSA-w68r-5p45-5rqp> Improper Input Validation in Laravel
+</security-advisories/PKSA-7ywf-hktb-jkn9> PKSA-7ywf-hktb-jkn9
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24941> CVE-2020-24941
+<https://github.com/advisories/GHSA-w68r-5p45-5rqp> GHSA-w68r-5p45-5rqp
+Affected version: >=7.0.0,<7.24.0|<6.18.35
+Reported by:
+GitHub
+[MEDIUM] <https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j> SQL Server LIMIT / OFFSET SQL Injection
+</security-advisories/PKSA-ckwp-rt7t-c46m> PKSA-ckwp-rt7t-c46m
+<https://github.com/advisories/GHSA-7852-w36x-6mf6> GHSA-7852-w36x-6mf6
+Affected version: >=6.0.0,<6.20.26|>=7.0.0,<7.30.5|>=8.0.0,<8.40.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] <https://github.com/laravel/framework/security/advisories/GHSA-x7p5-p2c9-phvg> Unexpected bindings in QueryBuilder
+</security-advisories/PKSA-4npr-btr6-zhny> PKSA-4npr-btr6-zhny
+<https://github.com/advisories/GHSA-6jvx-8ch9-j2jr> GHSA-6jvx-8ch9-j2jr
+Affected version: >=6.0.0,<6.20.14|>=7.0.0,<7.30.4|>=8.0.0,<8.24.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] <https://github.com/laravel/framework/security/advisories/GHSA-66hf-2p6w-jqfw> Possible cross-site scripting (XSS) vulnerability in the Blade templating engine
+</security-advisories/PKSA-njrm-6dtg-m2pc> PKSA-njrm-6dtg-m2pc
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43808> CVE-2021-43808
+<https://github.com/advisories/GHSA-66hf-2p6w-jqfw> GHSA-66hf-2p6w-jqfw
+Affected version: <6.20.42|>=7.0.0,<7.30.6|>=8.0.0,<8.75.0
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[CRITICAL] <https://blog.laravel.com/security-release-laravel-61834-7232> Guard bypass in Eloquent models
+</security-advisories/PKSA-vhvj-tvg4-96jj> PKSA-vhvj-tvg4-96jj
+<https://github.com/advisories/GHSA-qm5c-m76r-2hfr> GHSA-qm5c-m76r-2hfr
+Affected version: >=5.5.0,<=5.5.49|>=6.0.0,<6.18.34|>=7.0.0,<7.23.2
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] <https://blog.laravel.com/laravel-cookie-security-releases> RCE vulnerability in "cookie" session driver
+</security-advisories/PKSA-nrj3-r2wg-yt8b> PKSA-nrj3-r2wg-yt8b
+<https://github.com/advisories/GHSA-vr95-p7q6-8m9q> GHSA-vr95-p7q6-8m9q
+Affected version: >=4.1.0,<=4.1.99999|>=4.2.0,<=4.2.99999|>=5.0.0,<=5.0.99999|>=5.1.0,<=5.1.99999|>=5.2.0,<=5.2.99999|>=5.3.0,<=5.3.99999|>=5.4.0,<=5.4.99999|>=5.5.0,<=5.5.49|>=5.6.0,<=5.6.99999|>=5.7.0,<=5.7.99999|>=5.8.0,<=5.8.99999|>=6.0.0,<6.18.31|>=7.0.0,<7.22.4
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] XSS vulnerability in blade templating
+</security-advisories/PKSA-rvky-x3cg-y3qd> PKSA-rvky-x3cg-y3qd
+<https://github.com/advisories/GHSA-44pg-c29v-hp6r> GHSA-44pg-c29v-hp6r
+Affected version: >=7.0.0,<7.1.2
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] <https://blog.laravel.com/security-laravel-62011-7302-8221-released> Unexpected bindings in QueryBuilder
+</security-advisories/PKSA-985r-hryy-555b> PKSA-985r-hryy-555b
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21263> CVE-2021-21263
+<https://github.com/advisories/GHSA-3p32-j457-pg5x> GHSA-3p32-j457-pg5x
+Affected version: >=6.0.0,<6.20.11|>=7.0.0,<7.30.2|>=8.0.0,<8.22.1
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] Cookie serialization vulnerability
+</security-advisories/PKSA-mhj3-vthf-h41n> PKSA-mhj3-vthf-h41n
+<https://github.com/advisories/GHSA-jwvj-pwww-3mj5> GHSA-jwvj-pwww-3mj5
+Affected version: >=4.0.0,<=4.0.11|>=4.1.0,<=4.1.31|>=4.2.0,<=4.2.22|>=5.0.0,<=5.0.35|>=5.1.0,<=5.1.46|>=5.2.0,<=5.2.45|>=5.3.0,<=5.3.31|>=5.4.0,<=5.4.36|>=5.5.0,<5.5.42|>=5.6.0,<5.6.30
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] <https://medium.com/@taylorotwell/laravel-security-release-5-6-15-and-5-5-40-56f1257933a0> Exploit of encryption failure vulnerability
+</security-advisories/PKSA-cn77-7mny-v9zg> PKSA-cn77-7mny-v9zg
+<https://github.com/advisories/GHSA-4mg9-vhxq-vm7j> GHSA-4mg9-vhxq-vm7j
+Affected version: >=4.0.0,<=4.0.11|>=4.1.0,<=4.1.31|>=4.2.0,<=4.2.22|>=5.0.0,<=5.0.35|>=5.1.0,<=5.1.46|>=5.2.0,<=5.2.45|>=5.3.0,<=5.3.31|>=5.4.0,<=5.4.36|>=5.5.0,<5.5.40|>=5.6.0,<5.6.15
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] Timing attack vector for remember me token
+</security-advisories/PKSA-xf4x-p5c1-z9xq> PKSA-xf4x-p5c1-z9xq
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14775> CVE-2017-14775
+<https://github.com/advisories/GHSA-c2v7-j5gq-wcq4> GHSA-c2v7-j5gq-wcq4
+Affected version: >=4.1.26,<=4.1.31|>=4.2.0,<=4.2.22|>=5.0.0,<=5.0.35|>=5.1.0,<=5.1.46|>=5.2.0,<=5.2.45|>=5.3.0,<=5.3.31|>=5.4.0,<=5.4.36|>=5.5.0,<5.5.10
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[MEDIUM] Password reset phishing vulnerability
+</security-advisories/PKSA-fwj1-r2kg-bmxd> PKSA-fwj1-r2kg-bmxd
+<http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9303> CVE-2017-9303
+<https://github.com/advisories/GHSA-rc8x-jrrc-frfv> GHSA-rc8x-jrrc-frfv
+Affected version: >=5.3.0,<=5.3.31|>=5.4.0,<5.4.22
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] Risk of mass-assignment vulnerabilities
+</security-advisories/PKSA-4d28-pz9s-51zj> PKSA-4d28-pz9s-51zj
+<https://github.com/advisories/GHSA-x7p5-p2c9-phvg> GHSA-x7p5-p2c9-phvg
+Affected version: >=4.0.0,<4.0.99|>=4.1.0,<4.1.29
+Reported by:
+GitHub, FriendsOfPHP/security-advisories
+[HIGH] Hijacked authentication cookies vulnerability
+</security-advisories/PKSA-gf52-cc16-7thv> PKSA-gf52-cc16-7thv
+<https://github.com/advisories/GHSA-wq8p-mqvg-2p5h> GHSA-wq8p-mqvg-2p5h
+Affected version: >=4.0.0,<4.0.99|>=4.1.0,<4.1.26
+Reported by:
+GitHub, FriendsOfPHP/security-advisories

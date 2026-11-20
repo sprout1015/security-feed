@@ -1,0 +1,76 @@
+Skip to content
+Start typing...
+⌘ K
+Switch to light modeSwitch to dark mode
+English
+EnglishDeutschEspañolFrançaisItaliano日本語한국어Português简体中文繁體中文
+Main menu
+v5.x
+v5.xv4.x
+v5.x
+v5.xv4.xv3.x (deprecated)
+<https://github.com/expressjs/expressjs.com/edit/main/src/content/pages/en/advanced/security-updates.mdx> Edit on GitHub
+Security updates
+Caution
+Node.js vulnerabilities directly affect Express. Therefore, keep a watch on Node.js
+vulnerabilities and make sure you are using the latest
+stable version of Node.js.
+The list below enumerates the Express vulnerabilities that were fixed in the specified version update.
+Note
+If you believe you have discovered a security vulnerability in Express, please see </en/resources/contributing/#security-policies-and-procedures> Security
+Policies and Procedures.
+4.x
+4.21.2
+The dependency path-to-regexp has been updated to address a <https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-rhx6-c78j-4q9w> vulnerability.
+4.21.1
+The dependency cookie has been updated to address a <https://github.com/jshttp/cookie/security/advisories/GHSA-pxg6-pf52-xh8x> vulnerability, This may affect your application if you use res.cookie.
+4.20.0
+Fixed XSS vulnerability in res.redirect ( <https://github.com/expressjs/express/security/advisories/GHSA-qw6h-vgh9-j6wx> advisory, <https://www.cve.org/CVERecord?id=CVE-2024-43796> CVE-2024-43796).
+The dependency serve-static has been updated to address a <https://github.com/advisories/GHSA-cm22-4g7w-348p> vulnerability.
+The dependency send has been updated to address a <https://github.com/advisories/GHSA-m6fv-jmcg-4jfg> vulnerability.
+The dependency path-to-regexp has been updated to address a <https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-9wv6-86v2-598j> vulnerability.
+The dependency body-parser has been updated to address a <https://github.com/advisories/GHSA-qwcr-r2fm-qrc7> vulnerability, This may affect your application if you had url encoding activated.
+4.19.0, 4.19.1
+Fixed open redirect vulnerability in res.location and res.redirect ( <https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc> advisory, <https://www.cve.org/CVERecord?id=CVE-2024-29041> CVE-2024-29041).
+4.17.3
+The dependency qs has been updated to address a <https://github.com/advisories/GHSA-hrpp-h998-j3pp> vulnerability. This may affect your application if the following APIs are used: req.query, req.body, req.param.
+4.16.0
+The dependency forwarded has been updated to address a <https://github.com/advisories/GHSA-mpcf-4gmh-23w8> vulnerability. This may affect your application if the following APIs are used: req.host, req.hostname, req.ip, req.ips, req.protocol.
+The dependency mime has been updated to address a <https://github.com/advisories/GHSA-wrvr-8mpx-r7pp> vulnerability, but this issue does not impact Express.
+The dependency send has been updated to provide a protection against a Node.js 8.5.0 vulnerability. This only impacts running Express on the specific Node.js version 8.5.0.
+4.15.5
+The dependency debug has been updated to address a <https://security.snyk.io/vuln/npm:debug:20170905> vulnerability, but this issue does not impact Express.
+The dependency fresh has been updated to address a <https://github.com/advisories/GHSA-9qj9-36jm-prpv> vulnerability. This will affect your application if the following APIs are used: express.static, req.fresh, res.json, res.jsonp, res.send, res.sendfile res.sendFile, res.sendStatus.
+4.15.3
+The dependency ms has been updated to address a <https://security.snyk.io/vuln/npm:ms:20170412> vulnerability. This may affect your application if untrusted string input is passed to the maxAge option in the following APIs: express.static, res.sendfile, and res.sendFile.
+4.15.2
+The dependency qs has been updated to address a <https://security.snyk.io/vuln/npm:qs:20170213> vulnerability, but this issue does not impact Express. Updating to 4.15.2 is a good practice, but not required to address the vulnerability.
+4.11.1
+Fixed root path disclosure vulnerability in express.static, res.sendfile, and res.sendFile
+4.10.7
+Fixed open redirect vulnerability in express.static ( <https://github.com/advisories/GHSA-c3x7-gjmx-r2ff> advisory, <https://www.cve.org/CVERecord?id=CVE-2015-1164> CVE-2015-1164).
+4.8.8
+Fixed directory traversal vulnerabilities in express.static ( <https://github.com/advisories/GHSA-xwg4-93c6-3h42> advisory , <https://www.cve.org/CVERecord?id=CVE-2014-6394> CVE-2014-6394).
+4.8.4
+Node.js 0.10 can leak fds in certain situations that affect express.static and res.sendfile. Malicious requests could cause fds to leak and eventually lead to EMFILE errors and server unresponsiveness.
+4.8.0
+Sparse arrays that have extremely high indexes in the query string could cause the process to run out of memory and crash the server.
+Extremely nested query string objects could cause the process to block and make the server unresponsive temporarily.
+3.x
+Warning
+Express 3.x IS END-OF-LIFE AND NO LONGER MAINTAINED
+Known and unknown security and performance issues in 3.x have not been addressed since the last update (1 August, 2015). It is highly recommended to use the latest version of Express.
+If you are unable to upgrade past 3.x, please consider Commercial Support Options.
+3.19.1
+Fixed root path disclosure vulnerability in express.static, res.sendfile, and res.sendFile
+3.19.0
+Fixed open redirect vulnerability in express.static ( <https://github.com/advisories/GHSA-c3x7-gjmx-r2ff> advisory, <https://www.cve.org/CVERecord?id=CVE-2015-1164> CVE-2015-1164).
+3.16.10
+Fixed directory traversal vulnerabilities in express.static.
+3.16.6
+Node.js 0.10 can leak fds in certain situations that affect express.static and res.sendfile. Malicious requests could cause fds to leak and eventually lead to EMFILE errors and server unresponsiveness.
+3.16.0
+Sparse arrays that have extremely high indexes in query string could cause the process to run out of memory and crash the server.
+Extremely nested query string objects could cause the process to block and make the server unresponsive temporarily.
+3.3.0
+The 404 response of an unsupported method override attempt was susceptible to cross-site scripting attacks.

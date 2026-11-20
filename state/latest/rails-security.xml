@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:discourse="http://www.discourse.org/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Security Announcements - Ruby on Rails Discussions</title>
+    <link>https://discuss.rubyonrails.org/c/security-announcements/9</link>
+    <description>Topics in the &#39;Security Announcements&#39; category In the category we will post all the security advisories for the Rails framework.</description>
+    
+    <atom:link href="https://discuss.rubyonrails.org/c/security-announcements/9.rss" rel="self" type="application/rss+xml" />
+    <atom:link href="https://discuss.rubyonrails.org/c/security-announcements/9.md" rel="alternate" type="text/markdown" />
+      <lastBuildDate>Wed, 04 Nov 2026 02:56:53 +0000</lastBuildDate>
+        <item>
+          <title>Rails security releases: 8.0.5.2 and 8.1.4.1</title>
+          <dc:creator><![CDATA[Mike Dalessio]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>Hello, Rails community!</p>
+<p>Rails Versions 8.0.5.2 and 8.1.4.1 have been released. These are <strong>security updates</strong> addressing 21 security issues falling into a few themes:</p>
+<ul>
+<li>Possible arbitrary file read, file write and remote code execution in Active Storage image and video processing</li>
+<li>Possible Strong Parameters bypass in <code>Parameters#each_key</code></li>
+<li>Possible IP spoofing in <code>remote_ip</code> through the <code>Forwarded</code> header (8.1 only)</li>
+<li>Multiple possible XSS vulnerabilities in Action View helpers, and one in the Active Support MessagePack serializer (8.1 only)</li>
+<li>Possible DoS vulnerabilities in Active Support <code>safe_constantize</code>, Action Controller Live streaming, and Active Storage proxy mode and filename handling</li>
+<li>Unsigned <code>Content-Type</code> and unenforced file size in Active Storage direct uploads to Google Cloud Storage</li>
+<li>Session handling issues: a destroyed session restored by <code>CacheStore</code>, a session cookie leaked by Active Storage proxy mode, and a missing <code>SameSite</code> attribute on session cookies</li>
+<li>Possible cache poisoning through content negotiation</li>
+<li>Possible signature replay in Action Mailbox Mailgun ingress</li>
+</ul>
+<p>We strongly recommend upgrading as soon as possible.</p>
+<p>Older versions of Rails are unsupported, and users are recommended to upgrade to at least the 8.0 series. Security support for the 8.0 series ends on November 7, 2026. See our <a href="https://rubyonrails.org/maintenance">maintenance policy</a> for details.</p>
+<p>Here is a list of security issues that these releases address:</p>
+<ul>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-f3w6-w445-fwh9">GHSA-f3w6-w445-fwh9 Possible arbitrary file write and read in Active Storage image analysis</a> (Critical)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-v924-7rp8-4mxh">GHSA-v924-7rp8-4mxh Possible arbitrary file read and remote code execution in Active Storage video previews, analysis and image processing</a> (High)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-wm3x-v3qw-4jh3">GHSA-wm3x-v3qw-4jh3 Possible Strong Parameters bypass in <code>Parameters#each_key</code> in Action Pack</a> (High)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-2gff-2mmg-m73p">GHSA-2gff-2mmg-m73p Possible IP spoofing in Action Dispatch <code>RemoteIp</code></a> (8.1 only) (High)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-8474-xrp6-wh69">GHSA-8474-xrp6-wh69 Possible DoS vulnerability in Active Support <code>safe_constantize</code></a> (High)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-2p2f-4rq4-gjwc">GHSA-2p2f-4rq4-gjwc Possible XSS vulnerability in Action View text helpers</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-v6rj-xm57-3p59">GHSA-v6rj-xm57-3p59 Possible XSS vulnerability in Action View highlight helper</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-rq8q-p985-fjq7">GHSA-rq8q-p985-fjq7 Possible XSS vulnerability in Action View <code>strip_tags</code></a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-68p9-83h6-5wpj">GHSA-68p9-83h6-5wpj Possible XSS vulnerability in Action View tag helpers</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-2w9f-fxwj-w2qf">GHSA-2w9f-fxwj-w2qf Possible XSS vulnerability in Active Support MessagePack serializer</a> (8.1 only) (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-rwvh-fw6r-pwvp">GHSA-rwvh-fw6r-pwvp Possible DoS vulnerability in Action Controller Live streaming</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-4v2w-w6g6-f8f8">GHSA-4v2w-w6g6-f8f8 Possible DoS vulnerability in Active Storage proxy mode via storage errors during streaming</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-p2pm-g2h6-7j5j">GHSA-p2pm-g2h6-7j5j Possible DoS vulnerability in Active Storage filename handling</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-3w93-6hmw-whh4">GHSA-3w93-6hmw-whh4 Unsigned Content-Type in Active Storage GCS direct uploads with <code>cache_control</code></a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-hfr4-8rjc-97m2">GHSA-hfr4-8rjc-97m2 Possible circumvention of file size limits in Active Storage direct uploads to Google Cloud Storage</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-2586-8ghr-69fj">GHSA-2586-8ghr-69fj Possible restoration of destroyed sessions in Action Dispatch <code>CacheStore</code></a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-x6mj-8jx9-qhqv">GHSA-x6mj-8jx9-qhqv Possible sensitive session information leak in Active Storage proxy mode</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-r9jg-fmfx-2gv6">GHSA-r9jg-fmfx-2gv6 Possible cache poisoning in Action Pack content negotiation</a> (Medium)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-3f4q-8x5m-76v8">GHSA-3f4q-8x5m-76v8 Possible local file disclosure in Active Storage video previews and analysis</a> (Low)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-5957-c7qm-m469">GHSA-5957-c7qm-m469 Possible signature replay in Action Mailbox Mailgun ingress</a> (Low)</li>
+<li><a href="https://github.com/rails/rails/security/advisories/GHSA-gmj8-hvj3-49mw">GHSA-gmj8-hvj3-49mw Missing SameSite attribute on session cookies from Action Pack session stores</a> (Low)</li>
+</ul>
+<p>Each GHSA links to patches which may be useful if you’re unable to immediately upgrade.</p>
+<h2><a name="p-268247-sha-256-1" class="anchor" href="https://discuss.rubyonrails.org#p-268247-sha-256-1" aria-label="Heading link"></a>SHA-256</h2>
+<p>If you’d like to verify that your gems are the same as the ones we’ve uploaded,
+please use these SHA-256 hashes.</p>
+<pre data-code-wrap="ruby"><code class="lang-ruby">6841f8f3e2e605b8ac95369cbcd5a323ebc4b399e65b60fba309ec6e16b22b76  pkg/actioncable-8.0.5.2.gem
+45fa1d741696c0939d3724b660286f247fd1b676e084b22e68cb22c38486b78c  pkg/actionmailbox-8.0.5.2.gem
+b3a86551c40a67ce00349573d83a60588a92a404d850bc3541b58cdfe831da9e  pkg/actionmailer-8.0.5.2.gem
+5b96a0a841192954151047b4f6e8d992d56f767922e53b9e2c94449a26aebd61  pkg/actionpack-8.0.5.2.gem
+de4f3d9faea828f56be86dd48ade24d5f87b0318f0282fcdab338b754d4ad7f1  pkg/actiontext-8.0.5.2.gem
+8bba8b4a165a555eda0d9bf1c035de0644a77b6700fc5f214a7c0f75ae241cab  pkg/actionview-8.0.5.2.gem
+7360cc455bd78d5f215ffaa062b229ac68bf8ba41c963d96a919ebc5f0e3618e  pkg/activejob-8.0.5.2.gem
+8aabf86d1dc1516f47329d0cc8d61dea2af9652606e1bbfa467558bef615f375  pkg/activemodel-8.0.5.2.gem
+f2abc9288493a2ca9617a2287c229daad425d2eeb74f44027a8cdb3b46055d14  pkg/activerecord-8.0.5.2.gem
+556c548b9b0ae5ddc3ec4e5278c065cb48d0fa5ca93c1f2a020e484b8e4c1d44  pkg/activestorage-8.0.5.2.gem
+673acec3133cc8108a03d5ae0e3a9d0f5c7f818d02db33bcfed527a6c57bcdd1  pkg/activesupport-8.0.5.2.gem
+84bf06f0b96ebf625f4d120caa9c660f8fd09b3146acc1542679713b2cdda90a  pkg/rails-8.0.5.2.gem
+4b43a2c134a1b9887dd9ef659c71f61e8376d18a8fc52a09471979666b919fa6  pkg/railties-8.0.5.2.gem
+</code></pre>
+<pre data-code-wrap="ruby"><code class="lang-ruby">007670f7297973e94809e9f32a56624a7aa60b6e9d6696cd078064ce86d1c7fc  pkg/actioncable-8.1.4.1.gem
+18b43dd842bf3a3e31b8e38b7917c21e48c128fc8b263c893481cc66ee1a8f78  pkg/actionmailbox-8.1.4.1.gem
+a7b71dedf744e48dd6751e97350634edce9a2f7beeceac332dcccb91729ad066  pkg/actionmailer-8.1.4.1.gem
+8c6f2e7cbd2653ef0539bde1ff20eb3e2e264e366affe56f0ba7f06d3670cb4b  pkg/actionpack-8.1.4.1.gem
+fb59611dc16e2b6bbfcec66793acfae6cdd64b1e35ef3f9175424f31e62c38da  pkg/actiontext-8.1.4.1.gem
+d25b4d9cf8d0c0195ffcfe8b2cf3fcbe6fea54fd7c17f1a9cb8182881463f12b  pkg/actionview-8.1.4.1.gem
+82c4c9311ea1016d5f7f134a0c5f9b6527cad5a6237f5f3f60aa17984ef36229  pkg/activejob-8.1.4.1.gem
+063caf105372fbc98b2d789e4be23de63ac5c043f7d9330f04e2caddb7012805  pkg/activemodel-8.1.4.1.gem
+bd65599ca0b5d210937f835d42c7aff69d271741c75aab022730be6cbce67e87  pkg/activerecord-8.1.4.1.gem
+0f4e2f114f3584723a80a2c089aacc6170e765a0b2c385c9782e26ed78f05c66  pkg/activestorage-8.1.4.1.gem
+16ac4f341ca65c85a1fcdb8ac73f68891aae9e3c4a6f9c3a27daed8b00017ed7  pkg/activesupport-8.1.4.1.gem
+365c3a0ad2713bd6e60628e5e826622d4ca8dee60b5a7e560e9b20844e9650bc  pkg/rails-8.1.4.1.gem
+ff2ef4b5a62cbc89811f88be11c776e2ed71b14dd012eae6a494d37994aa9782  pkg/railties-8.1.4.1.gem
+</code></pre>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/rails-security-releases-8-0-5-2-and-8-1-4-1/91802">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/rails-security-releases-8-0-5-2-and-8-1-4-1/91802</link>
+          <pubDate>Wed, 04 Nov 2026 02:56:53 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-91802</guid>
+          <source url="https://discuss.rubyonrails.org/t/rails-security-releases-8-0-5-2-and-8-1-4-1/91802.rss">Rails security releases: 8.0.5.2 and 8.1.4.1</source>
+        </item>
+        <item>
+          <title>[GHSA-744p-w4gc-m3gh] SQL injection through `Trilogy#escape` with multibyte encodings</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p><a href="https://github.com/trilogy-libraries/trilogy/security/advisories/GHSA-744p-w4gc-m3gh">GHSA-744p-w4gc-m3gh</a></p>
+<p>This is a vulnerability in the Trilogy library which is used by the Active Record Trilogy adapter. We believe it’s likely applications using Trilogy as their MySQL adapter are vulnerable and should upgrade immediately.</p>
+<p>This has not yet been assigned a CVE identifier, I will update the report when it is.</p>
+<h3><a name="p-268238-summary-1" class="anchor" href="https://discuss.rubyonrails.org#p-268238-summary-1" aria-label="Heading link"></a>Summary</h3>
+<p><code>Trilogy#escape</code> produces unsafe output for Strings in Shift_JIS, Windows-31J, Big5, GBK or GB18030. In those encodings, the continuation byte of a multi byte character can be in the ASCII range. <code>escape</code> was intended for strict ASCII supersets and did not handle this correctly, which allowed SQL injection.</p>
+<h3><a name="p-268238-details-2" class="anchor" href="https://discuss.rubyonrails.org#p-268238-details-2" aria-label="Heading link"></a>Details</h3>
+<p>Applications are affected in two cases:</p>
+<ol>
+<li>On any connection charset, including the default <code>utf8mb4</code>, when an attacker can influence the encoding of a String the application escapes.</li>
+<li>On connections configured with <code>encoding: sjis</code>, <code>cp932</code>, <code>big5</code>, <code>gbk</code> or <code>gb18030</code>. These connection encodings never worked correctly, are no longer supported, and now raise <code>ArgumentError</code>.</li>
+</ol>
+<h3><a name="p-268238-impact-3" class="anchor" href="https://discuss.rubyonrails.org#p-268238-impact-3" aria-label="Heading link"></a>Impact</h3>
+<p>Unauthenticated SQL injection in applications that escape attacker-influenced Strings with <code>Trilogy#escape</code>. Ruby on Rails and other Rack applications using the Trilogy adapter are likely affected.</p>
+<h3><a name="p-268238-workarounds-4" class="anchor" href="https://discuss.rubyonrails.org#p-268238-workarounds-4" aria-label="Heading link"></a>Workarounds</h3>
+<p>Applications unable to upgrade may be able to avoid this issue by enforcing the encoding of all strings passed to <code>Trilogy#escape</code> and <code>Trilogy#query</code></p>
+<h3><a name="p-268238-credit-5" class="anchor" href="https://discuss.rubyonrails.org#p-268238-credit-5" aria-label="Heading link"></a>Credit</h3>
+<p>Discovered by Anthropic’s OSS Scanner, as vulnerability ANT-2026-9KOHJMNW</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/ghsa-744p-w4gc-m3gh-sql-injection-through-trilogy-escape-with-multibyte-encodings/91797">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/ghsa-744p-w4gc-m3gh-sql-injection-through-trilogy-escape-with-multibyte-encodings/91797</link>
+          <pubDate>Thu, 29 Oct 2026 21:37:37 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-91797</guid>
+          <source url="https://discuss.rubyonrails.org/t/ghsa-744p-w4gc-m3gh-sql-injection-through-trilogy-escape-with-multibyte-encodings/91797.rss">[GHSA-744p-w4gc-m3gh] SQL injection through `Trilogy#escape` with multibyte encodings</source>
+        </item>
+        <item>
+          <title>[CVE-2026-66066] Attack details, and tools to perform a forensic investigation</title>
+          <dc:creator><![CDATA[Mike Dalessio]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>Hello there, I’m writing as a member of the Rails security team about CVE-2026-66066.</p>
+<p>As mentioned in the advisory, <a href="https://github.com/rails/rails/security/advisories/GHSA-xr9x-r78c-5hrm">GHSA-xr9x-r78c-5hrm</a>, we held back details about the attack vector to allow applications to be upgraded before malicious attackers could take advantage of the vulnerability.</p>
+<p>We originally intended to publish these details no later than 2026-08-28, but several researchers quickly reverse-engineered the attack and have already published proofs-of-concept. As a result, we are disclosing details about the attack now, along with some tools to help assess whether an application was vulnerable and to help examine the forensic evidence for signs of secret exfiltration.</p>
+<p>We have published all of this in a git repository, <strong><a href="https://github.com/rails/rails-forensics-CVE-2026-66066">rails/rails-forensics-CVE-2026-66066</a></strong>, which contains:</p>
+<ul>
+<li><code>reference/the-attack.md</code> explains how the attack works, step by step, from the incoming request to the file being read.</li>
+<li><code>reference/the-investigation.md</code> explains what evidence the attack leaves behind in your database and your object store, and what that evidence does and does not prove.</li>
+<li>The <code>kr2s-was-i-vulnerable</code> agent skill works out whether your application was ever vulnerable, and if it was, over what period of time.</li>
+<li>The <code>kr2s-was-i-exploited</code> agent skill searches your Active Storage data for the crafted files, and works out what was read if it finds any.</li>
+</ul>
+<p>I sincerely hope you find this information and these tools helpful. They were extracted from work I did at 37signals to perform a forensic analysis on our own apps. And if you have suggestions on how to improve it, I would welcome pull requests that are likely to be generally useful.</p>
+<p>We again want to thank the original reporters, 0xacb, s3np41k1r1t0 and castilho of Ethiack, and RyotaK of GMO Flatt Security Inc., for responsibly reporting this vulnerability and for holding off on publishing attack details at our request.</p>
+            <p><small>2 posts - 2 participants</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-66066-attack-details-and-tools-to-perform-a-forensic-investigation/91441">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-66066-attack-details-and-tools-to-perform-a-forensic-investigation/91441</link>
+          <pubDate>Fri, 31 Jul 2026 00:51:48 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-91441</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-66066-attack-details-and-tools-to-perform-a-forensic-investigation/91441.rss">[CVE-2026-66066] Attack details, and tools to perform a forensic investigation</source>
+        </item>
+        <item>
+          <title>[CVE-2026-66066] Possible arbitrary file read and remote code execution in Active Storage variant processing</title>
+          <dc:creator><![CDATA[Rafael França]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>See <a href="https://github.com/rails/rails/security/advisories/GHSA-xr9x-r78c-5hrm" class="inline-onebox">Possible arbitrary file read and remote code execution in Active Storage variant processing · Advisory · rails/rails · GitHub</a></p>
+<h3><a name="p-267668-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-267668-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>In its default configuration, a Rails application that displays image variants may allow an
+unauthenticated attacker to read arbitrary files from the server, including the process environment.
+That environment typically holds <code>secret_key_base</code> and often credentials for external systems, which
+may in turn allow escalation to remote code execution or lateral movement to those systems.</p>
+<h3><a name="p-267668-details-2" class="anchor" href="https://discuss.rubyonrails.org#p-267668-details-2" aria-label="Heading link"></a>Details</h3>
+<p>libvips reads and writes file formats through “loaders” and “savers” (or more generally
+“operations”), many of which are backed by third-party libraries. It marks some of these operations
+as “unfuzzed”, meaning they are unsafe for untrusted content, and several handle formats unrelated
+to web images. Active Storage did not disable the unfuzzed operations, so an attacker who can upload
+a crafted file and cause a variant to be generated from it may be able to invoke one.</p>
+<p>We are aware of a mechanism by which an attacker, by uploading a crafted file, is able to cause
+disclosure of the contents of arbitrary files accessible on the filesystem of the targeted
+application. One specific attack chain has been reported to us (see “Disclosure” below), but we do
+not assume it is the only one that exists.</p>
+<h3><a name="p-267668-affected-applications-3" class="anchor" href="https://discuss.rubyonrails.org#p-267668-affected-applications-3" aria-label="Heading link"></a>Affected applications</h3>
+<p>An application is affected if it meets all of these requirements:</p>
+<ul>
+<li>Uses libvips for Active Storage image processing. This is <code>config.active_storage.variant_processor = :vips</code>,
+which <code>load_defaults 7.0</code> set and no later default has changed.</li>
+<li>Allows image uploads from untrusted users.</li>
+</ul>
+<p>Generating variants is not a separate requirement.</p>
+<h3><a name="p-267668-mitigation-4" class="anchor" href="https://discuss.rubyonrails.org#p-267668-mitigation-4" aria-label="Heading link"></a>Mitigation</h3>
+<ul>
+<li>Upgrade to a fixed version of <code>activestorage</code>.</li>
+<li>The minimum version of libvips must be upgraded to <code>&gt;= 8.13</code>.</li>
+<li>Change <code>secret_key_base</code> and change any secrets accessible in the application environment (see “Expire and change secrets” below)</li>
+</ul>
+<p>Earlier versions of libvips (<code>&lt; 8.13</code>) cannot disable unfuzzed operations at all, and Active Storage
+will raise an exception during boot in such an unsecurable environment.</p>
+<h3><a name="p-267668-expire-and-change-secrets-5" class="anchor" href="https://discuss.rubyonrails.org#p-267668-expire-and-change-secrets-5" aria-label="Heading link"></a>Expire and change secrets</h3>
+<p>Upgrading closes the vulnerability but does not undo an exfiltrated secret if that already
+occurred. An affected application should treat every secret readable by the application process as
+potentially exposed and change it, including:</p>
+<ul>
+<li><code>secret_key_base</code></li>
+<li>The master key, whether stored in <code>config/master.key</code> or supplied as <code>RAILS_MASTER_KEY</code>, along
+with everything in <code>config/credentials.yml.enc</code> that it decrypts</li>
+<li>Credentials for the Active Storage service, such as S3, GCS, or Azure keys</li>
+<li>Database credentials</li>
+<li>Tokens and keys for any third-party service the application calls</li>
+</ul>
+<p>Changing <code>secret_key_base</code> expires active sessions and requires users to log in again. Encrypted
+cookies, signed cookies, signed global IDs, and Active Storage URLs are also affected.</p>
+<p>Rotation should only be used as an intermediate step if necessary. Do not retain an exposed secret
+as a fallback.</p>
+<h3><a name="p-267668-workarounds-6" class="anchor" href="https://discuss.rubyonrails.org#p-267668-workarounds-6" aria-label="Heading link"></a>Workarounds</h3>
+<p>If libvips <code>&lt; 8.13</code> is being used, there are no workarounds available other than removing the
+dependency on libvips from the application. Some applications may have <code>ruby-vips</code> declared as a
+dependency only for image analysis, and those applications may be able to simply remove <code>ruby-vips</code>
+from the Gemfile to remove libvips from the application. Applications that do not use Active Storage
+can remove <code>ruby-vips</code> from the Gemfile to avoid the boot-time checks.</p>
+<p>If libvips <code>&gt;= 8.13</code> is present on the system, applications can disable the unfuzzed operations
+without upgrading Rails by setting the <code>VIPS_BLOCK_UNTRUSTED</code> environment variable, which libvips
+reads while initializing.</p>
+<p>Applications also running ruby-vips <code>&gt;= 2.2.1</code> or later can instead call
+<code>Vips.block_untrusted(true)</code> from an initializer.</p>
+<h3><a name="p-267668-releases-7" class="anchor" href="https://discuss.rubyonrails.org#p-267668-releases-7" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<h3><a name="p-267668-versions-affected-8" class="anchor" href="https://discuss.rubyonrails.org#p-267668-versions-affected-8" aria-label="Heading link"></a>Versions affected</h3>
+<ul>
+<li>activestorage &lt; 7.2.3.2</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.5.1</li>
+<li>activestorage &gt;= 8.1, &lt; 8.1.3.1</li>
+</ul>
+<h3><a name="p-267668-disclosure-9" class="anchor" href="https://discuss.rubyonrails.org#p-267668-disclosure-9" aria-label="Heading link"></a>Disclosure</h3>
+<p>Technical details of the attack chain are intentionally omitted from this advisory. They would add
+nothing to an administrator’s decision to upgrade, while making it substantially easier to attack
+applications that have not yet done so.</p>
+<p>Details will be disclosed no later than 2026-08-28, via the <a href="https://discuss.rubyonrails.org/c/security-announcements/9">Rails Security
+Announcements</a> forum.</p>
+<h3><a name="p-267668-credit-10" class="anchor" href="https://discuss.rubyonrails.org#p-267668-credit-10" aria-label="Heading link"></a>Credit</h3>
+<p>This issue was responsibly reported by <a href="https://x.com/0xacb">0xacb</a>, <a href="https://x.com/s3np41k1r1t0">s3np41k1r1t0</a> and <a href="https://x.com/castilho101">castilho</a> from <a href="https://ethiack.com">Ethiack</a>, and <a href="https://ryotak.net">RyotaK</a> from <a href="https://flatt.tech/en/">GMO Flatt Security Inc.</a>.</p>
+<h3><a name="p-267668-references-11" class="anchor" href="https://discuss.rubyonrails.org#p-267668-references-11" aria-label="Heading link"></a>References</h3>
+<ul>
+<li>libvips 8.13 release notes, <a href="https://www.libvips.org/2022/05/28/What's-new-in-8.13.html#blocking-of-unfuzzed-loaders">blocking of unfuzzed loaders</a></li>
+<li>W.A. Arbaugh, W.L. Fithen, and J. McHugh, <a href="https://doi.org/10.1109/2.889093">“Windows of Vulnerability: A Case Study
+Analysis”</a>, IEEE Computer 33(12), December 2000</li>
+<li><a href="https://ethiack.com/info-hub/research/kindarails2shell-rails-rce-cve" class="inline-onebox">KindaRails2Shell - Critical RCE in Rails via Active Storage (CVE-2026-66066) | Ethiack — Autonomous Ethical Hacking for continuous security</a></li>
+<li><a href="https://blog.flatt.tech/entry/kindarails2shell_rails" class="inline-onebox">深刻度「緊急」のRails脆弱性「KindaRails2Shell」（CVE-2026-66066）の概要と対応指針 - GMO Flatt Security Blog</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-66066-possible-arbitrary-file-read-and-remote-code-execution-in-active-storage-variant-processing/91432">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-66066-possible-arbitrary-file-read-and-remote-code-execution-in-active-storage-variant-processing/91432</link>
+          <pubDate>Wed, 29 Jul 2026 15:37:36 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-91432</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-66066-possible-arbitrary-file-read-and-remote-code-execution-in-active-storage-variant-processing/91432.rss">[CVE-2026-66066] Possible arbitrary file read and remote code execution in Active Storage variant processing</source>
+        </item>
+        <item>
+          <title>[GHSA-cj75-f6xr-r4g7] Possible XSS vulnerability with certain configurations of rails-html-sanitizer</title>
+          <dc:creator><![CDATA[Mike Dalessio]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>See <a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-cj75-f6xr-r4g7" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer · Advisory · rails/rails-html-sanitizer · GitHub</a></p>
+<h2><a name="p-267563-summary-1" class="anchor" href="https://discuss.rubyonrails.org#p-267563-summary-1" aria-label="Heading link"></a>Summary</h2>
+<p>There is a possible cross-site scripting vulnerability in rails-html-sanitizer when the sanitizer is configured to allow an SVG reference element such as <code>&lt;use&gt;</code>. See related <a href="https://github.com/flavorjones/loofah/security/advisories/GHSA-9wjq-cp2p-hrgf">GHSA-9wjq-cp2p-hrgf</a> in Loofah, whose SVG local-reference logic rails-html-sanitizer mirrors.</p>
+<ul>
+<li>Versions affected: <code>&gt;= 1.0.3, &lt; 1.7.1</code></li>
+<li>Not affected: <code>&lt; 1.0.3</code></li>
+<li>Fixed versions: <code>1.7.1</code></li>
+</ul>
+<h2><a name="p-267563-impact-2" class="anchor" href="https://discuss.rubyonrails.org#p-267563-impact-2" aria-label="Heading link"></a>Impact</h2>
+<p><code>Rails::HTML::PermitScrubber</code> restricts SVG reference elements in the <code>SVG_ALLOW_LOCAL_HREF</code> collection to local, same-document references, but that restriction covered only the <code>xlink:href</code> attribute. Browsers also accept a plain <code>href</code> attribute per the SVG 2 spec, and it was not restricted, so those elements could reference arbitrary external documents. SVG <code>&lt;use&gt;</code> can load and render external SVG content by reference, and if the referenced document is same-origin and contains scripts, it could execute in the context of the sanitized document. <code>&lt;feImage&gt;</code> can load external images, which can be used for tracking.</p>
+<p>Applications are impacted only when the allowed tags are overridden to include one of these SVG reference elements, for example <code>&lt;use&gt;</code> or <code>&lt;feImage&gt;</code>. The default allowed tags do not include these SVG elements, so applications using the default configuration are not affected.</p>
+<h2><a name="p-267563-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-267563-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>Remove the SVG reference elements (such as <code>use</code> and <code>feImage</code>) from the overridden allowed tags. Applications using the default allowed tags are not affected.</p>
+<h2><a name="p-267563-references-4" class="anchor" href="https://discuss.rubyonrails.org#p-267563-references-4" aria-label="Heading link"></a>References</h2>
+<ul>
+<li><a href="https://github.com/flavorjones/loofah/security/advisories/GHSA-9wjq-cp2p-hrgf">GHSA-9wjq-cp2p-hrgf: SVG <code>href</code> attribute bypasses local-reference restriction in Loofah</a></li>
+<li><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation (‘Cross-site Scripting’)</a></li>
+<li>CVE has been requested</li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/ghsa-cj75-f6xr-r4g7-possible-xss-vulnerability-with-certain-configurations-of-rails-html-sanitizer/91359">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/ghsa-cj75-f6xr-r4g7-possible-xss-vulnerability-with-certain-configurations-of-rails-html-sanitizer/91359</link>
+          <pubDate>Thu, 16 Jul 2026 03:08:03 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-91359</guid>
+          <source url="https://discuss.rubyonrails.org/t/ghsa-cj75-f6xr-r4g7-possible-xss-vulnerability-with-certain-configurations-of-rails-html-sanitizer/91359.rss">[GHSA-cj75-f6xr-r4g7] Possible XSS vulnerability with certain configurations of rails-html-sanitizer</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33167] Possible XSS vulnerability in Action Pack debug exceptions</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266984-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266984-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>The debug exceptions page does not properly escape exception messages. A carefully crafted exception message could inject arbitrary HTML and JavaScript into the page, leading to XSS. This affects applications with detailed exception pages enabled (<code>config.consider_all_requests_local = true</code>), which is the default in development.</p>
+<h3><a name="p-266984-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266984-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33167</li>
+<li>GHSA-pgm4-439c-5jp6</li>
+</ul>
+<h2><a name="p-266984-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266984-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>actionpack &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+</ul>
+<h2><a name="p-266984-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266984-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/6752711c8c31d79ba50d13af6a6698a3b85415e0.patch">https://github.com/rails/rails/commit/6752711c8c31d79ba50d13af6a6698a3b85415e0.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33167-possible-xss-vulnerability-in-action-pack-debug-exceptions/90913">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33167-possible-xss-vulnerability-in-action-pack-debug-exceptions/90913</link>
+          <pubDate>Mon, 23 Mar 2026 21:26:10 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90913</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33167-possible-xss-vulnerability-in-action-pack-debug-exceptions/90913.rss">[CVE-2026-33167] Possible XSS vulnerability in Action Pack debug exceptions</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33168] Possible XSS vulnerability in Action View tag helpers</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266983-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266983-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>When a blank string is used as an HTML attribute name in Action View tag helpers, the attribute escaping is bypassed, producing malformed HTML. A carefully crafted attribute value could then be misinterpreted by the browser as a separate attribute name, possibly leading to XSS. Applications that allow users to specify custom HTML attributes are affected.</p>
+<h3><a name="p-266983-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266983-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33168</li>
+<li>GHSA-v55j-83pf-r9cq</li>
+</ul>
+<h2><a name="p-266983-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266983-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>actionview &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>actionview &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>actionview &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266983-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266983-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/63f5ad83edaa0b976f82d46988d745426aa4a42d.patch">https://github.com/rails/rails/commit/63f5ad83edaa0b976f82d46988d745426aa4a42d.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/c79a07df1e88738df8f68cb0ee759ad6128ca924.patch">https://github.com/rails/rails/commit/c79a07df1e88738df8f68cb0ee759ad6128ca924.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/0b6f8002b52b9c606fd6be9e7915d9f944cf539c.patch">https://github.com/rails/rails/commit/0b6f8002b52b9c606fd6be9e7915d9f944cf539c.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33168-possible-xss-vulnerability-in-action-view-tag-helpers/90912">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33168-possible-xss-vulnerability-in-action-view-tag-helpers/90912</link>
+          <pubDate>Mon, 23 Mar 2026 21:26:04 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90912</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33168-possible-xss-vulnerability-in-action-view-tag-helpers/90912.rss">[CVE-2026-33168] Possible XSS vulnerability in Action View tag helpers</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33169] Possible ReDoS vulnerability in number_to_delimited in Active Support</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266982-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266982-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p><code>NumberToDelimitedConverter</code> used a regular expression with <code>gsub!</code> to insert thousands delimiters. This could produce quadratic time complexity on long digit strings.</p>
+<h3><a name="p-266982-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266982-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33169</li>
+<li>GHSA-cg4j-q9v8-6v38</li>
+</ul>
+<h2><a name="p-266982-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266982-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activesupport &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activesupport &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activesupport &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266982-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266982-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/ec1a0e215efd27a3b3911aae6df978a80f456a49.patch">https://github.com/rails/rails/commit/ec1a0e215efd27a3b3911aae6df978a80f456a49.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/29154f1097da13d48fdb3200760b3e3da66dcb11.patch">https://github.com/rails/rails/commit/29154f1097da13d48fdb3200760b3e3da66dcb11.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/b54a4b373c6f042cab6ee2033246b1c9ecc38974.patch">https://github.com/rails/rails/commit/b54a4b373c6f042cab6ee2033246b1c9ecc38974.patch</a></li>
+</ul>
+<h2><a name="p-266982-credit-5" class="anchor" href="https://discuss.rubyonrails.org#p-266982-credit-5" aria-label="Heading link"></a>Credit</h2>
+<p>This issue was responsibly reported by Seokchan Yoon (<a href="https://ch4n3.kr/">https://ch4n3.kr</a>).</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33169-possible-redos-vulnerability-in-number-to-delimited-in-active-support/90911">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33169-possible-redos-vulnerability-in-number-to-delimited-in-active-support/90911</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:58 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90911</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33169-possible-redos-vulnerability-in-number-to-delimited-in-active-support/90911.rss">[CVE-2026-33169] Possible ReDoS vulnerability in number_to_delimited in Active Support</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33170] Possible XSS vulnerability in SafeBuffer#% in Active Support</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266981-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266981-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p><code>SafeBuffer#%</code> does not propagate the <code>@html_unsafe</code> flag to the newly created buffer. If a <code>SafeBuffer</code> is mutated in place (e.g. via <code>gsub!</code>) and then formatted with <code>%</code> using untrusted arguments, the result incorrectly reports <code>html_safe? == true</code>, bypassing ERB auto-escaping and possibly leading to XSS.</p>
+<h3><a name="p-266981-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266981-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33170</li>
+<li>GHSA-89vf-4333-qx8v</li>
+</ul>
+<h2><a name="p-266981-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266981-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activesupport &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activesupport &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activesupport &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266981-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266981-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/50d732af3b7c8aaf63cbcca0becbc00279b215b7.patch">https://github.com/rails/rails/commit/50d732af3b7c8aaf63cbcca0becbc00279b215b7.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/6e8a81108001d58043de9e54a06fca58962fc2db.patch">https://github.com/rails/rails/commit/6e8a81108001d58043de9e54a06fca58962fc2db.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/c1ad0e8e1972032f3395853a5e99cea035035beb.patch">https://github.com/rails/rails/commit/c1ad0e8e1972032f3395853a5e99cea035035beb.patch</a></li>
+</ul>
+<h3><a name="p-266981-credit-5" class="anchor" href="https://discuss.rubyonrails.org#p-266981-credit-5" aria-label="Heading link"></a>Credit</h3>
+<p>This issue was responsibly reported by Seokchan Yoon (<a href="https://ch4n3.kr/">https://ch4n3.kr</a>)</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33170-possible-xss-vulnerability-in-safebuffer-in-active-support/90910">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33170-possible-xss-vulnerability-in-safebuffer-in-active-support/90910</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:51 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90910</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33170-possible-xss-vulnerability-in-safebuffer-in-active-support/90910.rss">[CVE-2026-33170] Possible XSS vulnerability in SafeBuffer#% in Active Support</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33173] Insufficient filtering of metadata in Active Storage direct uploads</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266980-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266980-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>Active Storage’s <code>DirectUploadsController</code> accepts arbitrary metadata from the client and persists it on the blob. Because internal flags like <code>identified</code> and <code>analyzed</code> are stored in the same metadata hash, a malicious direct-upload client could set these flags.</p>
+<h3><a name="p-266980-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266980-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33173</li>
+<li>GHSA-qcfx-2mfw-w4cg</li>
+</ul>
+<h2><a name="p-266980-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266980-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activestorage &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266980-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266980-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/d9502f5214e2198245a4c1defe9cd02a7c8057d0.patch">https://github.com/rails/rails/commit/d9502f5214e2198245a4c1defe9cd02a7c8057d0.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/8fcb934caadc79c8cc4ce53287046d0f67005b3e.patch">https://github.com/rails/rails/commit/8fcb934caadc79c8cc4ce53287046d0f67005b3e.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/707c0f1f41f067fdf96d54e99d43b28dfaae7e53.patch">https://github.com/rails/rails/commit/707c0f1f41f067fdf96d54e99d43b28dfaae7e53.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33173-insufficient-filtering-of-metadata-in-active-storage-direct-uploads/90909">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33173-insufficient-filtering-of-metadata-in-active-storage-direct-uploads/90909</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:45 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90909</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33173-insufficient-filtering-of-metadata-in-active-storage-direct-uploads/90909.rss">[CVE-2026-33173] Insufficient filtering of metadata in Active Storage direct uploads</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33174] Possible DoS vulnerability in Active Storage proxy mode via Range requests</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266979-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266979-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>When serving files through Active Storage’s <code>Blobs::ProxyController</code>, the controller loads the entire requested byte range into memory before sending it. A request with a large or unbounded Range header (e.g. <code>bytes=0-</code>) could cause the server to allocate memory proportional to the file size, possibly resulting in a DoS vulnerability through memory exhaustion.</p>
+<h3><a name="p-266979-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266979-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33174</li>
+<li>GHSA-r46p-8f7g-vvvg</li>
+</ul>
+<h2><a name="p-266979-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266979-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activestorage &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266979-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266979-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/42012eaaa88dfc7d0030161b2bc8074a7bbce92a.patch">https://github.com/rails/rails/commit/42012eaaa88dfc7d0030161b2bc8074a7bbce92a.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/2cd933c366b777f873d4d590127da2f4a25e4ba5.patch">https://github.com/rails/rails/commit/2cd933c366b777f873d4d590127da2f4a25e4ba5.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/8159a9c3de3f27a2bcf2866b8bf9ceb9075e229b.patch">https://github.com/rails/rails/commit/8159a9c3de3f27a2bcf2866b8bf9ceb9075e229b.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33174-possible-dos-vulnerability-in-active-storage-proxy-mode-via-range-requests/90908">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33174-possible-dos-vulnerability-in-active-storage-proxy-mode-via-range-requests/90908</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:39 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90908</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33174-possible-dos-vulnerability-in-active-storage-proxy-mode-via-range-requests/90908.rss">[CVE-2026-33174] Possible DoS vulnerability in Active Storage proxy mode via Range requests</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33176] Possible DoS vulnerability in Active Support number helpers</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266978-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266978-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>Active Support number helpers accept strings containing scientific notation (e.g. <code>1e10000</code>), which when converted to a string could be expanded into extremely large decimal representations. This can cause excessive memory allocation and CPU consumption when the expanded number is formatted, possibly resulting in a DoS vulnerability.</p>
+<h3><a name="p-266978-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266978-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33176</li>
+<li>GHSA-2j26-frm8-cmj9</li>
+</ul>
+<h2><a name="p-266978-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266978-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activesupport &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activesupport &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activesupport &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266978-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266978-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/19dbab51ca086a657bb86458042bc44314916bcb.patch">https://github.com/rails/rails/commit/19dbab51ca086a657bb86458042bc44314916bcb.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/ee2c59e730e5b8faed502cd2c573109df093f856.patch">https://github.com/rails/rails/commit/ee2c59e730e5b8faed502cd2c573109df093f856.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/ebd6be18120d1136511eb516338e27af25ac0a1a.patch">https://github.com/rails/rails/commit/ebd6be18120d1136511eb516338e27af25ac0a1a.patch</a></li>
+</ul>
+<h3><a name="p-266978-credit-5" class="anchor" href="https://discuss.rubyonrails.org#p-266978-credit-5" aria-label="Heading link"></a>Credit</h3>
+<p>This issue was responsibly reported by hackerone researcher <a href="https://hackerone.com/manun">https://hackerone.com/manun</a></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33176-possible-dos-vulnerability-in-active-support-number-helpers/90907">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33176-possible-dos-vulnerability-in-active-support-number-helpers/90907</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:34 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90907</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33176-possible-dos-vulnerability-in-active-support-number-helpers/90907.rss">[CVE-2026-33176] Possible DoS vulnerability in Active Support number helpers</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33658] Possible DoS vulnerability in Active Storage proxy mode via multi-range requests</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266977-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266977-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>Active Storage’s proxy controller does not limit the number of byte ranges in an HTTP Range header. A request with thousands of small ranges causes disproportionate CPU usage compared to a normal request for the same file, possibly resulting in a DoS vulnerability.</p>
+<h3><a name="p-266977-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266977-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33658</li>
+<li>GHSA-p9fm-f462-ggrg</li>
+</ul>
+<h2><a name="p-266977-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266977-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activestorage &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266977-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266977-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/85ec5b1e00d3197d8c69a5e622e1b398a1b10b06.patch">https://github.com/rails/rails/commit/85ec5b1e00d3197d8c69a5e622e1b398a1b10b06.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/d7da4ef03f99035fba5add8828646f1e9173549c.patch">https://github.com/rails/rails/commit/d7da4ef03f99035fba5add8828646f1e9173549c.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/b8a1665824a43d71cd6406cf9adcae842ceb1c22.patch">https://github.com/rails/rails/commit/b8a1665824a43d71cd6406cf9adcae842ceb1c22.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33658-possible-dos-vulnerability-in-active-storage-proxy-mode-via-multi-range-requests/90906">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33658-possible-dos-vulnerability-in-active-storage-proxy-mode-via-multi-range-requests/90906</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:29 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90906</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33658-possible-dos-vulnerability-in-active-storage-proxy-mode-via-multi-range-requests/90906.rss">[CVE-2026-33658] Possible DoS vulnerability in Active Storage proxy mode via multi-range requests</source>
+        </item>
+        <item>
+          <title>This was a previous vulnerability re-published by mistake. Please ignore CVE-2026-33178</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>Please ignore this post. My automated script to publish these posts picked up a previous vulnerability we’d fixed and attached a new CVE <img src="https://emoji.discourse-cdn.com/twitter/weary_face.png?v=15" title=":weary_face:" class="emoji" alt=":weary_face:" loading="lazy" width="20" height="20"></p>
+<p>Please ignore CVE-2026-33178</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/this-was-a-previous-vulnerability-re-published-by-mistake-please-ignore-cve-2026-33178/90905">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/this-was-a-previous-vulnerability-re-published-by-mistake-please-ignore-cve-2026-33178/90905</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:27 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90905</guid>
+          <source url="https://discuss.rubyonrails.org/t/this-was-a-previous-vulnerability-re-published-by-mistake-please-ignore-cve-2026-33178/90905.rss">This was a previous vulnerability re-published by mistake. Please ignore CVE-2026-33178</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33195] Possible path traversal in Active Storage DiskService</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266975-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266975-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>Active Storage’s <code>DiskService#path_for</code> does not validate that the resolved filesystem path remains within the storage root directory. If a blob key containing path traversal sequences (e.g. <code>../</code>) is used, it could allow reading, writing, or deleting arbitrary files on the server. Blob keys are expected to be trusted strings, but some applications could be passing user input as keys and would be affected.</p>
+<h3><a name="p-266975-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266975-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33195</li>
+<li>GHSA-9xrj-h377-fr87</li>
+</ul>
+<h2><a name="p-266975-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266975-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activestorage &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266975-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266975-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/9b06fbc0f504b8afe333f33d19548f3b85fbe655.patch">https://github.com/rails/rails/commit/9b06fbc0f504b8afe333f33d19548f3b85fbe655.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/a290c8a1ec189d793aa6d7f2570b6a763f675348.patch">https://github.com/rails/rails/commit/a290c8a1ec189d793aa6d7f2570b6a763f675348.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/4933c1e3b8c1bb04925d60347be9f69270392f2c.patch">https://github.com/rails/rails/commit/4933c1e3b8c1bb04925d60347be9f69270392f2c.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33195-possible-path-traversal-in-active-storage-diskservice/90904">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33195-possible-path-traversal-in-active-storage-diskservice/90904</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:21 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90904</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33195-possible-path-traversal-in-active-storage-diskservice/90904.rss">[CVE-2026-33195] Possible path traversal in Active Storage DiskService</source>
+        </item>
+        <item>
+          <title>[CVE-2026-33202] Possible glob injection in Active Storage DiskService</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <h3><a name="p-266974-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-266974-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>Active Storage’s <code>DiskService#delete_prefixed</code> passes blob keys directly to <code>Dir.glob</code> without escaping glob metacharacters. If a blob key contains attacker-controlled input or custom-generated keys with glob metacharacters, it may be possible to delete unintended files from the storage directory.</p>
+<h3><a name="p-266974-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-266974-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<ul>
+<li>CVE-2026-33202</li>
+<li>GHSA-73f9-jhhh-hr5m</li>
+</ul>
+<h2><a name="p-266974-versions-affected-3" class="anchor" href="https://discuss.rubyonrails.org#p-266974-versions-affected-3" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.1, &lt; 8.1.2.1 (patched in 8.1.2.1)</li>
+<li>activestorage &gt;= 8.0, &lt; 8.0.4.1 (patched in 8.0.4.1)</li>
+<li>activestorage &lt; 7.2.3.1 (patched in 7.2.3.1)</li>
+</ul>
+<h2><a name="p-266974-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-266974-patches-4" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.1 - <a href="https://github.com/rails/rails/commit/8c9676b803820110548cdb7523800db43bc6874c.patch">https://github.com/rails/rails/commit/8c9676b803820110548cdb7523800db43bc6874c.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/955284d26e469a9c026a4eee5b21f0414ab0bccf.patch">https://github.com/rails/rails/commit/955284d26e469a9c026a4eee5b21f0414ab0bccf.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/fa19073546360856e9f4dab221fc2c5d73a45e82.patch">https://github.com/rails/rails/commit/fa19073546360856e9f4dab221fc2c5d73a45e82.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2026-33202-possible-glob-injection-in-active-storage-diskservice/90903">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2026-33202-possible-glob-injection-in-active-storage-diskservice/90903</link>
+          <pubDate>Mon, 23 Mar 2026 21:25:17 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-90903</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2026-33202-possible-glob-injection-in-active-storage-diskservice/90903.rss">[CVE-2026-33202] Possible glob injection in Active Storage DiskService</source>
+        </item>
+        <item>
+          <title>[CVE-2025-24293] Active Storage allowed transformation methods potentially unsafe</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>Active Storage attempts to prevent the use of potentially unsafe image
+transformation methods and parameters by default.</p>
+<p>The default allowed list contains three methods allowing for the circumvention
+of the safe defaults which enables potential command injection
+vulnerabilities in cases where arbitrary user supplied input is accepted as
+valid transformation methods or parameters.</p>
+<p>This has been assigned the CVE identifier CVE-2025-24293.</p>
+<p>Versions Affected:  &gt;= 5.2.0
+Not affected:       &lt; 5.2.0
+Fixed Versions:     7.1.5.2, 7.2.2.2, 8.0.2.1</p>
+<ul>
+<li>CVE-2025-24293</li>
+<li>GHSA-r4mg-4433-c7g3</li>
+</ul>
+<h2><a name="p-265310-versions-affected-1" class="anchor" href="https://discuss.rubyonrails.org#p-265310-versions-affected-1" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activestorage &gt;= 8.0, &lt; 8.0.2.1 (patched in 8.0.2.1)</li>
+<li>activestorage &gt;= 7.2, &lt; 7.2.2.2 (patched in 7.2.2.2)</li>
+<li>activestorage &gt;= 0, &lt; 7.1.5.2 (patched in 7.1.5.2)</li>
+</ul>
+<h2><a name="p-265310-impact-2" class="anchor" href="https://discuss.rubyonrails.org#p-265310-impact-2" aria-label="Heading link"></a>Impact</h2>
+<p>This vulnerability impacts applications that use Active Storage with the image_processing processing gem in addition to mini_magick as the image processor.</p>
+<p>Vulnerable code will look something similar to this:</p>
+<pre data-code-wrap="ruby"><code class="lang-ruby">&lt;%= image_tag blob.variant(params[:t] =&gt; params[:v]) %&gt;
+</code></pre>
+<p>Where the transformation method or its arguments are untrusted arbitrary input.</p>
+<p>All users running an affected release should either upgrade or use one of the workarounds immediately.</p>
+<h2><a name="p-265310-releases-3" class="anchor" href="https://discuss.rubyonrails.org#p-265310-releases-3" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-265310-workarounds-4" class="anchor" href="https://discuss.rubyonrails.org#p-265310-workarounds-4" aria-label="Heading link"></a>Workarounds</h2>
+<p>Consuming user supplied input for image transformation methods or their parameters is unsupported behavior and should be considered dangerous.</p>
+<p>Strict validation of user supplied methods and parameters should be performed as well as having a strong <a href="https://imagemagick.org/script/security-policy.php">ImageMagick security policy</a> deployed.</p>
+<h2><a name="p-265310-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-265310-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thank you <a href="https://hackerone.com/lio346">lio346</a> for reporting this!</p>
+<h2><a name="p-265310-patches-6" class="anchor" href="https://discuss.rubyonrails.org#p-265310-patches-6" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/2d612735ac0d9712fdfffaf80afa627e7295f6ce.patch">https://github.com/rails/rails/commit/2d612735ac0d9712fdfffaf80afa627e7295f6ce.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/fb8f3a18c3d97524c0efc29150d1e5f3162fbb13.patch">https://github.com/rails/rails/commit/fb8f3a18c3d97524c0efc29150d1e5f3162fbb13.patch</a></li>
+<li>7.1 - <a href="https://github.com/rails/rails/commit/1b1adf6ee6ca0f3104fcfce79360b2ec1e06a354.patch">https://github.com/rails/rails/commit/1b1adf6ee6ca0f3104fcfce79360b2ec1e06a354.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2025-24293-active-storage-allowed-transformation-methods-potentially-unsafe/89670">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2025-24293-active-storage-allowed-transformation-methods-potentially-unsafe/89670</link>
+          <pubDate>Wed, 13 Aug 2025 20:46:54 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-89670</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2025-24293-active-storage-allowed-transformation-methods-potentially-unsafe/89670.rss">[CVE-2025-24293] Active Storage allowed transformation methods potentially unsafe</source>
+        </item>
+        <item>
+          <title>[CVE-2025-55193] ANSI escape injection in Active Record logging</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>This vulnerability has been assigned the CVE identifier CVE-2025-55193</p>
+<h3><a name="p-265309-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-265309-impact-1" aria-label="Heading link"></a>Impact</h3>
+<p>The ID passed to <code>find</code> or similar methods may be logged without escaping. If this is directly to the terminal it may include unescaped ANSI sequences.</p>
+<h3><a name="p-265309-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-265309-releases-2" aria-label="Heading link"></a>Releases</h3>
+<p>The fixed releases are available at the normal locations.</p>
+<h3><a name="p-265309-credits-3" class="anchor" href="https://discuss.rubyonrails.org#p-265309-credits-3" aria-label="Heading link"></a>Credits</h3>
+<p>Thanks to <a href="https://hackerone.com/lio346">lio346</a> for reporting this vulnerability</p>
+<ul>
+<li>CVE-2025-55193</li>
+<li>GHSA-76r7-hhxj-r776</li>
+</ul>
+<h2><a name="p-265309-versions-affected-4" class="anchor" href="https://discuss.rubyonrails.org#p-265309-versions-affected-4" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>activerecord &gt;= 8.0, &lt; 8.0.2.1 (patched in 8.0.2.1)</li>
+<li>activerecord &gt;= 7.2, &lt; 7.2.2.2 (patched in 7.2.2.2)</li>
+<li>activerecord &gt;= 0, &lt; 7.1.5.2 (patched in 7.1.5.2)</li>
+</ul>
+<h2><a name="p-265309-patches-5" class="anchor" href="https://discuss.rubyonrails.org#p-265309-patches-5" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/568c0bc2f1e74c65d150a84b89a080949bf9eb9b.patch">https://github.com/rails/rails/commit/568c0bc2f1e74c65d150a84b89a080949bf9eb9b.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/6a944ca4805e72050a0fbb1a461534eb760d3202.patch">https://github.com/rails/rails/commit/6a944ca4805e72050a0fbb1a461534eb760d3202.patch</a></li>
+<li>7.1 - <a href="https://github.com/rails/rails/commit/3beef20013736fd52c5dcfdf061f7999ba318290.patch">https://github.com/rails/rails/commit/3beef20013736fd52c5dcfdf061f7999ba318290.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2025-55193-ansi-escape-injection-in-active-record-logging/89669">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2025-55193-ansi-escape-injection-in-active-record-logging/89669</link>
+          <pubDate>Wed, 13 Aug 2025 20:46:51 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-89669</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2025-55193-ansi-escape-injection-in-active-record-logging/89669.rss">[CVE-2025-55193] ANSI escape injection in Active Record logging</source>
+        </item>
+        <item>
+          <title>[CVE-2024-54133] Possible Content Security Policy bypass in Action Dispatch</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>There is a possible Cross Site Scripting (XSS) vulnerability  in the <code>content_security_policy</code> helper in Action Pack.</p>
+<ul>
+<li>CVE-2024-54133</li>
+<li>GHSA-vfm5-rmrh-j26v</li>
+</ul>
+<h2><a name="p-262687-versions-affected-1" class="anchor" href="https://discuss.rubyonrails.org#p-262687-versions-affected-1" aria-label="Heading link"></a>Versions affected</h2>
+<ul>
+<li>actionpack &gt;= 5.2.0, &lt; 7.0.8.7 (patched in 7.0.8.7)</li>
+<li>actionpack &gt;= 7.1.0, &lt;  7.1.5.1 (patched in 7.1.5.1)</li>
+<li>actionpack &gt;= 7.2.0, &lt; 7.2.2.1 (patched in 7.2.2.1)</li>
+<li>actionpack &gt;= 8.0.0, &lt; 8.0.0.1 (patched in 8.0.0.1)</li>
+</ul>
+<h2><a name="p-262687-impact-2" class="anchor" href="https://discuss.rubyonrails.org#p-262687-impact-2" aria-label="Heading link"></a>Impact</h2>
+<p>Applications which set Content-Security-Policy (CSP) headers dynamically from untrusted user input may be vulnerable to carefully crafted inputs being able to inject new directives into the CSP. This could lead to a bypass of the CSP and its protection against XSS and other attacks.</p>
+<h2><a name="p-262687-releases-3" class="anchor" href="https://discuss.rubyonrails.org#p-262687-releases-3" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-262687-workarounds-4" class="anchor" href="https://discuss.rubyonrails.org#p-262687-workarounds-4" aria-label="Heading link"></a>Workarounds</h2>
+<p>Applications can avoid setting CSP headers dynamically from untrusted input, or can validate/sanitize that input.</p>
+<h2><a name="p-262687-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-262687-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thanks to <a href="https://hackerone.com/ryotak">ryotak</a> for the report!</p>
+<h2><a name="p-262687-patches-6" class="anchor" href="https://discuss.rubyonrails.org#p-262687-patches-6" aria-label="Heading link"></a>Patches</h2>
+<ul>
+<li>7.0 - <a href="https://github.com/rails/rails/commit/cb16a3bb515b5d769f73926d9757270ace691f1d.patch">https://github.com/rails/rails/commit/cb16a3bb515b5d769f73926d9757270ace691f1d.patch</a></li>
+<li>7.1 - <a href="https://github.com/rails/rails/commit/5558e72f22fc69c1c407b31ac5fb3b4ce087b542.patch">https://github.com/rails/rails/commit/5558e72f22fc69c1c407b31ac5fb3b4ce087b542.patch</a></li>
+<li>7.2 - <a href="https://github.com/rails/rails/commit/3da2479cfe1e00177114b17e496213c40d286b3a.patch">https://github.com/rails/rails/commit/3da2479cfe1e00177114b17e496213c40d286b3a.patch</a></li>
+<li>8.0 - <a href="https://github.com/rails/rails/commit/2e3f41e4538b9ca1044357f6644f037bbb7c6c49.patch">https://github.com/rails/rails/commit/2e3f41e4538b9ca1044357f6644f037bbb7c6c49.patch</a></li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-54133-possible-content-security-policy-bypass-in-action-dispatch/88178">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-54133-possible-content-security-policy-bypass-in-action-dispatch/88178</link>
+          <pubDate>Tue, 10 Dec 2024 21:54:19 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-88178</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-54133-possible-content-security-policy-bypass-in-action-dispatch/88178.rss">[CVE-2024-54133] Possible Content Security Policy bypass in Action Dispatch</source>
+        </item>
+        <item>
+          <title>Rails-html-sanitizer v1.6.1 addresses multiple CVEs</title>
+          <dc:creator><![CDATA[Mike Dalessio]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>rails-html-sanitizer v1.6.1 has been released. This is a security update which addresses multiple CVEs in v1.6.0 when used with Rails &gt;= 7.1 and HTML5 sanitization. Users are recommended to upgrade immediately.</p>
+<p>The relevant <a href="https://github.com/rails/rails-html-sanitizer/releases/tag/v1.6.1">release notes</a> are reproduced below, for more information please read the linked GHSAs.</p>
+<hr>
+<ul>
+<li>
+<p>The dependency on Nokogiri is updated to v1.15.7 or &gt;=1.16.8.</p>
+<p>This change addresses CVE-2024-53985 (<a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-w8gc-x259-rc7x" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer 1.6.0 · Advisory · rails/rails-html-sanitizer · GitHub</a>).</p>
+<p><em>Mike Dalessio</em></p>
+</li>
+<li>
+<p>Disallowed tags will be pruned when they appear in foreign content (i.e. SVG or MathML content),
+regardless of the <code>prune:</code> option value. Previously, disallowed tags were “stripped” unless the
+gem was configured with the <code>prune: true</code> option.</p>
+<p>The CVEs addressed by this change are:</p>
+<ul>
+<li>CVE-2024-53986 (<a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-638j-pmjw-jq48" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer 1.6.0 · Advisory · rails/rails-html-sanitizer · GitHub</a>)</li>
+<li>CVE-2024-53987 (<a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-2x5m-9ch4-qgrr" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer 1.6.0 · Advisory · rails/rails-html-sanitizer · GitHub</a>)</li>
+</ul>
+<p><em>Mike Dalessio</em></p>
+</li>
+<li>
+<p>The tags “noscript”, “mglyph”, and “malignmark” will not be allowed, even if explicitly added to
+the allowlist. If applications try to allow any of these tags, a warning is emitted and the tags
+are removed from the allow-list.</p>
+<p>The CVEs addressed by this change are:</p>
+<ul>
+<li>CVE-2024-53988 (<a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-cfjx-w229-hgx5" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer 1.6.0 · Advisory · rails/rails-html-sanitizer · GitHub</a>)</li>
+<li>CVE-2024-53989 (<a href="https://github.com/rails/rails-html-sanitizer/security/advisories/GHSA-rxv5-gxqc-xx8g" class="inline-onebox">Possible XSS vulnerability with certain configurations of rails-html-sanitizer 1.6.0 · Advisory · rails/rails-html-sanitizer · GitHub</a>)</li>
+</ul>
+<p>Please note that we <em>may</em> restore support for allowing “noscript” in a future release. We do not
+expect to ever allow “mglyph” or “malignmark”, though, especially since browser support is minimal
+for these tags.</p>
+<p><em>Mike Dalessio</em></p>
+</li>
+</ul>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/rails-html-sanitizer-v1-6-1-addresses-multiple-cves/88092">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/rails-html-sanitizer-v1-6-1-addresses-multiple-cves/88092</link>
+          <pubDate>Mon, 02 Dec 2024 20:59:07 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-88092</guid>
+          <source url="https://discuss.rubyonrails.org/t/rails-html-sanitizer-v1-6-1-addresses-multiple-cves/88092.rss">Rails-html-sanitizer v1.6.1 addresses multiple CVEs</source>
+        </item>
+        <item>
+          <title>[CVE-2024-41128] Possible ReDoS vulnerability in query parameter filtering in Action Dispatch</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>There is a possible ReDoS vulnerability in the query parameter filtering routines of Action Dispatch. This vulnerability has been assigned the CVE identifier CVE-2024-41128.</p>
+<p>Versions Affected:  &lt; 8.0.0.beta1<br>
+Not affected:       &gt;= 8.0.0.beta1, Ruby &gt;= 3.2<br>
+Fixed Versions:     7.2.1.1, 7.1.4.1, 7.0.8.5, 6.1.7.9</p>
+<h2><a name="p-261806-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-261806-impact-1" aria-label="Heading link"></a>Impact</h2>
+<p>Carefully crafted query parameters can cause query parameter filtering to take an unexpected amount of time, possibly resulting in a DoS vulnerability. All users running an affected release should either upgrade or apply the relevant patch immediately.</p>
+<p>Ruby 3.2 has mitigations for this problem, so Rails applications using Ruby 3.2 or newer are unaffected. Rails 8.0.0.beta1 requires Ruby 3.2 or greater so is unaffected.</p>
+<h2><a name="p-261806-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-261806-releases-2" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-261806-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-261806-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>Users on Ruby 3.2 are unaffected by this issue.</p>
+<h2><a name="p-261806-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-261806-patches-4" aria-label="Heading link"></a>Patches</h2>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/4aBlEOb3UqAXODBL2rkrOKs0YLJ.patch">7-0-0002-Avoid-backtracking-in-filtered_query_string.patch</a> (1.4 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/8A4yrPDHlpIjXPFSLcXfjLCcaBo.patch">7-1-0002-Avoid-backtracking-in-filtered_query_string.patch</a> (1.4 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/ldGJ2JgNl2vbT74GJJpQyyplVaY.patch">7-2-0002-Avoid-backtracking-in-filtered_query_string.patch</a> (2.4 KB)</p>
+<h2><a name="p-261806-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-261806-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thanks to <a href="https://hackerone.com/scyoon">scyoon</a> for the report and patches!</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-41128-possible-redos-vulnerability-in-query-parameter-filtering-in-action-dispatch/87699">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-41128-possible-redos-vulnerability-in-query-parameter-filtering-in-action-dispatch/87699</link>
+          <pubDate>Tue, 15 Oct 2024 21:10:52 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-87699</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-41128-possible-redos-vulnerability-in-query-parameter-filtering-in-action-dispatch/87699.rss">[CVE-2024-41128] Possible ReDoS vulnerability in query parameter filtering in Action Dispatch</source>
+        </item>
+        <item>
+          <title>[CVE-2024-47887] Possible ReDoS vulnerability in HTTP Token authentication in Action Controller</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>There is a possible ReDoS vulnerability in Action Controller’s HTTP Token authentication. This vulnerability has been assigned the CVE identifier CVE-2024-47887.</p>
+<p>Versions Affected:  &lt; 8.0.0.beta1<br>
+Not affected:       &gt;= 8.0.0.beta1, Ruby &gt;= 3.2<br>
+Fixed Versions:     7.2.1.1, 7.1.4.1, 7.0.8.5, 6.1.7.9</p>
+<h2><a name="p-261805-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-261805-impact-1" aria-label="Heading link"></a>Impact</h2>
+<p>For applications using HTTP Token authentication via <code>authenticate_or_request_with_http_token</code> or similar, a carefully crafted header may cause header parsing to take an unexpected amount of time, possibly resulting in a DoS vulnerability. All users running an affected release should either upgrade or apply the relevant patch immediately.</p>
+<p>Ruby 3.2 has mitigations for this problem, so Rails applications using Ruby 3.2 or newer are unaffected. Rails 8.0.0.beta1 depends on Ruby 3.2 or greater so is unaffected.</p>
+<h2><a name="p-261805-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-261805-releases-2" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-261805-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-261805-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>Users on Ruby 3.2 are unaffected by this issue.</p>
+<h2><a name="p-261805-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-261805-patches-4" aria-label="Heading link"></a>Patches</h2>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/bHtFkma1jtr0FFprDKVCSwnmtjw.patch">7-0-0001-Avoid-backtracking-in-Token-raw_params.patch</a> (1.2 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/qfhsYMm8XFBZmvvu79ocgemyv8C.patch">7-1-0001-Avoid-backtracking-in-Token-raw_params.patch</a> (1.5 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/8MmULLfAJpypnDbaJ0rUkWpQriG.patch">7-2-0001-Avoid-backtracking-in-Token-raw_params.patch</a> (1.4 KB)</p>
+<h2><a name="p-261805-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-261805-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thanks to <a href="https://hackerone.com/scyoon">scyoon</a> for reporting</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-47887-possible-redos-vulnerability-in-http-token-authentication-in-action-controller/87698">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-47887-possible-redos-vulnerability-in-http-token-authentication-in-action-controller/87698</link>
+          <pubDate>Tue, 15 Oct 2024 21:07:54 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-87698</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-47887-possible-redos-vulnerability-in-http-token-authentication-in-action-controller/87698.rss">[CVE-2024-47887] Possible ReDoS vulnerability in HTTP Token authentication in Action Controller</source>
+        </item>
+        <item>
+          <title>[CVE-2024-47888] Possible ReDoS vulnerability in plain_text_for_blockquote_node in Action Text</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>There is a possible ReDoS vulnerability in the plain_text_for_blockquote_node helper in Action Text. This vulnerability has been assigned the CVE identifier CVE-2024-47888.</p>
+<p>Versions Affected: &lt; 8.0.0.beta1<br>
+Not affected: &gt;= 8.0.0.beta1, Ruby &gt;= 3.2<br>
+Fixed Versions: 7.2.1.1, 7.1.4.1, 7.0.8.5, 6.1.7.9</p>
+<h2><a name="p-261803-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-261803-impact-1" aria-label="Heading link"></a>Impact</h2>
+<p>Carefully crafted text can cause the plain_text_for_blockquote_node helper to take an unexpected amount of time, possibly resulting in a DoS vulnerability. All users running an affected release should either upgrade or apply the relevant patch immediately.</p>
+<p>Ruby 3.2 has mitigations for this problem, so Rails applications using Ruby 3.2 or newer are unaffected. Rails 8.0.0.beta1 depends on Ruby 3.2 or greater so is unaffected.</p>
+<h2><a name="p-261803-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-261803-releases-2" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-261803-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-261803-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>Users can avoid calling <code>plain_text_for_blockquote_node</code> or upgrade to Ruby 3.2</p>
+<h2><a name="p-261803-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-261803-patches-4" aria-label="Heading link"></a>Patches</h2>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/3ATwiecp58JL1BM1fpVuflRJJD4.patch">7-0-0003-ActionText-Avoid-backtracing-in-plain_text_for_block.patch</a> (2.0 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/tZupWl2UHKhjxdKtTgNu2g7wAxP.patch">7-1-0003-Avoid-backtracing-in-plain_text_for_blockquote_node.patch</a> (2.0 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/sUNWljC25MJXYaH7HzoOyopvc7J.patch">7-2-0003-Avoid-backtracing-in-plain_text_for_blockquote_node.patch</a> (2.0 KB)</p>
+<h2><a name="p-261803-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-261803-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thanks to <a href="https://hackerone.com/ooooooo_q">ooooooo_q</a> for the report!</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-47888-possible-redos-vulnerability-in-plain-text-for-blockquote-node-in-action-text/87696">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-47888-possible-redos-vulnerability-in-plain-text-for-blockquote-node-in-action-text/87696</link>
+          <pubDate>Tue, 15 Oct 2024 21:04:36 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-87696</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-47888-possible-redos-vulnerability-in-plain-text-for-blockquote-node-in-action-text/87696.rss">[CVE-2024-47888] Possible ReDoS vulnerability in plain_text_for_blockquote_node in Action Text</source>
+        </item>
+        <item>
+          <title>[CVE-2024-47889] Possible ReDoS vulnerability in block_format in Action Mailer</title>
+          <dc:creator><![CDATA[John Hawthorn]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>There is a possible ReDoS vulnerability in the block_format helper in Action Mailer. This vulnerability has been assigned the CVE identifier CVE-2024-47889.</p>
+<p>Versions Affected: &lt; 8.0.0.beta1<br>
+Not affected: &gt;= 8.0.0.beta1, Ruby &gt;= 3.2<br>
+Fixed Versions: 7.2.1.1, 7.1.4.1, 7.0.8.5, 6.1.7.9</p>
+<h2><a name="p-261802-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-261802-impact-1" aria-label="Heading link"></a>Impact</h2>
+<p>Carefully crafted text can cause the block_format helper to take an unexpected amount of time, possibly resulting in a DoS vulnerability. All users running an affected release should either upgrade or apply the relevant patch immediately.</p>
+<p>Ruby 3.2 has mitigations for this problem, so Rails applications using Ruby 3.2 or newer are unaffected. Rails 8.0.0.beta1 requires Ruby 3.2 or greater so is unaffected.</p>
+<h2><a name="p-261802-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-261802-releases-2" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-261802-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-261802-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>Users can avoid calling the <code>block_format</code> helper or upgrade to Ruby 3.2</p>
+<h2><a name="p-261802-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-261802-patches-4" aria-label="Heading link"></a>Patches</h2>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/3Nh3EFsyD8CeEGH5Z4QT7KFs21S.patch">7-0-0004-Avoid-backtracking-in-ActionMailer-block_format.patch</a> (2.2 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/iuNHB4jNw4zIwry1fHI7PliDk3Z.patch">7-1-0004-Avoid-backtracking-in-ActionMailer-block_format.patch</a> (2.2 KB)</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/qfhWX9PuYOeIkkN3W1nzXiPC0l5.patch">7-2-0004-Avoid-backtracking-in-ActionMailer-block_format.patch</a> (2.2 KB)</p>
+<h2><a name="p-261802-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-261802-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thanks to yuki_osaki  for the report!</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-47889-possible-redos-vulnerability-in-block-format-in-action-mailer/87695">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-47889-possible-redos-vulnerability-in-block-format-in-action-mailer/87695</link>
+          <pubDate>Tue, 15 Oct 2024 21:00:07 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-87695</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-47889-possible-redos-vulnerability-in-block-format-in-action-mailer/87695.rss">[CVE-2024-47889] Possible ReDoS vulnerability in block_format in Action Mailer</source>
+        </item>
+        <item>
+          <title>[CVE-2024-32464] ActionText ContentAttachment&#39;s can Contain Unsanitized HTML</title>
+          <dc:creator><![CDATA[Aaron Patterson]]></dc:creator>
+          <category>Security Announcements</category>
+          <description><![CDATA[
+            <p>Instances of ActionText::Attachable::ContentAttachment included
+within a rich_text_area tag could potentially contain unsanitized
+HTML.</p>
+<p>This has been assigned the CVE identifier CVE-2024-32464.</p>
+<p>Versions Affected:  &gt;= 7.1.0
+Not affected:       &lt; 7.1.0
+Fixed Versions:     7.1.3.4</p>
+<h2><a name="p-259255-impact-1" class="anchor" href="https://discuss.rubyonrails.org#p-259255-impact-1" aria-label="Heading link"></a>Impact</h2>
+<p>This could lead to a potential cross site scripting issue
+within the Trix editor.</p>
+<h2><a name="p-259255-releases-2" class="anchor" href="https://discuss.rubyonrails.org#p-259255-releases-2" aria-label="Heading link"></a>Releases</h2>
+<p>The fixed releases are available at the normal locations.</p>
+<h2><a name="p-259255-workarounds-3" class="anchor" href="https://discuss.rubyonrails.org#p-259255-workarounds-3" aria-label="Heading link"></a>Workarounds</h2>
+<p>N/A</p>
+<h2><a name="p-259255-patches-4" class="anchor" href="https://discuss.rubyonrails.org#p-259255-patches-4" aria-label="Heading link"></a>Patches</h2>
+<p>To aid users who aren’t able to upgrade immediately we have provided patches for
+the supported release series in accordance with our
+<a href="https://guides.rubyonrails.org/maintenance_policy.html#security-issues">maintenance policy</a>
+regarding security issues. They are in git-am format and consist of a
+single changeset.</p>
+<ul>
+<li>action_text_content_attachment_xss_7_1_stable.patch - Patch for 7.1 series</li>
+</ul>
+<h2><a name="p-259255-credits-5" class="anchor" href="https://discuss.rubyonrails.org#p-259255-credits-5" aria-label="Heading link"></a>Credits</h2>
+<p>Thank you <a href="https://hackerone.com/ooooooo_q">ooooooo_q</a> for reporting this!</p>
+<p><a class="attachment" href="https://discuss.rubyonrails.org/uploads/short-url/aVxmGVExucUzrnlJzhtMkCGZQN9.patch">action_text_content_attachment_xss_7_1_stable.patch</a> (3.3 KB)</p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discuss.rubyonrails.org/t/cve-2024-32464-actiontext-contentattachments-can-contain-unsanitized-html/85949">Read full topic</a></p>
+          ]]></description>
+          <link>https://discuss.rubyonrails.org/t/cve-2024-32464-actiontext-contentattachments-can-contain-unsanitized-html/85949</link>
+          <pubDate>Tue, 04 Jun 2024 18:10:16 +0000</pubDate>
+          <discourse:topicPinned>No</discourse:topicPinned>
+          <discourse:topicClosed>No</discourse:topicClosed>
+          <discourse:topicArchived>No</discourse:topicArchived>
+          <guid isPermaLink="false">discuss.rubyonrails.org-topic-85949</guid>
+          <source url="https://discuss.rubyonrails.org/t/cve-2024-32464-actiontext-contentattachments-can-contain-unsanitized-html/85949.rss">[CVE-2024-32464] ActionText ContentAttachment&#39;s can Contain Unsanitized HTML</source>
+        </item>
+  </channel>
+</rss>

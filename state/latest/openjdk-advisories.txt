@@ -1,0 +1,151 @@
+OpenJDK Vulnerability Advisories
+We publish fixes to vulnerabilities in OpenJDK source code four
+times per year, in January, April, July, and October, on the third
+Tuesday of the month. We post advisories describing the severity,
+area, and affected versions of each fix to the vuln-announce
+mailing list, signed with the </groups/vulnerability/advisories/advisory-key> advisory key
+for integrity.
+We encourage you to update to the latest version of your
+preferred JDK distribution as soon as possible.
+Advisories
+2026/11/17 (latest)
+2026/10/24
+2026/10/21
+2026/10/20
+2026/08/18
+2026/07/21
+2026/04/21
+2026/01/20
+2025/10/21
+2025/07/15
+2025/04/15
+2025/01/21
+2024/10/15
+2024/07/16
+2024/04/16
+2024/01/16
+2023/10/17
+2023/07/18
+2023/04/18
+2023/01/17
+2022/10/18
+2022/07/19
+2022/04/19
+2022/01/18
+2021/10/19
+2021/07/20
+2021/04/20
+2021/01/19
+2020/10/20
+2020/07/14
+2020/04/14
+2020/01/14
+2019/10/15
+2019/07/16
+2019/04/16
+How to report a vulnerability
+Please see the reporting
+instructions for information about how to report a
+vulnerability.
+Last update: 2026/11/17 20:24 UTC
+Installing
+Contributing
+Sponsoring
+Developers' Guide
+Vulnerabilities
+JDK GA/EA Builds
+Mailing lists
+Wiki
+· IRC
+Mastodon
+Bluesky
+Bylaws · Census
+Legal · AI
+Workshop
+JEP Process
+Source code
+GitHub
+Mercurial
+Tools
+Git
+jtreg harness
+Groups
+(overview,
+archive)
+Adoption
+Build
+Client Libraries
+Compatibility & Specification Review
+Compiler
+Conformance
+Core Libraries
+Governing Board
+HotSpot
+IDE Tooling & Support
+Internationalization
+Members
+Networking
+Porters
+Quality
+</groups/security> Security
+Serviceability
+Vulnerability
+Web
+Projects
+(overview,
+archive)
+Amber
+Babylon
+Brisbane
+CRaC
+Code Tools
+Coin
+Common VM Interface
+Detroit
+Developers' Guide
+Duke
+IcedTea
+JDK 8 Updates
+JDK 9
+JDK
+(…,
+26,
+27,
+28)
+JDK Updates
+JMC
+Jigsaw
+Lanai
+Leyden
+Lilliput
+Loom
+Memory Model Update
+Multi-Language VM
+Nashorn
+New I/O
+OpenJFX
+Panama
+Port: AArch32
+Port: AArch64
+Port: BSD
+Port: Haiku
+Port: MIPS
+Port: Mobile
+Port: PowerPC/AIX
+Port: RISC-V
+Port: s390x
+SCTP
+Shenandoah
+Skara
+Sumatra
+Tsan
+Valhalla
+Wakefield
+Zero
+ZGC
+© 2026 Oracle Corporation and/or its affiliates
+Terms of Use
+·
+License: GPLv2
+· Privacy
+· Trademarks

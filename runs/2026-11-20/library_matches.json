@@ -1,0 +1,48 @@
+{
+  "status": "ok",
+  "scanned_lockfiles": 1,
+  "total_findings": 2,
+  "services": [
+    {
+      "service": "_sample-notification-service",
+      "lockfiles": [
+        "_sample-notification-service/package-lock.json"
+      ],
+      "findings": [
+        {
+          "package": "body-parser",
+          "ecosystem": "npm",
+          "installed": "1.20.3",
+          "id": "GHSA-27r3-jxmh-p828",
+          "aliases": [
+            "CVE-2026-111181"
+          ],
+          "summary": "body-parser vulnerable to Denial of Service via trailing bytes after a compressed request body",
+          "severity": "7.5",
+          "fixed": [
+            "1.20.9",
+            "2.4.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-27r3-jxmh-p828"
+        },
+        {
+          "package": "body-parser",
+          "ecosystem": "npm",
+          "installed": "1.20.3",
+          "id": "GHSA-v422-hmwv-36x6",
+          "aliases": [
+            "CVE-2026-12590"
+          ],
+          "summary": "body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement",
+          "severity": "3.7",
+          "fixed": [
+            "1.20.6",
+            "2.3.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-v422-hmwv-36x6"
+        }
+      ],
+      "count": 2
+    }
+  ]
+}

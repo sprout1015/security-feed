@@ -1,0 +1,1065 @@
+[
+ {
+  "ghsa_id": "GHSA-ww2c-pqp9-rvrq",
+  "cve_id": null,
+  "summary": "Cross-Origin Auth Token Leakage Through Broadcasting JSONP Callback",
+  "description": "### Summary\r\n\r\nThe Pusher and Reverb broadcasters answered the `/broadcasting/auth` endpoint with a JSONP response when a `callback` parameter was present. The endpoint also accepts GET requests without CSRF protection. A malicious page could therefore load the endpoint as a script and read the channel auth token of a logged-in user.\r\n\r\nWith that token, an attacker could subscribe to the user's private and presence channels and receive their events. With the default `SameSite=Lax` session cookie, the attacker's page has to be on a subdomain of the same site. Applications using `SameSite=None` could be attacked from any domain.\r\n\r\n## Patch\r\n\r\n- Fixed in [#58971](https://github.com/laravel/framework/pull/58971). JSONP responses are now off by default and must be enabled with the `jsonp` broadcasting config option.",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+   "score": 3.1
+  },
+  "published_at": "2026-11-18T13:25:22Z",
+  "updated_at": "2026-11-18T13:25:22Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.53.0",
+    "patched_versions": ">=12.53.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-ww2c-pqp9-rvrq",
+  "cwe_ids": [
+   "CWE-346"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-ch34-gjmh-c4hp",
+  "cve_id": null,
+  "summary": "Fluent Rule::exists() and Rule::unique() where() values can be interpreted as reserved predicates instead of literal values",
+  "description": "### Impact\r\n\r\nWhen `Rule::exists()` or `Rule::unique()` is scoped with the fluent `where()` method, the condition is serialized into the string rule format and parsed again. A scalar value of `NULL`, `NOT_NULL`, or one starting with `!` could be evaluated as an IS NULL, IS NOT NULL, or not-equal predicate instead of a literal comparison. If an attacker can influence a scope value, such as a tenant key, and the application relies on the rule to verify ownership of a referenced record, the validation can accept records from other scopes. For `unique`, the scope can be widened. Applications that use independent authorization checks or closure-based `where()` conditions are not affected in the same way.\r\n\r\n### Patches\r\n\r\nA fix that makes the validator read conditions from the rule object so `where()` values are compared literally is proposed in laravel/framework pull requests 62425 (13.x) and 62426 (12.x).\r\n\r\n### Workarounds\r\n\r\nDo not pass user-influenced values to the scalar `where()` form. Use a closure-based `where()` and perform independent ownership authorization of referenced records.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "score": 4.8
+  },
+  "published_at": "2026-11-18T12:47:46Z",
+  "updated_at": "2026-11-18T12:47:46Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-ch34-gjmh-c4hp",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-h84h-g58v-xg2h",
+  "cve_id": null,
+  "summary": "Quadratic regex backtracking in the decimal validation rule can cause denial of service",
+  "description": "### Impact\r\n\r\nThe `decimal` validation rule counts decimal places with a regular expression that backtracks quadratically on certain input. A very long run of digits followed by an exponent (for example, a value ending in `e5`) passes the rule's `is_numeric()` check and then forces excessive regex backtracking before the match fails. Any application that validates a request field with the `decimal` rule is affected, with no non-default configuration. A single large request can consume several seconds of worker CPU, so a low rate of such requests can exhaust the PHP worker pool and cause denial of service.\r\n\r\n### Patches\r\n\r\nThe fix makes the regular expression's quantifiers possessive, which removes the backtracking without changing validation results. Fixes have been proposed for the 13.x and 12.x branches in https://github.com/laravel/framework/pull/62420 and https://github.com/laravel/framework/pull/62421.\r\n\r\n### Workarounds\r\n\r\nUse the `bail` rule and order a size-limiting rule such as `max` or `digits_between` before `decimal`, so oversized values are rejected before the `decimal` rule runs.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:45:27Z",
+  "updated_at": "2026-11-18T12:45:27Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-h84h-g58v-xg2h",
+  "cwe_ids": [
+   "CWE-1333"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-h2hg-mfj4-rg7q",
+  "cve_id": null,
+  "summary": "`in` / `Rule::in` validation rule bypass via loose comparison",
+  "description": "## Summary\r\n\r\nThe `in` validation rule (and `Rule::in`, and `not_in` via the same code) compares\r\nthe scalar input to the allowlist with a **non-strict** `in_array()`. PHP 8 then\r\ncompares numeric strings numerically, so many values that are **not literally in\r\nthe list** pass validation — including whitespace-padded, leading-zero,\r\nsigned, and scientific-notation forms, and an embedded newline. The value\r\nreturned by `validated()` / `valid()` is the **raw, un-canonicalized** input, so\r\nthe attacker-controlled bytes flow through to the application even though the\r\nrule was supposed to constrain them to a fixed set.\r\n\r\nThe array branch of the same method already compares as strings\r\n(`array_diff`), so this is an internal inconsistency, not intended behavior.\r\n\r\n## Impact\r\n\r\nAny allowlist of numeric values — feature flags (`in:0,1`), status codes,\r\nrole/tenant/enum IDs stored as integers may be bypassed with an\r\nequivalent-but-not-identical representation. \r\n\r\n## Patched\r\nFixed in [#61146](https://github.com/laravel/framework/pull/61146) \r\n\r\n## Reported by\r\n— Sergey Sannikov, GitHub @semx",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:44:24Z",
+  "updated_at": "2026-11-18T12:44:24Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.67.0",
+    "patched_versions": ">=12.67.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.26.0",
+    "patched_versions": ">=13.26.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-h2hg-mfj4-rg7q",
+  "cwe_ids": [
+   "CWE-697"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-wwq3-m3j5-wv66",
+  "cve_id": null,
+  "summary": "Validation exists rule can be bypassed with integer or boolean input on MySQL/MariaDB",
+  "description": "### Impact\r\n\r\nThe `exists` and `unique` validation rules passed integer and boolean values from the request unchanged to the database query. On MySQL and MariaDB, comparing a string column with an integer casts the column to a number. As a result, JSON input such as `0`, `false` or `[0]` could satisfy a rule like `required|exists:invites,code` on a non-numeric string column without a valid value. An unauthenticated attacker who can submit JSON could bypass \"must reference an existing record\" checks. PostgreSQL and SQLite are not affected. Form-encoded input is always a string and is not affected.\r\n\r\n### Patches\r\n\r\n`DatabasePresenceVerifier` now compares integers and booleans as strings. The fixes are merged on the 13.x branch (https://github.com/laravel/framework/pull/62447) and the 12.x branch (https://github.com/laravel/framework/pull/62448).\r\n\r\n### Workarounds\r\n\r\nAdd the `string` rule (or `integer`, as appropriate) before `exists` and `unique` rules, or cast the input in `prepareForValidation()`.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:44:16Z",
+  "updated_at": "2026-11-18T12:44:16Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-wwq3-m3j5-wv66",
+  "cwe_ids": [
+   "CWE-843",
+   "CWE-1287"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-f3ph-5p6j-34xr",
+  "cve_id": null,
+  "summary": "Nested sometimes validation rules skipped when value is __missing__",
+  "description": "### Impact\r\n\r\nWhen an attribute is nested or uses a wildcard (for example `profile.age` or `items.*.quantity`) and is validated with the `sometimes` rule, submitting the literal string `__missing__` as its value causes the attribute to be treated as absent. All of its rules are skipped, the request passes validation, and the unvalidated value is returned by `validated()`. Applications may then store or process input that did not satisfy the declared rules. Top-level attributes and nested attributes without `sometimes` are not affected.\r\n\r\n### Patches\r\n\r\nThe issue is fixed in the 12.x branch & 13.x branch, released in v12.72.0 and v13.43.0.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "score": 6.5
+  },
+  "published_at": "2026-11-18T12:43:58Z",
+  "updated_at": "2026-11-18T12:43:58Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.72.0",
+    "patched_versions": ">=12.72.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-f3ph-5p6j-34xr",
+  "cwe_ids": [
+   "CWE-20"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-cgwv-q695-mj8g",
+  "cve_id": null,
+  "summary": "Unbounded $ref chain resolution in Illuminate\\JsonSchema\\Deserializer allows denial of service",
+  "description": "### Impact\r\n\r\n`Illuminate\\JsonSchema\\Deserializer` resolved chained local `$ref` pointers recursively without limiting the depth of the chain. Applications that pass attacker-influenced JSON Schema data to `JsonSchema::fromArray()` or `Deserializer::deserialize()` could be sent a crafted schema containing a long linear chain of `$ref` references. Resolving it consumes memory and CPU rapidly and can exhaust the PHP memory limit, terminating the worker process. Repeated requests can sustain the outage. Applications that only deserialize developer-defined schemas are not affected.\r\n\r\n### Patches\r\n\r\nThe fix limits the depth of chained `$ref` resolution and throws an `InvalidArgumentException` when the limit is exceeded. It has been merged into the 12.x branch: https://github.com/laravel/framework/pull/62498",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:43:42Z",
+  "updated_at": "2026-11-18T12:43:42Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-cgwv-q695-mj8g",
+  "cwe_ids": [
+   "CWE-400",
+   "CWE-674"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-hv67-wfqj-w9xv",
+  "cve_id": null,
+  "summary": "XSS via unescaped Stringable values in Blade component attribute bag",
+  "description": "### Impact\r\n\r\nBlade component attribute bags did not HTML-escape non-`Htmlable` object values, such as `Illuminate\\Support\\Stringable`, passed to `ComponentAttributeBag::merge()` or `prepends()`. Applications that place user-controlled `Stringable` values (for example, the result of `request()->string()`) into component attributes could allow an attacker to break out of the attribute and inject arbitrary attributes, such as event handlers. This results in cross-site scripting that runs in the origin of the application.\r\n\r\n### Patches\r\n\r\nThe fix escapes all attribute values except `null`, booleans and `Htmlable` instances, and also escapes values wrapped with `prepends()`. It was merged to the 12.x branch in https://github.com/laravel/framework/pull/62503.\r\n\r\n### Workarounds\r\n\r\nCast user-controlled values to plain strings, for example `request()->string('title')->toString()`, before passing them to `merge()` or `prepends()`.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+   "score": 5.4
+  },
+  "published_at": "2026-11-18T12:43:24Z",
+  "updated_at": "2026-11-18T12:43:24Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-hv67-wfqj-w9xv",
+  "cwe_ids": [
+   "CWE-83"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-hxc4-wvjf-r59p",
+  "cve_id": null,
+  "summary": "File validation bypass via empty input field colliding with an upload in Request::all()",
+  "description": "### Impact\r\n\r\nIn Laravel 13.x, `Request::all()` let a text input with the same name as an uploaded file take precedence over the file. If an attacker submitted an empty value alongside the file, request validation (including `FormRequest` validation) saw the empty value instead of the upload. Rules such as `nullable`, `image`, `mimes` and `max` were then skipped. Applications that validate an optional upload this way and then read it with `$request->file()` or `$request->hasFile()` could therefore store files that bypassed type and size validation.\r\n\r\n### Patches\r\n\r\nEmpty input values (`null`, empty string or empty array) no longer shadow a colliding uploaded file in `Request::all()`. This is fixed in laravel/framework 13.x by https://github.com/laravel/framework/pull/62521 and released in v13.43.0.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:43:01Z",
+  "updated_at": "2026-11-18T12:43:01Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-hxc4-wvjf-r59p",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-9966-43cq-4mpr",
+  "cve_id": null,
+  "summary": "Unescaped bound attributes on Blade dynamic components that resolve to class-based components",
+  "description": "### Impact\r\n\r\nBlade's `<x-dynamic-component>` did not HTML-escape bound attributes (`:attr=\"$value\"`) when the target resolved to a class-based component. If user-controlled data was bound to an attribute that is not a constructor parameter and the component outputs `{{ $attributes }}`, the value could break out of the HTML attribute and lead to cross-site scripting (XSS). The same component rendered with its normal tag escaped the value correctly. Anonymous component targets were not affected.\r\n\r\n### Patches\r\n\r\nThe fix is merged on the 13.x and 12.x branches: https://github.com/laravel/framework/pull/62455 and https://github.com/laravel/framework/pull/62456. It has not been confirmed as released. Compiled views keep the previous behavior until they are recompiled, so run `php artisan view:clear` or `php artisan view:cache` after upgrading.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+   "score": 4.2
+  },
+  "published_at": "2026-11-18T12:42:53Z",
+  "updated_at": "2026-11-18T12:42:53Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-9966-43cq-4mpr",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-gvpq-g4gw-8p4x",
+  "cve_id": null,
+  "summary": "Storage Signed URL Mode Confusion",
+  "description": "A temporary signed read URL for a private local-storage object can be replayed as a `PUT` upload to the same URL path. The route signature authenticates only the URL and query string, while the read/write mode is determined later from request input. \r\n\r\n### Impact\r\nThis vulnerability allows to overwrite files using a read-only temporary signed URL.\r\n\r\n### Patches\r\nPatched in [#61145](https://github.com/laravel/framework/pull/61145) ",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+   "score": 4.9
+  },
+  "published_at": "2026-11-18T12:42:31Z",
+  "updated_at": "2026-11-18T12:42:31Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.26.0",
+    "patched_versions": ">=13.26.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.67.0",
+    "patched_versions": ">=12.67.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-gvpq-g4gw-8p4x",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-cvfq-f547-rv2g",
+  "cve_id": null,
+  "summary": "Denial of service in email validation via oversized Unicode domains",
+  "description": "### Impact\r\n\r\nApplications using the default Laravel email validation rule on untrusted input can be exposed to excessive CPU and memory consumption when validating oversized email addresses with specially crafted non-ASCII domains. The reported attack triggers expensive Unicode normalization during native IDN conversion when the PHP intl extension is enabled.\r\n\r\nAn unauthenticated attacker who can submit values to an endpoint using this rule may occupy PHP workers and degrade application availability. Exposure depends on application input limits and deployment configuration.\r\n\r\n### Patches\r\n\r\nLaravel Framework 12.72.0 and 13.43.0 reject email addresses longer than 254 bytes before invoking the email validator. Upgrade to a patched release in your maintenance line.\r\n\r\nThe Laravel-side mitigation was introduced in https://github.com/laravel/framework/pull/62347.\r\n\r\n### Workarounds\r\n\r\nEnsure oversized email inputs are rejected before email validation runs. For example, place the bail and max:254 rules before email, using bail|max:254|email. Configure appropriate request-body limits as additional protection.\r\n\r\n### References\r\n\r\n- https://github.com/laravel/framework/releases/tag/v12.72.0\r\n- https://github.com/laravel/framework/releases/tag/v13.43.0",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:42:16Z",
+  "updated_at": "2026-11-18T12:42:16Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.72.0",
+    "patched_versions": ">=12.72.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-cvfq-f547-rv2g",
+  "cwe_ids": [
+   "CWE-400"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-hmj2-jgmw-v4m4",
+  "cve_id": null,
+  "summary": "SQL Injection in Laravel PostgreSQL Query Grammar ",
+  "description": "Laravel's PostgreSQL Query Grammar does not escape embedded single quotes in JSON path attributes when compiling non-raw Query Builder APIs.\r\n\r\nA user-influenced JSON path / identifier segment can break out of the single-quoted SQL string literal context used by PostgreSQL JSON operators. \r\n\r\n### Impact\r\nThis can lead to SQL structure injection and WHERE-condition manipulation when an application passes user-influenced JSON path input into affected Query Builder APIs.\r\n\r\n### Patches\r\n[#60923](https://github.com/laravel/framework/pull/60923) \r\n[#61192](https://github.com/laravel/framework/pull/61192) ",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+   "score": 5.9
+  },
+  "published_at": "2026-11-18T12:41:50Z",
+  "updated_at": "2026-11-18T12:41:50Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.24.0",
+    "patched_versions": ">=13.24.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.67.0",
+    "patched_versions": ">=12.67.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-hmj2-jgmw-v4m4",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-559m-v249-7qw2",
+  "cve_id": null,
+  "summary": "IP Spoofing via Host Header in TrustProxies Middleware Forge/Vapor Auto-Detection",
+  "description": "### Summary\r\n\r\nOn applications with no trusted proxies configured, Laravel could treat a request as coming through a trusted Forge or Vapor proxy based on a header the visitor controls. An attacker could use this to fake their IP address and make an insecure request look like HTTPS.\r\n\r\nThis can let an attacker get around IP-based rate limits, such as login throttling, and IP allowlists. Only applications that haven't configured trusted proxies, and whose web server accepts any hostname, are affected.\r\n\r\n## Patch\r\n\r\n- Fixed in [#62484](https://github.com/laravel/framework/pull/62484)",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "score": 6.5
+  },
+  "published_at": "2026-11-18T12:41:43Z",
+  "updated_at": "2026-11-18T12:41:43Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-559m-v249-7qw2",
+  "cwe_ids": [
+   "CWE-346"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-5xc4-gpwg-p8wq",
+  "cve_id": null,
+  "summary": "Markdown secured encoding bypassed when Blade views are cached",
+  "description": "### Impact\r\n\r\nApplications that enable `Markdown::withSecuredEncoding()` to escape user-controlled data in Markdown mail and mail notifications may not get that protection when views have been precompiled with `php artisan view:cache` or `php artisan optimize`. The cached view, compiled with the default echo format, is reused when mail views are rendered, so the secured encoder never runs. An attacker who controls data included in an email, such as a user name, could inject Markdown links or remote images into the message, for example for phishing or tracking.\r\n\r\n### Patches\r\n\r\nThe issue is fixed by giving non-default echo formats their own compiled view file: https://github.com/laravel/framework/pull/61822\r\n\r\n### Workarounds\r\n\r\nNo verified workaround is available.",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N",
+   "score": 3.1
+  },
+  "published_at": "2026-11-18T12:41:27Z",
+  "updated_at": "2026-11-18T12:41:27Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-5xc4-gpwg-p8wq",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-6pxv-c29g-cc5h",
+  "cve_id": null,
+  "summary": "Eloquent mass-assignment guard bypass via attribute-name normalization mismatch",
+  "description": "### Impact\r\n\r\nEloquent's `$guarded` protection can be bypassed with an alternate spelling of a guarded attribute name, such as a hyphen or whitespace variant of `is_admin`. The guard check compared the raw key, while set-mutator resolution normalized it with `Str::studly()` or `Str::camel()`. Applications are affected when a model uses a `$guarded` blacklist, defines a set-mutator (classic or `Attribute`-based) on a guarded attribute, and mass-assigns untrusted input such as `$request->all()`. A remote client could then write protected attributes such as role or privilege flags.\r\n\r\n### Patches\r\n\r\nA fix has been merged to the 12.x branch in https://github.com/laravel/framework/pull/62499. It normalizes keys before comparing them against the guarded list.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+   "score": 5.3
+  },
+  "published_at": "2026-11-18T12:40:57Z",
+  "updated_at": "2026-11-18T12:40:57Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-6pxv-c29g-cc5h",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-vfxr-r8f8-gfmp",
+  "cve_id": null,
+  "summary": "Sanctum guard can resolve the lowest-ID user when evaluated inside an eager-loaded Eloquent relation definition",
+  "description": "### Impact\r\n\r\nWhen an authenticated user is first resolved while Eloquent is initializing an eager-loaded relation, Eloquent's relation constraints are temporarily disabled. A lazy key-constrained lookup made during that window, such as Sanctum's token owner lookup, runs without its key restriction. The guard can then return the lowest-ID user (often an administrator) instead of the token's owner. This affects applications that call the guard inside a relation definition used with eager loading, for example in optional-authentication routes. A low-privilege token could then read that user's data, and the wrong user remains cached for the rest of the request. Routes where authentication middleware resolves the user first were not affected in testing.\r\n\r\n### Patches\r\n\r\nThe fix for the 12.x branch has been merged in https://github.com/laravel/framework/pull/62483, which keeps constraints enabled when nested relation attributes are resolved during eager-load relation initialization.\r\n\r\n### Workarounds\r\n\r\nAvoid resolving the authenticated user inside relation definitions. Resolve the user ID beforehand and pass it explicitly through an eager-load constraint closure.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+   "score": 6.8
+  },
+  "published_at": "2026-11-18T12:40:46Z",
+  "updated_at": "2026-11-18T12:40:46Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-vfxr-r8f8-gfmp",
+  "cwe_ids": [
+   "CWE-863"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-v5ch-g375-82r6",
+  "cve_id": null,
+  "summary": "Temporary signed URL expiration bypass",
+  "description": "### Impact\r\n\r\nWhen PHP's `max_input_vars` limit causes the `expires` query parameter to be dropped from the parsed query, Laravel's signed URL validation can still verify the signature against the raw query string. `signatureHasNotExpired()` then treats the URL as non-expiring, so an expired temporary signed URL may be accepted. Exploitation requires a request line long enough to exceed `max_input_vars`, which depends on server and proxy limits.\r\n\r\n### Patches\r\n\r\nThis issue has been patched in Laravel 12.72.0 and 13.41.0: https://github.com/laravel/framework/pull/62349. Users should upgrade to one of these versions or later.\r\n\r\n### Workarounds\r\n\r\n- Limit URL length at the web server. Default nginx and Apache settings already reject the long URL the attack needs.\r\n- If web server configuration is unavailable, add a middleware ahead of `signed` that returns an error when the raw query has more pairs than `max_input_vars` or when `expires` appears in the raw query but is missing from the parsed one.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "score": 4.8
+  },
+  "published_at": "2026-11-11T13:52:08Z",
+  "updated_at": "2026-11-11T13:52:08Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< 12.72.0",
+    "patched_versions": "12.72.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": ">= 13.0.0, < 13.41.0",
+    "patched_versions": "13.41.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-v5ch-g375-82r6",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-6rv8-qj5v-p8ch",
+  "cve_id": null,
+  "summary": "Temporary signed URL expiration bypass via unencoded numeric-keyed route parameters",
+  "description": "### Impact\n\nWhen an application passes attacker-influenced, numeric-keyed parameters (for example a request's query array) to `temporarySignedRoute()` or `signedRoute()`, and those parameters do not fill a route placeholder, Laravel appended their values to the query string without URL encoding. An attacker can use this to add a second `expires` field to the signed URL. The signature covers that field, but request parsing reads it as the authoritative value, so the signed URL is treated as never expiring. Exploitation requires the application to forward such input into signed URL generation.\n\n### Patches\n\nThis issue has been patched in Laravel 12.72.0 and 13.41.0, which URL-encode numeric-keyed query parameters: https://github.com/laravel/framework/pull/62401. Users should upgrade to one of these versions or later.\n\n### Workarounds\n\nDo not pass request-derived arrays to signed route generation. Pass only explicitly selected, string-keyed parameters.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+   "score": 4.8
+  },
+  "published_at": "2026-11-11T13:51:58Z",
+  "updated_at": "2026-11-11T13:51:58Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< 12.72.0",
+    "patched_versions": "12.72.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": ">= 13.0.0, < 13.41.0",
+    "patched_versions": "13.41.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-6rv8-qj5v-p8ch",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-63hm-g96r-2m2q",
+  "cve_id": "CVE-2026-128083",
+  "summary": "Task Output Injection - Concurrency Process ",
+  "description": "### Summary\r\n\r\nIf a concurrency task prints user-controlled text, an attacker can forge the framework's internal result message and achieve remote code execution in certain conditions\r\n\r\n### Pre-reqs\r\n\r\nInsecure code and insecure handling of user provided input (devs trust user-provided input) :\r\n\r\n1. App has a route that reaches Concurrency::run() (Not by default, it requires app code)\r\n\r\n2. The task writes user-controlled data to stdout (echo/print/`dd` of input, hand-built JSON via string concat, passthrough of tool output), and the user-controlled bytes can be made to start the child's stdout and form a complete JSON document followed by \\x1f\\x8b  (Not by default, requires the specific coding pattern in the app code)\r\n\r\n### Patches\r\n* 13.40.0\r\n* back-ported to 12.x as well",
+  "severity": "low",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-04T09:13:11Z",
+  "updated_at": "2026-11-13T18:42:16Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<v13.40.0",
+    "patched_versions": ">=v13.40.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-63hm-g96r-2m2q",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-5wcm-3v2w-8362",
+  "cve_id": "CVE-2026-114508",
+  "summary": "Unauthorized Data Destruction",
+  "description": "A vulnerability in how relationship inclusion is processed on certain read endpoints. Under specific conditions, a request to a read-only endpoint can be crafted to trigger a destructive database operation on a related table, rather than simply retrieving data.\r\n\r\n### Impact\r\nA user with only read access could cause irreversible data loss (e.g., a related table being emptied), without needing any write permissions. This could result in denial of service and loss of data integrity for affected applications.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+   "score": 6.5
+  },
+  "published_at": "2026-10-19T13:33:01Z",
+  "updated_at": "2026-10-21T21:42:42Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": ">= 12.45.0",
+    "patched_versions": ">= 12.68.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< 13.27.0",
+    "patched_versions": ">= 13.27.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-5wcm-3v2w-8362",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-f9x3-7vq9-cph6",
+  "cve_id": "CVE-2026-114509",
+  "summary": "Token-based API guard Auth Bypass",
+  "description": "Laravel's built-in TokenGuard, **when configured with a standard token-based API guard**, may be bypassed to authenticate as an arbitrary existing user without knowledge of their valid API token. \r\n\r\n**Under certain database configurations (MySQL/MariaDB)** an attacker can submit a specially crafted, non-string credential value that is mishandled during the authentication lookup, causing the underlying query to match an unintended user record rather than failing authentication as expected.\r\n\r\n### Impact\r\nAn unauthenticated attacker may authenticate as another user without possessing that user's API token, leading to authentication bypass and account takeover on any route protected by the affected guard.\r\n",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-10-19T13:32:50Z",
+  "updated_at": "2026-10-21T21:46:33Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< 13.29.0",
+    "patched_versions": ">= 13.29.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< v12.68.0",
+    "patched_versions": ">= v12.68.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-f9x3-7vq9-cph6",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-jh5r-qr3c-85q8",
+  "cve_id": "CVE-2026-102279",
+  "summary": "XSS in Debug Page Information",
+  "description": "### Impact\r\nWhen `APP_DEBUG=true`, attacker-controlled input is passed to a Tippy.js tooltip configured with `allowHTML: true`, enabling DOM-based XSS during mouse hover.\r\n\r\n### Patches\r\n[#61381](https://github.com/laravel/framework/pull/61381) ",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N",
+   "score": 3.1
+  },
+  "published_at": "2026-09-10T09:56:39Z",
+  "updated_at": "2026-09-28T20:58:40Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<v12.69.0",
+    "patched_versions": ">=v12.69.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<v13.30.0",
+    "patched_versions": ">=v13.30.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-jh5r-qr3c-85q8",
+  "cwe_ids": [
+   "CWE-80"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-crmm-hgp2-wgrp",
+  "cve_id": "CVE-2026-48041",
+  "summary": "Temporary Signed URL Path Confusion",
+  "description": "A vulnerability in Laravel's local filesystem driver allows temporary signed URLs to be parsed ambiguously, potentially misrouting requests and bypassing expiration enforcement.\r\n\r\nUnder certain conditions, a generated temporary signed URL can be interpreted differently by the server than intended at signing time. This may cause requests to resolve to an unintended resource, and can prevent expiration from being enforced, allowing expired URLs to remain valid indefinitely.\r\n\r\n### Impact\r\n- Expired temporary URLs may continue to be accepted\r\n- Requests may resolve to a different resource than the one that was signed\r\n- The upload variant may allow writes to reach an unintended destination\r\n\r\n### Patches\r\nhttps://github.com/laravel/framework/pull/60137\r\nhttps://github.com/laravel/framework/pull/60230\r\nhttps://github.com/laravel/framework/pull/60350",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+   "score": 4.2
+  },
+  "published_at": "2026-06-08T10:17:19Z",
+  "updated_at": "2026-06-08T10:17:19Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.12.0",
+    "patched_versions": ">=13.12.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.61.1",
+    "patched_versions": ">=12.61.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-crmm-hgp2-wgrp",
+  "cwe_ids": [
+   "CWE-116"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-5vg9-5847-vvmq",
+  "cve_id": "CVE-2026-48019",
+  "summary": "CRLF injection in default email rule ",
+  "description": "## Summary\r\nA CRLF injection vulnerability in Laravel's email validation, in combination with how Symfony Mailer and Symfony Mime handle certain character sequences, may allow an unauthenticated attacker to interfere with outbound email processing in applications that send mail to user-supplied addresses.\r\n\r\n## Description\r\nLaravel applications that send email to addresses provided by users — for example during authentication flows or contact forms — may be vulnerable to manipulation of outbound mail content if the address is not adequately sanitized before it reaches the mail transport layer.\r\nAn attacker who can supply an email address to such a flow may, under certain conditions, be able to influence the content of emails sent by the application, cause those emails to be delivered to unintended recipients, or cause the application's mail server to send unintended messages.\r\n\r\n## Impact\r\nAffected applications may be exposed to unauthorized access and mail relay abuse. The severity depends on what the application sends by email and how its mail infrastructure is configured.\r\n\r\n## Remediation\r\nUpgrade to version 12.60.0 or later, or 13.10.0 or later. ",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:L",
+   "score": 8.9
+  },
+  "published_at": "2026-06-01T08:23:09Z",
+  "updated_at": "2026-06-01T08:23:09Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<= 13.9.0",
+    "patched_versions": ">= 13.10.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "< 12.60.0",
+    "patched_versions": ">= 12.60.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-5vg9-5847-vvmq",
+  "cwe_ids": [
+   "CWE-93"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-78fx-h6xr-vch4",
+  "cve_id": "CVE-2025-27515",
+  "summary": "File Validation Bypass",
+  "description": "When using wildcard validation to validate a given file or image field array (`files.*`), a user-crafted malicious request could potentially bypass the validation rules.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2025-03-05T15:24:06Z",
+  "updated_at": "2025-03-05T18:19:25Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<11.44.1,>=12,<12.1.1",
+    "patched_versions": "12.1.1,11.44.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-78fx-h6xr-vch4",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-gv7v-rgg6-548h",
+  "cve_id": "CVE-2024-52301",
+  "summary": "Environment manipulation via query string",
+  "description": "## Description\r\n\r\nWhen the `register_argc_argv php` directive is set to `on` , and users call any URL with a special crafted query string, they are able to change the environment used by the framework when handling the request.\r\n\r\n## Resolution\r\n\r\nThe framework now ignores argv values for environment detection on non-cli SAPIs.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2024-11-12T18:19:39Z",
+  "updated_at": "2024-11-12T18:19:39Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<6.20.45,>=7,<7.30.7,>=8,<8.83.28,>=9,<9.52.17,>=10,<10.48.23,>=11,<11.31.0",
+    "patched_versions": "6.20.45,7.30.7,8.83.28,9.52.17,10.48.23,11.31.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-gv7v-rgg6-548h",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-66hf-2p6w-jqfw",
+  "cve_id": "CVE-2021-43808",
+  "summary": "Blade `@parent` Exploitation Leading To Possible XSS",
+  "description": "A security researcher has disclosed a possible XSS vulnerability in the Blade templating engine.\r\n\r\nGiven the following two Blade templates:\r\n\r\nresources/views/parent.blade.php:\r\n\r\n```html\r\n@section('content')\r\n<input value=\"{{ $value }}\">\r\n@show\r\n```\r\n\r\nresources/views/child.blade.php:\r\n\r\n```html\r\n@extends('parent')\r\n\r\n@section('content')\r\n<input value=\"{{ $value }}\">\r\n@endsection\r\n```\r\n\r\nAnd a route like the following:\r\n\r\n```php\r\nRoute::get('/example', function() {\r\n    $value = '//localhost/###parent-placeholder-040f06fd774092478d450774f5ba30c5da78acc8## onclick=location.assign(this.value);//';\r\n\r\n    return view('child', ['value' => $value]);\r\n});\r\n```\r\n\r\nThe broken HTML element may be clicked and the user is taken to another location in their browser due to XSS. This is due to the user being able to guess the parent placeholder SHA-1 hash by trying common names of sections. If the parent template contains an exploitable HTML structure an XSS vulnerability can be exposed.\r\n\r\nThis vulnerability has been patched by determining the parent placeholder at runtime and using a random hash that is unique to each request.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2021-12-07T19:38:45Z",
+  "updated_at": "2021-12-07T20:02:50Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": ">=8.0.0, <8.75.0, >=7.0.0, <7.30.6, <6.20.42",
+    "patched_versions": "6.20.42, 7.30.6, 8.75.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-66hf-2p6w-jqfw",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-4mg9-vhxq-vm7j",
+  "cve_id": null,
+  "summary": "SQL Server LIMIT / OFFSET SQL Injection",
+  "description": "### Impact\r\n\r\nThose using SQL Server with Laravel and allowing user input to be passed directly to the `limit` and `offset` functions are vulnerable to SQL injection. Other database drivers such as MySQL and Postgres are not affected by this vulnerability.\r\n\r\n### Patches\r\n\r\nThis problem has been patched on Laravel versions 6.20.26, 7.30.5, and 8.40.0.\r\n\r\n### Workarounds\r\n\r\nYou may workaround this vulnerability by ensuring that only integers are passed to the `limit` and `offset` functions, as well as the `skip` and `take` functions.\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2021-04-28T14:44:43Z",
+  "updated_at": "2021-11-17T15:41:16Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework, illuminate/database"
+    },
+    "vulnerable_version_range": ">=8.0.0, <8.40.0, >=7.0.0, <7.30.5, <6.20.26",
+    "patched_versions": "6.20.26, 7.30.5, 8.40.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-x7p5-p2c9-phvg",
+  "cve_id": "",
+  "summary": "Unexpected database bindings via requests (follow-up)",
+  "description": "This is a follow-up to the previous security advisory which addresses a few additional edge cases.\r\n\r\nIf a request is crafted where a field that is normally a non-array value is an array, and that input is not validated or cast to its expected type before being passed to the query builder, an unexpected number of query bindings can be added to the query. In some situations, this will simply lead to no results being returned by the query builder; however, it is possible certain queries could be affected in a way that causes the query to return unexpected results.\r\n\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2021-02-02T13:54:55Z",
+  "updated_at": "2021-02-02T13:54:55Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework, illuminate/database"
+    },
+    "vulnerable_version_range": ">=8.0.0, <8.24.0, >=7.0.0, <7.30.4, <6.20.14",
+    "patched_versions": "6.20.14, 7.30.4, 8.24.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-x7p5-p2c9-phvg",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-3p32-j457-pg5x",
+  "cve_id": "CVE-2021-21263",
+  "summary": "Query Binding Exploitation",
+  "description": "### Description\r\n\r\nLaravel versions <6.20.12, <7.30.3 & <8.22.1 contain a query binding exploitation.\r\n\r\nIf a request is crafted where a field that is normally a non-array value is an array, and that input is not validated or cast to its expected type before being passed to the query builder, an unexpected number of query bindings can be added to the query. In some situations, this will simply lead to no results being returned by the query builder; however, it is possible certain queries could be affected in a way that causes the query to return unexpected results.\r\n\r\nThis vulnerability was discovered by Tim Groenevelt (tim.g@foodbyus.com).\r\n\r\n### References\r\n\r\n- https://github.com/laravel/framework/pull/35865",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2021-01-15T15:41:20Z",
+  "updated_at": "2021-03-29T12:28:20Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework, illuminate/database"
+    },
+    "vulnerable_version_range": ">=8.0.0, <8.22.1, >=7.0.0, <7.30.3, <6.20.12",
+    "patched_versions": "",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-3p32-j457-pg5x",
+  "cwe_ids": []
+ }
+]

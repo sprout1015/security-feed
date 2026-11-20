@@ -1,0 +1,1368 @@
+[
+ {
+  "ghsa_id": "GHSA-c8h9-259x-jff4",
+  "cve_id": "CVE-2026-25243",
+  "summary": "Invalid Memory Access in Redis RESTORE Command May Lead to Remote Code Execution",
+  "description": "### Impact\r\nA vulnerability in the Redis RESTORE command allows an authenticated user to trigger an invalid memory access via a specially crafted serialized payload, potentially resulting in remote code execution.\r\n\r\nSuccessful exploitation could allow an attacker with authenticated access to execute arbitrary code in the context of the Redis server, potentially leading to full compromise of the affected system, data exfiltration, or service disruption\r\n\r\nThis problem affects all Redis versions.\r\n\r\n### Details\r\nThe vulnerability is caused by insufficient validation of serialized values processed by the RESTORE command, which allows malformed input to trigger unsafe memory accesses.\r\n\r\n### Attack Prerequisites\r\n- The attacker must be authenticated to the Redis instance.\r\n- The attacker must have permission to execute the RESTORE command.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the issue without patching the Redis server executable is to prevent users from executing the RESTORE command by applying an appropriate ACL restriction rule.\r\n\r\n### Credit\r\n- Emil Lerner during the Wiz Zeroday Cloud event.\r\n- Joseph Surin\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-05-05T13:59:17Z",
+  "updated_at": "2026-05-05T13:59:17Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-c8h9-259x-jff4",
+  "cwe_ids": [
+   "CWE-20",
+   "CWE-122"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-8ghh-qpmp-7826",
+  "cve_id": "CVE-2026-23631",
+  "summary": "Lua Use-After-Free may lead to remote code execution",
+  "description": "### Impact\r\nAn authenticated user may exploit the synchronization mechanism of the master-replica and trigger a use-after-free vulnerability, potentially leading to remote code execution.\r\n\r\nThe bug affects only replicas that are configured, or may be configured with `replica-read-only` disabled , and exists in all versions of Redis with Lua scripting\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts or avoid using replicas where `replica-read-only` is disabled\r\n\r\n### Credit\r\nThe issue was reported by independent researcher Yoni Sherez identified **DarkReplica** during the Wiz Zeroday Cloud event.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-05-05T13:58:51Z",
+  "updated_at": "2026-05-11T14:24:09Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-8ghh-qpmp-7826",
+  "cwe_ids": [
+   "CWE-416"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-93m2-935m-8rj3",
+  "cve_id": "CVE-2026-23479",
+  "summary": "Use-After-Free in unblock client flow may lead to remote code execution",
+  "description": "### Impact\r\nWhen a blocked client is evicted while re-executing a blocked command, an authenticated user may trigger a use-after-free and potentially lead to remote code execution.\r\n\r\nThe problem exists in Redis `7.2` or newer.\r\n\r\n### Details\r\nThe code doesn't handle the case where processing the command (`processCommandAndResetClient`) returns an error value.\r\n\r\n### Credits\r\nThe issue was reported by independent researcher Xint Code during the Wiz Zeroday Cloud event.\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-05-05T13:58:30Z",
+  "updated_at": "2026-05-05T13:58:30Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.2",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-93m2-935m-8rj3",
+  "cwe_ids": [
+   "CWE-416"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-jhjx-x4cf-4vm8",
+  "cve_id": "CVE-2025-62507",
+  "summary": "Bug in XACKDEL may lead to stack overflow and potential RCE",
+  "description": "### Impact\r\nA user can run the XACKDEL command with multiple ID's and trigger a stack buffer overflow, which may potentially lead to remote code execution.\r\n\r\nThe problem exists in Redis 8.2 or newer.\r\n\r\n### Details\r\nThe code doesn't handle the case where the number of ID's exceeds the STREAMID_STATIC_VECTOR_LEN, and skips a reallocation, which leads to a stack buffer overflow.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing XACKDEL operation. This can be done using ACL to restrict XACKDEL command.\r\n\r\n### Credits\r\nThe problem was reported by Google Big Sleep\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2025-11-02T13:49:19Z",
+  "updated_at": "2025-11-02T13:49:19Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 8.2.0",
+    "patched_versions": "8.2.3",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-jhjx-x4cf-4vm8",
+  "cwe_ids": [
+   "CWE-20",
+   "CWE-121"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-qrv7-wcrx-q5jp",
+  "cve_id": "CVE-2025-46818",
+  "summary": "Running Lua function as a different user",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted Lua script to manipulate different LUA objects and potentially run their own\r\ncode in the context of another user\r\n\r\nThe problem exists in all versions of Redis with Lua scripting.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to block a script by restricting both the EVAL and FUNCTION command families.\r\n\r\n### Credit\r\nThe problem was reported by zhutyra\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N",
+   "score": 6.0
+  },
+  "published_at": "2025-10-03T07:23:00Z",
+  "updated_at": "2025-10-03T07:23:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-qrv7-wcrx-q5jp",
+  "cwe_ids": [
+   "CWE-94"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-4c68-q8q8-3g4f",
+  "cve_id": "CVE-2025-46819",
+  "summary": "Out of bound read due to a bug in LUA",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted LUA script to read out-of-bound data or crash the server and subsequent denial of service.\r\n\r\nThe problem exists in all versions of Redis with Lua scripting\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to block a script by restricting both the EVAL and FUNCTION command families.\r\n\r\n### Credit\r\nThe problem was reported by zhutyra\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:H",
+   "score": 6.3
+  },
+  "published_at": "2025-10-03T07:22:53Z",
+  "updated_at": "2025-10-03T07:22:53Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-4c68-q8q8-3g4f",
+  "cwe_ids": [
+   "CWE-190"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-m8fj-85cg-7vhp",
+  "cve_id": "CVE-2025-46817",
+  "summary": "Lua library commands may lead to integer overflow and potential RCE",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted Lua script to cause an integer overflow and potentially lead to remote code execution\r\n\r\nThe problem exists in all versions of Redis with Lua scripting.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to block a script by restricting both the EVAL and FUNCTION command families.\r\n\r\n### Credit\r\nThe problem was reported by zhutyra\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2025-10-03T07:22:44Z",
+  "updated_at": "2025-10-03T07:22:44Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-m8fj-85cg-7vhp",
+  "cwe_ids": [
+   "CWE-190"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-4789-qfc9-5f9q",
+  "cve_id": "CVE-2025-49844",
+  "summary": "Lua Use-After-Free may lead to remote code execution",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted Lua script to manipulate the garbage collector, trigger a use-after-free and potentially lead to remote code execution.\r\n\r\nThe problem exists in all versions of Redis with Lua scripting.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to restrict EVAL and EVALSHA commands.\r\n\r\n### Credit\r\nThe problem was reported by Wiz researchers Benny Isaacs (@benny_isaacs), Nir Brakha, Sagi Tzadik (@sagitz_) working with Trend Micro, Zero Day Initiative\r\n",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "score": 9.9
+  },
+  "published_at": "2025-10-03T07:22:30Z",
+  "updated_at": "2025-10-03T12:28:31Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "6.2.20, 7.2.11, 7.4.6, 8.0.4, 8.2.2",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-4789-qfc9-5f9q",
+  "cwe_ids": [
+   "CWE-416"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-2r7g-8hpc-rpq9",
+  "cve_id": null,
+  "summary": "Multi-bulk commands sent by clients can lead to DoS",
+  "description": "From time to time we discover situations where the Redis application will allow a logged-in user to cause a denial-of-service or otherwise impact the performance or availability of the database they have access to, which can happen without explicitly violating the Redis Security Model. In some cases, such as CVE-2024-31227 and CVE-2024-31228, we elect to fix these denial-of-service possibilities in code as they result from error conditions. These decisions make tradeoffs between potential risks on the one hand, and the potential for introducing breaking changes, impacting database performance, and other considerations on the other.\r\n\r\nRecently, security researcher Gabriele Digregorio brought a similar potential denial-of-service issue to our attention. Based on Gabriele Digregorio’s research, and validated through our own analysis, this issue relies on abuse or misuse of the commands network protocol built into Redis and requires the user to be successfully authenticated. As such, it does not violate the Redis Security Model (therefore, we do not consider it a vulnerability and do not assign a CVE ID), but could still be used to cause unintended or unexpected impact to availability. Our assessment is that implementing an application change to prevent this possibility would negatively impact legitimate functionality and performance of Redis. As a result, we do not have a fix planned for this issue and are instead opting to publish this Security Advisory to bring it to the attention of users.\r\n\r\nAs always, we encourage Redis operators and admins to review our recommended security practices, and enforce strong access controls or integration with corporate identity provider solutions whenever possible.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2025-07-06T19:10:47Z",
+  "updated_at": "2025-07-06T19:10:47Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis"
+    },
+    "vulnerable_version_range": "<= 8.0",
+    "patched_versions": "",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-2r7g-8hpc-rpq9",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-4q32-c38c-pwgq",
+  "cve_id": "CVE-2025-48367",
+  "summary": "Redis DoS Vulnerability due to bad connection error handling",
+  "description": "### Impact\r\nAn unauthenticated connection can cause repeated IP protocol errors, leading to client starvation and, ultimately, a denial of service.\r\n\r\nThe problem affects all versions of Redis.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.X, 7.2.X, 7.4.X and 8.0.X\r\n\r\n### Credit\r\nThe problem was reported by @julienperriercornet \r\n\r\n\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2025-07-06T12:39:38Z",
+  "updated_at": "2025-07-06T12:39:39Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-4q32-c38c-pwgq",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-rp2m-q4j6-gr43",
+  "cve_id": "CVE-2025-32023",
+  "summary": "Out of bounds write in hyperloglog commands leads to RCE",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted string to trigger a stack/heap out of bounds write on hyperloglog operations, potentially leading to remote code execution.\r\n\r\nThe bug likely affects all Redis versions with hyperloglog operations implemented.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing hyperloglog operations. This can be done using ACL to restrict HLL commands.\r\n\r\n### Credit\r\nSeunghyun Lee (@0x10n) of CMU PPP, as part of PlaidCTF 2025\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2025-07-06T12:34:25Z",
+  "updated_at": "2025-07-06T17:23:14Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 2.8",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-5453-q98w-cmvm",
+  "cve_id": "CVE-2025-27151",
+  "summary": "redis-check-aof may lead to stack overflow and potential RCE",
+  "description": "### Impact\r\nA user can run the redis-check-aof cli and pass a long file path to trigger a stack buffer overflow, which may potentially lead to remote code execution.\r\n\r\nThe problem exists in Redis 7.0 or newer.\r\n\r\n### Details\r\nA stack-based buffer overflow exists in redis-check-aof due to the use of `memcpy` with `strlen(filepath)` when copying a user-supplied file path into a fixed-size stack buffer. This allows an attacker to overflow the stack and potentially achieve code execution.\r\n\r\n### Credit\r\nSimcha Kosman & CyberArk Labs\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 4.7
+  },
+  "published_at": "2025-05-27T15:36:29Z",
+  "updated_at": "2025-05-28T19:37:58Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-check-aof"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-5453-q98w-cmvm",
+  "cwe_ids": [
+   "CWE-20",
+   "CWE-121"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-r67f-p999-2gff",
+  "cve_id": "CVE-2025-21605",
+  "summary": "Redis DoS Vulnerability due to unlimited growth of output buffers abused by unauthenticated client",
+  "description": "### Summary\r\nAn unauthenticated client can cause unlimited growth of output buffers, until the server runs out of memory or is killed.\r\n\r\n### Details\r\nBy default, the Redis configuration does not limit the output buffer of normal clients (see client-output-buffer-limit). Therefore, the output buffer can grow unlimitedly over time. As a result, the service is exhausted and the memory is unavailable.\r\n\r\nWhen password authentication is enabled on the Redis server, but no password is provided, the client can still cause the output buffer to grow from \"NOAUTH\" responses until the system will run out of memory.\r\n\r\nThe problem exists in Redis 2.6 or newer.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate this problem without patching the redis-server executable is to block access to prevent unauthenticated users from connecting to Redis. This can be done in different ways:\r\n\r\nUsing network access control tools like firewalls, iptables, security groups, etc.\r\nEnabling TLS and requiring users to authenticate using client side certificates.\r\n\r\n### Credit\r\nThe problem was reported by Tiezhen Zhang(zhangtiezhen@huawei.com) and Hanyang Jin(jinhanyang@huawei.com).\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2025-04-23T13:50:02Z",
+  "updated_at": "2025-04-24T09:13:31Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 2.6",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-r67f-p999-2gff",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-prpq-rh5h-46g9",
+  "cve_id": "CVE-2024-51741",
+  "summary": "Denial-of-service due to malformed ACL selectors",
+  "description": "### Impact\r\nAn authenticated with sufficient privileges may create a malformed ACL selector which, when accessed, triggers a server panic and subsequent denial of service.\r\n\r\nThe problem exists in Redis 7.0.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.2.7 and 7.4.2.\r\n\r\n### Credit\r\nThe problem was reported by Axel Mierczuk.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+   "score": 4.4
+  },
+  "published_at": "2025-01-06T19:19:08Z",
+  "updated_at": "2025-01-06T19:19:08Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "TBD",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9",
+  "cwe_ids": [
+   "CWE-20"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-39h2-x6c4-6w4c",
+  "cve_id": "CVE-2024-46981",
+  "summary": "Lua library commands may lead to remote code execution",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted Lua script to manipulate the garbage collector and potentially lead to remote code execution.\r\n\r\nThe problem exists in all versions of Redis with Lua scripting.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.x, 7.2.x and 7.4.x.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to restrict EVAL and EVALSHA commands.\r\n\r\n### Credit\r\nThe problem was reported by p33zy working with Trend Micro Zero Day Initiative\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2025-01-06T19:18:56Z",
+  "updated_at": "2025-01-06T19:18:56Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "6.2.X, 7.2.X, 7.4.X",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-39h2-x6c4-6w4c",
+  "cwe_ids": [
+   "CWE-416"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-whxg-wx83-85p5",
+  "cve_id": "CVE-2024-31449",
+  "summary": "Lua library commands may lead to stack overflow and potential RCE",
+  "description": "### Impact\r\nAn authenticated user may use a specially crafted Lua script to trigger a stack buffer overflow in the bit library, which may potentially lead to remote code execution.\r\n\r\nThe problem exists in all versions of Redis with Lua scripting.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.16, 7.2.6, 7.4.1.\r\n\r\n### Credit\r\nThe problem was reported by ankki-zsyang, Shenzhen Ankki Technologies Co.Ltd.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2024-10-06T18:16:07Z",
+  "updated_at": "2024-10-06T18:16:07Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 2.8.18",
+    "patched_versions": "6.2.16, 7.2.6, 7.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-whxg-wx83-85p5",
+  "cwe_ids": [
+   "CWE-20",
+   "CWE-121"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-38p4-26x2-vqhh",
+  "cve_id": "CVE-2024-31227",
+  "summary": "Denial-of-service due to malformed ACL selectors",
+  "description": "### Impact\r\nAn authenticated with sufficient privileges may create a malformed ACL selector which, when accessed, triggers a server panic and subsequent denial of service.\r\n\r\nThe problem exists in Redis 7.0.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.2.6 and 7.4.1.\r\n\r\n### Credit\r\nThe problem was reported by Axel Mierczuk.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+   "score": 4.4
+  },
+  "published_at": "2024-10-06T18:15:20Z",
+  "updated_at": "2024-10-06T18:15:21Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "7.2.6, 7.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-38p4-26x2-vqhh",
+  "cwe_ids": [
+   "CWE-20"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-66gq-c942-6976",
+  "cve_id": "CVE-2024-31228",
+  "summary": "Denial-of-service due to unbounded pattern matching",
+  "description": "### Impact\r\nAuthenticated users can trigger a denial-of-service by using specially crafted, long string match patterns on supported commands such as `KEYS`, `SCAN`, `PSUBSCRIBE`, `FUNCTION LIST`, `COMMAND LIST` and ACL definitions. Matching of extremely long patterns may result in unbounded recursion, leading to stack overflow and process crash.\r\n\r\nThe problem affects all versions of Redis.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.16, 7.2.6, and 7.4.1.\r\n\r\n### Credit\r\nThe problem was reported by [tomistripping](https://github.com/tomistripping).\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2024-10-06T18:14:24Z",
+  "updated_at": "2024-10-06T18:14:24Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 2.2.5",
+    "patched_versions": "6.2.16, 7.2.6, 7.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-66gq-c942-6976",
+  "cwe_ids": [
+   "CWE-674"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-xr47-pcmx-fq2m",
+  "cve_id": "CVE-2023-41056",
+  "summary": "Certain sequence of payloads may lead to remote code execution",
+  "description": "### Impact\r\nIn some cases, Redis may incorrectly handle resizing of memory buffers which can result in incorrect accounting of buffer sizes and lead to heap overflow and potential remote code execution.\r\n\r\nThe problem exists in Redis 7.0.9 or newer (including 7.2.x).\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.0.15 and 7.2.4.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "score": 8.1
+  },
+  "published_at": "2024-01-09T15:00:22Z",
+  "updated_at": "2024-01-09T15:00:22Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "7.0.9, 7.2.x",
+    "patched_versions": "7.0.15, 7.2.4",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-xr47-pcmx-fq2m",
+  "cwe_ids": [
+   "CWE-762"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-ghmp-889m-7cvx",
+  "cve_id": "CVE-2023-45145",
+  "summary": "Redis Unix-domain socket may be exposed with the wrong permissions for a short time window.",
+  "description": "### Impact\r\nOn startup, Redis begins listening on a Unix socket before adjusting its permissions to the user-provided configuration. If a permissive umask(2) is used, this creates a race condition that enables, during a short period of time, another process to establish an otherwise unauthorized connection.\r\n\r\nThe problem exists since Redis 2.6.0-RC1.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.2.2, 7.0.14 or 6.2.14.\r\n\r\n### Workaround\r\nIt is possible to work around the problem by disabling Unix sockets, starting Redis with a restrictive umask, or storing the Unix socket file in a protected directory.\r\n\r\n### Credit\r\nThe problem was reported by Alexander Aleksandrovič Klimov of Icinga.",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N",
+   "score": 3.1
+  },
+  "published_at": "2023-10-18T14:07:32Z",
+  "updated_at": "2023-10-18T14:07:32Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 2.6.0-rc1",
+    "patched_versions": "7.2.2, 7.0.14, 6.2.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-ghmp-889m-7cvx",
+  "cwe_ids": [
+   "CWE-668"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-q4jr-5p56-4xwc",
+  "cve_id": "CVE-2023-41053",
+  "summary": "Redis SORT_RO may bypass ACL configuration",
+  "description": "### Impact\r\nRedis does not correctly identify keys accessed by `SORT_RO` and, as a result, may grant users executing this command access to keys that are not explicitly authorized by the ACL configuration.\r\n\r\nThe problem exists in Redis 7.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.0.13 and 7.2.1.\r\n\r\n### Credit\r\nThe problem was found by yangbodong22011.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "score": 3.3
+  },
+  "published_at": "2023-09-06T18:47:03Z",
+  "updated_at": "2023-09-06T18:47:03Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "7.0 and newer",
+    "patched_versions": "7.0.13, 7.2.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc",
+  "cwe_ids": [
+   "CWE-284"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-4cfx-h9gq-xpx3",
+  "cve_id": "CVE-2023-36824",
+  "summary": "Heap overflow in COMMAND GETKEYS and ACL evaluation",
+  "description": "### Impact\r\nExtracting key names from a command and a list of arguments may, in some cases, trigger a heap overflow and result in reading random heap memory, heap corruption and potentially remote code execution. Several scenarios that may lead to this result:\r\n* Authenticated users executing a specially crafted `COMMAND GETKEYS` or `COMMAND GETKEYSANDFLAGS`.\r\n* Authenticated users who were set with ACL rules that match key names, executing a specially crafted command that refers to a variadic list of key names.\r\n\r\nThe problem exists in Redis 7.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 7.0.12.\r\n\r\n### Credit\r\nThe problem was found by Lior Lahav.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.4
+  },
+  "published_at": "2023-07-10T12:40:05Z",
+  "updated_at": "2023-07-10T12:40:05Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "7.0.12",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-4cfx-h9gq-xpx3",
+  "cwe_ids": [
+   "CWE-122",
+   "CWE-131"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-p8x2-9v9q-c838",
+  "cve_id": "CVE-2022-24834",
+  "summary": "Heap overflow issue with the Lua cjson and cmsgpack libraries used by Redis",
+  "description": "### Impact\r\nA specially crafted Lua script executing in Redis can trigger a heap overflow in the cjson and cmsgpack libraries, and result in heap corruption and potentially remote code execution.\r\n\r\nThe problem exists in all versions of Redis with Lua scripting support, starting from 2.6, and affects only authenticated and authorized users.\r\n\r\n### Patches\r\nThe problem is fixed in versions 7.0.12, 6.2.13, 6.0.20.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent users from executing Lua scripts. This can be done using ACL to restrict EVAL and EVALSHA commands.\r\n\r\n### Credit\r\nThe problem was reported by Seiya Nakata and Yudai Fujiwara, security researchers from Ricerca Security, Inc.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2023-07-10T12:39:45Z",
+  "updated_at": "2023-07-10T12:39:45Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "7.0.12, 6.2.13, 6.0.20",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-p8x2-9v9q-c838",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-hjv8-vjf6-wcr6",
+  "cve_id": "CVE-2023-28856",
+  "summary": "HINCRBYFLOAT can be used to crash a redis-server process",
+  "description": "### Impact\r\nAuthenticated users can use the `HINCRBYFLOAT` command to create an invalid hash field that may later crash Redis on access.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 7.0.11, 6.2.12 and 6.0.19.\r\n\r\n### For more information\r\n\r\nIf you have any questions or comments about this advisory:\r\n\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at [redis@redis.io](mailto:redis@redis.io)",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-04-18T06:18:52Z",
+  "updated_at": "2023-04-18T06:18:52Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "7.0.11, 6.2.12, 6.0.19",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-hjv8-vjf6-wcr6",
+  "cwe_ids": [
+   "CWE-20",
+   "CWE-617"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-mvmm-4vq6-vw8c",
+  "cve_id": "CVE-2023-28425",
+  "summary": "Specially crafted MSETNX command can lead to denial-of-service",
+  "description": "### Impact\r\nAuthenticated users can use the MSETNX command to trigger a runtime assertion and termination of the Redis server process.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 7.0.10.\r\n\r\n### Credit\r\nThe issue has been identified by Yupeng Yang.\r\n\r\n### For more information\r\n\r\nIf you have any questions or comments about this advisory:\r\n\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at [redis@redis.io](mailto:redis@redis.io)",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-03-20T18:05:13Z",
+  "updated_at": "2023-03-20T18:05:13Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": ">= 7.0.8",
+    "patched_versions": "7.0.10",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-x2r7-j9vw-3w83",
+  "cve_id": "CVE-2023-25155",
+  "summary": "Integer Overflow in several Redis commands can lead to denial of service.",
+  "description": "### Impact\r\nAuthenticated users issuing specially crafted `SRANDMEMBER`, `ZRANDMEMBER`, and `HRANDFIELD` commands can trigger an integer overflow, resulting in a runtime assertion and termination of the Redis server process.\r\n\r\nThis problem affects all Redis versions.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.0.18, 6.2.11, 7.0.9.\r\n\r\n### Credit\r\nThe issue has been identified by Yupeng Yang.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-02-28T19:09:55Z",
+  "updated_at": "2023-02-28T19:09:55Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "7.0.9, 6.2.11, 6.0.18",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-x2r7-j9vw-3w83",
+  "cwe_ids": [
+   "CWE-190"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-jr7j-rfj5-8xqv",
+  "cve_id": "CVE-2022-36021",
+  "summary": "Redis string pattern matching can be abused to achieve Denial of Service",
+  "description": "### Impact\r\nAuthenticated users can use string matching commands (like `SCAN` or `KEYS`) with a specially crafted pattern to trigger a denial-of-service attack on Redis, causing it to hang and consume 100% CPU time.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.0.18, 6.2.11, 7.0.9.\r\n\r\n### Credit\r\nThe issue has been identified by Tom Levy.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-02-28T19:08:11Z",
+  "updated_at": "2023-02-28T19:08:11Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.0.18, 6.2.11, 7.0.9",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-jr7j-rfj5-8xqv",
+  "cwe_ids": [
+   "CWE-407"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-r8w2-2m53-gprj",
+  "cve_id": "CVE-2023-22458",
+  "summary": "Integer overflow in the Redis HRANDFIELD and ZRANDMEMBER commands may lead to denial-of-service",
+  "description": "### Impact\r\nAuthenticated users can issue a `HRANDFIELD` or `ZRANDMEMBER` command with specially crafted arguments to trigger a denial-of-service by crashing Redis with an assertion.\r\n\r\nThis problem affects Redis 6.2 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.9 and 7.0.8.\r\n\r\n### Credit\r\nThis issue has been identified and reported by yype on GitHub.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-01-20T08:03:31Z",
+  "updated_at": "2023-01-20T08:03:31Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": "6.2 or newer",
+    "patched_versions": "6.2.9, 7.0.8",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-r8w2-2m53-gprj",
+  "cwe_ids": [
+   "CWE-190"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-mrcw-fhw9-fj8j",
+  "cve_id": "CVE-2022-35977",
+  "summary": "Integer overflow in the Redis SETRANGE and SORT/SORT_RO commands may result with false OOM panic",
+  "description": "### Impact\r\nAuthenticated users issuing specially crafted `SETRANGE` and `SORT(_RO)` commands can trigger an integer overflow, resulting with Redis attempting to allocate impossible amounts of memory and abort with an OOM panic.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 7.0.8, 6.2.9 and 6.0.17.\r\n\r\n### Credit\r\nThe issue has been identified by Xion (SeungHyun Lee) of KAIST GoN\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.5
+  },
+  "published_at": "2023-01-20T08:01:51Z",
+  "updated_at": "2023-01-20T08:01:51Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "7.0.8, 6.2.9, 6.0.17",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-mrcw-fhw9-fj8j",
+  "cwe_ids": [
+   "CWE-190"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-5gc4-76rx-22c9",
+  "cve_id": "CVE-2022-35951",
+  "summary": "Heap overflow in Redis 7.0 XAUTOCLAIM command's COUNT argument.",
+  "description": "### Impact\r\nExecuting a `XAUTOCLAIM` command on a stream key in a specific state, with a specially crafted `COUNT` argument may cause an integer overflow, a subsequent heap overflow, and potentially lead to remote code execution. The problem affects Redis versions 7.0.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis version 7.0.5.\r\n\r\n### Credits\r\nThis problem was identified by Xion (SeungHyun Lee) of KAIST GoN.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2022-09-22T05:38:38Z",
+  "updated_at": "2022-09-22T05:38:38Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "Redis"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "7.0.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-5gc4-76rx-22c9",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-96f7-42fg-2jrh",
+  "cve_id": "CVE-2022-31144",
+  "summary": "Potential heap overflow in Redis 7.0 XAUTOCLAIM command.",
+  "description": "### Impact\r\nA specially crafted `XAUTOCLAIM` command on a stream key in a specific state may result with heap overflow, and potentially remote code execution. The problem affects Redis versions 7.0.0 or newer.\r\n\r\n### Patches\r\nThe problem is fixed in Redis version 7.0.4.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.0
+  },
+  "published_at": "2022-07-18T13:44:03Z",
+  "updated_at": "2022-07-18T13:44:03Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis-server"
+    },
+    "vulnerable_version_range": ">= 7.0.0",
+    "patched_versions": "7.0.4",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-96f7-42fg-2jrh",
+  "cwe_ids": [
+   "CWE-122"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-647m-2wmq-qmvq",
+  "cve_id": "CVE-2022-24735",
+  "summary": "Lua scripts can be manipulated to overcome ACL rules",
+  "description": "### Impact\r\nBy exploiting weaknesses in the Lua script execution environment, an attacker with access to Redis can inject Lua code that will execute with the (potentially higher) privileges of another Redis user.\r\n\r\nThe Lua script execution environment in Redis provides some measures that prevent a script from creating side effects that persist and can affect the execution of the same, or different script, at a later time. Several weaknesses of these measures have been publicly known for a long time, but they had no security impact as the Redis security model did not endorse the concept of users or privileges.\r\n\r\nWith the introduction of ACLs in Redis 6.0, these weaknesses can be exploited by a less privileged users to inject Lua code that will execute at a later time, when a privileged user executes a Lua script.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 7.0.0 and 6.2.7.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate this problem without patching the redis-server executable, if Lua scripting is not being used, is to block access to `SCRIPT LOAD` and `EVAL` commands using ACL rules.\r\n\r\n### Credit\r\nThis problem has been reported by Aviv Yahav.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+   "score": 3.9
+  },
+  "published_at": "2022-04-27T18:09:54Z",
+  "updated_at": "2022-04-27T18:09:54Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis"
+    },
+    "vulnerable_version_range": "All",
+    "patched_versions": "7.0.0, 6.2.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-647m-2wmq-qmvq",
+  "cwe_ids": [
+   "CWE-94"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-3qpw-7686-5984",
+  "cve_id": "CVE-2022-24736",
+  "summary": "A Malformed Lua script can crash Redis",
+  "description": "### Impact\r\nAn attacker attempting to load a specially crafted Lua script can cause NULL pointer dereference which will result with a crash of the redis-server process. This issue affects all versions of Redis.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 7.0.0 and 6.2.7.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate this problem without patching the redis-server executable, if Lua scripting is not being used, is to block access to `SCRIPT LOAD` and `EVAL` commands using ACL rules.\r\n\r\n### Credit\r\nThis problem has been reported by Aviv Yahav.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+   "score": 3.3
+  },
+  "published_at": "2022-04-27T18:09:06Z",
+  "updated_at": "2022-04-27T18:09:06Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "n/a",
+     "name": "redis"
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "7.0.0, 6.2.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-3qpw-7686-5984",
+  "cwe_ids": [
+   "CWE-476"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-px78-xgh7-74fw",
+  "cve_id": null,
+  "summary": "DEBUG command is dangerous and enabled by default",
+  "description": "### Impact\r\nThe `DEBUG` command has several potential security implications if used incorrectly or by unauthorized users. It exists mainly for advanced troubleshooting and by the Redis test suite.\r\n\r\nWhile it is possible to block it using ACL configuration, this was not the default configuration before Redis 7.0.0.\r\n\r\n### Patches\r\nThe problem is addressed in Redis versions 7.0, where the `DEBUG` command is blocked by default and can only be enabled by an administrator locally modifying a configuration file.\r\n\r\n### Workarounds\r\nIt is possible to mitigate this risk by using ACL to block users from using the `DEBUG` command.\r\n\r\n### Credit\r\nThis problem was reported by Xion (SeungHyun Lee) of KAIST GoN.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+   "score": 6.4
+  },
+  "published_at": "2022-04-27T18:08:28Z",
+  "updated_at": "2022-04-27T18:08:28Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "7.0.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-px78-xgh7-74fw",
+  "cwe_ids": [
+   "CWE-1188"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-j3cr-9h5g-6cph",
+  "cve_id": "CVE-2021-41099",
+  "summary": "Integer overflow issue with strings",
+  "description": "### Impact\r\nAn integer overflow bug in the underlying string library can be used to corrupt the heap and potentially result with denial of service or remote code execution.\r\n\r\nThe vulnerability involves changing the default `proto-max-bulk-len` configuration parameter to a very large value and constructing specially crafted network payloads or commands.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `proto-max-bulk-len` configuration parameter. This can be done using ACL to restrict unprivileged users from using the CONFIG SET command.\r\n\r\n### Credit\r\nThis issue was discovered and reported by yiyuaner.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:33:07Z",
+  "updated_at": "2021-10-04T11:33:07Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-j3cr-9h5g-6cph",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-833w-8v3m-8wwr",
+  "cve_id": "CVE-2021-32762",
+  "summary": "Integer overflow that can lead to heap overflow in redis-cli, redis-sentinel on some platforms",
+  "description": "### Impact\r\nThe `redis-cli` command line tool and `redis-sentinel` service may be vulnerable to integer overflow when parsing specially crafted large multi-bulk network replies. This is a result of a vulnerability in the underlying `hiredis` library which does not perform an overflow check before calling the `calloc()` heap allocation function.\r\n\r\nThis issue only impacts systems with heap allocators that do not perform their own overflow checks. Most modern systems do and are therefore not likely to be affected. Furthermore, by default `redis-sentinel` uses the `jemalloc` allocator which is also not vulnerable.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Credit\r\nThis issue was discovered and reported by Microsoft Vulnerability Research.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:32:51Z",
+  "updated_at": "2021-10-04T11:32:51Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-833w-8v3m-8wwr",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-m3mf-8x9w-r27q",
+  "cve_id": "CVE-2021-32687",
+  "summary": "Integer overflow issue with intsets",
+  "description": "### Impact\r\nAn integer overflow bug affecting all versions of Redis can be exploited to corrupt the heap and potentially be used to leak arbitrary contents of the heap or trigger remote code execution.\r\n\r\nThe vulnerability involves changing the default `set-max-intset-entries` configuration parameter to a very large value and constructing specially crafted commands to manipulate sets.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `set-max-intset-entries` configuration parameter. This can be done using ACL to restrict unprivileged users from using the CONFIG SET command.\r\n\r\n### Credit\r\nThis issue was discovered and reported by Pawel Wieczorkiewicz (Amazon Web Services).\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:32:31Z",
+  "updated_at": "2021-10-04T11:32:31Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-m3mf-8x9w-r27q",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-f6pw-v9gw-v64p",
+  "cve_id": "CVE-2021-32675",
+  "summary": "DoS vulnerability in Redis",
+  "description": "### Impact\r\nWhen parsing an incoming Redis Standard Protocol (RESP) request, Redis allocates memory according to user-specified values which determine the number of elements (in the multi-bulk header) and size of each element (in the bulk header). An attacker delivering specially crafted requests over multiple connections can cause the server to allocate significant amount of memory.\r\n\r\nBecause the same parsing mechanism is used to handle authentication requests, this vulnerability can also be exploited by unauthenticated users.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate this problem without patching the `redis-server` executable is to block access to prevent unauthenticated users from connecting to Redis. This can be done in different ways:\r\n\r\n* Using network access control tools like firewalls, iptables, security groups, etc.\r\n* Enabling TLS and requiring users to authenticate using client side certificates.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:32:12Z",
+  "updated_at": "2021-10-04T11:32:12Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-f6pw-v9gw-v64p",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-9mj9-xx53-qmxm",
+  "cve_id": "CVE-2021-32672",
+  "summary": "Vulnerability in Lua Debugger",
+  "description": "### Impact\r\nWhen using the Redis Lua Debugger, users can send malformed requests that cause the debugger’s protocol parser to read data beyond the actual buffer. This issue affects all versions of Redis with Lua debugging support (3.2 or newer).\r\n\r\n### Patches\r\nThe problem is fixed in versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Credit\r\nThis problem was found by Meir Shpilraien.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+   "score": 3.1
+  },
+  "published_at": "2021-10-04T11:31:47Z",
+  "updated_at": "2021-10-04T11:31:47Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "3.2 or newer",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-9mj9-xx53-qmxm",
+  "cwe_ids": [
+   "CWE-125",
+   "CWE-126"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-vw22-qm3h-49pr",
+  "cve_id": "CVE-2021-32628",
+  "summary": "Vulnerability in handling large ziplists",
+  "description": "### Impact\r\nAn integer overflow bug in the ziplist data structure used by all versions of Redis can be exploited to corrupt the heap and potentially result with remote code execution.\r\n\r\nThe vulnerability involves modifying the default ziplist configuration parameters (`hash-max-ziplist-entries`, `hash-max-ziplist-value`, `zset-max-ziplist-entries` or `zset-max-ziplist-value`) to a very large value, and then constructing specially crafted commands to create very large ziplists.\r\n\r\n### Patches\r\nThe problem is fixed in Redis versions 6.2.6, 6.0.16, 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the above configuration parameters. This can be done using ACL to restrict unprivileged users from using the `CONFIG SET` command.\r\n\r\n### Credit\r\nThis issue was discovered and reported by [sundb](https://github.com/sundb).\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:31:23Z",
+  "updated_at": "2021-10-04T11:31:23Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "All versions",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-vw22-qm3h-49pr",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-f434-69fm-g45v",
+  "cve_id": "CVE-2021-32627",
+  "summary": "Integer overflow issue with Streams",
+  "description": "### Impact\r\nAn integer overflow bug in Redis 5.0 or newer can be exploited to corrupt the heap and potentially result with remote code execution.\r\n\r\nThe vulnerability involves changing the default `proto-max-bulk-len` and `client-query-buffer-limit` configuration parameters to very large values and constructing specially crafted very large stream elements.\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `proto-max-bulk-len` configuration parameter. This can be done using ACL to restrict unprivileged users from using the `CONFIG SET` command.\r\n\r\n### Credit\r\nThis issue was discovered and reported by [sundb](https://github.com/sundb).\r\n\r\n### References\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `proto-max-bulk-len` configuration parameter. This can be done using ACL to restrict unprivileged users from using the `CONFIG SET` command.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:30:56Z",
+  "updated_at": "2021-10-04T11:30:56Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "5.0 or newer",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-f434-69fm-g45v",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-p486-xggp-782c",
+  "cve_id": "CVE-2021-32626",
+  "summary": "Lua scripts can overflow the heap-based Lua stack",
+  "description": "### Impact\r\nSpecially crafted Lua scripts executing in Redis can cause the heap-based Lua stack to be overflowed, due to incomplete checks for this condition. This can result with heap corruption and potentially remote code execution.\r\n\r\nThis problem exists in all versions of Redis with Lua scripting support, starting from 2.6.\r\n\r\n### Patches\r\nThe problem is fixed in versions 6.2.6, 6.0.16 and 5.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from executing Lua scripts. This can be done using ACL to restrict `EVAL` and `EVALSHA` commands.\r\n\r\n### Credit\r\nThis problem was identified by Meir Shpilraien.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-10-04T11:30:20Z",
+  "updated_at": "2021-10-04T11:30:20Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "redis",
+     "name": ""
+    },
+    "vulnerable_version_range": "2.6 or newer",
+    "patched_versions": "6.2.6, 6.0.16, 5.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-p486-xggp-782c",
+  "cwe_ids": [
+   "CWE-122",
+   "CWE-787"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-8wxq-j7rp-g8wj",
+  "cve_id": "CVE-2021-32761",
+  "summary": "Integer overflow issues with BITFIELD command on 32-bit systems",
+  "description": "### Impact\r\nOn 32-bit versions, Redis BITFIELD command is vulnerable to integer overflow that can potentially be exploited to corrupt the heap, leak arbitrary heap contents or trigger remote code execution. The vulnerability involves constructing specially crafted bit commands which overflow the bit offset.\r\n\r\n**This problem only affects 32-bit versions of Redis.**\r\n\r\n### Patches\r\nThe problem is fixed in Redis 6.2.5, 6.0.15, 5.0.13.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from using the BITFIELD command. This can be done using ACL in Redis 6.0 and above.\r\n\r\n### Credit\r\nThis issue was discovered and reported by Huang Zhw.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-07-21T19:08:42Z",
+  "updated_at": "2021-07-21T19:08:42Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": ""
+    },
+    "vulnerable_version_range": "2.2 or newer",
+    "patched_versions": "5.0.13, 6.0.15, 6.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj",
+  "cwe_ids": [
+   "CWE-125",
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-46cp-x4x9-6pfq",
+  "cve_id": "CVE-2021-32625",
+  "summary": "Vulnerability in STRALGO LCS",
+  "description": "### Impact\r\nAn integer overflow bug in Redis version 6.0 or newer, could be exploited using the STRALGO LCS command to corrupt the heap and potentially result with remote code execution.\r\n\r\nThis is a result of an incomplete fix by CVE-2021-29477.\r\n\r\n### Patches\r\nThe problem is fixed in version 6.2.4 and 6.0.14.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to use ACL configuration to prevent clients from using the `STRALGO LCS` command.\r\n\r\nOn 64 bit systems which have the fixes of CVE-2021-29477 (6.2.3 or 6.0.13), it is sufficient to make sure that the `proto-max-bulk-len` config parameter is smaller than 2GB (default is 512MB).\r\n\r\n### Credit\r\nThis problem has been identified and reported by Nipun Gupta.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-06-01T14:34:26Z",
+  "updated_at": "2021-06-01T14:34:26Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": ""
+    },
+    "vulnerable_version_range": "<6.2.4, <6.0.14",
+    "patched_versions": "6.2.4, 6.0.14",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-46cp-x4x9-6pfq",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-vqxj-26vj-996g",
+  "cve_id": "CVE-2021-29477",
+  "summary": "Vulnerability in the STRALGO LCS command",
+  "description": "### Impact\r\nAn integer overflow bug in Redis version 6.0 or newer could be exploited using the `STRALGO LCS` command to corrupt the heap and potentially result with remote code execution.\r\n\r\n### Patches\r\nThe problem is fixed in version 6.2.3 and 6.0.13.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to use ACL configuration to prevent clients from using the `STRALGO LCS` command.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-05-03T20:27:06Z",
+  "updated_at": "2021-05-03T20:27:06Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": ""
+    },
+    "vulnerable_version_range": "<6.2.3, <6.0.13",
+    "patched_versions": "6.2.3, 6.0.13",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-vqxj-26vj-996g",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-qh52-crrg-44g3",
+  "cve_id": "CVE-2021-29478",
+  "summary": "Vulnerability in the COPY command for large intsets",
+  "description": "### Impact\r\nAn integer overflow bug in Redis 6.2 could be exploited to corrupt the heap and potentially result with remote code execution.\r\n\r\nThe vulnerability involves changing the default `set-max-intset-entries` configuration value, creating a large set key that consists of integer values and using the `COPY` command to duplicate it.\r\n\r\nThe integer overflow bug exists in all versions of Redis starting with 2.6, where it could result with a corrupted RDB or DUMP payload, but not exploited through `COPY` (which did not exist before 6.2).\r\n\r\n### Patches\r\nThe problem is fixed in version 6.2.3.\r\n\r\nRedis 6.0 and earlier are not directly affected by this issue but should be upgraded as they are potentially vulnerable to other issues due to lack of RDB and RESTORE payload sanitization, which was introduced in 6.2.0.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `set-max-intset-entries` configuration parameter. This can be done using ACL to restrict unprivileged users from using the `CONFIG SET` command.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+   "score": 7.5
+  },
+  "published_at": "2021-05-03T20:26:57Z",
+  "updated_at": "2021-05-03T20:26:57Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": ""
+    },
+    "vulnerable_version_range": "6.2.x",
+    "patched_versions": "6.2.3",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-qh52-crrg-44g3",
+  "cwe_ids": [
+   "CWE-680"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-hgj8-vff2-7cjf",
+  "cve_id": "CVE-2021-21309",
+  "summary": "Integer overflow on 32-bit systems",
+  "description": "### Impact\r\nAn integer overflow bug in 32-bit Redis version 4.0 or newer could be exploited to corrupt the heap and potentially result with remote code execution.\r\n\r\nRedis 4.0 or newer uses a configurable limit for the maximum supported bulk input size. By default, it is 512MB which is a safe value for all platforms.\r\n\r\nIf the limit is significantly increased, receiving a large request from a client may trigger several integer overflow scenarios, which would result with buffer overflow and heap corruption. We believe this could in certain conditions be exploited for remote code execution.\r\n\r\nBy default, authenticated Redis users have access to all configuration parameters and can therefore use the “CONFIG SET proto-max-bulk-len” to change the safe default, making the system vulnerable.\r\n\r\n**This problem only affects 32-bit Redis (on a 32-bit system, or as a 32-bit executable running on a 64-bit system).**\r\n\r\n### Patches\r\nThe problem is fixed in version 6.2, and the fix is back ported to 6.0.11 and 5.0.11. Make sure you use one of these versions if you're running 32-bit Redis.\r\n\r\n### Workarounds\r\nAn additional workaround to mitigate the problem without patching the redis-server executable is to prevent clients from directly executing `CONFIG SET`:\r\n* Using Redis 6.0 or newer, ACL configuration can be used to block the command.\r\n* Using older versions, the `rename-command` configuration directive can be used to rename the command to a random string unknown to users, rendering it inaccessible.\r\n\r\nPlease note that this workaround may have an additional impact on users or operational systems that expect `CONFIG SET` to behave in certain ways.\r\n\r\n### Credits\r\nThe problem was reported by Omri Ben-Bassat of Section 52 at Azure Defender for IoT, Microsoft Corp.\r\n\r\n### For more information\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [the Redis repository](https://github.com/redis/redis)\r\n* Email us at redis@redis.io\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2021-02-23T08:13:33Z",
+  "updated_at": "2021-02-23T08:13:33Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "",
+     "name": ""
+    },
+    "vulnerable_version_range": ">= 4.0 (32-bit only)",
+    "patched_versions": "6.0.11, 5.0.11, 6.2",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/redis/redis/security/advisories/GHSA-hgj8-vff2-7cjf",
+  "cwe_ids": []
+ }
+]

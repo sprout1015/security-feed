@@ -1,0 +1,206 @@
+Skip to content
+Accessibility Policy
+QUICK LINKS
+Cloud
+Database
+Java
+AI
+SUGGESTED LINKS
+SUGGESTED SEARCHES
+Country
+Sign in to your Oracle account
+Create an Oracle account
+Signed in to Oracle (SSO) as:
+Oracle account
+Help
+Sign out
+Go to the OCI/Cloud console
+Critical Patch Updates, Critical Security Patch Updates, Security Alerts and Bulletins
+This page lists announcements of security fixes made in Critical Patch Update Advisories, Critical Security Patch Update Advisories, Security Alerts and Bulletins, and it is updated when new Critical Patch Update Advisories, Critical Security Patch Update Advisories, Security Alerts and Bulletins are released.
+</security-alerts/securityemail.html> Instructions for subscribing to email notifications of Critical Patch Update Advisories, Critical Security Patch Update Advisories and Security Alerts.
+<https://blogs.oracle.com/security/> Oracle Corporate Security Blog
+</corporate/security-practices/assurance/vulnerability/reporting.html> Guidelines for reporting security vulnerabilities
+This page contains the following sections:
+Critical Patch Updates
+Critical Security Patch Updates
+Security Alerts
+Solaris Third Party Bulletins
+Oracle Linux Security Advisories
+Map of CVE to Advisory/Alert
+Oracle CVEs not published in other Oracle public documents
+Policy on information provided in Critical Patch Update Advisories, Critical Security Patch Update Advisories and Security Alerts
+Applicability of Critical Patch Updates, Critical Security Patch Updates and Security Alerts to Oracle Cloud
+References
+Critical Patch Updates
+Critical Patch Updates provide security patches for supported Oracle on-premises products. A Critical Patch Update is a collection of patches for multiple security vulnerabilities. These patches address vulnerabilities in Oracle code and in third party components included in Oracle products. These patches are usually cumulative. They are available to customers with valid support contracts. Critical Patch Updates are released on the third Tuesday of January, April, July, and October. The next four dates are:
+19 January 2027
+20 April 2027
+20 July 2027
+19 October 2027
+A pre-release announcement will be published on the Thursday preceding each Critical Patch Update release.
+The Critical Patch Updates released since 2021 are listed in the following table. Critical Patch Updates released before 2021 are available </security-alerts/cpuarchive.html> here.
+| Critical Patch Update
+| Latest Version/Date
+| </security-alerts/cpuoct2026.html> Critical Patch Update - October 2026
+| Rev 3, 4 November 2026
+| </security-alerts/cpujul2026.html> Critical Patch Update - July 2026
+| Rev 7, 20 August 2026
+| </security-alerts/cpuapr2026.html> Critical Patch Update - April 2026
+| Rev 2, 24 April 2026
+| </security-alerts/cpujan2026.html> Critical Patch Update - January 2026
+| Rev 3, 2 February 2026
+| </security-alerts/cpuoct2025.html> Critical Patch Update - October 2025
+| Rev 1, 21 October 2025
+| </security-alerts/cpujul2025.html> Critical Patch Update - July 2025
+| Rev 4, 28 July 2025
+| </security-alerts/cpuapr2025.html> Critical Patch Update - April 2025
+| Rev 2, 21 April 2025
+| </security-alerts/cpujan2025.html> Critical Patch Update - January 2025
+| Rev 2, 11 February 2025
+| </security-alerts/cpuoct2024.html> Critical Patch Update - October 2024
+| Rev 2, 25 November 2024
+| </security-alerts/cpujul2024.html> Critical Patch Update - July 2024
+| Rev 3, 18 September 2024
+| </security-alerts/cpuapr2024.html> Critical Patch Update - April 2024
+| Rev 2, 18 September 2024
+| </security-alerts/cpujan2024.html> Critical Patch Update - January 2024
+| Rev 5, 11 February 2025
+| </security-alerts/cpuoct2023.html> Critical Patch Update - October 2023
+| Rev 5, 8 December 2023
+| </security-alerts/cpujul2023.html> Critical Patch Update - July 2023
+| Rev 1, 18 July 2023
+| </security-alerts/cpuapr2023.html> Critical Patch Update - April 2023
+| Rev 2, 25 April 2023
+| </security-alerts/cpujan2023.html> Critical Patch Update - January 2023
+| Rev 3, 27 February 2023
+| </security-alerts/cpuoct2022.html> Critical Patch Update - October 2022
+| Rev 3, 12 December 2022
+| </security-alerts/cpujul2022.html> Critical Patch Update - July 2022
+| Rev 4, 31 October 2022
+| </security-alerts/cpuapr2022.html> Critical Patch Update - April 2022
+| Rev 9, 23 December 2024
+| </security-alerts/cpujan2022.html> Critical Patch Update - January 2022
+| Rev 7, 23 December 2024
+| </security-alerts/cpuoct2021.html> Critical Patch Update - October 2021
+| Rev 3, 18 January 2022
+| </security-alerts/cpujul2021.html> Critical Patch Update - July 2021
+| Rev 7, 03 September 2021
+| </security-alerts/cpuapr2021.html> Critical Patch Update - April 2021
+| Rev 6, 28 July 2021
+| </security-alerts/cpujan2021.html> Critical Patch Update - January 2021
+| Rev 3, 22 February 2021
+Critical Security Patch Updates
+Critical Security Patch Updates provide security patches for supported Oracle on-premises products. A Critical Security Patch Update provides targeted, high-priority security fixes in a smaller, more focused format, making them easier to apply with minimal disruption. Critical Security Patch Updates complement Oracle’s existing quarterly cumulative Critical Patch Updates (CPUs). They are available to customers with valid support contracts. The first Critical Security Patch Update was released on May 28, 2026. Critical Security Patch Updates will be released on the third Tuesday of February, March, May, June, August, September, November, and December. The next four dates are:
+15 December 2026
+16 February 2027
+16 March 2027
+18 May 2027
+A pre-release announcement will be published on the Thursday preceding each Critical Security Patch Update release beginning in June 2026.
+| Critical Security Patch Update
+| Latest Version/Date
+| </security-alerts/cspunov2026.html> Critical Security Patch Update - November 2026
+| Rev 1, 17 November 2026
+| </security-alerts/cspusep2026.html> Critical Security Patch Update - September 2026
+| Rev 1, 15 September 2026
+| </security-alerts/cspuaug2026.html> Critical Security Patch Update - August 2026
+| Rev 4, 4 September 2026
+| </security-alerts/cspujun2026.html> Critical Security Patch Update - June 2026
+| Rev 1, 16 June 2026
+| </security-alerts/cspumay2026.html> Critical Security Patch Update - May 2026
+| Rev 1, 28 May 2026
+Security Alerts
+Oracle will issue Security Alerts for vulnerability fixes deemed too critical to wait for distribution in the next Critical Patch Update or Critical Security Patch Update. The Security Alerts released since 2021 are listed in the following table. Security Alerts released before 2021 are available </security-alerts/alertsarchive.html> here.
+| Security Alert Number And Description
+| Latest Version/Date
+| </security-alerts/alert-CVE-2026-109618.html> Alert for CVE-2026-109618
+| Rev 3, 6 November 2026
+| </security-alerts/alert-CVE-2026-114820.html> Alert for CVE-2026-114820
+| Rev 2, 30 October 2026
+| </security-alerts/alert-CVE-2026-91403.html> Alert for CVE-2026-91403
+| Rev 1, 21 October 2026
+| </security-alerts/alert-CVE-2026-35273.html> Alert for CVE-2026-35273
+| Rev 1, 10 June 2026
+| </security-alerts/alert-CVE-2026-21992.html> Alert for CVE-2026-21992
+| Rev 2, 20 March 2026
+| </security-alerts/alert-cve-2025-61884.html> Alert for CVE-2025-61884
+| Rev 1, 11 October 2025
+| </security-alerts/alert-cve-2025-61882.html> Alert for CVE-2025-61882
+| Rev 2, 06 October 2025
+| </security-alerts/alert-cve-2024-21287.html> Alert for CVE-2024-21287
+| Rev 1, 18 November 2024
+| </security-alerts/alert-cve-2022-21500.html> Alert for CVE-2022-21500
+| Rev 2, 25 May 2022
+| </security-alerts/alert-cve-2021-44228.html> Alert for CVE-2021-44228
+| Rev 3, 17 December 2021
+Solaris Third Party Bulletins
+Solaris Third Party Bulletins are used to announce security patches for third party software distributed with Oracle Solaris. Solaris Third Party Bulletins are published on the same day as Oracle Critical Patch Updates are released. These bulletins will be updated once after their release (i.e., one update between the normal quarterly Critical Patch Update publication dates). In addition, Solaris Third Party Bulletins may also be updated for vulnerability patches deemed too critical to wait for the next scheduled publication date. Solaris Third Party Bulletins released before 2021 are available </security-alerts/solarisbulletinsarchive.html> here.
+| Solaris Third Party Bulletin
+| Latest Version/Date
+| </security-alerts/bulletinoct2026.html> Solaris Third Party Bulletin - October 2026
+| Rev 1, 20 October 2026
+| </security-alerts/bulletinjul2026.html> Solaris Third Party Bulletin - July 2026
+| Rev 2, 21 September 2026
+| </security-alerts/bulletinapr2026.html> Solaris Third Party Bulletin - April 2026
+| Rev 2, 16 June 2026
+| </security-alerts/bulletinjan2026.html> Solaris Third Party Bulletin - January 2026
+| Rev 3, 18 March 2026
+| </security-alerts/bulletinoct2025.html> Solaris Third Party Bulletin - October 2025
+| Rev 3, 16 December 2025
+| </security-alerts/bulletinjul2025.html> Solaris Third Party Bulletin - July 2025
+| Rev 3, 23 September 2025
+| </security-alerts/bulletinapr2025.html> Solaris Third Party Bulletin - April 2025
+| Rev 3, 18 June 2025
+| </security-alerts/bulletinjan2025.html> Solaris Third Party Bulletin - January 2025
+| Rev 3, 18 March 2025
+| </security-alerts/bulletinoct2024.html> Solaris Third Party Bulletin - October 2024
+| Rev 4, 07 May 2025
+| </security-alerts/bulletinjul2024.html> Solaris Third Party Bulletin - July 2024
+| Rev 3, 24 September 2024
+| </security-alerts/bulletinapr2024.html> Solaris Third Party Bulletin - April 2024
+| Rev 3, 14 June 2024
+| </security-alerts/bulletinjan2024.html> Solaris Third Party Bulletin - January 2024
+| Rev 3, 19 March 2024
+| </security-alerts/bulletinoct2023.html> Solaris Third Party Bulletin - October 2023
+| Rev 3, 19 December 2023
+| </security-alerts/bulletinjul2023.html> Solaris Third Party Bulletin - July 2023
+| Rev 3, 19 September 2023
+| </security-alerts/bulletinapr2023.html> Solaris Third Party Bulletin - April 2023
+| Rev 3, 23 June 2023
+| </security-alerts/bulletinjan2023.html> Solaris Third Party Bulletin - January 2023
+| Rev 3, 20 March 2023
+| </security-alerts/bulletinoct2022.html> Solaris Third Party Bulletin - October 2022
+| Rev 4, 14 February 2023
+| </security-alerts/bulletinjul2022.html> Solaris Third Party Bulletin - July 2022
+| Rev 3, 20 September 2022
+| </security-alerts/bulletinapr2022.html> Solaris Third Party Bulletin - April 2022
+| Rev 3, 17 June 2022
+| </security-alerts/bulletinjan2022.html> Solaris Third Party Bulletin - January 2022
+| Rev 4, 15 March 2022
+| </security-alerts/bulletinoct2021.html> Solaris Third Party Bulletin - October 2021
+| Rev 3, 10 December 2021
+| </security-alerts/bulletinjul2021.html> Solaris Third Party Bulletin - July 2021
+| Rev 3, 14 September 2021
+| </security-alerts/bulletinapr2021.html> Solaris Third Party Bulletin - April 2021
+| Rev 3, 15 June 2021
+| </security-alerts/bulletinjan2021.html> Solaris Third Party Bulletin - January 2021
+| Rev 4, 16 March 2021
+Oracle Linux Security Advisories
+Oracle Linux Security Advisories are published at <https://linux.oracle.com/security/> https://linux.oracle.com/security/.
+Map of CVE to Advisory/Alert
+The </security-alerts/public-vuln-to-advisory-mapping.html> Map of CVE to Advisory/Alert indicates which CVEs are fixed in each Critical Patch Update, Critical Security Patch Update and Security Alert. The </security-alerts/public-vuln-to-bulletin-mapping.html> Map of CVE to Solaris Third Party Bulletin indicates which CVEs are fixed in each Solaris Third Party Bulletin.
+Oracle CVEs not published in other Oracle public documents
+The </security-alerts/all-oracle-cves-outside-other-oracle-public-documents.html> page provides Oracle CVEs which are not published in other Oracle public documents.
+Policy on information provided in Critical Patch Update Advisories, Critical Security Patch Update Advisories and Security Alerts
+As a matter of policy, Oracle will not provide additional information about the specifics of vulnerabilities beyond what is provided in the Critical Patch Update, Critical Security Patch Update or Security Alert notification, the pre-installation notes, the readme files, and FAQs. Oracle provides all customers with the same information in order to protect all customers equally. Oracle will not provide advance notification or "insider information" on Critical Patch Updates, Critical Security Patch Updates or Security Alerts to individual customers. Finally, Oracle does not distribute exploit code (or "proof of concept code") for vulnerabilities in our products.
+Applicability of Critical Patch Updates, Critical Security Patch Updates and Security Alerts to Oracle Cloud
+The Oracle Cloud operations and security teams regularly evaluate Oracle’s Critical Patch Updates, Critical Security Patch Updates and Security Alert fixes as well as relevant third-party fixes as they become available and apply the relevant patches in accordance with applicable change management processes.
+Cloud customers requiring information that is not addressed in the Critical Patch Update Advisory, Critical Security Patch Update Advisory or Security Alert Advisory may obtain information as follows:
+Oracle Cloud (IaaS, PaaS, and SaaS) customers should submit a SR within their designated support system
+Oracle Managed Cloud Services (OMCS) customers should contact their Service Delivery Manager (SDM) or Technical Account Manager (TAM)
+CRM On Demand customers should request status via a Service Request (SR)
+Global Business Units/Industry Cloud Services customers should submit a SR within their designated support system or, if applicable, contact their Customer Success Manager
+Oracle Advertising customers should contact their Client Partner.
+Oracle NetSuite customers should submit an Oracle NetSuite Support Case from within their Oracle NetSuite account.
+References
+</corporate/security-practices/assurance/> Oracle Software Security Assurance web site
+</corporate/security-practices/assurance/vulnerability/security-fixing.html> Oracle's policy and process for fixing security vulnerabilities

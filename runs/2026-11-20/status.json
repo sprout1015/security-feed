@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-20",
+  "finished_at": "2026-11-20T12:14:42+09:00",
+  "step_errors": {},
+  "sources": {
+    "total": 32,
+    "ok": 32,
+    "changed": 0,
+    "error": 0
+  },
+  "kev": {
+    "status": "ok",
+    "recent": 7
+  },
+  "cve": {
+    "status": "ok",
+    "new": 1046,
+    "hits": 22
+  },
+  "libraries": {
+    "status": "ok",
+    "findings": 2
+  }
+}

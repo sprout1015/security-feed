@@ -1,0 +1,2199 @@
+[
+ {
+  "ghsa_id": "GHSA-f3mh-rxg3-f5g2",
+  "cve_id": "CVE-2026-119346",
+  "summary": "HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-717 -->\r\n\r\nNext.js applications that set cookies through `NextResponse` on Edge runtime routes — App Router route handlers and Pages Router Edge API routes — send an internal `x-middleware-set-cookie` header in the public response, duplicating the cookie value and its attributes. This makes HttpOnly cookies, such as session tokens, readable by JavaScript running on the same origin when an application sets a sensitive cookie on an affected response.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:54Z",
+  "updated_at": "2026-11-06T10:20:20Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.0.0, <= 15.5.28",
+    "patched_versions": "15.5.29",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-f3mh-rxg3-f5g2",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-7qx7-33qx-rqx2",
+  "cve_id": "CVE-2026-119347",
+  "summary": "SVG rejection bypass in Next.js image optimization",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-438 -->\r\nOn self-hosted deployments, the Next.js image optimizer (`/_next/image`) can be made to process an attacker-supplied SVG even when SVG support is disabled with `dangerouslyAllowSVG: false` (the default). This reaches an SVG parser the application intended to keep disabled, increasing exposure to denial of service and SVG decoder vulnerabilities.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:51Z",
+  "updated_at": "2026-11-06T10:20:02Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.0.0, <= 15.5.28",
+    "patched_versions": "15.5.29",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-7qx7-33qx-rqx2",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-pc58-hwjq-p385",
+  "cve_id": "CVE-2026-119348",
+  "summary": "Cross-client response injection and disclosure in self-hosted Next.js applications forwarding fetched responses",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-564 -->\r\nSelf-hosted Next.js applications (App Router route handlers and the fetch cache) that return a fetched upstream response unchanged can emit a response whose declared framing does not match the body actually sent. When such an application sits behind an HTTP/1.1 reverse proxy that permits pipelined response queueing, a crafted upstream response can desynchronize responses between clients, enabling response injection and disclosure of other clients' responses.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:48Z",
+  "updated_at": "2026-11-06T10:20:08Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "<= 15.5.28",
+    "patched_versions": "15.5.29",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-pc58-hwjq-p385",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-rhh4-g77r-r9qj",
+  "cve_id": "CVE-2026-119349",
+  "summary": "Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-546 -->\r\nNext.js App Router applications that pass binary arguments (such as Uint8Array or Blob values) to functions using the `use cache` directive can produce identical cache keys for distinct arguments, allowing cached results to be shared across users — cross-user disclosure of cached data or cache poisoning. This affects applications using `use cache` with binary arguments.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:45Z",
+  "updated_at": "2026-11-06T10:20:05Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-rhh4-g77r-r9qj",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-vvgp-ww4w-46vf",
+  "cve_id": "CVE-2026-119350",
+  "summary": "Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-747 -->\r\n\r\nSelf-hosted Next.js applications served with `next start` and built with `cacheComponents: true` but without Partial Prefetching accept a request-supplied route param value as a prerender placeholder. One unauthenticated GET request can poison the fallback shell cache entry that a family of routes shares.\r\n\r\nSuch a route is served from a shell that keeps its never-prerenderable params as placeholders, so every value of those params shares one cache entry. A path segment equal to the percent-encoded, bracketed name of its own route param is treated as an unresolved placeholder, and only that param is deferred. A layout above it then renders its concrete value into the shell during the blocking render, and the result, including its HTTP status, is stored under the shared key.\r\n\r\nDepending on the application, the stored entry is one of the following:\r\n\r\n- A persistent 404, when the layout rejects the value with `notFound()`: served to every URL under the shell key with `\"revalidate\": false`, across server restarts, with no error logged.\r\n- A substituted param value, when the layout renders the value: the server-rendered HTML renders the attacker's value for that param in place of the visitor's own. A JavaScript client corrects it on hydration. No markup or script injection is possible, and no data is disclosed.\r\n\r\n### Preconditions\r\n\r\n1. `cacheComponents: true` with `partialPrefetching` unset or `false`.\r\n2. Self-hosted serving with `next start`.\r\n3. A dynamic route with a prerenderable param (`generateStaticParams`) whose requested value was not generated at build time.\r\n4. At least two never-prerenderable params below it: a layout reading the shallower one inside a Suspense boundary, and a deeper one the request supplies as the placeholder.\r\n5. A blocking fallback shell.\r\n\r\n### Workarounds\r\n\r\nSet `partialPrefetching: true` in `next.config`. Otherwise, apps should upgrade to the patched version as soon as possible.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:43Z",
+  "updated_at": "2026-11-06T10:20:17Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.4.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-vvgp-ww4w-46vf",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-vc7v-qv4w-wrv8",
+  "cve_id": "CVE-2026-119351",
+  "summary": "Cache leak across root param values in nested 'use cache' functions via delayed inner stream metadata",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-395 -->\r\n\r\nWith Cache Components enabled, an outer `'use cache'` function can be keyed incorrectly even when its inner `'use cache'` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises — for example an object with data that is ready immediately alongside slower data — React Flight delivers the ready portion to the outer function before the inner entry has finished publishing its root param dependencies. The outer function can then finish, and its cache entry is persisted under a key that omits that root param. The entry is written once and reused for all root param values, so a response for one root param value can serve content produced for a different value. Entries written this way can also ignore tag invalidation and cache lifetimes of the nested caches they consumed.\r\n\r\nWhat values are leaked cannot be attacker controlled. Which value's content is served depends only on which invocation wrote the entry first.\r\n\r\nThis is a variant of https://github.com/advisories/GHSA-h694-7cp9-m8p3 that the fix for that advisory does not cover: it does not require the inner call to be served from an existing entry, and it does not depend on a slow cache handler.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:40Z",
+  "updated_at": "2026-11-06T10:20:10Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.2.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-vc7v-qv4w-wrv8",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-mfr8-8qww-v76h",
+  "cve_id": "CVE-2026-119790",
+  "summary": "Information disclosure across root params in Next.js when a 'use cache' function is called through unstable_cache()",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-726 -->\r\nNext.js applications with `'use cache'` can disclose cached data across root params when the same `'use cache'` function is called both directly during rendering and through `unstable_cache()`, and that function reads a root param. Root params are route parameters of the root layout, and applications commonly use them to scope data, for example per locale.\r\n\r\nDuring a cold process start, a cross-request deduplication race allowed an `unstable_cache()` call to join the in-flight fill of a concurrent direct call and receive its result, bypassing the root param check that would normally reject it. `unstable_cache()` then stored that result under a cache key without root params, so subsequent requests for other root param values received the same entry until it is revalidated or evicted. Cached data produced for one root param value is returned to requests for other values.\r\n\r\nExploitation requires the `unstable_cache()` request to arrive while the function's first fill after a process start is still in flight. Outside this race, the nesting already throws an error: `'use cache' inside unstable_cache() is unsupported`, and avoiding it is a complete workaround.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-11-03T18:39:36Z",
+  "updated_at": "2026-11-06T10:20:14Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.3.0, <= 16.4.4",
+    "patched_versions": "16.4.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-mfr8-8qww-v76h",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-p3m5-59mp-jv5r",
+  "cve_id": null,
+  "summary": "Denial of Service in App Router using Server Actions",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-359 -->\r\n\r\n## Impact\r\n\r\nCrafted requests targeting Next.js applications using App Router with at least one Server Action can lead to excessive CPU usage blocking processing of further requests in the same process.\r\n\r\n## Workarounds\r\n\r\nNo workaround exists besides upgrading. Applications using Pages Router or not using Server Actions are not vulnerable.\r\n\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-10-14T17:47:43Z",
+  "updated_at": "2026-10-14T17:47:43Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 <= 15.5.27",
+    "patched_versions": "15.5.28",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 <= 16.4.0",
+    "patched_versions": "16.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-p3m5-59mp-jv5r",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-673q-mjm6-r5xr",
+  "cve_id": null,
+  "summary": "Unauthenticated Remote Code Execution in `use cache` functions returning typed arrays",
+  "description": "## Impact\r\n\r\nA vulnerability in applications using App router with Cache Component can lead to remote code execution. The application needs to have a `use cache` function that returns multiple typed arrays.\r\n\r\n## Workaround\r\n\r\nThere is no known workaround for affected applications with such `use cache` functions. You should upgrade immediately even if your application does not have similar functions.",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-10-14T17:47:07Z",
+  "updated_at": "2026-10-14T17:47:07Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=16.0.0 <= 16.4.0",
+    "patched_versions": "16.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-673q-mjm6-r5xr",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-2464-fhr4-w9xw",
+  "cve_id": "CVE-2026-96889",
+  "summary": "Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-386 -->\r\n\r\n## Impact\r\n\r\nA memory-related vulnerability has been discovered in an upstream library used for Image Optimization can lead to possible remote code execution (RCE) when Next.js runs on glibc-based Linux.\r\n\r\n## Workaround\r\n\r\nEnsure the version of `sharp` used by Next.js is greater than or equal to `0.35.5`. Fresh installs automatically get a fixed version fo `sharp`.\r\nUpgrading Next.js to the patched versions will ensure package managers automatically provide a fixed version of `sharp` to Next.js.",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-10-14T17:46:48Z",
+  "updated_at": "2026-10-14T17:46:48Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 10.0.0  <= 15.5.27",
+    "patched_versions": "15.5.28",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "> 16.0.0 <= 16.4.0",
+    "patched_versions": "16.4.1",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-2464-fhr4-w9xw",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-cjq9-62q9-8jv4",
+  "cve_id": "CVE-2026-94483",
+  "summary": "Server-Side Request Forgery in Image Optimization",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-225 -->\r\n\r\n## Impact\r\n\r\nAn attacker-controlled, allow-listed remote URL can lead to server-side request forgery (e.g. to private IPs) during Image Optimization. \r\n\r\n## Workaround\r\n\r\nAudit allow-listed remote URLs in `images.remotePatterns` (see https://nextjs.org/docs/app/getting-started/images#remote-images) for hosts that may not be trusted with their DNS entries. If no `images.remotePatterns` are configured, your app is not affected.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:15:36Z",
+  "updated_at": "2026-09-30T16:15:36Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.3.?",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-cjq9-62q9-8jv4",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-f87g-xv8r-7p7x",
+  "cve_id": "CVE-2026-94485",
+  "summary": "Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-109 -->\r\n\r\nIn Next.js App Router applications built with webpack, metadata image routes such as opengraph-image and twitter-image ignore the `dynamicParams` route segment option. An attacker can request metadata image URLs for dynamic segments that were deliberately excluded from `generateStaticParams()`.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:44Z",
+  "updated_at": "2026-09-30T16:14:44Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-f87g-xv8r-7p7x",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-3w37-wq28-93x7",
+  "cve_id": "CVE-2026-94544",
+  "summary": "Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-352 -->\r\n\r\nPending `use cache` fills are shared across requests for the same key without distinguishing Draft Mode requests from regular requests. When two such requests overlap, the second request receives the first request's fill:\r\n\r\n- A regular request that overlaps an editor's Draft Mode request receives unpublished content, without any authentication.\r\n- A Draft Mode request that overlaps a regular request receives published content instead of the draft.\r\n\r\nIf the overlapping regular request prerenders a page — for example an on-demand prerender of a route that was not prerendered at build time — the unpublished content can be persisted into the generated page and served to all later visitors of that route until the page is revalidated. Since cached functions can be shared across routes, the poisoned page does not need to be the page the editor is previewing.\r\n\r\nSites are affected if they enable Cache Components (or `experimental.useCache`) and serve Draft Mode previews whose cached functions return draft-dependent content.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:35Z",
+  "updated_at": "2026-09-30T16:14:35Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "16.3.0",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-3w37-wq28-93x7",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-h694-7cp9-m8p3",
+  "cve_id": "CVE-2026-103004",
+  "summary": "Cache leak across root param values in nested 'use cache' functions",
+  "description": "### Impact\r\n\r\nWith Cache Components enabled (`cacheComponents: true`), a `'use cache'` function that calls another `'use cache'` function that reads a root param can be keyed incorrectly when the inner call is served from an existing entry: the enclosing function's cache key then omits that root param. The enclosing entry is written once and reused for all root param values, so a response for one root param value can serve content produced for a different value — whether the page is prerendered at build time or at runtime, or rendered dynamically. Shared cache headers let downstream caches redistribute the content further. \r\n\r\nWhat values are leaked cannot be attacker controlled. Which value's content is served depends only on which invocation wrote the entry first.\r\n\r\n### Workarounds\r\n\r\nThere are no known workarounds. Apps should upgrade to the patched version as soon as possible.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:26Z",
+  "updated_at": "2026-10-01T14:42:54Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "16.3.0",
+    "patched_versions": "16.3.8",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-h694-7cp9-m8p3",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-4jqv-mc3x-m676",
+  "cve_id": "CVE-2026-94543",
+  "summary": "Cache poisoning of SSG and ISR pages in self-hosted Next.js applications",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-190 -->\r\n\r\nSelf-hosted Next.js applications that use the Pages Router with statically generated (SSG) or incrementally regenerated (ISR) pages can have a page's cache entry replaced with content from a different route, causing the affected page to serve wrong content to every visitor until the entry is revalidated. Applications deployed on Vercel are not affected.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:22Z",
+  "updated_at": "2026-09-30T16:14:22Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.0.0",
+    "patched_versions": "15.5.?",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-4jqv-mc3x-m676",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-mcj8-r9mp-w47p",
+  "cve_id": "CVE-2026-94484",
+  "summary": "Cache poisoning in Next.js SSG/ISR rendering leads to cross-user content substitution and persistent denial of service",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-198 -->\r\n\r\nNext.js applications that use a root-level catch-all page together with statically generated or Incremental Static Regeneration routes can have their shared response cache poisoned by a single unauthenticated crafted request. ",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:19Z",
+  "updated_at": "2026-09-30T16:14:19Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.0.0",
+    "patched_versions": "15.5.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-mcj8-r9mp-w47p",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-39w2-rjm5-chcv",
+  "cve_id": "CVE-2026-94486",
+  "summary": "Information disclosure in the Next.js development server's Model Context Protocol endpoint",
+  "description": "<!-- https://linear.app/vercel/issue/NSEC-277 -->\r\n\r\nThe Next.js development server (`next dev`) exposes a Model Context Protocol endpoint that does not verify which website a request originates from, allowing a malicious website visited by the developer to read sensitive development data — including the project's location on disk, source code snippets from error reports, the route inventory, and development logs. Only applications run with `next dev` are affected. Production deployments do not serve this endpoint.",
+  "severity": "low",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-30T16:14:15Z",
+  "updated_at": "2026-09-30T16:14:15Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0",
+    "patched_versions": "16.3.?",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-39w2-rjm5-chcv",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-vcvr-r3jv-pc5j",
+  "cve_id": "CVE-2026-94545",
+  "summary": "Remote Code Execution in next/og ImageResponse",
+  "description": "## Impact\r\n\r\nThe Node.js `ImageResponse` implementation from `next/og` is affected by an upstream vulnerability. This can lead to remote code execution.\r\n\r\nAffected applications pass attacker-controlled values into SVG content, attributes, or styles during image generation:\r\n\r\n```tsx\r\nimport { ImageResponse } from 'next/og'\r\n\r\nexport async function GET(request: Request) {\r\n  const value = new URL(request.url).searchParams.get('value') ?? ''\r\n\r\n  return new ImageResponse(\r\n    <svg width=\"1200\" height=\"630\">\r\n      <title>{value}</title>\r\n    </svg>\r\n  )\r\n}\r\n```\r\n\r\nApplications using the Edge `ImageResponse` implementation, or applications that do not pass attacker-controlled values into SVG content, attributes, or styles, are not affected.\r\n\r\n## Workaround\r\n\r\nIf upgrading is not immediately possible, do not pass attacker-controlled values into SVG content, attributes, or styles rendered by the Node.js `ImageResponse` implementation from `next/og`.",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-09-22T17:03:51Z",
+  "updated_at": "2026-09-22T17:03:51Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.2.0 < 16.3.6",
+    "patched_versions": "16.3.6",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3jv-pc5j",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-2xp9-vwfh-vxw4",
+  "cve_id": null,
+  "summary": "Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used",
+  "description": "A vulnerability in the underlying `libheif` library used by `sharp` which Next.js uses for image optimization can lead to remote code execution when AVIF files are optimized.\r\n\r\nUntil a fix has propagated, optimization of AVIF files is disabled.\r\n\r\n### References\r\n\r\n- [GHSA-g89c-p67h-r497](https://github.com/strukturag/libheif/security/advisories/GHSA-g89c-p67h-r497)",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-08-25T16:16:28Z",
+  "updated_at": "2026-08-25T16:16:29Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 10.0.0 < 15.5.24",
+    "patched_versions": "15.5.24",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "< 16.3.3",
+    "patched_versions": "16.3.3",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-2xp9-vwfh-vxw4",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-p293-qw3h-jr36",
+  "cve_id": "CVE-2026-75604",
+  "summary": "Unauthenticated Remote Code Execution on windows-hosted servers",
+  "description": "## Impact\r\n\r\nA vulnerability in applications using Pages and App router without Cache Component can lead to remote code execution when the server is hosted on machines using a Windows filesystem.\r\n\r\n## Workaround\r\n\r\nThere is no known workaround for affected windows-hosted applications. You should upgrade immediately if your server is hosted on Windows.",
+  "severity": "critical",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "score": 9.0
+  },
+  "published_at": "2026-08-25T16:15:42Z",
+  "updated_at": "2026-08-25T16:15:42Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 13.4 < 15.5.24",
+    "patched_versions": "15.5.24",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0 < 16.3.3",
+    "patched_versions": "16.3.3",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-p293-qw3h-jr36",
+  "cwe_ids": [
+   "CWE-22"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-89xv-2m56-2m9x",
+  "cve_id": "CVE-2026-64649",
+  "summary": "Server-Side Request Forgery in Server Actions on custom servers",
+  "description": "## Impact\r\n\r\nWhen a Server Action forwards or redirects a request, an attacker can cause the server to send that outbound request to a malicious host (Server-Side Request Forgery). This requires the attacker's request to control Host-associated headers. In some configurations, it's also possible to obtain internal values that weaken middleware/proxy authorization.\r\n\r\nApplications that use Server Actions are affected when the incoming host header is not fixed to a trusted value. This typically occurs on custom servers, or on deployments not behind a proxy that pins the host. Managed hosting pins the host upstream and is not affected; `next start` and standalone output do the same from version 14.2 onward.\r\n\r\n## Workarounds\r\n\r\nIf you cannot upgrade, ensure clients do not control the host header your application receives. Pin or validate `Host` and `X-Forwarded-Host` at your edge or proxy. On version 14.2.0 and later, you can additionally set the `__NEXT_PRIVATE_ORIGIN` environment variable to your deployment's real origin:\r\n\r\n```bash\r\n__NEXT_PRIVATE_ORIGIN=https://www.example.com node server.js",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:03:06Z",
+  "updated_at": "2026-07-21T16:03:07Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 14.1.1 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-89xv-2m56-2m9x",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-4633-3j49-mh5q",
+  "cve_id": "CVE-2026-64647",
+  "summary": "Cache confusion of response bodies for requests with bodies containing invalid UTF-8 byte sequences",
+  "description": "## Impact\r\n\r\nA server-side `fetch` with a request body may return a cached **response** body from a different request to the same URL but different body. Confidential data in the `POST`'s **response** body would then leak to unauthorized requests. Though the request itself will not be deduped.\r\n\r\nThis is only an issue when receiving request bodies with a content type charset other than UTF-8. For example, the UTF-16 byte sequences for `삃삃` and `섄섄` in the request body would share the same cache.\r\n\r\n## Workarounds\r\n\r\nIf you cannot upgrade, consider only making fetch requests with UTF-8 bodies (default in Next.js). Applications using Pages Router are not vulnerable.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:03:04Z",
+  "updated_at": "2026-07-21T16:03:04Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-4633-3j49-mh5q",
+  "cwe_ids": [
+   "CWE-116"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-68g3-v927-f742",
+  "cve_id": "CVE-2026-64648",
+  "summary": "Cache confusion of response bodies for requests with bodies",
+  "description": "## Impact\r\n\r\nA server-side `fetch` with a request body may return a cached **response** body from a different request to the same URL but different body. Confidential data in the `POST`'s **response** body would then leak to unauthorized requests. Though the request itself will not be deduped.\r\n\r\nThis only applies to `fetch` calls with a request that has a different init than the one passed to `fetch`.\r\nSafe: `fetch(new Request(init), init)`\r\nUnsafe: `fetch(new Request(init), aDifferentInit)`\r\n\r\n## Workarounds\r\n\r\nNo workaround exists besides upgrading. Applications using Pages Router are not vulnerable.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:03:02Z",
+  "updated_at": "2026-07-21T16:03:02Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-68g3-v927-f742",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-4c39-4ccg-62r3",
+  "cve_id": "CVE-2026-64646",
+  "summary": "Unbounded Server Action payload in Edge runtime",
+  "description": "## Impact\r\n\r\nRequests targeting Next.js applications using App Router with at least one Server Action can lead to excessive memory consumption if that Server Actions uses the Edge runtime\r\n\r\n## Workarounds\r\n\r\nIf you cannot upgrade, ensure your hosting provider limits the request's body size. 5 MiB should be allowed at max by your hosting provider.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:59Z",
+  "updated_at": "2026-07-21T16:02:59Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-4c39-4ccg-62r3",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-q8wf-6r8g-63ch",
+  "cve_id": "CVE-2026-64644",
+  "summary": "Denial of Service in the Image Optimization API using SVGs",
+  "description": "### Impact\r\n\r\nWhen self-hosting Next.js with the default image loader, the Image Optimization API can optimize remotely hosted images if configured (not enabled by default). If those images contain malicious content, they can cause CPU exhaustion in  `/_next/image` endpoints.\r\n\r\n- If you are using `config.images.remotePatterns`, only the patterns in that array are impacted.\r\n- If you are using `config.images.unoptimized: true`, you are NOT impacted.\r\n- If you are using `config.images.loader: 'custom'`, you are NOT impacted.\r\n- If you are using Vercel, you are NOT impacted.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, you can avoid the expensive work by setting `config.experimental.imgOptSkipMetadata : true`.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:56Z",
+  "updated_at": "2026-07-21T16:02:56Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=15.5.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-q8wf-6r8g-63ch",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-p9j2-gv94-2wf4",
+  "cve_id": "CVE-2026-64645",
+  "summary": "Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+  "description": "## Impact\r\n\r\nA `rewrites()` or `redirects()` rule that builds its external destination hostname from request-controlled input can be pointed at an arbitrary hostname, regardless of the rule's hostname suffix. For a rewrite, Next.js proxies the request to that arbitrary host and serves the response from the application's origin, leading to Server-Side Request forgery. A `redirects()` rule configured this way is vulnerable to an Open Redirect.\r\n\r\nThis affects any destination that puts a dynamic segment in the hostname, whether from the path:\r\n\r\n```javascript\r\n// next.config.js\r\nmodule.exports = {\r\n  async rewrites() {\r\n    return [\r\n      {\r\n        source: '/:tenant',\r\n        destination: 'https://:tenant.api.example.com',\r\n      },\r\n    ]\r\n  },\r\n}\r\n```\r\n\r\nor from a `has` capture:\r\n\r\n```javascript\r\n// next.config.js\r\nmodule.exports = {\r\n  async rewrites() {\r\n    return [\r\n      {\r\n        source: '/',\r\n        has: [{ type: 'query', key: 'region', value: '(?<region>.+)' }],\r\n        destination: 'https://:region.api.example.com',\r\n      },\r\n    ]\r\n  },\r\n}\r\n```\r\n\r\n## Workarounds\r\n\r\nIf you cannot upgrade immediately, do not build the hostname of an external `rewrites()` or `redirects()` destination from user-controlled input. If a dynamic subdomain is required, constrain the value to hostname-safe characters:  `value: '(?<region>[a-z0-9-]+)'`.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:54Z",
+  "updated_at": "2026-09-20T04:36:42Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 12.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-p9j2-gv94-2wf4",
+  "cwe_ids": [
+   "CWE-918"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-955p-x3mx-jcvp",
+  "cve_id": "CVE-2026-64643",
+  "summary": "Unauthenticated disclosure of internal Server Function endpoints",
+  "description": "## Impact\r\n\r\nIn Next.js applications using App Router, Server Actions (`use server`) or `use cache` endpoints can be disclosed bypassing any authentication on the pages where these endpoints are usually used.\r\n\r\nServer Action IDs can be disclosed to unauthenticated users via publicly served client artifacts (for example, static chunks containing action references).\r\n\r\nAffected users are applications using App Router + Server Actions.  \r\n\r\nBy itself, this disclosure is typically a recon/enumeration primitive; however, it can increase risk when combined with other weaknesses.\r\n \r\n## Workarounds\r\n\r\nNever assume any authentication claims at the `use cache` or `use server` boundary. Always authenticate within the boundary.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:51Z",
+  "updated_at": "2026-07-22T09:43:55Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 13.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-955p-x3mx-jcvp",
+  "cwe_ids": [
+   "CWE-201"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-6gpp-xcg3-4w24",
+  "cve_id": "CVE-2026-64642",
+  "summary": "Middleware / Proxy bypass in App Router applications using Turbopack and single locale",
+  "description": "## Impact\r\n\r\nCrafted requests targeting Next.js applications using App Router built with Turbopack and a **single** entry in `config.i18n.locales` can bypass middleware/proxy based authentication.\r\n\r\n## Workarounds\r\n\r\nIf you cannot upgrade immediately, enforce authorization in the page's server-side data path instead of relying solely on middleware.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:47Z",
+  "updated_at": "2026-07-21T16:02:47Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-6gpp-xcg3-4w24",
+  "cwe_ids": [
+   "CWE-285"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-m99w-x7hq-7vfj",
+  "cve_id": "CVE-2026-64641",
+  "summary": "Denial of Service in App Router using Server Actions",
+  "description": "## Impact\r\n\r\nCrafted requests targeting Next.js applications using App Router with at least one Server Action can lead to excessive CPU usage blocking processing of further requests in the same process.\r\n\r\n## Workarounds\r\n\r\nNo workaround exists besides upgrading. Applications using Pages Router or not using Server Actions are not vulnerable.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-07-21T16:02:35Z",
+  "updated_at": "2026-07-21T16:02:35Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.21",
+    "patched_versions": "15.5.21",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": " >= 16.0.0 < 16.2.11",
+    "patched_versions": "16.2.11",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-m99w-x7hq-7vfj",
+  "cwe_ids": [
+   "CWE-834"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-26hh-7cqf-hhc6",
+  "cve_id": "CVE-2026-45109",
+  "summary": "Middleware / Proxy bypass in App Router applications via segment-prefetch routes - Incomplete Fix Follow-Up",
+  "description": "### Impact\r\n\r\n\r\nIt was found that the fix addressing [CVE-2026-44575](https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f) did not apply to `middleware.ts` with Turbopack. Refer to  [CVE-2026-44575](https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f) for further details.\r\n\r\n### References \r\n\r\n- [CVE CVE-2026-44575](https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f)\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+   "score": 7.5
+  },
+  "published_at": "2026-05-07T19:42:05Z",
+  "updated_at": "2026-05-08T20:42:58Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.2.0 < 15.5.18",
+    "patched_versions": "15.5.18",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.6",
+    "patched_versions": "16.2.6",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-26hh-7cqf-hhc6",
+  "cwe_ids": [
+   "CWE-288"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-ffhc-5mcf-pf4q",
+  "cve_id": "CVE-2026-44581",
+  "summary": "Cross-site scripting in App Router applications using CSP nonces",
+  "description": "### Impact\r\n\r\nApp Router applications that rely on CSP nonces can be vulnerable to stored cross-site scripting when deployed behind shared caches. In affected versions, malformed nonce values derived from request headers could be reflected into rendered HTML in an unsafe way, allowing an attacker to poison cached responses and cause script execution for later visitors.\r\n\r\n### Fix\r\n\r\nWe now reject or ignore malformed nonce values before they are embedded into HTML and apply stricter nonce sanitization so request-derived nonce data cannot break out of the intended attribute context.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, strip inbound `Content-Security-Policy` request headers from untrusted traffic.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "score": 4.7
+  },
+  "published_at": "2026-05-06T18:44:34Z",
+  "updated_at": "2026-05-07T15:42:03Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 13.4.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-ffhc-5mcf-pf4q",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-vfv6-92ff-j949",
+  "cve_id": "CVE-2026-44582",
+  "summary": "Cache poisoning via collisions in React Server Component cache-busting",
+  "description": "### Impact\r\n\r\nReact Server Component responses can be vulnerable to cache poisoning in deployments that rely on shared caches with insufficient response partitioning. In affected conditions, collisions in the `_rsc` cache-busting value can allow an attacker to poison cache entries so users receive the wrong response variant for a given URL.\r\n\r\n### Fix\r\n\r\nWe strengthened the `_rsc` cache-busting mechanism to make practical collisions significantly harder and to better separate response variants that should not share cache entries.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, ensure intermediary caches correctly honor `Vary` for RSC-related request headers, or disable shared caching for affected RSC responses until you can deploy a patched release.\r\n",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+   "score": 3.7
+  },
+  "published_at": "2026-05-06T18:44:23Z",
+  "updated_at": "2026-05-07T15:42:49Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 13.4.6 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-vfv6-92ff-j949",
+  "cwe_ids": [
+   "CWE-328"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-gx5p-jg67-6x7h",
+  "cve_id": "CVE-2026-44580",
+  "summary": "Cross-site scripting in beforeInteractive scripts with untrusted input",
+  "description": "### Impact\r\n\r\nApplications that use `beforeInteractive` scripts together with untrusted content can be vulnerable to cross-site scripting. In affected versions, serialized script content was not escaped safely before being embedded into the document, which could allow attacker-controlled input to break out of the intended script context and execute arbitrary JavaScript in a visitor's browser.\r\n\r\n### Fix\r\n\r\nWe now HTML-escape serialized `beforeInteractive` script content before embedding it into the page, preventing attacker-controlled content from breaking out of the inline script boundary.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, do not pass untrusted data into `beforeInteractive` scripts. If that pattern is unavoidable, sanitize or escape the content before embedding it.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+   "score": 6.1
+  },
+  "published_at": "2026-05-06T18:44:07Z",
+  "updated_at": "2026-05-07T15:41:25Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-gx5p-jg67-6x7h",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-mg66-mrh9-m8jx",
+  "cve_id": "CVE-2026-44579",
+  "summary": "Denial of Service via connection exhaustion in applications using Cache Components",
+  "description": "### Impact\r\n\r\nApplications using Partial Prerendering through the Cache Components feature can be vulnerable to connection exhaustion through crafted POST requests to a server action. In affected configurations, a malicious request can trigger a request-body handling deadlock that leaves connections open for an extended period, consuming file descriptors and server capacity until legitimate users are denied service.\r\n\r\n### Fix\r\n\r\nWe now treat the header used for resuming Partial Prerendered requests as an internal-only header and strip it from untrusted incoming requests. This header should never be accepted directly from external clients.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, block requests that would be handled by Next.js if they contain the `Next-Resume` header at the edge.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2026-05-06T18:43:50Z",
+  "updated_at": "2026-05-07T15:40:59Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=15.0.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-mg66-mrh9-m8jx",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-h64f-5h5j-jqjh",
+  "cve_id": "CVE-2026-44577",
+  "summary": "Denial of Service in the Image Optimization API",
+  "description": "### Impact\r\n\r\nWhen self-hosting Next.js with the default image loader, the Image Optimization API fetches local images entirely into memory without enforcing a maximum size limit. An attacker could cause out-of-memory conditions by requesting large local assets from the `/_next/image` endpoint that match the `images.localPatterns` configuration (by default, all patterns are allowed).\r\n\r\n- If you are using `images.localPatterns`, only the patterns in that array are impacted.\r\n- If you are using `images.unoptimized: true`, you are NOT impacted.\r\n- If you are using `images.loader: 'custom'`, you are NOT impacted.\r\n- If you are using Vercel, you are NOT impacted.\r\n\r\n### Fix\r\n\r\nWe now apply response size limits consistently to internal image fetches, not just external ones, and fail oversized responses before they can exhaust process memory.\r\n\r\nThis can be adjusted using the `images.maximumResponseBody` configuration.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, avoid routing large local assets through `/_next/image`, disable image optimization for large or untrusted local files, or block image optimization access to those assets at the edge.\r\n\r\nYou can disable using the `images.localPatterns: []` configuration. This will still allow fetching remote images (which is not impacted).\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.9
+  },
+  "published_at": "2026-05-06T18:43:34Z",
+  "updated_at": "2026-05-07T15:38:43Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=10.0.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-h64f-5h5j-jqjh",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-c4j6-fc7j-m34r",
+  "cve_id": "CVE-2026-44578",
+  "summary": "Server-side request forgery in applications using WebSocket upgrades",
+  "description": "### Impact\r\n\r\nSelf-hosted applications using the built-in Node.js server can be vulnerable to server-side request forgery through crafted WebSocket upgrade requests. An attacker can cause the server to proxy requests to arbitrary internal or external destinations, which may expose internal services or cloud metadata endpoints. Vercel-hosted deployments are not affected.\r\n\r\n### Fix\r\n\r\nWe now apply the same safety checks to WebSocket upgrade handling that already existed for normal HTTP requests, so upgrade requests are only proxied when routing has explicitly marked them as safe external rewrites.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, do not expose the origin server directly to untrusted networks. If WebSocket upgrades are not required, block them at your reverse proxy or load balancer, and restrict origin egress to internal networks and metadata services where possible.\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+   "score": 8.6
+  },
+  "published_at": "2026-05-06T18:43:19Z",
+  "updated_at": "2026-05-07T15:39:23Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 13.4.13 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-c4j6-fc7j-m34r",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-wfc6-r584-vfw7",
+  "cve_id": "CVE-2026-44576",
+  "summary": "Cache poisoning in React Server Component responses",
+  "description": "### Impact\r\n\r\nApplications using React Server Components can be vulnerable to cache poisoning when shared caches do not correctly partition response variants. Under affected conditions, an attacker can cause an RSC response to be served from the original URL and poison shared cache entries so later visitors receive component payloads instead of the expected HTML.\r\n\r\n### Fix\r\n\r\nWe now validate and interpret `RSC` request headers consistently across request classification and rendering, and we enforce the intended cache-busting behavior so RSC payloads are not unexpectedly served from the original URL.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, ensure your CDN or reverse proxy keys on the relevant RSC request headers and honors `Vary`, or disable shared caching for affected App Router and RSC responses.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:L",
+   "score": 5.4
+  },
+  "published_at": "2026-05-06T18:43:05Z",
+  "updated_at": "2026-05-07T15:36:51Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 14.2.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-wfc6-r584-vfw7",
+  "cwe_ids": [
+   "CWE-436"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-267c-6grr-h53f",
+  "cve_id": "CVE-2026-44575",
+  "summary": "Middleware / Proxy bypass in App Router applications via segment-prefetch routes",
+  "description": "### Impact\r\n\r\nApp Router applications that rely on middleware or proxy-based checks for authorization can allow unauthorized access through transport-specific route variants used for segment prefetching. In affected configurations, specially crafted `.rsc` and segment-prefetch URLs can resolve to the same page without being matched by the intended middleware rule, which can allow protected content to be reached without the expected authorization check.\r\n\r\n### Fix\r\n\r\nWe now include App Router transport variants when generating middleware matchers, so middleware protections are applied consistently to those requests as well as to the normal page URL.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, enforce authorization in the underlying route or page logic instead of relying solely on middleware.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+   "score": 7.5
+  },
+  "published_at": "2026-05-06T18:42:50Z",
+  "updated_at": "2026-05-07T15:36:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.2.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f",
+  "cwe_ids": [
+   "CWE-288"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-492v-c6pp-mqqv",
+  "cve_id": "CVE-2026-44574",
+  "summary": "Middleware / Proxy bypass through dynamic route parameter injection",
+  "description": "### Impact\r\n\r\nApplications that rely on middleware to protect dynamic routes can be vulnerable to authorization bypass. In affected deployments, specially crafted query parameters can alter the dynamic route value seen by the page while leaving the visible path unchanged, which can allow protected content to be rendered without passing the expected middleware check.\r\n\r\n### Fix\r\n\r\nWe now only honor internal route-parameter normalization in trusted routing flows and ignore externally supplied parameter encodings that should never have been accepted from ordinary requests.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, enforce authorization in route or page logic instead of relying solely on middleware path matching.\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+   "score": 8.1
+  },
+  "published_at": "2026-05-06T18:42:36Z",
+  "updated_at": "2026-05-07T15:35:32Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 15.4.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-492v-c6pp-mqqv",
+  "cwe_ids": [
+   "CWE-288"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-36qx-fr4f-26g5",
+  "cve_id": "CVE-2026-44573",
+  "summary": "Middleware / Proxy bypass in Pages Router applications using i18n",
+  "description": "### Impact\r\n\r\nApplications using the Pages Router with `i18n` configured and middleware/proxy-based authorization can allow unauthorized access to protected page data through locale-less `/_next/data/<buildId>/<page>.json` requests. In affected configurations, middleware does not run for the unprefixed data route, allowing an attacker to retrieve SSR JSON for protected pages without passing the intended authorization checks.\r\n\r\n### Fix\r\nThe matcher logic was updated to perform the same match as it would on a non-i18n data route.\r\n\r\n### Workarounds\r\n\r\nIf you cannot upgrade immediately, enforce authorization in the page's server-side data path instead of relying solely on middleware.\r\n",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+   "score": 7.5
+  },
+  "published_at": "2026-05-06T18:42:18Z",
+  "updated_at": "2026-05-07T15:34:50Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= v12.2.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-36qx-fr4f-26g5",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-3g8h-86w9-wvmq",
+  "cve_id": "CVE-2026-44572",
+  "summary": "Middleware / Proxy redirects can be cache-poisoned",
+  "description": "### Impact\r\n\r\nNext.js uses the `x-nextjs-data` request header for internal data requests. On affected versions, an external client could send this header on a normal request to a path handled by middleware that returns a redirect.\r\n\r\nWhen that happened, the middleware/proxy could treat the request as a data request and replace the standard `Location` redirect header with the internal `x-nextjs-redirect` header. Browsers do not follow `x-nextjs-redirect`, so the response became an unusable redirect for normal clients.\r\n\r\nIf the application was deployed behind a CDN or reverse proxy that caches 3xx responses without varying on this header, a single attacker request could poison the cached redirect response for the affected path. Subsequent visitors could then receive a cached redirect response without a `Location` header, causing a denial of service for that redirect path until the cache entry expired or was purged.\r\n\r\n### Affected scenarios\r\n\r\nThis affects applications that:\r\n- use middleware or proxy redirects\r\n- are deployed behind a caching CDN or reverse proxy\r\n- allow 3xx responses on those paths to be cached without differentiating internal data requests from normal requests\r\n\r\n### Fix\r\n\r\nThe fix stops trusting `x-nextjs-data` by itself for middleware redirect handling. A request is now treated as an internal data request only when it is validated as such by internal routing state, preserving legitimate data-request redirect behavior while preventing external header injection from changing normal redirect responses.\r\n\r\n### Workarounds\r\n\r\nBefore upgrading, users can reduce risk by:\r\n- configuring the CDN or reverse proxy to vary its cache key on `x-nextjs-data` for affected responses",
+  "severity": "low",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+   "score": 3.7
+  },
+  "published_at": "2026-05-06T18:41:26Z",
+  "updated_at": "2026-05-07T15:34:06Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 12.2.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-3g8h-86w9-wvmq",
+  "cwe_ids": [
+   "CWE-349"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-8h8q-6873-q5fj",
+  "cve_id": "CVE-2026-23870",
+  "summary": "Denial of Service with Server Components",
+  "description": "A vulnerability affects certain React Server Components packages for versions 19.x and frameworks that use the affected packages, including Next.js 13.x, 14.x, 15.x, and 16.x using the App Router. The issue is tracked upstream as [CVE-2026-23870](https://github.com/facebook/react/security/advisories/GHSA-rv78-f8rc-xrxh). \r\n\r\nA specially crafted HTTP request can be sent to any App Router Server Function endpoint that, when deserialized, may trigger excessive CPU usage. This can result in denial of service in unpatched environments.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2026-05-06T18:40:57Z",
+  "updated_at": "2026-05-06T18:40:57Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.16",
+    "patched_versions": "15.5.16",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">= 16.0.0 < 16.2.5",
+    "patched_versions": "16.2.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-8h8q-6873-q5fj",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-q4gf-8mx6-v5v3",
+  "cve_id": "CVE-2026-23869",
+  "summary": "Denial of Service with Server Components",
+  "description": "A vulnerability affects certain React Server Components packages for versions 19.x and frameworks that use the affected packages, including Next.js 13.x, 14.x, 15.x, and 16.x using the App Router. The issue is tracked upstream as [CVE-2026-23869](https://github.com/facebook/react/security/advisories/GHSA-479c-33wc-g2pg). You can read more about this advisory our [this changelog](https://vercel.com/changelog/summary-of-cve-2026-23869).\r\n\r\nA specially crafted HTTP request can be sent to any App Router Server Function endpoint that, when deserialized, may trigger excessive CPU usage. This can result in denial of service in unpatched environments.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2026-04-08T19:09:37Z",
+  "updated_at": "2026-04-08T19:09:37Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 < 15.5.15, >= 16.0 < 16.2.3",
+    "patched_versions": "15.5.15, 16.2.3",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-q4gf-8mx6-v5v3",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-3x4c-7xq6-9pq8",
+  "cve_id": "CVE-2026-27980",
+  "summary": "Unbounded next/image disk cache growth can exhaust storage",
+  "description": "## Summary\r\nThe default Next.js image optimization disk cache (`/_next/image`) did not have a configurable upper bound, allowing unbounded cache growth.\r\n\r\n## Impact\r\nAn attacker could generate many unique image-optimization variants and exhaust disk space, causing denial of service. Note that this does not impact platforms that have their own image optimization capabilities, such as Vercel.\r\n\r\n## Patches\r\nFixed by adding an LRU-backed disk cache with `images.maximumDiskCacheSize`, including eviction of least-recently-used entries when the limit is exceeded. Setting `maximumDiskCacheSize: 0` disables disk caching. \r\n\r\n## Workarounds\r\nIf upgrade is not immediately possible:\r\n- Periodically clean `.next/cache/images`.\r\n- Reduce variant cardinality (e.g., tighten values for `images.localPatterns`, `images.remotePatterns`, and `images.qualities`)\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-03-16T23:18:02Z",
+  "updated_at": "2026-03-19T18:16:54Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=10.0.0",
+    "patched_versions": "15.5.14, 16.1.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-3x4c-7xq6-9pq8",
+  "cwe_ids": [
+   "CWE-400"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-mq59-m269-xvcx",
+  "cve_id": "CVE-2026-27978",
+  "summary": "null origin can bypass Server Actions CSRF checks",
+  "description": "## Summary\r\n`origin: null` was treated as a \"missing\" origin during Server Action CSRF validation. As a result, requests from opaque contexts (such as sandboxed iframes) could bypass origin verification instead of being validated as cross-origin requests.\r\n\r\n## Impact\r\nAn attacker could induce a victim browser to submit Server Actions from a sandboxed context, potentially executing state-changing actions with victim credentials (CSRF).\r\n\r\n## Patches\r\nFixed by treating `'null'` as an explicit origin value and enforcing host/origin checks unless `'null'` is explicitly allowlisted in `experimental.serverActions.allowedOrigins`.  \r\n\r\n## Workarounds\r\nIf upgrade is not immediately possible:\r\n- Add CSRF tokens for sensitive Server Actions.\r\n- Prefer `SameSite=Strict` on sensitive auth cookies.\r\n- Do not allow `'null'` in `serverActions.allowedOrigins` unless intentionally required and additionally protected.\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-03-16T23:17:47Z",
+  "updated_at": "2026-03-16T23:17:47Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=16.0.1",
+    "patched_versions": "16.1.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-mq59-m269-xvcx",
+  "cwe_ids": [
+   "CWE-352"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-jcc7-9wpm-mj36",
+  "cve_id": "CVE-2026-27977",
+  "summary": "Origin: null can bypass allowedDevOrigins protections for internal dev endpoints",
+  "description": "## Summary\r\nIn `next dev`, cross-site protections for internal development endpoints could treat `Origin: null` as a bypass case even when [`allowedDevOrigins`](https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins) is configured. This could allow privacy-sensitive or opaque browser contexts, such as sandboxed documents, to access privileged internal dev-server functionality unexpectedly.\r\n\r\n## Impact\r\nIf a developer visits attacker-controlled content while running an affected `next dev` server with [`allowedDevOrigins`](https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins) configured, attacker-controlled browser code may be able to connect to internal development endpoints and interact with sensitive dev-server functionality that should have remained blocked.\r\n\r\nThis issue affects development mode only. It does not affect `next start`, and it does not expose internal debugging functionality to the network by default.\r\n\r\n## Patches\r\nFixed by validating `Origin: null` through the same cross-site origin-allowance checks used for other origins on internal development endpoints.\r\n\r\n## Workarounds\r\nIf upgrade is not immediately possible:\r\n- Do not expose `next dev` to untrusted networks.\r\n- If you use [`allowedDevOrigins`](https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins), reject requests and websocket upgrades with `Origin: null` for internal dev endpoints at your proxy.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-03-16T23:17:28Z",
+  "updated_at": "2026-03-23T15:33:12Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=16.0.1",
+    "patched_versions": "16.1.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-jcc7-9wpm-mj36",
+  "cwe_ids": [
+   "CWE-1385"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-h27x-g6w4-24gq",
+  "cve_id": "CVE-2026-27979",
+  "summary": "Unbounded postponed resume buffering can lead to DoS",
+  "description": "## Summary\r\nA request containing the `next-resume: 1` header (corresponding with a PPR resume request) would buffer request bodies without consistently enforcing `maxPostponedStateSize` in certain setups. The previous mitigation protected minimal-mode deployments, but equivalent non-minimal deployments remained vulnerable to the same unbounded postponed resume-body buffering behavior.\r\n\r\n## Impact\r\nIn applications using the App Router with Partial Prerendering capability enabled (via `experimental.ppr` or `cacheComponents`), an attacker could send oversized `next-resume` POST payloads that were buffered without consistent size enforcement in non-minimal deployments, causing excessive memory usage and potential denial of service.\r\n\r\n## Patches\r\nFixed by enforcing size limits across all postponed-body buffering paths and erroring when limits are exceeded.  \r\n\r\n## Workarounds\r\nIf upgrade is not immediately possible:\r\n- Block requests containing the `next-resume` header, as this is never valid to be sent from an untrusted client.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-03-16T23:16:46Z",
+  "updated_at": "2026-03-16T23:16:46Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=16.1.0",
+    "patched_versions": "16.1.7",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-h27x-g6w4-24gq",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-ggv3-7p47-pfv8",
+  "cve_id": "CVE-2026-29057",
+  "summary": "HTTP request smuggling in rewrites",
+  "description": "## Summary\r\nWhen Next.js rewrites proxy traffic to an external backend, a crafted `DELETE`/`OPTIONS` request using `Transfer-Encoding: chunked` could trigger request boundary disagreement between the proxy and backend. This could allow request smuggling through rewritten routes.\r\n\r\n## Impact\r\nAn attacker could smuggle a second request to unintended backend routes (for example, internal/admin endpoints), bypassing assumptions that only the configured rewrite destination/path is reachable. This does not impact applications hosted on providers that handle rewrites at the CDN level, such as Vercel. \r\n\r\n## Patches\r\nThe vulnerability originated in an upstream library vendored by Next.js. It is fixed by updating that dependency’s behavior so `content-length: 0` is added only when both `content-length` and `transfer-encoding` are absent, and `transfer-encoding` is no longer removed in that code path.\r\n\r\n## Workarounds\r\nIf upgrade is not immediately possible:\r\n- Block chunked `DELETE`/`OPTIONS` requests on rewritten routes at your edge/proxy.\r\n- Enforce authentication/authorization on backend routes per our [security guidance](https://nextjs.org/docs/app/guides/data-security).\r\n",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": null,
+   "score": null
+  },
+  "published_at": "2026-03-16T23:16:21Z",
+  "updated_at": "2026-03-16T23:16:21Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=9.5.0",
+    "patched_versions": "16.1.7, 15.5.13",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-ggv3-7p47-pfv8",
+  "cwe_ids": [
+   "CWE-444"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-h25m-26qc-wcjf",
+  "cve_id": "CVE-2026-23864",
+  "summary": "Denial of Service with Server Components",
+  "description": "A vulnerability affects certain React Server Components packages for versions 19.0.x, 19.1.x, and 19.2.x and frameworks that use the affected packages, including Next.js 13.x, 14.x, 15.x, and 16.x using the App Router. The issue is tracked upstream as [CVE-2026-23864](https://github.com/facebook/react/security/advisories/GHSA-83fc-fqcc-2hmg).\r\n\r\nA specially crafted HTTP request can be sent to any App Router Server Function endpoint that, when deserialized, may trigger excessive CPU usage, out-of-memory exceptions, or server crashes. This can result in denial of service in unpatched environments.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2026-01-26T19:17:26Z",
+  "updated_at": "2026-01-27T12:49:14Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": ">=13.0.0 <15.0.8, >=15.0.0 <15.6.0-canary.61, >=16.0.0 <16.1.5",
+    "patched_versions": "15.0.8, 15.1.12, 15.2.9, 15.3.9, 15.4.11, 15.5.10, 15.6.0-canary.61, 16.0.11, 16.1.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-h25m-26qc-wcjf",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ },
+ {
+  "ghsa_id": "GHSA-5f7q-jpqc-wp7h",
+  "cve_id": "CVE-2025-59472",
+  "summary": "Denial of Service in Partial Pre Rendering",
+  "description": "A denial of service vulnerability exists in Next.js versions with Partial Prerendering (PPR) enabled when running in minimal mode. The PPR resume endpoint accepts unauthenticated POST requests with the `Next-Resume: 1` header and processes attacker-controlled postponed state data. Two closely related vulnerabilities allow an attacker to crash the server process through memory exhaustion:\r\n\r\n1. **Unbounded request body buffering**: The server buffers the entire POST request body into memory using `Buffer.concat()` without enforcing any size limit, allowing arbitrarily large payloads to exhaust available memory.\r\n\r\n2. **Unbounded decompression (zipbomb)**: The resume data cache is decompressed using `inflateSync()` without limiting the decompressed output size. A small compressed payload can expand to hundreds of megabytes or gigabytes, causing memory exhaustion.\r\n\r\nBoth attack vectors result in a fatal V8 out-of-memory error (`FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory`) causing the Node.js process to terminate. The zipbomb variant is particularly dangerous as it can bypass reverse proxy request size limits while still causing large memory allocation on the server.\r\n\r\nTo be affected you must have an application running with `experimental.ppr: true` or `cacheComponents: true` configured along with the NEXT_PRIVATE_MINIMAL_MODE=1 environment variable.\r\n\r\nStrongly consider upgrading to 15.6.0-canary.61 or 16.1.5 to reduce risk and prevent availability issues in Next applications.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 5.9
+  },
+  "published_at": "2026-01-26T19:13:06Z",
+  "updated_at": "2026-01-26T19:13:06Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.0-canary.0",
+    "patched_versions": "15.0.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.1-canary.0",
+    "patched_versions": "15.0.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.2-canary.0",
+    "patched_versions": "15.0.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.3-canary.0",
+    "patched_versions": "15.0.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.4-canary.0",
+    "patched_versions": "15.0.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.0-canary.0",
+    "patched_versions": "15.1.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.1-canary.0",
+    "patched_versions": "15.1.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.2-canary.0",
+    "patched_versions": "15.1.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.3-canary.0",
+    "patched_versions": "15.1.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.4-canary.0",
+    "patched_versions": "15.1.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.5-canary.0",
+    "patched_versions": "15.1.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.6-canary.0",
+    "patched_versions": "15.1.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.7-canary.0",
+    "patched_versions": "15.1.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.0-canary.0",
+    "patched_versions": "15.2.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.1-canary.0",
+    "patched_versions": "15.2.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.2-canary.0",
+    "patched_versions": "15.2.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.3-canary.0",
+    "patched_versions": "15.2.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.4-canary.0",
+    "patched_versions": "15.2.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.5-canary.0",
+    "patched_versions": "15.2.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.0-canary.0",
+    "patched_versions": "15.3.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.1-canary.0",
+    "patched_versions": "15.3.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.2-canary.0",
+    "patched_versions": "15.3.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.8-canary.0",
+    "patched_versions": "15.1.8",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.3-canary.0",
+    "patched_versions": "15.3.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.0-canary.0",
+    "patched_versions": "15.4.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.4-canary.0",
+    "patched_versions": "15.3.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.5-canary.0",
+    "patched_versions": "15.3.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.1-canary.0",
+    "patched_versions": "15.4.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.2-canary.0",
+    "patched_versions": "15.4.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.3-canary.0",
+    "patched_versions": "15.4.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.4-canary.0",
+    "patched_versions": "15.4.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.5-canary.0",
+    "patched_versions": "15.4.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.6-canary.0",
+    "patched_versions": "15.4.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.7-canary.0",
+    "patched_versions": "15.4.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.0-canary.0",
+    "patched_versions": "15.5.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.1-canary.0",
+    "patched_versions": "15.5.1",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.2-canary.0",
+    "patched_versions": "15.5.2",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.3-canary.0",
+    "patched_versions": "15.5.3",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.4-canary.0",
+    "patched_versions": "15.5.4",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.5-canary.0",
+    "patched_versions": "15.5.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.6-canary.0",
+    "patched_versions": "15.5.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.7-canary.0",
+    "patched_versions": "15.5.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.8-canary.0",
+    "patched_versions": "15.4.8",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.9-canary.0",
+    "patched_versions": "15.1.9",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.5-canary.0",
+    "patched_versions": "15.0.5",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.6-canary.0",
+    "patched_versions": "15.3.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.6-canary.0",
+    "patched_versions": "15.2.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.8-canary.0",
+    "patched_versions": "15.5.8",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.9-canary.0",
+    "patched_versions": "15.4.9",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.7-canary.0",
+    "patched_versions": "15.3.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.7-canary.0",
+    "patched_versions": "15.2.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.10-canary.0",
+    "patched_versions": "15.1.10",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.6-canary.0",
+    "patched_versions": "15.0.6",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.5.9-canary.0",
+    "patched_versions": "15.5.9",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.4.10-canary.0",
+    "patched_versions": "15.4.10",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.3.8-canary.0",
+    "patched_versions": "15.3.8",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.2.8-canary.0",
+    "patched_versions": "15.2.8",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.1.11-canary.0",
+    "patched_versions": "15.1.11",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "15.0.7-canary.0",
+    "patched_versions": "15.0.7",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "npm",
+     "name": "next"
+    },
+    "vulnerable_version_range": "16.1.0",
+    "patched_versions": "16.1.5",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/vercel/next.js/security/advisories/GHSA-5f7q-jpqc-wp7h",
+  "cwe_ids": [
+   "CWE-770"
+  ]
+ }
+]

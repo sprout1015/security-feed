@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Security Advisories - laravel/framework - Packagist.org</title>
+        <meta name="description" content="The PHP Package Repository" />
+        <meta name="author" content="Jordi Boggiano" />
+        <meta name="canonical" href="https://packagist.org/packages/laravel/framework/advisories" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="shortcut icon" href="/favicon.ico?v=1795122779" />
+
+        <link rel="stylesheet" href="/build/app.css?v=1795122779" />
+        
+                <link rel="alternate" type="application/rss+xml" title="Newly Submitted Packages - Packagist.org" href="https://packagist.org/feeds/packages.rss" />
+        <link rel="alternate" type="application/rss+xml" title="New Releases - Packagist.org" href="https://packagist.org/feeds/releases.rss" />
+        
+        <link rel="search" type="application/opensearchdescription+xml" href="/search.osd?v=1795122779" title="Packagist.org" />
+
+        <script nonce="bu3Igqa2I9hKaNbst4Nz8w==">
+            var onloadRecaptchaCallback = function() {
+                document.querySelectorAll('.recaptcha-protected').forEach((el) => {
+                    el.closest('form').querySelectorAll('button, input[type="submit"]').forEach((submit) => {
+                        grecaptcha.render(submit, {
+                            'sitekey' : '6LfKiPoUAAAAAGlKWkhEEx7X8muIVYy6oA0GNdX0',
+                            'callback' : function (token) {
+                                submit.form.submit();
+                            }
+                        });
+                    })
+                });
+            };
+        </script>
+        
+        <meta name="robots" content="noindex, nofollow">    </head>
+    <body>
+    <section class="wrap">
+        <header class="navbar-wrapper fixed-top">
+                        <nav class="container">
+                <div class="navbar navbar-expand-md" role="navigation">                        <h1 class="navbar-brand"><a href="/">Packagist</a> <em class="d-none d-lg-inline">The PHP Package Repository</em></h1>                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false">
+                        <span class="visually-hidden">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="main-navigation">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/explore/">Browse</a>
+                            </li>
+                            <li>
+                                <a href="/about">About Packagist.org</a>
+                            </li>
+                            <li>
+                                <a href="/packages/submit">Submit</a>
+                            </li>                            <li>
+                                <a href="/register/">Create account</a>
+                            </li>
+                            <li class="nav-user">
+                                <section class="nav-user-signin">
+                                    <a href="/login/">Sign in</a>
+
+                                    <section class="signin-box">
+                                        <form action="/login/" method="POST" id="nav_login">
+                                            <div class="input-group">
+                                                <span class="input-group-text"><span class="icon-user"></span></span>
+                                                <input class="form-control" type="text" id="_username" name="_username" placeholder="Username / Email">
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><span class="icon-lock"></span></span>
+                                                <input class="form-control" type="password" id="_password" name="_password" placeholder="Password">
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="_remember_me" name="_remember_me" value="on" checked="checked" />
+                                                <label class="form-check-label" for="_remember_me">Remember me</label>
+                                            </div>
+                                            <div class="signin-box-buttons">
+                                                <a href="/login/github" class="float-end btn btn-github"><span class="icon-github"></span>Use Github</a>
+                                                <button type="submit" class="btn btn-primary" id="_submit_mini" name="_submit">Log in</button>
+                                            </div>
+                                        </form>
+
+                                        <div class="signin-box-register">
+                                            <a href="/register/">No account yet? Create one now!</a>
+                                        </div>
+                                    </section>
+                                </section>
+                            </li>                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="wrapper wrapper-search">
+    <div class="container ">
+        <form name="search_query" method="get" action="/search/" id="search-form" autocomplete="off">
+            <div class="sortable row">
+                <div class="col-12 js-search-field-wrapper col-lg-9">
+                    <input type="search" id="search_query_query" name="query" required="required" autocomplete="off" placeholder="Search packages..." tabindex="1" class=" form-control" value="" />
+                </div>
+            </div>
+        </form>    </div>
+</section>
+
+
+                
+        
+        <section class="wrapper">
+            <section class="container content" role="main">
+                                    <div id="search-container" class="d-none">
+                        <div class="row">
+                            <div class="search-list col-lg-9"></div>
+
+                            <div class="search-facets col-lg-3">
+                                <div class="search-facets-active-filters-wrapper" style="display:none">
+                                    <div class="search-facets-active-filters-header">
+                                        <span>Active filters</span>
+                                        <div class="search-facets-clear-all"></div>
+                                    </div>
+                                    <div class="search-facets-active-filters"></div>
+                                </div>
+                                <div class="search-facets-type"></div>
+                                <div class="search-facets-tags"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div id="powered-by">
+                                    Search by <a href="https://www.algolia.com/"><img src="/img/sponsors/algolia-logo-light.svg?v=1795122779"></a>
+                                </div>
+                                <div id="pagination-container">
+                                    <div class="pagination-mount"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+        <div class="col-12 package">
+            <div class="package-header">
+                <h2 class="title">
+                    <a href="/packages/laravel/framework">laravel/framework</a>
+                    Security Advisories
+                                        <small>(31)</small>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="row">
+    <section class="col-lg-12">
+                    <ul class="packages list-unstyled">
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [LOW]                                        <a href="https://github.com/advisories/GHSA-63hm-g96r-2m2q">Laravel: Task Output Injection - Concurrency Process</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-yxbx-3c9s-cjt9">PKSA-yxbx-3c9s-cjt9</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-128083">CVE-2026-128083</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-63hm-g96r-2m2q">GHSA-63hm-g96r-2m2q</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=13.0.0,&lt;13.40.0|&lt;12.71.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [CRITICAL]                                        <a href="https://github.com/advisories/GHSA-f9x3-7vq9-cph6">Laravel TokenGuard authentication bypass through non-string API credentials</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-b41t-wbzk-9q51">PKSA-b41t-wbzk-9q51</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114509">CVE-2026-114509</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-f9x3-7vq9-cph6">GHSA-f9x3-7vq9-cph6</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &lt;10.50.4|&gt;=11.0.0,&lt;11.56.1|&gt;=12.0.0,&lt;12.68.0|&gt;=13.0.0,&lt;13.27.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/advisories/GHSA-5wcm-3v2w-8362">Laravel relationship inclusion can trigger unauthorized data destruction</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-4hy6-m98j-dz9f">PKSA-4hy6-m98j-dz9f</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114508">CVE-2026-114508</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-5wcm-3v2w-8362">GHSA-5wcm-3v2w-8362</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=13.0.0,&lt;13.27.0|&gt;=12.45.0,&lt;12.68.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [LOW]                                        <a href="https://github.com/advisories/GHSA-jh5r-qr3c-85q8">Laravel: XSS in Debug Page Information</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-d5tc-s1qs-h781">PKSA-d5tc-s1qs-h781</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102279">CVE-2026-102279</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-jh5r-qr3c-85q8">GHSA-jh5r-qr3c-85q8</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=13.0.0,&lt;13.30.0|&lt;12.69.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/advisories/GHSA-crmm-hgp2-wgrp">Laravel Framework: Temporary Signed URL Path Confusion</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-m5cs-t1y6-qpcs">PKSA-m5cs-t1y6-qpcs</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-crmm-hgp2-wgrp">GHSA-crmm-hgp2-wgrp</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &lt;12.61.1|&gt;=13.0.0,&lt;13.12.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/advisories/GHSA-5vg9-5847-vvmq">Laravel Framework: CRLF injection in default email rule </a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-3r5d-mb8f-1qw9">PKSA-3r5d-mb8f-1qw9</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-5vg9-5847-vvmq">GHSA-5vg9-5847-vvmq</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &lt;12.60.0|&gt;=13.0.0,&lt;=13.9.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                                                                <a href="https://github.com/laravel/framework/security/advisories/GHSA-5vg9-5847-vvmq">Laravel CRLF injection in default email rule</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-mdq4-51ck-6kdq">PKSA-mdq4-51ck-6kdq</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48019">CVE-2026-48019</a>
+                                                                                                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=9.0.0,&lt;10.0.0|&gt;=10.0.0,&lt;11.0.0|&gt;=11.0.0,&lt;12.0.0|&gt;=12.0.0,&lt;12.60.0|&gt;=13.0.0,&lt;13.10.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/advisories/GHSA-78fx-h6xr-vch4">Laravel has a File Validation Bypass</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-8qx3-n5y5-vvnd">PKSA-8qx3-n5y5-vvnd</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-27515">CVE-2025-27515</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-78fx-h6xr-vch4">GHSA-78fx-h6xr-vch4</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &lt;10.48.29|&gt;=11.0.0,&lt;11.44.1|&gt;=12.0.0,&lt;12.1.1</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/sbaresearch/advisories/tree/public/2024/SBA-ADV-20241209-02_Laravel_Reflected_XSS_via_Route_Parameter_in_Debug-Mode_Error_Page">Laravel Reflected XSS via Route Parameter in Debug-Mode Error Page</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-q46n-4fdk-zjr4">PKSA-q46n-4fdk-zjr4</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13919">CVE-2024-13919</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-83wp-f5c3-hqqr">GHSA-83wp-f5c3-hqqr</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=11.9.0,&lt;11.36.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/sbaresearch/advisories/tree/public/2024/SBA-ADV-20241209-01_Laravel_Reflected_XSS_via_Request_Parameter_in_Debug-Mode_Error_Page">Laravel Reflected XSS via Request Parameter in Debug-Mode Error Page</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-qzrn-rnz3-85w1">PKSA-qzrn-rnz3-85w1</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13918">CVE-2024-13918</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-546h-56qp-8jmw">GHSA-546h-56qp-8jmw</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=11.9.0,&lt;11.36.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/advisories/GHSA-gv7v-rgg6-548h">Laravel environment manipulation via query string</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-w7xr-vk7n-rstm">PKSA-w7xr-vk7n-rstm</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-52301">CVE-2024-52301</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-gv7v-rgg6-548h">GHSA-gv7v-rgg6-548h</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &lt;6.20.45|&gt;=7.0.0,&lt;7.30.7|&gt;=8.0.0,&lt;8.83.28|&gt;=9.0.0,&lt;9.52.17|&gt;=10.0.0,&lt;10.48.23|&gt;=11.0.0,&lt;11.31.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/advisories/GHSA-p62r-7637-3wwc">Laravel Hijacked authentication cookies vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-6wgv-k7p1-h4fg">PKSA-6wgv-k7p1-h4fg</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-p62r-7637-3wwc">GHSA-p62r-7637-3wwc</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;4.1.26</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/advisories/GHSA-rj3w-99gc-8j58">Laravel Risk of mass-assignment vulnerabilities</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-11c9-dxsr-yqjb">PKSA-11c9-dxsr-yqjb</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-rj3w-99gc-8j58">GHSA-rj3w-99gc-8j58</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;4.1.29</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [CRITICAL]                                        <a href="https://github.com/advisories/GHSA-pfg4-p438-p874">Laravel Framework Deserialization Vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-dpt9-7cmv-dk65">PKSA-dpt9-7cmv-dk65</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9081">CVE-2019-9081</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-pfg4-p438-p874">GHSA-pfg4-p438-p874</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=5.7.0,&lt;6.20.44</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/advisories/GHSA-qvqm-h22r-4cp9">Laravel Framework RCE Vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-3qhw-gzjt-j63j">PKSA-3qhw-gzjt-j63j</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15133">CVE-2018-15133</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-qvqm-h22r-4cp9">GHSA-qvqm-h22r-4cp9</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=5.6.0,&lt;=5.6.29|&lt;=5.5.40</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/advisories/GHSA-w2pm-r78h-4m7v">OS Command Injection in Laravel Framework</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-17kp-jm2n-vxzz">PKSA-17kp-jm2n-vxzz</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-19316">CVE-2020-19316</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-w2pm-r78h-4m7v">GHSA-w2pm-r78h-4m7v</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &lt;5.8.17</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                                                                <a href="https://github.com/laravel/framework/pull/39666">Image upload bypass</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-p3rx-dfwp-73ny">PKSA-p3rx-dfwp-73ny</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43617">CVE-2021-43617</a>
+                                                                                                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=8.0.0,&lt;8.71.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/advisories/GHSA-w68r-5p45-5rqp">Improper Input Validation in Laravel</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-7ywf-hktb-jkn9">PKSA-7ywf-hktb-jkn9</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24941">CVE-2020-24941</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-w68r-5p45-5rqp">GHSA-w68r-5p45-5rqp</a>
+                                                                                                                        </p>
+                                                                        <p>Affected version: &gt;=7.0.0,&lt;7.24.0|&lt;6.18.35</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j">SQL Server LIMIT / OFFSET SQL Injection</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-ckwp-rt7t-c46m">PKSA-ckwp-rt7t-c46m</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-7852-w36x-6mf6">GHSA-7852-w36x-6mf6</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=6.0.0,&lt;6.20.26|&gt;=7.0.0,&lt;7.30.5|&gt;=8.0.0,&lt;8.40.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://github.com/laravel/framework/security/advisories/GHSA-x7p5-p2c9-phvg">Unexpected bindings in QueryBuilder</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-4npr-btr6-zhny">PKSA-4npr-btr6-zhny</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-6jvx-8ch9-j2jr">GHSA-6jvx-8ch9-j2jr</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=6.0.0,&lt;6.20.14|&gt;=7.0.0,&lt;7.30.4|&gt;=8.0.0,&lt;8.24.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/laravel/framework/security/advisories/GHSA-66hf-2p6w-jqfw">Possible cross-site scripting (XSS) vulnerability in the Blade templating engine</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-njrm-6dtg-m2pc">PKSA-njrm-6dtg-m2pc</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43808">CVE-2021-43808</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-66hf-2p6w-jqfw">GHSA-66hf-2p6w-jqfw</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &lt;6.20.42|&gt;=7.0.0,&lt;7.30.6|&gt;=8.0.0,&lt;8.75.0</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [CRITICAL]                                        <a href="https://blog.laravel.com/security-release-laravel-61834-7232">Guard bypass in Eloquent models</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-vhvj-tvg4-96jj">PKSA-vhvj-tvg4-96jj</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-qm5c-m76r-2hfr">GHSA-qm5c-m76r-2hfr</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=5.5.0,&lt;=5.5.49|&gt;=6.0.0,&lt;6.18.34|&gt;=7.0.0,&lt;7.23.2</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://blog.laravel.com/laravel-cookie-security-releases">RCE vulnerability in &quot;cookie&quot; session driver</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-nrj3-r2wg-yt8b">PKSA-nrj3-r2wg-yt8b</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-vr95-p7q6-8m9q">GHSA-vr95-p7q6-8m9q</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.1.0,&lt;=4.1.99999|&gt;=4.2.0,&lt;=4.2.99999|&gt;=5.0.0,&lt;=5.0.99999|&gt;=5.1.0,&lt;=5.1.99999|&gt;=5.2.0,&lt;=5.2.99999|&gt;=5.3.0,&lt;=5.3.99999|&gt;=5.4.0,&lt;=5.4.99999|&gt;=5.5.0,&lt;=5.5.49|&gt;=5.6.0,&lt;=5.6.99999|&gt;=5.7.0,&lt;=5.7.99999|&gt;=5.8.0,&lt;=5.8.99999|&gt;=6.0.0,&lt;6.18.31|&gt;=7.0.0,&lt;7.22.4</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/laravel/framework/pull/31945">XSS vulnerability in blade templating</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-rvky-x3cg-y3qd">PKSA-rvky-x3cg-y3qd</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-44pg-c29v-hp6r">GHSA-44pg-c29v-hp6r</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=7.0.0,&lt;7.1.2</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://blog.laravel.com/security-laravel-62011-7302-8221-released">Unexpected bindings in QueryBuilder</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-985r-hryy-555b">PKSA-985r-hryy-555b</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21263">CVE-2021-21263</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-3p32-j457-pg5x">GHSA-3p32-j457-pg5x</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=6.0.0,&lt;6.20.11|&gt;=7.0.0,&lt;7.30.2|&gt;=8.0.0,&lt;8.22.1</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://laravel.com/docs/5.6/upgrade#upgrade-5.6.30">Cookie serialization vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-mhj3-vthf-h41n">PKSA-mhj3-vthf-h41n</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-jwvj-pwww-3mj5">GHSA-jwvj-pwww-3mj5</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;=4.0.11|&gt;=4.1.0,&lt;=4.1.31|&gt;=4.2.0,&lt;=4.2.22|&gt;=5.0.0,&lt;=5.0.35|&gt;=5.1.0,&lt;=5.1.46|&gt;=5.2.0,&lt;=5.2.45|&gt;=5.3.0,&lt;=5.3.31|&gt;=5.4.0,&lt;=5.4.36|&gt;=5.5.0,&lt;5.5.42|&gt;=5.6.0,&lt;5.6.30</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://medium.com/@taylorotwell/laravel-security-release-5-6-15-and-5-5-40-56f1257933a0">Exploit of encryption failure vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-cn77-7mny-v9zg">PKSA-cn77-7mny-v9zg</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-4mg9-vhxq-vm7j">GHSA-4mg9-vhxq-vm7j</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;=4.0.11|&gt;=4.1.0,&lt;=4.1.31|&gt;=4.2.0,&lt;=4.2.22|&gt;=5.0.0,&lt;=5.0.35|&gt;=5.1.0,&lt;=5.1.46|&gt;=5.2.0,&lt;=5.2.45|&gt;=5.3.0,&lt;=5.3.31|&gt;=5.4.0,&lt;=5.4.36|&gt;=5.5.0,&lt;5.5.40|&gt;=5.6.0,&lt;5.6.15</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://github.com/laravel/framework/pull/21320">Timing attack vector for remember me token</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-xf4x-p5c1-z9xq">PKSA-xf4x-p5c1-z9xq</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14775">CVE-2017-14775</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-c2v7-j5gq-wcq4">GHSA-c2v7-j5gq-wcq4</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.1.26,&lt;=4.1.31|&gt;=4.2.0,&lt;=4.2.22|&gt;=5.0.0,&lt;=5.0.35|&gt;=5.1.0,&lt;=5.1.46|&gt;=5.2.0,&lt;=5.2.45|&gt;=5.3.0,&lt;=5.3.31|&gt;=5.4.0,&lt;=5.4.36|&gt;=5.5.0,&lt;5.5.10</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [MEDIUM]                                        <a href="https://laravel.com/docs/5.4/releases#laravel-5.4.22">Password reset phishing vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-fwj1-r2kg-bmxd">PKSA-fwj1-r2kg-bmxd</a>
+                                                                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9303">CVE-2017-9303</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-rc8x-jrrc-frfv">GHSA-rc8x-jrrc-frfv</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=5.3.0,&lt;=5.3.31|&gt;=5.4.0,&lt;5.4.22</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://laravel.com/docs/5.3/upgrade#upgrade-4.1.29">Risk of mass-assignment vulnerabilities</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-4d28-pz9s-51zj">PKSA-4d28-pz9s-51zj</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-x7p5-p2c9-phvg">GHSA-x7p5-p2c9-phvg</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;4.0.99|&gt;=4.1.0,&lt;4.1.29</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                    <li class="row">
+                        <div class="col-12 package-item">
+                            <div class="row">
+                                <div class="col-md-8 col-xl-9">
+                                    <h4 class="font-bold">
+                                        [HIGH]                                        <a href="https://laravel.com/docs/5.3/upgrade#upgrade-4.1.26">Hijacked authentication cookies vulnerability</a>
+                                    </h4>
+                                    <p>
+                                        <a href="/security-advisories/PKSA-gf52-cc16-7thv">PKSA-gf52-cc16-7thv</a>
+                                                                                                                                                                            <a href="https://github.com/advisories/GHSA-wq8p-mqvg-2p5h">GHSA-wq8p-mqvg-2p5h</a>
+                                                                                                                                                                                                            </p>
+                                                                        <p>Affected version: &gt;=4.0.0,&lt;4.0.99|&gt;=4.1.0,&lt;4.1.26</p>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <p>Reported by:<br/>GitHub, FriendsOfPHP/security-advisories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                            </ul>
+            </section>
+</section>
+            </section>
+        </section>
+    </section>
+
+        <footer class="wrapper-footer">
+            <nav class="container">
+                <div class="row">
+                    <div class="col-8 col-md-9 col-lg-10">
+                        <div class="row">
+                            <ul class="col-6 col-md-3">
+                                <li><a href="/about">About Packagist.org</a></li>
+                                <li><a href="/feeds/" rel="nofollow">Atom/RSS Feeds</a></li>
+                            </ul>
+
+                            <ul class="col-6 col-md-3">
+                                <li><a href="/statistics" rel="nofollow">Statistics</a></li>
+                                <li><a href="/explore/">Browse Packages</a></li>
+                            </ul>
+
+                            <ul class="col-6 col-md-3">
+                                <li><a href="/apidoc">API</a></li>
+                                <li><a href="/mirrors">Mirrors</a></li>
+                            </ul>
+
+                            <ul class="col-6 col-md-3">
+                                <li><a href="https://status.packagist.org/">Status</a></li>
+                                <li><a href="https://p.datadoghq.com/sb/x98w56x71erzshui-4a54c45f82bacc991e83302548934b6a">Dashboard</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <ul class="social">
+                            <li><a href="http://github.com/composer/packagist" title="GitHub"><span class="icon-github"></span></a></li>
+                            <li><a href="/contact" title="Contact"><span class="icon-mail"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row sponsor">
+                    <p class="col-12 col-lg-6"><a class="short" href="https://packagist.com/"><img alt="Private Packagist" src="/img/sponsors/private-packagist.svg?v=1795122779" /></a> provides maintenance and hosting</p>
+                    <p class="col-12 col-lg-6"><a class="long" href="https://bunny.net/"><img alt="Bunny.net" src="/img/sponsors/bunny-net.svg?v=1795122779" /></a> provides bandwidth and CDN</p>
+                    <p class="col-12 col-lg-6"><a class="short" href="https://www.aikido.dev/"><img alt="Aikido" src="/img/sponsors/aikido.svg?v=1795122779" /></a> provides malware detection</p>
+                    <p class="col-12 text-center"><a href="/sponsor/">Sponsor Packagist &amp; Composer</a></p>
+                </div>
+            </nav>
+        </footer>
+
+        <div class="notifications-container toast-container position-fixed top-0 start-50 translate-middle-x p-3"></div>
+
+        <script nonce="bu3Igqa2I9hKaNbst4Nz8w==">
+                        var algoliaConfig = {"app_id":"M58222SH95","search_key":"0cdb98d788b15a422a65e7f2fcecff5b","index_name":"packagist"};
+                    </script>
+        
+        <script nonce="bu3Igqa2I9hKaNbst4Nz8w==" src="/build/app.js?v=1795122779"></script>
+
+            </body>
+</html>

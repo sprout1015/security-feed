@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Ruby News</title>
+    <link>https://www.ruby-lang.org/en/feeds/news.rss</link>
+    <language>en-US</language>
+    <ttl>40</ttl>
+    <description>The latest news from ruby-lang.org.</description>
+    
+    <item>
+      <title>Ruby 4.0.10 Released</title>
+      <description>&lt;p&gt;Ruby 4.0.10 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes security fixes.
+Please check the topic below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/&quot;&gt;Security advisories: multiple vulnerabilities in Regexp and String case conversion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This release also includes other bugfixes.
+Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v4.0.10&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 23973483
+SHA1: ce0edd32e23f4147573a842d24fd76c68164474a
+SHA256: b53eef3371fa5d3e3b74340edcd015f06d5d8853968d4e539a5264fce41ed9f1
+SHA512: b5a1be1bdad01564a766f2f6f4ec2d7eed6fcbc52b8742640214e8c8272bf62e7144126a45de5271de3bb4855db7e10672af344690af8c168523f9e44d823f00
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 18133108
+SHA1: 1e1eff5e147c2d74937f6c0c320d8ff6681bd61e
+SHA256: 1537f7a6003c436546ecab6b48b6e7725a9af2328f45a8af7f42f41c5df90ab8
+SHA512: d3fdb00e08165526065ce84a4606cdcfb9fb04ad8cfb0b516a403382cfc25e1aeed9ee4a13abdff98ebfd7241eaf32303fd7c385ef63e58c17689da88b80d847
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.10.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 29322047
+SHA1: 71a76f0251969d8ab71cdad9a3954064ad2e851b
+SHA256: aaa2003c2dcb2bc18cbc8616c953884c6ccc551d6965d2e27bc6cf826ca3f9e0
+SHA512: e00e60bd31aced35650cdecc6db80eaee53deaba22008066010b721433d50111e49fe31f1a90a90150fa38825a8411b0a37386e16ad93f417a780f41a7704de7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;k0kubun&lt;/strong&gt; on 18 Nov 2026&lt;/p&gt;</description>
+      <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-4-0-10-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-4-0-10-released/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 3.4.13 Released</title>
+      <description>&lt;p&gt;Ruby 3.4.13 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes security fixes.
+Please check the topic below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/&quot;&gt;Security advisories: multiple vulnerabilities in Regexp and String case conversion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This release also includes other bugfixes.
+Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v3_4_13&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 22523151
+SHA1: 61d6742c35916a965bb50dd6888d5f79c52938d5
+SHA256: d0d3bf3dd8c224a3c3b7ecd816a0f1b2cbcf4f87b5afcbdbe91d3fef177f351a
+SHA512: 0c914e049939f09cfbbbb5b03b427d9525eb3c75830077eb2c07ff0ac8b06770538facdabe6e8c7524874ef30309987bb336e61f97caba65c0983beae1eb51ba
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 16860020
+SHA1: cb2473ffd6dda89de200a4056fe82b2511312cc4
+SHA256: 6474dff9c02ea685fc44877a4807a27366bf109b176dad182108bb8c96d09589
+SHA512: 6a2df57f072ea341ce219d2d2c6a719dda976ad53d51f1c344d623bd64a4449642b49a9c81311daf367c19d42a11e2d92ac8bb343ff8bf0697247cc09b4b6eae
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.13.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 27744286
+SHA1: ac33a67d2386ede95744dcf8bba12880a618322c
+SHA256: 080c7ddd89ab02228a924837bf900310719e3486d7b664578d63a40fd1ea05ea
+SHA512: 19d8350b93d51914e8c49026f3526e892dc31f3e6aee4a85eea20a4d323a2eedcb40d80f0055d4cf4c9f81711f29b45fea1e0076b486e7678a34abe0fb630659
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;nagachika&lt;/strong&gt; on 18 Nov 2026&lt;/p&gt;</description>
+      <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-4-13-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-4-13-released/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 3.3.14 Released</title>
+      <description>&lt;p&gt;Ruby 3.3.14 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes security fixes.
+Please check the topic below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/&quot;&gt;Security advisories: multiple vulnerabilities in Regexp and String case conversion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Starting with this release, Ruby 3.3 also receives fixes for bugs that we judge need to be backported, not only security fixes.
+Accordingly, we have renamed this phase from the security maintenance phase to the legacy maintenance phase.
+The support period is unchanged for now, and official support for Ruby 3.3 is still scheduled to end at the end of March 2027.&lt;/p&gt;
+
+&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v3_3_14&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 21512128
+SHA1: cabe592634c8cc922a3f21792b1603488a3335dc
+SHA256: d0438ee291b0cacaf97c7a71df4c939d7f3265c8c2d1b8ffe27311f71fc680b0
+SHA512: d6c3599266d441b00659c7a6eafdc5cc2b5d5b57daa0aba6a22710a2be75bf9a9de9387b8de3734f40fea6591da0bd957ae0e2363758287bc403fe8006a5b224
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 16025548
+SHA1: e058f5782eef876b22e12f00429a36cc16d92719
+SHA256: e24ef6d97095a9c42bf8259a2de33a25aac8d92bb48fefdbdc81724b87784854
+SHA512: 5d690fdb53a0e2f9c0d9c536d037c199e4ea57a41849845c13724059129a895474f7cba4c9c071f3a1ec7aae81ad7560888a64525b24347eca1f2c7e15d0ff9b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 26978726
+SHA1: 146ace29d87719b3b108800b768abf0272cac813
+SHA256: 0c6af18c3998f0133e6b1338c593eeb04c2a78466d9566c8425dc057f0bf5948
+SHA512: e7d1bce838a25aa76b8b96dc4b9b943d6e343c302d3da8a93d341c47fa57c7a7b9ab277b1bea9240adc43c3f73c1aa29b2a9965637b87fd52265e4e1bb83757f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;hsbt&lt;/strong&gt; on 18 Nov 2026&lt;/p&gt;</description>
+      <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-3-14-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/11/18/ruby-3-3-14-released/</link>
+    </item>
+    
+    <item>
+      <title>Security advisories: multiple vulnerabilities in Regexp and String case conversion</title>
+      <description>&lt;p&gt;Seven vulnerabilities have been discovered in Ruby’s regular expression engine and in the case conversion of strings. We are aware of PoCs that prove some of them can be used to trigger remote code execution. We have released Ruby 4.0.10, 3.4.13 and 3.3.14 to fix them. We strongly recommend upgrading.&lt;/p&gt;
+
+&lt;p&gt;CVE identifiers have been requested for these vulnerabilities but have not been assigned yet, so this advisory refers to them by their GitHub Security Advisory (GHSA) identifiers.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-34m4-m9fh-gqp5-heap-buffer-overflow-in-case-conversion-of-strings&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-34m4-m9fh-gqp5&quot;&gt;GHSA-34m4-m9fh-gqp5&lt;/a&gt;: Heap buffer overflow in case conversion of strings&lt;/h2&gt;
+
+&lt;p&gt;Ruby has a one-byte heap-based buffer overflow in the case conversion of strings. Changing the case of a crafted string may allow remote code execution. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-7x2q-68qv-6p8x-double-free-in-regular-expression-compilation&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-7x2q-68qv-6p8x&quot;&gt;GHSA-7x2q-68qv-6p8x&lt;/a&gt;: Double free in regular expression compilation&lt;/h2&gt;
+
+&lt;p&gt;Ruby has a double free in its regular expression engine. Compiling a crafted regular expression pattern may allow remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-87fm-7w84-j2px-integer-overflow-in-case-conversion-of-strings&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-87fm-7w84-j2px&quot;&gt;GHSA-87fm-7w84-j2px&lt;/a&gt;: Integer overflow in case conversion of strings&lt;/h2&gt;
+
+&lt;p&gt;Ruby has an integer overflow in the case conversion of strings, which causes a heap-based buffer overflow. Changing the case of a crafted string may allow remote code execution. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-wpqw-5qxg-m68r-out-of-bounds-read-in-case-insensitive-regular-expression-matching&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-wpqw-5qxg-m68r&quot;&gt;GHSA-wpqw-5qxg-m68r&lt;/a&gt;: Out-of-bounds read in case-insensitive regular expression matching&lt;/h2&gt;
+
+&lt;p&gt;Ruby has an out-of-bounds read in its regular expression engine. Matching against a crafted regular expression pattern may allow remote code execution in applications that use attacker-controlled patterns. We are aware of PoCs that prove this flaw can lead to memory corruption in an attacker-controlled way.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-3p8q-wmhx-vm2w-heap-buffer-overflow-in-regular-expression-compilation&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-3p8q-wmhx-vm2w&quot;&gt;GHSA-3p8q-wmhx-vm2w&lt;/a&gt;: Heap buffer overflow in regular expression compilation&lt;/h2&gt;
+
+&lt;p&gt;Ruby has an integer overflow in its regular expression engine, which causes a heap-based buffer overflow. Compiling a crafted regular expression pattern may allow remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-7whj-cfh7-xgm4-heap-buffer-overflow-in-regexpto_s&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-7whj-cfh7-xgm4&quot;&gt;GHSA-7whj-cfh7-xgm4&lt;/a&gt;: Heap buffer overflow in Regexp#to_s&lt;/h2&gt;
+
+&lt;p&gt;Ruby has a heap-based buffer overflow in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp#to_s&lt;/code&gt;. Converting a crafted regular expression to a string may allow information disclosure or remote code execution in applications that compile attacker-controlled patterns. We are aware of PoCs that prove this flaw can be used to trigger RCE in some scenarios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghsa-pvgc-g7gj-pv6h-out-of-bounds-read-in-case-insensitive-backreference-matching&quot;&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-pvgc-g7gj-pv6h&quot;&gt;GHSA-pvgc-g7gj-pv6h&lt;/a&gt;: Out-of-bounds read in case-insensitive backreference matching&lt;/h2&gt;
+
+&lt;p&gt;Ruby has an out-of-bounds read in its regular expression engine. Matching a crafted string may disclose memory contents or crash the process.&lt;/p&gt;
+
+&lt;h2 id=&quot;affected-versions&quot;&gt;Affected versions&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby 3.3.13 and earlier&lt;/li&gt;
+  &lt;li&gt;Ruby 3.4.0 through 3.4.12&lt;/li&gt;
+  &lt;li&gt;Ruby 4.0.0 through 4.0.9&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;recommended-action&quot;&gt;Recommended action&lt;/h2&gt;
+
+&lt;p&gt;We strongly recommend upgrading to Ruby 4.0.10, 3.4.13 or 3.3.14.&lt;/p&gt;
+
+&lt;p&gt;Ruby 3.3 is in the security maintenance phase. Ruby 3.2 and earlier have reached their end of life and will not receive these fixes.&lt;/p&gt;
+
+&lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GHSA-34m4-m9fh-gqp5: Stephan Lipp (Ada Logics) and Anthropic&lt;/li&gt;
+  &lt;li&gt;GHSA-7x2q-68qv-6p8x: Stephan Lipp (Ada Logics) and Anthropic&lt;/li&gt;
+  &lt;li&gt;GHSA-87fm-7w84-j2px: &lt;a href=&quot;https://hackerone.com/baba__yaga&quot;&gt;baba__yaga&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GHSA-wpqw-5qxg-m68r: Stephan Lipp (Ada Logics) and Anthropic&lt;/li&gt;
+  &lt;li&gt;GHSA-3p8q-wmhx-vm2w: &lt;a href=&quot;https://hackerone.com/aphantom&quot;&gt;aphantom&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GHSA-7whj-cfh7-xgm4: Stephan Lipp (Ada Logics) and Anthropic&lt;/li&gt;
+  &lt;li&gt;GHSA-pvgc-g7gj-pv6h: Hiroya Fujinami and Hiroshi SHIBATA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Originally published at 2026-11-19 00:00:00 (UTC)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;mame&lt;/strong&gt; on 18 Nov 2026&lt;/p&gt;</description>
+      <pubDate>Wed, 18 Nov 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 3.3.13 Released</title>
+      <description>&lt;p&gt;Ruby 3.3.13 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes security fixes.
+Please check the topics below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/08/27/multiple-vulnerabilities-in-resolv/&quot;&gt;Security advisories: CVE-2026-80212 and CVE-2026-80213&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/&quot;&gt;Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This release updates the default gem resolv to 0.3.2, which fixes CVE-2026-80212 and CVE-2026-80213.&lt;/p&gt;
+
+&lt;p&gt;Ruby 3.3 is in the security maintenance phase. As an exception, this release also includes fixes for bugs in Regexp compilation that GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264 rely on.&lt;/p&gt;
+
+&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v3_3_13&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 21497008
+SHA1: e89379c35cd61b23c7fef6cff9c5bbece4e2c391
+SHA256: 4cae72e971bd1cdb20ca87d299111182417c5276c162de8ead0ab0531426cd61
+SHA512: 0536341f6f612a1eb0128f7d18eed081b09264c695e6a159a5456ba3050464849791ae26e33a7ea384406fa9e19b98bf194c89638dfe2940d3dbeed5b3126c92
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 15878972
+SHA1: 61e8a88d601ca7a4e9f9c30428fa46be0fdf690d
+SHA256: 6bd764359992373a96556b45fb7dfe6b6170da34a0a2fd0b7e1be7932fea982b
+SHA512: 906e270e2629b44e469265e08d693f996b467a3fc165fbdb9b8f6f7b37effe4fdae9d4968e72a809d1381e35279cb10b6630d40fac31a634981deb4c30ff325c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 26961541
+SHA1: 4536403d0c1feaa6290fc7d94e65db4bc2b7f0ed
+SHA256: 8cf1c468af6dbcaa2c48270cc4c951325dabe5fd84b609641d4bd7b89c9d5766
+SHA512: 622c8b60b2202aea1aa4caed00cee5984109926793ee57c86a9cc39b1628855f51a26d07258aa85aacc679c6186efc4ebf20b5a51f199de7cdd6fcc98a212d10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;hsbt&lt;/strong&gt; on 23 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Fri, 23 Oct 2026 04:24:46 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-3-13-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-3-13-released/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 3.4.12 Released</title>
+      <description>&lt;p&gt;Ruby 3.4.12 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes fixes for bugs in Regexp compilation that GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264 rely on.
+Please see the topic below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/&quot;&gt;Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This release also includes other bugfixes.
+Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v3_4_12&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 22498017
+SHA1: 8ead0b008d7cdeb543282489e7574324ab62939f
+SHA256: 5e5d85ad93b0adcccbad47733680f4892bd0078e3342437f7babce01c1872479
+SHA512: 7d4fcf4b57f94974091df406e159ccfd8460e75bd7593993d9d4172a8ad673388bb8505ddb41377014dce4df6d358e019d4fa4098b535aa705e790f65962f1cd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 16732860
+SHA1: bf42a4909e1517a2fee26eebbd840bbef3181c61
+SHA256: db6c147940d7ad0b706823d42c8e6713c36dec70a1f83f635f1d3a7f0599ec90
+SHA512: 7866ed652921f9f0d601e1e323d29fddee3506cfd89e258cab7601786bffec8a17245468d517d246ecfa7fa9a982b73cfff0aaf6534444753e8b6add297bfbd3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.12.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 27719665
+SHA1: c4381ce52fba1af02944cedb35eac569976bfdb8
+SHA256: b1bec4f3a2b0c47f349a102b013f1c8f345b9991388e75368d1178ac4f9cfc0e
+SHA512: 21573c2ba656984c006c8f499f3498c5208eba17d862d93269221c1e7295ace4e5034a53b23931d6b9585c4fc98ecd9b1196b81c2b58543d83550ea60fdc014e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;nagachika&lt;/strong&gt; on 23 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Fri, 23 Oct 2026 03:50:27 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-4-12-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-3-4-12-released/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 4.0.9 Released</title>
+      <description>&lt;p&gt;Ruby 4.0.9 has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes a fix for a bug in Regexp compilation that GitLab’s CVE-2026-110264 relies on.
+Please see the topic below for details.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/&quot;&gt;Regexp compilation fixes related to GitLab’s CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v4.0.9&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 23946524
+SHA1: 39f31360bc0c03bde9eec4177e443f6298481e2e
+SHA256: c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511
+SHA512: 9adb0069a07ee1348a04b627d8af1c9f2b6537bdea5dce0b57423659626d9ae3cc04955eae7167014c56bd0f4c7c9d1aa0e4fcfc666eda738b1b0c35a3674114
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 17996144
+SHA1: 630cf1e7a4c522f49a2fec383805627691500b54
+SHA256: a8057adb39f51ad6dc3106237504c93dd792bb515837b4fe7817ae21ed7e51f4
+SHA512: 7160b1c6fb61b0e369cddccb29eadae85390d86777c875efc18a56de390b1fe1ff47d6e37ccaf39d2ed477c9811f1224cbb3d2f54a0cbd5d5daf418b1cf2557e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 29263242
+SHA1: 9e2d496d0f3663918c3183b8671c7f4b78aa185e
+SHA256: 8242fbb2354cb71811cb2ff4d5e149b7a0ecb700e6c61a897710204ac36f866b
+SHA512: 29422739ea9b5189c24354f6c689f40485c4dc8945e735c38240094195a637dbc6807f4fe295a1579b27ca930e1eb6b2ad7fe1970dad38d0800e049863e8288b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;k0kubun&lt;/strong&gt; on 23 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Fri, 23 Oct 2026 03:11:22 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/23/ruby-4-0-9-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/23/ruby-4-0-9-released/</link>
+    </item>
+    
+    <item>
+      <title>Regexp compilation fixes related to GitLab's CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264</title>
+      <description>&lt;p&gt;We have released Ruby 4.0.9, 3.4.12 and 3.3.13. They fix several bugs in Ruby’s regular expression engine (Onigmo) that GitLab found could be used for remote code execution on GitLab servers. GitLab published four CVEs for these issues, and the Ruby releases contain the fixes for the underlying bugs in Ruby.&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;GitLab compiles regular expressions supplied by its users, such as patterns in CI configuration, with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp.new&lt;/code&gt;. GitLab found that specially crafted patterns could corrupt memory while Ruby compiles them, and that this could be turned into remote code execution on GitLab servers. GitLab addressed these issues in its own releases by patching the Ruby it ships, and assigned the following CVE identifiers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cve.org/CVERecord?id=CVE-2026-89078&quot;&gt;CVE-2026-89078&lt;/a&gt;: Double Free issue in Regular Expression Parser (&lt;a href=&quot;https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/&quot;&gt;GitLab 19.4.1&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cve.org/CVERecord?id=CVE-2026-93577&quot;&gt;CVE-2026-93577&lt;/a&gt;: Integer Overflow issue in Regular Expression Compiler (&lt;a href=&quot;https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/&quot;&gt;GitLab 19.4.1&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cve.org/CVERecord?id=CVE-2026-97229&quot;&gt;CVE-2026-97229&lt;/a&gt;: Integer Overflow issue in CI/CD Regular Expression Compiler (&lt;a href=&quot;https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/&quot;&gt;GitLab 19.4.2&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cve.org/CVERecord?id=CVE-2026-110264&quot;&gt;CVE-2026-110264&lt;/a&gt;: Integer Overflow issue in Regular Expression Compiler (&lt;a href=&quot;https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/&quot;&gt;GitLab 19.5.1&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fixes-in-ruby&quot;&gt;Fixes in Ruby&lt;/h2&gt;
+
+&lt;p&gt;The following table shows the change in Ruby that fixes the bug behind each CVE, and the first release of each series that contains it.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;CVE&lt;/th&gt;
+      &lt;th&gt;Bug in Ruby&lt;/th&gt;
+      &lt;th&gt;Change&lt;/th&gt;
+      &lt;th&gt;Ruby advisory&lt;/th&gt;
+      &lt;th&gt;Ruby 4.0&lt;/th&gt;
+      &lt;th&gt;Ruby 3.4&lt;/th&gt;
+      &lt;th&gt;Ruby 3.3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CVE-2026-89078&lt;/td&gt;
+      &lt;td&gt;Double free when parsing a pattern fails after an alternation&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/pull/13332&quot;&gt;#13332&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-gfj3-8wj9-qx8p&quot;&gt;GHSA-gfj3-8wj9-qx8p&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;4.0.0&lt;/td&gt;
+      &lt;td&gt;3.4.12&lt;/td&gt;
+      &lt;td&gt;3.3.13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CVE-2026-93577, CVE-2026-97229&lt;/td&gt;
+      &lt;td&gt;Integer overflow in the size of a compiled pattern&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/pull/19020&quot;&gt;#19020&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-22mf-ggw7-pxfx&quot;&gt;GHSA-22mf-ggw7-pxfx&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;4.0.8&lt;/td&gt;
+      &lt;td&gt;3.4.12&lt;/td&gt;
+      &lt;td&gt;3.3.13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CVE-2026-110264&lt;/td&gt;
+      &lt;td&gt;Overflow of internal IDs in a pattern with many repeats&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/pull/16801&quot;&gt;#16801&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/ruby/ruby/security/advisories/GHSA-qm4g-8pfh-6996&quot;&gt;GHSA-qm4g-8pfh-6996&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;4.0.9&lt;/td&gt;
+      &lt;td&gt;3.4.12&lt;/td&gt;
+      &lt;td&gt;3.3.13&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Ruby 4.0.9, 3.4.12 and 3.3.13 contain all of these fixes.&lt;/p&gt;
+
+&lt;h2 id=&quot;who-is-affected&quot;&gt;Who is affected&lt;/h2&gt;
+
+&lt;p&gt;These bugs are reached only when an application compiles a regular expression from a string that an attacker controls, for example by passing it to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp.new&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp.union&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp.compile&lt;/code&gt;, or by interpolating it into a regexp literal such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/#{input}/&lt;/code&gt;. Applications that only use regular expressions written by their own developers are not affected.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp.timeout&lt;/code&gt; does not protect against these bugs. Limiting the length of patterns does not reliably protect against them either, because some of them can be triggered by short patterns.&lt;/p&gt;
+
+&lt;h2 id=&quot;recommended-action&quot;&gt;Recommended action&lt;/h2&gt;
+
+&lt;p&gt;We recommend upgrading to Ruby 4.0.9, 3.4.12 or 3.3.13 or later.&lt;/p&gt;
+
+&lt;p&gt;If you cannot upgrade, please avoid compiling regular expressions from untrusted input.&lt;/p&gt;
+
+&lt;p&gt;Ruby 3.3 is in the security maintenance phase, in which we normally release only fixes for vulnerabilities. Ruby 3.3.13 includes these fixes as an exception, because GitLab assigned CVEs to issues that rely on them.&lt;/p&gt;
+
+&lt;h2 id=&quot;about-cve-identifiers&quot;&gt;About CVE identifiers&lt;/h2&gt;
+
+&lt;p&gt;Update (2026-11-20): The CVE identifiers of these vulnerabilities in Ruby are the ones GitLab assigned: CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264. We requested separate identifiers for the Ruby advisories, but the CVE Program assigns a single identifier to a vulnerability in code that several products share, and GitLab is affected through the Ruby it ships. Please use these identifiers, together with the Ruby advisories listed in the table above, when you track these issues, for example in a security scanner. The CVE records currently list only GitLab as the affected product. We have asked GitLab, which maintains the records, to add Ruby to them.&lt;/p&gt;
+
+&lt;p&gt;Update (2026-11-17): We now treat these issues as vulnerabilities in Ruby. We have published a security advisory for each of them in the ruby/ruby repository, listed in the table above.&lt;/p&gt;
+
+&lt;p&gt;When we originally published this page, we had not requested CVE identifiers in Ruby for these fixes, for the following reason.&lt;/p&gt;
+
+&lt;p&gt;Ruby has generally considered it unsafe to compile and use a regular expression created from untrusted input. We stated this in the advisory for &lt;a href=&quot;/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/&quot;&gt;CVE-2022-28738&lt;/a&gt;, where we nevertheless treated a double free in Regexp compilation as a vulnerability after a comprehensive assessment. We did the same for &lt;a href=&quot;/en/news/2024/04/23/arbitrary-memory-address-read-regexp-cve-2024-27282/&quot;&gt;CVE-2024-27282&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, the &lt;a href=&quot;https://docs.ruby-lang.org/en/master/Regexp.html#class-Regexp-label-Timeouts&quot;&gt;Regexp documentation&lt;/a&gt; discussed untrusted patterns only in terms of denial of service, and recommended a timeout for them. It did not clearly say whether compiling an untrusted pattern is a use case that Ruby supports. We have since discussed this and decided that memory corruption reachable by compiling an untrusted pattern is a vulnerability in Ruby, which is why we have published the advisories above.&lt;/p&gt;
+
+&lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Thanks to Johan Carlsson (&lt;a href=&quot;https://github.com/joaxcar&quot;&gt;joaxcar&lt;/a&gt;) for discovering the integer overflow fixed by &lt;a href=&quot;https://github.com/ruby/ruby/pull/19020&quot;&gt;#19020&lt;/a&gt; through GitLab’s bug bounty program, and to GitLab for reporting these issues to us and coordinating the fixes.&lt;/p&gt;
+
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Originally published at 2026-10-23 03:11:22 (UTC)&lt;/li&gt;
+  &lt;li&gt;Updated at 2026-11-17 04:28:40 (UTC): Added the Ruby security advisories and marked this page as a security announcement&lt;/li&gt;
+  &lt;li&gt;Updated at 2026-11-20 00:37:50 (UTC): Stated that the CVE identifiers assigned by GitLab are the identifiers of these vulnerabilities in Ruby&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;k0kubun&lt;/strong&gt; on 23 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Fri, 23 Oct 2026 03:11:22 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 4.0.8 Released</title>
+      <description>&lt;p&gt;Ruby 4.0.8 has been released.&lt;/p&gt;
+
+&lt;p&gt;This is a routine update that includes bugfixes.
+Please see the &lt;a href=&quot;https://github.com/ruby/ruby/releases/tag/v4.0.8&quot;&gt;GitHub releases&lt;/a&gt; for further details.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 23947459
+SHA1: f79bc8217dd0edd7ecc0c1c0cb57e64a906258a5
+SHA256: 0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2
+SHA512: 011b741c8fe3160643739f8fd88f3a69b198260dabcd3cb791c1ffacdfae7b48f6b2ca365ea97198d5dcb13fc839533ec1e83bab76f38c25203a7a3b6e665e8b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 18019152
+SHA1: 24404aa1371a1f5a28bfcc8ac4331bd744810954
+SHA256: 3bd35abc39dce9c682d62cf333fbd8b8f34816dd651f8228b3b59353157b84a4
+SHA512: 79eb57f30a853d6e856ce2df35b8ff20c393d5cacad43420c5caba9ebba53445d1b7b40f0a65a1cd4eee6bfc86abc3eb722e1fa5bef10b41bf56779b566e894a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 29263079
+SHA1: 40c0e4f791563bc8a24d683547cb3fe08c01da4b
+SHA256: 68e12bb40c9175c2a97f371ff6a76dd93649bb09dc76d757394b7086c881ade4
+SHA512: bee8b619c287530d10779d6527d5e7397b75b74d0abe57d9a12b8d8d0b303064ea6da3fe9a47d1fb9835abfe11701e64a767841658e209cb866ca44aa951ef33
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;release-comment&quot;&gt;Release Comment&lt;/h2&gt;
+
+&lt;p&gt;Many committers, developers, and users who provided bug reports helped us make this release.
+Thanks for their contributions.&lt;/p&gt;
+
+&lt;p&gt;Posted by &lt;strong&gt;k0kubun&lt;/strong&gt; on 22 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Thu, 22 Oct 2026 06:54:51 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/22/ruby-4-0-8-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/22/ruby-4-0-8-released/</link>
+    </item>
+    
+    <item>
+      <title>Ruby 4.1.0-preview1 Released</title>
+      <description>
+&lt;p&gt;We are pleased to announce the release of Ruby 4.1.0-preview1.
+Ruby 4.1 introduces Ractor local GC, Windows support of YJIT, autoload_relative,
+and adds many improvements.&lt;/p&gt;
+
+&lt;h2 id=&quot;ractor-improvements&quot;&gt;Ractor improvements&lt;/h2&gt;
+
+&lt;p&gt;A lot of work has gone into making Ractors more stable, performant, and usable. These improvements bring Ractor implementation closer to leaving experimental status.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The default GC now runs &lt;strong&gt;per Ractor&lt;/strong&gt;: each Ractor collects its own heap
+on its own thread without stopping the others, and a stop-the-world
+collection only runs when it is really needed (explicit full &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.start&lt;/code&gt;,
+shareable-object growth, reclaiming dead Ractors’ heaps).  Allocation-heavy
+Ractor programs now scale like forked processes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.start(global: false)&lt;/code&gt; can be used when multiple Ractors are running to force
+ a Ractor-local GC. By default, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.start&lt;/code&gt; runs a global GC (all Ractors) like
+ before. This can also be triggered with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.start(global: true)&lt;/code&gt;. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global&lt;/code&gt;
+ keyword argument has no effect when a single Ractor is running.&lt;/p&gt;
+
+    &lt;p&gt;Visible behavior changes:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor#value&lt;/code&gt; returns the value only once; a second call raises
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor::Error&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.disable&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.enable&lt;/code&gt; act as per-Ractor holds on a process-wide
+switch: one Ractor’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.enable&lt;/code&gt; no longer overrides another Ractor’s
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.disable&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectSpace.each_object&lt;/code&gt; enumerates the calling Ractor’s own objects
+plus other Ractors’ shareable objects (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectSpace.dump_all&lt;/code&gt; still
+covers everything).&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectSpace.define_finalizer&lt;/code&gt; on another Ractor’s object raises
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor::IsolationError&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor#monitor&lt;/code&gt; now sends an Array naming the Ractor and what happened to
+it, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ractor, :exited]&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ractor, :aborted]&lt;/code&gt;, where it used to send the
+bare Symbol &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:exited&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:aborted&lt;/code&gt;.  Several Ractors can then report to one
+port and the receiver still knows which one finished.  The Array is built for
+the receiving Ractor, so watching many Ractors leaves no shareable objects
+behind.&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;r = Ractor.new { :ok }
+r.monitor(port = Ractor::Port.new)
+port.receive #=&amp;gt; [r, :exited]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;One port can therefore watch a whole group, which is all a supervisor
+needs:&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;workers.each { |r| r.monitor port }
+
+until workers.empty?
+  r, status = port.receive
+  workers.delete(r)
+  workers &amp;lt;&amp;lt; restart(r) if status == :aborted
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;language-changes&quot;&gt;Language changes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;super&lt;/code&gt; in a module method that was called via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;super&lt;/code&gt; from a refinement
+method now works correctly.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22309&quot;&gt;Feature #22309&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#clone&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#dup&lt;/code&gt; no longer rewrite the lexical scope of
+copied methods. Constants and class variables resolve through the
+original class, consistent with inheritance and mixins.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21981&quot;&gt;Feature #21981&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alias&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#alias_method&lt;/code&gt; in a module emit a deprecation warning
+when the original method is not a method of the module or its ancestors
+and is only found through the fallback to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object&lt;/code&gt;. The fallback will be
+removed in Ruby 4.3, and such an alias will raise a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NameError&lt;/code&gt;.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22276&quot;&gt;Bug #22276&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alias&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#alias_method&lt;/code&gt; emit a deprecation warning when the
+original method is defined in a prepended module. This behavior will
+be removed in Ruby 4.3, and alias lookup will start at the origin
+class (after prepended modules).
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22273&quot;&gt;Bug #22273&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;core-classes-updates&quot;&gt;Core classes updates&lt;/h2&gt;
+
+&lt;p&gt;Note: We’re only listing outstanding class updates.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;C API&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RB_NOGVL_PENDING_INTR_FAIL&lt;/code&gt; is added as a flag for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_nogvl&lt;/code&gt;.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_nogvl&lt;/code&gt; does not enter the blocking region (and does not call the
+given function), returning &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;, if the current thread has pending
+interrupts, including interrupts masked by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Thread.handle_interrupt&lt;/code&gt;.
+As with the existing skip path, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;errno&lt;/code&gt; is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; because the function was
+never called.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RHASH_TBL&lt;/code&gt; is deprecated.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22232&quot;&gt;Feature #22232&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Array&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array#pack&lt;/code&gt; accepts new formats &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt; for unsigned and signed
+LEB128 encoded integers. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21785&quot;&gt;Feature #21785&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array#pack&lt;/code&gt; accepts new formats &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x!&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@!&lt;/code&gt; to align the current
+offset to a byte boundary or to the ABI alignment of another
+directive. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22185&quot;&gt;Feature #22185&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dir&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dir.glob&lt;/code&gt; supports &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;***/&lt;/code&gt; for recursive matching that follows
+directory symbolic links, stopping at links to ancestor directories.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/17548&quot;&gt;Feature #17548&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ENV&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENV.fetch_values&lt;/code&gt; is added. It returns an array of values for the
+given names, raising &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KeyError&lt;/code&gt; for missing names unless a block is
+given. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21781&quot;&gt;Feature #21781&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fiber::Scheduler&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fiber_interrupt&lt;/code&gt; hook is now required. Schedulers which do not
+implement it can no longer be installed with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fiber.set_scheduler&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GC&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.stat&lt;/code&gt; accepts &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scope: :ractor&lt;/code&gt; (the default), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scope: :local&lt;/code&gt;
+(a synonym for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:ractor&lt;/code&gt;), and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scope: :global&lt;/code&gt;.
+With the default collector, the global scope reports cumulative collection
+counts and measured marking/sweeping CPU time across Ractors, including
+history from destroyed object spaces, without requesting a stop-the-world
+snapshot. Unscoped &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.stat&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.count&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.total_time&lt;/code&gt; retain their
+current-Ractor behavior.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.stat&lt;/code&gt; reports a new key, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:global_gc_count&lt;/code&gt;: the number of
+stop-the-world global garbage collection cycles the current Ractor
+initiated. Each global collection is attributed to exactly one Ractor,
+so the values sum across Ractors. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.stat(:global_gc_count,
+scope: :global)&lt;/code&gt; reports the process total, including the counts of
+terminated Ractors.&lt;/li&gt;
+      &lt;li&gt;A global garbage collection is not counted in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:major_gc_count&lt;/code&gt;.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:count&lt;/code&gt; equals &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:minor_gc_count&lt;/code&gt; plus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:major_gc_count&lt;/code&gt; plus
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:global_gc_count&lt;/code&gt; in both scopes. When another Ractor’s object space
+exists, including one left by a terminated Ractor that is not yet
+absorbed, or one was absorbed since the last global collection,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GC.start&lt;/code&gt; runs a global collection by default, so it increments
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:global_gc_count&lt;/code&gt; rather than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:major_gc_count&lt;/code&gt;; pass &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global: false&lt;/code&gt;
+for a local major collection.&lt;/li&gt;
+      &lt;li&gt;Global compaction no longer counts overlapping CPU intervals in scalar GC
+timing statistics. Profiler wall-time intervals are unchanged.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hash&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hash.ruby2_keywords_hash?&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hash.ruby2_keywords_hash&lt;/code&gt; are
+deprecated and will be removed in Ruby 4.5. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22205&quot;&gt;Feature #22205&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Integer&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integer#bit_count&lt;/code&gt; is added. It returns the number of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt; bits in the
+binary representation of a non-negative integer (its population count).
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/20163&quot;&gt;Feature #20163&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IO::Buffer&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;read&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;write&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pread&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pwrite&lt;/code&gt; now perform one IO operation using
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(offset, length)&lt;/code&gt;, where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt; is the maximum transfer size. Short
+transfers are returned directly.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;The corresponding fiber scheduler hooks are no longer experimental and
+now use the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(offset, length)&lt;/code&gt; argument order and single-operation
+semantics.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kernel&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Kernel#autoload_relative&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#autoload_relative&lt;/code&gt; are added.
+These methods work like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;autoload&lt;/code&gt;, but resolve the file path relative
+to the file where the method is called, similar to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require_relative&lt;/code&gt;.
+This makes it easier to autoload constants from files in the same
+directory without hardcoding absolute paths or manipulating &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$LOAD_PATH&lt;/code&gt;.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/15330&quot;&gt;Feature #15330&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MatchData&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MatchData#integer_at&lt;/code&gt; is added.  It converts the matched substring to
+integer and return the result.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21932&quot;&gt;Feature #21932&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Module&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#descendants&lt;/code&gt; is added.  It returns an array of classes and
+modules that have the receiver in their ancestors.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/9779&quot;&gt;Feature #9779&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#ruby2_keywords&lt;/code&gt; and top-level &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby2_keywords&lt;/code&gt; are
+deprecated and will be removed in Ruby 4.4.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22205&quot;&gt;Feature #22205&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#method_defined?&lt;/code&gt; now accepts a third optional argument to also
+match private methods.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22297&quot;&gt;Feature #22297&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ObjectSpace&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectSpace._id2ref&lt;/code&gt; was removed.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22135&quot;&gt;Feature #22135&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Proc&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proc#refined&lt;/code&gt; is added. It returns a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proc&lt;/code&gt; that behaves like the
+receiver but with the refinements activated by the given modules
+in effect inside its body, without affecting the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proc&lt;/code&gt;.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22097&quot;&gt;Feature #22097&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proc#ruby2_keywords&lt;/code&gt; is deprecated and will be removed in Ruby 4.4.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22205&quot;&gt;Feature #22205&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Range&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Range#clamp&lt;/code&gt; is added. It returns a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Range&lt;/code&gt; instance whose
+begin and end values are clamped to the given bounds. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22175&quot;&gt;Feature #22175&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Regexp&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;All instances of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; are now frozen, not just literals.
+Subclasses of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Regexp&lt;/code&gt; are not frozen for compatibility.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/8948&quot;&gt;Feature #8948&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A deprecated behavior, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set#to_set&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Range#to_set&lt;/code&gt;, and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enumerable#to_set&lt;/code&gt; accepting arguments, was removed.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21390&quot;&gt;Feature #21390&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;String&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack1&lt;/code&gt; accept new formats &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;
+for unsigned and signed LEB128 encoded integers. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21785&quot;&gt;Feature #21785&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack1&lt;/code&gt; accept a new format &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^&lt;/code&gt; that
+returns the current offset.  Useful when combined with variable
+width formats like LEB128. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21796&quot;&gt;Feature #21796&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#unpack1&lt;/code&gt; accept new formats &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x!&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@!&lt;/code&gt; to align the current offset to a byte boundary or to the ABI
+alignment of another directive. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22185&quot;&gt;Feature #22185&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;Basic bit operations are added. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_get&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_set?&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_set&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_clear&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_flip&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bit_count&lt;/code&gt; handle individual bits, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bitwise_not&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bitwise_and&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bitwise_or&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#bitwise_xor&lt;/code&gt;
+(with their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt; variants) handle whole strings. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22118&quot;&gt;Feature #22118&lt;/a&gt;]&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String#tr&lt;/code&gt; now accept a Hash for multi-character replacement.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22238&quot;&gt;Feature #22238&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Symbol&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Symbol#to_s&lt;/code&gt; now returns a frozen string. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22137&quot;&gt;Feature #22137&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Thread&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Assigning &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Thread#thread_variable_set&lt;/code&gt; now deletes the
+thread-local variable. [[Feature #19333]]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Thread::Backtrace::Location&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Thread::Backtrace::Location#source_range&lt;/code&gt; is added. It returns a
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ruby::SourceRange&lt;/code&gt; for the Ruby expression associated with the frame.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;stdlib-updates&quot;&gt;Stdlib updates&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Psych&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;An experimental libfyaml backend has been added.  It is only
+enabled when psych is built with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--enable-libfyaml&lt;/code&gt;, and the
+default libyaml backend remains unchanged otherwise.  It is not
+supported on Windows.  [&lt;a href=&quot;https://github.com/ruby/psych/pull/805&quot;&gt;GH-psych #805&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ruby::Prism&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ruby::Prism&lt;/code&gt; is added.  It is the prism parser built into the
+interpreter, i.e., the very parser that parsed the running program,
+independent of the prism gem.  It is autoloaded.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Method#syntax_tree&lt;/code&gt; and others return its nodes.  Its API may change
+between Ruby minor versions; use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prism&lt;/code&gt; gem unless you need the
+parser of the running interpreter.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22379&quot;&gt;Bug #22379&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-following-bundled-gems-are-added&quot;&gt;The following bundled gems are added.&lt;/h3&gt;
+
+&lt;p&gt;We only list stdlib changes that are notable feature changes.&lt;/p&gt;
+
+&lt;p&gt;Other changes are listed in the following sections. We also listed release
+history from the previous bundled version that is Ruby 4.0.0 if it has GitHub
+releases.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-following-bundled-gems-are-promoted-from-default-gems&quot;&gt;The following bundled gems are promoted from default gems.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;prism 1.9.0&lt;/li&gt;
+  &lt;li&gt;tsort 0.2.0&lt;/li&gt;
+  &lt;li&gt;win32-registry 0.1.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-following-bundled-gems-are-removed&quot;&gt;The following bundled gems are removed.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;net-ftp 0.3.9&lt;/li&gt;
+  &lt;li&gt;net-pop 0.1.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They are still available on rubygems.org and can be installed with
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install&lt;/code&gt;.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21835&quot;&gt;Feature #21835&lt;/a&gt;]&lt;/p&gt;
+
+&lt;h3 id=&quot;the-following-default-gem-is-added&quot;&gt;The following default gem is added.&lt;/h3&gt;
+
+&lt;h3 id=&quot;the-following-default-gems-are-updated&quot;&gt;The following default gems are updated.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RubyGems 4.1.0.beta2
+    &lt;ul&gt;
+      &lt;li&gt;4.0.3 to &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.4&quot;&gt;v4.0.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.5&quot;&gt;v4.0.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.6&quot;&gt;v4.0.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.7&quot;&gt;v4.0.7&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.8&quot;&gt;v4.0.8&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.9&quot;&gt;v4.0.9&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.10&quot;&gt;v4.0.10&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.11&quot;&gt;v4.0.11&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.12&quot;&gt;v4.0.12&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.13&quot;&gt;v4.0.13&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.14&quot;&gt;v4.0.14&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.15&quot;&gt;v4.0.15&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.16&quot;&gt;v4.0.16&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.17&quot;&gt;v4.0.17&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.18&quot;&gt;v4.0.18&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.19&quot;&gt;v4.0.19&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.20&quot;&gt;v4.0.20&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.21&quot;&gt;v4.0.21&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.0.22&quot;&gt;v4.0.22&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.1.0.beta1&quot;&gt;v4.1.0.beta1&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/v4.1.0.beta2&quot;&gt;v4.1.0.beta2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;bundler 4.1.0.beta2
+    &lt;ul&gt;
+      &lt;li&gt;4.0.3 to &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.4&quot;&gt;v4.0.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.5&quot;&gt;v4.0.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.6&quot;&gt;v4.0.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.7&quot;&gt;v4.0.7&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.8&quot;&gt;v4.0.8&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.9&quot;&gt;v4.0.9&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.10&quot;&gt;v4.0.10&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.11&quot;&gt;v4.0.11&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.12&quot;&gt;v4.0.12&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.13&quot;&gt;v4.0.13&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.14&quot;&gt;v4.0.14&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.15&quot;&gt;v4.0.15&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.16&quot;&gt;v4.0.16&lt;/a&gt;, &lt;a href=&quot;https://github.com/rubygems/rubygems/releases/tag/bundler-v4.0.17&quot;&gt;v4.0.17&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;date 3.6.0
+    &lt;ul&gt;
+      &lt;li&gt;3.5.1 to &lt;a href=&quot;https://github.com/ruby/date/releases/tag/v3.6.0&quot;&gt;v3.6.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;delegate 0.7.0
+    &lt;ul&gt;
+      &lt;li&gt;0.6.1 to &lt;a href=&quot;https://github.com/ruby/delegate/releases/tag/v0.7.0&quot;&gt;v0.7.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;digest 3.3.0
+    &lt;ul&gt;
+      &lt;li&gt;3.2.1 to &lt;a href=&quot;https://github.com/ruby/digest/releases/tag/v3.3.0&quot;&gt;v3.3.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;erb 6.1.0
+    &lt;ul&gt;
+      &lt;li&gt;6.0.1 to &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.1.1&quot;&gt;v6.0.1.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.2&quot;&gt;v6.0.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.3&quot;&gt;v6.0.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.4&quot;&gt;v6.0.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.5&quot;&gt;v6.0.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.6&quot;&gt;v6.0.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/erb/releases/tag/v6.0.7&quot;&gt;v6.0.7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;error_highlight 0.7.2&lt;/li&gt;
+  &lt;li&gt;etc 1.5.0
+    &lt;ul&gt;
+      &lt;li&gt;1.4.6 to &lt;a href=&quot;https://github.com/ruby/etc/releases/tag/v1.5.0&quot;&gt;v1.5.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;fileutils 1.8.1
+    &lt;ul&gt;
+      &lt;li&gt;1.8.0 to &lt;a href=&quot;https://github.com/ruby/fileutils/releases/tag/v1.8.1&quot;&gt;v1.8.1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;io-console 0.9.4
+    &lt;ul&gt;
+      &lt;li&gt;0.8.2 to &lt;a href=&quot;https://github.com/ruby/io-console/releases/tag/v0.9.0&quot;&gt;v0.9.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/io-console/releases/tag/v0.9.1&quot;&gt;v0.9.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/io-console/releases/tag/v0.9.2&quot;&gt;v0.9.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/io-console/releases/tag/v0.9.3&quot;&gt;v0.9.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/io-console/releases/tag/v0.9.4&quot;&gt;v0.9.4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;io-wait 999.999.999&lt;/li&gt;
+  &lt;li&gt;ipaddr 1.2.9
+    &lt;ul&gt;
+      &lt;li&gt;1.2.8 to &lt;a href=&quot;https://github.com/ruby/ipaddr/releases/tag/v1.2.9&quot;&gt;v1.2.9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;json 3.0.2
+    &lt;ul&gt;
+      &lt;li&gt;2.18.0 to &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.18.1&quot;&gt;v2.18.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.0&quot;&gt;v2.19.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.1&quot;&gt;v2.19.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.2&quot;&gt;v2.19.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.3&quot;&gt;v2.19.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.4&quot;&gt;v2.19.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.5&quot;&gt;v2.19.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.6&quot;&gt;v2.19.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.7&quot;&gt;v2.19.7&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.8&quot;&gt;v2.19.8&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.19.9&quot;&gt;v2.19.9&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.20.0&quot;&gt;v2.20.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.21.0&quot;&gt;v2.21.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v2.21.2&quot;&gt;v2.21.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v3.0.0.rc1&quot;&gt;v3.0.0.rc1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/json/releases/tag/v3.0.0&quot;&gt;v3.0.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;net-http 0.10.0
+    &lt;ul&gt;
+      &lt;li&gt;0.9.1 to &lt;a href=&quot;https://github.com/ruby/net-http/releases/tag/v0.10.0&quot;&gt;v0.10.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;net-protocol 0.4.0
+    &lt;ul&gt;
+      &lt;li&gt;0.2.2 to &lt;a href=&quot;https://github.com/ruby/net-protocol/releases/tag/v0.3.0&quot;&gt;v0.3.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-protocol/releases/tag/v0.4.0&quot;&gt;v0.4.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;open3 0.3.0
+    &lt;ul&gt;
+      &lt;li&gt;0.2.1 to &lt;a href=&quot;https://github.com/ruby/open3/releases/tag/v0.3.0&quot;&gt;v0.3.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;openssl 4.0.2
+    &lt;ul&gt;
+      &lt;li&gt;4.0.0 to &lt;a href=&quot;https://github.com/ruby/openssl/releases/tag/v4.0.1&quot;&gt;v4.0.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/openssl/releases/tag/v4.0.2&quot;&gt;v4.0.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pp 0.6.4
+    &lt;ul&gt;
+      &lt;li&gt;0.6.3 to &lt;a href=&quot;https://github.com/ruby/pp/releases/tag/v0.6.4&quot;&gt;v0.6.4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;prettyprint 0.2.1
+    &lt;ul&gt;
+      &lt;li&gt;0.2.0 to &lt;a href=&quot;https://github.com/ruby/prettyprint/releases/tag/v0.2.1&quot;&gt;v0.2.1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;psych 5.5.0
+    &lt;ul&gt;
+      &lt;li&gt;5.3.1 to &lt;a href=&quot;https://github.com/ruby/psych/releases/tag/v5.4.0&quot;&gt;v5.4.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/psych/releases/tag/v5.5.0&quot;&gt;v5.5.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;resolv 0.8.1
+    &lt;ul&gt;
+      &lt;li&gt;0.7.0 to &lt;a href=&quot;https://github.com/ruby/resolv/releases/tag/v0.7.1&quot;&gt;v0.7.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/resolv/releases/tag/v0.7.2&quot;&gt;v0.7.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/resolv/releases/tag/v0.8.0&quot;&gt;v0.8.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/resolv/releases/tag/v0.8.1&quot;&gt;v0.8.1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;stringio 3.2.1.dev&lt;/li&gt;
+  &lt;li&gt;strscan 3.1.9.dev
+    &lt;ul&gt;
+      &lt;li&gt;3.1.6 to &lt;a href=&quot;https://github.com/ruby/strscan/releases/tag/v3.1.7&quot;&gt;v3.1.7&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/strscan/releases/tag/v3.1.8&quot;&gt;v3.1.8&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;syntax_suggest 3.0.0&lt;/li&gt;
+  &lt;li&gt;tempfile 0.3.2
+    &lt;ul&gt;
+      &lt;li&gt;0.3.1 to &lt;a href=&quot;https://github.com/ruby/tempfile/releases/tag/v0.3.2&quot;&gt;v0.3.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;time 0.5.0
+    &lt;ul&gt;
+      &lt;li&gt;0.4.2 to &lt;a href=&quot;https://github.com/ruby/time/releases/tag/v0.5.0&quot;&gt;v0.5.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;timeout 0.6.1
+    &lt;ul&gt;
+      &lt;li&gt;0.6.0 to &lt;a href=&quot;https://github.com/ruby/timeout/releases/tag/v0.6.1&quot;&gt;v0.6.1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;tmpdir 0.3.2
+    &lt;ul&gt;
+      &lt;li&gt;0.3.1 to &lt;a href=&quot;https://github.com/ruby/tmpdir/releases/tag/v0.3.2&quot;&gt;v0.3.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;uri 1.1.2
+    &lt;ul&gt;
+      &lt;li&gt;1.1.1 to &lt;a href=&quot;https://github.com/ruby/uri/releases/tag/v1.1.2&quot;&gt;v1.1.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;zlib 3.2.4
+    &lt;ul&gt;
+      &lt;li&gt;3.2.2 to &lt;a href=&quot;https://github.com/ruby/zlib/releases/tag/v3.2.3&quot;&gt;v3.2.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/zlib/releases/tag/v3.2.4&quot;&gt;v3.2.4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-following-bundled-gems-are-updated&quot;&gt;The following bundled gems are updated.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;minitest 6.0.6&lt;/li&gt;
+  &lt;li&gt;power_assert 3.1.0
+    &lt;ul&gt;
+      &lt;li&gt;3.0.1 to &lt;a href=&quot;https://github.com/ruby/power_assert/releases/tag/v3.1.0&quot;&gt;v3.1.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rake 13.4.2
+    &lt;ul&gt;
+      &lt;li&gt;13.3.1 to &lt;a href=&quot;https://github.com/ruby/rake/releases/tag/v13.4.0&quot;&gt;v13.4.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rake/releases/tag/v13.4.1&quot;&gt;v13.4.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rake/releases/tag/v13.4.2&quot;&gt;v13.4.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;test-unit 3.7.8
+    &lt;ul&gt;
+      &lt;li&gt;3.7.5 to &lt;a href=&quot;https://github.com/test-unit/test-unit/releases/tag/3.7.6&quot;&gt;3.7.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/test-unit/test-unit/releases/tag/3.7.7&quot;&gt;3.7.7&lt;/a&gt;, &lt;a href=&quot;https://github.com/test-unit/test-unit/releases/tag/3.7.8&quot;&gt;3.7.8&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rss 0.3.3
+    &lt;ul&gt;
+      &lt;li&gt;0.3.2 to &lt;a href=&quot;https://github.com/ruby/rss/releases/tag/0.3.3&quot;&gt;0.3.3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;net-imap 0.6.7
+    &lt;ul&gt;
+      &lt;li&gt;0.6.2 to &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.3&quot;&gt;v0.6.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.4&quot;&gt;v0.6.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.4.1&quot;&gt;v0.6.4.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.5&quot;&gt;v0.6.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.6&quot;&gt;v0.6.6&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/net-imap/releases/tag/v0.6.7&quot;&gt;v0.6.7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;net-smtp 0.5.2
+    &lt;ul&gt;
+      &lt;li&gt;0.5.1 to &lt;a href=&quot;https://github.com/ruby/net-smtp/releases/tag/v0.5.2&quot;&gt;v0.5.2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rbs 4.2.0
+    &lt;ul&gt;
+      &lt;li&gt;3.10.0 to &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v3.10.1&quot;&gt;v3.10.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v3.10.2&quot;&gt;v3.10.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v3.10.3&quot;&gt;v3.10.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v3.10.4&quot;&gt;v3.10.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.1&quot;&gt;v4.0.0.dev.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.2&quot;&gt;v4.0.0.dev.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.3&quot;&gt;v4.0.0.dev.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.4&quot;&gt;v4.0.0.dev.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0.dev.5&quot;&gt;v4.0.0.dev.5&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.0&quot;&gt;v4.0.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.1.dev.1&quot;&gt;v4.0.1.dev.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.1.dev.2&quot;&gt;v4.0.1.dev.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.1&quot;&gt;v4.0.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.2&quot;&gt;v4.0.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.0.3&quot;&gt;v4.0.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.0.pre.1&quot;&gt;v4.1.0.pre.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.0.pre.2&quot;&gt;v4.1.0.pre.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.0&quot;&gt;v4.1.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.1.pre.1&quot;&gt;v4.1.1.pre.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.1&quot;&gt;v4.1.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.2&quot;&gt;v4.1.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.1.3&quot;&gt;v4.1.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.2.0.pre.1&quot;&gt;v4.2.0.pre.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rbs/releases/tag/v4.2.0&quot;&gt;v4.2.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;typeprof 0.33.2&lt;/li&gt;
+  &lt;li&gt;mutex_m 0.3.0&lt;/li&gt;
+  &lt;li&gt;bigdecimal 4.1.3
+    &lt;ul&gt;
+      &lt;li&gt;4.0.1 to &lt;a href=&quot;https://github.com/ruby/bigdecimal/releases/tag/v4.1.0&quot;&gt;v4.1.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/bigdecimal/releases/tag/v4.1.1&quot;&gt;v4.1.1&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/bigdecimal/releases/tag/v4.1.2&quot;&gt;v4.1.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/bigdecimal/releases/tag/v4.1.3&quot;&gt;v4.1.3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;resolv-replace 0.2.0
+    &lt;ul&gt;
+      &lt;li&gt;0.1.1 to &lt;a href=&quot;https://github.com/ruby/resolv-replace/releases/tag/v0.2.0&quot;&gt;v0.2.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;nkf 0.3.0
+    &lt;ul&gt;
+      &lt;li&gt;0.2.0 to &lt;a href=&quot;https://github.com/ruby/nkf/releases/tag/v0.3.0&quot;&gt;v0.3.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;syslog 0.4.0
+    &lt;ul&gt;
+      &lt;li&gt;0.3.0 to &lt;a href=&quot;https://github.com/ruby/syslog/releases/tag/v0.4.0&quot;&gt;v0.4.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;csv 3.3.6
+    &lt;ul&gt;
+      &lt;li&gt;3.3.5 to &lt;a href=&quot;https://github.com/ruby/csv/releases/tag/v3.3.6&quot;&gt;v3.3.6&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;repl_type_completor 0.1.16
+    &lt;ul&gt;
+      &lt;li&gt;0.1.12 to &lt;a href=&quot;https://github.com/ruby/repl_type_completor/releases/tag/v0.1.13&quot;&gt;v0.1.13&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/repl_type_completor/releases/tag/v0.1.14&quot;&gt;v0.1.14&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/repl_type_completor/releases/tag/v0.1.15&quot;&gt;v0.1.15&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/repl_type_completor/releases/tag/v0.1.16&quot;&gt;v0.1.16&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pstore 0.2.1
+    &lt;ul&gt;
+      &lt;li&gt;0.2.0 to &lt;a href=&quot;https://github.com/ruby/pstore/releases/tag/v0.2.1&quot;&gt;v0.2.1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rdoc 8.1.0
+    &lt;ul&gt;
+      &lt;li&gt;7.0.3 to &lt;a href=&quot;https://github.com/ruby/rdoc/releases/tag/v7.0.4&quot;&gt;v7.0.4&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rdoc/releases/tag/v7.1.0&quot;&gt;v7.1.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rdoc/releases/tag/v7.2.0&quot;&gt;v7.2.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rdoc/releases/tag/v8.0.0&quot;&gt;v8.0.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/rdoc/releases/tag/v8.1.0&quot;&gt;v8.1.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;win32ole 1.9.3
+    &lt;ul&gt;
+      &lt;li&gt;1.9.2 to &lt;a href=&quot;https://github.com/ruby/win32ole/releases/tag/v1.9.3&quot;&gt;v1.9.3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;irb 1.18.0
+    &lt;ul&gt;
+      &lt;li&gt;1.16.0 to &lt;a href=&quot;https://github.com/ruby/irb/releases/tag/v1.17.0&quot;&gt;v1.17.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/ruby/irb/releases/tag/v1.18.0&quot;&gt;v1.18.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;reline 0.7.0
+    &lt;ul&gt;
+      &lt;li&gt;0.6.3 to &lt;a href=&quot;https://github.com/ruby/reline/releases/tag/v0.7.0&quot;&gt;v0.7.0&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rubygems-and-bundler&quot;&gt;RubyGems and Bundler&lt;/h3&gt;
+
+&lt;p&gt;Ruby 4.1 bundled RubyGems and Bundler version 4. see the following links for details.&lt;/p&gt;
+
+&lt;h2 id=&quot;supported-platforms&quot;&gt;Supported platforms&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support code for the following platforms has been removed.  Their
+vendors or distributors have ended support, there is no environment to
+test Ruby on them, and none of them has a platform maintainer.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;AmigaOS&lt;/li&gt;
+      &lt;li&gt;AtheOS&lt;/li&gt;
+      &lt;li&gt;BSD/OS (BSDi)&lt;/li&gt;
+      &lt;li&gt;ESIX&lt;/li&gt;
+      &lt;li&gt;EWS-UX (NEC EWS4800)&lt;/li&gt;
+      &lt;li&gt;FreeBSD, NetBSD and OpenBSD with a.out binaries&lt;/li&gt;
+      &lt;li&gt;GNU/kFreeBSD&lt;/li&gt;
+      &lt;li&gt;GNU/kOpenSolaris&lt;/li&gt;
+      &lt;li&gt;HI-UX/MPP&lt;/li&gt;
+      &lt;li&gt;HP-UX on the HP 9000 Series 300&lt;/li&gt;
+      &lt;li&gt;Interix (Windows Services for UNIX)&lt;/li&gt;
+      &lt;li&gt;IRIX&lt;/li&gt;
+      &lt;li&gt;MirOS BSD&lt;/li&gt;
+      &lt;li&gt;NeXTSTEP, OpenStep and Rhapsody&lt;/li&gt;
+      &lt;li&gt;OSF/1 (Tru64 UNIX)&lt;/li&gt;
+      &lt;li&gt;QNX Neutrino&lt;/li&gt;
+      &lt;li&gt;SunOS 4 (Solaris, i.e. SunOS 5, is unaffected)&lt;/li&gt;
+      &lt;li&gt;System V Release 4&lt;/li&gt;
+      &lt;li&gt;UNICOS/mp (Cray X1)&lt;/li&gt;
+      &lt;li&gt;UX/PDS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support code for the following old versions has been removed.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Cygwin 1.3 and earlier&lt;/li&gt;
+      &lt;li&gt;Solaris 9 and earlier&lt;/li&gt;
+      &lt;li&gt;Linux 2.6.23 and earlier (RHEL 5)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Windows 10 1703 or later no longer needs the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LongPathsEnabled&lt;/code&gt; registry
+value to use paths longer than 260 characters.  This applies to any process
+running the interpreter, including a program which embeds libruby.  Each path
+component is still limited to 255 characters, and a child process still
+starts with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MAX_PATH&lt;/code&gt; limited current directory. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/18947&quot;&gt;Bug #18947&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Building Ruby with MSVC now requires Visual Studio 2017 version 15.8
+(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_MSC_VER&lt;/code&gt; 1915) or later.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ruby built with MSVC now requires Windows 10 version 1809 (build 17763)
+or Windows Server 2019 or later.  Earlier Windows 10 releases and Windows
+Server 2016 are no longer supported.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ruby on macOS now requires Mac OS X 10.6 or later.  Mac OS X 10.5 and
+PowerPC Macs are no longer supported.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;compatibility-issues&quot;&gt;Compatibility issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A class or module can now be modified only by the Ractor which created it,
+its &lt;em&gt;owner&lt;/em&gt;.  Defining, removing or undefining methods, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alias&lt;/code&gt;, changing
+visibility, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prepend&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#refine&lt;/code&gt;, defining or removing
+constants, registering an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;autoload&lt;/code&gt;, writing the class’s own instance
+variables and class variables, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#freeze&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Module#set_temporary_name&lt;/code&gt; raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor::IsolationError&lt;/code&gt; in any other
+Ractor.  Reading is unchanged.  Everything defined at boot or by the main
+Ractor, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require&lt;/code&gt;d libraries included, is owned by the main Ractor, so a
+non-main Ractor can no longer monkey-patch it; and since defining a constant
+in a foreign class is prohibited, it can not define a top-level class or
+module name either.  In exchange a Ractor has full use of the classes it
+creates itself, including unshareable constant, instance variable and class
+variable values, which not even the main Ractor could do before.  See
+doc/language/ractor.md. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22226&quot;&gt;Feature #22226&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Kernel#at_exit&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;END {}&lt;/code&gt; now raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor::IsolationError&lt;/code&gt; when called
+in a non-main Ractor.  Previously the registered handler ran in the main
+Ractor at process exit, which was confusing. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22139&quot;&gt;Feature #22139&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor.make_shareable&lt;/code&gt; now raises &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor::Error&lt;/code&gt; for an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IO&lt;/code&gt; object, and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor.shareable?&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; for it.  A frozen &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IO&lt;/code&gt; used to be
+shareable, but almost all of its methods raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FrozenError&lt;/code&gt; and it can
+still refer to unshareable objects through the members of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_io_t&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Random.urandom&lt;/code&gt; now raises &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RangeError&lt;/code&gt; for every size too large for a
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt;, as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Random#bytes&lt;/code&gt; does.  A size that still fit in an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;unsigned long&lt;/code&gt;
+used to raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ArgumentError&lt;/code&gt;. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22400&quot;&gt;Feature #22400&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Struct#[]&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Struct#[]=&lt;/code&gt; now raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IndexError&lt;/code&gt; for every out-of-range
+Integer index that fits in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt;.  An index past the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int&lt;/code&gt; range used to
+raise &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RangeError&lt;/code&gt;. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22400&quot;&gt;Feature #22400&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;stdlib-compatibility-issues&quot;&gt;Stdlib compatibility issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;prism is now a bundled gem.  Under Bundler, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require &quot;prism&quot;&lt;/code&gt; needs prism
+in the Gemfile.  Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ruby::Prism&lt;/code&gt; for the parser of the running
+interpreter.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22379&quot;&gt;Bug #22379&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Etc.getlogin&lt;/code&gt; on Windows now returns the login name determined when the
+process starts, from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;USER&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;USERNAME&lt;/code&gt; environment variable or
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GetUserName()&lt;/code&gt;.  It used to follow later changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENV[&apos;USER&apos;]&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Socket&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;On Windows, a connection that is refused or unreachable now raises the
+matching &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Errno&lt;/code&gt; class as soon as Winsock reports it, instead of
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Errno::ETIMEDOUT&lt;/code&gt; once the whole &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect_timeout&lt;/code&gt; has passed. Code
+rescuing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Errno::ETIMEDOUT&lt;/code&gt; there has to rescue the real error instead.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;On Windows, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BasicSocket#getsockopt(:SOCKET, :ERROR)&lt;/code&gt; now reports an
+errno as it does on the other platforms, instead of the raw WinSock
+error code. Code comparing it with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WSAE*&lt;/code&gt; value has to compare it
+with the matching &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Errno::*::Errno&lt;/code&gt; instead.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/18661&quot;&gt;Bug #18661&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;c-api-updates&quot;&gt;C API updates&lt;/h2&gt;
+
+&lt;h3 id=&quot;embedded-typeddata&quot;&gt;Embedded TypedData&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUBY_TYPED_EMBEDDABLE&lt;/code&gt; flag is now public and documented and can be used by C extensions.
+It allows allocating C structs directly into Ruby object slots, which reduces pointer chasing,
+and in some case memory usage.
+See the C extension documentation for details. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21853&quot;&gt;Feature #21853&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Added new C23 inspired allocator functions, that takes the previous memory size.
+This allow the Ruby GC to better keep track of memory usage, improving its heuristics.
+It also improves the performance of system allocators that support C23 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;free_sized&lt;/code&gt;.&lt;/p&gt;
+
+    &lt;p&gt;However, it is important to note that passing an incorrect size to these function is undefined
+behavior and may result in crashes or memory leaks.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby_xfree_sized(void *ptr, size_t size)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby_xrealloc_sized(void *ptr, size_t newsiz, size_t oldsiz)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby_xrealloc2_sized(void *ptr, size_t newelems, size_t newsiz, size_t oldelems)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21861&quot;&gt;Feature #21861&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ractor-scoped-gc-address-registration&quot;&gt;Ractor-scoped GC address registration&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_gc_register_address&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_global_variable&lt;/code&gt; now register the address
+with the calling Ractor, and only that Ractor’s GC marks the stored object.&lt;/p&gt;
+
+    &lt;p&gt;Any Ractor may register an address, but the value stored through it must be a
+special constant, a shareable object, or an unshareable object owned by the
+registering Ractor. Storing another Ractor’s unshareable object can result in
+the object being freed while the address still refers to it (use-after-free).&lt;/p&gt;
+
+    &lt;p&gt;If the address has process lifetime (a static VALUE), register it from the
+main Ractor or keep the stored values shareable.&lt;/p&gt;
+
+    &lt;p&gt;When the registering Ractor is joined with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ractor#value&lt;/code&gt;, remaining
+registrations move to the joining Ractor; otherwise they move to the main
+Ractor once the dead Ractor is collected.&lt;/p&gt;
+
+    &lt;p&gt;[[Feature #22277]]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;type-for-lengths-and-indices&quot;&gt;Type for lengths and indices&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_len_t&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_ulen_t&lt;/code&gt; are added as the types of the lengths and indices
+of String, Array and MatchData, with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LEN2NUM&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NUM2LEN&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ULEN2NUM&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_len2int&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PRIdLEN&lt;/code&gt; and its siblings, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RB_LEN_MAX&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RB_LEN_MIN&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RB_ULEN_MAX&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIZEOF_RB_LEN_T&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HAVE_RB_LEN_T&lt;/code&gt;.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RbConfig::SIZEOF[&quot;rb_len_t&quot;]&lt;/code&gt;
+gives its size to an extconf.rb.  They are &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt; on every platform for now, and
+the C API that carries such lengths, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RSTRING_LEN&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_range_beg_len&lt;/code&gt;, uses them.  A later change will makes them 64 bits on mswin,
+so extensions should keep these lengths in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_len_t&lt;/code&gt;. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22400&quot;&gt;Feature #22400&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_len2long&lt;/code&gt; is added to convert an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_len_t&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt;, raising
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RangeError&lt;/code&gt; via the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_out_of_long&lt;/code&gt; when it does not fit, for
+extensions that keep a length in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt;. [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/22400&quot;&gt;Feature #22400&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;removed-apis&quot;&gt;Removed APIs&lt;/h3&gt;
+
+&lt;p&gt;The following APIs, which have been deprecated for many years, are removed.
+[&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21768&quot;&gt;Feature #21768&lt;/a&gt;]&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;old postponed job functions,&lt;/li&gt;
+  &lt;li&gt;untyped data object type/functions,&lt;/li&gt;
+  &lt;li&gt;old APIs to allocate a data object,&lt;/li&gt;
+  &lt;li&gt;taintedness/trustedness enums/macros,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_gc_force_recycle&lt;/code&gt; function,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_iterate&lt;/code&gt; function,&lt;/li&gt;
+  &lt;li&gt;and some functions and constants for internal use.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;implementation-improvements&quot;&gt;Implementation improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The default garbage collector has been switched from a freelist allocator to a bump pointer allocator. [&lt;a href=&quot;https://github.com/ruby/ruby/pull/17201&quot;&gt;PR #17201&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The error_highlight, did_you_mean, and syntax_suggest gems are now
+loaded lazily on the first error display instead of at interpreter
+boot, which reduces startup time.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Process.warmup&lt;/code&gt; loads them
+eagerly so that pre-forking servers keep their code in
+copy-on-write shared memory.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/21951&quot;&gt;Feature #21951&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mn-thread-scheduler&quot;&gt;M:N thread scheduler&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The scheduler scales with the number of waiters and of Ractors, where it
+used to walk a list or take one lock for all of them:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A timed wait sits in a hierarchical timer wheel rather than on a list
+sorted by deadline, which was inserted into by a linear scan.&lt;/li&gt;
+      &lt;li&gt;An fd stays armed in the backend between waits, instead of being added
+before each wait and removed after each wake.&lt;/li&gt;
+      &lt;li&gt;The io-wait bookkeeping is sharded by fd, rather than serialized on one
+lock across every fd.&lt;/li&gt;
+      &lt;li&gt;A timed wait on an fd rides the scheduler instead of going to a blocking
+region, which cost a native thread handoff per wait.&lt;/li&gt;
+      &lt;li&gt;A context switch, and leaving or rejoining the shared pool, no longer take
+the scheduler’s global lock.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUBY_MN_THREADS&lt;/code&gt; environment variable now runs from no M:N scheduling
+at all to all of it.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt; is new: a Ractor’s threads have been M:N since
+the scheduler was added, with no way to turn that off.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt; are
+unchanged.&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt; &lt;/th&gt;
+          &lt;th&gt;main thread&lt;/th&gt;
+          &lt;th&gt;the main Ractor’s other threads&lt;/th&gt;
+          &lt;th&gt;a Ractor’s threads&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; or unset&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;1:1&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+          &lt;td&gt;M:N&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RUBY_MN_THREADS=2&lt;/code&gt; is new.  The main thread is resumed like any other M:N
+thread rather than woken on a native thread of its own, which costs an order
+of magnitude more.  It pays off when the main thread drives the work, and
+does nothing for one that only starts other threads and waits.&lt;/p&gt;
+
+    &lt;p&gt;The main thread is then no longer bound to one OS thread, which is what the
+M:N scheduler already meant for every other thread:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A C extension that keeps state per OS thread has to call
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rb_thread_lock_native_thread()&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;What must run on the process’s initial thread does not work at all,
+pinning included: macOS AppKit and CFRunLoop, and hosts that embed Ruby
+and return into their own main loop.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The OS thread name is no longer set from the Ruby thread for M:N threads:
+one native thread runs many of them over its life.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Thread#name=&lt;/code&gt; was
+already skipped for the same reason.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jit&quot;&gt;JIT&lt;/h2&gt;
+
+&lt;h3 id=&quot;yjit&quot;&gt;YJIT&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;YJIT now supports Windows (mswin) on x64 CPUs.  Configure with
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;win32\configure.bat --enable-yjit&lt;/code&gt;, which requires &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rustc&lt;/code&gt; with the
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x86_64-pc-windows-msvc&lt;/code&gt; target.  Only the release build is supported,
+and MinGW is not.  [&lt;a href=&quot;https://bugs.ruby-lang.org/issues/18439&quot;&gt;Feature #18439&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://docs.ruby-lang.org/en/v4.1.0-preview1/NEWS_md.html&quot;&gt;NEWS&lt;/a&gt;
+or &lt;a href=&quot;https://github.com/ruby/ruby/compare/v4_0_0...v4.1.0-preview1&quot;&gt;commit logs&lt;/a&gt;
+for more details.&lt;/p&gt;
+
+&lt;p&gt;With those changes, &lt;a href=&quot;https://github.com/ruby/ruby/compare/v4_0_0...v4.1.0-preview1#file_bucket&quot;&gt;6116 files changed, 311387 insertions(+), 219997 deletions(-)&lt;/a&gt;
+since Ruby 4.0.0!&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.gz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 26550186
+SHA1: 4f04a63c2e65945a4f4f7a6d1372783b60e68c5a
+SHA256: fb530bb88e90de3ae91c1310a27ae090e6bd989b8726de50ef12a890a85b88ef
+SHA512: f5628830685d0ce4ffb26294089c31c452e2e5a0bdcc6a5e0c670f335e52fb33eaaea7df3b834778db1fdde89cd2656d94743f6efa672c3bff6e89d64d5b7539
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.xz&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.tar.xz&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 20218640
+SHA1: 3e6c6919bbdb178fd7d6210e3e960889094fac3c
+SHA256: b81f20bf2bc72aa360785eb77ffa0c9f15343ac7316637fbf347500fc3e2e3a8
+SHA512: b58bc71a8734ceb38c9c301e0201ecd28559c97a3b93caa1d49e07ff34d51565b0b6ed98f05be41868cc09513784bd3e8b5340574fec37116a4ffcb218d396e4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.zip&quot;&gt;https://cache.ruby-lang.org/pub/ruby/4.1/ruby-4.1.0-preview1.zip&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SIZE: 32429495
+SHA1: 199cf5247f7fc55ff225b3fe6928a39a522000d0
+SHA256: 2f1ea85203801c24e64ddf02fc2600f582a2544ef8c84d198111e56b0873b125
+SHA512: fd32a7b544ec73f0e642202531170bf8fa4454b2c7ff069748b2bf8e530fc8ae4124572e570c4c56606cc90aeeb723d35cab152978b28ee36b4bb06c798529df
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-ruby&quot;&gt;What is Ruby&lt;/h2&gt;
+
+&lt;p&gt;Ruby was first developed by Matz (Yukihiro Matsumoto) in 1993,
+and is now developed as Open Source. It runs on multiple platforms
+and is used all over the world especially for web development.&lt;/p&gt;
+
+
+&lt;p&gt;Posted by &lt;strong&gt;naruse&lt;/strong&gt; on 12 Oct 2026&lt;/p&gt;</description>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ruby-lang.org/en/news/2026/10/12/ruby-4-1-0-preview1-released/</guid>
+      <link>https://www.ruby-lang.org/en/news/2026/10/12/ruby-4-1-0-preview1-released/</link>
+    </item>
+    
+  </channel>
+</rss>

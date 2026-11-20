@@ -1,0 +1,2616 @@
+{
+  "status": "ok",
+  "since_utc": "2026-11-19T03:14:23",
+  "until_utc": "2026-11-20T03:00:55.231Z",
+  "new_cves": 1046,
+  "fetch_errors": 0,
+  "watch_matched": 275,
+  "below_threshold": 253,
+  "thresholds": {
+    "cvss": 9.0,
+    "inventory_cvss": 7.0,
+    "inventory_unscored": true,
+    "epss": 0.5
+  },
+  "epss_status": "ok",
+  "hits": [
+    {
+      "cve": "CVE-2026-115560",
+      "published": "2026-11-19T14:42:48.511Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Session serializer mismatch can lead to remote code execution",
+      "description": "Session serializer mismatch can lead to remote code execution.\n\nSession upload progress, when enabled, can store attacker-controlled data in a session key using the php_binary or php_serialize session serializer. If the same session is later read with the php serializer, because session.serialize_handler is changed at runtime or differs between applications sharing a session store, bytes inside the key can be passed to the unserializer. A remote attacker able to submit a multipart upload can inj",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-115560",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/115xxx/CVE-2026-115560.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-126714",
+      "published": "2026-11-19T14:43:19.430Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Partially overwritten session files can lead to remote code execution",
+      "description": "Partially overwritten session files can lead to remote code execution.\n\nThe files session save handler, which is the default, writes updated session data into the existing session file without first clearing it. If a write is interrupted, the file can contain the beginning of the new session followed by the end of the old one, and bytes of an ordinary string can later be unserialized as objects. An attacker who can influence the session data, for example through session upload progress, and inte",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-126714",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/126xxx/CVE-2026-126714.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129182",
+      "published": "2026-11-19T14:41:55.629Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Use-after-free via repopulation of last_fatal_error_backtrace global after shutdown",
+      "description": "Use-after-free via repopulation of last_fatal_error_backtrace global after shutdown.\n\nA fatal error raised while modified INI settings are restored during request shutdown can repopulate the stored fatal error backtrace after the executor has been cleaned up. The request memory is then freed, and a diagnostic emitted before executor initialization in a later request handled by the same PHP-FPM or mod_php worker can access the stale backtrace. The shutdown error requires per-path configuration of",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129182",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129182.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129289",
+      "published": "2026-11-19T14:44:30.679Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "PHP-FPM request smuggling through an unread HTTP request body",
+      "description": "PHP-FPM request smuggling through an unread HTTP request body.\n\nPHP does not discard the unread part of an HTTP request body at request shutdown when the application has opened php://input without reading it to the end. When the front end reuses backend connections, which is not the default in nginx or Apache (for example nginx with fastcgi_keep_conn on, or Apache mod_proxy_fcgi with enablereuse=on), PHP-FPM can parse the leftover bytes as a new FastCGI request. An unauthenticated remote attacke",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129289",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129289.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129474",
+      "published": "2026-11-19T14:43:04.047Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Use-after-free in magic method backtraces can lead to remote code execution",
+      "description": "Use-after-free in magic method backtraces can lead to remote code execution.\n\nWhen collecting the arguments of a method call handled by __call() or __callStatic() for a backtrace, PHP can read stale values that may refer to freed memory. If a fatal error such as exceeding memory_limit occurs while an application enters such a call, with fatal_error_backtraces enabled (the default) and zend.exception_ignore_args disabled, a remote attacker who controls enough request data to influence memory allo",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129474",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129474.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129481",
+      "published": "2026-11-19T14:43:45.078Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Use-after-free after interrupted session shutdown",
+      "description": "Use-after-free after interrupted session shutdown.\n\nThe session extension records the filename of the executing script when a session starts. If a fatal error occurs in an application callback while the session variables are destroyed at shutdown, such as stream_close() of a user-defined stream wrapper, the pointer is retained after the request memory is freed, and a later request handled by the same worker can free the stale string. An attacker who can trigger such a failing cleanup may crash t",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129481",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129481.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129496",
+      "published": "2026-11-19T14:43:52.930Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 9.2,
+        "version": "cvssV4_0",
+        "severity": "CRITICAL"
+      },
+      "kev": false,
+      "title": "Timezone cache use-after-free can lead to remote code execution",
+      "description": "Timezone cache use-after-free can lead to remote code execution.\n\nIn non-thread-safe builds, a diagnostic written to a file-based error_log during module startup, for example for an invalid date.timezone value or a session configuration warning, causes the timezone cache to be allocated in startup memory that is freed while a reference to it is kept. A diagnostic raised early in the first request of a worker, such as the max_input_vars warning, then accesses the freed cache. On such a deployment",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129496",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129496.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 9.2"
+      ]
+    },
+    {
+      "cve": "CVE-2026-129291",
+      "published": "2026-11-19T14:44:00.638Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 8.8,
+        "version": "cvssV4_0",
+        "severity": "HIGH"
+      },
+      "kev": false,
+      "title": "PHP-FPM epoll use-after-free can lead to local privilege escalation",
+      "description": "PHP-FPM epoll use-after-free can lead to local privilege escalation.\n\nWhen catch_workers_output is enabled and the epoll event backend is used, the PHP-FPM master can close a worker's output pipe in fpm_child_close() without removing the associated event, and the delayed cleanup can free the worker record while its epoll registration is still active. A later event is then dispatched through a pointer into freed memory. A local attacker who can execute PHP code in an FPM worker can crash the mast",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-129291",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/129xxx/CVE-2026-129291.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 8.8 (인벤토리 제품)"
+      ]
+    },
+    {
+      "cve": "CVE-2026-127960",
+      "published": "2026-11-19T14:44:15.741Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 8.7,
+        "version": "cvssV4_0",
+        "severity": "HIGH"
+      },
+      "kev": false,
+      "title": "Denial of service through folded HTTP response headers",
+      "description": "Denial of service through folded HTTP response headers.\n\nThe HTTP stream wrapper joins each continuation line of a folded response header to the accumulated value by allocating a new string and copying the whole value, so a response with many short continuation lines takes disproportionate CPU time to parse. An attacker who controls an HTTP or HTTPS response fetched through file_get_contents(), fopen() or other stream functions, by making the application request a chosen URL or by influencing a ",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-127960",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/127xxx/CVE-2026-127960.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 8.7 (인벤토리 제품)"
+      ]
+    },
+    {
+      "cve": "CVE-2026-128064",
+      "published": "2026-11-19T14:43:12.107Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 8.2,
+        "version": "cvssV4_0",
+        "severity": "HIGH"
+      },
+      "kev": false,
+      "title": "Mixed-case HTTPS and FTPS URLs can expose data in plaintext",
+      "description": "Mixed-case HTTPS and FTPS URLs can expose data in plaintext.\n\nThe HTTP and FTP stream wrappers recognise URL schemes case-insensitively, but enable TLS only when the scheme contains a lowercase \"s\" at a fixed position. A URL such as HTTPS:// or FTPS:// passed to file_get_contents(), fopen() or other stream functions, or received as an HTTP redirect target, is therefore handled over unencrypted HTTP or FTP. An attacker able to observe the network traffic can read data the application expected TLS",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-128064",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/128xxx/CVE-2026-128064.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 8.2 (인벤토리 제품)"
+      ]
+    },
+    {
+      "cve": "CVE-2026-128090",
+      "published": "2026-11-19T14:42:56.007Z",
+      "assigner": "php",
+      "affected": [
+        "PHP Group / PHP"
+      ],
+      "watch": [
+        "PHP"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {
+        "score": 7.7,
+        "version": "cvssV4_0",
+        "severity": "HIGH"
+      },
+      "kev": false,
+      "title": "PHAR OpenSSL signature bypass via algorithm downgrade",
+      "description": "PHAR OpenSSL signature bypass via algorithm downgrade.\n\nThe Phar extension selects the signature verification method from the signature type stored in the archive, and only the OpenSSL types consult the separate .pubkey file holding the trusted public key. An attacker who can modify an OpenSSL-signed Phar archive, but not its public key file, can switch the signature type to a keyless hash such as SHA-256 with a recomputed digest, so the altered archive passes verification even with phar.require",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-128090",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/128xxx/CVE-2026-128090.json",
+      "epss": null,
+      "reasons": [
+        "CVSS 7.7 (인벤토리 제품)"
+      ]
+    },
+    {
+      "cve": "CVE-2026-121649",
+      "published": "2026-11-19T21:39:36.799Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: ExpiresFilter removes existing Cache-Control: private header",
+      "description": "Use of cache containing sensitive information vulnerability in Apache Tomcat's ExpiresFilter caused by the filter removing cache-control header fields set by the authentication layer.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.0.M1 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.1 through 7.0.109. Older unsupported versions may ",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-121649",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/121xxx/CVE-2026-121649.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-133325",
+      "published": "2026-11-19T21:38:22.705Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Cluster TLS-PSK configured to use TLS 1.3 does not validate peer",
+      "description": "Key exchange without entity authentication vulnerability in Apache Tomcat allowed an unauthenticated node to join a cluster when the cluster was secured with TLS 1.3 and TLS-PSK.\n\n\n\nThis issue affects Apache Tomcat: 11.0.29, 10.1.62, 9.0.124.\n\n\n\nUsers are recommended to switch to TLS 1.2 and PLDS-PSK or upgrade to version 11.0.30, 10.1.63 or 9.0.123 (when released), which fix the issue.",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-133325",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/133xxx/CVE-2026-133325.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-118233",
+      "published": "2026-11-19T21:36:34.134Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Memory leak on HTTP upgrade leads to DoS",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Tomcat during HTTP upgrade in some circumstances lead to possible DoS.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.41 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.61 through 8.5.100. Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version ",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-118233",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/118xxx/CVE-2026-118233.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-118436",
+      "published": "2026-11-19T21:37:12.233Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: CGIServlet drops chunked POST body and can hang worker thread",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Tomcat in the CGI Servlet when handling POST bodies can result in a DoS for some inputs.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.0.M1 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be affected.\n",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-118436",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/118xxx/CVE-2026-118436.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-116561",
+      "published": "2026-11-19T21:25:27.162Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Jakarta Authentication secureResponse AuthException sends unprotected HTTP 200 response",
+      "description": "Improper cleanup on thrown exception vulnerability in Apache Tomcat meant that an HTTP 200 response was sent rather than an HTTP 500 response after a AuthException was thrown during Jakarta Authentication secureResponse().\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.0.M1 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100. Other unsupported ve",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-116561",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/116xxx/CVE-2026-116561.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-116600",
+      "published": "2026-11-19T21:26:22.270Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Memory leak with OWB integration leads to DoS",
+      "description": "Missing release of memory after effective lifetime vulnerability in Apache Tomcat via WebSocket.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.22 through 9.0.123\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.43 through 7.0.109. Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.29, 10.0.62 or 9.0.",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-116600",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/116xxx/CVE-2026-116600.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-116830",
+      "published": "2026-11-19T21:27:34.222Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: HTTP/2 checks frame type before size leads to DoS",
+      "description": "Missing release of resource after effective lifetime vulnerability in Apache Tomcat's HTTP/2 initial connection handling leads to DoS.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.20 through 9.0.123.\n\n\n\nUsers are recommended to upgrade to version 11.0.29, 10.1.62 or 9.0.124, which fix the issue.\nNote: Tomcat 11.0.28 was not released",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-116830",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/116xxx/CVE-2026-116830.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-117517",
+      "published": "2026-11-19T21:28:56.072Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Fix for CVE-2026-25854 was incomplete",
+      "description": "The fix for CVE-2026-25854 was incomplete.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.19 through 11.0.27, from 10.1.53 through 10.1.61, from 9.0.116 through 9.0.123.\n\n\n\nUsers are recommended to upgrade to version 11.0.29, 10.1.62 or 9.0.124, which fix the issue.\nNote: Tomcat 11.0.28 was not released",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-117517",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/117xxx/CVE-2026-117517.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-118028",
+      "published": "2026-11-19T21:29:52.147Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: RewriteValve [F]/[G]/[R] rule matches do not stop processing",
+      "description": "Execution After Redirect (EAR) vulnerability in Apache Tomcat in RedirectValve affecting flags [F], [G] and [R].\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M18 through 11.0.27, from 10.1.20 through 10.1.61, from 9.0.87 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: 8.5.100. Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.29, 10.1.62, 9.0.124, which fixes the issue.\nNote: ",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-118028",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/118xxx/CVE-2026-118028.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-106012",
+      "published": "2026-11-19T21:24:18.232Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Incorrect security-role-ref with RequestDispatcher.forward()",
+      "description": "Incorrect Authorization vulnerability in Apache Tomcat could occur during a request dispatch if the request depended on a security-role-ref provided by the dispatch target.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.0.M1 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be aff",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-106012",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/106xxx/CVE-2026-106012.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    },
+    {
+      "cve": "CVE-2026-95517",
+      "published": "2026-11-19T21:23:22.328Z",
+      "assigner": "apache",
+      "affected": [
+        "Apache Software Foundation / Apache Tomcat"
+      ],
+      "watch": [
+        "Apache Tomcat"
+      ],
+      "watch_group": [
+        "inventory"
+      ],
+      "cvss": {},
+      "kev": false,
+      "title": "Apache Tomcat: Multiple vulnerabilities in EncryptInterceptor",
+      "description": "Reliance on obfuscation or encryption of Security-Relevant inputs without integrity checking, Improper validation of integrity check value, Cleartext transmission of sensitive information vulnerability in the EncryptInterceptor of Apache Tomcat.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.13 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.38 through 8.5.100",
+      "link": "https://www.cve.org/CVERecord?id=CVE-2026-95517",
+      "record_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/95xxx/CVE-2026-95517.json",
+      "epss": null,
+      "reasons": [
+        "인벤토리 제품, 점수 미공개"
+      ]
+    }
+  ],
+  "matched_below_threshold": [
+    {
+      "cve": "CVE-2026-126765",
+      "watch": [
+        "glibc"
+      ],
+      "cvss": 3.7,
+      "title": "Double free after allocation failure in glob"
+    },
+    {
+      "cve": "CVE-2026-129292",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 5.3,
+      "title": "PHP-FPM status endpoint XSS via unescaped user and script fields"
+    },
+    {
+      "cve": "CVE-2026-129438",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 6.3,
+      "title": "Incorrect RFC 3986 URI serialization for oversized input"
+    },
+    {
+      "cve": "CVE-2026-129501",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 6.3,
+      "title": "Double free during DOM XML serialization"
+    },
+    {
+      "cve": "CVE-2026-129506",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 6.3,
+      "title": "SOAP use-after-free when processing DTD entity references"
+    },
+    {
+      "cve": "CVE-2026-129538",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 6.9,
+      "title": "PHP-CGI out-of-bounds read and write during PATH_INFO correction"
+    },
+    {
+      "cve": "CVE-2026-15353",
+      "watch": [
+        "PHP"
+      ],
+      "cvss": 6.3,
+      "title": "SOAP information disclosure through malformed array dimensions"
+    },
+    {
+      "cve": "CVE-2026-99423",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: take a snapshot of the name for copy up"
+    },
+    {
+      "cve": "CVE-2026-99424",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: set OVL_WHITEOUTS before publishing the upper dir"
+    },
+    {
+      "cve": "CVE-2026-99425",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: hold a reference on the parent in readdir"
+    },
+    {
+      "cve": "CVE-2026-99426",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: hold server info until cifsd exits"
+    },
+    {
+      "cve": "CVE-2026-99427",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix OOB last_entry pointer from unbounded LastNameOffset"
+    },
+    {
+      "cve": "CVE-2026-99428",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: snapshot dentry names in file and setattr traces"
+    },
+    {
+      "cve": "CVE-2026-99429",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: pin refcount trees before dropping the lookup lock"
+    },
+    {
+      "cve": "CVE-2026-99430",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: fix chunk number of the first chunk in a local quota file"
+    },
+    {
+      "cve": "CVE-2026-99431",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: cancel quota sync work before freeing quota info"
+    },
+    {
+      "cve": "CVE-2026-99432",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/dlm: hold the lookup reference across convert AST enqueue"
+    },
+    {
+      "cve": "CVE-2026-99433",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/dlm: hold a lock reference across grant AST enqueue"
+    },
+    {
+      "cve": "CVE-2026-99434",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/heartbeat: unlink live slots when their node is missing"
+    },
+    {
+      "cve": "CVE-2026-99435",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: Fix use after free in bpf progs"
+    },
+    {
+      "cve": "CVE-2026-99436",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: After rc_unregister_device() timers can be re-armed"
+    },
+    {
+      "cve": "CVE-2026-99437",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: Use after free in ir_raw_event_handle()"
+    },
+    {
+      "cve": "CVE-2026-99438",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: mce_kbd: Fix inconsistent locking of keylock"
+    },
+    {
+      "cve": "CVE-2026-99439",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: Ensure registered is cleared in error path"
+    },
+    {
+      "cve": "CVE-2026-99440",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: rc: Ensure that rc_unregister_device() does not free input device"
+    },
+    {
+      "cve": "CVE-2026-99441",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmet-auth: serialize access to DH-HMAC-CHAP state to fix UAF"
+    },
+    {
+      "cve": "CVE-2026-99442",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmem: core: Fix OOB read for bit offsets of more than one byte"
+    },
+    {
+      "cve": "CVE-2026-99443",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "pps: generators: don't use the driver's info after unregister"
+    },
+    {
+      "cve": "CVE-2026-99444",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "power: supply: sbs-battery: disable polling before supply teardown"
+    },
+    {
+      "cve": "CVE-2026-99445",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "power: supply: pf1550: drain IRQ work before unregistering supplies"
+    },
+    {
+      "cve": "CVE-2026-99446",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "phy: core: Fix race-condition between _of_phy_get() and try_module_get()"
+    },
+    {
+      "cve": "CVE-2026-99447",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "spi: spi-pci1xxxx: quiesce DMA engines on transfer timeout"
+    },
+    {
+      "cve": "CVE-2026-99448",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ufs: use u64 for directory size in ufs_last_byte"
+    },
+    {
+      "cve": "CVE-2026-99449",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "usb: gadget: fix refcount underflow in gadgetfs_bind() error path"
+    },
+    {
+      "cve": "CVE-2026-99450",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vfio/nvgrace-gpu: Use a core-only open_device in fallback mode"
+    },
+    {
+      "cve": "CVE-2026-99451",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: mt76: mt7996: unlink TWT flow if the MCU rejects the agreement"
+    },
+    {
+      "cve": "CVE-2026-99452",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: ath9k: delete channel-context timers on deinit"
+    },
+    {
+      "cve": "CVE-2026-99453",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xen-blkfront: unbind irq before tearing down ring and shadow requests"
+    },
+    {
+      "cve": "CVE-2026-99454",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "staging: rtl8723bs: fix protected RX frame validation in decrypt path"
+    },
+    {
+      "cve": "CVE-2026-99455",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "serial: core: shut down initialized port on removal"
+    },
+    {
+      "cve": "CVE-2026-99456",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "scsi: dc395x: sync the waiting_timer before freeing the host"
+    },
+    {
+      "cve": "CVE-2026-99457",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: sched: prevent scheduling deactivated qdiscs"
+    },
+    {
+      "cve": "CVE-2026-99458",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mtd: virt-concat: unlink discarded items before freeing"
+    },
+    {
+      "cve": "CVE-2026-99459",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mshv_vtl: detach poll waiter on POLLFREE"
+    },
+    {
+      "cve": "CVE-2026-99460",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mptcp: hold MP_JOIN msk ref when cloning reqsk"
+    },
+    {
+      "cve": "CVE-2026-99461",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: khugepaged: fix swap entry value to folio_pfn()"
+    },
+    {
+      "cve": "CVE-2026-99462",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/truncate: look up the end-edge straddler by index"
+    },
+    {
+      "cve": "CVE-2026-99463",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/rmap: don't discard lazyfree THPs at PMD level"
+    },
+    {
+      "cve": "CVE-2026-99464",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: redrat3: fix UAF in probe error path leaving rc device registered"
+    },
+    {
+      "cve": "CVE-2026-99465",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: microchip-isc: take a reference on the parsed endpoints"
+    },
+    {
+      "cve": "CVE-2026-99466",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: microchip-csi2dc: fix async notifier leak on probe error path"
+    },
+    {
+      "cve": "CVE-2026-99467",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: marvell: mcam: stop DMA and cancel s_bh_work before freeing DMA buffers"
+    },
+    {
+      "cve": "CVE-2026-99468",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: imx-jpeg: cancel timeout worker when streaming stops"
+    },
+    {
+      "cve": "CVE-2026-99469",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: gspca: use vb2_video_unregister_device() on disconnect"
+    },
+    {
+      "cve": "CVE-2026-99470",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: cx23885: unregister DVB bus when SP2 CI setup fails"
+    },
+    {
+      "cve": "CVE-2026-99471",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: PPC: Book3S HV: Add SRCU protection for virtual-mode HPT hcalls"
+    },
+    {
+      "cve": "CVE-2026-99472",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: pfncache: use a dedicated invalidation sequence for cache refresh"
+    },
+    {
+      "cve": "CVE-2026-99473",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: guest_memfd: Gracefully handle xarray errors when binding a memslot"
+    },
+    {
+      "cve": "CVE-2026-99474",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: hiddev: keep state alive through disconnect unlock"
+    },
+    {
+      "cve": "CVE-2026-99475",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "genirq: Defer kfree(irqaction) until irq_thread_dtor() finishes"
+    },
+    {
+      "cve": "CVE-2026-99476",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "fsverity: Set S_VERITY only after rollback is no longer possible"
+    },
+    {
+      "cve": "CVE-2026-99477",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "fs/proc/task_mmu: pin mm_users in do_pagemap_scan()"
+    },
+    {
+      "cve": "CVE-2026-99478",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "filelock: keep superblock active through delegation wait"
+    },
+    {
+      "cve": "CVE-2026-99479",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "fbdev: atmel_lcdfb: Prevent FIFO work after removal"
+    },
+    {
+      "cve": "CVE-2026-99480",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/panthor: Fix TOCTOU race between GROUP_REGISTERED check and erase"
+    },
+    {
+      "cve": "CVE-2026-99481",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: hci_vhci: Pin module for debugfs file operations"
+    },
+    {
+      "cve": "CVE-2026-99482",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ASoC: amd: ps: fix snd_acp63_remove() teardown ordering"
+    },
+    {
+      "cve": "CVE-2026-99483",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: pcmtest: handle multiple wraps in random capture fill"
+    },
+    {
+      "cve": "CVE-2026-99484",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: emux: Fix UAF of soundfont zones at note-on"
+    },
+    {
+      "cve": "CVE-2026-99485",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "accel/amdxdna: clear the mailbox channel pointer when starting it fails"
+    },
+    {
+      "cve": "CVE-2026-99486",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rust: configfs: fix data offset calculation for subsystem callbacks"
+    },
+    {
+      "cve": "CVE-2026-99487",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rust: bug: pass TAINT_WARN to warn_slowpath_fmt() on UML"
+    },
+    {
+      "cve": "CVE-2026-99488",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "klist: avoid accesses after waking klist_remove()"
+    },
+    {
+      "cve": "CVE-2026-99489",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: wacom: Redesign shared sibling data lifecycle"
+    },
+    {
+      "cve": "CVE-2026-99490",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: wacom: Fix Use-After-Free in wacom_bamboo_pad"
+    },
+    {
+      "cve": "CVE-2026-99491",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: wacom: Fix Use-After-Free in wacom_intuos_pad"
+    },
+    {
+      "cve": "CVE-2026-99492",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: wacom: Advertise SW_MUTE_DEVICE capability prior to registration"
+    },
+    {
+      "cve": "CVE-2026-99493",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/zcrypt: Guard domain index uses against speculative bypass"
+    },
+    {
+      "cve": "CVE-2026-99494",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/zcrypt: Fix out-of-bounds ptr advance in cca_query_crypto_facility()"
+    },
+    {
+      "cve": "CVE-2026-99495",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/zcrypt: Fix and improve zcrypt reply message verification checks"
+    },
+    {
+      "cve": "CVE-2026-99496",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/vmcp: Initialize full session info to zero"
+    },
+    {
+      "cve": "CVE-2026-99497",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/probes: Fix wrong opcode for cgrb fixup"
+    },
+    {
+      "cve": "CVE-2026-99498",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/kprobes: Prevent kprobes on instructions with exception table entry"
+    },
+    {
+      "cve": "CVE-2026-99499",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/pci: Fix use-after-free race in zpci floating interrupt cleanup"
+    },
+    {
+      "cve": "CVE-2026-99500",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/pci: Fix resource leak in zpci MSI setup"
+    },
+    {
+      "cve": "CVE-2026-99501",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/pci: Fix MSI directed-mode teardown IRQ bit count"
+    },
+    {
+      "cve": "CVE-2026-99502",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "s390/pci: Fix double-free and NULL deref in zpci MSI domain cleanup"
+    },
+    {
+      "cve": "CVE-2026-99503",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ata: sata_fsl: Fix use-after-free of host_priv on probe() failure"
+    },
+    {
+      "cve": "CVE-2026-99504",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ASoC: audio-graph-card2: Fix use-after-free in audio_graph2_link_c2c()"
+    },
+    {
+      "cve": "CVE-2026-99505",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "apparmor: fix a use-after-free in aa_lookupn_ns()"
+    },
+    {
+      "cve": "CVE-2026-99506",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/hugetlb: fix use-after-free of a new anon folio"
+    },
+    {
+      "cve": "CVE-2026-99507",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/hugetlb: fix use-after-free in hugetlb_mfill_atomic_pte()"
+    },
+    {
+      "cve": "CVE-2026-99508",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: ipu-bridge: Fix use-after-free in IVSC error path"
+    },
+    {
+      "cve": "CVE-2026-99509",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: imon: fix use-after-free in display_close via dev_dbg"
+    },
+    {
+      "cve": "CVE-2026-99510",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: hackrf: fix use-after-free in hackrf_alloc_urbs() error path"
+    },
+    {
+      "cve": "CVE-2026-99511",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: cx23885: Fix use-after-free in cx23885_finidev due to race condition"
+    },
+    {
+      "cve": "CVE-2026-99512",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: au0828: fix use-after-free in bulk_timeout timer on disconnect"
+    },
+    {
+      "cve": "CVE-2026-99513",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "lockd: Fix use-after-free in nlmsvc_retry_blocked"
+    },
+    {
+      "cve": "CVE-2026-99514",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "landlock: Fix superblock use-after-free in release_inode()"
+    },
+    {
+      "cve": "CVE-2026-99515",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "iommufd: Fix event queue release use-after-free"
+    },
+    {
+      "cve": "CVE-2026-99516",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmet-fc: fix use-after-free in nvmet_fc_ls_create_connection()"
+    },
+    {
+      "cve": "CVE-2026-99517",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmet: fix use-after-free of the old registrant in nvmet_pr_preempt()"
+    },
+    {
+      "cve": "CVE-2026-99518",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "platform/x86: asus-wmi: fix use-after-free unregistering kbd_led led"
+    },
+    {
+      "cve": "CVE-2026-99519",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "PM: EM: Fix use-after-free of perf domain in netlink doit handlers"
+    },
+    {
+      "cve": "CVE-2026-99520",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "pps: generators: fix use-after-free when closing a removed device"
+    },
+    {
+      "cve": "CVE-2026-99521",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rapidio: mport_cdev: fix use-after-free in mport_mm_close()"
+    },
+    {
+      "cve": "CVE-2026-99522",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "RDMA/irdma: avoid use-after-free in icrdma_remove"
+    },
+    {
+      "cve": "CVE-2026-99523",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "RDMA/uverbs: Fix DMABUF use-after-free during ufile cleanup"
+    },
+    {
+      "cve": "CVE-2026-99524",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sched_ext: Fix use-after-free of a local reenq node left on an inactive cpu"
+    },
+    {
+      "cve": "CVE-2026-99525",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix use-after-free in cifs_ses_add_channel()"
+    },
+    {
+      "cve": "CVE-2026-99526",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix use-after-free infoleak via the readdir resume name"
+    },
+    {
+      "cve": "CVE-2026-99527",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "spmi: Fix potential use-after-free by grabbing of_node reference"
+    },
+    {
+      "cve": "CVE-2026-99528",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: fix netns use-after-free in write_gssp()"
+    },
+    {
+      "cve": "CVE-2026-99529",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: b43: fix use-after-free in b43_bcma_remove()"
+    },
+    {
+      "cve": "CVE-2026-99530",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "cgroup: serialize migrations of newly forked processes"
+    },
+    {
+      "cve": "CVE-2026-99531",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: verify transform SessionId matches the decrypted header"
+    },
+    {
+      "cve": "CVE-2026-99532",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: validate security descriptor offsets before pointer arithmetic"
+    },
+    {
+      "cve": "CVE-2026-99533",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: validate AppInstanceId takeover target"
+    },
+    {
+      "cve": "CVE-2026-99534",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: prevent stale data from being written by SMB2 WRITE requests"
+    },
+    {
+      "cve": "CVE-2026-99535",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: prevent share root removal through empty paths"
+    },
+    {
+      "cve": "CVE-2026-99536",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: prevent session binding in compound requests"
+    },
+    {
+      "cve": "CVE-2026-99537",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: preserve unreadable named streams on open"
+    },
+    {
+      "cve": "CVE-2026-99538",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: ignore network devices of other namespaces"
+    },
+    {
+      "cve": "CVE-2026-99539",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix session reference leak on compounded SESSION_SETUP"
+    },
+    {
+      "cve": "CVE-2026-99540",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix parent dentry lifetime in directory enumeration"
+    },
+    {
+      "cve": "CVE-2026-99541",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix OOB read and cross-share confusion in ksmbd_validate_name_reconnect()"
+    },
+    {
+      "cve": "CVE-2026-99542",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: deny access for an empty DACL instead of granting the request"
+    },
+    {
+      "cve": "CVE-2026-99543",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "backlight: qcom-wled: Fix NULL pointer dereference in wled_remove()"
+    },
+    {
+      "cve": "CVE-2026-99544",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Drivers: hv: vmbus: Bounds check the shared ring buffer indices"
+    },
+    {
+      "cve": "CVE-2026-99545",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "driver core: take parent lock on deferred probe"
+    },
+    {
+      "cve": "CVE-2026-99546",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/sched: cls_flower: avoid stale mask references after delete"
+    },
+    {
+      "cve": "CVE-2026-99547",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "thunderbolt: Do not RPM complete unrelated subtrees on unplug"
+    },
+    {
+      "cve": "CVE-2026-99548",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix early procfs exposure race"
+    },
+    {
+      "cve": "CVE-2026-99549",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: do not pass a NULL buf to is_oplock_break()"
+    },
+    {
+      "cve": "CVE-2026-99550",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: pin owning modules for open debugfs files"
+    },
+    {
+      "cve": "CVE-2026-99551",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: drain quorum work before removing the cluster"
+    },
+    {
+      "cve": "CVE-2026-99552",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/dlm: drain join handlers before releasing module text"
+    },
+    {
+      "cve": "CVE-2026-99553",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: fix race between client_info_show() and free_client()"
+    },
+    {
+      "cve": "CVE-2026-99554",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: usb: pegasus: do not advance rx_skb->data on dropped frames"
+    },
+    {
+      "cve": "CVE-2026-99555",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "media: usbtv: fix null-pointer dereference on disconnect"
+    },
+    {
+      "cve": "CVE-2026-99556",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: serialize directory emptiness checks with readdir"
+    },
+    {
+      "cve": "CVE-2026-99557",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ceph: fail readdir when the MDS reply carries no dirfrag"
+    },
+    {
+      "cve": "CVE-2026-99558",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "blk-crypto: fix NULL deref and UAF in __blk_crypto_evict_key()"
+    },
+    {
+      "cve": "CVE-2026-99559",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ARM: 9524/1: mm: align hugetlb mappings to the huge page size"
+    },
+    {
+      "cve": "CVE-2026-99560",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: mt76: mt7925: fix reset panic caused by the WM2 rx irq mask"
+    },
+    {
+      "cve": "CVE-2026-99561",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "fork: don't create io threads once PF_POSTCOREDUMP is set"
+    },
+    {
+      "cve": "CVE-2026-99562",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: reject FSCTL_SET_ZERO_DATA on a directory handle"
+    },
+    {
+      "cve": "CVE-2026-99563",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: smbdirect: release failed pending sockets of a listener"
+    },
+    {
+      "cve": "CVE-2026-99564",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: smbdirect: don't wait for RDMA_CM_EVENT_DISCONNECTED in smbdirect_socket_destroy_sync()"
+    },
+    {
+      "cve": "CVE-2026-99565",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: wait for negotiation before receiving another PDU"
+    },
+    {
+      "cve": "CVE-2026-99407",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't repair fs summary counters with garbage"
+    },
+    {
+      "cve": "CVE-2026-99408",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't proceed with xattr repair if the live update fails"
+    },
+    {
+      "cve": "CVE-2026-99409",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't fix the directory tree if live update fails"
+    },
+    {
+      "cve": "CVE-2026-99410",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: always reset incore attr fork buffer when resetting fork"
+    },
+    {
+      "cve": "CVE-2026-99411",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: actually lock the metafile reservation when adjusting after repair"
+    },
+    {
+      "cve": "CVE-2026-99412",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: avoid cross-rtgroup reaping after a repair"
+    },
+    {
+      "cve": "CVE-2026-99413",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: fix buffer overruns in xfs_ioc_attr_list"
+    },
+    {
+      "cve": "CVE-2026-99414",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: skip copy up of empty security.capability"
+    },
+    {
+      "cve": "CVE-2026-99415",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: set the revalidate flags after d_instantiate()"
+    },
+    {
+      "cve": "CVE-2026-99416",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: read the nlink xattr of every indexed non-dir"
+    },
+    {
+      "cve": "CVE-2026-99417",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: fix a torn path in ovl_get_redirect()"
+    },
+    {
+      "cve": "CVE-2026-99418",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: do not copy up an xattr value that was never read"
+    },
+    {
+      "cve": "CVE-2026-99419",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: do not copy up a dentry that was removed"
+    },
+    {
+      "cve": "CVE-2026-99420",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: check that the parents of volatile/dirty are dirs"
+    },
+    {
+      "cve": "CVE-2026-99421",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: always encode the origin fh when index is enabled"
+    },
+    {
+      "cve": "CVE-2026-99422",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: use the pinned upper dir in ovl_fix_origin()"
+    },
+    {
+      "cve": "CVE-2026-99356",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: Do not credit control-record octets to the RPC stream"
+    },
+    {
+      "cve": "CVE-2026-99357",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: Copy the deferred RPC Call from the head buffer"
+    },
+    {
+      "cve": "CVE-2026-99358",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: zero NFSv4 COMPOUND tag padding"
+    },
+    {
+      "cve": "CVE-2026-99359",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: validate transport name in listener_set before serv creation"
+    },
+    {
+      "cve": "CVE-2026-99360",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Set nn->cld_net before registering the cld pipe"
+    },
+    {
+      "cve": "CVE-2026-99361",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: propagate SETXATTR value decode errors"
+    },
+    {
+      "cve": "CVE-2026-99362",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: preflight SEQUENCE replies before accepting a slot"
+    },
+    {
+      "cve": "CVE-2026-99363",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Map flex file layout IDs through the request's user namespace"
+    },
+    {
+      "cve": "CVE-2026-99364",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Fix out-of-bounds read in the rpc_status dump"
+    },
+    {
+      "cve": "CVE-2026-99365",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: Fix id-to-name cache entry leak in idtoname_parse()"
+    },
+    {
+      "cve": "CVE-2026-99366",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: don't modify a session slot when replaying its cached reply"
+    },
+    {
+      "cve": "CVE-2026-99367",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Don't complete a cld upcall the daemon has not read"
+    },
+    {
+      "cve": "CVE-2026-99368",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Do not send CB_RECALL_ANY to NFSv4.0 clients"
+    },
+    {
+      "cve": "CVE-2026-99369",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: Destroy a recalled delegation the client does not hold"
+    },
+    {
+      "cve": "CVE-2026-99370",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: copy SETXATTR data from all XDR buffer segments"
+    },
+    {
+      "cve": "CVE-2026-99371",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nfsd: clear XDR padding in GETXATTR replies"
+    },
+    {
+      "cve": "CVE-2026-99372",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: cap the number of listeners accepted in listener_set"
+    },
+    {
+      "cve": "CVE-2026-99373",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFS/localio: detect a short read or write before the iterator has moved"
+    },
+    {
+      "cve": "CVE-2026-99374",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSv4/flexfiles: Use the full 64-bit stripe_unit"
+    },
+    {
+      "cve": "CVE-2026-99375",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSv4/flexfiles: fail I/O to the data server once a lock is lost"
+    },
+    {
+      "cve": "CVE-2026-99376",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSv4/pnfs: Free the netid when draining a data-server address list"
+    },
+    {
+      "cve": "CVE-2026-99377",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSv4/pnfs: bound the CB_NOTIFY_DEVICEID array count before allocating"
+    },
+    {
+      "cve": "CVE-2026-99378",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "pnfs/blocklayout: Complete a device upcall when the pipe is closed"
+    },
+    {
+      "cve": "CVE-2026-99379",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: validate SMB1 EA list bounds before parsing"
+    },
+    {
+      "cve": "CVE-2026-99380",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: validate NT transaction response layout and offsets"
+    },
+    {
+      "cve": "CVE-2026-99381",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: reject short or out-of-range FIND response parameters"
+    },
+    {
+      "cve": "CVE-2026-99382",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: reject FIND data areas that run past the received response"
+    },
+    {
+      "cve": "CVE-2026-99383",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: reclaim credits for decrypted reads with no matching mid"
+    },
+    {
+      "cve": "CVE-2026-99384",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix OOB read of the resume name sent in TRANS2_FIND_NEXT2"
+    },
+    {
+      "cve": "CVE-2026-99385",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: fix buffer overflow in SMB2_tcon()"
+    },
+    {
+      "cve": "CVE-2026-99386",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: don't resurrect an exiting tcon from cached dir workers"
+    },
+    {
+      "cve": "CVE-2026-99387",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: client: bound POSIX lock data area by response length"
+    },
+    {
+      "cve": "CVE-2026-99388",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: smbdirect: fix buffer length underflow in RDMA transfers"
+    },
+    {
+      "cve": "CVE-2026-99389",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb: server: size directory name conversion buffer correctly"
+    },
+    {
+      "cve": "CVE-2026-99390",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: fix correction of unwritten extents in quota file data fork"
+    },
+    {
+      "cve": "CVE-2026-99391",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't try to scrub self-referential dirent in metapath checker"
+    },
+    {
+      "cve": "CVE-2026-99392",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't subtract excess usage twice when computing agf_btreeblks"
+    },
+    {
+      "cve": "CVE-2026-99393",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: don't overrun incore inode when cleaning attr forks"
+    },
+    {
+      "cve": "CVE-2026-99394",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: complain loudly when dirtree checker finds broken links"
+    },
+    {
+      "cve": "CVE-2026-99395",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: bound inode fork length against the fork size during log recovery"
+    },
+    {
+      "cve": "CVE-2026-99396",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: bound da-node entry count against the correct geometry"
+    },
+    {
+      "cve": "CVE-2026-99397",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: always report inode repair setup failures"
+    },
+    {
+      "cve": "CVE-2026-99398",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: always forget cached ACLs if the attr fork swap succeeds"
+    },
+    {
+      "cve": "CVE-2026-99399",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: reject remote xattr entries with an out-of-range value length"
+    },
+    {
+      "cve": "CVE-2026-99400",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: reject out-of-range attribute value lengths in xfs_attr_copy_value"
+    },
+    {
+      "cve": "CVE-2026-99401",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rtnetlink: wait for RCU readers in rtnl_link_unregister()"
+    },
+    {
+      "cve": "CVE-2026-99402",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "netfilter: nft_payload: restrict checksum offsets to known values"
+    },
+    {
+      "cve": "CVE-2026-99403",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: mark overfull dabtree node blocks as corrupt"
+    },
+    {
+      "cve": "CVE-2026-99404",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: check fork type against dabtree block magic number"
+    },
+    {
+      "cve": "CVE-2026-99405",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: abort dirtree repair if the live update hook dies"
+    },
+    {
+      "cve": "CVE-2026-99406",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: fix lost errno returned from xfarray_foliosort"
+    },
+    {
+      "cve": "CVE-2026-99321",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rust_binder: wake epoll on self-work queued to poll thread"
+    },
+    {
+      "cve": "CVE-2026-99322",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: rebind completed CREATE replays without draining the old channel"
+    },
+    {
+      "cve": "CVE-2026-99323",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix invalid pointer dereference when get_inode_acl() fails"
+    },
+    {
+      "cve": "CVE-2026-99324",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix out-of-bounds read when padding the final compound response"
+    },
+    {
+      "cve": "CVE-2026-99325",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: hid-lenovo-go-s: Add suspend function and gate access under bool."
+    },
+    {
+      "cve": "CVE-2026-99326",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: hid-lenovo-go-s: Prevent deadlock if device removed during setup"
+    },
+    {
+      "cve": "CVE-2026-99327",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: roccat: kovaplus: reject short button reports"
+    },
+    {
+      "cve": "CVE-2026-99328",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: picoLCD: check for fb_deferred_io_init() error"
+    },
+    {
+      "cve": "CVE-2026-99329",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: mcp2221: always initialize and cancel init_work"
+    },
+    {
+      "cve": "CVE-2026-99330",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: mcp2200: validate READ_ALL response length"
+    },
+    {
+      "cve": "CVE-2026-99331",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: cp2112: validate response report lengths"
+    },
+    {
+      "cve": "CVE-2026-99332",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: core: Fix out-of-bounds left shift by 32 in s32ton()"
+    },
+    {
+      "cve": "CVE-2026-99333",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "HID: amd_sfh: Use report type from request node"
+    },
+    {
+      "cve": "CVE-2026-99334",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: PPC: Book3S HV: Add preempt_disable() around virtual-mode HPTE bit-lock users"
+    },
+    {
+      "cve": "CVE-2026-99335",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: guest_memfd: Establish memslot<=>guest_memfd bindings *after* memslot is ready"
+    },
+    {
+      "cve": "CVE-2026-99336",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: guest_memfd: take the invalidate lock when unbinding a dying file"
+    },
+    {
+      "cve": "CVE-2026-99337",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: TDX: Enable Bus Lock VM exit"
+    },
+    {
+      "cve": "CVE-2026-99338",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: TDX: Enable Notify VM exit"
+    },
+    {
+      "cve": "CVE-2026-99339",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86: Zero reserved synic flags when delivering message to avoid stack leak"
+    },
+    {
+      "cve": "CVE-2026-99340",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86: Take SRCU in kvm_zap_gfn_range()"
+    },
+    {
+      "cve": "CVE-2026-99341",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86: Request event processing for exception VM-Exits"
+    },
+    {
+      "cve": "CVE-2026-99342",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86/xen: Enforce 4-byte alignment of vcpu_info registration"
+    },
+    {
+      "cve": "CVE-2026-99343",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86/mmu: Bug the VM if KVM attempts to walk more levels than the MMU has"
+    },
+    {
+      "cve": "CVE-2026-99344",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: nSVM: Ignore EFER.LMA if EFER.LME=0 when preparing L2 state"
+    },
+    {
+      "cve": "CVE-2026-99345",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: nSVM: Reject KVM_SET_NESTED_STATE if L1 has EFER.LMA=1 && EFER.LME=0"
+    },
+    {
+      "cve": "CVE-2026-99346",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: SVM: Trigger new ASID allocation in both VMCBs on pCPU switch"
+    },
+    {
+      "cve": "CVE-2026-99347",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: x86: hdmi: fix chmap array missing terminator entry"
+    },
+    {
+      "cve": "CVE-2026-99348",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "afs: Fix afs to abort the rxrpc call on send error"
+    },
+    {
+      "cve": "CVE-2026-99349",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rxrpc: Fix lack of short-send handling in rxrpc_kernel_send_data()"
+    },
+    {
+      "cve": "CVE-2026-99350",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "rxrpc: Fix update of call->tx_pending without holding lock"
+    },
+    {
+      "cve": "CVE-2026-99351",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sunrpc: treat empty auth.unix.gid replies as negative entries"
+    },
+    {
+      "cve": "CVE-2026-99352",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: trace an accepted transport before publishing it"
+    },
+    {
+      "cve": "CVE-2026-99353",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: Reject a socket that already has an svc_sock attached"
+    },
+    {
+      "cve": "CVE-2026-99354",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sunrpc: pin gss module across auth_domain RCU free"
+    },
+    {
+      "cve": "CVE-2026-99355",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "SUNRPC: fix oversized GSS proxy token copy"
+    },
+    {
+      "cve": "CVE-2026-99320",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": 7.0,
+      "title": "ipv6: raw: fix use-after-free in rawv6_send_hdrinc()"
+    }
+  ]
+}

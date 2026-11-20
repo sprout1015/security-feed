@@ -1,0 +1,1376 @@
+November 19, 2026: PostgreSQL 19 Released!
+Quick Links
+Support
+Versioning Policy
+</support/security/> Security
+Professional Services
+Hosting Solutions
+Report a Bug
+Security Information
+The PostgreSQL Global Development Group (PGDG) takes security seriously. This
+allows our users to place their trust in PostgreSQL for protecting their
+mission-critical data.
+The PostgreSQL Global Development Group follows a model that shares
+responsibility between PostgreSQL itself and its deployment environment,
+including hardware, operating system, and the application layer
+(programming language, frameworks and client libraries). The PostgreSQL
+documentation provides info on the inherent security features of PostgreSQL
+and how to securely configure and run PostgreSQL.
+Security vulnerabilities can exist both in PostgreSQL and software within the
+PostgreSQL ecosystem, including client libraries, extensions, installers,
+and other utilities. This page walks through what is considered a security
+vulnerability in PostgreSQL, how to report PostgreSQL security
+vulnerabilities, and how fixes for security vulnerabilities are released.
+Please note that the PostgreSQL Project does not offer bug bounties.
+CVE Numbering Authority
+The PostgreSQL Project is a CVE Numbering Authority (CNA), working with Red Hat
+as our CNA Root. This allows us to assign our own CVE numbers and publish CVE
+records for PostgreSQL and closely related projects.
+We will currently assign CVE numbers for the following projects upon request to
+cna@postgresql.org:
+PostgreSQL
+PostgreSQL RPM packaging
+PostgreSQL DEB packaging
+PostgreSQL Windows/macOS installers (EDB)
+pgJDBC
+psqlODBC
+pgAdmin
+PgBouncer
+PostgreSQL Anonymizer
+pgvector
+Additional projects may request inclusion on the list above by emailing
+cna@postgresql.org.
+NOTE: The security team will only assign CVEs to projects
+when requested by members of the project. If you think you've found a security
+issue in a project other than PostgreSQL or its packages and installers,
+please contact the security team for that project. See below for more details.
+What is a Security Vulnerability in PostgreSQL?
+A security vulnerability in PostgreSQL is an issue that allows a user to gain
+access to privileges or data that they do not have permission to use, or
+allows a user to execute arbitrary code through a PostgreSQL process.
+The PostgreSQL Security Team does not consider reports on actions a PostgreSQL
+superuser takes to be a security vulnerability. However, a report on an
+unprivileged user escalating to superuser generally qualifies as valid.
+The PostgreSQL Security Team typically does not consider a denial-of-service
+on a PostgreSQL server from an authenticated, valid SQL statement to be a
+security vulnerability. A denial-of-service issue of this nature could still
+be a bug, and we encourage you to report it
+on the Report a Bug page.
+Please do not report the lack of DMARC on postgresql.org mailing lists. This
+is by design.
+Reporting a PostgreSQL Security Vulnerability
+For security vulnerabilities in PostgreSQL or any of the installers linked
+from the PostgreSQL download page, please email
+<mailto:security@postgresql.org> security@postgresql.org.
+For reporting non-security bugs, please visit the
+Report a Bug page.
+If you are unsure if an issue is a security vulnerability, please err on the
+side of caution and email
+<mailto:security@postgresql.org> security@postgresql.org.
+Once a vulnerability is validated, the PostgreSQL Security Team works to fix
+it. Our goal is to try to include any fixes as part of the next scheduled
+PostgreSQL update release (see "PostgreSQL Security Releases"). Based on
+factors like the timing of the report, the severity of the issues, or
+complexity of the fix, the PostgreSQL Security Team may decide to include the
+fix in a subsequent release, or in exceptional circumstances, issue an
+"out-of-cycle" release.
+We expect that no vulnerability is prematurely disclosed until the PostgreSQL
+Project has made it available as part of its release and disclosure process.
+Reporting non-PostgreSQL Security Vulnerabilities
+Please see below for how you can report security vulnerabilities in
+PostgreSQL-related projects:
+For security vulnerabilities in the PostgreSQL JDBC Driver,
+please email
+<mailto:pgsql-jdbc-security@lists.postgresql.org> pgsql-jdbc-security@lists.postgresql.org.
+For security vulnerabilities in pgAdmin,
+please email <mailto:security@pgadmin.org> security@pgadmin.org.
+For security vulnerabilities in pgvector,
+please email <mailto:security@pgvector.org> security@pgvector.org.
+If you wish to report a security vulnerability for any other open source project in
+the PostgreSQL ecosystem (e.g. a driver, an extension, or an installer) and
+need a secure communication channel, please email
+<mailto:security@postgresql.org> security@postgresql.org.
+PostgreSQL Security Releases
+The PostgreSQL Project releases security fixes as part of
+minor version updates. You are always
+advised to use the latest minor version available, as it will contain other
+non-security related fixes.
+A new PostgreSQL major release, which contains new features, has every prior
+security fix.
+If you find a security vulnerability in PostgreSQL, the PostgreSQL Security
+Team will credit you in the release notes and register a CVE for the
+vulnerability. Please do not register a CVE independently of the
+PostgreSQL Security Team.
+PostgreSQL Security Notifications
+To receive notifications about security releases or other security
+related news, you can subscribe to
+the pgsql-announce mailing list. If you set your
+subscription to only include the tag Security, it will
+exclude all other announcements that are sent to this list.
+Known PostgreSQL Security Vulnerabilities
+The PostgreSQL Global Development Group believes that accuracy, completeness
+and availability of security information is essential for our users. We choose
+to pool all information on this one page, allowing easy searching for security
+vulnerabilities over a range of criteria. This includes:
+Which major versions a security vulnerability is present in
+Which minor version update releases a security vulnerability is fixed in
+Whether an exploit requires a valid login
+CVSS score
+You can find more detailed information about a security vulnerability by
+clicking on the links in the table below.
+Known PostgreSQL Security Vulnerabilities in
+Supported Versions
+You can filter the view of patches to show just patches for version:
+</support/security/19/> 19 -
+</support/security/18/> 18 -
+</support/security/17/> 17 -
+</support/security/16/> 16 -
+</support/security/15/> 15
+- </support/security/> all
+| Reference
+| Affected
+| Fixed
+| Component & CVSS v3 Base Score
+| Description
+|
+</support/security/CVE-2026-120154/> CVE-2026-120154
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL INSERT ... ON CONFLICT can read rows despite row security policies
+</support/security/CVE-2026-120154/> more details
+|
+</support/security/CVE-2026-120153/> CVE-2026-120153
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL extension-script substitutions allow SQL injection through object names
+</support/security/CVE-2026-120153/> more details
+|
+</support/security/CVE-2026-120152/> CVE-2026-120152
+Announcement
+| 18, 17, 16
+| 18.7, 17.12, 16.16
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL pg_show_all_settings() use-after-free discloses memory
+</support/security/CVE-2026-120152/> more details
+|
+</support/security/CVE-2026-120151/> CVE-2026-120151
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plpgsql record-field type confusion executes arbitrary code
+</support/security/CVE-2026-120151/> more details
+|
+</support/security/CVE-2026-120150/> CVE-2026-120150
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL expanded-record domain-check use-after-free executes arbitrary code
+</support/security/CVE-2026-120150/> more details
+|
+</support/security/CVE-2026-120149/> CVE-2026-120149
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL FDW batch-insert mismatch executes arbitrary code
+</support/security/CVE-2026-120149/> more details
+|
+</support/security/CVE-2026-120148/> CVE-2026-120148
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.1
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+| PostgreSQL extended-statistics pseudo-type confusion executes arbitrary code
+</support/security/CVE-2026-120148/> more details
+|
+</support/security/CVE-2026-120147/> CVE-2026-120147
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL dblink reentrant disconnect use-after-free executes arbitrary code
+</support/security/CVE-2026-120147/> more details
+|
+</support/security/CVE-2026-120146/> CVE-2026-120146
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+| PostgreSQL REASSIGN OWNED bypasses role SET and CREATEDB checks
+</support/security/CVE-2026-120146/> more details
+|
+</support/security/CVE-2026-120145/> CVE-2026-120145
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL logical replication can write to subscriber system catalogs, executing arbitrary code
+</support/security/CVE-2026-120145/> more details
+|
+</support/security/CVE-2026-120144/> CVE-2026-120144
+Announcement
+| 18
+| 18.7
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL type-cache invalidation gap executes arbitrary code
+</support/security/CVE-2026-120144/> more details
+|
+</support/security/CVE-2026-120143/> CVE-2026-120143
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL transition-table cursor use-after-free executes arbitrary code
+</support/security/CVE-2026-120143/> more details
+|
+</support/security/CVE-2026-120142/> CVE-2026-120142
+Announcement
+| 18, 17
+| 18.7, 17.12
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL dropped-column type confusion executes arbitrary code
+</support/security/CVE-2026-120142/> more details
+|
+</support/security/CVE-2026-120141/> CVE-2026-120141
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL materialized set-returning function type confusion executes arbitrary code
+</support/security/CVE-2026-120141/> more details
+|
+</support/security/CVE-2026-120139/> CVE-2026-120139
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL tuple-size integer wraparound executes arbitrary code
+</support/security/CVE-2026-120139/> more details
+|
+</support/security/CVE-2026-116336/> CVE-2026-116336
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL REINDEX CONCURRENTLY does not block DROP INDEX during index functions
+</support/security/CVE-2026-116336/> more details
+|
+</support/security/CVE-2026-116335/> CVE-2026-116335
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL commutator or negator result-type confusion executes arbitrary code
+</support/security/CVE-2026-116335/> more details
+|
+</support/security/CVE-2026-116333/> CVE-2026-116333
+Announcement
+| 18, 17
+| 18.7, 17.12
+| core server
+6.5
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+| PostgreSQL parallel B-tree array scan reads beyond array bounds
+</support/security/CVE-2026-116333/> more details
+|
+</support/security/CVE-2026-116332/> CVE-2026-116332
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL portal setup use-after-free executes arbitrary code
+</support/security/CVE-2026-116332/> more details
+|
+</support/security/CVE-2026-116331/> CVE-2026-116331
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL min/max aggregate type confusion executes arbitrary code
+</support/security/CVE-2026-116331/> more details
+|
+</support/security/CVE-2026-116330/> CVE-2026-116330
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| client
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL pg_dump tar restore.sql fails to block psql command injection
+</support/security/CVE-2026-116330/> more details
+|
+</support/security/CVE-2026-116329/> CVE-2026-116329
+Announcement
+| 18
+| 18.7
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL statistics import type confusion executes arbitrary code
+</support/security/CVE-2026-116329/> more details
+|
+</support/security/CVE-2026-116328/> CVE-2026-116328
+Announcement
+| 18, 17, 16
+| 18.7, 17.12, 16.16
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL generation memory context integer wraparound executes arbitrary code
+</support/security/CVE-2026-116328/> more details
+|
+</support/security/CVE-2026-116327/> CVE-2026-116327
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL security_barrier analysis can expose hidden values through indirect expressions
+</support/security/CVE-2026-116327/> more details
+|
+</support/security/CVE-2026-116326/> CVE-2026-116326
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl tied-object exceptions follow stale sigjmp_buf
+</support/security/CVE-2026-116326/> more details
+|
+</support/security/CVE-2026-116325/> CVE-2026-116325
+Announcement
+| 18, 17
+| 18.7, 17.12
+| client
+8.0
+AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL reindexdb index name quoting allows SQL injection
+</support/security/CVE-2026-116325/> more details
+|
+</support/security/CVE-2026-116323/> CVE-2026-116323
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pltcl reentrant result conversion use-after-free executes arbitrary code
+</support/security/CVE-2026-116323/> more details
+|
+</support/security/CVE-2026-116322/> CVE-2026-116322
+Announcement
+| 18
+| 18.7
+| core server
+5.3
+AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+| PostgreSQL pre-authentication cancel request can leak a spinlock
+</support/security/CVE-2026-116322/> more details
+|
+</support/security/CVE-2026-116321/> CVE-2026-116321
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL unterminated name value discloses server memory
+</support/security/CVE-2026-116321/> more details
+|
+</support/security/CVE-2026-116320/> CVE-2026-116320
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl array and hash conversion use-after-free executes arbitrary code
+</support/security/CVE-2026-116320/> more details
+|
+</support/security/CVE-2026-116319/> CVE-2026-116319
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl reentrant return_next() use-after-free executes arbitrary code
+</support/security/CVE-2026-116319/> more details
+|
+</support/security/CVE-2026-116318/> CVE-2026-116318
+Announcement
+| 18
+| 18.7
+| client
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pg_dump not-null constraint name allows SQL injection
+</support/security/CVE-2026-116318/> more details
+|
+</support/security/CVE-2026-116317/> CVE-2026-116317
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL ts_rank_cd() heap buffer overflow may execute arbitrary code
+</support/security/CVE-2026-116317/> more details
+|
+</support/security/CVE-2026-116316/> CVE-2026-116316
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL security-restricted operations can create types in pg_temp, which later queries of the session find
+</support/security/CVE-2026-116316/> more details
+|
+</support/security/CVE-2026-116315/> CVE-2026-116315
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL tsvector_delete() heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-116315/> more details
+|
+</support/security/CVE-2026-116314/> CVE-2026-116314
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| client
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL pg_restore executes arbitrary code due to missing non-plain archive validation
+</support/security/CVE-2026-116314/> more details
+|
+</support/security/CVE-2026-116313/> CVE-2026-116313
+Announcement
+| 18
+| 18.7
+| client
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL "vacuumdb --missing-stats-only" lets a database owner execute code as the vacuumdb user
+</support/security/CVE-2026-116313/> more details
+|
+</support/security/CVE-2026-116312/> CVE-2026-116312
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+5.4
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL MERGE can place the wrong row in a trigger transition table
+</support/security/CVE-2026-116312/> more details
+|
+</support/security/CVE-2026-116311/> CVE-2026-116311
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+5.4
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL DROP OWNED can remove restrictive row security policies from non-owned tables
+</support/security/CVE-2026-116311/> more details
+|
+</support/security/CVE-2026-116310/> CVE-2026-116310
+Announcement
+| 18, 17
+| 18.7, 17.12
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL COPY error context uses freed field storage
+</support/security/CVE-2026-116310/> more details
+|
+</support/security/CVE-2026-116309/> CVE-2026-116309
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl blessed-reference type confusion may execute arbitrary code
+</support/security/CVE-2026-116309/> more details
+|
+</support/security/CVE-2026-116308/> CVE-2026-116308
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| contrib module
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL dict_int reads beyond zero-length tokens
+</support/security/CVE-2026-116308/> more details
+|
+</support/security/CVE-2026-116307/> CVE-2026-116307
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl prepared-query use-after-free executes arbitrary code
+</support/security/CVE-2026-116307/> more details
+|
+</support/security/CVE-2026-116306/> CVE-2026-116306
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL composite-type change during field assignment executes arbitrary code
+</support/security/CVE-2026-116306/> more details
+|
+</support/security/CVE-2026-116304/> CVE-2026-116304
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL parallel RECORD typmod use-after-free executes arbitrary code
+</support/security/CVE-2026-116304/> more details
+|
+</support/security/CVE-2026-116303/> CVE-2026-116303
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+3.1
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL foreign key and JSON conversions bypass EXECUTE privilege on cast functions
+</support/security/CVE-2026-116303/> more details
+|
+</support/security/CVE-2026-19385/> CVE-2026-19385
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| client
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pg_dump heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-19385/> more details
+|
+</support/security/CVE-2026-18447/> CVE-2026-18447
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL output parameter type confusion executes arbitrary code
+</support/security/CVE-2026-18447/> more details
+|
+</support/security/CVE-2026-18408/> CVE-2026-18408
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| client
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL psql \unrestrict lets superuser of pg_dump origin server execute arbitrary code in psql client
+</support/security/CVE-2026-18408/> more details
+|
+</support/security/CVE-2026-18024/> CVE-2026-18024
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL ascii() function reads past end of buffer
+</support/security/CVE-2026-18024/> more details
+|
+</support/security/CVE-2026-16241/> CVE-2026-16241
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| client
+3.8
+AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L
+| PostgreSQL ECPG integer underflow can crash the client
+</support/security/CVE-2026-16241/> more details
+|
+</support/security/CVE-2026-16240/> CVE-2026-16240
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| client
+3.7
+AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL pg_basebackup can use backup manifest content as a format string
+</support/security/CVE-2026-16240/> more details
+|
+</support/security/CVE-2026-16239/> CVE-2026-16239
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL type confusion in cursor CLOSE + DECLARE executes arbitrary code
+</support/security/CVE-2026-16239/> more details
+|
+</support/security/CVE-2026-16238/> CVE-2026-16238
+Announcement
+| 18
+| 18.6
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL type confusion in pg_restore_attribute_stats() executes arbitrary code
+</support/security/CVE-2026-16238/> more details
+|
+</support/security/CVE-2026-16237/> CVE-2026-16237
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+5.4
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL INSERT ... ON CONFLICT can read or modify rows despite auto-updatable view WHERE condition
+</support/security/CVE-2026-16237/> more details
+|
+</support/security/CVE-2026-15742/> CVE-2026-15742
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL fuzzystrmatch writes effectively-arbitrary addresses, via integer wraparound
+</support/security/CVE-2026-15742/> more details
+|
+</support/security/CVE-2026-15741/> CVE-2026-15741
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL expression deparse allows SQL injection via EXTRACT argument
+</support/security/CVE-2026-15741/> more details
+|
+</support/security/CVE-2026-14681/> CVE-2026-14681
+Announcement
+| 18, 17
+| 18.6, 17.11
+| core server
+4.2
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL improper enforcement of GSSAPI encryption when coupled with SSL
+</support/security/CVE-2026-14681/> more details
+|
+</support/security/CVE-2026-14680/> CVE-2026-14680
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL type confusion via "internal" arguments
+</support/security/CVE-2026-14680/> more details
+|
+</support/security/CVE-2026-14679/> CVE-2026-14679
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.2
+AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+| PostgreSQL stack buffer overflow in argument match writes 0x0 and 0x1 to server memory
+</support/security/CVE-2026-14679/> more details
+|
+</support/security/CVE-2026-14678/> CVE-2026-14678
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| contrib module
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL pg_trgm picksplit reads past end of buffer
+</support/security/CVE-2026-14678/> more details
+|
+</support/security/CVE-2026-14677/> CVE-2026-14677
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL 32-bit pltcl and plperl undersize allocations, via integer wraparound
+</support/security/CVE-2026-14677/> more details
+|
+</support/security/CVE-2026-14676/> CVE-2026-14676
+Announcement
+| 18
+| 18.6
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pg_stat_statements heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-14676/> more details
+|
+</support/security/CVE-2026-14673/> CVE-2026-14673
+Announcement
+| 18, 16, 15
+| 18.6, 16.15, 15.19
+| contrib module
+3.8
+AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL amcheck does not clear untrusted search path
+</support/security/CVE-2026-14673/> more details
+|
+</support/security/CVE-2026-14672/> CVE-2026-14672
+Announcement
+| 18, 17, 16
+| 18.6, 17.11, 16.15
+| core server
+5.3
+AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL observable response discrepancy with non-default scram_iterations provides user existence oracle
+</support/security/CVE-2026-14672/> more details
+|
+</support/security/CVE-2026-14671/> CVE-2026-14671
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL refint plan cache type confusion executes arbitrary code
+</support/security/CVE-2026-14671/> more details
+|
+</support/security/CVE-2026-14670/> CVE-2026-14670
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL plperl tied object heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-14670/> more details
+|
+</support/security/CVE-2026-14669/> CVE-2026-14669
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL to_char heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-14669/> more details
+|
+</support/security/CVE-2026-14668/> CVE-2026-14668
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.1
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H
+| PostgreSQL ctid type confusion in selectivity estimator discloses derivative of arbitrary read
+</support/security/CVE-2026-14668/> more details
+|
+</support/security/CVE-2026-14666/> CVE-2026-14666
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+4.2
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL row security caching disregards role modifications
+</support/security/CVE-2026-14666/> more details
+|
+</support/security/CVE-2026-14664/> CVE-2026-14664
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL regexp heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-14664/> more details
+|
+</support/security/CVE-2026-14663/> CVE-2026-14663
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| contrib module
+6.5
+AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL pgcrypto, for OpenSSL-disabled ciphers, silently encrypts to and decrypts from cleartext
+</support/security/CVE-2026-14663/> more details
+|
+</support/security/CVE-2026-14662/> CVE-2026-14662
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL tsvector and tsquery undersize allocations, via integer wraparound
+</support/security/CVE-2026-14662/> more details
+|
+</support/security/CVE-2026-14661/> CVE-2026-14661
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| contrib module
+8.1
+AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+| PostgreSQL dblink and subscriptions can append to arbitrary files
+</support/security/CVE-2026-14661/> more details
+|
+</support/security/CVE-2026-6638/> CVE-2026-6638
+Announcement
+| 18, 17, 16
+| 18.4, 17.10, 16.14
+| core server
+3.7
+AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N
+| PostgreSQL REFRESH PUBLICATION allows SQL injection via table name
+</support/security/CVE-2026-6638/> more details
+|
+</support/security/CVE-2026-6637/> CVE-2026-6637
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL refint allows stack buffer overflow and SQL injection
+</support/security/CVE-2026-6637/> more details
+|
+</support/security/CVE-2026-6575/> CVE-2026-6575
+Announcement
+| 18
+| 18.4
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL pg_restore_attribute_stats accepts values that cause query planning to read past end of stats array
+</support/security/CVE-2026-6575/> more details
+|
+</support/security/CVE-2026-6479/> CVE-2026-6479
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| core server
+7.5
+AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+| PostgreSQL SSL/GSS init causes denial of service, via uncontrolled recursion
+</support/security/CVE-2026-6479/> more details
+|
+</support/security/CVE-2026-6478/> CVE-2026-6478
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| core server
+6.5
+AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL discloses MD5-hashed passwords via covert timing channel
+</support/security/CVE-2026-6478/> more details
+|
+</support/security/CVE-2026-6477/> CVE-2026-6477
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| client
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL libpq lo_* functions let server superuser overwrite client stack memory
+</support/security/CVE-2026-6477/> more details
+|
+</support/security/CVE-2026-6476/> CVE-2026-6476
+Announcement
+| 18, 17
+| 18.4, 17.10
+| client
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pg_createsubscriber allows SQL injection via subscription name
+</support/security/CVE-2026-6476/> more details
+|
+</support/security/CVE-2026-6475/> CVE-2026-6475
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| client
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL pg_basebackup and pg_rewind can overwrite unrelated files of origin superuser choice
+</support/security/CVE-2026-6475/> more details
+|
+</support/security/CVE-2026-6474/> CVE-2026-6474
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL timeofday() can disclose portions of server memory
+</support/security/CVE-2026-6474/> more details
+|
+</support/security/CVE-2026-6473/> CVE-2026-6473
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL server undersizes allocations, via integer wraparound
+</support/security/CVE-2026-6473/> more details
+|
+</support/security/CVE-2026-6472/> CVE-2026-6472
+Announcement
+| 18, 17, 16, 15
+| 18.4, 17.10, 16.14, 15.18
+| core server
+5.4
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL CREATE TYPE does not check multirange schema CREATE privilege
+</support/security/CVE-2026-6472/> more details
+|
+</support/security/CVE-2026-6471/> CVE-2026-6471
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL logical decoding can dlopen arbitrary file
+</support/security/CVE-2026-6471/> more details
+|
+</support/security/CVE-2026-6470/> CVE-2026-6470
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+| PostgreSQL fails to check type USAGE privilege
+</support/security/CVE-2026-6470/> more details
+|
+</support/security/CVE-2026-6469/> CVE-2026-6469
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| core server
+3.8
+AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L
+| PostgreSQL ALTER TABLE ALTER TYPE resets extended statistics ownership
+</support/security/CVE-2026-6469/> more details
+|
+</support/security/CVE-2026-6467/> CVE-2026-6467
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL extension script schema mishandling executes arbitrary SQL
+</support/security/CVE-2026-6467/> more details
+|
+</support/security/CVE-2026-6464/> CVE-2026-6464
+Announcement
+| 18, 17, 16, 15
+| 18.6, 17.11, 16.15, 15.19
+| client
+8.1
+AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL psql COPY FROM STDIN early failure processes data lines as psql commands
+</support/security/CVE-2026-6464/> more details
+|
+</support/security/CVE-2026-6460/> CVE-2026-6460
+Announcement
+| 18, 17, 16, 15
+| 18.7, 17.12, 16.16, 15.20
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL type confusion after ALTER ... SET DATA TYPE executes arbitrary code
+</support/security/CVE-2026-6460/> more details
+|
+</support/security/CVE-2026-2007/> CVE-2026-2007
+Announcement
+| 18
+| 18.2
+| contrib module
+8.2
+AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+| PostgreSQL pg_trgm heap buffer overflow writes pattern onto server memory
+</support/security/CVE-2026-2007/> more details
+|
+</support/security/CVE-2026-2006/> CVE-2026-2006
+Announcement
+| 18, 17, 16, 15
+| 18.2, 17.8, 16.12, 15.16
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL missing validation of multibyte character length executes arbitrary code
+</support/security/CVE-2026-2006/> more details
+|
+</support/security/CVE-2026-2005/> CVE-2026-2005
+Announcement
+| 18, 17, 16, 15
+| 18.2, 17.8, 16.12, 15.16
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL pgcrypto heap buffer overflow executes arbitrary code
+</support/security/CVE-2026-2005/> more details
+|
+</support/security/CVE-2026-2004/> CVE-2026-2004
+Announcement
+| 18, 17, 16, 15
+| 18.2, 17.8, 16.12, 15.16
+| contrib module
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL intarray missing validation of type of input to selectivity estimator executes arbitrary code
+</support/security/CVE-2026-2004/> more details
+|
+</support/security/CVE-2026-2003/> CVE-2026-2003
+Announcement
+| 18, 17, 16, 15
+| 18.2, 17.8, 16.12, 15.16
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL oidvector discloses a few bytes of memory
+</support/security/CVE-2026-2003/> more details
+|
+</support/security/CVE-2025-12818/> CVE-2025-12818
+Announcement
+| 18, 17, 16, 15
+| 18.1, 17.7, 16.11, 15.15
+| core server
+5.9
+AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+| PostgreSQL libpq undersizes allocations, via integer wraparound
+</support/security/CVE-2025-12818/> more details
+|
+</support/security/CVE-2025-12817/> CVE-2025-12817
+Announcement
+| 18, 17, 16, 15
+| 18.1, 17.7, 16.11, 15.15
+| core server
+3.1
+AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L
+| PostgreSQL CREATE STATISTICS does not check for schema CREATE privilege
+</support/security/CVE-2025-12817/> more details
+|
+</support/security/CVE-2025-8715/> CVE-2025-8715
+Announcement
+| 17, 16, 15
+| 17.6, 16.10, 15.14
+| core server
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL pg_dump newline in object name executes arbitrary code in psql client and in restore target server
+</support/security/CVE-2025-8715/> more details
+|
+</support/security/CVE-2025-8714/> CVE-2025-8714
+Announcement
+| 17, 16, 15
+| 17.6, 16.10, 15.14
+| core server
+8.8
+AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL pg_dump lets superuser of origin server execute arbitrary code in psql client
+</support/security/CVE-2025-8714/> more details
+|
+</support/security/CVE-2025-8713/> CVE-2025-8713
+Announcement
+| 17, 16, 15
+| 17.6, 16.10, 15.14
+| core server
+3.1
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+| PostgreSQL optimizer statistics can expose sampled data within a view, partition, or child table
+</support/security/CVE-2025-8713/> more details
+|
+</support/security/CVE-2025-4207/> CVE-2025-4207
+Announcement
+| 17, 16, 15
+| 17.5, 16.9, 15.13
+| core server
+5.9
+AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+| PostgreSQL GB18030 encoding validation can read one byte past end of allocation for text that fails validation
+</support/security/CVE-2025-4207/> more details
+|
+</support/security/CVE-2025-1094/> CVE-2025-1094
+Announcement
+| 17, 16, 15
+| 17.3, 16.7, 15.11
+| core server
+8.1
+AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL quoting APIs miss neutralizing quoting syntax in text that fails encoding validation
+</support/security/CVE-2025-1094/> more details
+|
+</support/security/CVE-2024-10979/> CVE-2024-10979
+Announcement
+| 17, 16, 15
+| 17.1, 16.5, 15.9
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL PL/Perl environment variable changes execute arbitrary code
+</support/security/CVE-2024-10979/> more details
+|
+</support/security/CVE-2024-10978/> CVE-2024-10978
+Announcement
+| 17, 16, 15
+| 17.1, 16.5, 15.9
+| core server
+4.2
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL SET ROLE, SET SESSION AUTHORIZATION reset to wrong user ID
+</support/security/CVE-2024-10978/> more details
+|
+</support/security/CVE-2024-10977/> CVE-2024-10977
+Announcement
+| 17, 16, 15
+| 17.1, 16.5, 15.9
+| client
+3.1
+AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N
+| PostgreSQL libpq retains an error message from man-in-the-middle
+</support/security/CVE-2024-10977/> more details
+|
+</support/security/CVE-2024-10976/> CVE-2024-10976
+Announcement
+| 17, 16, 15
+| 17.1, 16.5, 15.9
+| core server
+4.2
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+| PostgreSQL row security below e.g. subqueries disregards user ID changes
+</support/security/CVE-2024-10976/> more details
+|
+</support/security/CVE-2024-7348/> CVE-2024-7348
+Announcement
+| 16, 15
+| 16.4, 15.8
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| PostgreSQL relation replacement during pg_dump executes arbitrary SQL
+</support/security/CVE-2024-7348/> more details
+|
+</support/security/CVE-2024-4317/> CVE-2024-4317
+Announcement
+| 16, 15
+| 16.3, 15.7
+| core server
+3.1
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+| Restrict visibility of "pg_stats_ext" and "pg_stats_ext_exprs" entries to the table owner
+</support/security/CVE-2024-4317/> more details
+|
+</support/security/CVE-2024-0985/> CVE-2024-0985
+Announcement
+| 16, 15
+| 16.2, 15.6
+| core server
+8.0
+AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+| PostgreSQL non-owner REFRESH MATERIALIZED VIEW CONCURRENTLY executes arbitrary SQL
+</support/security/CVE-2024-0985/> more details
+|
+</support/security/CVE-2023-39418/> CVE-2023-39418
+Announcement
+| 15
+| 15.4
+| core server
+3.1
+AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N
+| MERGE fails to enforce UPDATE or SELECT row security policies
+</support/security/CVE-2023-39418/> more details
+|
+</support/security/CVE-2023-39417/> CVE-2023-39417
+Announcement
+| 15
+| 15.4
+| core server
+7.5
+AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+| Extension script @substitutions@ within quoting allow SQL injection
+</support/security/CVE-2023-39417/> more details
+|
+</support/security/CVE-2023-5870/> CVE-2023-5870
+Announcement
+| 16, 15
+| 16.1, 15.5
+| core server
+2.2
+AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L
+| Role "pg_signal_backend" can signal certain superuser processes
+</support/security/CVE-2023-5870/> more details
+|
+</support/security/CVE-2023-5869/> CVE-2023-5869
+Announcement
+| 16, 15
+| 16.1, 15.5
+| core server
+8.8
+AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+| Buffer overrun from integer overflow in array modification
+</support/security/CVE-2023-5869/> more details
+|
+</support/security/CVE-2023-5868/> CVE-2023-5868
+Announcement
+| 16, 15
+| 16.1, 15.5
+| core server
+4.3
+AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+| Memory disclosure in aggregate function calls
+</support/security/CVE-2023-5868/> more details
+|
+</support/security/CVE-2023-2455/> CVE-2023-2455
+Announcement
+| 15
+| 15.3
+| core server
+4.2
+AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+| Row security policies disregard user ID changes after inlining
+</support/security/CVE-2023-2455/> more details
+|
+</support/security/CVE-2023-2454/> CVE-2023-2454
+Announcement
+| 15
+| 15.3
+| core server
+7.2
+AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+| CREATE SCHEMA ... schema_element defeats protective search_path changes
+</support/security/CVE-2023-2454/> more details
+|
+</support/security/CVE-2022-41862/> CVE-2022-41862
+Announcement
+| 15
+| 15.2
+| client
+3.7
+AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+| Client memory disclosure when connecting, with Kerberos, to modified server
+</support/security/CVE-2022-41862/> more details
+Unsupported versions
+You can also view archived security patches for unsupported versions. Note that no further
+security patches are made available for these versions as they are end of life.
+</support/security/14/> 14 -
+</support/security/13/> 13 -
+</support/security/12/> 12 -
+</support/security/11/> 11 -
+</support/security/10/> 10 -
+</support/security/9.6/> 9.6 -
+</support/security/9.5/> 9.5 -
+</support/security/9.4/> 9.4 -
+</support/security/9.3/> 9.3 -
+</support/security/9.2/> 9.2 -
+</support/security/9.1/> 9.1 -
+</support/security/9.0/> 9.0 -
+</support/security/8.4/> 8.4 -
+</support/security/8.3/> 8.3 -
+</support/security/8.2/> 8.2 -
+</support/security/8.1/> 8.1 -
+</support/security/8.0/> 8.0 -
+</support/security/7.4/> 7.4 -
+</support/security/7.3/> 7.3
+Components
+The following component references are used in the above table:
+| Component
+| Description
+| core server
+| This vulnerability exists in the core server product.
+| client
+| This vulnerability exists in a client library or client application only.
+| contrib module
+| This vulnerability exists in a contrib module. Contrib modules are not installed by default when PostgreSQL is installed from source. They may be installed by binary packages.
+| client contrib module
+| This vulnerability exists in a contrib module used on the client only.
+| packaging
+| This vulnerability exists in PostgreSQL binary packaging, e.g. an installer or RPM.
+The PostgreSQL Security Team
+The PostgreSQL Security Team is made up of a group of contributors to the
+PostgreSQL project who have experience in different aspects of database and
+information security.
+You can find a list of members on the security team here:
+Álvaro Herrera
+Andres Freund
+Andrew Dunstan
+Bruce Momjian
+Dave Page
+Greg Stark
+Heikki Linnakangas
+Jacob Champion
+Joe Conway
+Jonathan Katz
+Magnus Hagander
+Masahiko Sawada
+Michael Paquier
+Nathan Bossart
+Noah Misch
+Peter Eisentraut
+Peter Geoghegan
+Robert Haas
+Stefan Kaltenbrunner
+Tom Lane
+Tomas Vondra
