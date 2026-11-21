@@ -1,0 +1,1931 @@
+{
+  "status": "ok",
+  "since_utc": "2026-11-20T03:00:55.231Z",
+  "until_utc": "2026-11-21T02:31:40.764Z",
+  "new_cves": 743,
+  "fetch_errors": 0,
+  "watch_matched": 239,
+  "below_threshold": 239,
+  "thresholds": {
+    "cvss": 9.0,
+    "inventory_cvss": 7.0,
+    "inventory_unscored": true,
+    "epss": 0.5
+  },
+  "epss_status": "ok",
+  "hits": [],
+  "matched_below_threshold": [
+    {
+      "cve": "CVE-2026-99796",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/poll: cancel all matching requests in one pass"
+    },
+    {
+      "cve": "CVE-2026-99797",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/cancel: drop sqd->lock while SQPOLL waits"
+    },
+    {
+      "cve": "CVE-2026-99798",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring: defer foreign io-wq enqueues to task_work"
+    },
+    {
+      "cve": "CVE-2026-99799",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/sqpoll: don't wait for the thread to exit"
+    },
+    {
+      "cve": "CVE-2026-99800",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring: free the task context after a grace period"
+    },
+    {
+      "cve": "CVE-2026-99801",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/bpf-ops: clear bpf_ctx while submitting SQEs"
+    },
+    {
+      "cve": "CVE-2026-99802",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/register: enforce per-task restrictions in io_uring_register_blind()"
+    },
+    {
+      "cve": "CVE-2026-99803",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/net: mask socket type with SOCK_TYPE_MASK in io_socket_bpf_populate()"
+    },
+    {
+      "cve": "CVE-2026-99804",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "io_uring/io-wq: save worker type before dropping its reference"
+    },
+    {
+      "cve": "CVE-2026-99566",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "assoc_array: keep gc's cleanup out of the live tree on allocation failure"
+    },
+    {
+      "cve": "CVE-2026-99567",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "assoc_array: don't chain a new shortcut onto an existing one"
+    },
+    {
+      "cve": "CVE-2026-99568",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "iommufd/iova_bitmap: Ensure that iova_bitmap_set() handles the full IOVA"
+    },
+    {
+      "cve": "CVE-2026-99569",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: release a removed xattr node in roll-forward recovery"
+    },
+    {
+      "cve": "CVE-2026-99570",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: fix to invalidate curseg if change_curseg() fails"
+    },
+    {
+      "cve": "CVE-2026-99571",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvme-tcp: Validate the queue state under the queue lock in the address attribute"
+    },
+    {
+      "cve": "CVE-2026-99572",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: fix to avoid potential reference count leak in do_garbage_collect()"
+    },
+    {
+      "cve": "CVE-2026-99573",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: arm64: vgic: Stop the target vcpu when disabling LPIs"
+    },
+    {
+      "cve": "CVE-2026-99574",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: bound the SIT/NAT bitmaps by the checkpoint pack"
+    },
+    {
+      "cve": "CVE-2026-99575",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: return -EIO for a lost inode block after cp_error"
+    },
+    {
+      "cve": "CVE-2026-99576",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: zone: fix to avoid bio split on sequential zone"
+    },
+    {
+      "cve": "CVE-2026-99577",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: rtw88: usb: bound what the driver feeds the after-DTIM queue"
+    },
+    {
+      "cve": "CVE-2026-99578",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: rtw88: usb: route bmc frames via the high queue only for DTIM delivery"
+    },
+    {
+      "cve": "CVE-2026-99579",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: honour F_SEAL_EXEC when an ACL is set"
+    },
+    {
+      "cve": "CVE-2026-99580",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/userfaultfd: only allocate anon_vma in CoW mappings"
+    },
+    {
+      "cve": "CVE-2026-99581",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "platform/chrome: cros_usbpd_notify: Only use drvdata when parent is GOOG0004"
+    },
+    {
+      "cve": "CVE-2026-99582",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sctp: re-point retained control chunks on association migration"
+    },
+    {
+      "cve": "CVE-2026-99583",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sctp: hold shkey across socket migration"
+    },
+    {
+      "cve": "CVE-2026-99584",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "f2fs: fix to avoid folio->mapping dereference in is_{meta, node}_folio()"
+    },
+    {
+      "cve": "CVE-2026-99585",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: arm64: Use kvm_s2_fault_vma_info in gmem_abort()"
+    },
+    {
+      "cve": "CVE-2026-99586",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "iommu/arm-smmu-v3: Handle ARM erratum for CONT under invalidation with SVA"
+    },
+    {
+      "cve": "CVE-2026-99587",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ata: libata-scsi: reject data-in commands with a data-out buffer"
+    },
+    {
+      "cve": "CVE-2026-99588",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: tt: only update flags for TT events"
+    },
+    {
+      "cve": "CVE-2026-99589",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: tt: clear ROAM flag when re-adding a pending local client"
+    },
+    {
+      "cve": "CVE-2026-99590",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ceph: clamp the inline data length in ceph_fill_inline_data()"
+    },
+    {
+      "cve": "CVE-2026-99591",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "iommu/amd: Force device table to maximum size"
+    },
+    {
+      "cve": "CVE-2026-99592",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "x86/mm: Fix global ASID handed out to two processes"
+    },
+    {
+      "cve": "CVE-2026-99593",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "arm64: sdei: Preserve the interrupted context's exception registers"
+    },
+    {
+      "cve": "CVE-2026-99594",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "arm64: kexec_file: Fix elf_headers memory leak in retry loop"
+    },
+    {
+      "cve": "CVE-2026-99595",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sched/fair: Clear throttle state when leaving the fair class"
+    },
+    {
+      "cve": "CVE-2026-99596",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvme: wait for SRCU readers before splicing the namespace list"
+    },
+    {
+      "cve": "CVE-2026-99597",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "srcu: Add list_splice_init_srcu()"
+    },
+    {
+      "cve": "CVE-2026-99598",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "MIPS: sgi-ip32: Leave MACE PCI control alone in config accesses"
+    },
+    {
+      "cve": "CVE-2026-99599",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "udf: don't use eloc after the end of the unallocated space table"
+    },
+    {
+      "cve": "CVE-2026-99600",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "udf: fix preallocation discarding before an empty allocation extent"
+    },
+    {
+      "cve": "CVE-2026-99601",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "udf: check the unallocated space table when it is loaded"
+    },
+    {
+      "cve": "CVE-2026-99602",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "udf: don't let the extent type hide an exhausted free-space table extent"
+    },
+    {
+      "cve": "CVE-2026-99603",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mptcp: pm: kernel: use RCU to free endpoint listeners"
+    },
+    {
+      "cve": "CVE-2026-99604",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/etnaviv: Flush the tile status cache through both the PE and BLT"
+    },
+    {
+      "cve": "CVE-2026-99605",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/etnaviv: Fix NULL dereference on unbind without PPU flop reset"
+    },
+    {
+      "cve": "CVE-2026-99606",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/smc: don't spin in smc_rx_recvmsg() while a pipe holds spliced data"
+    },
+    {
+      "cve": "CVE-2026-99607",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ext2: preserve IOMAP_F_DIRTY for extending direct writes"
+    },
+    {
+      "cve": "CVE-2026-99608",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: usx2y: Guard the playback copy"
+    },
+    {
+      "cve": "CVE-2026-99609",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: usx2y: Require a buffer of two URBs"
+    },
+    {
+      "cve": "CVE-2026-99610",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: caiaq: free the EP4 URB when input setup fails"
+    },
+    {
+      "cve": "CVE-2026-99611",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: line6: Reject capture buffers smaller than two packets"
+    },
+    {
+      "cve": "CVE-2026-99612",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: hda/tas2781: Only accept CRC-less V1 data if all entries are valid"
+    },
+    {
+      "cve": "CVE-2026-99613",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ALSA: cs46xx: Handle SCB creation failures before dereferencing"
+    },
+    {
+      "cve": "CVE-2026-99614",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/nouveau/nvkm: clear use.enabled when subdev init fails"
+    },
+    {
+      "cve": "CVE-2026-99615",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "l2tp: only return sessions of the given tunnel in l2tp_session_get()"
+    },
+    {
+      "cve": "CVE-2026-99616",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: look up the index by the decoded origin"
+    },
+    {
+      "cve": "CVE-2026-99617",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "arm64: mm: validate /dev/mem mmap ranges without overflow"
+    },
+    {
+      "cve": "CVE-2026-99618",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmet: don't return memory contents beyond valid data when reading ANA log page"
+    },
+    {
+      "cve": "CVE-2026-99619",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: don't drop the gang dependency fence twice"
+    },
+    {
+      "cve": "CVE-2026-99620",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: don't walk the CS chunks when allocating them failed"
+    },
+    {
+      "cve": "CVE-2026-99621",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: unlock the VM and BO when attaching a KFD BO fails"
+    },
+    {
+      "cve": "CVE-2026-99622",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: drop the dma-buf reference when a KFD import fails"
+    },
+    {
+      "cve": "CVE-2026-99623",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: Clamp the ATIF backlight curve to its 99 points"
+    },
+    {
+      "cve": "CVE-2026-99624",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: Report MES ring wait timeouts."
+    },
+    {
+      "cve": "CVE-2026-99625",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: Fix duplicate dependency fence releases"
+    },
+    {
+      "cve": "CVE-2026-99626",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amd/display: Fix NULL deref in dcn401_update_clocks_update_dtb_dto"
+    },
+    {
+      "cve": "CVE-2026-99627",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu/gfx12: disallow GFXOFF while updating the SPM VMID"
+    },
+    {
+      "cve": "CVE-2026-99628",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amd/display: Avoid closing unowned DDC pins"
+    },
+    {
+      "cve": "CVE-2026-99629",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: clear RB_OVERFLOW bit when enabling interrupts for navi10_ih"
+    },
+    {
+      "cve": "CVE-2026-99630",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu/userq: validate the moved individual BOs on restore"
+    },
+    {
+      "cve": "CVE-2026-99631",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: check amdgpu_vm_ready() in dma-buf move notify"
+    },
+    {
+      "cve": "CVE-2026-99632",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdkfd: use the queue's process info for the WPTR BO eviction fence"
+    },
+    {
+      "cve": "CVE-2026-99633",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/amdgpu: keep the CS user fence BO in GTT"
+    },
+    {
+      "cve": "CVE-2026-99634",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mptcp: do not use Fast Open on MP_JOIN subflows"
+    },
+    {
+      "cve": "CVE-2026-99635",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vhost/vsock: size receive SKBs from declared payload"
+    },
+    {
+      "cve": "CVE-2026-99636",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: reject a negative TCP header offset in qdisc_pkt_len_segs_init()"
+    },
+    {
+      "cve": "CVE-2026-99637",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: inherit FMODE_NONOTIFY when opening directory realfiles"
+    },
+    {
+      "cve": "CVE-2026-99638",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/sched: clamp skb->queue_mapping before indexing the tx queue"
+    },
+    {
+      "cve": "CVE-2026-99639",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: fix whiteout creation in casefolded directories"
+    },
+    {
+      "cve": "CVE-2026-99640",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: do not let chattr change the casefold flag"
+    },
+    {
+      "cve": "CVE-2026-99641",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ovl: fail the mount if the casefold flag has changed"
+    },
+    {
+      "cve": "CVE-2026-99642",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/gup: check folio->mapping under folio lock in memfd_pin_folios()"
+    },
+    {
+      "cve": "CVE-2026-99643",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "khugepaged: fix readahead lock inversion in collapse_file()"
+    },
+    {
+      "cve": "CVE-2026-99644",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/memory-tiers: unregister empty tiers outside memory_tier_lock"
+    },
+    {
+      "cve": "CVE-2026-99645",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/cma: don't release CMA pages still in use"
+    },
+    {
+      "cve": "CVE-2026-99646",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/vma: don't leak the charge for stack growth"
+    },
+    {
+      "cve": "CVE-2026-99647",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/huge_memory: split huge PUDs when adjusting VMA boundaries"
+    },
+    {
+      "cve": "CVE-2026-99648",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/vma: call ->may_split() before a partial merge"
+    },
+    {
+      "cve": "CVE-2026-99649",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/ksm: check large swap-cache folios before mapping them"
+    },
+    {
+      "cve": "CVE-2026-99650",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/ksm: fix use of a freed anon_vma at swap-in"
+    },
+    {
+      "cve": "CVE-2026-99651",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/ksm: reset the unstable trees of all nodes"
+    },
+    {
+      "cve": "CVE-2026-99652",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: fix deadlock of mremap() against UFFDIO_MOVE"
+    },
+    {
+      "cve": "CVE-2026-99653",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: fix unkillable fault loop on MAP_DROPPABLE memory"
+    },
+    {
+      "cve": "CVE-2026-99654",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: fix unmap_mapping_range() beyond 4 GiB on 32-bit"
+    },
+    {
+      "cve": "CVE-2026-99655",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/memory: reject remote COW faults on PFN mappings"
+    },
+    {
+      "cve": "CVE-2026-99656",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/madvise: fix data loss from MADV_FREE on a KSM page"
+    },
+    {
+      "cve": "CVE-2026-99657",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/mmu_notifier: set ->mm only after mmgrab()"
+    },
+    {
+      "cve": "CVE-2026-99658",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/mmu_notifier: finish non-blocking interval invalidation on error"
+    },
+    {
+      "cve": "CVE-2026-99659",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/mmu_gather: fix flushing ranges with 4 GiB or larger"
+    },
+    {
+      "cve": "CVE-2026-99660",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/userfaultfd: write-lock the VMA before waking waiters when unregistering"
+    },
+    {
+      "cve": "CVE-2026-99661",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/gup: check for overflow when converting nr_pages to bytes in GUP-fast"
+    },
+    {
+      "cve": "CVE-2026-99662",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/gup: fix out-of-bounds write for nr_pages == 0 in GUP-fast"
+    },
+    {
+      "cve": "CVE-2026-99663",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/gup: fix clearing folios in memfd_pin_folios()"
+    },
+    {
+      "cve": "CVE-2026-99664",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/gup: recheck the PUD under PTL in follow_pud_mask()"
+    },
+    {
+      "cve": "CVE-2026-99665",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/khugepaged: preserve dirty bits when collapsing PTE-mapped THPs"
+    },
+    {
+      "cve": "CVE-2026-99666",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/khugepaged: fix PMD table lock leak in try_collapse_pte_mapped_thp()"
+    },
+    {
+      "cve": "CVE-2026-99667",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/khugepaged: always recheck the pmd in try_collapse_pte_mapped_thp()"
+    },
+    {
+      "cve": "CVE-2026-99668",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/huge_memory: fix zapping migration entries for device-private THPs"
+    },
+    {
+      "cve": "CVE-2026-99669",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/huge_memory: fix truncate racing with PMD zapping"
+    },
+    {
+      "cve": "CVE-2026-99670",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "can: dev: can_fill_info(): don't wake up controller if interface is down"
+    },
+    {
+      "cve": "CVE-2026-99671",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "can: raw, isotp: copy socket options outside of lock_sock()"
+    },
+    {
+      "cve": "CVE-2026-99672",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "can: protect the receive lists with a per-device lock"
+    },
+    {
+      "cve": "CVE-2026-99673",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "can: replace ARPHRD_CAN type checks with can_get_ml_priv()"
+    },
+    {
+      "cve": "CVE-2026-99674",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "can: dev: can_dropped_invalid_skb: drop CAN XL frames on non-CAN XL devices"
+    },
+    {
+      "cve": "CVE-2026-99675",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvmet: reject keep-alive timeouts that would overflow"
+    },
+    {
+      "cve": "CVE-2026-99676",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: restore refcount ordering for lockless socket access"
+    },
+    {
+      "cve": "CVE-2026-99677",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: clamp the pNFS layout range to the maximum file size"
+    },
+    {
+      "cve": "CVE-2026-99678",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: cap the block count of xfs_iomap_write_direct() at one extent"
+    },
+    {
+      "cve": "CVE-2026-99679",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: refuse a pNFS LAYOUTCOMMIT of a range without blocks"
+    },
+    {
+      "cve": "CVE-2026-99680",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: mark the inode preallocated for pNFS write layouts past EOF"
+    },
+    {
+      "cve": "CVE-2026-99681",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "blk-mq: fix out-of-bounds read in blk_mq_free_rqs"
+    },
+    {
+      "cve": "CVE-2026-99682",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "virtio_blk: use synchronous quiesce in virtblk_freeze_priv()"
+    },
+    {
+      "cve": "CVE-2026-99683",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vduse: fix VA/PA confusion in the coherent page fault path"
+    },
+    {
+      "cve": "CVE-2026-99684",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwrng: virtio - prevent use-after-free after a failed restore"
+    },
+    {
+      "cve": "CVE-2026-99685",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "iommu/virtio: Reset device before deleting virtqueues on probe failure"
+    },
+    {
+      "cve": "CVE-2026-99686",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vhost: fix used ring index wrap in vhost_add_used_n_in_order"
+    },
+    {
+      "cve": "CVE-2026-99687",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vhost-scsi: zero misaligned I/O bounce pages"
+    },
+    {
+      "cve": "CVE-2026-99688",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/sched: sch_qfq: prevent aggregate self-replacement"
+    },
+    {
+      "cve": "CVE-2026-99689",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: fix temporary cursor leak in btree shift corruption paths"
+    },
+    {
+      "cve": "CVE-2026-99690",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: cache the mount context for dentry lock callbacks"
+    },
+    {
+      "cve": "CVE-2026-99691",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/cluster: unlink socket containers before releasing resources"
+    },
+    {
+      "cve": "CVE-2026-99692",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: stop recovery before shutting down local allocators"
+    },
+    {
+      "cve": "CVE-2026-99693",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2/dlm: serialize migration MLE cleanup on failure"
+    },
+    {
+      "cve": "CVE-2026-99694",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: do not index before the entry array when dividing an empty bucket"
+    },
+    {
+      "cve": "CVE-2026-99695",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: find the xattr entry again after converting a block to a bucket"
+    },
+    {
+      "cve": "CVE-2026-99696",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ocfs2: find the xattr entry again after defragmenting a bucket"
+    },
+    {
+      "cve": "CVE-2026-99697",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: memcontrol: fix NULL pointer deref and UAF from high_work_func() on dying memcg"
+    },
+    {
+      "cve": "CVE-2026-99698",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/cma: accept memory of CMA areas reserved at a fixed address"
+    },
+    {
+      "cve": "CVE-2026-99699",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/cma: accept memory of multi-range CMA areas"
+    },
+    {
+      "cve": "CVE-2026-99700",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/hugetlb_vmemmap: map the shared tail page writable"
+    },
+    {
+      "cve": "CVE-2026-99701",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/ksm: fix userfaultfd protection during merge and unmerge"
+    },
+    {
+      "cve": "CVE-2026-99702",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/vma: write lock source VMA before duplicating it in __split_vma()"
+    },
+    {
+      "cve": "CVE-2026-99703",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/hugetlb: fix mremap deadlock when PMD sharing is possible"
+    },
+    {
+      "cve": "CVE-2026-99704",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/page-writeback: avoid 32-bit overflow in dirty threshold shares"
+    },
+    {
+      "cve": "CVE-2026-99705",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: memory: fix truncation removing mapped folios"
+    },
+    {
+      "cve": "CVE-2026-99706",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm: fix address wraparound when scanning large folio PTEs"
+    },
+    {
+      "cve": "CVE-2026-99707",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/khugepaged: flush deferred unmaps before dropping a failed folio"
+    },
+    {
+      "cve": "CVE-2026-99708",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ipv6: reject wrapped temporary address preferred lifetimes"
+    },
+    {
+      "cve": "CVE-2026-99709",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "inet: frags: limit the truesize of a reassembly queue"
+    },
+    {
+      "cve": "CVE-2026-99710",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86/mmu: Cap number of parent PTEs per SP at 1000 (the arbitrary rmap limit)"
+    },
+    {
+      "cve": "CVE-2026-99711",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: nVMX: Process each host MSR entry at most once when unwinding failed VM-Entry"
+    },
+    {
+      "cve": "CVE-2026-99712",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86: Conditionally resched when restarting REP string emulation"
+    },
+    {
+      "cve": "CVE-2026-99713",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "KVM: x86/mmu: Conditionally resched when retrying gPTE walk on A/D update failure"
+    },
+    {
+      "cve": "CVE-2026-99714",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvme: Do not drop the cdev reference twice when cdev_device_add() fails"
+    },
+    {
+      "cve": "CVE-2026-99715",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "nvme-rdma: fix NULL queue->ctrl dereference on reconnect"
+    },
+    {
+      "cve": "CVE-2026-99716",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: (coretemp) Set nr_cores only after core_data allocation succeeds"
+    },
+    {
+      "cve": "CVE-2026-99717",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: (pmbus/q54sj108a2) Add missing NULL pointer check"
+    },
+    {
+      "cve": "CVE-2026-99718",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: (peci/dimmtemp) Fix devres leak and UAF on concurrent unbind"
+    },
+    {
+      "cve": "CVE-2026-99719",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: (lm87) Fix drvdata type confusion in vrm_show() and vrm_store()"
+    },
+    {
+      "cve": "CVE-2026-99720",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: chipcap2: fix IRQ teardown ordering"
+    },
+    {
+      "cve": "CVE-2026-99721",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "hwmon: (aquacomputer_d5next) reject short status reports"
+    },
+    {
+      "cve": "CVE-2026-99722",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vringh: bound top-level re-entry into indirect tables"
+    },
+    {
+      "cve": "CVE-2026-99723",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vhost-vdpa: fix pinned page leak in vhost_vdpa_pa_map() error path"
+    },
+    {
+      "cve": "CVE-2026-99724",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ntfs: don't allow compression on volumes with clusters larger than 4K"
+    },
+    {
+      "cve": "CVE-2026-99725",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "cipso: fix optlen corruption in cipso_v4_delopt()"
+    },
+    {
+      "cve": "CVE-2026-99726",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/v3d: Widen cache_clean_lock over the whole L2TCACTL sequence"
+    },
+    {
+      "cve": "CVE-2026-99727",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/huge_memory: properly handle refcounted PUD mappings on fork"
+    },
+    {
+      "cve": "CVE-2026-99728",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/huge_memory: fix list corruption when deferred_split_scan() races with deferred_split_folio()"
+    },
+    {
+      "cve": "CVE-2026-99729",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/rmap: handle device-exclusive entries in folio_referenced_one()"
+    },
+    {
+      "cve": "CVE-2026-99730",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/filemap: finish fault cleanup before dropping the fault lock"
+    },
+    {
+      "cve": "CVE-2026-99731",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/filemap: don't lose a folio lock wakeup to a signal"
+    },
+    {
+      "cve": "CVE-2026-99732",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/filemap: read mapping->a_ops->free_folio under i_lock"
+    },
+    {
+      "cve": "CVE-2026-99733",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/truncate: look again if a folio left the mapping"
+    },
+    {
+      "cve": "CVE-2026-99734",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: make shmem_file() check the file's inode"
+    },
+    {
+      "cve": "CVE-2026-99735",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/mglru: don't use stack pointers when walking PUD and PMD tables"
+    },
+    {
+      "cve": "CVE-2026-99736",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: fix accounting of swapin-error markers"
+    },
+    {
+      "cve": "CVE-2026-99737",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: fix truncate loop after boundary swapin failure"
+    },
+    {
+      "cve": "CVE-2026-99738",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: preserve allocation errors when swapping in large entries"
+    },
+    {
+      "cve": "CVE-2026-99739",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: fix truncate hang in large swap entry"
+    },
+    {
+      "cve": "CVE-2026-99740",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/shmem: stop retrying folios that cannot be split"
+    },
+    {
+      "cve": "CVE-2026-99741",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "tmpfs: keep the quota soft limits of an unused id"
+    },
+    {
+      "cve": "CVE-2026-99742",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "mm/mempolicy: charge shared policy nodes"
+    },
+    {
+      "cve": "CVE-2026-99743",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: grant a POSIX ACL group entry only to the group's members"
+    },
+    {
+      "cve": "CVE-2026-99744",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: atl1c: drop oversized RX frames instead of panicking"
+    },
+    {
+      "cve": "CVE-2026-99745",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "x86/bugs: Select the BHI mitigation based on the attack vector properly"
+    },
+    {
+      "cve": "CVE-2026-99746",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ASoC: SOF: Intel: hda-sdw-bpt: Stop active DMA before closing BPT streams"
+    },
+    {
+      "cve": "CVE-2026-99747",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: fix NULL pointer dereference in session_user_name() and session_account_type()"
+    },
+    {
+      "cve": "CVE-2026-99748",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: revert fsids on durable reconnect and replay failure"
+    },
+    {
+      "cve": "CVE-2026-99749",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: enforce the read-only share flag when creating a stream"
+    },
+    {
+      "cve": "CVE-2026-99750",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ksmbd: require DELETE access for delete-on-close opens"
+    },
+    {
+      "cve": "CVE-2026-99751",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "bpf: Fix skb_pull() BUG in __bpf_redirect_neigh()"
+    },
+    {
+      "cve": "CVE-2026-99752",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/loongson: Handle buffer mapping failures when clearing a BO"
+    },
+    {
+      "cve": "CVE-2026-99753",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/loongson: Fix double free on BO initialization failure"
+    },
+    {
+      "cve": "CVE-2026-99754",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "scsi: target: Verify the iSCSI ISID is null-terminated"
+    },
+    {
+      "cve": "CVE-2026-99755",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ptp: fix use-after-free in extts_fifo_show() reading tsevqs unlocked"
+    },
+    {
+      "cve": "CVE-2026-99756",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "btrfs: prevent deleting the wrong subvolume by ID"
+    },
+    {
+      "cve": "CVE-2026-99757",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "btrfs: sysfs: restore NOFS context on early return in btrfs_sysfs_add_block_group_type()"
+    },
+    {
+      "cve": "CVE-2026-99758",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "sctp: account for chunk padding in sctp_init_cause()"
+    },
+    {
+      "cve": "CVE-2026-99759",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: tt: don't drop local events queued during TVLV update"
+    },
+    {
+      "cve": "CVE-2026-99760",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: tt: ignore ROAM flag of received ADD changes"
+    },
+    {
+      "cve": "CVE-2026-99761",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: stop originator purge worker before freeing TT"
+    },
+    {
+      "cve": "CVE-2026-99762",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "batman-adv: mcast: validate tracker padding before forwarding"
+    },
+    {
+      "cve": "CVE-2026-99763",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "9p: don't decrement a server-owned zero nlink"
+    },
+    {
+      "cve": "CVE-2026-99764",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "9p/xen: validate the response size from the backend"
+    },
+    {
+      "cve": "CVE-2026-99765",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "scsi: target: Fix demo-mode dynamic ACL dev-entry UAF vs LUN teardown"
+    },
+    {
+      "cve": "CVE-2026-99766",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "scsi: aic79xx: Fix NULL pointer dereference in device reset"
+    },
+    {
+      "cve": "CVE-2026-99767",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfrm4: use a full socket for local errors"
+    },
+    {
+      "cve": "CVE-2026-99768",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: mac80211: reinstate IEEE80211_TX_CTL_AMPDU flag in ieee80211_tx_prep_agg()"
+    },
+    {
+      "cve": "CVE-2026-99769",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/vc4: Drop the BO reservations outside of job_lock"
+    },
+    {
+      "cve": "CVE-2026-99770",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/vc4: Publish the output fence outside of job_lock"
+    },
+    {
+      "cve": "CVE-2026-99771",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "wifi: mac80211: reload TDLS header pointer after skb_linearize()"
+    },
+    {
+      "cve": "CVE-2026-99772",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/drm_crtc: fix race with dma_fence_signal() in ::get_driver_name()"
+    },
+    {
+      "cve": "CVE-2026-99773",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "drm/drm_crtc: ensure dma_fence_ops remain valid during device unbind"
+    },
+    {
+      "cve": "CVE-2026-99774",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfrm: espintcp: reorder operations within espintcp_init_sk"
+    },
+    {
+      "cve": "CVE-2026-99775",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfrm: interface: validate the IP header on xmit"
+    },
+    {
+      "cve": "CVE-2026-99776",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: clear stale client pointer on close"
+    },
+    {
+      "cve": "CVE-2026-99777",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: remove bogus context initialization in alloc_requests"
+    },
+    {
+      "cve": "CVE-2026-99778",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: fix out_req buffer leak in disable_usb9pfs"
+    },
+    {
+      "cve": "CVE-2026-99779",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: call disable_usb9pfs() from usb9pfs_disable()"
+    },
+    {
+      "cve": "CVE-2026-99780",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: always reset completion when disconnecting"
+    },
+    {
+      "cve": "CVE-2026-99781",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: set client to Disconnected on usb9pfs_disable"
+    },
+    {
+      "cve": "CVE-2026-99782",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: also disable endpoints on p9_usbg_close"
+    },
+    {
+      "cve": "CVE-2026-99783",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net/9p/usbg: Fix use-after-free in disable_usb9pfs()"
+    },
+    {
+      "cve": "CVE-2026-99784",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "9p/xen: fix refcount leak in p9_xen_response() on wrong tag"
+    },
+    {
+      "cve": "CVE-2026-99785",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "9p/trans_virtio: reject mount tags longer than NAME_MAX at probe"
+    },
+    {
+      "cve": "CVE-2026-99786",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfrm: retry inexact policy lookup after node reinsertion"
+    },
+    {
+      "cve": "CVE-2026-99787",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "cpufreq: CPPC: Select the frequency-invariance callback per CPU"
+    },
+    {
+      "cve": "CVE-2026-99788",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "ACPI: CPPC: Validate FFH register fields before hardware access"
+    },
+    {
+      "cve": "CVE-2026-99789",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "block: restore the iterator when rejecting a misaligned bio"
+    },
+    {
+      "cve": "CVE-2026-99790",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "NFSD: stop registering with rpcbind after a failure in listener_set"
+    },
+    {
+      "cve": "CVE-2026-99791",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "xfs: improve dirent bounds checking in scrub and repair"
+    },
+    {
+      "cve": "CVE-2026-99792",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "smb/server: prevent file publication after tree disconnect"
+    },
+    {
+      "cve": "CVE-2026-99793",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: L2CAP: Only accept connection responses to outstanding requests"
+    },
+    {
+      "cve": "CVE-2026-99794",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: L2CAP: Reject signalling responses in invalid states"
+    },
+    {
+      "cve": "CVE-2026-99795",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "cxl/features: Ensure that count is set before access to ent[] __counted_by()"
+    }
+  ]
+}

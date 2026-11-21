@@ -1,0 +1,22 @@
+--- yesterday
++++ 2026-11-21
+@@ -6,4 +6,19 @@
+ <link>https://expressjs.com/</link>
+ <item>
++<title>Express is joining the OpenJS CNA end-of-year break</title>
++<link>https://expressjs.com/en/blog/2026-11-20-joining-the-openjs-cna-end-of-year-break/</link>
++<guid isPermaLink="true">https://expressjs.com/en/blog/2026-11-20-joining-the-openjs-cna-end-of-year-break/</guid>
++<description>The Express security team is pausing from December 18, 2026 to January 4, 2027, alongside the OpenJS Foundation CNA.</description>
++<pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
++<content:encoded>
++<a href="https://expressjs.com/en/blog/2026-11-20-joining-the-openjs-cna-end-of-year-break/">Express is joining the OpenJS CNA end-of-year break</a>
++</content:encoded>
++<author>
++<name>Express Security Team</name>
++<uri>https://github.com/expressjs</uri>
++</author>
++<category>security</category>
++</item>
++<item>
+ <title>Express is now observable by design</title>
+ <link>https://expressjs.com/en/blog/2026-11-17-express-tracing-channels/</link>

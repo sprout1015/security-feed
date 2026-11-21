@@ -6,7 +6,29 @@
 <description>Mailing list for security advisories affecting Python or pip</description>
 <atom:link href="https://mail.python.org/archives/list/security-announce@python.org/feed/" rel="self"/>
 <language>en</language>
-<lastBuildDate>Thu, 12 Nov 2026 16:07:16 +0000</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 19:08:15 +0000</lastBuildDate>
+<item>
+<title>[Security-announce][CVE-2026-133949] pip bundles compromised eMudhra certificates via certifi</title>
+<link>https://mail.python.org/archives/list/security-announce@python.org/message/4234WU4ONSVWPT3BIGG6TOJO2UFE26Y6/</link>
+<description>There is a CRITICAL severity vulnerability affecting pip.
+pip prior to v26.2.2 the certifi bundled with pip contains the compromised
+eMudhra certificates.
+Upgrading to a secure version of pip should be done either by first
+upgrading Python to a version that rejects the compromised intermediates (
+https://www.cve.org/CVERecord?id=CVE-2026-115557) or use hash pinning with
+a known-secure version of pip.
+Please see the linked CVE ID for the latest information on affected
+versions:
+* https://github.com/advisories/ghsa-6q48-6c7w-9gw2
+*
+https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576
+* https://www.cve.org/CVERecord?id=CVE-2026-133949
+* https://github.com/pypa/pip/pull/14371
+</description>
+<author>seth＠python.org (Seth Larson)</author>
+<pubDate>Fri, 20 Nov 2026 19:08:15 +0000</pubDate>
+<guid>https://mail.python.org/archives/list/security-announce@python.org/message/4234WU4ONSVWPT3BIGG6TOJO2UFE26Y6/</guid>
+</item>
 <item>
 <title>[Security-announce][CVE-2026-16052] Cookie Attribute Injection via Unescaped Semicolons in http.cookies.Morsel</title>
 <link>https://mail.python.org/archives/list/security-announce@python.org/message/IZL4QUFV7PKGT2JYSU2DCBMLTWYJDGKZ/</link>
@@ -603,25 +625,6 @@ versions:
 <author>steve.dower＠python.org (Steve Dower)</author>
 <pubDate>Tue, 16 Jun 2026 15:01:03 +0000</pubDate>
 <guid>https://mail.python.org/archives/list/security-announce@python.org/message/JIFOBO7UX3LY4VJKJUOKYJV62CFR2IRH/</guid>
-</item>
-<item>
-<title>[Security-announce][CVE-2026-9669] bz2.BZ2Decompressor reuse after error can cause a stack buffer overflow</title>
-<link>https://mail.python.org/archives/list/security-announce@python.org/message/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/</link>
-<description>There is a HIGH severity vulnerability affecting CPython.
-bz2.BZ2Decompressor objects could be reused after a decompression error.
-If an application caught the resulting OSError and retried with the
-same decompressor,
-crafted input could cause the decompressor to resume from an invalid
-internal state
-and perform out-of-bounds writes to a stack buffer. This could crash the process
-when processing untrusted data.
-Please see the linked CVE ID for the latest information on affected versions:
-* https://www.cve.org/CVERecord?id=CVE-2026-9669
-* https://github.com/python/cpython/pull/150600
-</description>
-<author>emma＠emmatyping.dev (Emma Smith)</author>
-<pubDate>Mon, 08 Jun 2026 20:07:31 +0000</pubDate>
-<guid>https://mail.python.org/archives/list/security-announce@python.org/message/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/</guid>
 </item>
 </channel>
 </rss>

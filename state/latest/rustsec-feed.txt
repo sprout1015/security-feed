@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>RustSec Advisories</title>
 <id>https://rustsec.org/feed.xml</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
+<updated>2026-11-20T12:00:00+00:00</updated>
 <author>
 <name>RustSec</name>
 </author>
@@ -10,6 +10,833 @@
 <link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/>
 <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
 <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
+<entry>
+<title>RUSTSEC-2026-0583: Vulnerability in sad-rsa</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0583.html</id>
+<updated>2026-11-20T12:00:00+00:00</updated>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0583.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0583: Vulnerability in sad-rsa"/>
+<published>2026-11-20T12:00:00+00:00</published>
+<summary xml:lang="en">Panics during RSA private-key construction, validation, or re-encoding</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/sad-rsa/RUSTSEC-2026-0583.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/sad-rsa/RUSTSEC-2026-0583.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0583">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0583
+</h1>
+<span class="subtitle">
+<p>Panics during RSA private-key construction, validation, or re-encoding</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-19">
+November 19, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/sad-rsa.html">sad-rsa</a>
+(<a href="https://crates.io/crates/sad-rsa">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/rsa.html">#rsa</a>
+<a href="/keywords/panic.html">#panic</a>
+<a href="/keywords/private-key.html">#private-key</a>
+<a href="/keywords/pkcs1.html">#pkcs1</a>
+<a href="/keywords/pkcs8.html">#pkcs8</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-3hj7-mch7-c7cc">GHSA-3hj7-mch7-c7cc</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4">
+https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>5.3 <span class="tag medium">
+MEDIUM
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Attack Complexity</dt>
+<dd>Low</dd>
+<dt>Privileges Required</dt>
+<dd>None</dd>
+<dt>User Interaction</dt>
+<dd>None</dd>
+<dt>Scope</dt>
+<dd>Unchanged</dd>
+<dt>Confidentiality Impact</dt>
+<dd>None</dd>
+<dt>Integrity Impact</dt>
+<dd>None</dd>
+<dt>Availability Impact</dt>
+<dd>Low</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.10.4</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>sad_rsa::RsaPrivateKey::crt_coefficient</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.10.4</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>sad_rsa::RsaPrivateKey::from_components</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.10.4</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>sad_rsa::RsaPrivateKey::from_p_q</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.10.4</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>sad_rsa::RsaPrivateKey::from_primes</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.10.4</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>sad_rsa::RsaPrivateKey::validate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.10.4</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>
+<code>RsaPrivateKey</code> private-key construction, validation, and serialization can panic across three
+classes of inputs, as well as when re-encoding certain valid keys:</p>
+<ul>
+<li>
+<code>RsaPrivateKey::from_components</code> and PKCS#1 or PKCS#8 private-key decoding (DER or PEM) can panic
+during validation when a supplied factor equals 1, because <code>RsaPrivateKey::validate()</code> let a
+factor of 1 reach a later check that panicked.</li>
+<li>
+<code>RsaPrivateKey::from_primes</code> and <code>RsaPrivateKey::from_p_q</code> can panic during construction when a
+supplied factor is 0, 1, or even.</li>
+<li>Prime recovery in <code>RsaPrivateKey::from_components</code> can panic when the private exponent is 0.</li>
+<li>For a key, including a valid one, whose first prime occupies more limbs than the second,
+<code>crt_coefficient</code>, <code>to_pkcs1_der</code>, <code>to_pkcs8_der</code>, and <code>serde</code> serialization can panic.</li>
+</ul>
+<p>An application that imports untrusted private keys or factors, or re-encodes such keys, can lose a
+worker, or the whole process when built with <code>panic = &quot;abort&quot;</code>. Public-key parsing is not affected.</p>
+<p>Fixed in 0.10.4, which rejects factors below 2, even factors, repeated factors, and a zero private
+exponent during prime recovery, and computes the CRT coefficient and re-encodes valid two-prime
+keys when the first prime occupies more limbs than the second.</p>
+<p>If you cannot upgrade to 0.10.4, isolate the entire import, construction, CRT calculation, or
+serialization in a separate process and treat an abnormal exit as an operation failure, or use
+<code>catch_unwind</code> around the entire operation when panics unwind.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0584.html</id>
+<updated>2026-11-20T12:00:00+00:00</updated>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0584.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit"/>
+<published>2026-11-20T12:00:00+00:00</published>
+<summary xml:lang="en">gRPC `IpKeyExtractor` keys on client-supplied forwarding headers</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/tokio-rate-limit/RUSTSEC-2026-0584.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/tokio-rate-limit/RUSTSEC-2026-0584.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0584">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0584
+</h1>
+<span class="subtitle">
+<p>gRPC <code>IpKeyExtractor</code> keys on client-supplied forwarding headers</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-19">
+November 19, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/tokio-rate-limit.html">tokio-rate-limit</a>
+(<a href="https://crates.io/crates/tokio-rate-limit">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/rate-limit.html">#rate-limit</a>
+<a href="/keywords/grpc.html">#grpc</a>
+<a href="/keywords/tonic.html">#tonic</a>
+<a href="/keywords/x-forwarded-for.html">#x-forwarded-for</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-r5c9-r265-ccg3">GHSA-r5c9-r265-ccg3</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/sadco-io/tokio-rate-limit/releases/tag/v0.11.1">
+https://github.com/sadco-io/tokio-rate-limit/releases/tag/v0.11.1
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>5.3 <span class="tag medium">
+MEDIUM
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Attack Complexity</dt>
+<dd>Low</dd>
+<dt>Privileges Required</dt>
+<dd>None</dd>
+<dt>User Interaction</dt>
+<dd>None</dd>
+<dt>Scope</dt>
+<dd>Unchanged</dd>
+<dt>Confidentiality Impact</dt>
+<dd>None</dd>
+<dt>Integrity Impact</dt>
+<dd>None</dd>
+<dt>Availability Impact</dt>
+<dd>Low</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.11.1</code>
+</li>
+</ul>
+</dd>
+<dt id="unaffected">Unaffected</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.5.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>tokio_rate_limit::tonic_middleware::IpKeyExtractor::extract</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.5.0, &#60;0.11.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>
+<code>tonic_middleware::IpKeyExtractor</code> is documented as rate limiting gRPC requests by client IP address,
+but on a standard tonic server it keys on client-supplied <code>x-forwarded-for</code> and <code>x-real-ip</code>
+headers. In 0.5.0–0.9.1, the extractor reads those headers directly; in 0.10.0–0.11.0, it first
+checks for a bare <code>std::net::SocketAddr</code> request extension—which <code>tonic::transport::Server</code> never
+supplies, as it provides <code>TcpConnectInfo</code> instead—and falls back to the same headers. Direct
+clients can therefore choose their rate-limit key to bypass per-IP rate limits and increase the
+number of tracked keys; without forwarding headers, 0.5.0–0.9.1 allow requests without limiting
+them and 0.10.0–0.11.0 reject them by default unless <code>.fail_open()</code> is enabled.</p>
+<p>Applications are affected if they use <code>GrpcRateLimitLayer</code> with <code>IpKeyExtractor</code> (the
+<code>tonic-support</code> feature). The HTTP middleware's <code>IpKeyExtractor</code> reads <code>ConnectInfo&lt;SocketAddr&gt;</code> and
+is not affected.</p>
+<p>Version 0.11.1 fixes <code>IpKeyExtractor</code> to honor a server-supplied <code>SocketAddr</code> override first and then
+read the TCP peer address from tonic's <code>TcpConnectInfo</code> (which <code>tonic::transport::Server</code> attaches
+to plaintext connections and connections using its built-in TLS), without ever reading forwarding
+headers. Deployments behind a trusted proxy can use the new opt-in <code>ForwardedIpKeyExtractor</code>, which
+reads a single configured header (<code>x-forwarded-for</code> or <code>x-real-ip</code>) and is only correct when that
+proxy sets the header as documented.</p>
+<p>If you cannot upgrade to 0.11.1, use a custom key extractor that reads the peer IP from tonic's
+connection information for the transport in use (including TLS) and rejects requests without a
+verified peer address before invoking the limiter, or restrict backend access to a trusted proxy
+that strips all incoming <code>x-forwarded-for</code> and <code>x-real-ip</code> fields and sets one <code>x-forwarded-for</code>
+value to the verified client IP on every request.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0585: Vulnerability in pqcrypto-mlkem</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0585.html</id>
+<updated>2026-11-20T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0585.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0585: Vulnerability in pqcrypto-mlkem"/>
+<published>2026-11-20T12:00:00+00:00</published>
+<summary xml:lang="en">ML-KEM does not perform the FIPS 203 input checks</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-mlkem/RUSTSEC-2026-0585.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-mlkem/RUSTSEC-2026-0585.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0585">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0585
+</h1>
+<span class="subtitle">
+<p>ML-KEM does not perform the FIPS 203 input checks</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/pqcrypto-mlkem.html">pqcrypto-mlkem</a>
+(<a href="https://crates.io/crates/pqcrypto-mlkem">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/ml-kem.html">#ml-kem</a>
+<a href="/keywords/fips203.html">#fips203</a>
+<a href="/keywords/input-validation.html">#input-validation</a>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mlkem-input-validation">
+https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mlkem-input-validation
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+no patched versions
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem1024::decapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem1024::encapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem512::decapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem512::encapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem768::decapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mlkem::mlkem768::encapsulate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>
+<code>pqcrypto-mlkem</code> wraps PQClean's ML-KEM implementation, which does not perform
+the input checks required by FIPS 203:</p>
+<ul>
+<li>encapsulation does not perform the encapsulation key modulus check
+(section 7.2), so encapsulation keys with coefficients that are not reduced
+modulo q are accepted;</li>
+<li>decapsulation does not perform the decapsulation key hash check
+(section 7.3), so a decapsulation key whose stored hash or embedded
+encapsulation key has been altered is accepted.</li>
+</ul>
+<p>With the Wycheproof ML-KEM vectors, 108 / 112 / 116 invalid encapsulation keys
+(ML-KEM-512 / -768 / -1024) and 2 invalid decapsulation keys per parameter set
+are accepted.</p>
+<p>This does not disclose key material. It is a FIPS 203 non-conformance, and an
+affected implementation can disagree with a conforming one about which keys
+are valid.</p>
+<p>The crate is unmaintained (see RUSTSEC-2026-0161) and no patched version is
+expected. Migrating to a maintained implementation, such as the
+<a href="https://crates.io/crates/ml-kem">
+<code>ml-kem</code>
+</a> crate, is recommended.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0586: Vulnerability in pqcrypto-mldsa</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0586.html</id>
+<updated>2026-11-20T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0586.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0586: Vulnerability in pqcrypto-mldsa"/>
+<published>2026-11-20T12:00:00+00:00</published>
+<summary xml:lang="en">ML-DSA verification accepts non-conforming signatures with the `avx2` feature</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-mldsa/RUSTSEC-2026-0586.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-mldsa/RUSTSEC-2026-0586.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0586">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0586
+</h1>
+<span class="subtitle">
+<p>ML-DSA verification accepts non-conforming signatures with the <code>avx2</code> feature</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/pqcrypto-mldsa.html">pqcrypto-mldsa</a>
+(<a href="https://crates.io/crates/pqcrypto-mldsa">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/ml-dsa.html">#ml-dsa</a>
+<a href="/keywords/signature.html">#signature</a>
+<a href="/keywords/verification.html">#verification</a>
+<a href="/keywords/avx2.html">#avx2</a>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier">
+https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier
+</a>
+</li>
+<li>
+<a href="https://github.com/pq-crystals/dilithium/issues/113">
+https://github.com/pq-crystals/dilithium/issues/113
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+no patched versions
+</dd>
+<dt>Affected Architectures</dt>
+<dd>
+<ul>
+<li>
+<code>x86_64</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>pqcrypto_mldsa::mldsa44::verify_detached_signature</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.2</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mldsa::mldsa65::verify_detached_signature</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.2</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>pqcrypto_mldsa::mldsa87::verify_detached_signature</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.2</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>With the default <code>avx2</code> feature on x86_64 (non-Windows) and a CPU that supports
+AVX2, <code>pqcrypto-mldsa</code> verifies signatures with PQClean's AVX2 implementation of
+ML-DSA. That implementation predates two upstream fixes
+(<a href="https://github.com/pq-crystals/dilithium/issues/113">pq-crystals/dilithium#113</a>,
+3 June 2026):</p>
+<ul>
+<li>the verifier does not check that the infinity norm of <code>z</code> is below
+<code>γ1 − β</code> (FIPS 204, Algorithm 8, line 13), so it accepts signatures that
+conforming verifiers reject;</li>
+<li>
+<code>use_hint_avx()</code> mishandles a boundary case, so one class of valid
+signatures is rejected.</li>
+</ul>
+<p>Creating an accepted out-of-bound signature requires the private key. The
+practical effect is that verification results differ between this crate with
+AVX2 and conforming implementations, including this crate without AVX2.</p>
+<p>The Wycheproof ML-DSA verification vectors reproduce both defects: with AVX2,
+37 / 41 / 49 invalid vectors (ML-DSA-44 / -65 / -87) are accepted and one valid
+vector per parameter set is rejected.</p>
+<p>The crate is unmaintained (see RUSTSEC-2026-0166) and no patched version is
+expected. Disabling the <code>avx2</code> feature avoids the affected code. Migrating to a
+maintained implementation, such as the <a href="https://crates.io/crates/ml-dsa">
+<code>ml-dsa</code>
+</a>
+crate, is recommended.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0587: Vulnerability in wasmtime-wasi</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0587.html</id>
+<updated>2026-11-20T12:00:00+00:00</updated>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0587.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0587: Vulnerability in wasmtime-wasi"/>
+<published>2026-11-20T12:00:00+00:00</published>
+<summary xml:lang="en">WASI filesystem sandbox escape on Windows through a drive-prefixed path component</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime-wasi/RUSTSEC-2026-0587.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime-wasi/RUSTSEC-2026-0587.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0587">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0587
+</h1>
+<span class="subtitle">
+<p>WASI filesystem sandbox escape on Windows through a drive-prefixed path component</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-19">
+November 19, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/wasmtime-wasi.html">wasmtime-wasi</a>
+(<a href="https://crates.io/crates/wasmtime-wasi">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-f2pq-268w-886c">GHSA-f2pq-268w-886c</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/bytecodealliance/wasmtime/pull/15371">
+https://github.com/bytecodealliance/wasmtime/pull/15371
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>7.5 <span class="tag high">
+HIGH
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Complexity</dt>
+<dd>Low</dd>
+<dt>Attack Requirements</dt>
+<dd>Present</dd>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Privileges Required</dt>
+<dd>Low</dd>
+<dt>Availability Impact to the Subsequent System</dt>
+<dd>None</dd>
+<dt>Confidentiality Impact to the Subsequent System</dt>
+<dd>None</dd>
+<dt>Integrity Impact to the Subsequent System</dt>
+<dd>None</dd>
+<dt>User Interaction</dt>
+<dd>Passive</dd>
+<dt>Availability Impact to the Vulnerable System</dt>
+<dd>High</dd>
+<dt>Confidentiality Impact to the Vulnerable System</dt>
+<dd>High</dd>
+<dt>Integrity Impact to the Vulnerable System</dt>
+<dd>High</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=36.0.22, &#60;37.0.0</code>
+</li>
+<li>
+<code>&#62;=48.0.10, &#60;49.0.0</code>
+</li>
+<li>
+<code>&#62;=49.0.7, &#60;50.0.0</code>
+</li>
+<li>
+<code>&#62;=50.0.3</code>
+</li>
+</ul>
+</dd>
+<dt>Affected OSes</dt>
+<dd>
+<ul>
+<li>
+<code>windows</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>This is an entry in the RustSec database for the Wasmtime security advisory
+located at
+https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-f2pq-268w-886c
+For more information see the GitHub-hosted security advisory.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
 <entry>
 <title>RUSTSEC-2026-0581: Unsoundness in heapless</title>
 <id>https://rustsec.org/advisories/RUSTSEC-2026-0581.html</id>
@@ -6640,4352 +7467,6 @@ https://github.com/hickory-dns/hickory-dns/commit/2e3c829ea45000b1c409a64a03bd42
 <p>DNSSEC validation did not make this distinction. It used such a record as a covering NSEC for names below the cut, and as a direct match proving that other types did not exist at the cut. An attacker who can answer or modify DNS responses can replay the parent's genuine signed records to get an NXDOMAIN or NODATA response for an existing name in the child zone accepted as secure. A recursor caches that denial for the negative TTL.</p>
 <p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
 <p>The fix adds <code>NSEC::is_ancestor_delegation()</code> in hickory-proto. Validation no longer uses such a record to cover a name below its owner, and treats a direct match on it as bogus unless the query is for DS. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2024-0450: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2024-0450.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2024-0450.html" rel="alternate" type="text/html" title="RUSTSEC-2024-0450: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Memory exhaustion from an unchecked SSH packet length</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2024-0450.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2024-0450.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2024-0450">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2024-0450
-</h1>
-<span class="subtitle">
-<p>Memory exhaustion from an unchecked SSH packet length</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2024-08-14">
-August 14, 2024
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh.html">#ssh</a>
-<a href="/keywords/packet-length.html">#packet-length</a>
-<a href="/keywords/allocation.html">#allocation</a>
-<a href="/keywords/oom.html">#oom</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2024-43410">CVE-2024-43410</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-vgvv-x7xg-6cqg">GHSA-vgvv-x7xg-6cqg</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/f660ea3f64b86d11d19e33076012069f02431e55">
-https://github.com/Eugeny/russh/commit/f660ea3f64b86d11d19e33076012069f02431e55
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.44.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When reading a packet, russh took the 4-byte packet length sent by the peer and sized its receive buffer from it without any upper bound. The length is fully controlled by the other side of the connection and is read before authentication, so an unauthenticated client can claim packets of up to about 4 GiB and make a server allocate that much memory per connection. A few such connections are enough to run the process out of memory.</p>
-<p>From 0.44.1, lengths above 256 KiB are rejected with <code>Error::PacketSize</code> before the buffer is sized.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0494: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0494.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0494.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0494: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">SSH message fields allocated before their size is checked</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2026-0494.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2026-0494.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0494">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0494
-</h1>
-<span class="subtitle">
-<p>SSH message fields allocated before their size is checked</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-06-11">
-June 11, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh.html">#ssh</a>
-<a href="/keywords/kexinit.html">#kexinit</a>
-<a href="/keywords/name-list.html">#name-list</a>
-<a href="/keywords/allocation.html">#allocation</a>
-<a href="/keywords/pre-auth.html">#pre-auth</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-48110">CVE-2026-48110</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-4r3c-5hpg-58qr">GHSA-4r3c-5hpg-58qr</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/72b250aa2dacb3bb1b13a84499c09bd9fc836158">
-https://github.com/Eugeny/russh/commit/72b250aa2dacb3bb1b13a84499c09bd9fc836158
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.61.0</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.34.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Many of russh's client and server message handlers decoded length-prefixed strings, byte fields and name-lists from the peer into owned <code>String</code>, <code>Vec</code> or name-list values first and only checked their size and meaning afterwards. This includes the algorithm name-lists in <code>SSH_MSG_KEXINIT</code>, which a server parses during the initial key exchange, before any authentication.</p>
-<p>A peer can fill these fields with oversized or highly fragmented values, for example a name-list of hundreds of thousands of one-letter algorithm names, and make russh allocate far more memory than the packet itself takes. With many concurrent connections this can exhaust the memory of a server process.</p>
-<p>From 0.61.0, name-lists are rejected before they are split into separate strings when they are longer than 16 KiB or hold more than 1,024 entries, and the key exchange decodes its algorithm lists through this bounded decoder.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0493: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0493.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0493.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0493: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">No limit on the size of a decompressed SSH packet</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2026-0493.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2026-0493.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0493">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0493
-</h1>
-<span class="subtitle">
-<p>No limit on the size of a decompressed SSH packet</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-05-29">
-May 29, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh.html">#ssh</a>
-<a href="/keywords/zlib.html">#zlib</a>
-<a href="/keywords/compression.html">#compression</a>
-<a href="/keywords/decompression-bomb.html">#decompression-bomb</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-46702">CVE-2026-46702</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-wwx6-x28x-8259">GHSA-wwx6-x28x-8259</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/2692a6f66edafaf63f463c412b45d8490f7ad06e">
-https://github.com/Eugeny/russh/commit/2692a6f66edafaf63f463c412b45d8490f7ad06e
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.61.1</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.34.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>With <code>zlib</code> or <code>zlib@openssh.com</code> compression negotiated, the packet length that russh checks applies to the compressed payload only. The decompressor kept growing its output buffer until the whole payload was inflated, with no limit of its own, so a packet that is small on the wire could expand to hundreds of megabytes before it was parsed.</p>
-<p>The default server configuration offers both zlib methods, and a client that lists compression first can select it during the initial key exchange. That client can then send such a packet after <code>NEWKEYS</code> but before authenticating, so a russh server with default settings can be made to use large amounts of memory by an unauthenticated peer. A malicious server can do the same to a client that negotiated compression.</p>
-<p>From 0.61.1, decompressed output is capped at the same maximum as an uncompressed packet (256 KiB plus a few bytes of header room), and larger packets are rejected with <code>Error::PacketSize</code>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0496: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0496.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0496.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0496: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Pre-authentication allocation from the keyboard-interactive response count</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2026-0496.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2026-0496.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0496">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0496
-</h1>
-<span class="subtitle">
-<p>Pre-authentication allocation from the keyboard-interactive response count</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-04-24">
-April 24, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh.html">#ssh</a>
-<a href="/keywords/keyboard-interactive.html">#keyboard-interactive</a>
-<a href="/keywords/allocation.html">#allocation</a>
-<a href="/keywords/pre-auth.html">#pre-auth</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-42189">CVE-2026-42189</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-f5v4-2wr6-hqmg">GHSA-f5v4-2wr6-hqmg</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/6c3c80a9b6d60763d6227d60fa8310e57172a4d1">
-https://github.com/Eugeny/russh/commit/6c3c80a9b6d60763d6227d60fa8310e57172a4d1
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.60.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>A server that answers a keyboard-interactive authentication request with prompts (<code>Auth::Partial</code>, as a TOTP or other second-factor login does) then parses the client's <code>SSH_MSG_USERAUTH_INFO_RESPONSE</code>. russh read the number of responses from that message and reserved a vector of that many entries before reading any of them. A client that has not authenticated can send a very large count in a packet that carries no responses at all, and the server tries to allocate several gigabytes and may be killed for running out of memory.</p>
-<p>Servers whose handler keeps the default behaviour, which rejects keyboard-interactive authentication, are not affected. From 0.60.1 the count is limited by how many responses the remaining packet data could actually hold.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0495: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0495.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0495.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0495: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Agent server signs with confirm-constrained keys without calling `Agent::confirm`</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2026-0495.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2026-0495.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0495">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0495
-</h1>
-<span class="subtitle">
-<p>Agent server signs with confirm-constrained keys without calling <code>Agent::confirm</code>
-</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-10-30">
-October 30, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh-agent.html">#ssh-agent</a>
-<a href="/keywords/confirm.html">#confirm</a>
-<a href="/keywords/constraint.html">#constraint</a>
-<a href="/keywords/authorization.html">#authorization</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-116794">CVE-2026-116794</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-vp5q-ff62-jwqv">GHSA-vp5q-ff62-jwqv</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/62db6e7defd6d244159da962ccccb029e785ce0f">
-https://github.com/Eugeny/russh/commit/62db6e7defd6d244159da962ccccb029e785ce0f
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.65.0</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.50.0-beta.12</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>A key added to an SSH agent with the confirm constraint (what <code>ssh-add -c</code> sends) must not be used to sign until the user approves each use. russh's agent server (<code>russh::keys::agent::server</code>) accepted the constraint, but when a sign request arrived for such a key it used a fixed <code>true</code> in place of the result of <code>Agent::confirm</code>, so the application's confirmation step never ran. This started in 0.50.0-beta.12; 0.50.0-beta.8 to beta.11 still called <code>confirm</code>, and earlier russh releases have no agent server.</p>
-<p>Any process that can reach the agent, including a remote host when the agent is forwarded, can then sign with the protected key without the user's approval, for example to log in elsewhere as the user. The private key itself is not disclosed. Agents whose <code>Agent::confirm</code> keeps the default, which always returns <code>true</code>, behave the same before and after the fix.</p>
-<p>From 0.65.0 the agent server calls <code>Agent::confirm</code> for confirm-constrained keys and refuses to sign when it returns <code>false</code>. Implementations that left <code>confirm</code> unimplemented (for example as <code>todo!()</code>) will now reach that code.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0492: Vulnerability in russh</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0492.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0492.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0492: Vulnerability in russh"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Client `Handler` callbacks run for channels the client never opened</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/russh/RUSTSEC-2026-0492.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/russh/RUSTSEC-2026-0492.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0492">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0492
-</h1>
-<span class="subtitle">
-<p>Client <code>Handler</code> callbacks run for channels the client never opened</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-30">
-September 30, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/russh.html">russh</a>
-(<a href="https://crates.io/crates/russh">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/ssh.html">#ssh</a>
-<a href="/keywords/client.html">#client</a>
-<a href="/keywords/channel.html">#channel</a>
-<a href="/keywords/handler.html">#handler</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-102823">CVE-2026-102823</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-47hw-gvq5-r2gm">GHSA-47hw-gvq5-r2gm</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Eugeny/russh/commit/3430fd26ecafc0dc3705210f5f39a9119fa22774">
-https://github.com/Eugeny/russh/commit/3430fd26ecafc0dc3705210f5f39a9119fa22774
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.63.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>On the client side, russh passed channel messages from the server (data, extended data, EOF, close, success, failure, open failure and the exit-status, exit-signal and xon-xoff requests) to the application's <code>client::Handler</code> callbacks without checking that the channel number belonged to a channel the client had opened and the server had confirmed. The server side already performed this check.</p>
-<p>A malicious or compromised SSH server can therefore send these messages for any channel number, including the next number the client will allocate (they are assigned in order) or one it has already closed. An application that tracks per-channel state can be made to record a false exit status, see a channel close before its real output arrives, or panic when it looks up a channel it does not know.</p>
-<p>From 0.63.1 the client ignores channel messages for channels that are not established and confirmed, and handles an open failure only for a channel it is actually opening.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0510: Vulnerability in vodozemac</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0510.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0510.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0510: Vulnerability in vodozemac"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Panic when decoding malformed Ed25519 keys from Base64</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/vodozemac/RUSTSEC-2026-0510.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/vodozemac/RUSTSEC-2026-0510.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0510">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0510
-</h1>
-<span class="subtitle">
-<p>Panic when decoding malformed Ed25519 keys from Base64</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-11">
-November 11, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/vodozemac.html">vodozemac</a>
-(<a href="https://crates.io/crates/vodozemac">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-pqp6-f7wc-6498">GHSA-pqp6-f7wc-6498</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/matrix-org/vodozemac/pull/453">
-https://github.com/matrix-org/vodozemac/pull/453
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.11.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>vodozemac::Ed25519PublicKey::from_base64</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.11.2</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>vodozemac::Ed25519SecretKey::from_base64</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.11.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>In version 0.11.1 and earlier of vodozemac, Ed25519PublicKey::from_base64() and
-Ed25519SecretKey::from_base64() panic on malformed input instead of returning an
-error, if the input decodes to 31 or 33 bytes instead of the expected 32 bytes.
-An attacker who can supply a key to an application using vodozemac can crash it.</p>
-<h2>Impact</h2>
-<p>Ed25519 public keys are routinely received from other Matrix users and servers,
-so a malicious party can publish a crafted key that crashes clients parsing it.</p>
-<p>The impact is limited to denial of service; no key disclosure or signature
-forgery is possible.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0500: Vulnerability in bsv-rs</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0500.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="crypto-failure"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0500.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0500: Vulnerability in bsv-rs"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">BEEF validation answers valid for a raw entry that is not a transaction</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/bsv-rs/RUSTSEC-2026-0500.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/bsv-rs/RUSTSEC-2026-0500.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0500">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0500
-</h1>
-<span class="subtitle">
-<p>BEEF validation answers valid for a raw entry that is not a transaction</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-10">
-November 10, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/bsv-rs.html">bsv-rs</a>
-(<a href="https://crates.io/crates/bsv-rs">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/crypto-failure.html">crypto-failure</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/bitcoin.html">#bitcoin</a>
-<a href="/keywords/beef.html">#beef</a>
-<a href="/keywords/spv.html">#spv</a>
-<a href="/keywords/verification.html">#verification</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-j8hr-pjhm-6h27">GHSA-j8hr-pjhm-6h27</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/blob/v0.8.5/CHANGELOG.md">
-https://github.com/Calhooon/bsv-rs/blob/v0.8.5/CHANGELOG.md
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/pull/852">
-https://github.com/Calhooon/bsv-rs/pull/852
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.8.5, &#60;0.9.0-beta.1</code>
-</li>
-<li>
-<code>&#62;0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::find_atomic_transaction</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::find_transaction_for_signing</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::is_valid</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::merge_raw_tx</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::sort_txs</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::verify_structure</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.4.2, &#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Beef::verify_valid</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::BeefTx::from_raw_tx</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>Beef::merge_raw_tx</code> and <code>BeefTx::from_raw_tx</code> accept raw bytes without a
-<code>Result</code>. For bytes that are not exactly one transaction (a transaction
-followed by bytes, a cut transaction, bytes that are no transaction at all),
-<code>Beef::sort_txs</code>, <code>verify_structure</code>, <code>verify_valid</code> and <code>is_valid</code> could
-answer valid, even with no BUMP and no parent in the BEEF, and, where the entry
-carried a BUMP index, treat the hash of those bytes as a proven transaction id;
-an entry that names it as a parent was answered valid too.</p>
-<p>The wire readers (<code>Beef::from_binary</code>, <code>verify_stream</code>,
-<code>Transaction::from_beef</code>, <code>from_atomic_beef</code>) parse every entry and are not
-affected. Reaching this needs an application that passes bytes it did not
-parse to <code>merge_raw_tx</code> or <code>BeefTx::from_raw_tx</code> and then relies on the verdict
-or on the transaction the BEEF hands back.</p>
-<p>0.8.5 refuses such an entry at all four verdict doors, with or without a BUMP
-index, and every entry that names it as a parent. Where upgrading is not
-possible, do not rely on <code>is_valid</code> or <code>verify_valid</code> alone for such an entry:
-check that the bytes are exactly one transaction before merging them.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0497: Vulnerability in bsv-rs</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0497.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0497.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0497: Vulnerability in bsv-rs"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Transaction::from_json holds an input txid that is not 64 hex digits and writes the input as spending the zero txid</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/bsv-rs/RUSTSEC-2026-0497.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/bsv-rs/RUSTSEC-2026-0497.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0497">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0497
-</h1>
-<span class="subtitle">
-<p>Transaction::from_json holds an input txid that is not 64 hex digits and writes the input as spending the zero txid</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-11">
-November 11, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/bsv-rs.html">bsv-rs</a>
-(<a href="https://crates.io/crates/bsv-rs">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/bitcoin.html">#bitcoin</a>
-<a href="/keywords/transaction.html">#transaction</a>
-<a href="/keywords/txid.html">#txid</a>
-<a href="/keywords/json.html">#json</a>
-<a href="/keywords/parsing.html">#parsing</a>
-<a href="/keywords/input-validation.html">#input-validation</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-84xq-3662-pvx5">GHSA-84xq-3662-pvx5</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/blob/v0.8.6/CHANGELOG.md">
-https://github.com/Calhooon/bsv-rs/blob/v0.8.6/CHANGELOG.md
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/issues/845">
-https://github.com/Calhooon/bsv-rs/issues/845
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/pull/856">
-https://github.com/Calhooon/bsv-rs/pull/856
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.3 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>Low</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.8.6, &#60;0.9.0-beta.1</code>
-</li>
-<li>
-<code>&#62;0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_json</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>Transaction::from_json</code>, for a document with no <code>hex</code> member, held each
-input's <code>txid</code> member as given. An input <code>txid</code> that is not 64 hex digits
-(<code>&quot;zz&quot;</code>, <code>&quot;&quot;</code>, 63 or 65 digits, characters that are not hex digits) answered
-<code>Ok</code>: <code>source_txid</code> and <code>to_json</code> gave the text back, while <code>to_binary</code> wrote
-the input as spending the txid of 32 zero bytes and <code>id()</code> hashed those bytes.
-Documents naming different texts were one transaction, spending an outpoint
-none of them named.</p>
-<p>An application that reads a peer's transaction document with <code>from_json</code> and
-relies both on the text of its inputs and on its bytes or <code>id()</code> is affected;
-one that reads only documents it produced is not.</p>
-<p>0.8.6 refuses such a txid (<code>Invalid txid of input N: expected 64 hex digits</code>).
-Where upgrading is not possible, require each input's <code>txid</code> to be 64 ASCII hex
-digits before calling <code>from_json</code>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0498: Vulnerability in bsv-rs</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0498.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="crypto-failure"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0498.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0498: Vulnerability in bsv-rs"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Transaction readers accept trailing bytes, so a parsed transaction can carry another transaction id</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/bsv-rs/RUSTSEC-2026-0498.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/bsv-rs/RUSTSEC-2026-0498.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0498">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0498
-</h1>
-<span class="subtitle">
-<p>Transaction readers accept trailing bytes, so a parsed transaction can carry another transaction id</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-10">
-November 10, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/bsv-rs.html">bsv-rs</a>
-(<a href="https://crates.io/crates/bsv-rs">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/crypto-failure.html">crypto-failure</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/bitcoin.html">#bitcoin</a>
-<a href="/keywords/transaction.html">#transaction</a>
-<a href="/keywords/txid.html">#txid</a>
-<a href="/keywords/parsing.html">#parsing</a>
-<a href="/keywords/trailing-data.html">#trailing-data</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-j8hr-pjhm-6h27">GHSA-j8hr-pjhm-6h27</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/blob/v0.8.5/CHANGELOG.md">
-https://github.com/Calhooon/bsv-rs/blob/v0.8.5/CHANGELOG.md
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/issues/840">
-https://github.com/Calhooon/bsv-rs/issues/840
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.3 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>Low</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.8.5, &#60;0.9.0-beta.1</code>
-</li>
-<li>
-<code>&#62;0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_binary</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_ef</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_hex</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_hex_ef</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::from_json</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::transaction::Transaction::parse_script_offsets</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.5</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>Transaction::from_binary</code> and <code>Transaction::from_hex</code> read one transaction
-from the front of their input, did not check that the input ended there, and
-kept the whole input as the transaction's cached serialization: <code>to_binary</code>,
-<code>to_hex</code> and <code>id()</code> then answered for bytes that are not the transaction's.
-<code>Transaction::from_json</code>, given a <code>hex</code> field, reads it through <code>from_hex</code> and
-answers the same. <code>from_ef</code>, <code>from_hex_ef</code> and <code>parse_script_offsets</code> also
-read a prefix.</p>
-<p>An application that takes bytes or hex from outside, parses them with these
-readers and then uses <code>id()</code> or the serialization could be given one
-transaction under another identity: the same parsed fields, a different id.
-An application that passes them only bytes it produced or has already checked
-is not affected.</p>
-<p>0.8.5 refuses a byte after the transaction; <code>Transaction::from_reader</code> reads
-from the front of a longer buffer. Where upgrading is not possible, parse with
-<code>Transaction::from_binary</code>, call <code>tx.invalidate_caches()</code> (public from 0.3.16)
-and require <code>tx.to_binary() == bytes</code>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0499: Vulnerability in bsv-rs</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0499.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="crypto-failure"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0499.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0499: Vulnerability in bsv-rs"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Signature::from_der reads a signature with bytes after it, a wrong sequence length or an unneeded zero as the signature</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/bsv-rs/RUSTSEC-2026-0499.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/bsv-rs/RUSTSEC-2026-0499.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0499">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0499
-</h1>
-<span class="subtitle">
-<p>Signature::from_der reads a signature with bytes after it, a wrong sequence length or an unneeded zero as the signature</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-11">
-November 11, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/bsv-rs.html">bsv-rs</a>
-(<a href="https://crates.io/crates/bsv-rs">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/crypto-failure.html">crypto-failure</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/bitcoin.html">#bitcoin</a>
-<a href="/keywords/ecdsa.html">#ecdsa</a>
-<a href="/keywords/der.html">#der</a>
-<a href="/keywords/signature.html">#signature</a>
-<a href="/keywords/malleability.html">#malleability</a>
-<a href="/keywords/parsing.html">#parsing</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-9c8r-76f3-m426">GHSA-9c8r-76f3-m426</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/blob/v0.8.6/CHANGELOG.md">
-https://github.com/Calhooon/bsv-rs/blob/v0.8.6/CHANGELOG.md
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/issues/842">
-https://github.com/Calhooon/bsv-rs/issues/842
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/pull/846">
-https://github.com/Calhooon/bsv-rs/pull/846
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.3 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>Low</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.8.6, &#60;0.9.0-beta.1</code>
-</li>
-<li>
-<code>&#62;0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>bsv_rs::auth::Certificate::verify</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>=0.9.0-beta.1</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::auth::VerifiableCertificate::verify</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>=0.9.0-beta.1</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::auth::utils::validate_certificate_encoding</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::compat::bsm::verify_message_der</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::kvstore::KVStoreInterpreter::verify_signature</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.2</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::messages::verify</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::primitives::bsv::TransactionSignature::from_checksig_format</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::primitives::ec::Signature::from_der</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::wallet::ProtoWallet::verify_signature</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.6</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>Signature::from_der</code> read a DER-encoded ECDSA signature leniently. It read as
-the signature: the signature followed by other bytes; a sequence length
-shorter than its contents, or longer with bytes after them (a length byte with
-its high bit set among them); and an R or S preceded by a zero byte it did not
-need. It read a lone-zero R or S as zero.</p>
-<p>
-<code>messages::verify</code>, <code>compat::bsm::verify_message_der</code>,
-<code>auth::Certificate::verify</code>, <code>auth::VerifiableCertificate::verify</code>,
-<code>wallet::ProtoWallet::verify_signature</code> and
-<code>kvstore::KVStoreInterpreter::verify_signature</code> read through it, and each
-verified such a form of a valid signature. Given one signature a key holder
-made, anyone could produce other byte strings that verify as that signature
-over the same data. No form verifies over other data: an application that acts
-on the verdict alone is not affected; one that compares, hashes or stores a
-signature's bytes is.</p>
-<p>0.8.6 refuses each form as <code>Error::InvalidSignature</code>. A signature's bytes are
-still not unique after the patch: the same signature with S replaced by n - S
-verifies, so an application that keys on the bytes also requires
-<code>Signature::is_low_s()</code>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0501: Vulnerability in bsv-rs</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0501.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="crypto-failure"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0501.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0501: Vulnerability in bsv-rs"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Shamir backup recovery accepts a share at x = 0, so a supplied share can substitute the recovered private key</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/bsv-rs/RUSTSEC-2026-0501.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/bsv-rs/RUSTSEC-2026-0501.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0501">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0501
-</h1>
-<span class="subtitle">
-<p>Shamir backup recovery accepts a share at x = 0, so a supplied share can substitute the recovered private key</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/bsv-rs.html">bsv-rs</a>
-(<a href="https://crates.io/crates/bsv-rs">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/crypto-failure.html">crypto-failure</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/bitcoin.html">#bitcoin</a>
-<a href="/keywords/shamir.html">#shamir</a>
-<a href="/keywords/backup.html">#backup</a>
-<a href="/keywords/secret-sharing.html">#secret-sharing</a>
-<a href="/keywords/key-recovery.html">#key-recovery</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-cwxv-4866-5gq2">GHSA-cwxv-4866-5gq2</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/blob/v0.8.7/CHANGELOG.md">
-https://github.com/Calhooon/bsv-rs/blob/v0.8.7/CHANGELOG.md
-</a>
-</li>
-<li>
-<a href="https://github.com/Calhooon/bsv-rs/issues/854">
-https://github.com/Calhooon/bsv-rs/issues/854
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>9.1 <span class="tag critical">
-CRITICAL
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>High</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.8.7, &#60;0.9.0-beta.1</code>
-</li>
-<li>
-<code>&#62;0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>bsv_rs::primitives::bsv::shamir::KeyShares::from_backup_format</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.2.0, &#60;0.8.7</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>bsv_rs::primitives::bsv::shamir::KeyShares::recover_private_key</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.2.0, &#60;0.8.7</code>
-</li>
-<li>
-<code>&#62;=0.9.0-beta.1, &#60;=0.9.0-beta.7</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>KeyShares::from_backup_format</code> (the Shamir backup share reader, public since
-0.2.0, the crate's first release) accepted a share whose x coordinate is 0,
-and <code>KeyShares::recover_private_key</code> interpolates the shares at x = 0 to
-recover the key. At an x of 0 the interpolation answers that share's y value
-alone, so an attacker who supplies one share in that form — with the share's
-integrity tag ground to match the honest set's — chooses the recovered key
-outright. The non-canonical zero x = p works the same way, and a repeated x
-past the threshold window also passed.</p>
-<p>An application that recovers a Shamir backup from shares it did not produce —
-a custodian's medium, a share pasted by hand, a set restored from another
-writer — could be handed the attacker's key as the recovered one. A set the
-crate's own writer produces never carries such a share; the door is the
-reader.</p>
-<p>0.8.7 refuses such a set before interpolating (the 0.9 line's next prerelease
-carries the same refusal). Where upgrading is not possible, before recovering
-split each share on <code>.</code> into four fields, base58-decode the x field, and
-refuse the set if it decodes to zero (the one-character field <code>1</code>, or a value
-at or above the field prime) or if two shares carry the same x.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0502: Vulnerability in sqlcipher-src</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0502.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="memory-exposure"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0502.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0502: Vulnerability in sqlcipher-src"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">`sqlcipher-src` via C SQLite CVE-2026-119375</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/sqlcipher-src/RUSTSEC-2026-0502.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/sqlcipher-src/RUSTSEC-2026-0502.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0502">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0502
-</h1>
-<span class="subtitle">
-<p>
-<code>sqlcipher-src</code> via C SQLite CVE-2026-119375</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-10-30">
-October 30, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/sqlcipher-src.html">sqlcipher-src</a>
-(<a href="https://crates.io/crates/sqlcipher-src">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-exposure.html">memory-exposure</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/sqlite.html">#sqlite</a>
-<a href="/keywords/sqlcipher.html">#sqlcipher</a>
-<a href="/keywords/wal.html">#wal</a>
-<a href="/keywords/uninitialized-memory.html">#uninitialized-memory</a>
-<a href="/keywords/information-disclosure.html">#information-disclosure</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-119375">CVE-2026-119375</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-72w2-rjgg-q729">GHSA-72w2-rjgg-q729</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://sqlite.org/bugs/info/2026-08-17T15:54:41Z">
-https://sqlite.org/bugs/info/2026-08-17T15:54:41Z
-</a>
-</li>
-<li>
-<a href="https://github.com/sqlite/sqlite/commit/e5bf119821f25be1d7f10ef0a2edbe175289166e">
-https://github.com/sqlite/sqlite/commit/e5bf119821f25be1d7f10ef0a2edbe175289166e
-</a>
-</li>
-<li>
-<a href="https://sqlite.org/releaselog/3_54_0.html">
-https://sqlite.org/releaselog/3_54_0.html
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>6.8 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Attack Requirements</dt>
-<dd>None</dd>
-<dt>Attack Vector</dt>
-<dd>Local</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>Availability Impact to the Subsequent System</dt>
-<dd>None</dd>
-<dt>Confidentiality Impact to the Subsequent System</dt>
-<dd>None</dd>
-<dt>Integrity Impact to the Subsequent System</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>Passive</dd>
-<dt>Availability Impact to the Vulnerable System</dt>
-<dd>None</dd>
-<dt>Confidentiality Impact to the Vulnerable System</dt>
-<dd>High</dd>
-<dt>Integrity Impact to the Vulnerable System</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N">CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=420.0.0</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;419.0.3</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>SQLite versions before 3.54.0 can return uninitialized page-cache memory when a process opens a database file together with a sibling write-ahead-log (<code>-wal</code>) file whose page size differs from the database's. A crafted pair of files can make ordinary queries return stale bytes from the process's memory. The attack vector is local and needs the victim to open the files.</p>
-<p>
-<code>sqlcipher-src</code> ships the SQLCipher amalgamation (SQLCipher is built on SQLite and contains the same <code>sqlite3WalReadFrame</code> code) for <code>-sys</code> crates to compile, so a build that uses it is susceptible to the vulnerability. The releases <code>419.0.3</code> to <code>419.0.6</code> bundle SQLCipher <code>4.19.0</code> on SQLite <code>3.53.4</code> and are affected. <code>sqlcipher-src</code> was updated in <code>420.0.0</code> (SQLCipher <code>4.20.0</code> on SQLite <code>3.54.1</code>), which contains the fix. The releases <code>0.1.0</code> and <code>0.1.1</code> contain no SQLCipher source. <code>libsqlite3-sys</code>
-<code>0.39.0</code> and <code>0.39.1</code> depend on <code>sqlcipher-src =419.0.6</code> for their <code>bundled-sqlcipher</code> feature.</p>
-<p>Only a process that opens a database file, with its <code>-wal</code>, that a less trusted party could have written is exposed.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0504: Vulnerability in hickory-proto</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0504.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0504.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0504: Vulnerability in hickory-proto"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Inverted NSEC3 comparison in DNSSEC validation (hickory-proto 0.25)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-proto/RUSTSEC-2026-0504.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-proto/RUSTSEC-2026-0504.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0504">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0504
-</h1>
-<span class="subtitle">
-<p>Inverted NSEC3 comparison in DNSSEC validation (hickory-proto 0.25)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-proto.html">hickory-proto</a>
-(<a href="https://crates.io/crates/hickory-proto">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec3.html">#nsec3</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123601">CVE-2026-123601</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-588m-chg6-8jqj">GHSA-588m-chg6-8jqj</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/87ee4f81aa9689d81847770d3a74e13982c9bcdc">
-https://github.com/hickory-dns/hickory-dns/commit/87ee4f81aa9689d81847770d3a74e13982c9bcdc
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.25.0</code>
-</li>
-<li>
-<code>&#62;=0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>In hickory-proto 0.25.0 through 0.26.0-alpha.1, DNSSEC validation handled the last NSEC3 record of a zone's hash chain with its two comparisons reversed. That record was treated as covering almost every hash it does not cover, so an attacker who can answer or modify DNS responses could replay it, with its RRSIG, to forge proofs that existing names have no records.</p>
-<p>From 0.26.0-beta.1 the DNSSEC validation code lives in the hickory-net crate, where this was fixed in hickory-net 0.26.2. No hickory-proto release contains a fix. Users of DNSSEC validation in hickory-proto 0.25 (directly or through hickory-resolver or hickory-recursor 0.25) should move to the 0.26.2 or later releases, which validate through hickory-net.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0505: Vulnerability in hickory-proto</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0505.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0505.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0505: Vulnerability in hickory-proto"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">NSEC3 owner names not checked against the zone in DNSSEC validation (hickory-proto)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-proto/RUSTSEC-2026-0505.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-proto/RUSTSEC-2026-0505.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0505">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0505
-</h1>
-<span class="subtitle">
-<p>NSEC3 owner names not checked against the zone in DNSSEC validation (hickory-proto)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-proto.html">hickory-proto</a>
-(<a href="https://crates.io/crates/hickory-proto">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec3.html">#nsec3</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123580">CVE-2026-123580</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-p2jv-r3m3-7wf4">GHSA-p2jv-r3m3-7wf4</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/10840b8432feb08d369f82e2bb6ce99ae23d7afa">
-https://github.com/hickory-dns/hickory-dns/commit/10840b8432feb08d369f82e2bb6ce99ae23d7afa
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Up to 0.26.0-alpha.1, hickory-proto's DNSSEC validation matched NSEC3 records to a name only by the hashed first label of the NSEC3 owner name, without checking that the rest of the owner name was the zone in question. A signed NSEC3 record from any zone the attacker controls could therefore be used, by someone who can answer or modify DNS responses, to prove that a name in another zone does not exist.</p>
-<p>From 0.26.0-beta.1 the DNSSEC validation code lives in the hickory-net crate, where this was fixed in hickory-net 0.26.2. No hickory-proto release contains a fix. Users of DNSSEC validation in older hickory-proto releases (directly or through hickory-resolver or hickory-recursor) should move to the 0.26.2 or later releases, which validate through hickory-net.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0511: Vulnerability in hickory-proto</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0511.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0511.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0511: Vulnerability in hickory-proto"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">NXDOMAIN accepted for a proven empty non-terminal (hickory-proto)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-proto/RUSTSEC-2026-0511.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-proto/RUSTSEC-2026-0511.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0511">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0511
-</h1>
-<span class="subtitle">
-<p>NXDOMAIN accepted for a proven empty non-terminal (hickory-proto)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-proto.html">hickory-proto</a>
-(<a href="https://crates.io/crates/hickory-proto">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec.html">#nsec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123594">CVE-2026-123594</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-86vr-jm6c-7cpg">GHSA-86vr-jm6c-7cpg</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/bfbe7ede4021965526f065be9b415945ce575e29">
-https://github.com/hickory-dns/hickory-dns/commit/bfbe7ede4021965526f065be9b415945ce575e29
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Up to 0.26.0-alpha.1, hickory-proto's NSEC validation accepted an NXDOMAIN response as secure even when the covering NSEC record's next domain name was below the queried name, which proves the name exists as an empty non-terminal. Because the response code is not signed, someone who can modify DNS responses could turn a genuine signed NODATA response into an accepted NXDOMAIN.</p>
-<p>From 0.26.0-beta.1 the DNSSEC validation code lives in the hickory-net crate, where this was fixed in hickory-net 0.26.2. No hickory-proto release contains a fix. Users of DNSSEC validation in older hickory-proto releases (directly or through hickory-resolver or hickory-recursor) should move to the 0.26.2 or later releases, which validate through hickory-net.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0512: Vulnerability in hickory-proto</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0512.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0512.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0512: Vulnerability in hickory-proto"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">DNSSEC validation accepted an unrelated signed RRset as the answer (hickory-proto)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-proto/RUSTSEC-2026-0512.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-proto/RUSTSEC-2026-0512.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0512">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0512
-</h1>
-<span class="subtitle">
-<p>DNSSEC validation accepted an unrelated signed RRset as the answer (hickory-proto)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-proto.html">hickory-proto</a>
-(<a href="https://crates.io/crates/hickory-proto">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123581">CVE-2026-123581</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-929p-gjf6-5hqj">GHSA-929p-gjf6-5hqj</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/77ec9c5d2e9481a0753bbaf1be3cd5175d300cff">
-https://github.com/hickory-dns/hickory-dns/commit/77ec9c5d2e9481a0753bbaf1be3cd5175d300cff
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.3 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>Low</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N">CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Up to 0.26.0-alpha.1, hickory-proto's DNSSEC validation treated a response with a non-empty answer section as a positive answer if its records validated, without checking that any of them matched the queried name and type. Someone who can answer or modify DNS responses could return a genuine signed RRset for another name or type and have it accepted as a validated answer.</p>
-<p>From 0.26.0-beta.1 the DNSSEC validation code lives in the hickory-net crate, where this was fixed in hickory-net 0.26.2. No hickory-proto release contains a fix. Users of DNSSEC validation in older hickory-proto releases (directly or through hickory-resolver or hickory-recursor) should move to the 0.26.2 or later releases, which validate through hickory-net.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0514: Vulnerability in hickory-resolver</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0514.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0514.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0514: Vulnerability in hickory-resolver"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">`Resolver::lookup` and `lookup_ip` returned records that failed DNSSEC validation</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-resolver/RUSTSEC-2026-0514.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-resolver/RUSTSEC-2026-0514.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0514">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0514
-</h1>
-<span class="subtitle">
-<p>
-<code>Resolver::lookup</code> and <code>lookup_ip</code> returned records that failed DNSSEC validation</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-resolver.html">hickory-resolver</a>
-(<a href="https://crates.io/crates/hickory-resolver">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-93657">CVE-2026-93657</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-5j98-2g5x-46v6">GHSA-5j98-2g5x-46v6</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/30720f4fb22e5556ecbf26d2c8274ea4a9fdd238">
-https://github.com/hickory-dns/hickory-dns/commit/30720f4fb22e5556ecbf26d2c8274ea4a9fdd238
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>With DNSSEC validation enabled, <code>Resolver::lookup()</code> and <code>Resolver::lookup_ip()</code> returned <code>Ok</code> with the records even when validation found the response bogus. The result was only visible in each record's proof status, which callers had to inspect themselves.</p>
-<p>Applications that enable validation and treat a successful lookup as validated data would therefore accept forged or tampered answers from anyone who can answer or modify their DNS traffic.</p>
-<p>From 0.26.2 a lookup whose records are bogus fails with a &quot;DNSSEC validation failed&quot; error (<code>DnsError::DnssecBogus</code>), the error is not retried, and the hickory-server forwarder answers SERVFAIL for it.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0513: Vulnerability in hickory-resolver</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0513.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0513.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0513: Vulnerability in hickory-resolver"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Unbounded retries on truncated responses in the name server pool</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-resolver/RUSTSEC-2026-0513.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-resolver/RUSTSEC-2026-0513.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0513">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0513
-</h1>
-<span class="subtitle">
-<p>Unbounded retries on truncated responses in the name server pool</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-resolver.html">hickory-resolver</a>
-(<a href="https://crates.io/crates/hickory-resolver">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/truncation.html">#truncation</a>
-<a href="/keywords/retry.html">#retry</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123604">CVE-2026-123604</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-6w6g-hm98-mhgm">GHSA-6w6g-hm98-mhgm</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/f9a7bc5d188e5b680b09aea91009d2fbf3fec58a">
-https://github.com/hickory-dns/hickory-dns/commit/f9a7bc5d188e5b680b09aea91009d2fbf3fec58a
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When an upstream answer had the TC (truncated) bit set, the resolver's name server pool disabled UDP and sent the query again. It did this for every truncated answer, including answers that already came over TCP, and it kept no count of retries.</p>
-<p>A name server that sets TC on every answer, which anyone running an authoritative server the resolver queries can do, kept each lookup re-sending queries over the same connection until the request deadline (5 seconds by default) ran out. This uses up resolver resources and sends many queries per lookup.</p>
-<p>From 0.26.2 a truncated answer received after UDP has already been disabled ends the lookup with <code>NetError::Truncated</code> instead of retrying again.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0515: Vulnerability in hickory-resolver</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0515.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0515.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0515: Vulnerability in hickory-resolver"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Recursor followed every glueless name server in a referral, with no per-query budget</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-resolver/RUSTSEC-2026-0515.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-resolver/RUSTSEC-2026-0515.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0515">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0515
-</h1>
-<span class="subtitle">
-<p>Recursor followed every glueless name server in a referral, with no per-query budget</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-resolver.html">hickory-resolver</a>
-(<a href="https://crates.io/crates/hickory-resolver">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/recursor.html">#recursor</a>
-<a href="/keywords/nxnsattack.html">#nxnsattack</a>
-<a href="/keywords/amplification.html">#amplification</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123606">CVE-2026-123606</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-6h5c-jjg5-wj59">GHSA-6h5c-jjg5-wj59</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/74062f3a3ef6904b64717dd025945702b2cf4133">
-https://github.com/hickory-dns/hickory-dns/commit/74062f3a3ef6904b64717dd025945702b2cf4133
-</a>
-</li>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/47cd005b8f3d190134bbb943d2328ef8a83ade8c">
-https://github.com/hickory-dns/hickory-dns/commit/47cd005b8f3d190134bbb943d2328ef8a83ade8c
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When a referral listed name servers outside the delegated zone and gave no glue addresses, the recursor looked up A and AAAA records for every listed name server, recursing into each one. Only the chain-depth limits applied. There was no cap on how many name servers it chased per referral or on the total upstream work per client query.</p>
-<p>Someone who controls a zone can return referrals that list many glueless name servers in a victim's domain, and nest them, so that each client query makes the recursor send a large number of queries to the victim's servers (the NXNSAttack pattern). The same can exhaust the recursor's own resources.</p>
-<p>This affects the recursive resolver, which is in hickory-resolver behind the opt-in <code>recursor</code> feature from 0.26.0-beta.1. Earlier releases shipped it as the separate hickory-recursor crate.</p>
-<p>From 0.26.2 the recursor follows at most 5 glueless name servers per delegation and sends at most 200 upstream queries per client request.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0516: Vulnerability in hickory-resolver</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0516.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0516.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0516: Vulnerability in hickory-resolver"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Recursor kept querying cyclic glueless sibling delegations</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-resolver/RUSTSEC-2026-0516.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-resolver/RUSTSEC-2026-0516.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0516">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0516
-</h1>
-<span class="subtitle">
-<p>Recursor kept querying cyclic glueless sibling delegations</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-resolver.html">hickory-resolver</a>
-(<a href="https://crates.io/crates/hickory-resolver">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/recursor.html">#recursor</a>
-<a href="/keywords/amplification.html">#amplification</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123586">CVE-2026-123586</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-cx5j-p54p-q756">GHSA-cx5j-p54p-q756</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/308dcfd5cd9bfaa50c956427380160505e5de532">
-https://github.com/hickory-dns/hickory-dns/commit/308dcfd5cd9bfaa50c956427380160505e5de532
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.26.0-beta.1</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Two zones can each delegate to name servers named only inside the other zone, with no glue records (the cyclic sibling case in RFC 9471 section 2.3). Such delegations can never be resolved, but the recursor did not stop when it came back to a zone it was already resolving. It kept sending queries until the per-request limits ran out, and zero TTLs on the referral NS records made this worse.</p>
-<p>Someone who controls two such zones can make a recursor send many upstream queries for each client query.</p>
-<p>This affects the recursive resolver, which is in hickory-resolver behind the opt-in <code>recursor</code> feature from 0.26.0-beta.1. Earlier releases shipped it as the separate hickory-recursor crate.</p>
-<p>From 0.26.2 each client request tracks the zones on its resolution stack and refuses to enter a zone that is already on it.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0519: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0519.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0519.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0519: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">NXDOMAIN accepted for an empty non-terminal that the NSEC record proves exists</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0519.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0519.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0519">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0519
-</h1>
-<span class="subtitle">
-<p>NXDOMAIN accepted for an empty non-terminal that the NSEC record proves exists</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec.html">#nsec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123594">CVE-2026-123594</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-86vr-jm6c-7cpg">GHSA-86vr-jm6c-7cpg</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/bfbe7ede4021965526f065be9b415945ce575e29">
-https://github.com/hickory-dns/hickory-dns/commit/bfbe7ede4021965526f065be9b415945ce575e29
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When an NSEC record's next domain name is below the queried name, the queried name exists as an empty non-terminal (RFC 8020 section 3.1). The NSEC validator did not check for this case and accepted an NXDOMAIN response backed by such a record as secure.</p>
-<p>The response code is not covered by any signature. An attacker who can modify DNS responses can take a genuine signed NODATA response for an empty non-terminal, change its response code to NXDOMAIN, and have the validator accept that an existing name does not exist.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix rejects NXDOMAIN as bogus, and validates NODATA as secure, when the covering NSEC record's next domain name is below the queried name and is not the zone apex. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0508: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0508.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0508.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0508: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">NSEC wraparound detection trusted an unvalidated SOA record</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0508.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0508.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0508">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0508
-</h1>
-<span class="subtitle">
-<p>NSEC wraparound detection trusted an unvalidated SOA record</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec.html">#nsec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123587">CVE-2026-123587</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-qw83-5pm2-ggp5">GHSA-qw83-5pm2-ggp5</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/e5ca40a7ef149ba5a79bc6f4916f114d153ce9ab">
-https://github.com/hickory-dns/hickory-dns/commit/e5ca40a7ef149ba5a79bc6f4916f114d153ce9ab
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.26.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>The last NSEC record in a zone points back to the zone apex. To recognise it, DNSSEC validation treated an NSEC record as covering every name after its owner when its next domain name equalled the owner name of an SOA record in the response. That SOA record did not have to pass validation.</p>
-<p>An attacker who can answer or modify DNS responses can replay a genuine NSEC record and its RRSIG, add a forged SOA record whose name equals that NSEC record's next domain name, and so make the validator accept that any name sorting after the NSEC owner does not exist.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix recognises a wraparound NSEC record from the chain itself (its next domain name sorts at or before its owner and is the zone of the queried name) and only uses validated SOA records. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0518: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0518.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0518.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0518: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">DNSSEC validation cache could reuse an Insecure result for a different name</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0518.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0518.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0518">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0518
-</h1>
-<span class="subtitle">
-<p>DNSSEC validation cache could reuse an Insecure result for a different name</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/cache.html">#cache</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123592">CVE-2026-123592</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-rx82-4p2j-j5cv">GHSA-rx82-4p2j-j5cv</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/96b87c9ab0f10c1331cef56f88742eb00bce71e1">
-https://github.com/hickory-dns/hickory-dns/commit/96b87c9ab0f10c1331cef56f88742eb00bce71e1
-</a>
-</li>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/9c82ce0c529d33ef4b3d6507e3b8dbbb5cd0dd48">
-https://github.com/hickory-dns/hickory-dns/commit/9c82ce0c529d33ef4b3d6507e3b8dbbb5cd0dd48
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>The DNSSEC validation cache used a 64-bit hash of the query as its key, and two keys with the same hash counted as equal. The <code>Hash</code> implementation of <code>Name</code> hashed the bytes of the labels but not where one label ends and the next begins, so names that differ only in the placement of dots (such as <code>ab.c.</code> and <code>a.bc.</code>) hashed to the same value.</p>
-<p>An attacker who controls an unsigned delegation whose name collides in this way with a name in a signed zone can first get an Insecure result cached for their own name. A forged response for the signed name is then served from that cache entry without signature checks and returned with the AD bit clear, where validation should have failed.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix stores the query in the cache key and compares it on lookup. The <code>Hash</code> implementations of <code>Label</code>, <code>Name</code> and <code>LowerName</code> in hickory-proto were also changed to include label boundaries. Both are in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0509: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0509.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0509.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0509: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">NSEC3 records from another zone were accepted in proofs of nonexistence</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0509.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0509.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0509">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0509
-</h1>
-<span class="subtitle">
-<p>NSEC3 records from another zone were accepted in proofs of nonexistence</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec3.html">#nsec3</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123580">CVE-2026-123580</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-p2jv-r3m3-7wf4">GHSA-p2jv-r3m3-7wf4</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/10840b8432feb08d369f82e2bb6ce99ae23d7afa">
-https://github.com/hickory-dns/hickory-dns/commit/10840b8432feb08d369f82e2bb6ce99ae23d7afa
-</a>
-</li>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/d2ee774a789193010f109d3d463adf72c4c261ab">
-https://github.com/hickory-dns/hickory-dns/commit/d2ee774a789193010f109d3d463adf72c4c261ab
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>7.5 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When DNSSEC validation used NSEC3 records to prove that a name or record type does not exist, it compared only the hashed first label of each NSEC3 owner name with the hash of the name being checked. The rest of the owner name, which says which zone the record belongs to, was not checked.</p>
-<p>Someone who controls any DNSSEC-signed zone can publish a signed NSEC3 record whose first label is the hash of a name in another zone. An attacker who can answer or modify DNS responses can then use it to make the validator accept that the name in the other zone does not exist.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix requires a matching NSEC3 record to belong to a zone that contains the checked name, and ignores NSEC3 records whose owner is not directly below the RRSIG signer name. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0506: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0506.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0506.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0506: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Inverted NSEC3 comparison lets one record &quot;prove&quot; that almost any name does not exist</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0506.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0506.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0506">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0506
-</h1>
-<span class="subtitle">
-<p>Inverted NSEC3 comparison lets one record &quot;prove&quot; that almost any name does not exist</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/nsec3.html">#nsec3</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123601">CVE-2026-123601</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-588m-chg6-8jqj">GHSA-588m-chg6-8jqj</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/87ee4f81aa9689d81847770d3a74e13982c9bcdc">
-https://github.com/hickory-dns/hickory-dns/commit/87ee4f81aa9689d81847770d3a74e13982c9bcdc
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When DNSSEC validation looks for the NSEC3 record that covers a hashed name, the last record in the zone's hash chain needs special handling, because its next hashed owner name sorts before its own hash. For that record the two comparisons were reversed: it was treated as covering every hash below its owner hash or above its next hash, which is mostly the part of the chain it does not cover.</p>
-<p>An attacker who can answer or modify DNS responses can replay that one signed NSEC3 record, with its RRSIG, from the target zone and use it in forged negative answers. The validator then accepts proof that names which do exist have no records.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> (resolver, recursor and client) when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>. The same code was in hickory-proto before it moved to hickory-net.</p>
-<p>The fix corrects the comparison in <code>find_covering_record</code>. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0507: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0507.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0507.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0507: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">RRSIG signer name was not checked against the zone of the signed records</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0507.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0507.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0507">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0507
-</h1>
-<span class="subtitle">
-<p>RRSIG signer name was not checked against the zone of the signed records</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-<a href="/keywords/rrsig.html">#rrsig</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123605">CVE-2026-123605</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-2vgh-3wfw-qj7c">GHSA-2vgh-3wfw-qj7c</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/019535e011131c52d19cb6a2c7a2d31270271135">
-https://github.com/hickory-dns/hickory-dns/commit/019535e011131c52d19cb6a2c7a2d31270271135
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>DNSSEC validation checked an RRset against the DNSKEYs of whatever zone was named in the RRSIG's Signer's Name field. RFC 4035 section 5.3.1 requires that name to be the zone that contains the RRset, but this was not checked.</p>
-<p>Anyone who controls a DNSSEC-signed zone, and can answer or modify DNS responses, can therefore sign records for names in an unrelated zone with their own keys and have the validator accept them as secure.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> (resolver, recursor and client) when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix ignores an RRSIG whose signer name is not the RRset's owner name or one of its ancestors. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0520: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0520.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0520.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0520: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">DNSSEC validation accepted a validly signed but unrelated RRset as the answer</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0520.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0520.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0520">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0520
-</h1>
-<span class="subtitle">
-<p>DNSSEC validation accepted a validly signed but unrelated RRset as the answer</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/dnssec.html">#dnssec</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123581">CVE-2026-123581</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-929p-gjf6-5hqj">GHSA-929p-gjf6-5hqj</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/77ec9c5d2e9481a0753bbaf1be3cd5175d300cff">
-https://github.com/hickory-dns/hickory-dns/commit/77ec9c5d2e9481a0753bbaf1be3cd5175d300cff
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.3 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>Low</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.0#CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N">CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When a response had a non-empty answer section, DNSSEC validation treated it as a positive answer as long as the records in it validated. It did not check that any of those records had the queried name and either the queried type or type CNAME.</p>
-<p>An attacker who can answer or modify DNS responses can therefore return a genuine, signed RRset for some other name or type, and have it accepted as a validated answer to the query instead of being handled as a response with no matching data.</p>
-<p>This affects DNSSEC validation through <code>DnssecDnsHandle</code> when built with <code>dnssec-ring</code> or <code>dnssec-aws-lc-rs</code>.</p>
-<p>The fix requires at least one answer record that matches the query name and is either of the queried type or a CNAME, both for positive responses and when NSEC records are checked. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0517: Vulnerability in hickory-net</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0517.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0517.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0517: Vulnerability in hickory-net"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Spoofed malformed UDP datagrams abort DNS lookups</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-net/RUSTSEC-2026-0517.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-net/RUSTSEC-2026-0517.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0517">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0517
-</h1>
-<span class="subtitle">
-<p>Spoofed malformed UDP datagrams abort DNS lookups</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-net.html">hickory-net</a>
-(<a href="https://crates.io/crates/hickory-net">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/udp.html">#udp</a>
-<a href="/keywords/spoofing.html">#spoofing</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123584">CVE-2026-123584</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-v44v-c8m4-gc43">GHSA-v44v-c8m4-gc43</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/07ff35c1b33c1df27e398cee463e424cef951a82">
-https://github.com/hickory-dns/hickory-dns/commit/07ff35c1b33c1df27e398cee463e424cef951a82
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>5.9 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>High</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.26.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.26.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>While waiting for a reply on a UDP connection, the client parsed every datagram that arrived from the name server's address and port before checking its message ID. If parsing failed, the attempt ended with an error instead of dropping the datagram and waiting for the real reply. The receive loop also gave up after three datagrams.</p>
-<p>An off-path attacker who can guess the client's source port, but not the transaction ID, can send one malformed datagram with a spoofed source address and make the pending lookup fail.</p>
-<p>The fix reads the message ID from the first two bytes before parsing, ignores short datagrams and datagrams with the wrong ID, keeps listening until the outer timeout, and only then parses the response. It is in 0.26.2.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0521: Vulnerability in hickory-recursor</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0521.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0521.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0521: Vulnerability in hickory-recursor"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Recursor followed every glueless name server in a referral (no fixed hickory-recursor release)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-recursor/RUSTSEC-2026-0521.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-recursor/RUSTSEC-2026-0521.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0521">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0521
-</h1>
-<span class="subtitle">
-<p>Recursor followed every glueless name server in a referral (no fixed hickory-recursor release)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-recursor.html">hickory-recursor</a>
-(<a href="https://crates.io/crates/hickory-recursor">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/recursor.html">#recursor</a>
-<a href="/keywords/nxnsattack.html">#nxnsattack</a>
-<a href="/keywords/amplification.html">#amplification</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123606">CVE-2026-123606</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-6h5c-jjg5-wj59">GHSA-6h5c-jjg5-wj59</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/74062f3a3ef6904b64717dd025945702b2cf4133">
-https://github.com/hickory-dns/hickory-dns/commit/74062f3a3ef6904b64717dd025945702b2cf4133
-</a>
-</li>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/47cd005b8f3d190134bbb943d2328ef8a83ade8c">
-https://github.com/hickory-dns/hickory-dns/commit/47cd005b8f3d190134bbb943d2328ef8a83ade8c
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.25.0-alpha.3</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>For referrals whose name servers are outside the delegated zone and come without glue, the recursor resolved every listed name server, with no cap on referral width and no per-query work budget. Someone who controls a zone can use this to make each client query send a large number of queries to a victim's servers (the NXNSAttack pattern), or to exhaust the recursor.</p>
-<p>The recursor code moved into hickory-resolver (opt-in <code>recursor</code> feature) in 0.26.0-beta.1, and the fix is in hickory-resolver 0.26.2. No hickory-recursor release contains a fix, so users should move to hickory-resolver 0.26.2 or later with the <code>recursor</code> feature.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0522: Vulnerability in hickory-recursor</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0522.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0522.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0522: Vulnerability in hickory-recursor"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">Recursor kept querying cyclic glueless sibling delegations (no fixed hickory-recursor release)</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hickory-recursor/RUSTSEC-2026-0522.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hickory-recursor/RUSTSEC-2026-0522.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0522">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0522
-</h1>
-<span class="subtitle">
-<p>Recursor kept querying cyclic glueless sibling delegations (no fixed hickory-recursor release)</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-09-03">
-September 3, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/hickory-recursor.html">hickory-recursor</a>
-(<a href="https://crates.io/crates/hickory-recursor">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/dns.html">#dns</a>
-<a href="/keywords/recursor.html">#recursor</a>
-<a href="/keywords/amplification.html">#amplification</a>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://www.cve.org/CVERecord?id=CVE-2026-123586">CVE-2026-123586</a>
-</li>
-<li>
-<a href="https://github.com/advisories/GHSA-cx5j-p54p-q756">GHSA-cx5j-p54p-q756</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/hickory-dns/hickory-dns/commit/308dcfd5cd9bfaa50c956427380160505e5de532">
-https://github.com/hickory-dns/hickory-dns/commit/308dcfd5cd9bfaa50c956427380160505e5de532
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-no patched versions
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.25.0-alpha.3</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Two zones can each delegate to name servers named only inside the other zone, with no glue records (RFC 9471 section 2.3). The recursor did not stop when it came back to a zone it was already resolving, so someone who controls two such zones can make it send many upstream queries for each client query.</p>
-<p>The recursor code moved into hickory-resolver (opt-in <code>recursor</code> feature) in 0.26.0-beta.1, and the fix is in hickory-resolver 0.26.2. No hickory-recursor release contains a fix, so users should move to hickory-resolver 0.26.2 or later with the <code>recursor</code> feature.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0503: Vulnerability in eazip</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0503.html</id>
-<updated>2026-11-12T12:00:00+00:00</updated>
-<category term="privilege-escalation"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0503.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0503: Vulnerability in eazip"/>
-<published>2026-11-12T12:00:00+00:00</published>
-<summary xml:lang="en">eazip: symlink-target validation checks the wrong argument, allowing extraction path escapes on Windows</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/eazip/RUSTSEC-2026-0503.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/eazip/RUSTSEC-2026-0503.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0503">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0503
-</h1>
-<span class="subtitle">
-<p>eazip: symlink-target validation checks the wrong argument, allowing extraction path escapes on Windows</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-07">
-November 7, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-12">
-November 12, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/eazip.html">eazip</a>
-(<a href="https://crates.io/crates/eazip">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/privilege-escalation.html">privilege-escalation</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/symlink.html">#symlink</a>
-<a href="/keywords/zip-slip.html">#zip-slip</a>
-<a href="/keywords/windows.html">#windows</a>
-<a href="/keywords/path-escape.html">#path-escape</a>
-<a href="/keywords/extraction.html">#extraction</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/a1phyr/eazip/releases/tag/v0.2.7">
-https://github.com/a1phyr/eazip/releases/tag/v0.2.7
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>8.6 <span class="tag high">
-HIGH
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>Low</dd>
-<dt>Privileges Required</dt>
-<dd>None</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Changed</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>High</dd>
-<dt>Availability Impact</dt>
-<dd>None</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.2.7</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.2.5</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>When extracting archives, <code>eazip</code> validates symlink entries before writing
-them. The validation function <code>validate_symlink()</code> (<code>src/utils/mod.rs</code>) scans
-for backslash and NUL bytes, but passes the symlink's <em>name</em> where the
-symlink's <em>target</em> was intended:</p>
-<pre>
-<code class="language-rust">memchr2(b'\\', b'\0', name.as_bytes()) // should be target.as_bytes()
-</code>
-</pre>
-<p>As a result, symlink <em>targets</em> containing backslash or NUL bytes pass
-validation. On Windows, backslash is a path separator, so targets such as
-<code>..\..\..\Windows\system32\evil.exe</code> also defeat the remaining depth check,
-which splits on <code>/</code> only. A crafted archive can therefore create symlinks
-that resolve outside the extraction directory — including UNC targets such as
-<code>\\host\share\...</code> — redirecting writes to arbitrary filesystem locations
-chosen by the attacker.</p>
-<p>Applications that extract untrusted archives with <code>eazip</code> on Windows targets
-are affected; on Unix targets backslash is not a separator, which limits
-exposure there.</p>
-<p>The vulnerability was introduced in version 0.2.5 and fixed in 0.2.7
-(<a href="https://github.com/a1phyr/eazip/commit/0e4caa13d59f5ba15aaac332f5534260c3b8fc43">a1phyr/eazip@0e4caa13</a>),
-which rejects backslash and NUL bytes in the symlink target. It was
-privately reported to the maintainer on 2026-11-06 and credited in the
-0.2.7 release notes.</p>
 <p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
 license.
 </p>

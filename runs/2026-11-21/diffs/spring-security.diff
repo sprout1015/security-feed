@@ -1,0 +1,28 @@
+--- yesterday
++++ 2026-11-21
+@@ -7,5 +7,5 @@
+ To report a security vulnerability for a project within the Spring portfolio, see the </security-policy> Security Policy
+ Project: All
+-AllMicrometerMicrometer TracingReactor CoreReactor NettySpring AISpring AMQPSpring Authorization ServerSpring BatchSpring BootSpring Cloud CommonsSpring Cloud ConfigSpring Cloud ContractSpring Cloud Data FlowSpring Cloud FunctionSpring Cloud GatewaySpring Cloud KubernetesSpring Cloud NetflixSpring Cloud OpenFeignSpring Cloud SleuthSpring Cloud StreamSpring Cloud TaskSpring Data CommonsSpring Data ElasticsearchSpring Data JPASpring Data KeyValueSpring Data MongoDBSpring Data RelationalSpring Data RESTSpring for Apache KafkaSpring for Apache PulsarSpring for GraphQLSpring FrameworkSpring gRPCSpring HATEOASSpring IntegrationSpring LDAPSpring REST DocsSpring RetrySpring SecuritySpring Security OAuthSpring SessionSpring SocialSpring StatemachineSpring VaultSpring Web FlowSpring Web Services
++AllMicrometerMicrometer TracingReactor CoreReactor NettySpring AISpring AMQPSpring Authorization ServerSpring BatchSpring BootSpring Cloud CommonsSpring Cloud ConfigSpring Cloud Data FlowSpring Cloud FunctionSpring Cloud GatewaySpring Cloud KubernetesSpring Cloud NetflixSpring Cloud OpenFeignSpring Cloud SleuthSpring Cloud StreamSpring Cloud TaskSpring Data CommonsSpring Data ElasticsearchSpring Data JPASpring Data KeyValueSpring Data MongoDBSpring Data RelationalSpring Data RESTSpring for Apache KafkaSpring for Apache PulsarSpring for GraphQLSpring FrameworkSpring gRPCSpring HATEOASSpring IntegrationSpring LDAPSpring REST DocsSpring RetrySpring SecuritySpring SessionSpring VaultSpring Web FlowSpring Web Servicesspring-cloud-contractspring-security-oauthspring-socialspring-statemachine
+ Generation: Select a project first
+ All
+@@ -17,6 +17,6 @@
+ | Severity | CVE ID | Project | Published | Fix Version
+ | HIGH | </security/cve-2026-123886> CVE-2026-123886 | Spring Data Elasticsearch | November 19, 2026 | 2 versions
++| LOW | </security/cve-2026-41698> CVE-2026-41698 | Spring Vault | November 19, 2026 | 7 versions
+ | CRITICAL | </security/cve-2026-59273> CVE-2026-59273 | Spring Security | November 19, 2026 | 8 versions
+-| LOW | </security/cve-2026-41698> CVE-2026-41698 | Spring Vault | November 19, 2026 | 7 versions
+ | LOW | </security/cve-2026-59329> CVE-2026-59329 | Spring Security | November 19, 2026 | 8 versions
+ | HIGH | </security/cve-2026-59330> CVE-2026-59330 | Spring Security | November 19, 2026 | 4 versions
+@@ -32,8 +32,8 @@
+ | HIGH | </security/cve-2026-59345> CVE-2026-59345 | Spring AI | November 19, 2026 | 4 versions
+ | MEDIUM | </security/cve-2026-59348> CVE-2026-59348 | Spring AI | November 19, 2026 | 2 versions
++| MEDIUM | </security/cve-2026-59351> CVE-2026-59351 | Spring Web Services | November 19, 2026 | 5 versions
++| MEDIUM | </security/cve-2026-59350> CVE-2026-59350 | Spring Web Services | November 19, 2026 | 5 versions
+ | HIGH | </security/cve-2026-59349> CVE-2026-59349 | Spring Web Services | November 19, 2026 | 5 versions
+-| MEDIUM | </security/cve-2026-59350> CVE-2026-59350 | Spring Web Services | November 19, 2026 | 5 versions
+ | MEDIUM | </security/cve-2026-59352> CVE-2026-59352 | Spring Web Services | November 19, 2026 | 5 versions
+-| MEDIUM | </security/cve-2026-59351> CVE-2026-59351 | Spring Web Services | November 19, 2026 | 5 versions
+ | MEDIUM | </security/cve-2026-59353> CVE-2026-59353 | Spring Web Services | November 19, 2026 | 5 versions
+ | LOW | </security/cve-2026-59356> CVE-2026-59356 | Spring for GraphQL | November 19, 2026 | 4 versions

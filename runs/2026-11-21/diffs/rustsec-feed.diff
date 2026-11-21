@@ -1,0 +1,401 @@
+--- yesterday
++++ 2026-11-21
+@@ -3,5 +3,5 @@
+ <title>RustSec Advisories</title>
+ <id>https://rustsec.org/feed.xml</id>
+-<updated>2026-11-19T12:00:00+00:00</updated>
++<updated>2026-11-20T12:00:00+00:00</updated>
+ <author>
+ <name>RustSec</name>
+@@ -11,4 +11,831 @@
+ <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
+ <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
++<entry>
++<title>RUSTSEC-2026-0583: Vulnerability in sad-rsa</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0583.html</id>
++<updated>2026-11-20T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0583.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0583: Vulnerability in sad-rsa"/>
++<published>2026-11-20T12:00:00+00:00</published>
++<summary xml:lang="en">Panics during RSA private-key construction, validation, or re-encoding</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/sad-rsa/RUSTSEC-2026-0583.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/sad-rsa/RUSTSEC-2026-0583.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0583">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0583
++</h1>
++<span class="subtitle">
++<p>Panics during RSA private-key construction, validation, or re-encoding</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-20">
++November 20, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/sad-rsa.html">sad-rsa</a>
++(<a href="https://crates.io/crates/sad-rsa">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/rsa.html">#rsa</a>
++<a href="/keywords/panic.html">#panic</a>
++<a href="/keywords/private-key.html">#private-key</a>
++<a href="/keywords/pkcs1.html">#pkcs1</a>
++<a href="/keywords/pkcs8.html">#pkcs8</a>
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/advisories/GHSA-3hj7-mch7-c7cc">GHSA-3hj7-mch7-c7cc</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4">
++https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4
++</a>
++</li>
++</ul>
++</dd>
++<dt id="cvss_score">CVSS Score</dt>
++<dd>5.3 <span class="tag medium">
++MEDIUM
++</span>
++</dd>
++<dt id="cvss_details">CVSS Details</dt>
++<dd>
++<dl>
++<dt>Attack Vector</dt>
++<dd>Network</dd>
++<dt>Attack Complexity</dt>
++<dd>Low</dd>
++<dt>Privileges Required</dt>
++<dd>None</dd>
++<dt>User Interaction</dt>
++<dd>None</dd>
++<dt>Scope</dt>
++<dd>Unchanged</dd>
++<dt>Confidentiality Impact</dt>
++<dd>None</dd>
++<dt>Integrity Impact</dt>
++<dd>None</dd>
++<dt>Availability Impact</dt>
++<dd>Low</dd>
++</dl>
++</dd>
++<dt id="cvss">CVSS Vector</dt>
++<dd>
++<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</a>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.10.4</code>
++</li>
++</ul>
++</dd>
++</dl>
++<dl>
++<dt>Affected Functions</dt>
++<dd>Version</dd>
++<dt>
++<code>sad_rsa::RsaPrivateKey::crt_coefficient</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.10.4</code>
++</li>
++</ul>
++</dd>
++<dt>
++<code>sad_rsa::RsaPrivateKey::from_components</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.10.4</code>
++</li>
++</ul>
++</dd>
++<dt>
++<code>sad_rsa::RsaPrivateKey::from_p_q</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.10.4</code>
++</li>
++</ul>
++</dd>
++<dt>
++<code>sad_rsa::RsaPrivateKey::from_primes</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.10.4</code>
++</li>
++</ul>
++</dd>
++<dt>
++<code>sad_rsa::RsaPrivateKey::validate</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.10.4</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>
++<code>RsaPrivateKey</code> private-key construction, validation, and serialization can panic across three
++classes of inputs, as well as when re-encoding certain valid keys:</p>
++<ul>
++<li>
++<code>RsaPrivateKey::from_components</code> and PKCS#1 or PKCS#8 private-key decoding (DER or PEM) can panic
++during validation when a supplied factor equals 1, because <code>RsaPrivateKey::validate()</code> let a
++factor of 1 reach a later check that panicked.</li>
++<li>
++<code>RsaPrivateKey::from_primes</code> and <code>RsaPrivateKey::from_p_q</code> can panic during construction when a
++supplied factor is 0, 1, or even.</li>
++<li>Prime recovery in <code>RsaPrivateKey::from_components</code> can panic when the private exponent is 0.</li>
++<li>For a key, including a valid one, whose first prime occupies more limbs than the second,
++<code>crt_coefficient</code>, <code>to_pkcs1_der</code>, <code>to_pkcs8_der</code>, and <code>serde</code> serialization can panic.</li>
++</ul>
++<p>An application that imports untrusted private keys or factors, or re-encodes such keys, can lose a
++worker, or the whole process when built with <code>panic = &quot;abort&quot;</code>. Public-key parsing is not affected.</p>
++<p>Fixed in 0.10.4, which rejects factors below 2, even factors, repeated factors, and a zero private
++exponent during prime recovery, and computes the CRT coefficient and re-encodes valid two-prime
++keys when the first prime occupies more limbs than the second.</p>
++<p>If you cannot upgrade to 0.10.4, isolate the entire import, construction, CRT calculation, or
++serialization in a separate process and treat an abnormal exit as an operation failure, or use
++<code>catch_unwind</code> around the entire operation when panics unwind.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0584.html</id>
++<updated>2026-11-20T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0584.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit"/>
++<published>2026-11-20T12:00:00+00:00</published>
++<summary xml:lang="en">gRPC `IpKeyExtractor` keys on client-supplied forwarding headers</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/tokio-rate-limit/RUSTSEC-2026-0584.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/tokio-rate-limit/RUSTSEC-2026-0584.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0584">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0584
++</h1>
++<span class="subtitle">
++<p>gRPC <code>IpKeyExtractor</code> keys on client-supplied forwarding headers</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-20">
++November 20, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/tokio-rate-limit.html">tokio-rate-limit</a>
++(<a href="https://crates.io/crates/tokio-rate-limit">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/rate-limit.html">#rate-limit</a>
++<a href="/keywords/grpc.html">#grpc</a>
++<a href="/keywords/tonic.html">#tonic</a>
++<a href="/keywords/x-forwarded-for.html">#x-forwarded-for</a>
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/advisories/GHSA-r5c9-r265-ccg3">GHSA-r5c9-r265-ccg3</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/sadco-io/tokio-rate-limit/releases/tag/v0.11.1">
++https://github.com/sadco-io/tokio-rate-limit/releases/tag/v0.11.1
++</a>
++</li>
++</ul>
++</dd>
++<dt id="cvss_score">CVSS Score</dt>
++<dd>5.3 <span class="tag medium">
++MEDIUM
++</span>
++</dd>
++<dt id="cvss_details">CVSS Details</dt>
++<dd>
++<dl>
++<dt>Attack Vector</dt>
++<dd>Network</dd>
++<dt>Attack Complexity</dt>
++<dd>Low</dd>
++<dt>Privileges Required</dt>
++<dd>None</dd>
++<dt>User Interaction</dt>
++<dd>None</dd>
++<dt>Scope</dt>
++<dd>Unchanged</dd>
++<dt>Confidentiality Impact</dt>
++<dd>None</dd>
++<dt>Integrity Impact</dt>
++<dd>None</dd>
++<dt>Availability Impact</dt>
++<dd>Low</dd>
++</dl>
++</dd>
++<dt id="cvss">CVSS Vector</dt>
++<dd>
++<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</a>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.11.1</code>
++</li>
++</ul>
++</dd>
++<dt id="unaffected">Unaffected</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.5.0</code>
++</li>
++</ul>
++</dd>
++</dl>
++<dl>
++<dt>Affected Functions</dt>
++<dd>Version</dd>
++<dt>
++<code>tokio_rate_limit::tonic_middleware::IpKeyExtractor::extract</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.5.0, &#60;0.11.1</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>
++<code>tonic_middleware::IpKeyExtractor</code> is documented as rate limiting gRPC requests by client IP address,
++but on a standard tonic server it keys on client-supplied <code>x-forwarded-for</code> and <code>x-real-ip</code>
++headers. In 0.5.0–0.9.1, the extractor reads those headers directly; in 0.10.0–0.11.0, it first
++checks for a bare <code>std::net::SocketAddr</code> request extension—which <code>tonic::transport::Server</code> never
++supplies, as it provides <code>TcpConnectInfo</code> instead—and falls back to the same headers. Direct
++clients can therefore choose their rate-limit key to bypass per-IP rate limits and increase the
++number of tracked keys; without forwarding headers, 0.5.0–0.9.1 allow requests without limiting
++them and 0.10.0–0.11.0 reject them by default unless <code>.fail_open()</code> is enabled.</p>
++<p>Applications are affected if they use <code>GrpcRateLimitLayer</code> with <code>IpKeyExtractor</code> (the
++<code>tonic-support</code> feature). The HTTP middleware's <code>IpKeyExtractor</code> reads <code>ConnectInfo&lt;SocketAddr&gt;</code> and
++is not affected.</p>
++<p>Version 0.11.1 fixes <code>IpKeyExtractor</code> to honor a server-supplied <code>SocketAddr</code> override first and then
++read the TCP peer address from tonic's <code>TcpConnectInfo</code> (which <code>tonic::transport::Server</code> attaches
++to plaintext connections and connections using its built-in TLS), without ever reading forwarding
++headers. Deployments behind a trusted proxy can use the new opt-in <code>ForwardedIpKeyExtractor</code>, which
++reads a single configured header (<code>x-forwarded-for</code> or <code>x-real-ip</code>) and is only correct when that
++proxy sets the header as documented.</p>
++<p>If you cannot upgrade to 0.11.1, use a custom key extractor that reads the peer IP from tonic's
++connection information for the transport in use (including TLS) and rejects requests without a
++verified peer address before invoking the limiter, or restrict backend access to a trusted proxy
++that strips all incoming <code>x-forwarded-for</code> and <code>x-real-ip</code> fields and sets one <code>x-forwarded-for</code>
++value to the verified client IP on every request.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0585: Vulnerability in pqcrypto-mlkem</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0585.html</id>
++<updated>2026-11-20T12:00:00+00:00</updated>
++<category term="crypto-failure"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0585.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0585: Vulnerability in pqcrypto-mlkem"/>
++<published>2026-11-20T12:00:00+00:00</published>
++<summary xml:lang="en">ML-KEM does not perform the FIPS 203 input checks</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-mlkem/RUSTSEC-2026-0585.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-mlkem/RUSTSEC-2026-0585.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0585">JSON (OSV)</a>
++</span>
++<header>
++<h1>
+... (4791줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)
