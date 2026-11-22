@@ -1,0 +1,401 @@
+--- yesterday
++++ 2026-11-22
+@@ -11,206 +11,4 @@
+ <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
+ <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
+-<entry>
+-<title>RUSTSEC-2026-0583: Vulnerability in sad-rsa</title>
+-<id>https://rustsec.org/advisories/RUSTSEC-2026-0583.html</id>
+-<updated>2026-11-20T12:00:00+00:00</updated>
+-<category term="denial-of-service"/>
+-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0583.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0583: Vulnerability in sad-rsa"/>
+-<published>2026-11-20T12:00:00+00:00</published>
+-<summary xml:lang="en">Panics during RSA private-key construction, validation, or re-encoding</summary>
+-<content xml:lang="en" type="html">
+-<article>
+-<span class="floating-menu">
+-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/sad-rsa/RUSTSEC-2026-0583.md">History</a> ⋅
+-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/sad-rsa/RUSTSEC-2026-0583.md">Edit</a> ⋅
+-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0583">JSON (OSV)</a>
+-</span>
+-<header>
+-<h1>
+-RUSTSEC-2026-0583
+-</h1>
+-<span class="subtitle">
+-<p>Panics during RSA private-key construction, validation, or re-encoding</p>
+-</span>
+-</header>
+-<dl>
+-<dt id="reported">Reported</dt>
+-<dd>
+-<time datetime="2026-11-19">
+-November 19, 2026
+-</time>
+-</dd>
+-<dt id="issued">Issued</dt>
+-<dd>
+-<time datetime="2026-11-20">
+-November 20, 2026
+-</time>
+-</dd>
+-<dt id="package">Package</dt>
+-<dd>
+-<a href="/packages/sad-rsa.html">sad-rsa</a>
+-(<a href="https://crates.io/crates/sad-rsa">crates.io</a>)
+-</dd>
+-<dt id="type">Type</dt>
+-<dd>
+-Vulnerability
+-</dd>
+-<dt id="categories">Categories</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="/categories/denial-of-service.html">denial-of-service</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="keywords">Keywords</dt>
+-<dd>
+-<a href="/keywords/rsa.html">#rsa</a>
+-<a href="/keywords/panic.html">#panic</a>
+-<a href="/keywords/private-key.html">#private-key</a>
+-<a href="/keywords/pkcs1.html">#pkcs1</a>
+-<a href="/keywords/pkcs8.html">#pkcs8</a>
+-</dd>
+-<dt id="aliases">Aliases</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/advisories/GHSA-3hj7-mch7-c7cc">GHSA-3hj7-mch7-c7cc</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="details">References</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4">
+-https://github.com/sadco-io/sad-rsa/releases/tag/v0.10.4
+-</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="cvss_score">CVSS Score</dt>
+-<dd>5.3 <span class="tag medium">
+-MEDIUM
+-</span>
+-</dd>
+-<dt id="cvss_details">CVSS Details</dt>
+-<dd>
+-<dl>
+-<dt>Attack Vector</dt>
+-<dd>Network</dd>
+-<dt>Attack Complexity</dt>
+-<dd>Low</dd>
+-<dt>Privileges Required</dt>
+-<dd>None</dd>
+-<dt>User Interaction</dt>
+-<dd>None</dd>
+-<dt>Scope</dt>
+-<dd>Unchanged</dd>
+-<dt>Confidentiality Impact</dt>
+-<dd>None</dd>
+-<dt>Integrity Impact</dt>
+-<dd>None</dd>
+-<dt>Availability Impact</dt>
+-<dd>Low</dd>
+-</dl>
+-</dd>
+-<dt id="cvss">CVSS Vector</dt>
+-<dd>
+-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</a>
+-</dd>
+-<dt id="patched">Patched</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#62;=0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-</dl>
+-<dl>
+-<dt>Affected Functions</dt>
+-<dd>Version</dd>
+-<dt>
+-<code>sad_rsa::RsaPrivateKey::crt_coefficient</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-<dt>
+-<code>sad_rsa::RsaPrivateKey::from_components</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-<dt>
+-<code>sad_rsa::RsaPrivateKey::from_p_q</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-<dt>
+-<code>sad_rsa::RsaPrivateKey::from_primes</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-<dt>
+-<code>sad_rsa::RsaPrivateKey::validate</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.4</code>
+-</li>
+-</ul>
+-</dd>
+-</dl>
+-<h3 id="description">Description</h3>
+-<p>
+-<code>RsaPrivateKey</code> private-key construction, validation, and serialization can panic across three
+-classes of inputs, as well as when re-encoding certain valid keys:</p>
+-<ul>
+-<li>
+-<code>RsaPrivateKey::from_components</code> and PKCS#1 or PKCS#8 private-key decoding (DER or PEM) can panic
+-during validation when a supplied factor equals 1, because <code>RsaPrivateKey::validate()</code> let a
+-factor of 1 reach a later check that panicked.</li>
+-<li>
+-<code>RsaPrivateKey::from_primes</code> and <code>RsaPrivateKey::from_p_q</code> can panic during construction when a
+-supplied factor is 0, 1, or even.</li>
+-<li>Prime recovery in <code>RsaPrivateKey::from_components</code> can panic when the private exponent is 0.</li>
+-<li>For a key, including a valid one, whose first prime occupies more limbs than the second,
+-<code>crt_coefficient</code>, <code>to_pkcs1_der</code>, <code>to_pkcs8_der</code>, and <code>serde</code> serialization can panic.</li>
+-</ul>
+-<p>An application that imports untrusted private keys or factors, or re-encodes such keys, can lose a
+-worker, or the whole process when built with <code>panic = &quot;abort&quot;</code>. Public-key parsing is not affected.</p>
+-<p>Fixed in 0.10.4, which rejects factors below 2, even factors, repeated factors, and a zero private
+-exponent during prime recovery, and computes the CRT coefficient and re-encodes valid two-prime
+-keys when the first prime occupies more limbs than the second.</p>
+-<p>If you cannot upgrade to 0.10.4, isolate the entire import, construction, CRT calculation, or
+-serialization in a separate process and treat an abnormal exit as an operation failure, or use
+-<code>catch_unwind</code> around the entire operation when panics unwind.</p>
+-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+-license.
+-</p>
+-</article>
+-</content>
+-</entry>
+ <entry>
+ <title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title>
+@@ -383,4 +181,341 @@
+ </entry>
+ <entry>
++<title>RUSTSEC-2026-0587: Vulnerability in wasmtime-wasi</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0587.html</id>
++<updated>2026-11-20T12:00:00+00:00</updated>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0587.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0587: Vulnerability in wasmtime-wasi"/>
++<published>2026-11-20T12:00:00+00:00</published>
++<summary xml:lang="en">WASI filesystem sandbox escape on Windows through a drive-prefixed path component</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime-wasi/RUSTSEC-2026-0587.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime-wasi/RUSTSEC-2026-0587.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0587">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0587
++</h1>
++<span class="subtitle">
++<p>WASI filesystem sandbox escape on Windows through a drive-prefixed path component</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-20">
++November 20, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/wasmtime-wasi.html">wasmtime-wasi</a>
++(<a href="https://crates.io/crates/wasmtime-wasi">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/advisories/GHSA-f2pq-268w-886c">GHSA-f2pq-268w-886c</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/bytecodealliance/wasmtime/pull/15371">
++https://github.com/bytecodealliance/wasmtime/pull/15371
++</a>
++</li>
++</ul>
++</dd>
++<dt id="cvss_score">CVSS Score</dt>
++<dd>7.5 <span class="tag high">
++HIGH
++</span>
++</dd>
++<dt id="cvss_details">CVSS Details</dt>
++<dd>
++<dl>
++<dt>Attack Complexity</dt>
++<dd>Low</dd>
++<dt>Attack Requirements</dt>
++<dd>Present</dd>
++<dt>Attack Vector</dt>
++<dd>Network</dd>
++<dt>Privileges Required</dt>
++<dd>Low</dd>
++<dt>Availability Impact to the Subsequent System</dt>
++<dd>None</dd>
++<dt>Confidentiality Impact to the Subsequent System</dt>
++<dd>None</dd>
++<dt>Integrity Impact to the Subsequent System</dt>
++<dd>None</dd>
++<dt>User Interaction</dt>
++<dd>Passive</dd>
++<dt>Availability Impact to the Vulnerable System</dt>
++<dd>High</dd>
++<dt>Confidentiality Impact to the Vulnerable System</dt>
++<dd>High</dd>
++<dt>Integrity Impact to the Vulnerable System</dt>
++<dd>High</dd>
++</dl>
++</dd>
++<dt id="cvss">CVSS Vector</dt>
++<dd>
++<a href="https://www.first.org/cvss/calculator/3.1#CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N">CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N</a>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=36.0.22, &#60;37.0.0</code>
++</li>
++<li>
++<code>&#62;=48.0.10, &#60;49.0.0</code>
++</li>
++<li>
++<code>&#62;=49.0.7, &#60;50.0.0</code>
++</li>
++<li>
++<code>&#62;=50.0.3</code>
++</li>
++</ul>
++</dd>
++<dt>Affected OSes</dt>
++<dd>
++<ul>
++<li>
++<code>windows</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>This is an entry in the RustSec database for the Wasmtime security advisory
++located at
++https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-f2pq-268w-886c
++For more information see the GitHub-hosted security advisory.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0583: Vulnerability in sad-rsa</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0583.html</id>
++<updated>2026-11-20T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0583.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0583: Vulnerability in sad-rsa"/>
++<published>2026-11-20T12:00:00+00:00</published>
++<summary xml:lang="en">Panics during RSA private-key construction, validation, or re-encoding</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/sad-rsa/RUSTSEC-2026-0583.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/sad-rsa/RUSTSEC-2026-0583.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0583">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0583
++</h1>
++<span class="subtitle">
++<p>Panics during RSA private-key construction, validation, or re-encoding</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-20">
++November 20, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/sad-rsa.html">sad-rsa</a>
++(<a href="https://crates.io/crates/sad-rsa">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
+... (6645줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)
