@@ -1,0 +1,401 @@
+--- yesterday
++++ 2026-11-23
+@@ -3,5 +3,5 @@
+ <title>RustSec Advisories</title>
+ <id>https://rustsec.org/feed.xml</id>
+-<updated>2026-11-20T12:00:00+00:00</updated>
++<updated>2026-11-22T12:00:00+00:00</updated>
+ <author>
+ <name>RustSec</name>
+@@ -11,4 +11,666 @@
+ <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
+ <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
++<entry>
++<title>RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0588.html</id>
++<updated>2026-11-22T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0588.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation"/>
++<published>2026-11-22T12:00:00+00:00</published>
++<summary xml:lang="en">Validating Matrix Content URIs may panic</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0588">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0588
++</h1>
++<span class="subtitle">
++<p>Validating Matrix Content URIs may panic</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-22">
++November 22, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/ruma-identifiers-validation.html">ruma-identifiers-validation</a>
++(<a href="https://crates.io/crates/ruma-identifiers-validation">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c">
++https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c
++</a>
++</li>
++</ul>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.13.0</code>
++</li>
++</ul>
++</dd>
++<dt id="unaffected">Unaffected</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.2.3</code>
++</li>
++</ul>
++</dd>
++</dl>
++<dl>
++<dt>Affected Functions</dt>
++<dd>Version</dd>
++<dt>
++<code>ruma_identifiers_validation::mxc_uri::validate</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.13.0, &#62;=0.2.3</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>Using <code>mxc_uri::validate</code> may panic if the server name part of the URI is larger
++than 249 bytes. The affected versions assumed that the length of the first part
++of the URI (<code>mxc://{server_name}</code>) would fit into a <code>NonZeroU8</code>, but the length
++of the server name wasn't validated and the Matrix specification actually allows
++the server name to have a maximum length of 261 bytes.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0589.html</id>
++<updated>2026-11-22T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0589.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation"/>
++<published>2026-11-22T12:00:00+00:00</published>
++<summary xml:lang="en">Validating Matrix key IDs may panic</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0589">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0589
++</h1>
++<span class="subtitle">
++<p>Validating Matrix key IDs may panic</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-19">
++November 19, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-22">
++November 22, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/ruma-identifiers-validation.html">ruma-identifiers-validation</a>
++(<a href="https://crates.io/crates/ruma-identifiers-validation">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038">
++https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038
++</a>
++</li>
++</ul>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.14.0</code>
++</li>
++</ul>
++</dd>
++</dl>
++<dl>
++<dt>Affected Functions</dt>
++<dd>Version</dd>
++<dt>
++<code>ruma_identifiers_validation::key_id::validate</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.14.0</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>Using <code>key_id::validate</code> may panic if the <code>algorithm</code> part of the key ID is
++longer than 255 bytes and contains non-ASCII characters. The affected versions
++assumed that the length of the first part containing the encryption or signing
++algorithm (the part before the colon) would fit into a <code>NonZeroU8</code>, but the
++length of the first part wasn't validated.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0593.html</id>
++<updated>2026-11-22T12:00:00+00:00</updated>
++<category term="crypto-failure"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0593.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium"/>
++<published>2026-11-22T12:00:00+00:00</published>
++<summary xml:lang="en">Dilithium verification accepts non-conforming signatures with the `avx2` feature</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0593">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0593
++</h1>
++<span class="subtitle">
++<p>Dilithium verification accepts non-conforming signatures with the <code>avx2</code> feature</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-21">
++November 21, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-22">
++November 22, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/pqcrypto-dilithium.html">pqcrypto-dilithium</a>
++(<a href="https://crates.io/crates/pqcrypto-dilithium">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/crypto-failure.html">crypto-failure</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/dilithium.html">#dilithium</a>
++<a href="/keywords/signature.html">#signature</a>
++<a href="/keywords/verification.html">#verification</a>
++<a href="/keywords/avx2.html">#avx2</a>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier">
++https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier
++</a>
++</li>
++<li>
++<a href="https://github.com/pq-crystals/dilithium/issues/113">
++https://github.com/pq-crystals/dilithium/issues/113
++</a>
++</li>
++<li>
++<a href="https://rustsec.org/advisories/RUSTSEC-2026-0586.html">
++https://rustsec.org/advisories/RUSTSEC-2026-0586.html
++</a>
++</li>
++</ul>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++no patched versions
++</dd>
++<dt>Affected Architectures</dt>
++<dd>
++<ul>
++<li>
++<code>x86_64</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>With the default <code>avx2</code> feature on x86_64 and a CPU that supports AVX2,
++<code>pqcrypto-dilithium</code> verifies signatures with PQClean's AVX2 implementation of
++Dilithium. That implementation predates two upstream fixes
++(<a href="https://github.com/pq-crystals/dilithium/issues/113">pq-crystals/dilithium#113</a>,
++3 June 2026), the same ones described in RUSTSEC-2026-0586 for <code>pqcrypto-mldsa</code>:</p>
++<ul>
++<li>the verifier does not check that the infinity norm of <code>z</code> is below
++<code>γ1 − β</code>, so it accepts signatures that the crate's own portable
++implementation rejects;</li>
++<li>
++<code>use_hint_avx()</code> mishandles a boundary case, so one class of valid
++signatures is rejected.</li>
++</ul>
++<p>Creating an accepted out-of-bound signature requires the private key. The
++practical effect is that verification results differ between this crate with
++AVX2 and the same crate without it.</p>
++<p>Tested on version 0.5.0: for each of dilithium2, dilithium3 and dilithium5, 20
++signatures with <code>z</code> out of bound are accepted with AVX2 and rejected by the
++portable code, and 2 valid signatures that exercise the <code>use_hint</code> boundary
++are rejected with AVX2 and accepted by the portable code. This crate
++implements a pre-standard version of the scheme, so the Wycheproof ML-DSA
++vectors do not apply; the test signatures are built with the crate's own
++signer.</p>
++<p>The crate is unmaintained (see RUSTSEC-2024-0380) and no patched version is
++expected. Disabling the <code>avx2</code> feature avoids the affected code.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0590: Vulnerability in secure-gate</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0590.html</id>
++<updated>2026-11-22T12:00:00+00:00</updated>
++<category term="memory-exposure"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0590.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0590: Vulnerability in secure-gate"/>
++<published>2026-11-22T12:00:00+00:00</published>
++<summary xml:lang="en">`Fixed` and `Dynamic` secret wrappers were not zeroized on drop</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/secure-gate/RUSTSEC-2026-0590.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/secure-gate/RUSTSEC-2026-0590.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0590">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0590
++</h1>
++<span class="subtitle">
++<p>
++<code>Fixed</code> and <code>Dynamic</code> secret wrappers were not zeroized on drop</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-03-17">
++March 17, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-22">
++November 22, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/secure-gate.html">secure-gate</a>
++(<a href="https://crates.io/crates/secure-gate">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/memory-exposure.html">memory-exposure</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/zeroize.html">#zeroize</a>
++<a href="/keywords/drop.html">#drop</a>
++<a href="/keywords/secrets.html">#secrets</a>
+... (276줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)

@@ -1,5 +1,964 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>RustSec Advisories</title><id>https://rustsec.org/feed.xml</id><updated>2026-11-20T12:00:00+00:00</updated><author><name>RustSec</name></author><icon>https://rustsec.org/favicon.ico</icon><link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/><link href="https://rustsec.org/" rel="alternate" type="text/html"/><subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle><entry><title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0584.html</id><updated>2026-11-20T12:00:00+00:00</updated><category term="denial-of-service"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0584.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit"/><published>2026-11-20T12:00:00+00:00</published><summary xml:lang="en">gRPC `IpKeyExtractor` keys on client-supplied forwarding headers</summary><content xml:lang="en" type="html">  &lt;article&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>RustSec Advisories</title><id>https://rustsec.org/feed.xml</id><updated>2026-11-22T12:00:00+00:00</updated><author><name>RustSec</name></author><icon>https://rustsec.org/favicon.ico</icon><link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/><link href="https://rustsec.org/" rel="alternate" type="text/html"/><subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle><entry><title>RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0588.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="denial-of-service"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0588.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">Validating Matrix Content URIs may panic</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0588&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0588
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;Validating Matrix Content URIs may panic&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-19&quot;&gt;
+          November 19, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/ruma-identifiers-validation.html&quot;&gt;ruma-identifiers-validation&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/ruma-identifiers-validation&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        Vulnerability
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/denial-of-service.html&quot;&gt;denial-of-service&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c&quot;&gt;
+              https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#62;=0.13.0&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;unaffected&quot;&gt;Unaffected&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;0.2.3&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      
+
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+    &lt;dl&gt;
+      &lt;dt&gt;Affected Functions&lt;/dt&gt;
+      &lt;dd&gt;Version&lt;/dd&gt;
+      
+      &lt;dt&gt;&lt;code&gt;ruma_identifiers_validation::mxc_uri::validate&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;0.13.0, &amp;#62;=0.2.3&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+    &lt;/dl&gt;
+    
+
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;Using &lt;code&gt;mxc_uri::validate&lt;/code&gt; may panic if the server name part of the URI is larger
+than 249 bytes. The affected versions assumed that the length of the first part
+of the URI (&lt;code&gt;mxc://{server_name}&lt;/code&gt;) would fit into a &lt;code&gt;NonZeroU8&lt;/code&gt;, but the length
+of the server name wasn&apos;t validated and the Matrix specification actually allows
+the server name to have a maximum length of 261 bytes.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0589.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="denial-of-service"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0589.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">Validating Matrix key IDs may panic</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0589&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0589
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;Validating Matrix key IDs may panic&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-19&quot;&gt;
+          November 19, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/ruma-identifiers-validation.html&quot;&gt;ruma-identifiers-validation&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/ruma-identifiers-validation&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        Vulnerability
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/denial-of-service.html&quot;&gt;denial-of-service&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038&quot;&gt;
+              https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#62;=0.14.0&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+        
+      &lt;/dd&gt;
+
+      
+
+      
+      
+
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+    &lt;dl&gt;
+      &lt;dt&gt;Affected Functions&lt;/dt&gt;
+      &lt;dd&gt;Version&lt;/dd&gt;
+      
+      &lt;dt&gt;&lt;code&gt;ruma_identifiers_validation::key_id::validate&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;0.14.0&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+    &lt;/dl&gt;
+    
+
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;Using &lt;code&gt;key_id::validate&lt;/code&gt; may panic if the &lt;code&gt;algorithm&lt;/code&gt; part of the key ID is
+longer than 255 bytes and contains non-ASCII characters. The affected versions
+assumed that the length of the first part containing the encryption or signing
+algorithm (the part before the colon) would fit into a &lt;code&gt;NonZeroU8&lt;/code&gt;, but the
+length of the first part wasn&apos;t validated.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0593.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="crypto-failure"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0593.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">Dilithium verification accepts non-conforming signatures with the `avx2` feature</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0593&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0593
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;Dilithium verification accepts non-conforming signatures with the &lt;code&gt;avx2&lt;/code&gt; feature&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-21&quot;&gt;
+          November 21, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/pqcrypto-dilithium.html&quot;&gt;pqcrypto-dilithium&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/pqcrypto-dilithium&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        Vulnerability
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/crypto-failure.html&quot;&gt;crypto-failure&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      &lt;dt id=&quot;keywords&quot;&gt;Keywords&lt;/dt&gt;
+      &lt;dd&gt;
+        
+          &lt;a href=&quot;/keywords/dilithium.html&quot;&gt;#dilithium&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/signature.html&quot;&gt;#signature&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/verification.html&quot;&gt;#verification&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/avx2.html&quot;&gt;#avx2&lt;/a&gt;
+        
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier&quot;&gt;
+              https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/pq-crystals/dilithium/issues/113&quot;&gt;
+              https://github.com/pq-crystals/dilithium/issues/113
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://rustsec.org/advisories/RUSTSEC-2026-0586.html&quot;&gt;
+              https://rustsec.org/advisories/RUSTSEC-2026-0586.html
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        no patched versions
+        
+      &lt;/dd&gt;
+
+      
+
+      
+      
+      &lt;dt&gt;Affected Architectures&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;x86_64&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;With the default &lt;code&gt;avx2&lt;/code&gt; feature on x86_64 and a CPU that supports AVX2,
+&lt;code&gt;pqcrypto-dilithium&lt;/code&gt; verifies signatures with PQClean&apos;s AVX2 implementation of
+Dilithium. That implementation predates two upstream fixes
+(&lt;a href=&quot;https://github.com/pq-crystals/dilithium/issues/113&quot;&gt;pq-crystals/dilithium#113&lt;/a&gt;,
+3 June 2026), the same ones described in RUSTSEC-2026-0586 for &lt;code&gt;pqcrypto-mldsa&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the verifier does not check that the infinity norm of &lt;code&gt;z&lt;/code&gt; is below
+&lt;code&gt;γ1 − β&lt;/code&gt;, so it accepts signatures that the crate&apos;s own portable
+implementation rejects;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;use_hint_avx()&lt;/code&gt; mishandles a boundary case, so one class of valid
+signatures is rejected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Creating an accepted out-of-bound signature requires the private key. The
+practical effect is that verification results differ between this crate with
+AVX2 and the same crate without it.&lt;/p&gt;
+&lt;p&gt;Tested on version 0.5.0: for each of dilithium2, dilithium3 and dilithium5, 20
+signatures with &lt;code&gt;z&lt;/code&gt; out of bound are accepted with AVX2 and rejected by the
+portable code, and 2 valid signatures that exercise the &lt;code&gt;use_hint&lt;/code&gt; boundary
+are rejected with AVX2 and accepted by the portable code. This crate
+implements a pre-standard version of the scheme, so the Wycheproof ML-DSA
+vectors do not apply; the test signatures are built with the crate&apos;s own
+signer.&lt;/p&gt;
+&lt;p&gt;The crate is unmaintained (see RUSTSEC-2024-0380) and no patched version is
+expected. Disabling the &lt;code&gt;avx2&lt;/code&gt; feature avoids the affected code.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0590: Vulnerability in secure-gate</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0590.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="memory-exposure"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0590.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0590: Vulnerability in secure-gate"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">`Fixed` and `Dynamic` secret wrappers were not zeroized on drop</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/secure-gate/RUSTSEC-2026-0590.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/secure-gate/RUSTSEC-2026-0590.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0590&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0590
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;&lt;code&gt;Fixed&lt;/code&gt; and &lt;code&gt;Dynamic&lt;/code&gt; secret wrappers were not zeroized on drop&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-03-17&quot;&gt;
+          March 17, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/secure-gate.html&quot;&gt;secure-gate&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/secure-gate&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        Vulnerability
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/memory-exposure.html&quot;&gt;memory-exposure&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      &lt;dt id=&quot;keywords&quot;&gt;Keywords&lt;/dt&gt;
+      &lt;dd&gt;
+        
+          &lt;a href=&quot;/keywords/zeroize.html&quot;&gt;#zeroize&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/drop.html&quot;&gt;#drop&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/secrets.html&quot;&gt;#secrets&lt;/a&gt;
+        
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/Slurp9187/secure-gate/blob/main/SECURITY.md#past-advisory&quot;&gt;
+              https://github.com/Slurp9187/secure-gate/blob/main/SECURITY.md#past-advisory
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#62;=0.8.0-rc.1&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;unaffected&quot;&gt;Unaffected&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;0.5.0&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;In affected versions, the &lt;code&gt;Fixed&amp;lt;T&amp;gt;&lt;/code&gt; and &lt;code&gt;Dynamic&amp;lt;T&amp;gt;&lt;/code&gt; wrappers (and the
+&lt;code&gt;FixedNoClone&lt;/code&gt; / &lt;code&gt;DynamicNoClone&lt;/code&gt; variants in 0.6.x) did not wipe their contents
+when dropped. The types implemented the &lt;code&gt;zeroize::ZeroizeOnDrop&lt;/code&gt; marker trait,
+which has no methods and does nothing by itself, but had no &lt;code&gt;Drop&lt;/code&gt; implementation.
+The documentation stated that secrets were zeroized on drop.&lt;/p&gt;
+&lt;p&gt;A secret held in one of these wrappers stayed in the freed stack or heap memory
+after the wrapper went out of scope, where it could be read by anything able to
+observe that memory later, such as a core dump, swap, or a separate memory
+disclosure bug.&lt;/p&gt;
+&lt;p&gt;Versions before 0.5.0 are not affected: with the default &lt;code&gt;zeroize&lt;/code&gt; feature they
+stored the secret in &lt;code&gt;secrecy::SecretBox&lt;/code&gt; or &lt;code&gt;zeroize::Zeroizing&lt;/code&gt;, both of which
+wipe on drop.&lt;/p&gt;
+&lt;p&gt;The flaw was fixed by making &lt;code&gt;zeroize&lt;/code&gt; a required dependency, bounding the
+wrappers on &lt;code&gt;T: Zeroize&lt;/code&gt;, and adding &lt;code&gt;Drop&lt;/code&gt; implementations that call
+&lt;code&gt;zeroize()&lt;/code&gt;. The first published release with the fix is 0.8.0-rc.1; the first
+stable release is 0.8.0. All affected versions have been yanked from crates.io.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0591: Security notice about secmem-proc</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0591.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="memory-exposure"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0591.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0591: Security notice about secmem-proc"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">Ineffective default DACL on Windows</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/secmem-proc/RUSTSEC-2026-0591.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/secmem-proc/RUSTSEC-2026-0591.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0591&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0591
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;Ineffective default DACL on Windows&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-10-27&quot;&gt;
+          October 27, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/secmem-proc.html&quot;&gt;secmem-proc&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/secmem-proc&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;span class=&quot;tag info&quot;&gt;INFO&lt;/span&gt;
+        Notice
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/memory-exposure.html&quot;&gt;memory-exposure&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/niluxv/secmem-proc/issues/13&quot;&gt;
+              https://github.com/niluxv/secmem-proc/issues/13
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#62;=0.3.9&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+        
+      &lt;/dd&gt;
+
+      
+
+      
+      
+
+      
+      &lt;dt&gt;Affected OSes&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;windows&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;On Windows, affected versions of this crate do not provide the intended security-enhancement.
+In particular, any process running under the same user as the hardened process can reset our DACL,
+and thus bypass the protection the DACL should have provided. Usage of the crate however &lt;em&gt;does not
+actively harm security&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;On affected version, an explicit owner SID (taken from the process token) was used for the DACL.
+However, Windows implicitly grants extra access rights to the well-known &amp;quot;owner rights&amp;quot; SID, unless
+it occurs in the DACL, which it did not. This allows any process under the same user to reset the
+DACL of our process, making this defence effectively useless. The new code uses the well-known
+&amp;quot;owner rights&amp;quot; SID, preventing the attack.&lt;/p&gt;
+&lt;p&gt;The default hardening setup is fixed in version &lt;code&gt;0.3.9&lt;/code&gt;. Users creating a custom DACL with the API
+from the &lt;code&gt;win_acl&lt;/code&gt; module need to manually update their code to get the security enhancement. They
+are strongly advised to use a well-known &amp;quot;owner rights&amp;quot; SID created using the new
+&lt;code&gt;win_acl::SidRef::well_known&lt;/code&gt; (introduced in version &lt;code&gt;0.3.9&lt;/code&gt;) in their DACL instead of the owner
+SID returned by &lt;code&gt;win_acl::TokenUser::sid&lt;/code&gt;.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0592: Vulnerability in url</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0592.html</id><updated>2026-11-22T12:00:00+00:00</updated><category term="denial-of-service"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0592.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0592: Vulnerability in url"/><published>2026-11-22T12:00:00+00:00</published><summary xml:lang="en">Stack overflow in `Url::origin()` on nested `blob:` URLs</summary><content xml:lang="en" type="html">  &lt;article&gt;
+    
+        &lt;span class=&quot;floating-menu&quot;&gt;
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/url/RUSTSEC-2026-0592.md&quot;&gt;History&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://github.com/RustSec/advisory-db/edit/main/crates/url/RUSTSEC-2026-0592.md&quot;&gt;Edit&lt;/a&gt; ⋅
+          &lt;a href=&quot;https://api.osv.dev/v1/vulns/RUSTSEC-2026-0592&quot;&gt;JSON (OSV)&lt;/a&gt;
+        &lt;/span&gt;
+    
+
+    &lt;header&gt;
+      &lt;h1&gt;
+        
+        RUSTSEC-2026-0592
+        
+      &lt;/h1&gt;
+      &lt;span class=&quot;subtitle&quot;&gt;&lt;p&gt;Stack overflow in &lt;code&gt;Url::origin()&lt;/code&gt; on nested &lt;code&gt;blob:&lt;/code&gt; URLs&lt;/p&gt;
+&lt;/span&gt;
+    &lt;/header&gt;
+
+    
+
+    &lt;dl&gt;
+      &lt;dt id=&quot;reported&quot;&gt;Reported&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-20&quot;&gt;
+          November 20, 2026
+        &lt;/time&gt;
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;issued&quot;&gt;Issued&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;time datetime=&quot;2026-11-22&quot;&gt;
+          November 22, 2026
+        &lt;/time&gt;
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;package&quot;&gt;Package&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        
+        &lt;a href=&quot;/packages/url.html&quot;&gt;url&lt;/a&gt;
+           
+          (&lt;a href=&quot;https://crates.io/crates/url&quot;&gt;crates.io&lt;/a&gt;)
+          
+        
+        
+      &lt;/dd&gt;
+
+      &lt;dt id=&quot;type&quot;&gt;Type&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        Vulnerability
+        
+      &lt;/dd&gt;
+
+      
+      &lt;dt id=&quot;categories&quot;&gt;Categories&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;a href=&quot;/categories/denial-of-service.html&quot;&gt;denial-of-service&lt;/a&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      &lt;dt id=&quot;keywords&quot;&gt;Keywords&lt;/dt&gt;
+      &lt;dd&gt;
+        
+          &lt;a href=&quot;/keywords/stack-overflow.html&quot;&gt;#stack-overflow&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/recursion.html&quot;&gt;#recursion&lt;/a&gt;
+        
+          &lt;a href=&quot;/keywords/blob.html&quot;&gt;#blob&lt;/a&gt;
+        
+      &lt;/dd&gt;
+      
+
+      
+      &lt;dt id=&quot;aliases&quot;&gt;Aliases&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;
+            
+            &lt;a href=&quot;https://github.com/advisories/GHSA-hrj5-67jp-wqp9&quot;&gt;GHSA-hrj5-67jp-wqp9&lt;/a&gt;
+            
+          &lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+      &lt;dt id=&quot;details&quot;&gt;References&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+        
+          &lt;li&gt;
+            &lt;a href=&quot;https://github.com/servo/rust-url/pull/1186&quot;&gt;
+              https://github.com/servo/rust-url/pull/1186
+            &lt;/a&gt;
+          &lt;/li&gt;
+        
+        
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+
+      
+
+      
+      
+
+      &lt;dt id=&quot;patched&quot;&gt;Patched&lt;/dt&gt;
+      &lt;dd&gt;
+        
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#62;=2.5.9&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+        
+      &lt;/dd&gt;
+
+      
+
+      
+      
+
+      
+      
+    &lt;/dl&gt;
+
+    
+    
+    &lt;dl&gt;
+      &lt;dt&gt;Affected Functions&lt;/dt&gt;
+      &lt;dd&gt;Version&lt;/dd&gt;
+      
+      &lt;dt&gt;&lt;code&gt;url::Url::origin&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;=2.5.8&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+      &lt;dt&gt;&lt;code&gt;url::quirks::origin&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;
+        &lt;ul&gt;
+          
+          &lt;li&gt;&lt;code&gt;&amp;#60;=2.5.8&lt;/code&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/dd&gt;
+      
+    &lt;/dl&gt;
+    
+
+    
+
+    &lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+    &lt;p&gt;In &lt;code&gt;url&lt;/code&gt; 2.5.8 and earlier, &lt;code&gt;Url::origin()&lt;/code&gt; handled a &lt;code&gt;blob:&lt;/code&gt; URL by parsing its path as another URL and calling itself on the result. It did so regardless of the inner URL&apos;s scheme, &lt;code&gt;blob&lt;/code&gt; included. Each &lt;code&gt;blob:&lt;/code&gt; prefix cost one stack frame, with no limit on nesting depth. &lt;code&gt;Url::parse()&lt;/code&gt; accepts a URL with 10,000 &lt;code&gt;blob:&lt;/code&gt; prefixes followed by &lt;code&gt;https://example.com/&lt;/code&gt; (50,020 bytes in total); calling &lt;code&gt;Url::origin()&lt;/code&gt; on it overflowed the default 2 MiB stack of a spawned thread.&lt;/p&gt;
+&lt;p&gt;A stack overflow aborts the whole process, and &lt;code&gt;catch_unwind()&lt;/code&gt; does not catch it. One such URL crashes any program that calls &lt;code&gt;Url::origin()&lt;/code&gt; on untrusted input. &lt;code&gt;url::quirks::origin()&lt;/code&gt; also calls &lt;code&gt;Url::origin()&lt;/code&gt;. For example, Servo&apos;s &lt;code&gt;URL.origin&lt;/code&gt; DOM getter calls &lt;code&gt;url::quirks::origin()&lt;/code&gt;, so a script on a page can trigger the overflow.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url&lt;/code&gt; 2.5.9 follows the URL Standard: &lt;code&gt;Url::origin()&lt;/code&gt; takes the origin of the inner URL only when its scheme is &lt;code&gt;http&lt;/code&gt;, &lt;code&gt;https&lt;/code&gt;, or &lt;code&gt;file&lt;/code&gt;, returns an opaque origin otherwise, and never calls itself. A &lt;code&gt;blob:&lt;/code&gt; URL with another inner scheme that previously produced a tuple origin, such as &lt;code&gt;blob:ws://...&lt;/code&gt; or &lt;code&gt;blob:blob:https://...&lt;/code&gt;, now returns an opaque origin.&lt;/p&gt;
+
+
+    &lt;p id=&quot;license&quot; class=&quot;license&quot;&gt;Advisory available under &lt;a href=&quot;https://spdx.org/licenses/CC0-1.0.html&quot;&gt;CC0-1.0&lt;/a&gt;
+    license.
+
+    
+    &lt;/p&gt;
+  &lt;/article&gt;</content></entry><entry><title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title><id>https://rustsec.org/advisories/RUSTSEC-2026-0584.html</id><updated>2026-11-20T12:00:00+00:00</updated><category term="denial-of-service"/><link href="https://rustsec.org/advisories/RUSTSEC-2026-0584.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit"/><published>2026-11-20T12:00:00+00:00</published><summary xml:lang="en">gRPC `IpKeyExtractor` keys on client-supplied forwarding headers</summary><content xml:lang="en" type="html">  &lt;article&gt;
     
         &lt;span class=&quot;floating-menu&quot;&gt;
           &lt;a href=&quot;https://github.com/RustSec/advisory-db/commits/main/crates/tokio-rate-limit/RUSTSEC-2026-0584.md&quot;&gt;History&lt;/a&gt; ⋅

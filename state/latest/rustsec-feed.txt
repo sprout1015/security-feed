@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>RustSec Advisories</title>
 <id>https://rustsec.org/feed.xml</id>
-<updated>2026-11-20T12:00:00+00:00</updated>
+<updated>2026-11-22T12:00:00+00:00</updated>
 <author>
 <name>RustSec</name>
 </author>
@@ -10,6 +10,668 @@
 <link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/>
 <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
 <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
+<entry>
+<title>RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0588.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0588.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0588: Vulnerability in ruma-identifiers-validation"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">Validating Matrix Content URIs may panic</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0588.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0588">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0588
+</h1>
+<span class="subtitle">
+<p>Validating Matrix Content URIs may panic</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-19">
+November 19, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/ruma-identifiers-validation.html">ruma-identifiers-validation</a>
+(<a href="https://crates.io/crates/ruma-identifiers-validation">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c">
+https://github.com/ruma/ruma/commit/caf1ac05a9fd347158b60505ef8546a2ff18ae7c
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.13.0</code>
+</li>
+</ul>
+</dd>
+<dt id="unaffected">Unaffected</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.2.3</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>ruma_identifiers_validation::mxc_uri::validate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.13.0, &#62;=0.2.3</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>Using <code>mxc_uri::validate</code> may panic if the server name part of the URI is larger
+than 249 bytes. The affected versions assumed that the length of the first part
+of the URI (<code>mxc://{server_name}</code>) would fit into a <code>NonZeroU8</code>, but the length
+of the server name wasn't validated and the Matrix specification actually allows
+the server name to have a maximum length of 261 bytes.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0589.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0589.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0589: Vulnerability in ruma-identifiers-validation"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">Validating Matrix key IDs may panic</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/ruma-identifiers-validation/RUSTSEC-2026-0589.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0589">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0589
+</h1>
+<span class="subtitle">
+<p>Validating Matrix key IDs may panic</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-19">
+November 19, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/ruma-identifiers-validation.html">ruma-identifiers-validation</a>
+(<a href="https://crates.io/crates/ruma-identifiers-validation">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038">
+https://github.com/ruma/ruma/commit/b2cb9b43efbe082e4d9292560d4c9f0db5734038
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.14.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>ruma_identifiers_validation::key_id::validate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.14.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>Using <code>key_id::validate</code> may panic if the <code>algorithm</code> part of the key ID is
+longer than 255 bytes and contains non-ASCII characters. The affected versions
+assumed that the length of the first part containing the encryption or signing
+algorithm (the part before the colon) would fit into a <code>NonZeroU8</code>, but the
+length of the first part wasn't validated.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0593.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0593.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">Dilithium verification accepts non-conforming signatures with the `avx2` feature</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/pqcrypto-dilithium/RUSTSEC-2026-0593.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0593">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0593
+</h1>
+<span class="subtitle">
+<p>Dilithium verification accepts non-conforming signatures with the <code>avx2</code> feature</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-21">
+November 21, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/pqcrypto-dilithium.html">pqcrypto-dilithium</a>
+(<a href="https://crates.io/crates/pqcrypto-dilithium">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/dilithium.html">#dilithium</a>
+<a href="/keywords/signature.html">#signature</a>
+<a href="/keywords/verification.html">#verification</a>
+<a href="/keywords/avx2.html">#avx2</a>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier">
+https://github.com/RatioLabsEU/pqc-field-notes/tree/main/advisories/2026-mldsa-avx2-verifier
+</a>
+</li>
+<li>
+<a href="https://github.com/pq-crystals/dilithium/issues/113">
+https://github.com/pq-crystals/dilithium/issues/113
+</a>
+</li>
+<li>
+<a href="https://rustsec.org/advisories/RUSTSEC-2026-0586.html">
+https://rustsec.org/advisories/RUSTSEC-2026-0586.html
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+no patched versions
+</dd>
+<dt>Affected Architectures</dt>
+<dd>
+<ul>
+<li>
+<code>x86_64</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>With the default <code>avx2</code> feature on x86_64 and a CPU that supports AVX2,
+<code>pqcrypto-dilithium</code> verifies signatures with PQClean's AVX2 implementation of
+Dilithium. That implementation predates two upstream fixes
+(<a href="https://github.com/pq-crystals/dilithium/issues/113">pq-crystals/dilithium#113</a>,
+3 June 2026), the same ones described in RUSTSEC-2026-0586 for <code>pqcrypto-mldsa</code>:</p>
+<ul>
+<li>the verifier does not check that the infinity norm of <code>z</code> is below
+<code>γ1 − β</code>, so it accepts signatures that the crate's own portable
+implementation rejects;</li>
+<li>
+<code>use_hint_avx()</code> mishandles a boundary case, so one class of valid
+signatures is rejected.</li>
+</ul>
+<p>Creating an accepted out-of-bound signature requires the private key. The
+practical effect is that verification results differ between this crate with
+AVX2 and the same crate without it.</p>
+<p>Tested on version 0.5.0: for each of dilithium2, dilithium3 and dilithium5, 20
+signatures with <code>z</code> out of bound are accepted with AVX2 and rejected by the
+portable code, and 2 valid signatures that exercise the <code>use_hint</code> boundary
+are rejected with AVX2 and accepted by the portable code. This crate
+implements a pre-standard version of the scheme, so the Wycheproof ML-DSA
+vectors do not apply; the test signatures are built with the crate's own
+signer.</p>
+<p>The crate is unmaintained (see RUSTSEC-2024-0380) and no patched version is
+expected. Disabling the <code>avx2</code> feature avoids the affected code.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0590: Vulnerability in secure-gate</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0590.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="memory-exposure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0590.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0590: Vulnerability in secure-gate"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">`Fixed` and `Dynamic` secret wrappers were not zeroized on drop</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/secure-gate/RUSTSEC-2026-0590.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/secure-gate/RUSTSEC-2026-0590.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0590">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0590
+</h1>
+<span class="subtitle">
+<p>
+<code>Fixed</code> and <code>Dynamic</code> secret wrappers were not zeroized on drop</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-03-17">
+March 17, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/secure-gate.html">secure-gate</a>
+(<a href="https://crates.io/crates/secure-gate">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/memory-exposure.html">memory-exposure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/zeroize.html">#zeroize</a>
+<a href="/keywords/drop.html">#drop</a>
+<a href="/keywords/secrets.html">#secrets</a>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/Slurp9187/secure-gate/blob/main/SECURITY.md#past-advisory">
+https://github.com/Slurp9187/secure-gate/blob/main/SECURITY.md#past-advisory
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.8.0-rc.1</code>
+</li>
+</ul>
+</dd>
+<dt id="unaffected">Unaffected</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.5.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>In affected versions, the <code>Fixed&lt;T&gt;</code> and <code>Dynamic&lt;T&gt;</code> wrappers (and the
+<code>FixedNoClone</code> / <code>DynamicNoClone</code> variants in 0.6.x) did not wipe their contents
+when dropped. The types implemented the <code>zeroize::ZeroizeOnDrop</code> marker trait,
+which has no methods and does nothing by itself, but had no <code>Drop</code> implementation.
+The documentation stated that secrets were zeroized on drop.</p>
+<p>A secret held in one of these wrappers stayed in the freed stack or heap memory
+after the wrapper went out of scope, where it could be read by anything able to
+observe that memory later, such as a core dump, swap, or a separate memory
+disclosure bug.</p>
+<p>Versions before 0.5.0 are not affected: with the default <code>zeroize</code> feature they
+stored the secret in <code>secrecy::SecretBox</code> or <code>zeroize::Zeroizing</code>, both of which
+wipe on drop.</p>
+<p>The flaw was fixed by making <code>zeroize</code> a required dependency, bounding the
+wrappers on <code>T: Zeroize</code>, and adding <code>Drop</code> implementations that call
+<code>zeroize()</code>. The first published release with the fix is 0.8.0-rc.1; the first
+stable release is 0.8.0. All affected versions have been yanked from crates.io.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0591: Security notice about secmem-proc</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0591.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="memory-exposure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0591.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0591: Security notice about secmem-proc"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">Ineffective default DACL on Windows</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/secmem-proc/RUSTSEC-2026-0591.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/secmem-proc/RUSTSEC-2026-0591.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0591">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0591
+</h1>
+<span class="subtitle">
+<p>Ineffective default DACL on Windows</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-10-27">
+October 27, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/secmem-proc.html">secmem-proc</a>
+(<a href="https://crates.io/crates/secmem-proc">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+<span class="tag info">INFO</span>
+Notice
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/memory-exposure.html">memory-exposure</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/niluxv/secmem-proc/issues/13">
+https://github.com/niluxv/secmem-proc/issues/13
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.3.9</code>
+</li>
+</ul>
+</dd>
+<dt>Affected OSes</dt>
+<dd>
+<ul>
+<li>
+<code>windows</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>On Windows, affected versions of this crate do not provide the intended security-enhancement.
+In particular, any process running under the same user as the hardened process can reset our DACL,
+and thus bypass the protection the DACL should have provided. Usage of the crate however <em>does not
+actively harm security</em>.</p>
+<p>On affected version, an explicit owner SID (taken from the process token) was used for the DACL.
+However, Windows implicitly grants extra access rights to the well-known &quot;owner rights&quot; SID, unless
+it occurs in the DACL, which it did not. This allows any process under the same user to reset the
+DACL of our process, making this defence effectively useless. The new code uses the well-known
+&quot;owner rights&quot; SID, preventing the attack.</p>
+<p>The default hardening setup is fixed in version <code>0.3.9</code>. Users creating a custom DACL with the API
+from the <code>win_acl</code> module need to manually update their code to get the security enhancement. They
+are strongly advised to use a well-known &quot;owner rights&quot; SID created using the new
+<code>win_acl::SidRef::well_known</code> (introduced in version <code>0.3.9</code>) in their DACL instead of the owner
+SID returned by <code>win_acl::TokenUser::sid</code>.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0592: Vulnerability in url</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0592.html</id>
+<updated>2026-11-22T12:00:00+00:00</updated>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0592.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0592: Vulnerability in url"/>
+<published>2026-11-22T12:00:00+00:00</published>
+<summary xml:lang="en">Stack overflow in `Url::origin()` on nested `blob:` URLs</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/url/RUSTSEC-2026-0592.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/url/RUSTSEC-2026-0592.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0592">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0592
+</h1>
+<span class="subtitle">
+<p>Stack overflow in <code>Url::origin()</code> on nested <code>blob:</code> URLs</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-20">
+November 20, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-22">
+November 22, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/url.html">url</a>
+(<a href="https://crates.io/crates/url">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/stack-overflow.html">#stack-overflow</a>
+<a href="/keywords/recursion.html">#recursion</a>
+<a href="/keywords/blob.html">#blob</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-hrj5-67jp-wqp9">GHSA-hrj5-67jp-wqp9</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/servo/rust-url/pull/1186">
+https://github.com/servo/rust-url/pull/1186
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=2.5.9</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>url::Url::origin</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=2.5.8</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>url::quirks::origin</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=2.5.8</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>In <code>url</code> 2.5.8 and earlier, <code>Url::origin()</code> handled a <code>blob:</code> URL by parsing its path as another URL and calling itself on the result. It did so regardless of the inner URL's scheme, <code>blob</code> included. Each <code>blob:</code> prefix cost one stack frame, with no limit on nesting depth. <code>Url::parse()</code> accepts a URL with 10,000 <code>blob:</code> prefixes followed by <code>https://example.com/</code> (50,020 bytes in total); calling <code>Url::origin()</code> on it overflowed the default 2 MiB stack of a spawned thread.</p>
+<p>A stack overflow aborts the whole process, and <code>catch_unwind()</code> does not catch it. One such URL crashes any program that calls <code>Url::origin()</code> on untrusted input. <code>url::quirks::origin()</code> also calls <code>Url::origin()</code>. For example, Servo's <code>URL.origin</code> DOM getter calls <code>url::quirks::origin()</code>, so a script on a page can trigger the overflow.</p>
+<p>
+<code>url</code> 2.5.9 follows the URL Standard: <code>Url::origin()</code> takes the origin of the inner URL only when its scheme is <code>http</code>, <code>https</code>, or <code>file</code>, returns an opaque origin otherwise, and never calls itself. A <code>blob:</code> URL with another inner scheme that previously produced a tuple origin, such as <code>blob:ws://...</code> or <code>blob:blob:https://...</code>, now returns an opaque origin.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
 <entry>
 <title>RUSTSEC-2026-0584: Vulnerability in tokio-rate-limit</title>
 <id>https://rustsec.org/advisories/RUSTSEC-2026-0584.html</id>
