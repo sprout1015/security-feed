@@ -17,6 +17,7 @@ on:
       l4: { required: false, default: "0" }
       summary: { description: "한 줄 요약", required: false, default: "알림 연결 테스트" }
       url: { description: "Notion 보고서 링크", required: false, default: "" }
+      channel_id: { description: "(진단용) Secret 대신 쓸 채널 ID", required: false, default: "" }
 
 permissions:
   contents: read
@@ -39,7 +40,8 @@ jobs:
           token = os.environ.get("DISCORD_BOT_TOKEN", "").strip()
           if token.lower().startswith("bot "):
               token = token[4:].strip()
-          raw_channel = os.environ.get("DISCORD_CHANNEL_ID", "")
+          p0 = json.loads(os.environ.get("PAYLOAD_JSON") or "{}") or {}
+          raw_channel = (p0.get("channel_id") or "").strip() or os.environ.get("DISCORD_CHANNEL_ID", "")
           channel = re.sub(r"\D", "", raw_channel)  # 공백·줄바꿈·<#…> 표기 제거, 숫자만
           if not token or not channel:
               print("::error::DISCORD_BOT_TOKEN / DISCORD_CHANNEL_ID 저장소 Secret이 없습니다.")
@@ -100,6 +102,14 @@ jobs:
                   ch = get(f"/channels/{channel}"); print(f"진단: 채널 조회 성공 (type={ch.get('type')})")
               except urllib.error.HTTPError as e2:
                   print(f"진단: 채널 조회 실패 HTTP {e2.code} — 이 ID의 채널을 봇이 볼 수 없음")
+              try:
+                  g = get(f"/guilds/{channel}")
+                  print("진단: 이 ID는 채널이 아니라 '서버(길드) ID'입니다. 아래 텍스트 채널 중 하나의 ID를 쓰세요:")
+                  for c in get(f"/guilds/{channel}/channels"):
+                      if c.get("type") in (0, 5):
+                          print(f"  - #{c.get('name')} → {c.get('id')}")
+              except urllib.error.HTTPError:
+                  pass
 
           try:
               with urllib.request.urlopen(req, timeout=20) as r:
