@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "since_utc": "2026-11-24T11:03:14.456Z",
-  "until_utc": "2026-11-24T11:03:14.456Z",
-  "new_cves": 0,
+  "until_utc": "2026-11-24T11:14:37.586Z",
+  "new_cves": 1,
   "fetch_errors": 0,
   "watch_matched": 0,
   "below_threshold": 0,
