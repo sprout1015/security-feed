@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from common import load_json, now_kst, run_dir, save_json, today_kst
+from common import STATE, extract_ids, load_json, now_kst, run_dir, save_json, today_kst
 
 MAX_EXCERPT = 25
 
@@ -16,6 +16,24 @@ def _added_excerpt(diff_path: Path) -> list[str]:
     return lines[:MAX_EXCERPT]
 
 
+def _kev_lookup(out, cve: dict, lib: dict) -> dict:
+    """오늘 자료에 나온 모든 CVE의 KEV 등재 정보. 루틴이 34만 바이트짜리 kev_index.json 을 통째로 읽지 않게 한다."""
+    import re
+    ids = set()
+    for f in (out / "diffs").glob("*.diff") if (out / "diffs").exists() else []:
+        ids.update(i for i in extract_ids(f.read_text(encoding="utf-8", errors="ignore")) if i.startswith("CVE-"))
+    for h in (cve.get("hits") or []) + (cve.get("matched_below_threshold") or []):
+        if h.get("cve"):
+            ids.add(h["cve"])
+    for svc in lib.get("services", []) or []:
+        for g in svc.get("by_package", []) or []:
+            ids.update(g.get("cves", []))
+    idx = (load_json(STATE / "kev_index.json", {}) or {}).get("cves", {})
+    look = {i: idx.get(i) for i in sorted(ids)}
+    save_json(out / "kev_lookup.json", {"count": len(look), "kev_listed": sum(1 for v in look.values() if v), "cves": look})
+    return look
+
+
 def build(step_errors: dict) -> str:
     date = today_kst()
     out = run_dir(date)
@@ -24,11 +42,13 @@ def build(step_errors: dict) -> str:
     cve = load_json(out / "cve_radar.json", {}) or {}
     lib = load_json(out / "library_matches.json", {}) or {}
     prj = load_json(out / "projects.json", {}) or {}
+    kev_look = _kev_lookup(out, cve, lib)
     root = out.parent.parent
 
     L = [f"# 보안 수집 요약 — {date}", "",
          f"수집 시각: {now_kst().isoformat(timespec='minutes')} (KST)", "",
-         "이 파일은 수집기가 만든 사실 목록이다. 레벨 판정과 해석은 루틴이 원문을 읽고 한다.", ""]
+         "이 파일은 수집기가 만든 사실 목록이다. 레벨 판정과 해석은 루틴이 원문을 읽고 한다.",
+         "KEV 대조는 kev_lookup.json(오늘 자료에 나온 CVE만)을 쓴다. kev_index.json·library_matches.json 은 크므로 통째로 읽지 않는다.", ""]
 
     if step_errors:
         L += ["## 수집 단계 오류", ""] + [f"- {k}: {v}" for k, v in step_errors.items()] + [""]
@@ -121,7 +141,8 @@ def build(step_errors: dict) -> str:
                 L.append(f"패키지 {len(s['by_package'])}개에 권고 {s['count']}건 · CVSS 7.0 이상 패키지 {s.get('high_or_above_packages', 0)}개 (패키지 단위 요약, 상세는 library_matches.json)")
                 for g in s["by_package"]:
                     cv = ", ".join(g["cves"][:3]) + (f" 외 {len(g['cves']) - 3}" if len(g["cves"]) > 3 else "")
-                    L.append(f"- {g['package']} {g['installed']} → {g['fix_to'] or '수정 버전 없음'} · 최고 CVSS {g['max_cvss'] if g['max_cvss'] is not None else '미상'} · 권고 {g['count']}건 · {cv or '-'}")
+                    kev_hit = [c for c in g["cves"] if kev_look.get(c)]
+                    L.append(f"- {g['package']} {g['installed']} → {g['fix_to'] or '수정 버전 없음'} · 최고 CVSS {g['max_cvss'] if g['max_cvss'] is not None else '미상'} · 권고 {g['count']}건 · {cv or '-'}" + (f" · ⚠️ KEV: {', '.join(kev_hit)}" if kev_hit else ""))
             else:
                 for f in s["findings"]:
                     alias = ", ".join(a for a in f["aliases"] if a.startswith("CVE-")) or "-"

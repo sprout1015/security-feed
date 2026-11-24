@@ -17,6 +17,9 @@ on:
       l4: { required: false, default: "0" }
       summary: { description: "한 줄 요약", required: false, default: "알림 연결 테스트" }
       url: { description: "Notion 보고서 링크", required: false, default: "" }
+      actions: { description: "할 일 (줄바꿈 또는 | 로 구분, 최대 3개)", required: false, default: "" }
+      top: { description: "L1 상위 항목 (줄바꿈 또는 | 로 구분, 최대 3개)", required: false, default: "" }
+      checks: { description: "사람 확인 요청 건수", required: false, default: "0" }
       channel_id: { description: "(진단용) Secret 대신 쓸 채널 ID", required: false, default: "" }
 
 permissions:
@@ -54,23 +57,53 @@ jobs:
           kst = dt.timezone(dt.timedelta(hours=9))
           date = s("date", dt.datetime.now(kst).date().isoformat(), 10)
           verdict = s("verdict", "보고서 작성 완료", 40)
-          color = {"🔴": 0xE5484D, "🟠": 0xF5A524, "🟢": 0x30A46C, "⚪": 0x8B8D98}.get(verdict[:1], 0x5B5BD6)
+          mark = verdict[:1]
+          head, color = {
+              "🔴": ("오늘 조치 필요", 0xE5484D),
+              "🟠": ("이번 주 안에 조치", 0xF5A524),
+              "🟢": ("조치 필요 없음", 0x30A46C),
+              "⚪": ("수집 실패 — 확인 필요", 0x8B8D98),
+          }.get(mark, ("알림", 0x5B5BD6))
           url = s("url", "", 500)
           if url and not url.startswith(("https://www.notion.so/", "https://app.notion.com/", "https://notion.so/")):
               url = ""  # Notion 주소만 링크로 허용
 
+          def lst(k, n=3, w=140):
+              v = p.get(k)
+              if isinstance(v, str):
+                  v = [x for x in v.replace("|", "\n").split("\n")]
+              return [str(x).strip()[:w] for x in (v or []) if str(x).strip()][:n]
+
+          actions = lst("actions")
+          if not actions:
+              actions = {"🔴": ["보고서의 🔴 L1 표를 열어 패치 버전으로 업데이트"],
+                         "🟠": ["보고서의 🟠 L2 표를 보고 이번 주 일정에 업데이트 반영"],
+                         "🟢": ["할 일 없음 — 요약만 확인"],
+                         "⚪": ["GitHub Actions의 collect-security-feed 실행 결과 확인"]}.get(mark, ["보고서 확인"])
+          top = lst("top")
+          try:
+              checks = int(s("checks", "0", 4))
+          except ValueError:
+              checks = 0
+
+          desc = [f"**{s('summary', '', 200)}**", ""] if s("summary") else []
+          desc += ["**📌 할 일**"] + [f"{i}. {a}" for i, a in enumerate(actions, 1)]
+          if checks:
+              desc += [f"🙋 사람 확인 요청 **{checks}건** — 보고서의 🙋 체크리스트"]
+          if url:
+              desc += ["", f"[📄 보고서 열기]({url})"]
+
+          fields = []
+          if top:
+              fields.append({"name": "🔴 긴급 항목", "value": "\n".join(f"• {t}" for t in top)[:1000], "inline": False})
+          fields.append({"name": "건수", "value": f"🔴 {s('l1','0',6)}  ·  🟠 {s('l2','0',6)}  ·  🟡 {s('l3','0',6)}  ·  ⚪ {s('l4','0',6)}", "inline": False})
+
           embed = {
-              "title": f"보안 경고 일일 보고 — {date}",
-              "description": s("summary", "", 300),
+              "title": f"{mark} {head}  |  보안 일일 보고 {date[5:].replace('-', '/')}",
+              "description": "\n".join(desc)[:3500],
               "color": color,
-              "fields": [
-                  {"name": "판정", "value": verdict, "inline": False},
-                  {"name": "🔴 L1", "value": s("l1", "0", 6), "inline": True},
-                  {"name": "🟠 L2", "value": s("l2", "0", 6), "inline": True},
-                  {"name": "🟡 L3", "value": s("l3", "0", 6), "inline": True},
-                  {"name": "⚪ L4", "value": s("l4", "0", 6), "inline": True},
-              ],
-              "footer": {"text": "security-feed · Claude 데일리 루틴"},
+              "fields": fields,
+              "footer": {"text": "🔴 오늘 · 🟠 이번 주 · 🟡 관찰 · ⚪ 참고  |  security-feed"},
           }
           if url:
               embed["url"] = url
