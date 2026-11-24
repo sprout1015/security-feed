@@ -117,9 +117,15 @@ def build(step_errors: dict) -> str:
         L += [f"lock 파일 {lib.get('scanned_lockfiles')}개 · 발견 {lib.get('total_findings')}건", ""]
         for s in lib.get("services", []):
             L.append(f"### 서비스: {s['service']} ({s['count']}건 · 패키지 {s.get('packages', '?')}개 · lock {len(s['lockfiles'])}개)")
-            for f in s["findings"]:
-                alias = ", ".join(a for a in f["aliases"] if a.startswith("CVE-")) or "-"
-                L.append(f"- {f['package']} {f['installed']} → 수정 {', '.join(f['fixed']) or '없음'} · {f['id']} ({alias}) · {f.get('severity') or '심각도 미상'} · {f.get('summary') or ''}")
+            if s.get("by_package") is not None:
+                L.append(f"패키지 {len(s['by_package'])}개에 권고 {s['count']}건 · CVSS 7.0 이상 패키지 {s.get('high_or_above_packages', 0)}개 (패키지 단위 요약, 상세는 library_matches.json)")
+                for g in s["by_package"]:
+                    cv = ", ".join(g["cves"][:3]) + (f" 외 {len(g['cves']) - 3}" if len(g["cves"]) > 3 else "")
+                    L.append(f"- {g['package']} {g['installed']} → {g['fix_to'] or '수정 버전 없음'} · 최고 CVSS {g['max_cvss'] if g['max_cvss'] is not None else '미상'} · 권고 {g['count']}건 · {cv or '-'}")
+            else:
+                for f in s["findings"]:
+                    alias = ", ".join(a for a in f["aliases"] if a.startswith("CVE-")) or "-"
+                    L.append(f"- {f['package']} {f['installed']} → 수정 {', '.join(f['fixed']) or '없음'} · {f['id']} ({alias}) · {f.get('severity') or '심각도 미상'} · {f.get('summary') or ''}")
             L.append("")
     else:
         L += [f"{lib.get('status')}: {lib.get('reason') or lib.get('error')}", ""]

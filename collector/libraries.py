@@ -37,6 +37,54 @@ def _severity(vuln: dict, groups: list[dict]) -> str | None:
     return (vuln.get("database_specific") or {}).get("severity")
 
 
+def _ver_key(v: str):
+    import re
+    parts = re.split(r"[.\-+_]", v or "")
+    return [(0, int(x)) if x.isdigit() else (1, x) for x in parts]
+
+
+def _fix_for(installed: str, fixed: list[str]) -> str | None:
+    """설치 버전보다 큰 수정 버전 중 가장 작은 것 (같은 메이저 우선)."""
+    try:
+        cands = [f for f in fixed if _ver_key(f) > _ver_key(installed)]
+    except TypeError:
+        return None
+    if not cands:
+        return None
+    major = (installed or "").split(".")[0]
+    same = [f for f in cands if f.split(".")[0] == major]
+    try:
+        return min(same or cands, key=_ver_key)
+    except TypeError:
+        return (same or cands)[0]
+
+
+def _summarize(findings: list[dict]) -> list[dict]:
+    """권고 단위 결과를 패키지@버전 단위로 묶는다. 루틴·보고서는 이 요약을 쓴다."""
+    groups: dict[tuple, dict] = {}
+    for f in findings:
+        k = (f["ecosystem"], f["package"], f["installed"])
+        g = groups.setdefault(k, {"package": f["package"], "ecosystem": f["ecosystem"], "installed": f["installed"],
+                                  "advisories": set(), "cves": set(), "max_cvss": None, "fix_to": None})
+        g["advisories"].add(f["id"])
+        g["cves"].update(a for a in f["aliases"] if a.startswith("CVE-"))
+        try:
+            sc = float(f.get("severity"))
+        except (TypeError, ValueError):
+            sc = None
+        if sc is not None and (g["max_cvss"] is None or sc > g["max_cvss"]):
+            g["max_cvss"] = sc
+        fx = _fix_for(f["installed"], f["fixed"])
+        if fx and (g["fix_to"] is None or _ver_key(fx) > _ver_key(g["fix_to"])):
+            g["fix_to"] = fx
+    out = []
+    for g in groups.values():
+        g["advisories"] = sorted(g["advisories"]); g["cves"] = sorted(g["cves"])
+        g["count"] = len(g["advisories"])
+        out.append(g)
+    return sorted(out, key=lambda g: (-(g["max_cvss"] or 0), g["package"]))
+
+
 def run() -> dict:
     out = run_dir()
     services = sorted(p for p in INVENTORY.iterdir() if p.is_dir()) if INVENTORY.exists() else []
@@ -90,7 +138,12 @@ def run() -> dict:
     services_out = []
     for svc in by_service.values():
         svc["lockfiles"] = sorted(svc["lockfiles"])
+        # 같은 권고가 여러 Gradle 구성에서 중복되므로 (패키지, 버전, 권고)로 한 번만 센다
+        uniq = {(f["package"], f["installed"], f["id"]): f for f in svc["findings"]}
+        svc["findings"] = list(uniq.values())
         svc["count"] = len(svc["findings"])
+        svc["by_package"] = _summarize(svc["findings"])
+        svc["high_or_above_packages"] = sum(1 for g in svc["by_package"] if (g["max_cvss"] or 0) >= 7.0)
         services_out.append(svc)
     result = {"status": "ok", "scanned_lockfiles": len(lockfiles),
               "total_findings": sum(s["count"] for s in services_out), "services": services_out}

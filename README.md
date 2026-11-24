@@ -71,3 +71,12 @@ jobs:
 python collector/run.py          # 오늘 날짜로 실행
 FEED_DATE=2026-11-20 python collector/run.py
 ```
+
+## 내 프로젝트 감시 (config/projects.json)
+
+- 수집기는 실행 때마다 목록의 **공개 저장소**를 얕게 클론해 lock 파일을 `inventory/<id>/`에 모으고 osv-scanner로 대조합니다. 비공개 저장소는 공개 피드에 버전이 새지 않도록 자동으로 건너뜁니다.
+- Gradle 프로젝트는 대상 저장소를 고치지 않고 `collector/lock-all.init.gradle`로 `gradle.lockfile`을 만들어 전이 의존성까지 검사합니다.
+- `inventory/<id>/`는 커밋하지 않습니다(.gitignore). 그래서 osv-scanner는 `--no-ignore`로 실행합니다.
+- 결과는 `runs/D/library_matches.json`의 서비스별 `by_package`(패키지@버전 단위 요약: 최고 CVSS, 권고 수, 올릴 버전)로 정리됩니다.
+- 현재 등록: Alpha-Match. endfield-attendance-android·RAGDeck은 공개 전환 후 `enabled: true`로 바꿉니다.
+
