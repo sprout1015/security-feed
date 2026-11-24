@@ -85,6 +85,43 @@ def _summarize(findings: list[dict]) -> list[dict]:
     return sorted(out, key=lambda g: (-(g["max_cvss"] or 0), g["package"]))
 
 
+def _previous_result(today_dir) -> dict:
+    """오늘보다 앞선 가장 최근 실행의 library_matches.json (없으면 빈 dict)."""
+    runs = sorted(d for d in today_dir.parent.iterdir() if d.is_dir() and d.name < today_dir.name)
+    for d in reversed(runs):
+        f = d / "library_matches.json"
+        if f.exists():
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+            if data.get("status") == "ok":
+                return {"date": d.name, **data}
+    return {}
+
+
+def _delta(svc: dict, prev: dict) -> dict:
+    """어제 대비 새로 생긴/해결된 패키지@버전·권고. 루틴은 이 변경분만 판단한다."""
+    prev_svc = next((x for x in prev.get("services", []) if x.get("service") == svc["service"]), None)
+    if prev_svc is None:
+        return {"since": prev.get("date"), "first_seen": True, "new": [g for g in svc["by_package"]],
+                "new_advisories": {}, "resolved": [], "unchanged": 0}
+    key = lambda g: (g["package"], g["installed"])
+    before = {key(g): g for g in prev_svc.get("by_package", [])}
+    now = {key(g): g for g in svc["by_package"]}
+    new = [g for k, g in now.items() if k not in before]
+    resolved = [{"package": g["package"], "installed": g["installed"]} for k, g in before.items() if k not in now]
+    new_adv = {}
+    for k, g in now.items():
+        if k in before:
+            added = sorted(set(g["advisories"]) - set(before[k].get("advisories", [])))
+            if added:
+                new_adv[f"{g['package']}@{g['installed']}"] = added
+    unchanged = sum(1 for k in now if k in before and f"{k[0]}@{k[1]}" not in new_adv)
+    return {"since": prev.get("date"), "first_seen": False, "new": new, "new_advisories": new_adv,
+            "resolved": resolved, "unchanged": unchanged}
+
+
 def run() -> dict:
     out = run_dir()
     services = sorted(p for p in INVENTORY.iterdir() if p.is_dir()) if INVENTORY.exists() else []
@@ -145,6 +182,9 @@ def run() -> dict:
         svc["by_package"] = _summarize(svc["findings"])
         svc["high_or_above_packages"] = sum(1 for g in svc["by_package"] if (g["max_cvss"] or 0) >= 7.0)
         services_out.append(svc)
+    prev = _previous_result(out)
+    for svc in services_out:
+        svc["delta"] = _delta(svc, prev)
     result = {"status": "ok", "scanned_lockfiles": len(lockfiles),
               "total_findings": sum(s["count"] for s in services_out), "services": services_out}
     save_json(out / "library_matches.json", result)

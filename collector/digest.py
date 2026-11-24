@@ -87,7 +87,7 @@ def build(step_errors: dict) -> str:
         L += [f"수집 실패: {kev.get('error')}", ""]
     else:
         L += [f"카탈로그 {kev.get('catalogVersion')} · 전체 {kev.get('count')}건 · 최근 {kev.get('window_days')}일 신규 {len(kev.get('recent', []))}건",
-              "모든 CVE의 KEV 여부는 `state/kev_index.json`에서 조회한다.", ""]
+              "모든 CVE의 KEV 여부는 `runs/D/kev_lookup.json`에서 조회한다(오늘 자료에 나온 CVE만 담김).", ""]
         if kev.get("recent"):
             L += ["| 등재일 | CVE | 벤더 / 제품 | 감시 목록 | 랜섬웨어 | 조치 기한 |", "|---|---|---|---|---|---|"]
             for v in kev["recent"]:
@@ -138,11 +138,24 @@ def build(step_errors: dict) -> str:
         for s in lib.get("services", []):
             L.append(f"### 서비스: {s['service']} ({s['count']}건 · 패키지 {s.get('packages', '?')}개 · lock {len(s['lockfiles'])}개)")
             if s.get("by_package") is not None:
-                L.append(f"패키지 {len(s['by_package'])}개에 권고 {s['count']}건 · CVSS 7.0 이상 패키지 {s.get('high_or_above_packages', 0)}개 (패키지 단위 요약, 상세는 library_matches.json)")
-                for g in s["by_package"]:
+                dl = s.get("delta") or {}
+                L.append(f"전체: 패키지 {len(s['by_package'])}개에 권고 {s['count']}건 · CVSS 7.0 이상 패키지 {s.get('high_or_above_packages', 0)}개")
+                def line(g):
                     cv = ", ".join(g["cves"][:3]) + (f" 외 {len(g['cves']) - 3}" if len(g["cves"]) > 3 else "")
                     kev_hit = [c for c in g["cves"] if kev_look.get(c)]
-                    L.append(f"- {g['package']} {g['installed']} → {g['fix_to'] or '수정 버전 없음'} · 최고 CVSS {g['max_cvss'] if g['max_cvss'] is not None else '미상'} · 권고 {g['count']}건 · {cv or '-'}" + (f" · ⚠️ KEV: {', '.join(kev_hit)}" if kev_hit else ""))
+                    return (f"- {g['package']} {g['installed']} → {g['fix_to'] or '수정 버전 없음'} · 최고 CVSS {g['max_cvss'] if g['max_cvss'] is not None else '미상'} · 권고 {g['count']}건 · {cv or '-'}"
+                            + (f" · ⚠️ KEV: {', '.join(kev_hit)}" if kev_hit else ""))
+                if dl.get("first_seen"):
+                    L.append(f"(이 서비스는 오늘 처음 대조됨 — 전 항목이 새 항목)")
+                L += ["", f"**새로 생김 (기준 {dl.get('since') or '없음'} 대비, {len(dl.get('new', []))}개)** — 루틴은 이것만 새로 판단한다"]
+                L += [line(g) for g in dl.get("new", [])] or ["- 없음"]
+                if dl.get("new_advisories"):
+                    L += ["", "**기존 패키지에 권고 추가**"] + [f"- {k}: {', '.join(v)}" for k, v in dl["new_advisories"].items()]
+                L += ["", f"**해결됨 ({len(dl.get('resolved', []))}개)**"] + ([f"- {r['package']} {r['installed']}" for r in dl.get("resolved", [])] or ["- 없음"])
+                known = [g for g in s["by_package"] if g not in dl.get("new", [])]
+                if known:
+                    L += ["", f"**기존 미조치 {len(known)}개** (이미 보고됨, 상위 5개만 표시. 전체는 library_matches.json)"]
+                    L += [line(g) for g in known[:5]]
             else:
                 for f in s["findings"]:
                     alias = ", ".join(a for a in f["aliases"] if a.startswith("CVE-")) or "-"
@@ -151,6 +164,23 @@ def build(step_errors: dict) -> str:
     else:
         L += [f"{lib.get('status')}: {lib.get('reason') or lib.get('error')}", ""]
 
+    # 0절: 오늘의 변화 (루틴이 가장 먼저 본다)
+    prev_kev = set()
+    prev_dirs = sorted(d for d in out.parent.iterdir() if d.is_dir() and d.name < date)
+    if prev_dirs:
+        pk = load_json(prev_dirs[-1] / "kev_recent.json", {}) or {}
+        prev_kev = {v["cve"] for v in pk.get("recent", [])}
+    new_kev = [v["cve"] for v in kev.get("recent", []) if v["cve"] not in prev_kev] if prev_dirs else [v["cve"] for v in kev.get("recent", [])]
+    lib_new = sum(len((x.get("delta") or {}).get("new", [])) + len((x.get("delta") or {}).get("new_advisories", {})) for x in lib.get("services", []))
+    lib_resolved = sum(len((x.get("delta") or {}).get("resolved", [])) for x in lib.get("services", []))
+    changed_src = int(src.get("changed") or 0)
+    cve_hits = len(cve.get("hits", []))
+    quiet = (changed_src == 0 and cve_hits == 0 and not new_kev and lib_new == 0 and not step_errors and not src.get("error"))
+    head = ["## 0. 오늘의 변화", "",
+            f"- 바뀐 공식 소스 {changed_src}개 · 새 KEV {len(new_kev)}건{(' (' + ', '.join(new_kev[:5]) + ')') if new_kev else ''} · 레이더 대상 CVE {cve_hits}건 · 라이브러리 새 항목 {lib_new}건 · 해결 {lib_resolved}건",
+            f"- 조용한 날: {'예 — 새로 판단할 것이 없다. 짧은 보고서로 끝낸다.' if quiet else '아니오'}", ""]
+    idx = next(i for i, l in enumerate(L) if l.startswith("## 1."))
+    L[idx:idx] = head
     text = "\n".join(L) + "\n"
     (out / "digest.md").write_text(text, encoding="utf-8")
     save_json(out / "status.json", {
@@ -161,5 +191,7 @@ def build(step_errors: dict) -> str:
         "cve": {"status": cve.get("status"), "new": cve.get("new_cves"), "hits": len(cve.get("hits", []))},
         "libraries": {"status": lib.get("status"), "findings": lib.get("total_findings", 0)},
         "projects": {p["id"]: p.get("status") for p in prj.get("projects", [])},
+        "today": {"quiet": quiet, "changed_sources": changed_src, "new_kev": new_kev, "cve_hits": cve_hits,
+                  "library_new": lib_new, "library_resolved": lib_resolved},
     })
     return text
