@@ -1,11 +1,11 @@
 {
   "date": "2026-11-24",
-  "finished_at": "2026-11-24T20:13:47+09:00",
+  "finished_at": "2026-11-24T20:16:10+09:00",
   "step_errors": {},
   "sources": {
     "total": 32,
     "ok": 32,
-    "changed": 9,
+    "changed": 2,
     "error": 0
   },
   "kev": {
@@ -14,12 +14,12 @@
   },
   "cve": {
     "status": "ok",
-    "new": 86,
-    "hits": 1
+    "new": 0,
+    "hits": 0
   },
   "libraries": {
     "status": "ok",
-    "findings": 2
+    "findings": 311
   },
   "projects": {
     "alpha-match": "ok",

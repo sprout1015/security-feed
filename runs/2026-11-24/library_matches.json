@@ -1,13 +1,14 @@
 {
   "status": "ok",
   "scanned_lockfiles": 5,
-  "total_findings": 2,
+  "total_findings": 311,
   "services": [
     {
       "service": "_sample-notification-service",
       "lockfiles": [
         "_sample-notification-service/package-lock.json"
       ],
+      "packages": 2,
       "findings": [
         {
           "package": "body-parser",
@@ -43,6 +44,4966 @@
         }
       ],
       "count": 2
+    },
+    {
+      "service": "alpha-match",
+      "lockfiles": [
+        "alpha-match/Backend/Api-Server/gradle.lockfile",
+        "alpha-match/Backend/Batch-Server/gradle.lockfile",
+        "alpha-match/Demo-Python/requirements.txt",
+        "alpha-match/Frontend/Front-Server/package-lock.json"
+      ],
+      "packages": 1013,
+      "findings": [
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.22",
+          "id": "GHSA-jhq6-gfmj-v8fx",
+          "aliases": [
+            "CVE-2026-10532"
+          ],
+          "summary": "Logback vulnerable to Object Injection through HardenedObjectInputStream modules",
+          "severity": "2.9",
+          "fixed": [
+            "1.5.34"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-jhq6-gfmj-v8fx"
+        },
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.22",
+          "id": "GHSA-p47f-322f-whfh",
+          "aliases": [
+            "CVE-2026-9828"
+          ],
+          "summary": "QOS.CH Sarl logback logback-core has a deserialization of untrusted data vulnerability",
+          "severity": "1.2",
+          "fixed": [
+            "1.5.33"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p47f-322f-whfh"
+        },
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.22",
+          "id": "GHSA-qqpg-mvqg-649v",
+          "aliases": [
+            "CVE-2026-1225"
+          ],
+          "summary": "Logback allows an attacker to instantiate classes already present on the class path",
+          "severity": "1.8",
+          "fixed": [
+            "1.5.25"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qqpg-mvqg-649v"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-72hv-8253-57qq",
+          "aliases": [
+            "CVE-2026-18401"
+          ],
+          "summary": "jackson-core: Number Length Constraint Bypass in Async Parser Leads to Potential DoS Condition",
+          "severity": "6.9",
+          "fixed": [
+            "2.18.6",
+            "2.21.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72hv-8253-57qq"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-7hhh-6rmp-j9qf",
+          "aliases": [
+            "CVE-2026-89425"
+          ],
+          "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7hhh-6rmp-j9qf"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-p6pp-m3f8-5c89",
+          "aliases": [
+            "CVE-2026-89407"
+          ],
+          "summary": " jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p6pp-m3f8-5c89"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-r7wm-3cxj-wff9",
+          "aliases": [
+            "CVE-2026-68494"
+          ],
+          "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+          "severity": "8.7",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r7wm-3cxj-wff9"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-3pjw-73gf-8qr5",
+          "aliases": [
+            "CVE-2026-59888"
+          ],
+          "summary": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "severity": "6.5",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3pjw-73gf-8qr5"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-5gvw-p9qm-jgwh",
+          "aliases": [
+            "CVE-2026-59889"
+          ],
+          "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "severity": "6.5",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5gvw-p9qm-jgwh"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-5jmj-h7xm-6q6v",
+          "aliases": [
+            "CVE-2026-54515"
+          ],
+          "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5jmj-h7xm-6q6v"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-cxp5-3px4-pw24",
+          "aliases": [
+            "CVE-2026-91777"
+          ],
+          "summary": "jackson-databind quadratic forward-reference completion ",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cxp5-3px4-pw24"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-gx83-3vf8-gh7j",
+          "aliases": [
+            "CVE-2026-83557"
+          ],
+          "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+          "severity": "5.6",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gx83-3vf8-gh7j"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-hgj6-7826-r7m5",
+          "aliases": [
+            "CVE-2026-54514"
+          ],
+          "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hgj6-7826-r7m5"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-j3rv-43j4-c7qm",
+          "aliases": [
+            "CVE-2026-54512"
+          ],
+          "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+          "severity": "8.1",
+          "fixed": [
+            "2.18.8",
+            "2.21.4",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j3rv-43j4-c7qm"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-q4xh-88c3-wmh7",
+          "aliases": [
+            "CVE-2026-68497"
+          ],
+          "summary": "jackson-databind: Duration XMLGregorianCalendar Unbounded Number Parse DoS",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4xh-88c3-wmh7"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-rmj7-2vxq-3g9f",
+          "aliases": [
+            "CVE-2026-54513"
+          ],
+          "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+          "severity": "8.1",
+          "fixed": [
+            "2.18.8",
+            "2.21.4",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rmj7-2vxq-3g9f"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-vvgp-rfg2-7rr6",
+          "aliases": [
+            "CVE-2026-77310"
+          ],
+          "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-vvgp-rfg2-7rr6"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-wjgm-6hv5-3cvf",
+          "aliases": [
+            "CVE-2026-19032"
+          ],
+          "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wjgm-6hv5-3cvf"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-wv8q-qhhj-9h54",
+          "aliases": [
+            "CVE-2026-91776"
+          ],
+          "summary": "jackson-databind retains every unknown raw type ID ",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wv8q-qhhj-9h54"
+        },
+        {
+          "package": "com.google.guava:guava",
+          "ecosystem": "Maven",
+          "installed": "33.4.8-android",
+          "id": "GHSA-xxph-c9ww-hj94",
+          "aliases": [
+            "CVE-2026-102554"
+          ],
+          "summary": "Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation",
+          "severity": "8.2",
+          "fixed": [
+            "33.7.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94"
+        },
+        {
+          "package": "com.google.guava:guava",
+          "ecosystem": "Maven",
+          "installed": "33.4.8-jre",
+          "id": "GHSA-xxph-c9ww-hj94",
+          "aliases": [
+            "CVE-2026-102554"
+          ],
+          "summary": "Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation",
+          "severity": "8.2",
+          "fixed": [
+            "33.7.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94"
+        },
+        {
+          "package": "io.netty:netty-codec-classes-quic",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-cmm3-54f8-px4j",
+          "aliases": [
+            "CVE-2026-44894"
+          ],
+          "summary": "Netty's Default QUIC token handler accepts any client-supplied token",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cmm3-54f8-px4j"
+        },
+        {
+          "package": "io.netty:netty-codec-classes-quic",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-cq4q-cv5g-r8q5",
+          "aliases": [
+            "CVE-2026-50009"
+          ],
+          "summary": "Netty: QUIC stateless reset token material exposed through header-visible connection IDs",
+          "severity": "4.8",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cq4q-cv5g-r8q5"
+        },
+        {
+          "package": "io.netty:netty-codec-compression",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-558v-64gr-wgg4",
+          "aliases": [
+            "CVE-2026-59901"
+          ],
+          "summary": "Netty: [Bzip2Decoder] Infinite Loop in RLE State Machine Leads to Event-Loop Thread Hang",
+          "severity": "8.7",
+          "fixed": [
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-558v-64gr-wgg4"
+        },
+        {
+          "package": "io.netty:netty-codec-compression",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-mj4r-2hfc-f8p6",
+          "aliases": [
+            "CVE-2026-42583"
+          ],
+          "summary": "Netty Lz4FrameDecoder is vulnerable to resource exhaustion ",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mj4r-2hfc-f8p6"
+        },
+        {
+          "package": "io.netty:netty-codec-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-cm33-6792-r9fm",
+          "aliases": [
+            "CVE-2026-42579"
+          ],
+          "summary": "Netty has a DNS Codec Input Validation Bypass (Encoder + Decoder)",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cm33-6792-r9fm"
+        },
+        {
+          "package": "io.netty:netty-codec-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-mfg7-5gfp-c4w3",
+          "aliases": [
+            "CVE-2026-73508"
+          ],
+          "summary": "Netty: Memory Leak in DNS Record Decoder via Malformed Domain Names",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mfg7-5gfp-c4w3"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-38f8-5428-x5cv",
+          "aliases": [
+            "CVE-2026-42585"
+          ],
+          "summary": "Netty vulnerable to HTTP Request Smuggling due to malformed Transfer-Encoding",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-38f8-5428-x5cv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-4mp9-239f-g9hg",
+          "aliases": [
+            "CVE-2026-59898"
+          ],
+          "summary": "Netty: WebSockets V07/V08 handshaker missing Connection/Upgrade validation",
+          "severity": "6.3",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4mp9-239f-g9hg"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-57rv-r2g8-2cj3",
+          "aliases": [
+            "CVE-2026-42584"
+          ],
+          "summary": "Netty has HttpClientCodec response desynchronization",
+          "severity": "7.3",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-57rv-r2g8-2cj3"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-6cqp-g7gg-8hr5",
+          "aliases": [
+            "CVE-2026-56746"
+          ],
+          "summary": "Netty: Security Control Bypass via CORS Short-Circuit Failure",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6cqp-g7gg-8hr5"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-6jqx-86gh-f27w",
+          "aliases": [
+            "CVE-2026-55831"
+          ],
+          "summary": "Netty SPDY SETTINGS frame count materializes unbounded settings map",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6jqx-86gh-f27w"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-8c42-7qj2-3j46",
+          "aliases": [
+            "CVE-2026-59903"
+          ],
+          "summary": "Netty Vulnerable to Cache Poisoning and Information Disclosure via CORS Vary Header Overwrite",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-8c42-7qj2-3j46"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-f6hv-jmp6-3vwv",
+          "aliases": [
+            "CVE-2026-42587"
+          ],
+          "summary": "Netty: HttpContentDecompressor maxAllocation bypass when Content-Encoding set to br/zstd/snappy leads to decompression bomb DoS",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f6hv-jmp6-3vwv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-gcjf-9mgh-3p7g",
+          "aliases": [
+            "CVE-2026-59921"
+          ],
+          "summary": "Netty: CRLF Injection via Multipart Filename in Netty HttpPostRequestEncoder",
+          "severity": "5.7",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gcjf-9mgh-3p7g"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-hvcg-qmg6-jm4c",
+          "aliases": [
+            "CVE-2026-50020"
+          ],
+          "summary": "Netty: HttpObjectDecoder skips arbitrary initial control characters when only initial CRLF characters are permitted",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hvcg-qmg6-jm4c"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-jppx-w49h-x2qq",
+          "aliases": [
+            "CVE-2026-56745"
+          ],
+          "summary": "Netty: [SpdyHttpDecoder] ByteBuf Reference Leak on RST_STREAM Leads to Native Memory Exhaustion",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-jppx-w49h-x2qq"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-m4cv-j2px-7723",
+          "aliases": [
+            "CVE-2026-42580"
+          ],
+          "summary": "Netty vulnerable to HTTP Request Smuggling due to incorrect chunk size parsing",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-m4cv-j2px-7723"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-mvh2-crg5-v77c",
+          "aliases": [
+            "CVE-2026-55833"
+          ],
+          "summary": "Netty SPDY zlib header block continues decoded expansion after maxHeaderSize truncation",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mvh2-crg5-v77c"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-pwqr-wmgm-9rr8",
+          "aliases": [
+            "CVE-2026-33870"
+          ],
+          "summary": "Netty: HTTP Request Smuggling via Chunked Extension Quoted-String Parsing",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.132.Final",
+            "4.2.10.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-pwqr-wmgm-9rr8"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-q4f6-jm68-57ww",
+          "aliases": [
+            "CVE-2026-59899"
+          ],
+          "summary": "Netty: [HttpContentEncoder] Unbounded Per-Connection Queue Growth via HTTP/1.1 Pipelining Leads to Denial of Service",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4f6-jm68-57ww"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-v8h7-rr48-vmmv",
+          "aliases": [
+            "CVE-2026-41417"
+          ],
+          "summary": "Netty: Start-Line Injection in DefaultHttpRequest.setUri() Allows HTTP Request Smuggling and RTSP Request Injection",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-v8h7-rr48-vmmv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-xxqh-mfjm-7mv9",
+          "aliases": [
+            "CVE-2026-42581"
+          ],
+          "summary": "Netty HTTP/1.0 TE+CL Coexistence Bypasses Smuggling Sanitization",
+          "severity": "5.8",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxqh-mfjm-7mv9"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-563q-j3cm-6jxm",
+          "aliases": [
+            "CVE-2026-50560"
+          ],
+          "summary": "Netty susceptible to HTTP/2 Reset Attack with different on-the-wire signature",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-563q-j3cm-6jxm"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-5x3r-wrvg-rp6q",
+          "aliases": [
+            "CVE-2026-47244"
+          ],
+          "summary": "Netty HTTP/2: Advertised MAX_CONCURRENT_STREAMS are not enforced",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5x3r-wrvg-rp6q"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-93wv-jw9v-4972",
+          "aliases": [
+            "CVE-2026-56819"
+          ],
+          "summary": "Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-93wv-jw9v-4972"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-c2gf-v879-257j",
+          "aliases": [
+            "CVE-2026-48043"
+          ],
+          "summary": "netty-codec-http2: ByteBuf Reference-Count Leak in DelegatingDecompressorFrameListener Leads to Memory Exhaustion",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2gf-v879-257j"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-c69g-56f8-xwqj",
+          "aliases": [
+            "CVE-2026-59900"
+          ],
+          "summary": "Netty: [codec-http2] Lack of Host Header Deduplication in HTTP/2→HTTP/1.x Translation Leads to Request Routing Bypass",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c69g-56f8-xwqj"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-f6hv-jmp6-3vwv",
+          "aliases": [
+            "CVE-2026-42587"
+          ],
+          "summary": "Netty: HttpContentDecompressor maxAllocation bypass when Content-Encoding set to br/zstd/snappy leads to decompression bomb DoS",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f6hv-jmp6-3vwv"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-w9fj-cfpg-grvv",
+          "aliases": [
+            "CVE-2026-33871"
+          ],
+          "summary": "Netty HTTP/2 CONTINUATION Frame Flood DoS via Zero-Byte Frame Bypass",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.132.Final",
+            "4.2.11.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w9fj-cfpg-grvv"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-2c5c-chwr-9hqw",
+          "aliases": [
+            "CVE-2026-42582"
+          ],
+          "summary": "Netty HTTP/3 QPACK literal unbounded allocation",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2c5c-chwr-9hqw"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-4grm-h2qv-h6w6",
+          "aliases": [
+            "CVE-2026-48748"
+          ],
+          "summary": "Netty HTTP/3 QPACK Blocked Streams Memory Exhaustion",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4grm-h2qv-h6w6"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-c2rx-5r8w-8xr2",
+          "aliases": [
+            "CVE-2026-44892"
+          ],
+          "summary": "Netty has a Vulnerable Default Configuration Which Leads to Denial of Service via Unbounded HTTP/3 Header Size",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2rx-5r8w-8xr2"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-hpcc-26xq-25fv",
+          "aliases": [
+            "CVE-2026-56816"
+          ],
+          "summary": "Netty: Memory Exhaustion via HTTP/3 Reserved Frame Types",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hpcc-26xq-25fv"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-3qp7-7mw8-wx86",
+          "aliases": [
+            "CVE-2026-44249"
+          ],
+          "summary": "Netty has an IPv6 Subnet Filter Bypass via Incorrect Comparator Masking",
+          "severity": "8.1",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3qp7-7mw8-wx86"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-c4c3-7fpv-j4q5",
+          "aliases": [
+            "CVE-2026-75595"
+          ],
+          "summary": "Netty: SNI Routing Bypass via Fragmented TLS ClientHello Causing Fallback to Default SslContext",
+          "severity": "9.1",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c4c3-7fpv-j4q5"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-c653-97m9-rcg9",
+          "aliases": [
+            "CVE-2026-50010"
+          ],
+          "summary": "Netty: Wrapping plain trust manager silently disables hostname verification",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c653-97m9-rcg9"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-fccg-mwvh-qqg4",
+          "aliases": [
+            "CVE-2026-75596"
+          ],
+          "summary": "Netty: Fragmented ClientHello records trigger quadratic pre-handshake reassembly in default SNI parsing",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-fccg-mwvh-qqg4"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-x4gw-5cx5-pgmh",
+          "aliases": [
+            "CVE-2026-45416"
+          ],
+          "summary": "Netty: SNI handler pre-allocates up to 16 MiB from nine attacker bytes",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-x4gw-5cx5-pgmh"
+        },
+        {
+          "package": "io.netty:netty-handler-proxy",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-45q3-82m4-75jr",
+          "aliases": [
+            "CVE-2026-42578"
+          ],
+          "summary": "Netty has HTTP Header Injection via HttpProxyHandler Disabled Validation (Incomplete Fix CVE-2025-67735)",
+          "severity": "2.9",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-45q3-82m4-75jr"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-5pvg-856g-cp85",
+          "aliases": [
+            "CVE-2026-47691"
+          ],
+          "summary": "Netty has Insufficient Bailiwick Validation for NS Records",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5pvg-856g-cp85"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-676x-f7gg-47vc",
+          "aliases": [
+            "CVE-2026-45674"
+          ],
+          "summary": "Netty Vulnerable to DNS Cache Poisoning via Missing Bailiwick Checks in CNAME Records",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-676x-f7gg-47vc"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-xmv7-r254-6q78",
+          "aliases": [
+            "CVE-2026-45673"
+          ],
+          "summary": "Netty: DNS Cache Poisoning due to Predictable PRNG and Default Static Source Port",
+          "severity": "6.8",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xmv7-r254-6q78"
+        },
+        {
+          "package": "io.netty:netty-transport-classes-epoll",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-rwm7-x88c-3g2p",
+          "aliases": [
+            "CVE-2026-42577"
+          ],
+          "summary": "Netty epoll transport denial of service via RST on half-closed TCP connection",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rwm7-x88c-3g2p"
+        },
+        {
+          "package": "io.netty:netty-transport-native-epoll",
+          "ecosystem": "Maven",
+          "installed": "4.2.9.Final",
+          "id": "GHSA-w573-9ffj-6ff9",
+          "aliases": [
+            "CVE-2026-45536"
+          ],
+          "summary": "Netty: Unix-socket fd receive leaks descriptors when peer sends two at once",
+          "severity": "4.0",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w573-9ffj-6ff9"
+        },
+        {
+          "package": "org.apache.commons:commons-compress",
+          "ecosystem": "Maven",
+          "installed": "1.24.0",
+          "id": "GHSA-4265-ccf5-phj5",
+          "aliases": [
+            "CVE-2024-26308"
+          ],
+          "summary": "Apache Commons Compress: OutOfMemoryError unpacking broken Pack200 file",
+          "severity": "6.7",
+          "fixed": [
+            "1.26.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4265-ccf5-phj5"
+        },
+        {
+          "package": "org.apache.commons:commons-compress",
+          "ecosystem": "Maven",
+          "installed": "1.24.0",
+          "id": "GHSA-4g9r-vxhx-9pgx",
+          "aliases": [
+            "CVE-2024-25710"
+          ],
+          "summary": "Apache Commons Compress: Denial of service caused by an infinite loop for a corrupted DUMP file",
+          "severity": "5.9",
+          "fixed": [
+            "1.26.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4g9r-vxhx-9pgx"
+        },
+        {
+          "package": "org.apache.logging.log4j:log4j-api",
+          "ecosystem": "Maven",
+          "installed": "2.25.3",
+          "id": "GHSA-qv9r-c865-cp47",
+          "aliases": [
+            "CVE-2026-49844"
+          ],
+          "summary": "Apache Log4j API: Improper encoding of non-finite floating-point values during MapMessage JSON serialization",
+          "severity": "6.3",
+          "fixed": [
+            "2.25.5",
+            "2.26.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qv9r-c865-cp47"
+        },
+        {
+          "package": "org.assertj:assertj-core",
+          "ecosystem": "Maven",
+          "installed": "3.27.6",
+          "id": "GHSA-rqfh-9r24-8c9r",
+          "aliases": [
+            "CVE-2026-24400"
+          ],
+          "summary": "AssertJ has XML External Entity (XXE) vulnerability when parsing untrusted XML via isXmlEqualTo assertion",
+          "severity": "8.2",
+          "fixed": [
+            "3.27.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rqfh-9r24-8c9r"
+        },
+        {
+          "package": "org.postgresql:postgresql",
+          "ecosystem": "Maven",
+          "installed": "42.7.8",
+          "id": "GHSA-98qh-xjc8-98pq",
+          "aliases": [
+            "BIT-postgresql-jdbc-driver-2026-42198",
+            "CVE-2026-42198"
+          ],
+          "summary": "pgjdbc: Unbounded PBKDF2 iterations in SCRAM authentication allows CPU exhaustion DoS",
+          "severity": "7.5",
+          "fixed": [
+            "42.7.11"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-98qh-xjc8-98pq"
+        },
+        {
+          "package": "org.postgresql:postgresql",
+          "ecosystem": "Maven",
+          "installed": "42.7.8",
+          "id": "GHSA-j92g-9f8w-j867",
+          "aliases": [
+            "BIT-postgresql-jdbc-driver-2026-54291",
+            "CVE-2026-54291"
+          ],
+          "summary": "PostgreSQL JDBC Driver: Silent channel-binding authentication downgrade via unsupported certificate algorithms",
+          "severity": "8.2",
+          "fixed": [
+            "42.7.12"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j92g-9f8w-j867"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-8v8j-3hxp-93wr",
+          "aliases": [
+            "CVE-2026-40976"
+          ],
+          "summary": "Spring Boot's default security filter chain has no authorization rule with Actuator but without Health",
+          "severity": "9.1",
+          "fixed": [
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-8v8j-3hxp-93wr"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-wwpq-f5c3-7hvx",
+          "aliases": [
+            "CVE-2026-40973"
+          ],
+          "summary": "Spring Boot accepts predictable temp directory without ownership verification",
+          "severity": "7.0",
+          "fixed": [
+            "3.5.14",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wwpq-f5c3-7hvx"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot-autoconfigure",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-ggg2-9786-hwc8",
+          "aliases": [
+            "CVE-2026-41001"
+          ],
+          "summary": "Spring Boot: Predictable Temp Directory in Artemis Auto-configuration",
+          "severity": "5.3",
+          "fixed": [
+            "3.5.15",
+            "4.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-ggg2-9786-hwc8"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-5m4m-73w9-8433",
+          "aliases": [
+            "CVE-2026-41721"
+          ],
+          "summary": "Spring Data Commons: Denial of Service via excessive memory allocation in projection binding",
+          "severity": "5.9",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5m4m-73w9-8433"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-5vpf-xvv7-c8vh",
+          "aliases": [
+            "CVE-2026-41711"
+          ],
+          "summary": "Spring Data Commons: StackOverflowException when parsing Sort parameters (DoS)",
+          "severity": "5.9",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5vpf-xvv7-c8vh"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-88fw-v6x4-3f58",
+          "aliases": [
+            "CVE-2026-41695"
+          ],
+          "summary": "Spring Data: Unbounded property-path cache keyed by externally-supplied path string",
+          "severity": "7.5",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-88fw-v6x4-3f58"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-9fw2-h3hf-293r",
+          "aliases": [
+            "CVE-2026-41716"
+          ],
+          "summary": "Spring Data Commons: Heap exhaustion from unbounded property-lookup cache retaining crafted string keys",
+          "severity": "7.5",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9fw2-h3hf-293r"
+        },
+        {
+          "package": "org.springframework.data:spring-data-keyvalue",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-xg2j-3hj6-pc24",
+          "aliases": [
+            "CVE-2026-41719"
+          ],
+          "summary": "Spring Data KeyValue: Remote code execution via SpEL Injection in Sort-based repository queries",
+          "severity": "6.4",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xg2j-3hj6-pc24"
+        },
+        {
+          "package": "org.springframework.data:spring-data-relational",
+          "ecosystem": "Maven",
+          "installed": "4.0.1",
+          "id": "GHSA-8r2h-xh92-gq57",
+          "aliases": [
+            "CVE-2026-41697"
+          ],
+          "summary": "Spring Data Relational: Attackers can supply wildcard characters to perform boolean-based blind data inference",
+          "severity": "4.8",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-8r2h-xh92-gq57"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.1",
+          "id": "GHSA-m39w-hqxx-3r48",
+          "aliases": [
+            "CVE-2026-41700"
+          ],
+          "summary": "Spring for GraphQL: Cross-Site WebSocket Hijacking",
+          "severity": "8.1",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-m39w-hqxx-3r48"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.1",
+          "id": "GHSA-phxq-526m-79px",
+          "aliases": [
+            "CVE-2026-41856"
+          ],
+          "summary": "Spring for GraphQL: Annotation Detection Vulnerability",
+          "severity": "7.5",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-phxq-526m-79px"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.1",
+          "id": "GHSA-px92-q6rc-6mwv",
+          "aliases": [
+            "CVE-2026-41699"
+          ],
+          "summary": "Spring for GraphQL: Unsafe Deserialization",
+          "severity": "8.1",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-px92-q6rc-6mwv"
+        },
+        {
+          "package": "org.springframework:spring-core",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-659m-px2c-25wj",
+          "aliases": [
+            "CVE-2026-41848"
+          ],
+          "summary": "Spring Framework Denial of Service via AntPathMatcher",
+          "severity": "3.7",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-659m-px2c-25wj"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-9f52-rjqv-25qv",
+          "aliases": [
+            "CVE-2026-41852"
+          ],
+          "summary": "Spring Framework Arbitrary Method Invocation in SpEL Expressions",
+          "severity": "3.7",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9f52-rjqv-25qv"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-r5w3-xv2f-j59q",
+          "aliases": [
+            "CVE-2026-41850"
+          ],
+          "summary": "Spring Framework Algorithmic Denial of Service via SpEL Expressions",
+          "severity": "7.5",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r5w3-xv2f-j59q"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-wxpp-56q6-5pcg",
+          "aliases": [
+            "CVE-2026-41851"
+          ],
+          "summary": "Spring Framework Denial of Service via Unbounded Cache in SpEL",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wxpp-56q6-5pcg"
+        },
+        {
+          "package": "org.springframework:spring-web",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-7m2p-62gw-p8qq",
+          "aliases": [
+            "CVE-2026-41854"
+          ],
+          "summary": "Spring Framework Server-Side Request Forgery via UriComponentsBuilder",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7m2p-62gw-p8qq"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-4773-3jfm-qmx3",
+          "aliases": [
+            "CVE-2026-22737"
+          ],
+          "summary": "Spring Framework Improper Path Limitation with Script View Templates",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.17",
+            "7.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4773-3jfm-qmx3"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-4hfh-6x8g-gwpp",
+          "aliases": [
+            "CVE-2026-41839"
+          ],
+          "summary": "Spring Framework Escalation via Session Fixation in WebFlux",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4hfh-6x8g-gwpp"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-5843-p793-ghmm",
+          "aliases": [
+            "CVE-2026-22740"
+          ],
+          "summary": "Spring Framework DoS with Multipart Temp Files in WebFlux",
+          "severity": "6.5",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5843-p793-ghmm"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-6hcq-hmm3-jj3c",
+          "aliases": [
+            "CVE-2026-22735"
+          ],
+          "summary": "Spring MVC and WebFlux has Server Sent Event stream corruption",
+          "severity": "2.6",
+          "fixed": [
+            "6.2.17",
+            "7.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6hcq-hmm3-jj3c"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-6p4f-wcwh-5vvm",
+          "aliases": [
+            "CVE-2026-22745"
+          ],
+          "summary": "Spring MVC and WebFlux applications are vulnerable to Denial of Service attacks when resolving static resources",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6p4f-wcwh-5vvm"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-72pg-x5f8-j25j",
+          "aliases": [
+            "CVE-2026-41843"
+          ],
+          "summary": "Spring Framework Path Traversal via Versioned Static Resources in Spring MVC and WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72pg-x5f8-j25j"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-83f7-v6px-pp3h",
+          "aliases": [
+            "CVE-2026-41840"
+          ],
+          "summary": "Spring Framework Denial of Service via Multipart Requests in WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-83f7-v6px-pp3h"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-9qf2-26p9-2q2q",
+          "aliases": [
+            "CVE-2026-47892"
+          ],
+          "summary": "Spring Framework Header Predicate Bypass in WebFlux Functional Endpoints",
+          "severity": "9.8",
+          "fixed": [
+            "7.0.9"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9qf2-26p9-2q2q"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-cjpg-rgq5-fr37",
+          "aliases": [
+            "CVE-2026-41853"
+          ],
+          "summary": "Spring Framework Multipart Request Smuggling in Spring MVC and WebFlux",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cjpg-rgq5-fr37"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-h3qp-gqrc-q736",
+          "aliases": [
+            "CVE-2026-41844"
+          ],
+          "summary": "Spring Framework Open Redirect in Spring MVC and WebFlux",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-h3qp-gqrc-q736"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-j9f9-w8pj-32f8",
+          "aliases": [
+            "CVE-2026-47890"
+          ],
+          "summary": "Spring Framework Server Sent Event stream corruption while rendering fragments",
+          "severity": "9.8",
+          "fixed": [
+            "7.0.9"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j9f9-w8pj-32f8"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-mq64-j8f9-9gcj",
+          "aliases": [
+            "CVE-2026-41841"
+          ],
+          "summary": "Spring Framework Information Disclosure via Static Resource Cache in Spring MVC and WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mq64-j8f9-9gcj"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-wg35-8jpf-2xv3",
+          "aliases": [
+            "CVE-2026-22741"
+          ],
+          "summary": "Spring MVC and WebFlux applications are vulnerable to cache poisoning when resolving static resources.",
+          "severity": "3.1",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wg35-8jpf-2xv3"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.2",
+          "id": "GHSA-x23c-287f-qqv5",
+          "aliases": [
+            "CVE-2026-41842"
+          ],
+          "summary": "Spring Framework Denial of Service via Versioned Resources in Spring MVC and WebFlux",
+          "severity": "7.5",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-x23c-287f-qqv5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-2m67-wjpj-xhg9",
+          "aliases": [],
+          "summary": "Jackson Core: Document length constraint bypass in blocking, async, and DataInput parsers",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2m67-wjpj-xhg9"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-6v53-7c9g-w56r",
+          "aliases": [
+            "CVE-2026-29062"
+          ],
+          "summary": "jackson-core has Nesting Depth Constraint Bypass in `UTF8DataInputJsonParser` potentially allowing Resource Exhaustion",
+          "severity": "8.7",
+          "fixed": [
+            "3.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6v53-7c9g-w56r"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-72hv-8253-57qq",
+          "aliases": [
+            "CVE-2026-18401"
+          ],
+          "summary": "jackson-core: Number Length Constraint Bypass in Async Parser Leads to Potential DoS Condition",
+          "severity": "6.9",
+          "fixed": [
+            "3.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72hv-8253-57qq"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-7hhh-6rmp-j9qf",
+          "aliases": [
+            "CVE-2026-89425"
+          ],
+          "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7hhh-6rmp-j9qf"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-p6pp-m3f8-5c89",
+          "aliases": [
+            "CVE-2026-89407"
+          ],
+          "summary": " jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p6pp-m3f8-5c89"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-r7wm-3cxj-wff9",
+          "aliases": [
+            "CVE-2026-68494"
+          ],
+          "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+          "severity": "8.7",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r7wm-3cxj-wff9"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-3pjw-73gf-8qr5",
+          "aliases": [
+            "CVE-2026-59888"
+          ],
+          "summary": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3pjw-73gf-8qr5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-5gvw-p9qm-jgwh",
+          "aliases": [
+            "CVE-2026-59889"
+          ],
+          "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.5",
+            "3.2.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5gvw-p9qm-jgwh"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-5hh8-q8hv-fr38",
+          "aliases": [
+            "CVE-2026-54517"
+          ],
+          "summary": "jackson-databind has @JsonView bypass for setterless creator properties",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5hh8-q8hv-fr38"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-9fxm-vc8v-hj55",
+          "aliases": [
+            "CVE-2026-54516"
+          ],
+          "summary": "jackson-databind's renamed @JsonIgnore'd setters can deserialize via private fields",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9fxm-vc8v-hj55"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-cxp5-3px4-pw24",
+          "aliases": [
+            "CVE-2026-91777"
+          ],
+          "summary": "jackson-databind quadratic forward-reference completion ",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cxp5-3px4-pw24"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-gx83-3vf8-gh7j",
+          "aliases": [
+            "CVE-2026-83557"
+          ],
+          "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+          "severity": "5.6",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gx83-3vf8-gh7j"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-hgj6-7826-r7m5",
+          "aliases": [
+            "CVE-2026-54514"
+          ],
+          "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hgj6-7826-r7m5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-j3rv-43j4-c7qm",
+          "aliases": [
+            "CVE-2026-54512"
+          ],
+          "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+          "severity": "8.1",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j3rv-43j4-c7qm"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-q4xh-88c3-wmh7",
+          "aliases": [
+            "CVE-2026-68497"
+          ],
+          "summary": "jackson-databind: Duration XMLGregorianCalendar Unbounded Number Parse DoS",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4xh-88c3-wmh7"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-rcqc-6cw3-h962",
+          "aliases": [
+            "CVE-2026-54518"
+          ],
+          "summary": "jackson-databind has a @JsonView bypass for unwrapped creator parameters",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rcqc-6cw3-h962"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-rmj7-2vxq-3g9f",
+          "aliases": [
+            "CVE-2026-54513"
+          ],
+          "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+          "severity": "8.1",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rmj7-2vxq-3g9f"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-vvgp-rfg2-7rr6",
+          "aliases": [
+            "CVE-2026-77310"
+          ],
+          "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.5",
+            "3.2.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-vvgp-rfg2-7rr6"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-wjgm-6hv5-3cvf",
+          "aliases": [
+            "CVE-2026-19032"
+          ],
+          "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wjgm-6hv5-3cvf"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.3",
+          "id": "GHSA-wv8q-qhhj-9h54",
+          "aliases": [
+            "CVE-2026-91776"
+          ],
+          "summary": "jackson-databind retains every unknown raw type ID ",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wv8q-qhhj-9h54"
+        },
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.21",
+          "id": "GHSA-jhq6-gfmj-v8fx",
+          "aliases": [
+            "CVE-2026-10532"
+          ],
+          "summary": "Logback vulnerable to Object Injection through HardenedObjectInputStream modules",
+          "severity": "2.9",
+          "fixed": [
+            "1.5.34"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-jhq6-gfmj-v8fx"
+        },
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.21",
+          "id": "GHSA-p47f-322f-whfh",
+          "aliases": [
+            "CVE-2026-9828"
+          ],
+          "summary": "QOS.CH Sarl logback logback-core has a deserialization of untrusted data vulnerability",
+          "severity": "1.2",
+          "fixed": [
+            "1.5.33"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p47f-322f-whfh"
+        },
+        {
+          "package": "ch.qos.logback:logback-core",
+          "ecosystem": "Maven",
+          "installed": "1.5.21",
+          "id": "GHSA-qqpg-mvqg-649v",
+          "aliases": [
+            "CVE-2026-1225"
+          ],
+          "summary": "Logback allows an attacker to instantiate classes already present on the class path",
+          "severity": "1.8",
+          "fixed": [
+            "1.5.25"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qqpg-mvqg-649v"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-72hv-8253-57qq",
+          "aliases": [
+            "CVE-2026-18401"
+          ],
+          "summary": "jackson-core: Number Length Constraint Bypass in Async Parser Leads to Potential DoS Condition",
+          "severity": "6.9",
+          "fixed": [
+            "2.18.6",
+            "2.21.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72hv-8253-57qq"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-7hhh-6rmp-j9qf",
+          "aliases": [
+            "CVE-2026-89425"
+          ],
+          "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7hhh-6rmp-j9qf"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-p6pp-m3f8-5c89",
+          "aliases": [
+            "CVE-2026-89407"
+          ],
+          "summary": " jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p6pp-m3f8-5c89"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-r7wm-3cxj-wff9",
+          "aliases": [
+            "CVE-2026-68494"
+          ],
+          "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+          "severity": "8.7",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r7wm-3cxj-wff9"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-3pjw-73gf-8qr5",
+          "aliases": [
+            "CVE-2026-59888"
+          ],
+          "summary": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "severity": "6.5",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3pjw-73gf-8qr5"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-5gvw-p9qm-jgwh",
+          "aliases": [
+            "CVE-2026-59889"
+          ],
+          "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "severity": "6.5",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5gvw-p9qm-jgwh"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-5jmj-h7xm-6q6v",
+          "aliases": [
+            "CVE-2026-54515"
+          ],
+          "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5jmj-h7xm-6q6v"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-cxp5-3px4-pw24",
+          "aliases": [
+            "CVE-2026-91777"
+          ],
+          "summary": "jackson-databind quadratic forward-reference completion ",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cxp5-3px4-pw24"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-gx83-3vf8-gh7j",
+          "aliases": [
+            "CVE-2026-83557"
+          ],
+          "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+          "severity": "5.6",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gx83-3vf8-gh7j"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-hgj6-7826-r7m5",
+          "aliases": [
+            "CVE-2026-54514"
+          ],
+          "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.8",
+            "2.21.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hgj6-7826-r7m5"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-j3rv-43j4-c7qm",
+          "aliases": [
+            "CVE-2026-54512"
+          ],
+          "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+          "severity": "8.1",
+          "fixed": [
+            "2.18.8",
+            "2.21.4",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j3rv-43j4-c7qm"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-q4xh-88c3-wmh7",
+          "aliases": [
+            "CVE-2026-68497"
+          ],
+          "summary": "jackson-databind: Duration XMLGregorianCalendar Unbounded Number Parse DoS",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4xh-88c3-wmh7"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-rmj7-2vxq-3g9f",
+          "aliases": [
+            "CVE-2026-54513"
+          ],
+          "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+          "severity": "8.1",
+          "fixed": [
+            "2.18.8",
+            "2.21.4",
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rmj7-2vxq-3g9f"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-vvgp-rfg2-7rr6",
+          "aliases": [
+            "CVE-2026-77310"
+          ],
+          "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.9",
+            "2.21.5",
+            "2.22.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-vvgp-rfg2-7rr6"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-wjgm-6hv5-3cvf",
+          "aliases": [
+            "CVE-2026-19032"
+          ],
+          "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+          "severity": "5.3",
+          "fixed": [
+            "2.18.10",
+            "2.21.6",
+            "2.22.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wjgm-6hv5-3cvf"
+        },
+        {
+          "package": "com.fasterxml.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "2.20.1",
+          "id": "GHSA-wv8q-qhhj-9h54",
+          "aliases": [
+            "CVE-2026-91776"
+          ],
+          "summary": "jackson-databind retains every unknown raw type ID ",
+          "severity": "7.5",
+          "fixed": [
+            "2.18.11",
+            "2.21.7",
+            "2.22.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wv8q-qhhj-9h54"
+        },
+        {
+          "package": "com.google.guava:guava",
+          "ecosystem": "Maven",
+          "installed": "33.4.8-android",
+          "id": "GHSA-xxph-c9ww-hj94",
+          "aliases": [
+            "CVE-2026-102554"
+          ],
+          "summary": "Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation",
+          "severity": "8.2",
+          "fixed": [
+            "33.7.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94"
+        },
+        {
+          "package": "com.google.guava:guava",
+          "ecosystem": "Maven",
+          "installed": "33.4.8-jre",
+          "id": "GHSA-xxph-c9ww-hj94",
+          "aliases": [
+            "CVE-2026-102554"
+          ],
+          "summary": "Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation",
+          "severity": "8.2",
+          "fixed": [
+            "33.7.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94"
+        },
+        {
+          "package": "io.micrometer:micrometer-core",
+          "ecosystem": "Maven",
+          "installed": "1.16.0",
+          "id": "GHSA-g3pr-3p32-fp23",
+          "aliases": [
+            "CVE-2026-40984"
+          ],
+          "summary": "Micrometer HTTP server instrumentations DoS",
+          "severity": "7.5",
+          "fixed": [
+            "1.15.12",
+            "1.16.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-g3pr-3p32-fp23"
+        },
+        {
+          "package": "io.micrometer:micrometer-core",
+          "ecosystem": "Maven",
+          "installed": "1.16.0",
+          "id": "GHSA-w737-wx49-qj23",
+          "aliases": [
+            "CVE-2026-40983"
+          ],
+          "summary": "Micrometer gRPC server instrumentation DoS",
+          "severity": "7.5",
+          "fixed": [
+            "1.15.12",
+            "1.16.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w737-wx49-qj23"
+        },
+        {
+          "package": "io.netty:netty-codec-classes-quic",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-cmm3-54f8-px4j",
+          "aliases": [
+            "CVE-2026-44894"
+          ],
+          "summary": "Netty's Default QUIC token handler accepts any client-supplied token",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cmm3-54f8-px4j"
+        },
+        {
+          "package": "io.netty:netty-codec-classes-quic",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-cq4q-cv5g-r8q5",
+          "aliases": [
+            "CVE-2026-50009"
+          ],
+          "summary": "Netty: QUIC stateless reset token material exposed through header-visible connection IDs",
+          "severity": "4.8",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cq4q-cv5g-r8q5"
+        },
+        {
+          "package": "io.netty:netty-codec-compression",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-558v-64gr-wgg4",
+          "aliases": [
+            "CVE-2026-59901"
+          ],
+          "summary": "Netty: [Bzip2Decoder] Infinite Loop in RLE State Machine Leads to Event-Loop Thread Hang",
+          "severity": "8.7",
+          "fixed": [
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-558v-64gr-wgg4"
+        },
+        {
+          "package": "io.netty:netty-codec-compression",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-mj4r-2hfc-f8p6",
+          "aliases": [
+            "CVE-2026-42583"
+          ],
+          "summary": "Netty Lz4FrameDecoder is vulnerable to resource exhaustion ",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mj4r-2hfc-f8p6"
+        },
+        {
+          "package": "io.netty:netty-codec-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-cm33-6792-r9fm",
+          "aliases": [
+            "CVE-2026-42579"
+          ],
+          "summary": "Netty has a DNS Codec Input Validation Bypass (Encoder + Decoder)",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cm33-6792-r9fm"
+        },
+        {
+          "package": "io.netty:netty-codec-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-mfg7-5gfp-c4w3",
+          "aliases": [
+            "CVE-2026-73508"
+          ],
+          "summary": "Netty: Memory Leak in DNS Record Decoder via Malformed Domain Names",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mfg7-5gfp-c4w3"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-38f8-5428-x5cv",
+          "aliases": [
+            "CVE-2026-42585"
+          ],
+          "summary": "Netty vulnerable to HTTP Request Smuggling due to malformed Transfer-Encoding",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-38f8-5428-x5cv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-4mp9-239f-g9hg",
+          "aliases": [
+            "CVE-2026-59898"
+          ],
+          "summary": "Netty: WebSockets V07/V08 handshaker missing Connection/Upgrade validation",
+          "severity": "6.3",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4mp9-239f-g9hg"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-57rv-r2g8-2cj3",
+          "aliases": [
+            "CVE-2026-42584"
+          ],
+          "summary": "Netty has HttpClientCodec response desynchronization",
+          "severity": "7.3",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-57rv-r2g8-2cj3"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-6cqp-g7gg-8hr5",
+          "aliases": [
+            "CVE-2026-56746"
+          ],
+          "summary": "Netty: Security Control Bypass via CORS Short-Circuit Failure",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6cqp-g7gg-8hr5"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-6jqx-86gh-f27w",
+          "aliases": [
+            "CVE-2026-55831"
+          ],
+          "summary": "Netty SPDY SETTINGS frame count materializes unbounded settings map",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6jqx-86gh-f27w"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-84h7-rjj3-6jx4",
+          "aliases": [
+            "CVE-2025-67735"
+          ],
+          "summary": "Netty has a CRLF Injection vulnerability in io.netty.handler.codec.http.HttpRequestEncoder",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.129.Final",
+            "4.2.8.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-84h7-rjj3-6jx4"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-8c42-7qj2-3j46",
+          "aliases": [
+            "CVE-2026-59903"
+          ],
+          "summary": "Netty Vulnerable to Cache Poisoning and Information Disclosure via CORS Vary Header Overwrite",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-8c42-7qj2-3j46"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-f6hv-jmp6-3vwv",
+          "aliases": [
+            "CVE-2026-42587"
+          ],
+          "summary": "Netty: HttpContentDecompressor maxAllocation bypass when Content-Encoding set to br/zstd/snappy leads to decompression bomb DoS",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f6hv-jmp6-3vwv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-gcjf-9mgh-3p7g",
+          "aliases": [
+            "CVE-2026-59921"
+          ],
+          "summary": "Netty: CRLF Injection via Multipart Filename in Netty HttpPostRequestEncoder",
+          "severity": "5.7",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gcjf-9mgh-3p7g"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-hvcg-qmg6-jm4c",
+          "aliases": [
+            "CVE-2026-50020"
+          ],
+          "summary": "Netty: HttpObjectDecoder skips arbitrary initial control characters when only initial CRLF characters are permitted",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hvcg-qmg6-jm4c"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-jppx-w49h-x2qq",
+          "aliases": [
+            "CVE-2026-56745"
+          ],
+          "summary": "Netty: [SpdyHttpDecoder] ByteBuf Reference Leak on RST_STREAM Leads to Native Memory Exhaustion",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-jppx-w49h-x2qq"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-m4cv-j2px-7723",
+          "aliases": [
+            "CVE-2026-42580"
+          ],
+          "summary": "Netty vulnerable to HTTP Request Smuggling due to incorrect chunk size parsing",
+          "severity": "6.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-m4cv-j2px-7723"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-mvh2-crg5-v77c",
+          "aliases": [
+            "CVE-2026-55833"
+          ],
+          "summary": "Netty SPDY zlib header block continues decoded expansion after maxHeaderSize truncation",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mvh2-crg5-v77c"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-pwqr-wmgm-9rr8",
+          "aliases": [
+            "CVE-2026-33870"
+          ],
+          "summary": "Netty: HTTP Request Smuggling via Chunked Extension Quoted-String Parsing",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.132.Final",
+            "4.2.10.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-pwqr-wmgm-9rr8"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-q4f6-jm68-57ww",
+          "aliases": [
+            "CVE-2026-59899"
+          ],
+          "summary": "Netty: [HttpContentEncoder] Unbounded Per-Connection Queue Growth via HTTP/1.1 Pipelining Leads to Denial of Service",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4f6-jm68-57ww"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-v8h7-rr48-vmmv",
+          "aliases": [
+            "CVE-2026-41417"
+          ],
+          "summary": "Netty: Start-Line Injection in DefaultHttpRequest.setUri() Allows HTTP Request Smuggling and RTSP Request Injection",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-v8h7-rr48-vmmv"
+        },
+        {
+          "package": "io.netty:netty-codec-http",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-xxqh-mfjm-7mv9",
+          "aliases": [
+            "CVE-2026-42581"
+          ],
+          "summary": "Netty HTTP/1.0 TE+CL Coexistence Bypasses Smuggling Sanitization",
+          "severity": "5.8",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xxqh-mfjm-7mv9"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-563q-j3cm-6jxm",
+          "aliases": [
+            "CVE-2026-50560"
+          ],
+          "summary": "Netty susceptible to HTTP/2 Reset Attack with different on-the-wire signature",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-563q-j3cm-6jxm"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-5x3r-wrvg-rp6q",
+          "aliases": [
+            "CVE-2026-47244"
+          ],
+          "summary": "Netty HTTP/2: Advertised MAX_CONCURRENT_STREAMS are not enforced",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5x3r-wrvg-rp6q"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-93wv-jw9v-4972",
+          "aliases": [
+            "CVE-2026-56819"
+          ],
+          "summary": "Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-93wv-jw9v-4972"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-c2gf-v879-257j",
+          "aliases": [
+            "CVE-2026-48043"
+          ],
+          "summary": "netty-codec-http2: ByteBuf Reference-Count Leak in DelegatingDecompressorFrameListener Leads to Memory Exhaustion",
+          "severity": "5.3",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2gf-v879-257j"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-c69g-56f8-xwqj",
+          "aliases": [
+            "CVE-2026-59900"
+          ],
+          "summary": "Netty: [codec-http2] Lack of Host Header Deduplication in HTTP/2→HTTP/1.x Translation Leads to Request Routing Bypass",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.136.Final",
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c69g-56f8-xwqj"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-f6hv-jmp6-3vwv",
+          "aliases": [
+            "CVE-2026-42587"
+          ],
+          "summary": "Netty: HttpContentDecompressor maxAllocation bypass when Content-Encoding set to br/zstd/snappy leads to decompression bomb DoS",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f6hv-jmp6-3vwv"
+        },
+        {
+          "package": "io.netty:netty-codec-http2",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-w9fj-cfpg-grvv",
+          "aliases": [
+            "CVE-2026-33871"
+          ],
+          "summary": "Netty HTTP/2 CONTINUATION Frame Flood DoS via Zero-Byte Frame Bypass",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.132.Final",
+            "4.2.11.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w9fj-cfpg-grvv"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-2c5c-chwr-9hqw",
+          "aliases": [
+            "CVE-2026-42582"
+          ],
+          "summary": "Netty HTTP/3 QPACK literal unbounded allocation",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2c5c-chwr-9hqw"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-4grm-h2qv-h6w6",
+          "aliases": [
+            "CVE-2026-48748"
+          ],
+          "summary": "Netty HTTP/3 QPACK Blocked Streams Memory Exhaustion",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4grm-h2qv-h6w6"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-c2rx-5r8w-8xr2",
+          "aliases": [
+            "CVE-2026-44892"
+          ],
+          "summary": "Netty has a Vulnerable Default Configuration Which Leads to Denial of Service via Unbounded HTTP/3 Header Size",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2rx-5r8w-8xr2"
+        },
+        {
+          "package": "io.netty:netty-codec-http3",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-hpcc-26xq-25fv",
+          "aliases": [
+            "CVE-2026-56816"
+          ],
+          "summary": "Netty: Memory Exhaustion via HTTP/3 Reserved Frame Types",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.16.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hpcc-26xq-25fv"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-3qp7-7mw8-wx86",
+          "aliases": [
+            "CVE-2026-44249"
+          ],
+          "summary": "Netty has an IPv6 Subnet Filter Bypass via Incorrect Comparator Masking",
+          "severity": "8.1",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3qp7-7mw8-wx86"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-c4c3-7fpv-j4q5",
+          "aliases": [
+            "CVE-2026-75595"
+          ],
+          "summary": "Netty: SNI Routing Bypass via Fragmented TLS ClientHello Causing Fallback to Default SslContext",
+          "severity": "9.1",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c4c3-7fpv-j4q5"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-c653-97m9-rcg9",
+          "aliases": [
+            "CVE-2026-50010"
+          ],
+          "summary": "Netty: Wrapping plain trust manager silently disables hostname verification",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c653-97m9-rcg9"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-fccg-mwvh-qqg4",
+          "aliases": [
+            "CVE-2026-75596"
+          ],
+          "summary": "Netty: Fragmented ClientHello records trigger quadratic pre-handshake reassembly in default SNI parsing",
+          "severity": "6.9",
+          "fixed": [
+            "4.1.137.Final",
+            "4.2.17.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-fccg-mwvh-qqg4"
+        },
+        {
+          "package": "io.netty:netty-handler",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-x4gw-5cx5-pgmh",
+          "aliases": [
+            "CVE-2026-45416"
+          ],
+          "summary": "Netty: SNI handler pre-allocates up to 16 MiB from nine attacker bytes",
+          "severity": "7.5",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-x4gw-5cx5-pgmh"
+        },
+        {
+          "package": "io.netty:netty-handler-proxy",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-45q3-82m4-75jr",
+          "aliases": [
+            "CVE-2026-42578"
+          ],
+          "summary": "Netty has HTTP Header Injection via HttpProxyHandler Disabled Validation (Incomplete Fix CVE-2025-67735)",
+          "severity": "2.9",
+          "fixed": [
+            "4.1.133.Final",
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-45q3-82m4-75jr"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-5pvg-856g-cp85",
+          "aliases": [
+            "CVE-2026-47691"
+          ],
+          "summary": "Netty has Insufficient Bailiwick Validation for NS Records",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5pvg-856g-cp85"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-676x-f7gg-47vc",
+          "aliases": [
+            "CVE-2026-45674"
+          ],
+          "summary": "Netty Vulnerable to DNS Cache Poisoning via Missing Bailiwick Checks in CNAME Records",
+          "severity": "8.7",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-676x-f7gg-47vc"
+        },
+        {
+          "package": "io.netty:netty-resolver-dns",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-xmv7-r254-6q78",
+          "aliases": [
+            "CVE-2026-45673"
+          ],
+          "summary": "Netty: DNS Cache Poisoning due to Predictable PRNG and Default Static Source Port",
+          "severity": "6.8",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-xmv7-r254-6q78"
+        },
+        {
+          "package": "io.netty:netty-transport-classes-epoll",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-rwm7-x88c-3g2p",
+          "aliases": [
+            "CVE-2026-42577"
+          ],
+          "summary": "Netty epoll transport denial of service via RST on half-closed TCP connection",
+          "severity": "7.5",
+          "fixed": [
+            "4.2.13.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rwm7-x88c-3g2p"
+        },
+        {
+          "package": "io.netty:netty-transport-native-epoll",
+          "ecosystem": "Maven",
+          "installed": "4.2.7.Final",
+          "id": "GHSA-w573-9ffj-6ff9",
+          "aliases": [
+            "CVE-2026-45536"
+          ],
+          "summary": "Netty: Unix-socket fd receive leaks descriptors when peer sends two at once",
+          "severity": "4.0",
+          "fixed": [
+            "4.1.135.Final",
+            "4.2.15.Final"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w573-9ffj-6ff9"
+        },
+        {
+          "package": "org.apache.logging.log4j:log4j-api",
+          "ecosystem": "Maven",
+          "installed": "2.25.2",
+          "id": "GHSA-qv9r-c865-cp47",
+          "aliases": [
+            "CVE-2026-49844"
+          ],
+          "summary": "Apache Log4j API: Improper encoding of non-finite floating-point values during MapMessage JSON serialization",
+          "severity": "6.3",
+          "fixed": [
+            "2.25.5",
+            "2.26.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qv9r-c865-cp47"
+        },
+        {
+          "package": "org.assertj:assertj-core",
+          "ecosystem": "Maven",
+          "installed": "3.27.6",
+          "id": "GHSA-rqfh-9r24-8c9r",
+          "aliases": [
+            "CVE-2026-24400"
+          ],
+          "summary": "AssertJ has XML External Entity (XXE) vulnerability when parsing untrusted XML via isXmlEqualTo assertion",
+          "severity": "8.2",
+          "fixed": [
+            "3.27.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rqfh-9r24-8c9r"
+        },
+        {
+          "package": "org.bouncycastle:bcprov-jdk18on",
+          "ecosystem": "Maven",
+          "installed": "1.80",
+          "id": "GHSA-574f-3g2m-x479",
+          "aliases": [
+            "CVE-2025-14813"
+          ],
+          "summary": "Bouncy Castle for Java GOST 28147 CTR mode reuses keystream after 255 blocks",
+          "severity": "9.3",
+          "fixed": [
+            "1.80.2",
+            "1.81.1",
+            "1.84"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-574f-3g2m-x479"
+        },
+        {
+          "package": "org.bouncycastle:bcprov-jdk18on",
+          "ecosystem": "Maven",
+          "installed": "1.80",
+          "id": "GHSA-9pwp-9qqc-pr26",
+          "aliases": [
+            "CVE-2026-8763"
+          ],
+          "summary": "Bouncy Castle: Name Constraints bypass via trailing dot in rfc822Name and URI",
+          "severity": "9.3",
+          "fixed": [
+            "1.85"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9pwp-9qqc-pr26"
+        },
+        {
+          "package": "org.bouncycastle:bcprov-jdk18on",
+          "ecosystem": "Maven",
+          "installed": "1.80",
+          "id": "GHSA-c3fc-8qff-9hwx",
+          "aliases": [
+            "CVE-2026-0636"
+          ],
+          "summary": "Bouncy Castle has an LDAP injection",
+          "severity": "6.5",
+          "fixed": [
+            "1.80.2",
+            "1.81.1",
+            "1.84"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c3fc-8qff-9hwx"
+        },
+        {
+          "package": "org.bouncycastle:bcprov-jdk18on",
+          "ecosystem": "Maven",
+          "installed": "1.80",
+          "id": "GHSA-p93r-85wp-75v3",
+          "aliases": [
+            "CVE-2026-5598"
+          ],
+          "summary": "Bouncy Castle Has Covert Timing Channel Vulnerability",
+          "severity": "8.9",
+          "fixed": [
+            "1.80.2",
+            "1.84"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p93r-85wp-75v3"
+        },
+        {
+          "package": "org.bouncycastle:bcprov-jdk18on",
+          "ecosystem": "Maven",
+          "installed": "1.80",
+          "id": "GHSA-qp49-qgx5-5m26",
+          "aliases": [
+            "CVE-2026-13506"
+          ],
+          "summary": "Bouncy Castle: Lazy ASN.1 sequence forcing resets nesting-depth guard",
+          "severity": "8.7",
+          "fixed": [
+            "1.85"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qp49-qgx5-5m26"
+        },
+        {
+          "package": "org.postgresql:postgresql",
+          "ecosystem": "Maven",
+          "installed": "42.7.8",
+          "id": "GHSA-98qh-xjc8-98pq",
+          "aliases": [
+            "BIT-postgresql-jdbc-driver-2026-42198",
+            "CVE-2026-42198"
+          ],
+          "summary": "pgjdbc: Unbounded PBKDF2 iterations in SCRAM authentication allows CPU exhaustion DoS",
+          "severity": "7.5",
+          "fixed": [
+            "42.7.11"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-98qh-xjc8-98pq"
+        },
+        {
+          "package": "org.postgresql:postgresql",
+          "ecosystem": "Maven",
+          "installed": "42.7.8",
+          "id": "GHSA-j92g-9f8w-j867",
+          "aliases": [
+            "BIT-postgresql-jdbc-driver-2026-54291",
+            "CVE-2026-54291"
+          ],
+          "summary": "PostgreSQL JDBC Driver: Silent channel-binding authentication downgrade via unsupported certificate algorithms",
+          "severity": "8.2",
+          "fixed": [
+            "42.7.12"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j92g-9f8w-j867"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-8v8j-3hxp-93wr",
+          "aliases": [
+            "CVE-2026-40976"
+          ],
+          "summary": "Spring Boot's default security filter chain has no authorization rule with Actuator but without Health",
+          "severity": "9.1",
+          "fixed": [
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-8v8j-3hxp-93wr"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-wwpq-f5c3-7hvx",
+          "aliases": [
+            "CVE-2026-40973"
+          ],
+          "summary": "Spring Boot accepts predictable temp directory without ownership verification",
+          "severity": "7.0",
+          "fixed": [
+            "3.5.14",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wwpq-f5c3-7hvx"
+        },
+        {
+          "package": "org.springframework.boot:spring-boot-autoconfigure",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-ggg2-9786-hwc8",
+          "aliases": [
+            "CVE-2026-41001"
+          ],
+          "summary": "Spring Boot: Predictable Temp Directory in Artemis Auto-configuration",
+          "severity": "5.3",
+          "fixed": [
+            "3.5.15",
+            "4.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-ggg2-9786-hwc8"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-5m4m-73w9-8433",
+          "aliases": [
+            "CVE-2026-41721"
+          ],
+          "summary": "Spring Data Commons: Denial of Service via excessive memory allocation in projection binding",
+          "severity": "5.9",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5m4m-73w9-8433"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-5vpf-xvv7-c8vh",
+          "aliases": [
+            "CVE-2026-41711"
+          ],
+          "summary": "Spring Data Commons: StackOverflowException when parsing Sort parameters (DoS)",
+          "severity": "5.9",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5vpf-xvv7-c8vh"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-88fw-v6x4-3f58",
+          "aliases": [
+            "CVE-2026-41695"
+          ],
+          "summary": "Spring Data: Unbounded property-path cache keyed by externally-supplied path string",
+          "severity": "7.5",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-88fw-v6x4-3f58"
+        },
+        {
+          "package": "org.springframework.data:spring-data-commons",
+          "ecosystem": "Maven",
+          "installed": "4.0.0",
+          "id": "GHSA-9fw2-h3hf-293r",
+          "aliases": [
+            "CVE-2026-41716"
+          ],
+          "summary": "Spring Data Commons: Heap exhaustion from unbounded property-lookup cache retaining crafted string keys",
+          "severity": "7.5",
+          "fixed": [
+            "3.5.12",
+            "4.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9fw2-h3hf-293r"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.0",
+          "id": "GHSA-m39w-hqxx-3r48",
+          "aliases": [
+            "CVE-2026-41700"
+          ],
+          "summary": "Spring for GraphQL: Cross-Site WebSocket Hijacking",
+          "severity": "8.1",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-m39w-hqxx-3r48"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.0",
+          "id": "GHSA-phxq-526m-79px",
+          "aliases": [
+            "CVE-2026-41856"
+          ],
+          "summary": "Spring for GraphQL: Annotation Detection Vulnerability",
+          "severity": "7.5",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-phxq-526m-79px"
+        },
+        {
+          "package": "org.springframework.graphql:spring-graphql",
+          "ecosystem": "Maven",
+          "installed": "2.0.0",
+          "id": "GHSA-px92-q6rc-6mwv",
+          "aliases": [
+            "CVE-2026-41699"
+          ],
+          "summary": "Spring for GraphQL: Unsafe Deserialization",
+          "severity": "8.1",
+          "fixed": [
+            "1.4.6",
+            "2.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-px92-q6rc-6mwv"
+        },
+        {
+          "package": "org.springframework.retry:spring-retry",
+          "ecosystem": "Maven",
+          "installed": "2.0.12",
+          "id": "GHSA-2827-2mxx-j8pv",
+          "aliases": [
+            "CVE-2026-41710"
+          ],
+          "summary": "Spring Retry has Cache Exhaustion in Stateful Retries that leads to Denial of Service",
+          "severity": "5.9",
+          "fixed": [
+            "2.0.13"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2827-2mxx-j8pv"
+        },
+        {
+          "package": "org.springframework:spring-core",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-659m-px2c-25wj",
+          "aliases": [
+            "CVE-2026-41848"
+          ],
+          "summary": "Spring Framework Denial of Service via AntPathMatcher",
+          "severity": "3.7",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-659m-px2c-25wj"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-9f52-rjqv-25qv",
+          "aliases": [
+            "CVE-2026-41852"
+          ],
+          "summary": "Spring Framework Arbitrary Method Invocation in SpEL Expressions",
+          "severity": "3.7",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9f52-rjqv-25qv"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-r5w3-xv2f-j59q",
+          "aliases": [
+            "CVE-2026-41850"
+          ],
+          "summary": "Spring Framework Algorithmic Denial of Service via SpEL Expressions",
+          "severity": "7.5",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r5w3-xv2f-j59q"
+        },
+        {
+          "package": "org.springframework:spring-expression",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-wxpp-56q6-5pcg",
+          "aliases": [
+            "CVE-2026-41851"
+          ],
+          "summary": "Spring Framework Denial of Service via Unbounded Cache in SpEL",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wxpp-56q6-5pcg"
+        },
+        {
+          "package": "org.springframework:spring-web",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-7m2p-62gw-p8qq",
+          "aliases": [
+            "CVE-2026-41854"
+          ],
+          "summary": "Spring Framework Server-Side Request Forgery via UriComponentsBuilder",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7m2p-62gw-p8qq"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-4773-3jfm-qmx3",
+          "aliases": [
+            "CVE-2026-22737"
+          ],
+          "summary": "Spring Framework Improper Path Limitation with Script View Templates",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.17",
+            "7.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4773-3jfm-qmx3"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-4hfh-6x8g-gwpp",
+          "aliases": [
+            "CVE-2026-41839"
+          ],
+          "summary": "Spring Framework Escalation via Session Fixation in WebFlux",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-4hfh-6x8g-gwpp"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-5843-p793-ghmm",
+          "aliases": [
+            "CVE-2026-22740"
+          ],
+          "summary": "Spring Framework DoS with Multipart Temp Files in WebFlux",
+          "severity": "6.5",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5843-p793-ghmm"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-6hcq-hmm3-jj3c",
+          "aliases": [
+            "CVE-2026-22735"
+          ],
+          "summary": "Spring MVC and WebFlux has Server Sent Event stream corruption",
+          "severity": "2.6",
+          "fixed": [
+            "6.2.17",
+            "7.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6hcq-hmm3-jj3c"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-6p4f-wcwh-5vvm",
+          "aliases": [
+            "CVE-2026-22745"
+          ],
+          "summary": "Spring MVC and WebFlux applications are vulnerable to Denial of Service attacks when resolving static resources",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6p4f-wcwh-5vvm"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-72pg-x5f8-j25j",
+          "aliases": [
+            "CVE-2026-41843"
+          ],
+          "summary": "Spring Framework Path Traversal via Versioned Static Resources in Spring MVC and WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72pg-x5f8-j25j"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-83f7-v6px-pp3h",
+          "aliases": [
+            "CVE-2026-41840"
+          ],
+          "summary": "Spring Framework Denial of Service via Multipart Requests in WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-83f7-v6px-pp3h"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-9qf2-26p9-2q2q",
+          "aliases": [
+            "CVE-2026-47892"
+          ],
+          "summary": "Spring Framework Header Predicate Bypass in WebFlux Functional Endpoints",
+          "severity": "9.8",
+          "fixed": [
+            "7.0.9"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9qf2-26p9-2q2q"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-cjpg-rgq5-fr37",
+          "aliases": [
+            "CVE-2026-41853"
+          ],
+          "summary": "Spring Framework Multipart Request Smuggling in Spring MVC and WebFlux",
+          "severity": "5.3",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cjpg-rgq5-fr37"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-h3qp-gqrc-q736",
+          "aliases": [
+            "CVE-2026-41844"
+          ],
+          "summary": "Spring Framework Open Redirect in Spring MVC and WebFlux",
+          "severity": "4.2",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-h3qp-gqrc-q736"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-j9f9-w8pj-32f8",
+          "aliases": [
+            "CVE-2026-47890"
+          ],
+          "summary": "Spring Framework Server Sent Event stream corruption while rendering fragments",
+          "severity": "9.8",
+          "fixed": [
+            "7.0.9"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j9f9-w8pj-32f8"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-mq64-j8f9-9gcj",
+          "aliases": [
+            "CVE-2026-41841"
+          ],
+          "summary": "Spring Framework Information Disclosure via Static Resource Cache in Spring MVC and WebFlux",
+          "severity": "5.9",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mq64-j8f9-9gcj"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-wg35-8jpf-2xv3",
+          "aliases": [
+            "CVE-2026-22741"
+          ],
+          "summary": "Spring MVC and WebFlux applications are vulnerable to cache poisoning when resolving static resources.",
+          "severity": "3.1",
+          "fixed": [
+            "6.2.18",
+            "7.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wg35-8jpf-2xv3"
+        },
+        {
+          "package": "org.springframework:spring-webflux",
+          "ecosystem": "Maven",
+          "installed": "7.0.1",
+          "id": "GHSA-x23c-287f-qqv5",
+          "aliases": [
+            "CVE-2026-41842"
+          ],
+          "summary": "Spring Framework Denial of Service via Versioned Resources in Spring MVC and WebFlux",
+          "severity": "7.5",
+          "fixed": [
+            "6.2.19",
+            "7.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-x23c-287f-qqv5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-2m67-wjpj-xhg9",
+          "aliases": [],
+          "summary": "Jackson Core: Document length constraint bypass in blocking, async, and DataInput parsers",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2m67-wjpj-xhg9"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-6v53-7c9g-w56r",
+          "aliases": [
+            "CVE-2026-29062"
+          ],
+          "summary": "jackson-core has Nesting Depth Constraint Bypass in `UTF8DataInputJsonParser` potentially allowing Resource Exhaustion",
+          "severity": "8.7",
+          "fixed": [
+            "3.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6v53-7c9g-w56r"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-72hv-8253-57qq",
+          "aliases": [
+            "CVE-2026-18401"
+          ],
+          "summary": "jackson-core: Number Length Constraint Bypass in Async Parser Leads to Potential DoS Condition",
+          "severity": "6.9",
+          "fixed": [
+            "3.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-72hv-8253-57qq"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-7hhh-6rmp-j9qf",
+          "aliases": [
+            "CVE-2026-89425"
+          ],
+          "summary": "jackson-core: UTF8DataInputJsonParser._reportInvalidToken() missing maxErrorTokenLength limit -> unbounded StringBuilder growth (DoS)",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7hhh-6rmp-j9qf"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-p6pp-m3f8-5c89",
+          "aliases": [
+            "CVE-2026-89407"
+          ],
+          "summary": " jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p6pp-m3f8-5c89"
+        },
+        {
+          "package": "tools.jackson.core:jackson-core",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-r7wm-3cxj-wff9",
+          "aliases": [
+            "CVE-2026-68494"
+          ],
+          "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)",
+          "severity": "8.7",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r7wm-3cxj-wff9"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-3pjw-73gf-8qr5",
+          "aliases": [
+            "CVE-2026-59888"
+          ],
+          "summary": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3pjw-73gf-8qr5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-5gvw-p9qm-jgwh",
+          "aliases": [
+            "CVE-2026-59889"
+          ],
+          "summary": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.5",
+            "3.2.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5gvw-p9qm-jgwh"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-5hh8-q8hv-fr38",
+          "aliases": [
+            "CVE-2026-54517"
+          ],
+          "summary": "jackson-databind has @JsonView bypass for setterless creator properties",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5hh8-q8hv-fr38"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-9fxm-vc8v-hj55",
+          "aliases": [
+            "CVE-2026-54516"
+          ],
+          "summary": "jackson-databind's renamed @JsonIgnore'd setters can deserialize via private fields",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-9fxm-vc8v-hj55"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-cxp5-3px4-pw24",
+          "aliases": [
+            "CVE-2026-91777"
+          ],
+          "summary": "jackson-databind quadratic forward-reference completion ",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cxp5-3px4-pw24"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-gx83-3vf8-gh7j",
+          "aliases": [
+            "CVE-2026-83557"
+          ],
+          "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+          "severity": "5.6",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-gx83-3vf8-gh7j"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-hgj6-7826-r7m5",
+          "aliases": [
+            "CVE-2026-54514"
+          ],
+          "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-hgj6-7826-r7m5"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-j3rv-43j4-c7qm",
+          "aliases": [
+            "CVE-2026-54512"
+          ],
+          "summary": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
+          "severity": "8.1",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-j3rv-43j4-c7qm"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-q4xh-88c3-wmh7",
+          "aliases": [
+            "CVE-2026-68497"
+          ],
+          "summary": "jackson-databind: Duration XMLGregorianCalendar Unbounded Number Parse DoS",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q4xh-88c3-wmh7"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-rcqc-6cw3-h962",
+          "aliases": [
+            "CVE-2026-54518"
+          ],
+          "summary": "jackson-databind has a @JsonView bypass for unwrapped creator parameters",
+          "severity": "6.5",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rcqc-6cw3-h962"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-rmj7-2vxq-3g9f",
+          "aliases": [
+            "CVE-2026-54513"
+          ],
+          "summary": "jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)",
+          "severity": "8.1",
+          "fixed": [
+            "3.1.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rmj7-2vxq-3g9f"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-vvgp-rfg2-7rr6",
+          "aliases": [
+            "CVE-2026-77310"
+          ],
+          "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.5",
+            "3.2.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-vvgp-rfg2-7rr6"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-wjgm-6hv5-3cvf",
+          "aliases": [
+            "CVE-2026-19032"
+          ],
+          "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+          "severity": "5.3",
+          "fixed": [
+            "3.1.6",
+            "3.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wjgm-6hv5-3cvf"
+        },
+        {
+          "package": "tools.jackson.core:jackson-databind",
+          "ecosystem": "Maven",
+          "installed": "3.0.2",
+          "id": "GHSA-wv8q-qhhj-9h54",
+          "aliases": [
+            "CVE-2026-91776"
+          ],
+          "summary": "jackson-databind retains every unknown raw type ID ",
+          "severity": "7.5",
+          "fixed": [
+            "3.1.7",
+            "3.2.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wv8q-qhhj-9h54"
+        },
+        {
+          "package": "fastapi",
+          "ecosystem": "PyPI",
+          "installed": "0.108.0",
+          "id": "PYSEC-2024-38",
+          "aliases": [
+            "CVE-2024-24762",
+            "GHSA-2jv5-9r88-3w3p",
+            "GHSA-qf9m-vfgh-m389",
+            "PYSEC-2026-1850"
+          ],
+          "summary": null,
+          "severity": "7.5",
+          "fixed": [
+            "0.109.1",
+            "9d34ad0ee8a0dfbbcce06f76c2d5d851085024fc"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2024-38"
+        },
+        {
+          "package": "protobuf",
+          "ecosystem": "PyPI",
+          "installed": "4.25.8",
+          "id": "PYSEC-2026-1805",
+          "aliases": [
+            "CVE-2026-0994",
+            "GHSA-7gcm-g887-7qv7"
+          ],
+          "summary": "protobuf affected by a JSON recursion depth bypass",
+          "severity": "8.2",
+          "fixed": [
+            "5.29.6",
+            "6.33.5"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-1805"
+        },
+        {
+          "package": "protobuf",
+          "ecosystem": "PyPI",
+          "installed": "4.25.8",
+          "id": "GHSA-7gcm-g887-7qv7",
+          "aliases": [
+            "CVE-2026-0994",
+            "PYSEC-2026-1805"
+          ],
+          "summary": "protobuf affected by a JSON recursion depth bypass",
+          "severity": "8.2",
+          "fixed": [
+            "5.29.6",
+            "6.33.5"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7gcm-g887-7qv7"
+        },
+        {
+          "package": "anyio",
+          "ecosystem": "PyPI",
+          "installed": "4.9.0",
+          "id": "PYSEC-2026-4024",
+          "aliases": [
+            "CVE-2026-64847",
+            "GHSA-5p39-cfhj-2xmp"
+          ],
+          "summary": "AnyIO process-pool workers can block indefinitely on undrained stderr",
+          "severity": "6.8",
+          "fixed": [
+            "4.14.2"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-4024"
+        },
+        {
+          "package": "anyio",
+          "ecosystem": "PyPI",
+          "installed": "4.9.0",
+          "id": "PYSEC-2026-4025",
+          "aliases": [
+            "CVE-2026-63374",
+            "GHSA-82r6-8w77-94w6"
+          ],
+          "summary": "AnyIO: TLSStream IDNA 2003 host name encoding enables potential TLS certificate spoofing",
+          "severity": "9.3",
+          "fixed": [
+            "4.14.2"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-4025"
+        },
+        {
+          "package": "anyio",
+          "ecosystem": "PyPI",
+          "installed": "4.9.0",
+          "id": "GHSA-5p39-cfhj-2xmp",
+          "aliases": [
+            "CVE-2026-64847",
+            "PYSEC-2026-4024"
+          ],
+          "summary": "AnyIO process-pool workers can block indefinitely on undrained stderr",
+          "severity": "6.8",
+          "fixed": [
+            "4.14.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5p39-cfhj-2xmp"
+        },
+        {
+          "package": "anyio",
+          "ecosystem": "PyPI",
+          "installed": "4.9.0",
+          "id": "GHSA-82r6-8w77-94w6",
+          "aliases": [
+            "CVE-2026-63374",
+            "PYSEC-2026-4025"
+          ],
+          "summary": "AnyIO: TLSStream IDNA 2003 host name encoding enables potential TLS certificate spoofing",
+          "severity": "9.3",
+          "fixed": [
+            "4.14.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-82r6-8w77-94w6"
+        },
+        {
+          "package": "h11",
+          "ecosystem": "PyPI",
+          "installed": "0.9.0",
+          "id": "PYSEC-2026-348",
+          "aliases": [
+            "CVE-2025-43859",
+            "GHSA-vqfr-h8mv-ghfj"
+          ],
+          "summary": "h11 accepts some malformed Chunked-Encoding bodies",
+          "severity": "9.1",
+          "fixed": [
+            "0.16.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-348"
+        },
+        {
+          "package": "h11",
+          "ecosystem": "PyPI",
+          "installed": "0.9.0",
+          "id": "GHSA-vqfr-h8mv-ghfj",
+          "aliases": [
+            "CVE-2025-43859",
+            "PYSEC-2026-348"
+          ],
+          "summary": "h11 accepts some malformed Chunked-Encoding bodies",
+          "severity": "9.1",
+          "fixed": [
+            "0.16.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-vqfr-h8mv-ghfj"
+        },
+        {
+          "package": "idna",
+          "ecosystem": "PyPI",
+          "installed": "3.9.0",
+          "id": "PYSEC-2026-215",
+          "aliases": [
+            "CVE-2026-45409",
+            "GHSA-65pc-fj4g-8rjx"
+          ],
+          "summary": null,
+          "severity": "6.9",
+          "fixed": [
+            "3.15"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-215"
+        },
+        {
+          "package": "idna",
+          "ecosystem": "PyPI",
+          "installed": "3.9.0",
+          "id": "GHSA-65pc-fj4g-8rjx",
+          "aliases": [
+            "CVE-2026-45409",
+            "PYSEC-2026-215"
+          ],
+          "summary": "Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix",
+          "severity": "6.9",
+          "fixed": [
+            "3.15"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "PYSEC-2022-43012",
+          "aliases": [
+            "BIT-setuptools-2022-40897",
+            "CVE-2022-40897",
+            "GHSA-r9hx-vwmv-q579"
+          ],
+          "summary": null,
+          "severity": "8.7",
+          "fixed": [
+            "43a9c9bfa6aa626ec2a22540bea28d2ca77964be",
+            "65.5.1"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2022-43012"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "PYSEC-2025-49",
+          "aliases": [
+            "BIT-setuptools-2025-47273",
+            "CVE-2025-47273",
+            "GHSA-5rjg-fvgr-3xxf"
+          ],
+          "summary": null,
+          "severity": "8.8",
+          "fixed": [
+            "250a6d17978f9f6ac3ac887091f2d32886fbbb0b",
+            "78.1.1"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2025-49"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "PYSEC-2026-1918",
+          "aliases": [
+            "BIT-setuptools-2024-6345",
+            "CVE-2024-6345",
+            "GHSA-cx63-2mw6-8hw5"
+          ],
+          "summary": "setuptools vulnerable to Command Injection via package URL",
+          "severity": "8.8",
+          "fixed": [
+            "70.0.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-1918"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "PYSEC-2026-3447",
+          "aliases": [
+            "BIT-setuptools-2026-59890",
+            "CVE-2026-59890",
+            "GHSA-h35f-9h28-mq5c"
+          ],
+          "summary": null,
+          "severity": "6.1",
+          "fixed": [
+            "83.0.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-3447"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "GHSA-5rjg-fvgr-3xxf",
+          "aliases": [
+            "BIT-setuptools-2025-47273",
+            "CVE-2025-47273",
+            "PYSEC-2025-49"
+          ],
+          "summary": "setuptools has a path traversal vulnerability in PackageIndex.download that leads to Arbitrary File Write",
+          "severity": "8.8",
+          "fixed": [
+            "78.1.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5rjg-fvgr-3xxf"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "GHSA-cx63-2mw6-8hw5",
+          "aliases": [
+            "BIT-setuptools-2024-6345",
+            "CVE-2024-6345",
+            "PYSEC-2026-1918"
+          ],
+          "summary": "setuptools vulnerable to Command Injection via package URL",
+          "severity": "8.8",
+          "fixed": [
+            "70.0.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-cx63-2mw6-8hw5"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "GHSA-h35f-9h28-mq5c",
+          "aliases": [
+            "BIT-setuptools-2026-59890",
+            "CVE-2026-59890",
+            "PYSEC-2026-3447"
+          ],
+          "summary": "setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD) on macOS APFS/HFS+",
+          "severity": "6.1",
+          "fixed": [
+            "83.0.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-h35f-9h28-mq5c"
+        },
+        {
+          "package": "setuptools",
+          "ecosystem": "PyPI",
+          "installed": "9.1.0",
+          "id": "GHSA-r9hx-vwmv-q579",
+          "aliases": [
+            "BIT-setuptools-2022-40897",
+            "CVE-2022-40897",
+            "PYSEC-2022-43012"
+          ],
+          "summary": "pypa/setuptools vulnerable to Regular Expression Denial of Service (ReDoS)",
+          "severity": "8.7",
+          "fixed": [
+            "65.5.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-161",
+          "aliases": [
+            "CVE-2026-48710",
+            "GHSA-86qp-5c8j-p5mr",
+            "X41-2026-002"
+          ],
+          "summary": "BadHost: Missing Host header validation poisons request.url.path, bypassing path-based security checks",
+          "severity": "6.5",
+          "fixed": [
+            "1.0.1"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-161"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-1941",
+          "aliases": [
+            "CVE-2025-54121",
+            "GHSA-2c2j-9gv5-cj73"
+          ],
+          "summary": "Starlette has possible denial-of-service vector when parsing large files in multipart forms",
+          "severity": "5.3",
+          "fixed": [
+            "0.47.2"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-1941"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-1943",
+          "aliases": [
+            "CVE-2024-47874",
+            "GHSA-f96h-pmfr-66vw"
+          ],
+          "summary": "Starlette Denial of service (DoS) via multipart/form-data",
+          "severity": "8.7",
+          "fixed": [
+            "0.40.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-1943"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-2280",
+          "aliases": [
+            "CVE-2026-48817",
+            "GHSA-x746-7m8f-x49c"
+          ],
+          "summary": null,
+          "severity": "5.3",
+          "fixed": [
+            "1.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-2280"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-2281",
+          "aliases": [
+            "CVE-2026-48818",
+            "GHSA-wqp7-x3pw-xc5r"
+          ],
+          "summary": null,
+          "severity": "7.5",
+          "fixed": [
+            "1.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-2281"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-248",
+          "aliases": [
+            "CVE-2026-54282",
+            "GHSA-jp82-jpqv-5vv3"
+          ],
+          "summary": null,
+          "severity": "5.3",
+          "fixed": [
+            "1.3.0"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-248"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "PYSEC-2026-249",
+          "aliases": [
+            "CVE-2026-54283",
+            "GHSA-82w8-qh3p-5jfq"
+          ],
+          "summary": null,
+          "severity": "7.5",
+          "fixed": [
+            "1.3.1"
+          ],
+          "link": "https://osv.dev/vulnerability/PYSEC-2026-249"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-2c2j-9gv5-cj73",
+          "aliases": [
+            "CVE-2025-54121",
+            "PYSEC-2026-1941"
+          ],
+          "summary": "Starlette has possible denial-of-service vector when parsing large files in multipart forms",
+          "severity": "5.3",
+          "fixed": [
+            "0.47.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2c2j-9gv5-cj73"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-82w8-qh3p-5jfq",
+          "aliases": [
+            "CVE-2026-54283",
+            "PYSEC-2026-249"
+          ],
+          "summary": "Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS",
+          "severity": "7.5",
+          "fixed": [
+            "1.3.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-82w8-qh3p-5jfq"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-86qp-5c8j-p5mr",
+          "aliases": [
+            "CVE-2026-48710",
+            "PYSEC-2026-161",
+            "X41-2026-002"
+          ],
+          "summary": "Starlette has missing Host header validation that poisons request.url.path, bypassing path-based security checks",
+          "severity": "6.5",
+          "fixed": [
+            "1.0.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-86qp-5c8j-p5mr"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-f96h-pmfr-66vw",
+          "aliases": [
+            "CVE-2024-47874",
+            "PYSEC-2026-1943"
+          ],
+          "summary": "Starlette Denial of service (DoS) via multipart/form-data",
+          "severity": "8.7",
+          "fixed": [
+            "0.40.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f96h-pmfr-66vw"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-jp82-jpqv-5vv3",
+          "aliases": [
+            "CVE-2026-54282",
+            "PYSEC-2026-248"
+          ],
+          "summary": "Starlette: Unvalidated request path concatenated into authority poisons request.url.hostname",
+          "severity": "5.3",
+          "fixed": [
+            "1.3.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-jp82-jpqv-5vv3"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-wqp7-x3pw-xc5r",
+          "aliases": [
+            "CVE-2026-48818",
+            "PYSEC-2026-2281"
+          ],
+          "summary": "Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows",
+          "severity": "7.5",
+          "fixed": [
+            "1.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-wqp7-x3pw-xc5r"
+        },
+        {
+          "package": "starlette",
+          "ecosystem": "PyPI",
+          "installed": "0.32.0.post1",
+          "id": "GHSA-x746-7m8f-x49c",
+          "aliases": [
+            "CVE-2026-48817",
+            "PYSEC-2026-2280"
+          ],
+          "summary": "Starlette: Arbitrary HTTP method dispatched to `HTTPEndpoint` attributes via `getattr`",
+          "severity": "5.3",
+          "fixed": [
+            "1.1.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-x746-7m8f-x49c"
+        },
+        {
+          "package": "@humanfs/node",
+          "ecosystem": "npm",
+          "installed": "0.16.7",
+          "id": "GHSA-p498-v437-472g",
+          "aliases": [],
+          "summary": "humanfs: Recursive copy follows symlinked files and copies data from outside the source tree",
+          "severity": "5.7",
+          "fixed": [
+            "0.16.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-p498-v437-472g"
+        },
+        {
+          "package": "ajv",
+          "ecosystem": "npm",
+          "installed": "6.12.6",
+          "id": "GHSA-2g4f-4pwh-qvx6",
+          "aliases": [
+            "CVE-2025-69873"
+          ],
+          "summary": "ajv has ReDoS when using `$data` option",
+          "severity": "5.5",
+          "fixed": [
+            "6.14.0",
+            "8.18.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2g4f-4pwh-qvx6"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-3jxr-9vmj-r5cp",
+          "aliases": [
+            "CVE-2026-13149"
+          ],
+          "summary": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+          "severity": "7.7",
+          "fixed": [
+            "1.1.16",
+            "2.1.2",
+            "5.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3jxr-9vmj-r5cp"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-6j4f-fj2g-mc7p",
+          "aliases": [
+            "CVE-2026-102276"
+          ],
+          "summary": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+          "severity": "7.5",
+          "fixed": [
+            "1.1.19",
+            "2.1.5",
+            "3.0.7",
+            "5.0.10"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-6j4f-fj2g-mc7p"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-f886-m6hf-6m8v",
+          "aliases": [
+            "CVE-2026-33750"
+          ],
+          "summary": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+          "severity": "6.5",
+          "fixed": [
+            "1.1.13",
+            "2.0.3",
+            "3.0.2",
+            "5.0.5"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-f886-m6hf-6m8v"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-mh99-v99m-4gvg",
+          "aliases": [
+            "CVE-2026-14257"
+          ],
+          "summary": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+          "severity": "7.5",
+          "fixed": [
+            "1.1.17",
+            "2.1.3",
+            "3.0.3",
+            "5.0.8"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-mh99-v99m-4gvg"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-q2hr-2g5m-vwhr",
+          "aliases": [
+            "CVE-2026-102277"
+          ],
+          "summary": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+          "severity": "5.3",
+          "fixed": [
+            "1.1.21",
+            "2.1.7",
+            "3.0.9",
+            "5.0.12"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-q2hr-2g5m-vwhr"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-qhr7-859c-m2p7",
+          "aliases": [
+            "CVE-2026-102278"
+          ],
+          "summary": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+          "severity": "7.5",
+          "fixed": [
+            "1.1.20",
+            "2.1.6",
+            "3.0.8",
+            "5.0.11"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-qhr7-859c-m2p7"
+        },
+        {
+          "package": "brace-expansion",
+          "ecosystem": "npm",
+          "installed": "1.1.12",
+          "id": "GHSA-rgw5-rvv9-x895",
+          "aliases": [
+            "CVE-2026-69152"
+          ],
+          "summary": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+          "severity": "7.5",
+          "fixed": [
+            "1.1.18",
+            "2.1.4",
+            "3.0.6",
+            "5.0.9"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rgw5-rvv9-x895"
+        },
+        {
+          "package": "browserslist",
+          "ecosystem": "npm",
+          "installed": "4.28.1",
+          "id": "GHSA-73wf-gq98-2v4g",
+          "aliases": [
+            "CVE-2026-73088"
+          ],
+          "summary": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+          "severity": "7.5",
+          "fixed": [
+            "4.28.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-73wf-gq98-2v4g"
+        },
+        {
+          "package": "browserslist",
+          "ecosystem": "npm",
+          "installed": "4.28.1",
+          "id": "GHSA-c83g-rgw3-j3cx",
+          "aliases": [
+            "CVE-2026-73089"
+          ],
+          "summary": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+          "severity": "7.5",
+          "fixed": [
+            "4.28.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c83g-rgw3-j3cx"
+        },
+        {
+          "package": "flatted",
+          "ecosystem": "npm",
+          "installed": "3.3.3",
+          "id": "GHSA-25h7-pfq9-p65f",
+          "aliases": [
+            "CVE-2026-32141"
+          ],
+          "summary": "flatted vulnerable to unbounded recursion DoS in parse() revive phase",
+          "severity": "7.5",
+          "fixed": [
+            "3.4.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-25h7-pfq9-p65f"
+        },
+        {
+          "package": "flatted",
+          "ecosystem": "npm",
+          "installed": "3.3.3",
+          "id": "GHSA-rf6f-7fwh-wjgh",
+          "aliases": [
+            "CVE-2026-33228"
+          ],
+          "summary": "Prototype Pollution via parse() in NodeJS flatted",
+          "severity": "8.9",
+          "fixed": [
+            "3.4.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rf6f-7fwh-wjgh"
+        },
+        {
+          "package": "js-yaml",
+          "ecosystem": "npm",
+          "installed": "4.1.1",
+          "id": "GHSA-2883-xcg3-v3hh",
+          "aliases": [
+            "CVE-2026-84375"
+          ],
+          "summary": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+          "severity": "7.5",
+          "fixed": [
+            "3.15.2",
+            "4.3.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-2883-xcg3-v3hh"
+        },
+        {
+          "package": "js-yaml",
+          "ecosystem": "npm",
+          "installed": "4.1.1",
+          "id": "GHSA-52cp-r559-cp3m",
+          "aliases": [
+            "CVE-2026-59869"
+          ],
+          "summary": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+          "severity": "7.5",
+          "fixed": [
+            "3.15.0",
+            "4.3.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-52cp-r559-cp3m"
+        },
+        {
+          "package": "js-yaml",
+          "ecosystem": "npm",
+          "installed": "4.1.1",
+          "id": "GHSA-5p4m-2wfm-xmqj",
+          "aliases": [],
+          "summary": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported",
+          "severity": "7.5",
+          "fixed": [
+            "3.15.1",
+            "4.3.1"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-5p4m-2wfm-xmqj"
+        },
+        {
+          "package": "js-yaml",
+          "ecosystem": "npm",
+          "installed": "4.1.1",
+          "id": "GHSA-h67p-54hq-rp68",
+          "aliases": [
+            "CVE-2026-53550"
+          ],
+          "summary": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+          "severity": "5.3",
+          "fixed": [
+            "3.15.0",
+            "4.2.0"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-h67p-54hq-rp68"
+        },
+        {
+          "package": "minimatch",
+          "ecosystem": "npm",
+          "installed": "3.1.2",
+          "id": "GHSA-23c5-xmqv-rm74",
+          "aliases": [
+            "CVE-2026-27904"
+          ],
+          "summary": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+          "severity": "7.5",
+          "fixed": [
+            "10.2.3",
+            "3.1.4",
+            "4.2.5",
+            "5.1.8",
+            "6.2.2",
+            "7.4.8",
+            "8.0.6",
+            "9.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-23c5-xmqv-rm74"
+        },
+        {
+          "package": "minimatch",
+          "ecosystem": "npm",
+          "installed": "3.1.2",
+          "id": "GHSA-3ppc-4f35-3m26",
+          "aliases": [
+            "CVE-2026-26996"
+          ],
+          "summary": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+          "severity": "8.7",
+          "fixed": [
+            "10.2.1",
+            "3.1.3",
+            "4.2.4",
+            "5.1.7",
+            "6.2.1",
+            "7.4.7",
+            "8.0.5",
+            "9.0.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3ppc-4f35-3m26"
+        },
+        {
+          "package": "minimatch",
+          "ecosystem": "npm",
+          "installed": "3.1.2",
+          "id": "GHSA-7r86-cg39-jmmj",
+          "aliases": [
+            "CVE-2026-27903"
+          ],
+          "summary": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+          "severity": "7.5",
+          "fixed": [
+            "10.2.3",
+            "3.1.3",
+            "4.2.5",
+            "5.1.8",
+            "6.2.2",
+            "7.4.8",
+            "8.0.6",
+            "9.0.7"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-7r86-cg39-jmmj"
+        },
+        {
+          "package": "picomatch",
+          "ecosystem": "npm",
+          "installed": "2.3.1",
+          "id": "GHSA-3v7f-55p6-f55p",
+          "aliases": [
+            "CVE-2026-33672"
+          ],
+          "summary": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching",
+          "severity": "5.3",
+          "fixed": [
+            "2.3.2",
+            "3.0.2",
+            "4.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3v7f-55p6-f55p"
+        },
+        {
+          "package": "picomatch",
+          "ecosystem": "npm",
+          "installed": "2.3.1",
+          "id": "GHSA-c2c7-rcm5-vvqj",
+          "aliases": [
+            "CVE-2026-33671"
+          ],
+          "summary": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+          "severity": "7.5",
+          "fixed": [
+            "2.3.2",
+            "3.0.2",
+            "4.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2c7-rcm5-vvqj"
+        },
+        {
+          "package": "picomatch",
+          "ecosystem": "npm",
+          "installed": "4.0.3",
+          "id": "GHSA-3v7f-55p6-f55p",
+          "aliases": [
+            "CVE-2026-33672"
+          ],
+          "summary": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching",
+          "severity": "5.3",
+          "fixed": [
+            "2.3.2",
+            "3.0.2",
+            "4.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-3v7f-55p6-f55p"
+        },
+        {
+          "package": "picomatch",
+          "ecosystem": "npm",
+          "installed": "4.0.3",
+          "id": "GHSA-c2c7-rcm5-vvqj",
+          "aliases": [
+            "CVE-2026-33671"
+          ],
+          "summary": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+          "severity": "7.5",
+          "fixed": [
+            "2.3.2",
+            "3.0.2",
+            "4.0.4"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-c2c7-rcm5-vvqj"
+        },
+        {
+          "package": "postcss-selector-parser",
+          "ecosystem": "npm",
+          "installed": "6.1.2",
+          "id": "GHSA-rj75-hqrm-r3gf",
+          "aliases": [
+            "CVE-2026-104844"
+          ],
+          "summary": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+          "severity": "5.9",
+          "fixed": [
+            "6.1.5",
+            "7.1.6"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-rj75-hqrm-r3gf"
+        },
+        {
+          "package": "postcss-selector-parser",
+          "ecosystem": "npm",
+          "installed": "6.1.2",
+          "id": "GHSA-w9m9-85wc-3x92",
+          "aliases": [
+            "CVE-2026-9358"
+          ],
+          "summary": "postcss-selector-parser allows denial of service through uncontrolled AST recursion",
+          "severity": "4.3",
+          "fixed": [
+            "6.1.3",
+            "7.1.3"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-w9m9-85wc-3x92"
+        },
+        {
+          "package": "source-map-js",
+          "ecosystem": "npm",
+          "installed": "1.2.1",
+          "id": "GHSA-68fv-2mgg-jv7q",
+          "aliases": [
+            "CVE-2026-93749"
+          ],
+          "summary": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+          "severity": "8.7",
+          "fixed": [
+            "1.2.2"
+          ],
+          "link": "https://osv.dev/vulnerability/GHSA-68fv-2mgg-jv7q"
+        }
+      ],
+      "count": 309
     }
   ]
 }

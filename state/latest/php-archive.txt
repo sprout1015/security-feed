@@ -648,7 +648,7 @@ Knowledge + Networking
 In this event, several relevant topics will be covered, from the latest language updates to best
 development practices. You will have the opportunity to expand your PHP knowledge and stay up to date
 with the latest market trends.
-Date: May 29-30, 2026
+Date: May 29-30, 2025
 Location: Unochapecó Noble Hall in Chapecó, Santa Catarina, Brazil.
 See how it was last year:
 PHP Velho Oeste 2025.
