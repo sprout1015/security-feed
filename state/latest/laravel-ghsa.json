@@ -1,5 +1,77 @@
 [
  {
+  "ghsa_id": "GHSA-cq3g-fj94-c8p3",
+  "cve_id": null,
+  "summary": "Empty array key validation bypass",
+  "description": "When validated input contains an array element whose key is an empty string, such as `{\"items\": {\"\": {\"name\": \"...\"}}}` in a JSON request, the rules attached to `items.*` are never applied to that element. `ValidationRuleParser` already matches empty segments with `[^\\.]*`, but `ValidationData::extractValuesForWildcards()` and `Validator::getExplicitKeys()` still use `[^\\.]+`, so the element is never gathered and wildcard parameters such as `required_if:users.*.role,admin` are not resolved for it. Rules like `Rule::forEach()` or `array:name,qty` on `items.*` are silently skipped for that element.",
+  "severity": "medium",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+   "score": 5.4
+  },
+  "published_at": "2026-11-23T13:53:01Z",
+  "updated_at": "2026-11-23T13:53:01Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.43.0",
+    "patched_versions": ">=13.43.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.73.0",
+    "patched_versions": ">=12.73.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-cq3g-fj94-c8p3",
+  "cwe_ids": []
+ },
+ {
+  "ghsa_id": "GHSA-8h64-cpq2-9h2g",
+  "cve_id": null,
+  "summary": "Denial of service via crafted JSON request body",
+  "description": "A specially crafted JSON request of ordinary size can make a Laravel application use far too much CPU and memory while it handles the request. An unauthenticated attacker can send a small number of these requests at once to use up every PHP worker and take the application offline.",
+  "severity": "high",
+  "cvss": {
+   "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+   "score": 7.5
+  },
+  "published_at": "2026-11-23T10:48:14Z",
+  "updated_at": "2026-11-23T10:48:14Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<13.38.0",
+    "patched_versions": ">=13.38.0",
+    "vulnerable_functions": []
+   },
+   {
+    "package": {
+     "ecosystem": "composer",
+     "name": "laravel/framework"
+    },
+    "vulnerable_version_range": "<12.74.0",
+    "patched_versions": ">=12.74.0",
+    "vulnerable_functions": []
+   }
+  ],
+  "html_url": "https://github.com/laravel/framework/security/advisories/GHSA-8h64-cpq2-9h2g",
+  "cwe_ids": []
+ },
+ {
   "ghsa_id": "GHSA-ww2c-pqp9-rvrq",
   "cve_id": null,
   "summary": "Cross-Origin Auth Token Leakage Through Broadcasting JSONP Callback",

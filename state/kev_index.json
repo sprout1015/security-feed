@@ -1,8 +1,22 @@
 {
-  "catalogVersion": "2026.11.20",
-  "dateReleased": "2026-11-20T17:48:39.1516Z",
-  "count": 1790,
+  "catalogVersion": "2026.11.23",
+  "dateReleased": "2026-11-23T19:43:55.7979Z",
+  "count": 1792,
   "cves": {
+    "CVE-2026-133968": {
+      "dateAdded": "2026-11-23",
+      "dueDate": "2026-11-26",
+      "vendor": "Project MONAI",
+      "product": "MONAI Label",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-134624": {
+      "dateAdded": "2026-11-23",
+      "dueDate": "2026-11-26",
+      "vendor": "N-able",
+      "product": "MailAssure",
+      "ransomware": "Unknown"
+    },
     "CVE-2026-129448": {
       "dateAdded": "2026-11-20",
       "dueDate": "2026-11-23",
@@ -36,7 +50,7 @@
       "dueDate": "2026-11-21",
       "vendor": "Synology",
       "product": "DiskStation Manager (DSM)",
-      "ransomware": "Unknown"
+      "ransomware": "Known"
     },
     "CVE-2026-40217": {
       "dateAdded": "2026-11-18",

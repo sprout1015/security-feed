@@ -1,0 +1,401 @@
+--- yesterday
++++ 2026-11-24
+@@ -3,5 +3,5 @@
+ <title>RustSec Advisories</title>
+ <id>https://rustsec.org/feed.xml</id>
+-<updated>2026-11-22T12:00:00+00:00</updated>
++<updated>2026-11-23T12:00:00+00:00</updated>
+ <author>
+ <name>RustSec</name>
+@@ -11,4 +11,444 @@
+ <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
+ <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
++<entry>
++<title>RUSTSEC-2026-0595: Unsoundness in parquet</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0595.html</id>
++<updated>2026-11-23T12:00:00+00:00</updated>
++<category term="crypto-failure"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0595.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0595: Unsoundness in parquet"/>
++<published>2026-11-23T12:00:00+00:00</published>
++<summary xml:lang="en">Apache Arrow Rust: Bloom filters written as plaintext when writing encrypted Parquet</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/parquet/RUSTSEC-2026-0595.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/parquet/RUSTSEC-2026-0595.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0595">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0595
++</h1>
++<span class="subtitle">
++<p>Apache Arrow Rust: Bloom filters written as plaintext when writing encrypted Parquet</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-23">
++November 23, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-23">
++November 23, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/parquet.html">parquet</a>
++(<a href="https://crates.io/crates/parquet">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++<span class="tag info">INFO</span>
++Unsound
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/crypto-failure.html">crypto-failure</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/information-disclosure.html">#information-disclosure</a>
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://www.cve.org/CVERecord?id=CVE-2026-125651">CVE-2026-125651</a>
++</li>
++<li>
++<a href="https://github.com/advisories/GHSA-8m2j-rv5j-c94f">GHSA-8m2j-rv5j-c94f</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/apache/arrow-rs/pull/12165">
++https://github.com/apache/arrow-rs/pull/12165
++</a>
++</li>
++<li>
++<a href="https://www.openwall.com/lists/oss-security/2026/11/22/5">
++https://www.openwall.com/lists/oss-security/2026/11/22/5
++</a>
++</li>
++</ul>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=60.2.0</code>
++</li>
++<li>
++<code>&#62;=59.3.3, &#60;60.0.0</code>
++</li>
++<li>
++<code>&#62;=58.4.2, &#60;59.0.0</code>
++</li>
++<li>
++<code>&#62;=57.3.3, &#60;58.0.0</code>
++</li>
++</ul>
++</dd>
++<dt id="unaffected">Unaffected</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;55.0.0</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>When writing an encrypted parquet file with a column with bloom filters, the header
++and bitsets of the bloom filter are written in plaintext in the final parquet.</p>
++<p>Patched versions now reject writing bloom filters when encryption is enabled, raising
++an error at runtime.</p>
++<p>Existing encrypted parquet files written with bloom filters are still vulnerable,
++and it is recommended to rewrite those files with bloom filters disabled if possible.</p>
++<p>Credit to Yanzhi Xin (autoCAT6) for finding this.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0594: Vulnerability in cookie</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0594.html</id>
++<updated>2026-11-23T12:00:00+00:00</updated>
++<category term="crypto-failure"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0594.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0594: Vulnerability in cookie"/>
++<published>2026-11-23T12:00:00+00:00</published>
++<summary xml:lang="en">Private cookie nonces can repeat in processes that fork</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/cookie/RUSTSEC-2026-0594.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/cookie/RUSTSEC-2026-0594.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0594">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0594
++</h1>
++<span class="subtitle">
++<p>Private cookie nonces can repeat in processes that fork</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-11-23">
++November 23, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-23">
++November 23, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/cookie.html">cookie</a>
++(<a href="https://crates.io/crates/cookie">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/crypto-failure.html">crypto-failure</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/nonce-reuse.html">#nonce-reuse</a>
++<a href="/keywords/aes-gcm.html">#aes-gcm</a>
++<a href="/keywords/fork.html">#fork</a>
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/advisories/GHSA-8wcq-xq25-7fhm">GHSA-8wcq-xq25-7fhm</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/rwf2/cookie-rs/commit/98de6032defb10ad5e49d83fa1a9bbed1873cbe4">
++https://github.com/rwf2/cookie-rs/commit/98de6032defb10ad5e49d83fa1a9bbed1873cbe4
++</a>
++</li>
++</ul>
++</dd>
++<dt id="cvss_score">CVSS Score</dt>
++<dd>6.5 <span class="tag medium">
++MEDIUM
++</span>
++</dd>
++<dt id="cvss_details">CVSS Details</dt>
++<dd>
++<dl>
++<dt>Attack Vector</dt>
++<dd>Network</dd>
++<dt>Attack Complexity</dt>
++<dd>High</dd>
++<dt>Privileges Required</dt>
++<dd>None</dd>
++<dt>User Interaction</dt>
++<dd>None</dd>
++<dt>Scope</dt>
++<dd>Unchanged</dd>
++<dt>Confidentiality Impact</dt>
++<dd>Low</dd>
++<dt>Integrity Impact</dt>
++<dd>High</dd>
++<dt>Availability Impact</dt>
++<dd>None</dd>
++</dl>
++</dd>
++<dt id="cvss">CVSS Vector</dt>
++<dd>
++<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N">CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N</a>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.18.3</code>
++</li>
++</ul>
++</dd>
++<dt id="unaffected">Unaffected</dt>
++<dd>
++<ul>
++<li>
++<code>&#60;0.11.3</code>
++</li>
++<li>
++<code>&#62;=0.12.0, &#60;0.14.0</code>
++</li>
++</ul>
++</dd>
++<dt>Affected OSes</dt>
++<dd>
++<ul>
++<li>
++<code>linux</code>
++</li>
++<li>
++<code>macos</code>
++</li>
++<li>
++<code>freebsd</code>
++</li>
++<li>
++<code>netbsd</code>
++</li>
++<li>
++<code>openbsd</code>
++</li>
++<li>
++<code>dragonfly</code>
++</li>
++<li>
++<code>solaris</code>
++</li>
++<li>
++<code>illumos</code>
++</li>
++<li>
++<code>android</code>
++</li>
++<li>
++<code>ios</code>
++</li>
++</ul>
++</dd>
++</dl>
++<dl>
++<dt>Affected Functions</dt>
++<dd>Version</dd>
++<dt>
++<code>cookie::PrivateJar::add</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.11.3, &#60;0.12.0</code>
++</li>
++<li>
++<code>&#62;=0.14.0, &#60;0.18.3</code>
++</li>
++</ul>
++</dd>
++<dt>
++<code>cookie::PrivateJar::add_original</code>
++</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.11.3, &#60;0.12.0</code>
++</li>
++<li>
++<code>&#62;=0.14.0, &#60;0.18.3</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<h2>Who is affected</h2>
++<p>Only applications that call <code>fork()</code> and then add private (encrypted) cookies
++on the thread that forked, in more than one of the resulting processes. This
++is an uncommon way to deploy a Rust web application. In particular:</p>
++<ul>
++<li>
++<strong>Rocket is not affected.</strong>
++</li>
++<li>
++<strong>axum is not affected as normally run.</strong> It is affected only when an
++application forks worker processes itself and runs each on a
++current-thread runtime. See &quot;Rocket and axum&quot; below.</li>
++<li>Applications that never fork are not affected. This includes all
++applications on Windows.</li>
++<li>Signed cookies (<code>SignedJar</code>) are not affected.</li>
++</ul>
++<p>The exact conditions are listed under &quot;Conditions&quot; below.</p>
++<h2>Description</h2>
++<p>Private cookies are sealed with AES-256-GCM using a random 96-bit nonce.
++Affected versions drew the nonce from <code>rand</code>'s thread-local generator,
++<code>rand::thread_rng()</code>. That generator hands out bytes from an internal buffer
++and only notices that the process has forked when the buffer is refilled. A
++process that forks therefore continues, in both the parent and the child, from
++the same buffered bytes, and the private cookies sealed first on each side of
++the fork use the same nonces.</p>
++<h2>Impact</h2>
++<p>Reusing a nonce under the same key breaks AES-GCM. From two private cookies
++that share a nonce, an attacker can:</p>
++<ul>
++<li>recover the XOR of the two plaintexts, and thus either plaintext if the
++other is known, and</li>
++<li>recover the GHASH authentication key and forge private cookies, with a
++name and value of their choosing, that the application accepts as
++authentic.</li>
++</ul>
++<p>The nonce is the first 12 bytes of a private cookie's (base64-decoded) value,
++so a repeated nonce is visible to anyone who holds two such cookies.</p>
++<p>Exploitation requires the uncommon deployment described above, and only the
++first private cookies added after a fork are affected: at most 21 per process.
++An attacker must obtain two of them, from two different processes.</p>
++<h2>Conditions</h2>
++<p>All of the following must hold:</p>
++<ol>
++<li>The target is a Unix-like system and the process calls <code>fork()</code> without a
++subsequent <code>exec()</code>.</li>
++<li>The thread that calls <code>fork()</code> used <code>rand::thread_rng()</code> at any point
++before the fork. Any use counts, including <code>Key::generate()</code>, adding a
++private cookie, or a call made by an unrelated crate.</li>
++<li>After the fork, private cookies are added on that same thread in two or
++more of the resulting processes: the parent and a child, or several
++children.</li>
++<li>Those processes use the same <code>Key</code>.</li>
++</ol>
++<p>When they hold, at most the first 21 private cookies added on that thread in
++each process share nonces. After that the generator reseeds and the processes
++diverge.</p>
++<p>The following are <strong>not</strong> affected:</p>
++<ul>
++<li>Applications that never fork, including all applications on Windows.</li>
++<li>Processes in which the forking thread did not use <code>rand::thread_rng()</code>
++before the fork.</li>
++<li>Private cookies added on threads that were created after the fork. This
++includes servers that fork and then start a multi-threaded async runtime
++in each child.</li>
++<li>Signed cookies (<code>SignedJar</code>), which do not use a nonce.</li>
++<li>Versions <code>0.12.0</code> through <code>0.13.3</code>, and <code>0.11.2</code> and earlier, which
++obtained nonces from the operating system via <code>ring</code>.</li>
++</ul>
++<h2>Rocket and axum</h2>
++<p>Rocket and axum were tested with <code>cookie</code>
++<code>0.18.2</code> by collecting the private
+... (54줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)

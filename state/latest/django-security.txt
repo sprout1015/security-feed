@@ -1137,7 +1137,7 @@ Django 0.95 (patch)
 Back to Top
 Additional Information
 Support Django!
-Ihar donated to the Django Software Foundation to support Django development. Donate today!
+getup8 donated to the Django Software Foundation to support Django development. Donate today!
 Contents
 Archive of security issues
 <#issues-under-django-s-security-process> Issues under Django’s security process

@@ -2,6 +2,78 @@
 {
 "cve_id": null,
 "cvss": {
+"score": 5.4,
+"vector_string": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+},
+"cwe_ids": [],
+"description": "When validated input contains an array element whose key is an empty string, such as `{\"items\": {\"\": {\"name\": \"...\"}}}` in a JSON request, the rules attached to `items.*` are never applied to that element. `ValidationRuleParser` already matches empty segments with `[^\\.]*`, but `ValidationData::extractValuesForWildcards()` and `Validator::getExplicitKeys()` still use `[^\\.]+`, so the element is never gathered and wildcard parameters such as `required_if:users.*.role,admin` are not resolved for it. Rules like `Rule::forEach()` or `array:name,qty` on `items.*` are silently skipped for that element.",
+"ghsa_id": "GHSA-cq3g-fj94-c8p3",
+"html_url": "https://github.com/laravel/framework/security/advisories/GHSA-cq3g-fj94-c8p3",
+"published_at": "2026-11-23T13:53:01Z",
+"severity": "medium",
+"summary": "Empty array key validation bypass",
+"updated_at": "2026-11-23T13:53:01Z",
+"vulnerabilities": [
+{
+"package": {
+"ecosystem": "composer",
+"name": "laravel/framework"
+},
+"patched_versions": ">=13.43.0",
+"vulnerable_functions": [],
+"vulnerable_version_range": "<13.43.0"
+},
+{
+"package": {
+"ecosystem": "composer",
+"name": "laravel/framework"
+},
+"patched_versions": ">=12.73.0",
+"vulnerable_functions": [],
+"vulnerable_version_range": "<12.73.0"
+}
+],
+"withdrawn_at": null
+},
+{
+"cve_id": null,
+"cvss": {
+"score": 7.5,
+"vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+},
+"cwe_ids": [],
+"description": "A specially crafted JSON request of ordinary size can make a Laravel application use far too much CPU and memory while it handles the request. An unauthenticated attacker can send a small number of these requests at once to use up every PHP worker and take the application offline.",
+"ghsa_id": "GHSA-8h64-cpq2-9h2g",
+"html_url": "https://github.com/laravel/framework/security/advisories/GHSA-8h64-cpq2-9h2g",
+"published_at": "2026-11-23T10:48:14Z",
+"severity": "high",
+"summary": "Denial of service via crafted JSON request body",
+"updated_at": "2026-11-23T10:48:14Z",
+"vulnerabilities": [
+{
+"package": {
+"ecosystem": "composer",
+"name": "laravel/framework"
+},
+"patched_versions": ">=13.38.0",
+"vulnerable_functions": [],
+"vulnerable_version_range": "<13.38.0"
+},
+{
+"package": {
+"ecosystem": "composer",
+"name": "laravel/framework"
+},
+"patched_versions": ">=12.74.0",
+"vulnerable_functions": [],
+"vulnerable_version_range": "<12.74.0"
+}
+],
+"withdrawn_at": null
+},
+{
+"cve_id": null,
+"cvss": {
 "score": 3.1,
 "vector_string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
 },

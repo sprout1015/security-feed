@@ -18,6 +18,13 @@ Patches are signed using one of the
 <link doc="pgp_keys.xml">PGP public keys</link>.
 </para>
 <security>
+<item name="Excessive CPU usage in TLS 1.3 with ssl_early_data"
+severity="medium"
+advisory="https://my.f5.com/manage/s/article/K000163947"
+cve="2026-132779"
+good="1.31.10+, 1.30.8+"
+vulnerable="1.21.4-1.31.9">
+</item>
 <item name="Use-after-free during response processing in resolver"
 severity="medium"
 advisory="https://my.f5.com/manage/s/article/K000163925"
@@ -35,7 +42,7 @@ vulnerable="1.9.5-1.31.8">
 <item name="Use-after-free in HTTP/3"
 severity="medium"
 advisory="https://my.f5.com/manage/s/article/K000163927"
-cve="CVE-2026-121810"
+cve="2026-121810"
 good="1.31.9+, 1.30.7+"
 vulnerable="1.25.0-1.31.8">
 </item>
