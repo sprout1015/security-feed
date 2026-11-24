@@ -80,3 +80,9 @@ FEED_DATE=2026-11-20 python collector/run.py
 - 결과는 `runs/D/library_matches.json`의 서비스별 `by_package`(패키지@버전 단위 요약: 최고 CVSS, 권고 수, 올릴 버전)로 정리됩니다.
 - 현재 등록: Alpha-Match. endfield-attendance-android·RAGDeck은 공개 전환 후 `enabled: true`로 바꿉니다.
 
+## 디스코드 알림 (.github/workflows/notify-discord.yml)
+
+- 데일리 루틴이 Notion 보고서를 다 쓰면 `repository_dispatch`(report-ready)로 이 워크플로를 호출하고, 워크플로가 디스코드 봇으로 판정·L1~L4·한 줄 요약·보고서 링크를 보냅니다.
+- 루틴 실행 환경은 discord.com에 나갈 수 없어서 GitHub Actions가 대신 보냅니다. 봇 토큰과 채널 ID는 저장소 Secret(`DISCORD_BOT_TOKEN`, `DISCORD_CHANNEL_ID`)에만 둡니다.
+- 수동 시험: Actions → notify-discord → Run workflow.
+

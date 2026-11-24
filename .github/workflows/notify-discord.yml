@@ -103,11 +103,8 @@ jobs:
               except urllib.error.HTTPError as e2:
                   print(f"진단: 채널 조회 실패 HTTP {e2.code} — 이 ID의 채널을 봇이 볼 수 없음")
               try:
-                  g = get(f"/guilds/{channel}")
-                  print("진단: 이 ID는 채널이 아니라 '서버(길드) ID'입니다. 아래 텍스트 채널 중 하나의 ID를 쓰세요:")
-                  for c in get(f"/guilds/{channel}/channels"):
-                      if c.get("type") in (0, 5):
-                          print(f"  - #{c.get('name')} → {c.get('id')}")
+                  get(f"/guilds/{channel}")
+                  print("진단: 이 ID는 채널이 아니라 서버(길드) ID입니다. 채널 이름 우클릭 → '채널 ID 복사' 값을 쓰세요.")
               except urllib.error.HTTPError:
                   pass
 
