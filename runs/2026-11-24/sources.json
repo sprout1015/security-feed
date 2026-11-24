@@ -1,9 +1,9 @@
 {
   "date": "2026-11-24",
-  "collected_at": "2026-11-24T20:19:57+09:00",
+  "collected_at": "2026-11-24T21:08:09+09:00",
   "total": 32,
   "ok": 32,
-  "changed": 4,
+  "changed": 5,
   "error": 0,
   "sources": [
     {
@@ -11,7 +11,7 @@
       "name": "Oracle Security Alerts",
       "products": "Oracle Java SE, GraalVM",
       "url": "https://www.oracle.com/security-alerts/",
-      "sha256": "4f877f734f785c99",
+      "sha256": "56f1e1a600a66b9c",
       "bytes": 52162,
       "text_path": "state/latest/oracle-alerts.txt",
       "raw_path": "state/latest/oracle-alerts.html",
@@ -50,7 +50,7 @@
       "name": "Node.js 보안 릴리스 RSS",
       "products": "Node.js",
       "url": "https://nodejs.org/en/feed/vulnerability.xml",
-      "sha256": "e82876b0ed0c2bcf",
+      "sha256": "801ae170d4481acf",
       "bytes": 29277,
       "text_path": "state/latest/nodejs-vuln-rss.txt",
       "raw_path": "state/latest/nodejs-vuln-rss.xml",
@@ -79,7 +79,7 @@
       "name": "PHP 연도별 공지",
       "products": "PHP",
       "url": "https://www.php.net/archive/{year}.php",
-      "sha256": "438d01c57d7cda1c",
+      "sha256": "ef6874062e55cbc3",
       "bytes": 126155,
       "text_path": "state/latest/php-archive.txt",
       "raw_path": "state/latest/php-archive.html",
@@ -101,10 +101,7 @@
       "raw_path": "state/latest/php-changelog-8.html",
       "id_count": 179,
       "new_ids": [],
-      "status": "changed",
-      "added_lines": 1,
-      "removed_lines": 1,
-      "diff_path": "runs/2026-11-24/diffs/php-changelog-8.diff"
+      "status": "unchanged"
     },
     {
       "id": "php-src-ghsa",
@@ -189,7 +186,7 @@
       "name": "Laravel 보안 권고 (Packagist)",
       "products": "Laravel",
       "url": "https://packagist.org/packages/laravel/framework/advisories",
-      "sha256": "49b09949c5feb7d7",
+      "sha256": "3b3ea7b77598f29b",
       "bytes": 64191,
       "text_path": "state/latest/laravel-packagist.txt",
       "raw_path": "state/latest/laravel-packagist.html",
@@ -215,13 +212,16 @@
       "name": "Symfony Security Advisories",
       "products": "Symfony, Twig",
       "url": "https://symfony.com/blog/category/security-advisories",
-      "sha256": "214c2a811a20818c",
-      "bytes": 131601,
+      "sha256": "756352364325ac09",
+      "bytes": 131738,
       "text_path": "state/latest/symfony-advisories.txt",
       "raw_path": "state/latest/symfony-advisories.html",
       "id_count": 11,
       "new_ids": [],
-      "status": "unchanged"
+      "status": "changed",
+      "added_lines": 2,
+      "removed_lines": 2,
+      "diff_path": "runs/2026-11-24/diffs/symfony-advisories.diff"
     },
     {
       "id": "nextjs-ghsa",
@@ -241,20 +241,23 @@
       "name": "Express 블로그 피드",
       "products": "Express 및 미들웨어",
       "url": "https://expressjs.com/feed",
-      "sha256": "fcf1bb04a5b3c471",
-      "bytes": 20097,
+      "sha256": "112937b7de215993",
+      "bytes": 21020,
       "text_path": "state/latest/express-feed.txt",
       "raw_path": "state/latest/express-feed.xml",
       "id_count": 1,
       "new_ids": [],
-      "status": "unchanged"
+      "status": "changed",
+      "added_lines": 23,
+      "removed_lines": 0,
+      "diff_path": "runs/2026-11-24/diffs/express-feed.diff"
     },
     {
       "id": "express-security-updates",
       "name": "Express Security Updates",
       "products": "Express",
       "url": "https://expressjs.com/en/advanced/security-updates.html",
-      "sha256": "b78c417d458e5e73",
+      "sha256": "9fc8a6133f98f745",
       "bytes": 85003,
       "text_path": "state/latest/express-security-updates.txt",
       "raw_path": "state/latest/express-security-updates.html",
@@ -332,8 +335,8 @@
       "name": ".NET Announcements",
       "products": ".NET, ASP.NET Core",
       "url": "https://github.com/dotnet/announcements/issues?q=is%3Aissue+label%3ASecurity",
-      "sha256": "451899627180f8ea",
-      "bytes": 350764,
+      "sha256": "4897dbf310d9b008",
+      "bytes": 350751,
       "text_path": "state/latest/dotnet-announcements.txt",
       "raw_path": "state/latest/dotnet-announcements.html",
       "id_count": 24,
@@ -397,13 +400,16 @@
       "name": "PostgreSQL Security Information",
       "products": "PostgreSQL",
       "url": "https://www.postgresql.org/support/security/",
-      "sha256": "89938bbebcac6cf3",
-      "bytes": 103913,
+      "sha256": "9cf0d15b6dd2b220",
+      "bytes": 103942,
       "text_path": "state/latest/postgresql-security.txt",
       "raw_path": "state/latest/postgresql-security.html",
       "id_count": 118,
       "new_ids": [],
-      "status": "unchanged"
+      "status": "changed",
+      "added_lines": 1,
+      "removed_lines": 0,
+      "diff_path": "runs/2026-11-24/diffs/postgresql-security.diff"
     },
     {
       "id": "redis-ghsa",
@@ -429,10 +435,7 @@
       "raw_path": "state/latest/k8s-cve-feed.json",
       "id_count": 99,
       "new_ids": [],
-      "status": "changed",
-      "added_lines": 1,
-      "removed_lines": 1,
-      "diff_path": "runs/2026-11-24/diffs/k8s-cve-feed.diff"
+      "status": "unchanged"
     }
   ]
 }

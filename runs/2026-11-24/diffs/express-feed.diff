@@ -1,0 +1,30 @@
+--- yesterday
++++ 2026-11-24
+@@ -6,4 +6,27 @@
+ <link>https://expressjs.com/</link>
+ <item>
++<title>Contributing to Express in 2026 and beyond: where to start</title>
++<link>https://expressjs.com/en/blog/contributing-to-express/</link>
++<guid isPermaLink="true">https://expressjs.com/en/blog/contributing-to-express/</guid>
++<description>A guide to help you start contributing to Express, with advice from people who started recently and from the people who review contributions.</description>
++<pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
++<content:encoded>
++<a href="https://expressjs.com/en/blog/contributing-to-express/">Contributing to Express in 2026 and beyond: where to start</a>
++</content:encoded>
++<author>
++<name>Efe Karasakal</name>
++<uri>https://github.com/efekrskl</uri>
++</author>
++<author>
++<name>Sebastian Beltran</name>
++<uri>https://github.com/bjohansebas</uri>
++</author>
++<author>
++<name>Ulises Gascon</name>
++<uri>https://github.com/UlisesGascon</uri>
++</author>
++<category>community</category>
++</item>
++<item>
+ <title>Express is joining the OpenJS CNA end-of-year break</title>
+ <link>https://expressjs.com/en/blog/2026-11-20-joining-the-openjs-cna-end-of-year-break/</link>

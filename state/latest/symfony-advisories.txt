@@ -1,6 +1,6 @@
 Skip to content
 Black Friday 2026 deals
-30% off Symfony and Twig certifications
+30% off SymfonyInsight yearly Business plans
 (ends in 6 days)
 « Security Advisories » blog posts
 Have found a security issue in Symfony or in one of its projects? Send the details to
@@ -77,9 +77,9 @@ Twig
 SensioLabs Blog
 Archives
 Blog Posts RSS
+Symfony Code Performance Profiling
 Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
 Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
-Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
 CLOSE
 Search Symfony Docs
 Search

@@ -1357,6 +1357,7 @@ You can find a list of members on the security team here:
 Andres Freund
 Andrew Dunstan
 Bruce Momjian
+Daniel Gustafsson
 Dave Page
 Greg Stark
 Heikki Linnakangas

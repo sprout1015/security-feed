@@ -1,11 +1,11 @@
 {
   "date": "2026-11-24",
-  "finished_at": "2026-11-24T20:20:19+09:00",
+  "finished_at": "2026-11-24T21:08:16+09:00",
   "step_errors": {},
   "sources": {
     "total": 32,
     "ok": 32,
-    "changed": 4,
+    "changed": 5,
     "error": 0
   },
   "kev": {
@@ -14,16 +14,27 @@
   },
   "cve": {
     "status": "ok",
-    "new": 1,
+    "new": 23,
     "hits": 0
   },
   "libraries": {
     "status": "ok",
-    "findings": 290
+    "findings": 288
   },
   "projects": {
     "alpha-match": "ok",
     "endfield-attendance-android": "disabled",
     "ragdeck": "disabled"
+  },
+  "today": {
+    "quiet": false,
+    "changed_sources": 5,
+    "new_kev": [
+      "CVE-2026-133968",
+      "CVE-2026-134624"
+    ],
+    "cve_hits": 0,
+    "library_new": 76,
+    "library_resolved": 0
   }
 }

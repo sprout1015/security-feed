@@ -1,18 +1,27 @@
 {
   "status": "ok",
-  "since_utc": "2026-11-24T11:03:14.456Z",
-  "until_utc": "2026-11-24T11:14:37.586Z",
-  "new_cves": 1,
+  "since_utc": "2026-11-24T11:14:37.586Z",
+  "until_utc": "2026-11-24T12:03:10.839Z",
+  "new_cves": 23,
   "fetch_errors": 0,
-  "watch_matched": 0,
-  "below_threshold": 0,
+  "watch_matched": 1,
+  "below_threshold": 1,
   "thresholds": {
     "cvss": 9.0,
     "inventory_cvss": 7.0,
     "inventory_unscored": true,
     "epss": 0.5
   },
-  "epss_status": "skipped",
+  "epss_status": "ok",
   "hits": [],
-  "matched_below_threshold": []
+  "matched_below_threshold": [
+    {
+      "cve": "CVE-2026-84785",
+      "watch": [
+        "OpenSSL"
+      ],
+      "cvss": null,
+      "title": "Unbounded Out-of-Order Fragment Reassembly in QUIC Streams"
+    }
+  ]
 }
