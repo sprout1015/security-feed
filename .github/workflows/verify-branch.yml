@@ -69,7 +69,7 @@ jobs:
             for coord in $IN_MAVEN_METADATA; do
               g="${coord%%:*}"; a="${coord##*:}"
               url="https://repo.maven.apache.org/maven2/${g//.//}/${a}/maven-metadata.xml"
-              vers=$(curl -fsSL "$url" | grep -o '<version>[^<]*</version>' | sed 's/<[^>]*>//g' | tail -15 | tr '\n' ' ')
+              vers=$(curl -fsSL "$url" | grep -o '<version>[^<]*</version>' | sed 's/<[^>]*>//g' | tail -40 | tr '\n' ' ')
               echo "- \`$coord\`: $vers"
             done
           } | tee -a "$GITHUB_STEP_SUMMARY"
@@ -116,7 +116,7 @@ jobs:
           done
           osv-scanner scan source --recursive --no-ignore --format json scan > osv.json || true
           curl -fsSL https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json -o kev.json || echo '{"vulnerabilities":[]}' > kev.json
-          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          python3 - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
           import json
           osv = json.load(open("osv.json"))
           kev = {v["cveID"] for v in json.load(open("kev.json")).get("vulnerabilities", [])}
@@ -145,6 +145,16 @@ jobs:
           print("|---|---|---|---|---|")
           for s, n, v, c, src in sorted(rows, reverse=True):
               print(f"| {s} | {n} | {v} | {c} | {src} |")
+          print()
+          print("<details><summary>전체 취약 패키지</summary>")
+          print()
+          for res in osv.get("results", []):
+              src = res.get("source", {}).get("path", "").split("/scan/", 1)[-1]
+              for p in res.get("packages", []):
+                  gs = p.get("groups", [])
+                  sc = max([float(g["max_severity"]) for g in gs if g.get("max_severity")] or [0])
+                  print(f"- VULN {src} {p['package']['name']} {p['package']['version']} cvss={sc} n={len(gs)}")
+          print("</details>")
           PY
 
       - name: 결과 업로드
