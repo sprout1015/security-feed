@@ -52,7 +52,9 @@ def run() -> dict:
         save_json(out / "library_matches.json", result)
         return result
 
-    cmd = [binary, "scan", "source", "--recursive", "--format", "json", str(INVENTORY)]
+    # --no-ignore: inventory/<프로젝트>/는 .gitignore 대상이라 이 옵션이 없으면 건너뜀
+    # --all-packages: 취약점이 없는 lock 파일도 결과에 남겨 "검사됨"을 확인할 수 있게 함
+    cmd = [binary, "scan", "source", "--recursive", "--no-ignore", "--all-packages", "--format", "json", str(INVENTORY)]
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
     # 종료 코드 0: 취약점 없음, 1: 취약점 발견, 그 밖: 오류
     if proc.returncode not in (0, 1):
@@ -71,8 +73,9 @@ def run() -> dict:
         path = (res.get("source") or {}).get("path", "")
         rel = os.path.relpath(path, INVENTORY) if path else "?"
         service = rel.split(os.sep)[0]
-        svc = by_service.setdefault(service, {"service": service, "lockfiles": set(), "findings": []})
+        svc = by_service.setdefault(service, {"service": service, "lockfiles": set(), "packages": 0, "findings": []})
         svc["lockfiles"].add(rel)
+        svc["packages"] += len(res.get("packages", []) or [])
         for pkg in res.get("packages", []) or []:
             p = pkg.get("package") or {}
             groups = pkg.get("groups") or []

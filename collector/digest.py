@@ -116,7 +116,7 @@ def build(step_errors: dict) -> str:
     if lib.get("status") == "ok":
         L += [f"lock 파일 {lib.get('scanned_lockfiles')}개 · 발견 {lib.get('total_findings')}건", ""]
         for s in lib.get("services", []):
-            L.append(f"### 서비스: {s['service']} ({s['count']}건)")
+            L.append(f"### 서비스: {s['service']} ({s['count']}건 · 패키지 {s.get('packages', '?')}개 · lock {len(s['lockfiles'])}개)")
             for f in s["findings"]:
                 alias = ", ".join(a for a in f["aliases"] if a.startswith("CVE-")) or "-"
                 L.append(f"- {f['package']} {f['installed']} → 수정 {', '.join(f['fixed']) or '없음'} · {f['id']} ({alias}) · {f.get('severity') or '심각도 미상'} · {f.get('summary') or ''}")
