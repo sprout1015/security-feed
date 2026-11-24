@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>RustSec Advisories</title>
 <id>https://rustsec.org/feed.xml</id>
-<updated>2026-11-23T12:00:00+00:00</updated>
+<updated>2026-11-24T12:00:00+00:00</updated>
 <author>
 <name>RustSec</name>
 </author>
@@ -10,6 +10,374 @@
 <link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/>
 <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
 <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
+<entry>
+<title>RUSTSEC-2026-0597: Unsoundness in hugepage-rs</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0597.html</id>
+<updated>2026-11-24T12:00:00+00:00</updated>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0597.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0597: Unsoundness in hugepage-rs"/>
+<published>2026-11-24T12:00:00+00:00</published>
+<summary xml:lang="en">`hugepage_rs::Box::new` may cause undefined behavior when initializing memory</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hugepage-rs/RUSTSEC-2026-0597.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hugepage-rs/RUSTSEC-2026-0597.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0597">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0597
+</h1>
+<span class="subtitle">
+<p>
+<code>hugepage_rs::Box::new</code> may cause undefined behavior when initializing memory</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-10-28">
+October 28, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-24">
+November 24, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/hugepage-rs.html">hugepage-rs</a>
+(<a href="https://crates.io/crates/hugepage-rs">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+<span class="tag info">INFO</span>
+Unsound
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/issues/9">
+https://github.com/cppcoffee/hugepage-rs/issues/9
+</a>
+</li>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/pull/8">
+https://github.com/cppcoffee/hugepage-rs/pull/8
+</a>
+</li>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/releases/tag/v0.1.2">
+https://github.com/cppcoffee/hugepage-rs/releases/tag/v0.1.2
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.1.2</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>hugepage_rs::Box::new</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>
+<code>hugepage_rs::Box::new</code> incorrectly initialized freshly allocated memory. Earlier implementations could either drop an uninitialized <code>T</code> or create a mutable reference before the memory contained a valid <code>T</code>, causing undefined behavior even when called from safe Rust code.</p>
+<p>The issue was fixed in version <code>0.1.2</code> by using <code>ptr::write(nn.as_ptr(), data)</code> to initialize memory directly through a raw pointer.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0598: Unsoundness in hugepage-rs</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0598.html</id>
+<updated>2026-11-24T12:00:00+00:00</updated>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0598.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0598: Unsoundness in hugepage-rs"/>
+<published>2026-11-24T12:00:00+00:00</published>
+<summary xml:lang="en">`hugepage_rs::alloc` may cause undefined behavior with zero-sized layouts from safe code</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/hugepage-rs/RUSTSEC-2026-0598.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/hugepage-rs/RUSTSEC-2026-0598.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0598">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0598
+</h1>
+<span class="subtitle">
+<p>
+<code>hugepage_rs::alloc</code> may cause undefined behavior with zero-sized layouts from safe code</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-10-27">
+October 27, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-24">
+November 24, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/hugepage-rs.html">hugepage-rs</a>
+(<a href="https://crates.io/crates/hugepage-rs">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+<span class="tag info">INFO</span>
+Unsound
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/issues/7">
+https://github.com/cppcoffee/hugepage-rs/issues/7
+</a>
+</li>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/pull/8">
+https://github.com/cppcoffee/hugepage-rs/pull/8
+</a>
+</li>
+<li>
+<a href="https://github.com/cppcoffee/hugepage-rs/releases/tag/v0.1.2">
+https://github.com/cppcoffee/hugepage-rs/releases/tag/v0.1.2
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=0.1.2</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>hugepage_rs::alloc</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;=0.1.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>
+<code>hugepage_rs::alloc</code> was a publicly accessible safe function that forwarded a <code>Layout</code> to the hugepage allocator's <code>GlobalAlloc::alloc</code> implementation without enforcing its safety requirements.
+<code>GlobalAlloc::alloc</code> requires the layout size to be non-zero. However, the safe wrapper allowed callers to pass a zero-sized <code>Layout</code>, violating this precondition without using <code>unsafe</code>.
+Affected versions therefore exposed an unsafe allocation precondition through safe Rust code, violating Rust's soundness guarantees.</p>
+<p>The upstream repository fixed this in version <code>0.1.2</code> by marking <code>alloc</code> as unsafe and documenting its non-zero-layout requirement.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0596: Vulnerability in etherparse</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0596.html</id>
+<updated>2026-11-24T12:00:00+00:00</updated>
+<category term="memory-exposure"/>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0596.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0596: Vulnerability in etherparse"/>
+<published>2026-11-24T12:00:00+00:00</published>
+<summary xml:lang="en">Out-of-bounds read when iterating over IPv6 extension headers of laxly parsed packets</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/etherparse/RUSTSEC-2026-0596.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/etherparse/RUSTSEC-2026-0596.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0596">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0596
+</h1>
+<span class="subtitle">
+<p>Out-of-bounds read when iterating over IPv6 extension headers of laxly parsed packets</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-23">
+November 23, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-24">
+November 24, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/etherparse.html">etherparse</a>
+(<a href="https://crates.io/crates/etherparse">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/memory-exposure.html">memory-exposure</a>
+</li>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/out-of-bounds-read.html">#out-of-bounds-read</a>
+<a href="/keywords/ipv6.html">#ipv6</a>
+<a href="/keywords/parser.html">#parser</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-mmwx-cp2j-wjh2">GHSA-mmwx-cp2j-wjh2</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/JulianSchmid/etherparse/pull/169">
+https://github.com/JulianSchmid/etherparse/pull/169
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>6.5 <span class="tag medium">
+MEDIUM
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Attack Complexity</dt>
+<dd>High</dd>
+<dt>Privileges Required</dt>
+<dd>None</dd>
+<dt>User Interaction</dt>
+<dd>None</dd>
+<dt>Scope</dt>
+<dd>Unchanged</dd>
+<dt>Confidentiality Impact</dt>
+<dd>Low</dd>
+<dt>Integrity Impact</dt>
+<dd>None</dd>
+<dt>Availability Impact</dt>
+<dd>High</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H">CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>^0.14.4</code>
+</li>
+<li>
+<code>^0.15.1</code>
+</li>
+<li>
+<code>^0.16.1</code>
+</li>
+<li>
+<code>^0.17.1</code>
+</li>
+<li>
+<code>^0.18.3</code>
+</li>
+<li>
+<code>^0.19.1</code>
+</li>
+<li>
+<code>^0.20.4</code>
+</li>
+<li>
+<code>&#62;=0.21.1</code>
+</li>
+</ul>
+</dd>
+<dt id="unaffected">Unaffected</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;0.14.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>Iterating over malformed or truncated IPv6 extension headers can cause
+out-of-bounds reads when the packet was parsed using one of the lax parsing
+functions (e.g. via <code>Ipv6ExtensionsSlice::from_slice_lax</code> or <code>LaxSlicedPacket</code>).</p>
+<p>Lax parsing stops at the first invalid or truncated extension header and returns
+the headers parsed up to that point. The &quot;next header&quot; field of the last returned
+header can then refer to a header that is not part of the slice.
+<code>Ipv6ExtensionSliceIter</code> followed it without checking the remaining length.</p>
+<p>A crafted or truncated IPv6 packet can cause a crash or expose memory located
+behind the packet to the application. Users who do not iterate over the IPv6
+extension headers of laxly parsed packets are not affected.</p>
+<p>As a workaround, do not iterate over the IPv6 extension headers if lax parsing
+reported an error.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
 <entry>
 <title>RUSTSEC-2026-0595: Unsoundness in parquet</title>
 <id>https://rustsec.org/advisories/RUSTSEC-2026-0595.html</id>

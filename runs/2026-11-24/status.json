@@ -1,11 +1,11 @@
 {
   "date": "2026-11-24",
-  "finished_at": "2026-11-24T14:23:55+09:00",
+  "finished_at": "2026-11-24T20:13:47+09:00",
   "step_errors": {},
   "sources": {
     "total": 32,
     "ok": 32,
-    "changed": 11,
+    "changed": 9,
     "error": 0
   },
   "kev": {
@@ -14,11 +14,16 @@
   },
   "cve": {
     "status": "ok",
-    "new": 479,
-    "hits": 2
+    "new": 86,
+    "hits": 1
   },
   "libraries": {
     "status": "ok",
     "findings": 2
+  },
+  "projects": {
+    "alpha-match": "ok",
+    "endfield-attendance-android": "disabled",
+    "ragdeck": "disabled"
   }
 }

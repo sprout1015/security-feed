@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "scanned_lockfiles": 1,
+  "scanned_lockfiles": 5,
   "total_findings": 2,
   "services": [
     {

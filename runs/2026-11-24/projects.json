@@ -1,0 +1,43 @@
+{
+  "projects": [
+    {
+      "id": "alpha-match",
+      "name": "Alpha-Match",
+      "repo": "Alpha-Match/Alpha-Match",
+      "ref": "main",
+      "commit": "59ffc51c04a88dd0eb2d000f48c4b742852742f0",
+      "status": "ok",
+      "lockfiles": [
+        "Frontend/Front-Server/package-lock.json",
+        "Demo-Python/requirements.txt"
+      ],
+      "missing": [],
+      "gradle": [
+        {
+          "path": "Backend/Api-Server",
+          "ok": true,
+          "lockfiles": 1
+        },
+        {
+          "path": "Backend/Batch-Server",
+          "ok": true,
+          "lockfiles": 1
+        }
+      ]
+    },
+    {
+      "id": "endfield-attendance-android",
+      "name": "endfield-attendance-android",
+      "repo": "sprout1015/endfield-attendance-android",
+      "ref": "main",
+      "status": "disabled"
+    },
+    {
+      "id": "ragdeck",
+      "name": "RAGDeck",
+      "repo": "sprout1015/RAGDeck",
+      "ref": "develop",
+      "status": "disabled"
+    }
+  ]
+}

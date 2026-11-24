@@ -854,6 +854,398 @@
     <h2 id="2026">2026</h2>
     
     
+      <a href="#CVE-2026-84785">
+        <h3 id="CVE-2026-84785">CVE-2026-84785</h3>
+      </a>
+
+      <div class="grid grid-cols-6 gap-2">
+
+
+
+    <div><span class="font-semibold">Severity</span></div>
+    <div class="col-span-5">Low</div>
+
+    <div><span class="font-semibold">Published at</span></div>
+    <div class="col-span-5">24 November 2026</div>
+
+    <div><span class="font-semibold">Title</span></div>
+    <div class="col-span-5">Unbounded Out-of-Order Fragment Reassembly in QUIC Streams</div>
+
+
+
+
+
+  
+
+  
+
+
+    <div><span class="font-semibold">Found by</span></div>
+    <div class="col-span-5">Duc Anh Luu (University of Melbourne) and Jiwoo Kim (Arpe)</div>
+
+
+
+
+
+
+  
+
+
+    <div><span class="font-semibold">Fix developed by</span></div>
+    <div class="col-span-5">Duc Anh Luu (University of Melbourne)</div>
+
+
+    <div><span class="font-semibold">Affected</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        
+        
+        <li>from 4.1.0 before 4.1.1 </li>
+        
+        <li>from 4.0.0 before 4.0.4 </li>
+        
+        <li>from 3.5.0 before 3.5.10 </li>
+        
+      </ul>
+    </div>
+    <div><span class="font-semibold">References</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-84785" target="_blank">CVE Record</a></li>
+        
+        <li><a href="https://openssl-library.org/news/secadv/20261124.txt" target="_blank">OpenSSL Advisory</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/fead004f52d6e5efffa62019ea451218c0aa79e9" target="_blank">4.1.1 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/05bfccf68184665b989dc7001fc5f1f885f84194" target="_blank">4.0.4 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/7a14b6e410c881365881596231ea6f88e7d27c6e" target="_blank">3.5.10 git commit</a></li>
+        
+      </ul>
+    </div>
+</div>
+
+
+      <p>Issue summary: A QUIC peer that sends many small out-of-order STREAM fragments
+while withholding the first byte of the stream may cause OpenSSL to buffer
+a large number of reassembly nodes occupying much larger memory than
+the actual data sent.</p>
+<p>Impact summary: A remote peer can pin large amounts of memory on a server that
+accepts incoming QUIC streams, potentially exhausting memory and causing
+Denial of Service.</p>
+<p>CWE: CWE-770: Allocation of Resources Without Limits or Throttling</p>
+<p>Description: QUIC receive flow control limits the highest byte offset a peer
+may reach on a stream. It does not limit how many out-of-order fragments the
+receiver buffers. OpenSSL allocates a reassembly node for each non-adjacent
+STREAM fragment and never caps the count. A peer that opens a stream and sends
+many one-byte fragments at increasing offsets, while withholding the first
+byte, makes the receiver retain one node per fragment without delivering any
+data.</p>
+<p>Only applications that accept incoming streams are exposed. With the default
+policy, which rejects peer-initiated streams, the stream is torn down before
+state accumulates. Because the read side never advances past the missing
+prefix, the flow control window never slides and the nodes stay pinned for the
+life of the connection.</p>
+<p>The per-stream window bounds the highest offset, so the memory one stream can
+pin is finite, but it can reach tens of megabytes and, across many streams and
+connections, drive memory pressure and Denial of Service. The severity is
+limited because the exhaustion is bounded by flow control and requires a
+non-default configuration.</p>
+<p>FIPS impact: no
+The affected code is outside the FIPS module boundary.</p>
+
+    
+      <a href="#CVE-2026-107494">
+        <h3 id="CVE-2026-107494">CVE-2026-107494</h3>
+      </a>
+
+      <div class="grid grid-cols-6 gap-2">
+
+
+
+    <div><span class="font-semibold">Severity</span></div>
+    <div class="col-span-5">Low</div>
+
+    <div><span class="font-semibold">Published at</span></div>
+    <div class="col-span-5">24 November 2026</div>
+
+    <div><span class="font-semibold">Title</span></div>
+    <div class="col-span-5">Unbounded QUIC RETIRE_CONNECTION_ID Frame Sending Queue</div>
+
+
+
+
+
+  
+
+  
+
+  
+
+
+    <div><span class="font-semibold">Found by</span></div>
+    <div class="col-span-5">moltenbit, Duc Anh Luu (University of Melbourne) and hataehoon</div>
+
+
+
+
+
+
+  
+
+
+    <div><span class="font-semibold">Fix developed by</span></div>
+    <div class="col-span-5">Alexandr Nedvědický</div>
+
+
+    <div><span class="font-semibold">Affected</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        
+        
+        <li>from 4.1.0 before 4.1.1 </li>
+        
+        <li>from 4.0.0 before 4.0.4 </li>
+        
+        <li>from 3.5.0 before 3.5.10 </li>
+        
+      </ul>
+    </div>
+    <div><span class="font-semibold">References</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-107494" target="_blank">CVE Record</a></li>
+        
+        <li><a href="https://openssl-library.org/news/secadv/20261124.txt" target="_blank">OpenSSL Advisory</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/dec00b87a89e8f81cef0e50cbbecdfad4d377849" target="_blank">4.1.1 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/c94e74a0d6273109ac86ad98ce42354c60499d1d" target="_blank">4.0.4 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/734c6cd7444bdbf589bfec917e47598c1b21ddd3" target="_blank">3.5.10 git commit</a></li>
+        
+      </ul>
+    </div>
+</div>
+
+
+      <p>Issue summary: The QUIC stack queues a RETIRE_CONNECTION_ID frame also for
+retransmitted NEW_CONNECTION_ID frames. This allows a remote malicious
+QUIC stack to queue an unlimited number of RETIRE_CONNECTION_ID frames.</p>
+<p>Impact summary: A malicious remote QUIC peer can trigger an out-of-memory
+condition causing a Denial of Service.</p>
+<p>CWE: CWE-770: Allocation of Resources Without Limits or Throttling</p>
+<p>Description: The earlier fix for CVE-2026-84784 was not complete. It
+failed to ignore retransmissions of the NEW_CONNECTION_ID frame. The QUIC
+implementation created and inserted a RETIRE_CONNECTION_ID frame for every
+retransmitted NEW_CONNECTION_ID frame it received and there was no limit
+on how many RETIRE_CONNECTION_ID frames were queued.</p>
+<p>This issue allows a malicious remote QUIC stack to trigger an unbounded
+allocation of memory and eventually an out-of-memory (OOM) condition.</p>
+<p>FIPS impact: no
+The FIPS module is not affected as the QUIC implementation is outside the
+OpenSSL FIPS module boundary.</p>
+
+    
+      <a href="#CVE-2026-121482">
+        <h3 id="CVE-2026-121482">CVE-2026-121482</h3>
+      </a>
+
+      <div class="grid grid-cols-6 gap-2">
+
+
+
+    <div><span class="font-semibold">Severity</span></div>
+    <div class="col-span-5">Low</div>
+
+    <div><span class="font-semibold">Published at</span></div>
+    <div class="col-span-5">24 November 2026</div>
+
+    <div><span class="font-semibold">Title</span></div>
+    <div class="col-span-5">Relative CRL Distribution Point Names Rebuilt per CRL in X.509 Verification</div>
+
+
+
+
+
+  
+
+
+    <div><span class="font-semibold">Found by</span></div>
+    <div class="col-span-5">Alex Gaynor (Anthropic)</div>
+
+
+
+
+
+
+  
+
+
+    <div><span class="font-semibold">Fix developed by</span></div>
+    <div class="col-span-5">Neil Horman</div>
+
+
+    <div><span class="font-semibold">Affected</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        
+        
+        <li>from 4.1.0 before 4.1.1 </li>
+        
+        <li>from 4.0.0 before 4.0.4 </li>
+        
+        <li>from 3.5.0 before 3.5.10 </li>
+        
+      </ul>
+    </div>
+    <div><span class="font-semibold">References</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-121482" target="_blank">CVE Record</a></li>
+        
+        <li><a href="https://openssl-library.org/news/secadv/20261124.txt" target="_blank">OpenSSL Advisory</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/14a9f9ad6e8a17437fb75545f33e4fc56e9d41f6" target="_blank">4.1.1 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/c37874e29c43e86f5ed94d02275f1c31cf68afb3" target="_blank">4.0.4 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/468c287cf451a834b370b69ab321b8ffdfac23aa" target="_blank">3.5.10 git commit</a></li>
+        
+      </ul>
+    </div>
+</div>
+
+
+      <p>Issue summary: Verifying a maliciously crafted CMS or PKCS#7 SignedData
+message with CRL checking enabled may consume excessive CPU time, growing with
+the square of the message size.</p>
+<p>Impact summary: An attacker who can submit a CMS or PKCS#7 SignedData message
+to an application that verifies it with CRL checking enabled can occupy a CPU
+core for seconds to minutes, causing Denial of Service. Applications that
+leave CRL checking disabled are not affected.</p>
+<p>CWE: CWE-407: Inefficient Algorithmic Complexity</p>
+<p>Description: With CRL checking enabled, OpenSSL compares each CRL distribution
+point of a certificate against the issuing distribution point of every
+candidate CRL. For a nameRelativeToCRLIssuer distribution point, the full name
+is the CRL issuer name with the relative name appended. Since the change that
+deferred this computation, crl_crldp_check() rebuilds that full name for each
+candidate CRL and frees it again.</p>
+<p>CMS_verify() and PKCS7_verify() take both the distribution points and the
+candidate CRLs from the message, and this scoring runs before any signature is
+checked. An application is exposed only if it sets X509_V_FLAG_CRL_CHECK on
+the store and does not pass CMS_NOCRL or PKCS7_NOCRL; CRL checking is off by
+default. In TLS the CRLs come from the local store, so a peer controls only
+the distribution point count.</p>
+<p>The cost grows with the product of the distribution point count, the CRL count
+and the issuer name length, all chosen by the message author; a few hundred
+kilobytes can occupy a CPU core for tens of seconds. Verification still fails
+as it should, with no crash, no incorrect result and no memory growth.
+Requiring CRL checking is what limits the severity.</p>
+<p>FIPS impact: no
+The affected code is outside the FIPS module boundary.</p>
+
+    
+      <a href="#CVE-2026-84786">
+        <h3 id="CVE-2026-84786">CVE-2026-84786</h3>
+      </a>
+
+      <div class="grid grid-cols-6 gap-2">
+
+
+
+    <div><span class="font-semibold">Severity</span></div>
+    <div class="col-span-5">Low</div>
+
+    <div><span class="font-semibold">Published at</span></div>
+    <div class="col-span-5">24 November 2026</div>
+
+    <div><span class="font-semibold">Title</span></div>
+    <div class="col-span-5">Possible NULL Dereference in Non-SMTP DANE Clients</div>
+
+
+
+
+
+  
+
+  
+
+
+    <div><span class="font-semibold">Found by</span></div>
+    <div class="col-span-5">Sanjay Rawat and Mohammed Alquraini (HUMAIN)</div>
+
+
+
+
+
+
+  
+
+
+    <div><span class="font-semibold">Fix developed by</span></div>
+    <div class="col-span-5">Viktor Dukhovni</div>
+
+
+    <div><span class="font-semibold">Affected</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        
+        
+        <li>from 4.1.0 before 4.1.1 </li>
+        
+        <li>from 4.0.0 before 4.0.4 </li>
+        
+        <li>from 3.5.0 before 3.5.10 </li>
+        
+        <li>from 3.0.0 before 3.0.24 </li>
+        
+        <li>from 1.1.1 before 1.1.1zk </li>
+        
+      </ul>
+    </div>
+    <div><span class="font-semibold">References</span></div>
+    <div class="col-span-5 prose-li:m-0 prose-ul:m-0 prose-ul:ps-4">
+      <ul>
+        <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-84786" target="_blank">CVE Record</a></li>
+        
+        <li><a href="https://openssl-library.org/news/secadv/20261124.txt" target="_blank">OpenSSL Advisory</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/a7e57082ccb27330a42f5f116a4e125b13bdcfef" target="_blank">4.1.1 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/fecc9ee387f3be48afdaced3aeef243dc1566aab" target="_blank">4.0.4 git commit</a></li>
+        
+        <li><a href="https://github.com/openssl/openssl/commit/1ad851363d5b8588b0d40edcc045fd633e93f0c2" target="_blank">3.5.10 git commit</a></li>
+        
+      </ul>
+    </div>
+</div>
+
+
+      <p>Issue summary: A DANE-enabled TLS client may crash by dereferencing a NULL
+pointer when processing an unusual combination of certificate and TLSA
+records.</p>
+<p>Impact summary: The impact is limited to a client crash (potential Denial
+of Service).</p>
+<p>CWE: CWE-476: NULL Pointer Dereference</p>
+<p>Description: A DANE-enabled TLS client that supports TLSA records with at
+least one of the PKIX-TA(0) or PKIX-EE(1) usages alongside the DANE-TA(2)
+usage may crash by dereferencing a NULL pointer if the server claims a trusted
+CA&rsquo;s certificate to be its end-entity certificate and has an unusual mix of
+associated TLSA records.</p>
+<p>DANE SMTP clients should not be affected since only the
+DANE-TA(2) and DANE-EE(3) TLSA record usages are specified applicable
+in SMTP.  For example, the Postfix MTA is not affected, while the Exim
+MTA does not at present use OpenSSL&rsquo;s DANE implementation.</p>
+<p>Use of DANE in validation of RFC7250 raw public keys (RPKs) is also
+unaffected, as these only use DANE-EE(3) TLSA records.</p>
+<p>Only applications that support combining the DANE PKI with a traditional PKI
+are potentially affected.  A DANE-enabled browser or similar, that uses
+OpenSSL&rsquo;s DANE API could be affected.</p>
+<p>FIPS impact: no
+The DANE API is outside the FIPS module boundary.</p>
+
+    
       <a href="#CVE-2026-107493">
         <h3 id="CVE-2026-107493">CVE-2026-107493</h3>
       </a>

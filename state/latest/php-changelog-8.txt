@@ -1,4 +1,4 @@
-PHP 8.6.0 Released!
+PHP Conference Kansai 2026 (JAPAN)
 PHP 8 ChangeLog
 8.6 | 8.5 | 8.4 | 8.3 | 8.2 | 8.1 | 8.0
 Version 8.6.0
