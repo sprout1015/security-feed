@@ -2,6 +2,5 @@ __pycache__/
 *.pyc
 .DS_Store
 work/
-# 실행 때 공개 저장소에서 가져오는 lock 파일 (커밋하지 않음). 데모용 샘플만 추적
-inventory/*
-!inventory/_sample-notification-service/
+# 실행 때 공개 저장소에서 가져오는 lock 파일 (커밋하지 않음)
+inventory/

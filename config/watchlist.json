@@ -10,17 +10,6 @@
   },
   "products": [
     {
-      "label": "nginx",
-      "group": "inventory",
-      "product": [
-        "nginx"
-      ],
-      "vendor": [
-        "f5",
-        "nginx"
-      ]
-    },
-    {
       "label": "Spring",
       "group": "inventory",
       "product": [
@@ -35,27 +24,6 @@
         "broadcom",
         "spring",
         "pivotal"
-      ]
-    },
-    {
-      "label": "Apache Tomcat",
-      "group": "inventory",
-      "product": [
-        "tomcat"
-      ],
-      "vendor": [
-        "apache"
-      ]
-    },
-    {
-      "label": "Laravel",
-      "group": "inventory",
-      "product": [
-        "laravel",
-        "framework"
-      ],
-      "vendor": [
-        "laravel"
       ]
     },
     {
@@ -85,34 +53,6 @@
         "openjdk",
         "adoptium",
         "amazon"
-      ]
-    },
-    {
-      "label": "PHP",
-      "group": "inventory",
-      "product": [
-        "php"
-      ],
-      "vendor": [
-        "php"
-      ]
-    },
-    {
-      "label": "Express",
-      "group": "inventory",
-      "product": [
-        "express",
-        "body-parser",
-        "multer",
-        "cookie",
-        "send",
-        "serve-static"
-      ],
-      "vendor": [
-        "expressjs",
-        "openjs",
-        "pillarjs",
-        "jshttp"
       ]
     },
     {
@@ -175,6 +115,66 @@
       "vendor": [
         "grpc",
         "google"
+      ]
+    },
+    {
+      "label": "nginx",
+      "group": "baseline",
+      "product": [
+        "nginx"
+      ],
+      "vendor": [
+        "f5",
+        "nginx"
+      ]
+    },
+    {
+      "label": "Apache Tomcat",
+      "group": "baseline",
+      "product": [
+        "tomcat"
+      ],
+      "vendor": [
+        "apache"
+      ]
+    },
+    {
+      "label": "Laravel",
+      "group": "baseline",
+      "product": [
+        "laravel",
+        "framework"
+      ],
+      "vendor": [
+        "laravel"
+      ]
+    },
+    {
+      "label": "PHP",
+      "group": "baseline",
+      "product": [
+        "php"
+      ],
+      "vendor": [
+        "php"
+      ]
+    },
+    {
+      "label": "Express",
+      "group": "baseline",
+      "product": [
+        "express",
+        "body-parser",
+        "multer",
+        "cookie",
+        "send",
+        "serve-static"
+      ],
+      "vendor": [
+        "expressjs",
+        "openjs",
+        "pillarjs",
+        "jshttp"
       ]
     },
     {
