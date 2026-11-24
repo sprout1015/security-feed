@@ -9,24 +9,264 @@
     "kev_window_days": 7
   },
   "products": [
-    {"label": "nginx", "group": "inventory", "product": ["nginx"], "vendor": ["f5", "nginx"]},
-    {"label": "Spring", "group": "inventory", "product": ["spring framework", "spring boot", "spring security", "spring cloud", "spring"], "vendor": ["vmware", "broadcom", "spring", "pivotal"]},
-    {"label": "Apache Tomcat", "group": "inventory", "product": ["tomcat"], "vendor": ["apache"]},
-    {"label": "Laravel", "group": "inventory", "product": ["laravel", "framework"], "vendor": ["laravel"]},
-    {"label": "Next.js", "group": "inventory", "product": ["next.js", "nextjs", "next"], "vendor": ["vercel"]},
-    {"label": "Java SE / JDK", "group": "inventory", "product": ["java se", "jdk", "openjdk", "graalvm", "java"], "vendor": ["oracle", "openjdk", "adoptium", "amazon"]},
-    {"label": "PHP", "group": "inventory", "product": ["php"], "vendor": ["php"]},
-    {"label": "Express", "group": "inventory", "product": ["express", "body-parser", "multer", "cookie", "send", "serve-static"], "vendor": ["expressjs", "openjs", "pillarjs", "jshttp"]},
-    {"label": "Node.js", "group": "inventory", "product": ["node.js", "nodejs", "node"], "vendor": ["nodejs", "node.js", "openjs"]},
-    {"label": "OpenSSH", "group": "baseline", "product": ["openssh"], "vendor": []},
-    {"label": "OpenSSL", "group": "baseline", "product": ["openssl"], "vendor": []},
-    {"label": "glibc", "group": "baseline", "product": ["glibc", "gnu c library"], "vendor": []},
-    {"label": "Linux kernel", "group": "baseline", "product": ["linux kernel", "kernel", "linux"], "vendor": ["linux"]},
-    {"label": "curl", "group": "baseline", "product": ["curl", "libcurl"], "vendor": []},
-    {"label": "sudo", "group": "baseline", "product": ["sudo"], "vendor": []},
-    {"label": "systemd", "group": "baseline", "product": ["systemd"], "vendor": []},
-    {"label": "zlib", "group": "baseline", "product": ["zlib"], "vendor": []},
-    {"label": "xz", "group": "baseline", "product": ["xz", "xz utils", "liblzma"], "vendor": []},
-    {"label": "컨테이너 런타임", "group": "baseline", "product": ["runc", "containerd", "docker engine", "moby"], "vendor": []}
+    {
+      "label": "nginx",
+      "group": "inventory",
+      "product": [
+        "nginx"
+      ],
+      "vendor": [
+        "f5",
+        "nginx"
+      ]
+    },
+    {
+      "label": "Spring",
+      "group": "inventory",
+      "product": [
+        "spring framework",
+        "spring boot",
+        "spring security",
+        "spring cloud",
+        "spring"
+      ],
+      "vendor": [
+        "vmware",
+        "broadcom",
+        "spring",
+        "pivotal"
+      ]
+    },
+    {
+      "label": "Apache Tomcat",
+      "group": "inventory",
+      "product": [
+        "tomcat"
+      ],
+      "vendor": [
+        "apache"
+      ]
+    },
+    {
+      "label": "Laravel",
+      "group": "inventory",
+      "product": [
+        "laravel",
+        "framework"
+      ],
+      "vendor": [
+        "laravel"
+      ]
+    },
+    {
+      "label": "Next.js",
+      "group": "inventory",
+      "product": [
+        "next.js",
+        "nextjs",
+        "next"
+      ],
+      "vendor": [
+        "vercel"
+      ]
+    },
+    {
+      "label": "Java SE / JDK",
+      "group": "inventory",
+      "product": [
+        "java se",
+        "jdk",
+        "openjdk",
+        "graalvm",
+        "java"
+      ],
+      "vendor": [
+        "oracle",
+        "openjdk",
+        "adoptium",
+        "amazon"
+      ]
+    },
+    {
+      "label": "PHP",
+      "group": "inventory",
+      "product": [
+        "php"
+      ],
+      "vendor": [
+        "php"
+      ]
+    },
+    {
+      "label": "Express",
+      "group": "inventory",
+      "product": [
+        "express",
+        "body-parser",
+        "multer",
+        "cookie",
+        "send",
+        "serve-static"
+      ],
+      "vendor": [
+        "expressjs",
+        "openjs",
+        "pillarjs",
+        "jshttp"
+      ]
+    },
+    {
+      "label": "Node.js",
+      "group": "inventory",
+      "product": [
+        "node.js",
+        "nodejs",
+        "node"
+      ],
+      "vendor": [
+        "nodejs",
+        "node.js",
+        "openjs"
+      ]
+    },
+    {
+      "label": "PostgreSQL",
+      "group": "inventory",
+      "product": [
+        "postgresql",
+        "postgres"
+      ],
+      "vendor": [
+        "postgresql"
+      ]
+    },
+    {
+      "label": "React",
+      "group": "inventory",
+      "product": [
+        "react",
+        "react-dom",
+        "react server components"
+      ],
+      "vendor": [
+        "facebook",
+        "meta"
+      ]
+    },
+    {
+      "label": "FastAPI",
+      "group": "inventory",
+      "product": [
+        "fastapi"
+      ],
+      "vendor": [
+        "tiangolo",
+        "fastapi"
+      ]
+    },
+    {
+      "label": "gRPC",
+      "group": "inventory",
+      "product": [
+        "grpc",
+        "grpcio",
+        "grpc-java"
+      ],
+      "vendor": [
+        "grpc",
+        "google"
+      ]
+    },
+    {
+      "label": "OpenSSH",
+      "group": "baseline",
+      "product": [
+        "openssh"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "OpenSSL",
+      "group": "baseline",
+      "product": [
+        "openssl"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "glibc",
+      "group": "baseline",
+      "product": [
+        "glibc",
+        "gnu c library"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "Linux kernel",
+      "group": "baseline",
+      "product": [
+        "linux kernel",
+        "kernel",
+        "linux"
+      ],
+      "vendor": [
+        "linux"
+      ]
+    },
+    {
+      "label": "curl",
+      "group": "baseline",
+      "product": [
+        "curl",
+        "libcurl"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "sudo",
+      "group": "baseline",
+      "product": [
+        "sudo"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "systemd",
+      "group": "baseline",
+      "product": [
+        "systemd"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "zlib",
+      "group": "baseline",
+      "product": [
+        "zlib"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "xz",
+      "group": "baseline",
+      "product": [
+        "xz",
+        "xz utils",
+        "liblzma"
+      ],
+      "vendor": []
+    },
+    {
+      "label": "컨테이너 런타임",
+      "group": "baseline",
+      "product": [
+        "runc",
+        "containerd",
+        "docker engine",
+        "moby"
+      ],
+      "vendor": []
+    }
   ]
 }
