@@ -23,6 +23,7 @@ def build(step_errors: dict) -> str:
     kev = load_json(out / "kev_recent.json", {}) or {}
     cve = load_json(out / "cve_radar.json", {}) or {}
     lib = load_json(out / "library_matches.json", {}) or {}
+    prj = load_json(out / "projects.json", {}) or {}
     root = out.parent.parent
 
     L = [f"# 보안 수집 요약 — {date}", "",
@@ -101,6 +102,17 @@ def build(step_errors: dict) -> str:
 
     # 3층
     L += ["## 4. 라이브러리 대조 (lock 파일 × OSV)", ""]
+    if prj.get("projects"):
+        L += ["감시 프로젝트 (공개 저장소에서 실행 때마다 가져옴):"]
+        for p in prj["projects"]:
+            extra = ""
+            if p.get("status") in ("ok", "partial"):
+                g = ", ".join(f"{x['path']} {'✓' if x['ok'] else '✗ lock 생성 실패'}" for x in p.get("gradle", []))
+                extra = f" · 커밋 {p.get('commit', '')[:7]} · lock {len(p.get('lockfiles', []))}개" + (f" · Gradle: {g}" if g else "") + (f" · 없음: {', '.join(p['missing'])}" if p.get("missing") else "")
+            elif p.get("reason"):
+                extra = f" · {p['reason'][:120]}"
+            L.append(f"- {p['name']} ({p['repo']}@{p.get('ref')}): {p['status']}{extra}")
+        L.append("")
     if lib.get("status") == "ok":
         L += [f"lock 파일 {lib.get('scanned_lockfiles')}개 · 발견 {lib.get('total_findings')}건", ""]
         for s in lib.get("services", []):
@@ -121,5 +133,6 @@ def build(step_errors: dict) -> str:
         "kev": {"status": kev.get("status"), "recent": len(kev.get("recent", []))},
         "cve": {"status": cve.get("status"), "new": cve.get("new_cves"), "hits": len(cve.get("hits", []))},
         "libraries": {"status": lib.get("status"), "findings": lib.get("total_findings", 0)},
+        "projects": {p["id"]: p.get("status") for p in prj.get("projects", [])},
     })
     return text

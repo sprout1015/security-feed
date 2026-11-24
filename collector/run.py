@@ -9,6 +9,7 @@ from common import RUNS, today_kst
 import collect_sources
 import digest
 import libraries
+import projects
 import radar
 
 KEEP_RUNS = 60  # 일
@@ -24,7 +25,7 @@ def prune_runs() -> None:
 
 def main() -> int:
     errors = {}
-    for name, fn in (("공식 소스", collect_sources.collect), ("레이더", radar.run), ("라이브러리", libraries.run)):
+    for name, fn in (("내 프로젝트", projects.run), ("공식 소스", collect_sources.collect), ("레이더", radar.run), ("라이브러리", libraries.run)):
         try:
             fn()
         except Exception as e:

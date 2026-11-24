@@ -1,0 +1,33 @@
+{
+  "_설명": "감시할 내 프로젝트. 공개 저장소만 가져온다(비공개면 자동 건너뜀). lockfiles는 저장소 안 경로, gradle은 lock 파일을 만들 Gradle 프로젝트 폴더.",
+  "projects": [
+    {
+      "id": "alpha-match",
+      "name": "Alpha-Match",
+      "repo": "Alpha-Match/Alpha-Match",
+      "ref": "main",
+      "lockfiles": ["Frontend/Front-Server/package-lock.json", "Demo-Python/requirements.txt"],
+      "gradle": ["Backend/Api-Server", "Backend/Batch-Server"]
+    },
+    {
+      "id": "endfield-attendance-android",
+      "name": "endfield-attendance-android",
+      "repo": "sprout1015/endfield-attendance-android",
+      "ref": "main",
+      "lockfiles": [],
+      "gradle": ["."],
+      "enabled": false,
+      "_메모": "공개 전환 후 enabled=true"
+    },
+    {
+      "id": "ragdeck",
+      "name": "RAGDeck",
+      "repo": "sprout1015/RAGDeck",
+      "ref": "develop",
+      "lockfiles": ["ppt-generator/poetry.lock"],
+      "gradle": [],
+      "enabled": false,
+      "_메모": "공개 전환(+GitHub Support 정리) 후 enabled=true"
+    }
+  ]
+}
