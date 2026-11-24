@@ -5,7 +5,7 @@
       "name": "Alpha-Match",
       "repo": "Alpha-Match/Alpha-Match",
       "ref": "main",
-      "commit": "59ffc51c04a88dd0eb2d000f48c4b742852742f0",
+      "commit": "5f73a698f2ca220982aae1b9b389f8ef3d2058e1",
       "status": "ok",
       "lockfiles": [
         "Frontend/Front-Server/package-lock.json",

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "finished_at": "2026-11-24T21:08:16+09:00",
+  "finished_at": "2026-11-24T21:18:32+09:00",
   "step_errors": {},
   "sources": {
     "total": 32,
@@ -14,12 +14,12 @@
   },
   "cve": {
     "status": "ok",
-    "new": 23,
+    "new": 0,
     "hits": 0
   },
   "libraries": {
     "status": "ok",
-    "findings": 288
+    "findings": 0
   },
   "projects": {
     "alpha-match": "ok",
@@ -34,7 +34,7 @@
       "CVE-2026-134624"
     ],
     "cve_hits": 0,
-    "library_new": 76,
+    "library_new": 0,
     "library_resolved": 0
   }
 }
