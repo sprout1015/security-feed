@@ -51,6 +51,10 @@ jobs:
               sys.exit(1)
 
           p = json.loads(os.environ.get("PAYLOAD_JSON") or "{}") or {}
+          # repository_dispatch 는 client_payload 최상위 항목이 10개까지라 건수는 counts 로 묶어 받는다
+          if isinstance(p.get("counts"), dict):
+              for k, v in p["counts"].items():
+                  p.setdefault(k, v)
           def s(k, d="", n=300):
               return str(p.get(k) if p.get(k) not in (None, "") else d)[:n]
 

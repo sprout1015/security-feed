@@ -54,12 +54,12 @@ Notion 커넥터를 쓸 수 없으면 그 사실만 보고하고 종료한다. �
    - "🧾 인벤토리·설정 점검"에는 버전 미확인 행, EOL 행, 그리고 Notion 공식 소스(사용 체크) 중 수집 저장소 config/sources.json 에 같은 도메인의 소스가 하나도 없는 것을 적는다. 단 CISA KEV, NVD, OSV, GitHub Advisory Database 는 레이더·라이브러리 단계가 대신하므로 제외한다. 인벤토리 제품 중 config/watchlist.json 에 없는 제품도 적는다(넓은 레이더에서 빠지므로).
 10. 디스코드 알림: 보고서 행을 만든(또는 추가 실행으로 고친) 뒤, 셸에서 아래처럼 GitHub에 알림 신호를 보낸다. 디스코드로 직접 보내지 않는다(봇 토큰은 GitHub Secret에만 있다).
     - python3로 payload.json 을 만든다(숫자도 문자열로): {"event_type":"report-ready","client_payload":{
-        "date":D, "verdict":판정, "l1":L1, "l2":L2, "l3":L3, "l4":L4,
+        "date":D, "verdict":판정, "counts":{"l1":L1, "l2":L2, "l3":L3, "l4":L4},
         "summary": 한 줄 요약,
         "actions": 받는 사람이 할 일 최대 3개. 각 항목은 "무엇을 · 어디서 · 어떻게"가 한 줄(60자 안팎)에 드러나게 쓴다. 예: "Alpha-Match FastAPI 0.108 → 최신 (starlette KEV 해소)", "주문 API Tomcat 10.1.44 → 10.1.50 (더미)". 할 일이 없으면 빈 배열,
         "top": L1 항목 중 KEV 등재 → CVSS 높은 순으로 최대 3개. 형식 "제품 설치버전 — 식별자(KEV면 'KEV' 표기) — →패치버전",
         "checks": 사람 확인 요청 건수,
-        "url": 보고서 Notion 페이지 URL}}
+        "url": 보고서 Notion 페이지 URL}}  (client_payload 최상위 항목은 GitHub 제한상 10개 이하)
     - gh api -X POST repos/sprout1015/security-feed/dispatches --input payload.json
     - "⚪ 실행 실패"로 끝나는 경우에도 같은 방법으로 보낸다. 신호 전송이 실패해도 보고서는 그대로 두고, 마지막 응답에 "디스코드 알림 신호 실패: <오류 요약>"을 한 줄 덧붙인다. 다시 시도는 한 번만 한다.
 11. 마지막 응답: 레벨별 건수, L1 항목의 제품과 식별자, 확인 못 한 소스 수, 보고서 링크를 세 줄에서 다섯 줄로 요약한다. 새 공지가 없으면 "새 긴급 이슈 없음"이라고 쓴다.
