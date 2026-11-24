@@ -35,8 +35,12 @@ jobs:
           python3 - <<'PY'
           import json, os, sys, urllib.request, urllib.error, datetime as dt
 
-          token = os.environ.get("DISCORD_BOT_TOKEN", "")
-          channel = os.environ.get("DISCORD_CHANNEL_ID", "")
+          import re
+          token = os.environ.get("DISCORD_BOT_TOKEN", "").strip()
+          if token.lower().startswith("bot "):
+              token = token[4:].strip()
+          raw_channel = os.environ.get("DISCORD_CHANNEL_ID", "")
+          channel = re.sub(r"\D", "", raw_channel)  # 공백·줄바꿈·<#…> 표기 제거, 숫자만
           if not token or not channel:
               print("::error::DISCORD_BOT_TOKEN / DISCORD_CHANNEL_ID 저장소 Secret이 없습니다.")
               sys.exit(1)
@@ -76,10 +80,32 @@ jobs:
               headers={"Authorization": f"Bot {token}", "Content-Type": "application/json",
                        "User-Agent": "security-feed-notify (https://github.com/sprout1015/security-feed, 1.0)"},
               method="POST")
+          def diag():
+              # 공개 로그이므로 값은 출력하지 않고 길이·개수만 출력
+              print(f"진단: 채널 ID 숫자 {len(channel)}자리 (원본 {len(raw_channel)}자), 토큰 {len(token)}자")
+              def get(path):
+                  rq = urllib.request.Request(f"https://discord.com/api/v10{path}",
+                      headers={"Authorization": f"Bot {token}", "User-Agent": "security-feed-notify (https://github.com/sprout1015/security-feed, 1.0)"})
+                  with urllib.request.urlopen(rq, timeout=20) as r:
+                      return json.load(r)
+              try:
+                  me = get("/users/@me"); print(f"진단: 토큰 정상 (봇 계정 확인됨, bot={me.get('bot')})")
+              except urllib.error.HTTPError as e2:
+                  print(f"진단: 토큰 확인 실패 HTTP {e2.code}"); return
+              try:
+                  print(f"진단: 봇이 들어가 있는 서버 {len(get('/users/@me/guilds'))}개")
+              except urllib.error.HTTPError as e2:
+                  print(f"진단: 서버 목록 조회 실패 HTTP {e2.code}")
+              try:
+                  ch = get(f"/channels/{channel}"); print(f"진단: 채널 조회 성공 (type={ch.get('type')})")
+              except urllib.error.HTTPError as e2:
+                  print(f"진단: 채널 조회 실패 HTTP {e2.code} — 이 ID의 채널을 봇이 볼 수 없음")
+
           try:
               with urllib.request.urlopen(req, timeout=20) as r:
                   print(f"Discord 전송 완료 (HTTP {r.status})")
           except urllib.error.HTTPError as e:
+              diag()
               hint = {401: "토큰이 잘못됨", 403: "봇에 채널 보기/메시지 보내기/임베드 링크 권한이 없음",
                       404: "채널 ID가 잘못됐거나 봇이 그 서버에 없음"}.get(e.code, "")
               print(f"::error::Discord 전송 실패 HTTP {e.code} {hint}")
