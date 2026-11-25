@@ -1,7 +1,7 @@
 Skip to content
 Black Friday 2026 deals
-40% off SymfonyCasts subscriptions and renewals
-(ends in 6 days)
+30% off Symfony and Twig certifications
+(ends in 5 days)
 « Security Advisories » blog posts
 Have found a security issue in Symfony or in one of its projects? Send the details to
 security [at] symfony.com and don't
@@ -11,56 +11,56 @@ for the projects hosted in the symfony, symfony-cli, symfony-tools, twigphp and 
 GitHub organizations. Learn </doc/current/contributing/code/security.html> how we handle security issues.
 Manage your notification preferences
 to receive an email as soon as a Symfony security release is published.
-CVE-2026-133781 Build-time Code Execution in @symfony/stimulus-bridge via a Controller Package That Maps Its package.json to a Script
-Build-time Code Execution in @symfony/stimulus-bridge via a Controller Package That Maps Its package.json to a Script
+CVE-2026-133773 Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options
+Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133780 @symfony/stimulus-bridge lazy-controller-loader: arbitrary code execution via unsanitized Stimulus magic comments
-@symfony/stimulus-bridge lazy-controller-loader: arbitrary code execution via unsanitized Stimulus magic comments
+#Twig
+CVE-2026-133772 Sandbox Tag Allow-List Bypass via the Branch of a `guard` Tag That Isn't Selected
+Sandbox Tag Allow-List Bypass via the Branch of a `guard` Tag That Isn't Selected
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133779 XSS in symfony/ux-icons via Attribute Names That Browsers Read Differently: Incomplete Fix for CVE-2026-55877
-XSS in symfony/ux-icons via Attribute Names That Browsers Read Differently: Incomplete Fix for CVE-2026-55877
+#Twig
+CVE-2026-133771 Missing autoescaping for a variable named like a macro import alias of another scope
+Missing autoescaping for a variable named like a macro import alias of another scope
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133778 Live Components Configured With a Custom Route Can Still Be Reached Through the Default Route
-Live Components Configured With a Custom Route Can Still Be Reached Through the Default Route
+#Twig
+CVE-2026-133770 Sandboxed templates can rewrite application-owned `Markup` objects through their constructor
+Sandboxed templates can rewrite application-owned `Markup` objects through their constructor
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133777 XSS in symfony/ux-icons via SVG Content That Browsers Parse as HTML: Incomplete Fix for CVE-2026-55877
-XSS in symfony/ux-icons via SVG Content That Browsers Parse as HTML: Incomplete Fix for CVE-2026-55877
+#Twig
+CVE-2026-133769 Sandbox property allow-list bypass via `html_cva()` variant values
+Sandbox property allow-list bypass via `html_cva()` variant values
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133776 XSS in symfony/ux-icons via Text That Sanitized Icons Contain Unescaped: Incomplete Fix for CVE-2026-55877
-XSS in symfony/ux-icons via Text That Sanitized Icons Contain Unescaped: Incomplete Fix for CVE-2026-55877
+#Twig
+CVE-2026-133768 Sandbox property allow-list bypass via the `join` filter on non-iterable objects
+Sandbox property allow-list bypass via the `join` filter on non-iterable objects
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133775 XSS in symfony/ux-icons via Scripts Nested in SVG Style Elements: Incomplete Fix for CVE-2026-55877
-XSS in symfony/ux-icons via Scripts Nested in SVG Style Elements: Incomplete Fix for CVE-2026-55877
+#Twig
+CVE-2026-133767 Sandbox allow-list and `__toString()` bypass via a dynamic `embed` parent expression
+Sandbox allow-list and `__toString()` bypass via a dynamic `embed` parent expression
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-133774 Authorization bypass in symfony/ux-live-component via an empty batch action request
-Authorization bypass in symfony/ux-live-component via an empty batch action request
+#Twig
+CVE-2026-133766 Sandbox `__toString()` policy bypass via spread arguments
+Sandbox `__toString()` policy bypass via spread arguments
 November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony UX
-CVE-2026-135802 Generated URLs Can Point to a Host Chosen by the Client
-Generated URLs Can Point to a Host Chosen by the Client
-November 4, 2026
+#Twig
+CVE-2026-133765 Sandbox `__toString()` policy bypass via assignment and destructuring expressions
+Sandbox `__toString()` policy bypass via assignment and destructuring expressions
+November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony
-CVE-2026-135801 Path Rules Enforced in Front of PHP Can Be Bypassed by Appending the Path to the Script Name
-Path Rules Enforced in Front of PHP Can Be Bypassed by Appending the Path to the Script Name
-November 4, 2026
+#Twig
+CVE-2026-133764 Sandbox `__toString()` policy bypass via the input of custom tests
+Sandbox `__toString()` policy bypass via the input of custom tests
+November 24, 2026
 </blog/category/security-advisories> #Security Advisories
-#Symfony
+#Twig
 All Blog Posts
 A Week of Symfony
 Case Studies
@@ -77,8 +77,8 @@ Twig
 SensioLabs Blog
 Archives
 Blog Posts RSS
+Check Code Performance in Dev, Test, Staging & Production
 Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
-Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
 Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
 CLOSE
 Search Symfony Docs

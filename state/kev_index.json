@@ -1,8 +1,29 @@
 {
-  "catalogVersion": "2026.11.23",
-  "dateReleased": "2026-11-23T19:43:55.7979Z",
-  "count": 1792,
+  "catalogVersion": "2026.11.24",
+  "dateReleased": "2026-11-24T17:47:46.199Z",
+  "count": 1795,
   "cves": {
+    "CVE-2026-132224": {
+      "dateAdded": "2026-11-24",
+      "dueDate": "2026-11-27",
+      "vendor": "Optimizely",
+      "product": "Web Experimentation",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-131914": {
+      "dateAdded": "2026-11-24",
+      "dueDate": "2026-11-27",
+      "vendor": "Idunno",
+      "product": "AntiCsrf",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-132165": {
+      "dateAdded": "2026-11-24",
+      "dueDate": "2026-11-27",
+      "vendor": "Drupal",
+      "product": "Core",
+      "ransomware": "Unknown"
+    },
     "CVE-2026-133968": {
       "dateAdded": "2026-11-23",
       "dueDate": "2026-11-26",

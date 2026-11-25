@@ -1,0 +1,26 @@
+{
+  "projects": [
+    {
+      "id": "alpha-match",
+      "name": "Alpha-Match",
+      "repo": "Alpha-Match/Alpha-Match",
+      "ref": "main",
+      "status": "error",
+      "reason": "공개 여부 확인 실패"
+    },
+    {
+      "id": "endfield-attendance-android",
+      "name": "endfield-attendance-android",
+      "repo": "sprout1015/endfield-attendance-android",
+      "ref": "main",
+      "status": "disabled"
+    },
+    {
+      "id": "ragdeck",
+      "name": "RAGDeck",
+      "repo": "sprout1015/RAGDeck",
+      "ref": "develop",
+      "status": "disabled"
+    }
+  ]
+}

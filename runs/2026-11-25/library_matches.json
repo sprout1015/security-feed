@@ -1,0 +1,5 @@
+{
+  "status": "skipped",
+  "reason": "inventory/ 아래에 lock 파일이 없음",
+  "services": []
+}

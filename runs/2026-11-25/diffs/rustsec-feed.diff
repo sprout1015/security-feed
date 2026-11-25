@@ -1,0 +1,153 @@
+--- yesterday
++++ 2026-11-25
+@@ -205,4 +205,150 @@
+ Affected versions therefore exposed an unsafe allocation precondition through safe Rust code, violating Rust's soundness guarantees.</p>
+ <p>The upstream repository fixed this in version <code>0.1.2</code> by marking <code>alloc</code> as unsafe and documenting its non-zero-layout requirement.</p>
++<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
++license.
++</p>
++</article>
++</content>
++</entry>
++<entry>
++<title>RUSTSEC-2026-0599: Vulnerability in xmloxide</title>
++<id>https://rustsec.org/advisories/RUSTSEC-2026-0599.html</id>
++<updated>2026-11-24T12:00:00+00:00</updated>
++<category term="denial-of-service"/>
++<link href="https://rustsec.org/advisories/RUSTSEC-2026-0599.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0599: Vulnerability in xmloxide"/>
++<published>2026-11-24T12:00:00+00:00</published>
++<summary xml:lang="en">Stack overflow from unbounded recursion in DTD content-model parsing</summary>
++<content xml:lang="en" type="html">
++<article>
++<span class="floating-menu">
++<a href="https://github.com/RustSec/advisory-db/commits/main/crates/xmloxide/RUSTSEC-2026-0599.md">History</a> ⋅
++<a href="https://github.com/RustSec/advisory-db/edit/main/crates/xmloxide/RUSTSEC-2026-0599.md">Edit</a> ⋅
++<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0599">JSON (OSV)</a>
++</span>
++<header>
++<h1>
++RUSTSEC-2026-0599
++</h1>
++<span class="subtitle">
++<p>Stack overflow from unbounded recursion in DTD content-model parsing</p>
++</span>
++</header>
++<dl>
++<dt id="reported">Reported</dt>
++<dd>
++<time datetime="2026-07-20">
++July 20, 2026
++</time>
++</dd>
++<dt id="issued">Issued</dt>
++<dd>
++<time datetime="2026-11-24">
++November 24, 2026
++</time>
++</dd>
++<dt id="package">Package</dt>
++<dd>
++<a href="/packages/xmloxide.html">xmloxide</a>
++(<a href="https://crates.io/crates/xmloxide">crates.io</a>)
++</dd>
++<dt id="type">Type</dt>
++<dd>
++Vulnerability
++</dd>
++<dt id="categories">Categories</dt>
++<dd>
++<ul>
++<li>
++<a href="/categories/denial-of-service.html">denial-of-service</a>
++</li>
++</ul>
++</dd>
++<dt id="keywords">Keywords</dt>
++<dd>
++<a href="/keywords/dtd.html">#dtd</a>
++<a href="/keywords/recursion.html">#recursion</a>
++<a href="/keywords/stack-overflow.html">#stack-overflow</a>
++<a href="/keywords/xml.html">#xml</a>
++</dd>
++<dt id="aliases">Aliases</dt>
++<dd>
++<ul>
++<li>
++<a href="https://www.cve.org/CVERecord?id=CVE-2026-61727">CVE-2026-61727</a>
++</li>
++<li>
++<a href="https://github.com/advisories/GHSA-7jmw-29gc-ffx4">GHSA-7jmw-29gc-ffx4</a>
++</li>
++</ul>
++</dd>
++<dt id="details">References</dt>
++<dd>
++<ul>
++<li>
++<a href="https://github.com/jonwiggins/xmloxide/commit/d606e11ddaf033272d85c5422addd91b79788aba">
++https://github.com/jonwiggins/xmloxide/commit/d606e11ddaf033272d85c5422addd91b79788aba
++</a>
++</li>
++</ul>
++</dd>
++<dt id="cvss_score">CVSS Score</dt>
++<dd>7.5 <span class="tag high">
++HIGH
++</span>
++</dd>
++<dt id="cvss_details">CVSS Details</dt>
++<dd>
++<dl>
++<dt>Attack Vector</dt>
++<dd>Network</dd>
++<dt>Attack Complexity</dt>
++<dd>Low</dd>
++<dt>Privileges Required</dt>
++<dd>None</dd>
++<dt>User Interaction</dt>
++<dd>None</dd>
++<dt>Scope</dt>
++<dd>Unchanged</dd>
++<dt>Confidentiality Impact</dt>
++<dd>None</dd>
++<dt>Integrity Impact</dt>
++<dd>None</dd>
++<dt>Availability Impact</dt>
++<dd>High</dd>
++</dl>
++</dd>
++<dt id="cvss">CVSS Vector</dt>
++<dd>
++<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</a>
++</dd>
++<dt id="patched">Patched</dt>
++<dd>
++<ul>
++<li>
++<code>&#62;=0.4.4</code>
++</li>
++</ul>
++</dd>
++</dl>
++<h3 id="description">Description</h3>
++<p>
++<code>xmloxide</code>'s DTD parser recursed without a depth bound when parsing the
++parenthesised content model of an <code>&lt;!ELEMENT&gt;</code> declaration. A small document
++whose internal DTD subset contains many nested <code>(</code> drives unbounded mutual
++recursion between <code>DtdParser::parse_content_particle</code> and
++<code>DtdParser::parse_content_spec_group</code>, exhausting the stack and aborting the
++process.</p>
++<p>The internal DTD subset is parsed during ordinary document parsing, so this is
++reachable through the default parse entry points (for example
++<code>Document::parse_str</code>) on any input that carries a <code>DOCTYPE</code>. The existing
++<code>ParseOptions::max_depth</code> limit does not prevent it: it bounds element nesting,
++not DTD content-model nesting. A stack overflow cannot be caught as an error,
++so any process that parses attacker-controlled XML with <code>xmloxide</code> can be
++crashed with a small payload.</p>
++<p>Fixed in 0.4.4: a parenthesis-nesting depth counter is threaded through the
++content-model parser, and nesting deeper than 256 levels is rejected with a
++normal <code>ParseError</code>. Well-formed DTDs are unaffected.</p>
++<p>Applications that cannot upgrade should reject or strip the <code>DOCTYPE</code> from
++untrusted input before parsing.</p>
+ <p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+ license.
