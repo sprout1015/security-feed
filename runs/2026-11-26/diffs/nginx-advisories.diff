@@ -1,0 +1,401 @@
+--- yesterday
++++ 2026-11-26
+@@ -20,5 +20,4 @@
+ <security>
+ <item name="Excessive CPU usage in TLS 1.3 with ssl_early_data"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000163947"
+ cve="2026-132779"
+@@ -27,5 +26,4 @@
+ </item>
+ <item name="Use-after-free during response processing in resolver"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000163925"
+ cve="2026-123634"
+@@ -34,5 +32,4 @@
+ </item>
+ <item name="Memory corruption in HTTP/2 flow control"
+-severity="major"
+ advisory="https://my.f5.com/manage/s/article/K000163926"
+ cve="2026-123007"
+@@ -41,5 +38,4 @@
+ </item>
+ <item name="Use-after-free in HTTP/3"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000163927"
+ cve="2026-121810"
+@@ -48,5 +44,4 @@
+ </item>
+ <item name="Use-after-free in HTTP/2"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000163928"
+ cve="2026-123633"
+@@ -55,5 +50,4 @@
+ </item>
+ <item name="Infinite loop while reading client request body over TLS 1.3"
+-severity="major"
+ advisory="https://my.f5.com/manage/s/article/K000163930"
+ cve="2026-118899"
+@@ -62,5 +56,4 @@
+ </item>
+ <item name="Use-after-free in mail proxy module"
+-severity="major"
+ advisory="https://my.f5.com/manage/s/article/K000163931"
+ cve="2026-113425"
+@@ -69,5 +62,4 @@
+ </item>
+ <item name="NULL pointer dereference when using PROXY protocol version 2"
+-severity="minor"
+ advisory="https://my.f5.com/manage/s/article/K000163932"
+ cve="2026-120993"
+@@ -76,5 +68,4 @@
+ </item>
+ <item name="Buffer overflow when using alias with try_files"
+-severity="minor"
+ advisory="https://my.f5.com/manage/s/article/K000163933"
+ cve="2026-125283"
+@@ -83,5 +74,4 @@
+ </item>
+ <item name="SNI bypass when using client certificate validation in stream"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000163934"
+ cve="2026-120967"
+@@ -90,5 +80,4 @@
+ </item>
+ <item name="Insufficient validation in stream ssl_preread module"
+-severity="minor"
+ advisory="https://my.f5.com/manage/s/article/K000163935"
+ cve="2026-123640"
+@@ -97,5 +86,4 @@
+ </item>
+ <item name="Buffer overflow when using alias with rewrite"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162416"
+ cve="2026-15176"
+@@ -104,5 +92,4 @@
+ </item>
+ <item name="Buffer overflow in script evaluation"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162607"
+ cve="2026-93479"
+@@ -111,5 +98,4 @@
+ </item>
+ <item name="Request body injection in HTTP/3"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162613"
+ cve="2026-95101"
+@@ -118,5 +104,4 @@
+ </item>
+ <item name="Session forgery when using TLS session tickets"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162606"
+ cve="2026-97629"
+@@ -125,5 +110,4 @@
+ </item>
+ <item name="Use-after-free when using asynchronous file I/O (AIO)"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162608"
+ cve="2026-97205"
+@@ -132,5 +116,4 @@
+ </item>
+ <item name="Buffer overflow when using ngx_http_v3_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162604"
+ cve="2026-90439"
+@@ -139,5 +122,4 @@
+ </item>
+ <item name="Buffer overflow when using map and regex"
+-severity="major"
+ advisory="https://my.f5.com/manage/s/article/K000162097"
+ cve="2026-42533"
+@@ -146,5 +128,4 @@
+ </item>
+ <item name="Memory disclosure when using ngx_http_slice_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162100"
+ cve="2026-60005"
+@@ -153,5 +134,4 @@
+ </item>
+ <item name="Use-after-free when using ngx_http_ssi_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000162098"
+ cve="2026-56434"
+@@ -160,5 +140,4 @@
+ </item>
+ <item name="Use-after-free in HTTP/3"
+-severity="major"
+ advisory="https://my.f5.com/manage/s/article/K000161616"
+ cve="2026-42530"
+@@ -167,5 +146,4 @@
+ </item>
+ <item name="Buffer overflow in the ngx_http_proxy_v2_module and ngx_http_grpc_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161584"
+ cve="2026-42055"
+@@ -174,5 +152,4 @@
+ </item>
+ <item name="Buffer overread in the ngx_http_charset_module"
+-severity="low"
+ advisory="https://my.f5.com/manage/s/article/K000161585"
+ cve="2026-48142"
+@@ -181,5 +158,4 @@
+ </item>
+ <item name="Buffer overflow in the ngx_http_rewrite_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161377"
+ cve="2026-9256"
+@@ -188,5 +164,4 @@
+ </item>
+ <item name="HTTP/2 request injection in the ngx_http_proxy_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161131"
+ cve="2026-42926"
+@@ -195,5 +170,4 @@
+ </item>
+ <item name="Buffer overflow in the ngx_http_rewrite_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161019"
+ cve="2026-42945"
+@@ -202,5 +176,4 @@
+ </item>
+ <item name="Buffer overread in the ngx_http_scgi_module and ngx_http_uwsgi_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161027"
+ cve="2026-42946"
+@@ -209,5 +182,4 @@
+ </item>
+ <item name="Buffer overread in the ngx_http_charset_module"
+-severity="low"
+ advisory="https://my.f5.com/manage/s/article/K000161028"
+ cve="2026-42934"
+@@ -216,5 +188,4 @@
+ </item>
+ <item name="HTTP/3 address spoofing"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161068"
+ cve="2026-40460"
+@@ -223,5 +194,4 @@
+ </item>
+ <item name="resolver use-after-free in OCSP"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000161021"
+ cve="2026-40701"
+@@ -230,5 +200,4 @@
+ </item>
+ <item name="Buffer overflow in ngx_http_dav_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000160382"
+ cve="2026-27654"
+@@ -237,5 +206,4 @@
+ </item>
+ <item name="Buffer overflow in the ngx_http_mp4_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000160364"
+ cve="2026-27784"
+@@ -244,5 +212,4 @@
+ </item>
+ <item name="Buffer overflow in the ngx_http_mp4_module"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000160366"
+ cve="2026-32647"
+@@ -251,5 +218,4 @@
+ </item>
+ <item name="NULL pointer dereference while using CRAM-MD5 or APOP"
+-severity="low"
+ advisory="https://my.f5.com/manage/s/article/K000160383"
+ cve="2026-27651"
+@@ -258,5 +224,4 @@
+ </item>
+ <item name="Injection in auth_http and XCLIENT"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000160367"
+ cve="2026-28753"
+@@ -265,5 +230,4 @@
+ </item>
+ <item name="OCSP result bypass in stream"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000160368"
+ cve="2026-28755"
+@@ -272,5 +236,4 @@
+ </item>
+ <item name="SSL upstream injection"
+-severity="medium"
+ advisory="https://my.f5.com/manage/s/article/K000159824"
+ cve="2026-1642"
+@@ -279,5 +242,4 @@
+ </item>
+ <item name="Buffer overread in the ngx_mail_smtp_module"
+-severity="low"
+ advisory="https://my.f5.com/manage/s/article/K000152786"
+ cve="2025-53859"
+@@ -286,5 +248,4 @@
+ </item>
+ <item name="SSL session reuse vulnerability"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2025/NYEUJX7NCBCGJGXDFVXNMAAMJDFSE45G.html"
+ cve="2025-23419"
+@@ -293,5 +254,4 @@
+ </item>
+ <item name="Buffer overread in the ngx_http_mp4_module"
+-severity="low"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/UUOCLLONPR6244YQYU65PO5LB7JDYCWM.html"
+ cve="2024-7347"
+@@ -301,5 +261,4 @@
+ </item>
+ <item name="Buffer overwrite in HTTP/3"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/GMY32CSHFH6VFTN76HJNX7WNEX4RLHF6.html"
+ cve="2024-32760"
+@@ -308,5 +267,4 @@
+ </item>
+ <item name="Stack overflow and use-after-free in HTTP/3"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/GMY32CSHFH6VFTN76HJNX7WNEX4RLHF6.html"
+ cve="2024-31079"
+@@ -315,5 +273,4 @@
+ </item>
+ <item name="NULL pointer dereference in HTTP/3"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/GMY32CSHFH6VFTN76HJNX7WNEX4RLHF6.html"
+ cve="2024-35200"
+@@ -322,5 +279,4 @@
+ </item>
+ <item name="Memory disclosure in HTTP/3"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/GMY32CSHFH6VFTN76HJNX7WNEX4RLHF6.html"
+ cve="2024-34161"
+@@ -329,5 +285,4 @@
+ </item>
+ <item name="NULL pointer dereference in HTTP/3"
+-severity="major"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/NW6MNW34VZ6HDIHH5YFBIJYZJN7FGNAV.html"
+ cve="2024-24989"
+@@ -336,5 +291,4 @@
+ </item>
+ <item name="Use-after-free in HTTP/3"
+-severity="major"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2024/NW6MNW34VZ6HDIHH5YFBIJYZJN7FGNAV.html"
+ cve="2024-24990"
+@@ -343,5 +297,4 @@
+ </item>
+ <item name="Memory corruption in the ngx_http_mp4_module"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2022/RBRRON6PYBJJM2XIAPQBFBVLR4Q6IHRA.html"
+ cve="2022-41741"
+@@ -351,5 +304,4 @@
+ </item>
+ <item name="Memory disclosure in the ngx_http_mp4_module"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2022/RBRRON6PYBJJM2XIAPQBFBVLR4Q6IHRA.html"
+ cve="2022-41742"
+@@ -359,5 +311,4 @@
+ </item>
+ <item name="1-byte memory overwrite in resolver"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2021/000300.html"
+ cve="2021-23017"
+@@ -367,5 +318,4 @@
+ </item>
+ <item name="Excessive CPU usage in HTTP/2 with small window updates"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2019/000249.html"
+ cve="2019-9511"
+@@ -374,5 +324,4 @@
+ </item>
+ <item name="Excessive CPU usage in HTTP/2 with priority changes"
+-severity="low"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2019/000249.html"
+ cve="2019-9513"
+@@ -381,5 +330,4 @@
+ </item>
+ <item name="Excessive memory usage in HTTP/2 with zero length headers"
+-severity="low"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2019/000249.html"
+ cve="2019-9516"
+@@ -388,5 +336,4 @@
+ </item>
+ <item name="Excessive memory usage in HTTP/2"
+-severity="low"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2018/000220.html"
+ cve="2018-16843"
+@@ -395,5 +342,4 @@
+ </item>
+ <item name="Excessive CPU usage in HTTP/2"
+-severity="low"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2018/000220.html"
+ cve="2018-16844"
+@@ -402,5 +348,4 @@
+ </item>
+ <item name="Memory disclosure in the ngx_http_mp4_module"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2018/000221.html"
+ cve="2018-16845"
+@@ -410,5 +355,4 @@
+ </item>
+ <item name="Integer overflow in the range filter"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2017/000200.html"
+ cve="2017-7529"
+@@ -418,5 +362,4 @@
+ </item>
+ <item name="NULL pointer dereference while writing client request body"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2016/000179.html"
+ cve="2016-4450"
+@@ -427,5 +370,4 @@
+ </item>
+ <item name="Invalid pointer dereference in resolver"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2016/000169.html"
+ cve="2016-0742"
+@@ -433,5 +375,4 @@
+ vulnerable="0.6.18-1.9.9" />
+ <item name="Use-after-free during CNAME response processing in resolver"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2016/000169.html"
+ cve="2016-0746"
+@@ -439,5 +380,4 @@
+ vulnerable="0.6.18-1.9.9" />
+ <item name="Insufficient limits of CNAME resolution in resolver"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2016/000169.html"
+ cve="2016-0747"
+@@ -445,5 +385,4 @@
+ vulnerable="0.6.18-1.9.9" />
+ <item name="SSL session reuse vulnerability"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html"
+ cve="2014-3616"
+@@ -452,5 +391,4 @@
+ </item>
+ <item name="STARTTLS command injection"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html"
+ cve="2014-3556"
+@@ -460,5 +398,4 @@
+ </item>
+ <item name="SPDY heap buffer overflow"
+-severity="major"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html"
+ cve="2014-0133"
+@@ -468,5 +405,4 @@
+ </item>
+ <item name="SPDY memory corruption"
+-severity="major"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html"
+ cve="2014-0088"
+@@ -476,5 +412,4 @@
+ </item>
+ <item name="Request line parsing vulnerability"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html"
+ cve="2013-4547"
+@@ -484,5 +419,4 @@
+ </item>
+ <item name="Memory disclosure with specially crafted HTTP backend responses"
+-severity="medium"
+ advisory="https://mailman.nginx.org/pipermail/nginx-announce/2013/000114.html"
+ cve="2013-2070"
+@@ -493,5 +427,4 @@
+ </item>
+... (71줄 생략. 전체 텍스트: state/latest/nginx-advisories.txt)

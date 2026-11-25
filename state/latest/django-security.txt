@@ -9,10 +9,6 @@ Toggle theme (current theme: auto)
 Toggle theme (current theme: light)
 Toggle theme (current theme: dark)
 Toggle Light / Dark / Auto color theme
-Read the Docs supports Django
-Built with Django, and hosting documentation for open and closed source projects for 15 years.
-Get live previews for every docs PR →
-Sponsor the Django Software Foundation
 Documentation
 Getting Help
 Language: en
@@ -1137,7 +1133,7 @@ Django 0.95 (patch)
 Back to Top
 Additional Information
 Support Django!
-getup8 donated to the Django Software Foundation to support Django development. Donate today!
+Melvyn Sopacua donated to the Django Software Foundation to support Django development. Donate today!
 Contents
 Archive of security issues
 <#issues-under-django-s-security-process> Issues under Django’s security process

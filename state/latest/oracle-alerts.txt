@@ -42,7 +42,7 @@ The Critical Patch Updates released since 2021 are listed in the following table
 | Critical Patch Update
 | Latest Version/Date
 | </security-alerts/cpuoct2026.html> Critical Patch Update - October 2026
-| Rev 3, 4 November 2026
+| Rev 4, 25 November 2026
 | </security-alerts/cpujul2026.html> Critical Patch Update - July 2026
 | Rev 7, 20 August 2026
 | </security-alerts/cpuapr2026.html> Critical Patch Update - April 2026

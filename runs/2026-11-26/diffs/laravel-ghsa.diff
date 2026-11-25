@@ -1,0 +1,44 @@
+--- yesterday
++++ 2026-11-26
+@@ -1,3 +1,41 @@
+ [
++{
++"cve_id": null,
++"cvss": {
++"score": 7.5,
++"vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
++},
++"cwe_ids": [
++"CWE-770"
++],
++"description": "### Impact\r\n\r\nThe `multiple_of` validation rule, and the `gt`, `gte`, `lt` and `lte` rules when they compare against another numeric field, expand numeric input using arbitrary-precision arithmetic without bounding its exponent. A request containing a very small or very large exponent value, such as one in scientific notation, can cause excessive memory and CPU use and may exhaust PHP's memory limit. Applications are affected when these rules are applied to an unbounded numeric field, with no preceding bounding rule such as `min`, `max` or `between` combined with `bail`. Comparisons against literal numbers, and the `min`, `max`, `between` and `size` rules, are not affected.\r\n\r\n### Patches\r\n\r\nThe fix applies the framework's existing exponent range guard to these rules. It has been merged to the 12.x and 13.x branches: https://github.com/laravel/framework/pull/62589 and https://github.com/laravel/framework/pull/62590.\r\n\r\n### Workarounds\r\n\r\nBound the value before the affected rule and stop on failure, for example `bail|numeric|min:0|max:100|multiple_of:2`. Setting a low PHP memory limit can also make PHP stop early with a fatal error.",
++"ghsa_id": "GHSA-c25c-x5r7-2v5m",
++"html_url": "https://github.com/laravel/framework/security/advisories/GHSA-c25c-x5r7-2v5m",
++"published_at": "2026-11-25T09:13:14Z",
++"severity": "high",
++"summary": "Numeric validation can exhaust resources via extreme exponent input",
++"updated_at": "2026-11-25T10:00:36Z",
++"vulnerabilities": [
++{
++"package": {
++"ecosystem": "composer",
++"name": "laravel/framework"
++},
++"patched_versions": ">=12.74.0",
++"vulnerable_functions": [],
++"vulnerable_version_range": "<12.74.0"
++},
++{
++"package": {
++"ecosystem": "composer",
++"name": "laravel/framework"
++},
++"patched_versions": ">=13.44.1",
++"vulnerable_functions": [],
++"vulnerable_version_range": "<13.44.1"
++}
++],
++"withdrawn_at": null
++},
+ {
+ "cve_id": null,

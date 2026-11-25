@@ -1,0 +1,91 @@
+{
+  "status": "ok",
+  "since_utc": "2026-11-25T00:59:10.732Z",
+  "until_utc": "2026-11-25T22:38:04.707Z",
+  "new_cves": 592,
+  "fetch_errors": 0,
+  "watch_matched": 9,
+  "below_threshold": 9,
+  "thresholds": {
+    "cvss": 9.0,
+    "inventory_cvss": 7.0,
+    "inventory_unscored": true,
+    "epss": 0.5
+  },
+  "epss_status": "ok",
+  "hits": [],
+  "matched_below_threshold": [
+    {
+      "cve": "CVE-2026-99805",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "net: limit priority VLAN untag depth"
+    },
+    {
+      "cve": "CVE-2026-99806",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: L2CAP: Reject mode changes on connected channels"
+    },
+    {
+      "cve": "CVE-2026-99807",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: L2CAP: Reject invalid TxWindow in configuration requests"
+    },
+    {
+      "cve": "CVE-2026-99808",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "Bluetooth: L2CAP: Use default TxWindow for zero socket option"
+    },
+    {
+      "cve": "CVE-2026-99809",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vfio/platform: prevent read-only region mappings from becoming writable"
+    },
+    {
+      "cve": "CVE-2026-99810",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vfio/fsl-mc: prevent read-only region mappings from becoming writable"
+    },
+    {
+      "cve": "CVE-2026-99811",
+      "watch": [
+        "Linux kernel"
+      ],
+      "cvss": null,
+      "title": "vfio/cdx: prevent read-only region mappings from becoming writable"
+    },
+    {
+      "cve": "CVE-2026-135124",
+      "watch": [
+        "컨테이너 런타임"
+      ],
+      "cvss": 4.1,
+      "title": "Docker Engine race in docker cp lets a container write through read-only bind mounts"
+    },
+    {
+      "cve": "CVE-2026-135844",
+      "watch": [
+        "컨테이너 런타임"
+      ],
+      "cvss": 5.6,
+      "title": "Incomplete fix for unbounded user and group file reads in moby/sys/user"
+    }
+  ]
+}
