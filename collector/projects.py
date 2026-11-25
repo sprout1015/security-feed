@@ -20,15 +20,28 @@ INIT_SCRIPT = ROOT / "collector" / "lock-all.init.gradle"
 
 
 def _is_public(repo: str) -> bool | None:
-    req = urllib.request.Request(f"https://api.github.com/repos/{repo}",
-                                 headers={"Accept": "application/vnd.github+json"})  # 토큰 없이: 공개일 때만 200
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return not json.load(r).get("private", True)
-    except urllib.error.HTTPError as e:
-        return False if e.code == 404 else None
-    except Exception:
-        return None
+    # 토큰 없는 호출은 GitHub Actions 러너 IP 공유로 시간당 60회 제한에 자주 걸려 403이 난다(11/25).
+    # Actions 의 GITHUB_TOKEN 은 이 저장소 전용이라 다른 비공개 저장소는 여전히 404 → 비공개로 처리된다.
+    headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
+    if os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+    for attempt in range(3):
+        req = urllib.request.Request(f"https://api.github.com/repos/{repo}", headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return not json.load(r).get("private", True)
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return False
+            if e.code in (403, 429) or e.code >= 500:
+                import time
+                time.sleep(5 * (attempt + 1))
+                continue
+            return None
+        except Exception:
+            import time
+            time.sleep(5 * (attempt + 1))
+    return None
 
 
 def _run(cmd: list[str], cwd, timeout: int) -> subprocess.CompletedProcess:
