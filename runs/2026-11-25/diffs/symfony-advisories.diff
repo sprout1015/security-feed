@@ -1,9 +1,19 @@
 --- yesterday
 +++ 2026-11-25
-@@ -79,5 +79,5 @@
+@@ -1,5 +1,5 @@
+ Skip to content
+ Black Friday 2026 deals
+-30% off Symfony and Twig certifications
++40% off SymfonyCasts subscriptions and renewals
+ (ends in 5 days)
+ « Security Advisories » blog posts
+@@ -78,7 +78,7 @@
+ Archives
  Blog Posts RSS
- Check Code Performance in Dev, Test, Staging & Production
--Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
-+Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
- Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
+-Check Code Performance in Dev, Test, Staging & Production
++Code consumes server resources. Blackfire tells you how
++Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
+ Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
+-Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
  CLOSE
+ Search Symfony Docs

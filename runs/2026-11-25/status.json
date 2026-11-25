@@ -1,11 +1,12 @@
 {
   "date": "2026-11-25",
-  "finished_at": "2026-11-25T09:57:38+09:00",
+  "finished_at": "2026-11-25T10:11:31+09:00",
   "step_errors": {},
   "sources": {
     "total": 32,
     "ok": 32,
-    "changed": 3,
+    "changed": 1,
+    "noise": 3,
     "error": 0
   },
   "kev": {
@@ -14,7 +15,7 @@
   },
   "cve": {
     "status": "ok",
-    "new": 2,
+    "new": 1,
     "hits": 0
   },
   "libraries": {
@@ -28,7 +29,7 @@
   },
   "today": {
     "quiet": false,
-    "changed_sources": 3,
+    "changed_sources": 1,
     "new_kev": [
       "CVE-2026-132224",
       "CVE-2026-131914",
