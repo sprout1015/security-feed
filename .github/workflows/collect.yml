@@ -73,5 +73,10 @@ jobs:
             echo "no changes"
           else
             git commit -m "collect: $(TZ=Asia/Seoul date +%F)"
-            git push
+            # 실행 중 main에 다른 커밋이 올라오면(11/26) 바로 push가 거부된다. 결과(state/runs)만 바뀌므로 rebase 후 재시도.
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push && exit 0
+              sleep $((i * 5))
+            done
+            exit 1
           fi
