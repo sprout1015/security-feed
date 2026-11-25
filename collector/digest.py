@@ -77,6 +77,21 @@ def build(step_errors: dict) -> str:
     errors = [s for s in sources if s.get("status") == "error"]
     if errors:
         L += ["### 수집 실패", ""] + [f"- {s['name']} (`{s['id']}`): {s.get('error')}" for s in errors] + [""]
+    det = (load_json(out / "cve_details.json", {}) or {}).get("cves", {})
+    if det:
+        L += ["### 오늘 처음 본 CVE — 공식 레코드 요약 (cve_details.json, 벤더·CVE 상세 페이지를 따로 열지 않는다)", ""]
+        for cid, d in det.items():
+            if d.get("error"):
+                L.append(f"- {cid}: 레코드 없음/조회 실패 ({d['error'][:60]}) — 원문 공지 내용으로만 판단")
+                continue
+            sc = d.get("cvss") or {}
+            L.append(f"- **{cid}** {sc.get('severity') or '점수 없음'} {sc.get('score') or ''} · {d.get('title') or d.get('description', '')[:80]}"
+                     f" · 영향: {'; '.join(d.get('affected_versions') or []) or '미기재'}")
+        L.append("")
+    noise = [s for s in sources if s.get("status") == "noise"]
+    if noise:
+        L += ["### 형식만 바뀜 (시각·배너 등. 판단 불필요, 읽지 않는다)", "",
+              ", ".join(f"{s['name']} (`{s['id']}`)" for s in noise), ""]
     unchanged = [s["name"] for s in sources if s.get("status") == "unchanged"]
     if unchanged:
         L += ["### 변화 없음", "", ", ".join(unchanged), ""]
@@ -112,7 +127,7 @@ def build(step_errors: dict) -> str:
             L += [title, ""]
             for h in rows:
                 L.append(f"- **{h['cve']}** [{', '.join(h['watch'])}] {' · '.join(h['reasons'])} · {h.get('title') or (h.get('description') or '')[:120]}")
-                L.append(f"  - 영향 제품: {'; '.join(h['affected'])} · {h['link']}")
+                L.append(f"  - 영향 범위(공식 레코드): {'; '.join(h.get('affected_versions') or h['affected'])} · {h['link']}")
             L.append("")
         below = cve.get("matched_below_threshold") or []
         if below:
@@ -186,7 +201,7 @@ def build(step_errors: dict) -> str:
     save_json(out / "status.json", {
         "date": date, "finished_at": now_kst().isoformat(timespec="seconds"),
         "step_errors": step_errors,
-        "sources": {k: src.get(k) for k in ("total", "ok", "changed", "error")},
+        "sources": {k: src.get(k) for k in ("total", "ok", "changed", "noise", "error")},
         "kev": {"status": kev.get("status"), "recent": len(kev.get("recent", []))},
         "cve": {"status": cve.get("status"), "new": cve.get("new_cves"), "hits": len(cve.get("hits", []))},
         "libraries": {"status": lib.get("status"), "findings": lib.get("total_findings", 0)},

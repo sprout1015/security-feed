@@ -69,6 +69,54 @@ def _scores(cve: dict) -> dict:
     return best or {}
 
 
+def _affected_versions(cna: dict, limit: int = 6) -> list[str]:
+    """CVE 레코드의 affected[] 를 '벤더/제품: 범위' 문자열로 요약 (루틴이 레코드를 다시 받지 않게)."""
+    out = []
+    for a in cna.get("affected", []) or []:
+        name = f"{a.get('vendor') or ''}/{a.get('product') or a.get('packageName') or ''}".strip("/")
+        parts = []
+        for v in a.get("versions", []) or []:
+            if v.get("status") not in (None, "affected"):
+                continue
+            ver = v.get("version") or ""
+            if v.get("lessThan"):
+                parts.append(f"{ver} ~ <{v['lessThan']}" if ver not in ("", "0", "*") else f"<{v['lessThan']}")
+            elif v.get("lessThanOrEqual"):
+                parts.append(f"{ver} ~ <={v['lessThanOrEqual']}" if ver not in ("", "0", "*") else f"<={v['lessThanOrEqual']}")
+            elif ver:
+                parts.append(ver)
+        if a.get("defaultStatus") == "affected" and not parts:
+            parts.append("전 버전(기본값 affected)")
+        out.append(f"{name}: {', '.join(parts[:8]) or '범위 미기재'}")
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _cve_record_url(cid: str) -> str:
+    _, year, num = cid.split("-")
+    return f"https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/{year}/{int(num) // 1000}xxx/{cid}.json"
+
+
+def cve_details(ids: list[str], limit: int = 60) -> dict:
+    """오늘 공식 소스 diff에서 처음 본 CVE의 공식 레코드 요약. 루틴 환경에서는 CVE·벤더 상세 페이지가 막혀 있어 미리 받아 둔다."""
+    ids = sorted(set(ids))[:limit]
+
+    def get(cid):
+        try:
+            rec = json.loads(http_get(_cve_record_url(cid), timeout=30, retries=1))
+        except Exception as ex:
+            return cid, {"error": str(ex)[:120]}
+        cna = rec.get("containers", {}).get("cna", {})
+        desc = next((d.get("value") for d in cna.get("descriptions", []) if d.get("lang", "").startswith("en")), "")
+        return cid, {"state": rec.get("cveMetadata", {}).get("state"), "title": cna.get("title"),
+                     "cvss": _scores(rec), "affected_versions": _affected_versions(cna),
+                     "description": (desc or "")[:300]}
+
+    with cf.ThreadPoolExecutor(max_workers=8) as pool:
+        return dict(pool.map(get, ids))
+
+
 def _epss(cves: list[str]) -> dict:
     out = {}
     for i in range(0, len(cves), 80):
@@ -136,7 +184,7 @@ def cve_layer(watch: dict, kev_index: dict) -> dict:
         candidates.append({
             "cve": cid, "published": rec.get("cveMetadata", {}).get("datePublished"),
             "assigner": rec.get("cveMetadata", {}).get("assignerShortName"),
-            "affected": prods[:5], "watch": sorted(labels), "watch_group": sorted(groups),
+            "affected": prods[:5], "affected_versions": _affected_versions(cna), "watch": sorted(labels), "watch_group": sorted(groups),
             "cvss": _scores(rec), "kev": cid in kev_index, "title": cna.get("title"),
             "description": (desc or "")[:500],
             "link": f"https://www.cve.org/CVERecord?id={cid}",
@@ -190,6 +238,13 @@ def run() -> dict:
     kev_index = (load_json(KEV_INDEX_PATH, {}) or {}).get("cves", {})
     cve = cve_layer(watch, kev_index)
     save_json(out / "cve_radar.json", cve)
+    # 공식 소스(벤더 공지)에서 오늘 처음 본 CVE의 공식 레코드 요약 → runs/D/cve_details.json
+    src = load_json(out / "sources.json", {}) or {}
+    new_ids = [i for s in src.get("sources", []) if s.get("status") in ("changed", "first")
+               for i in s.get("new_ids", []) if i.startswith("CVE-")]
+    radar_ids = {h["cve"] for h in cve.get("hits", [])}
+    details = cve_details([i for i in new_ids if i not in radar_ids])
+    save_json(out / "cve_details.json", {"count": len(details), "cves": details})
     return {"kev": kev, "cve": cve}
 
 

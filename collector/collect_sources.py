@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import difflib
+import re
 import hashlib
 import json
 import os
@@ -19,6 +20,23 @@ LATEST = STATE / "latest"
 SEEN_PATH = STATE / "seen_ids.json"
 MAX_DIFF_LINES = 400
 EXT = {"html": "html", "xml": "xml", "rss": "xml", "json": "json", "github_advisories": "json"}
+
+
+# 내용 없는 변경 판별: 바뀐 줄이 전부 시각 표시이거나, 식별자·보안 낱말·버전 번호가 없는 문구(배너 등)면 "noise".
+_TIMESTAMP = re.compile(r"(lastBuildDate|pubDate|updated_at|last_updated|lastModified|dateModified|generated_at|\"updated\"|^Date:|Last updated|최종 수정)", re.I)
+_SIGNAL = re.compile(r"(CVE-\d{4}-\d+|GHSA-|RUSTSEC-|GO-\d{4}-|vulnerab|security|advisory|exploit|patch|fix|release|update|보안|취약|\b\d+\.\d+(\.\d+)?\b)", re.I)
+
+
+def _is_noise(changed_lines: list[str]) -> bool:
+    if not changed_lines:
+        return True
+    for ln in changed_lines:
+        body = ln.strip()
+        if not body or _TIMESTAMP.search(body):
+            continue
+        if _SIGNAL.search(body):
+            return False
+    return True
 
 
 def _fetch(src: dict) -> bytes:
@@ -107,6 +125,8 @@ def collect() -> dict:
             added = [ln[1:] for ln in diff if ln.startswith("+") and not ln.startswith("+++")]
             removed = [ln for ln in diff if ln.startswith("-") and not ln.startswith("---")]
             entry.update(added_lines=len(added), removed_lines=len(removed))
+            if _is_noise(added + [r[1:] for r in removed]) and not new_ids:
+                entry["status"] = "noise"  # 시각·배너만 바뀜. diff는 남기되 '바뀐 소스'로 세지 않는다
             diff_dir.mkdir(parents=True, exist_ok=True)
             body = diff[:MAX_DIFF_LINES]
             if len(diff) > MAX_DIFF_LINES:
@@ -122,6 +142,7 @@ def collect() -> dict:
         "total": len(sources),
         "ok": sum(1 for r in report if r["status"] != "error"),
         "changed": sum(1 for r in report if r["status"] == "changed"),
+        "noise": sum(1 for r in report if r["status"] == "noise"),
         "error": sum(1 for r in report if r["status"] == "error"),
         "sources": report,
     }
