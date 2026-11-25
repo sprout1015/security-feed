@@ -11,8 +11,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
-  security-events: read
+  contents: write   # runs/·state/ 결과 커밋에만 필요 (다른 권한 없음)
 
 concurrency:
   group: collect-security-feed
