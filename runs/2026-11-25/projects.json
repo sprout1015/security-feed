@@ -5,8 +5,25 @@
       "name": "Alpha-Match",
       "repo": "Alpha-Match/Alpha-Match",
       "ref": "main",
-      "status": "error",
-      "reason": "공개 여부 확인 실패"
+      "commit": "5f73a698f2ca220982aae1b9b389f8ef3d2058e1",
+      "status": "ok",
+      "lockfiles": [
+        "Frontend/Front-Server/package-lock.json",
+        "Demo-Python/requirements.txt"
+      ],
+      "missing": [],
+      "gradle": [
+        {
+          "path": "Backend/Api-Server",
+          "ok": true,
+          "lockfiles": 1
+        },
+        {
+          "path": "Backend/Batch-Server",
+          "ok": true,
+          "lockfiles": 1
+        }
+      ]
     },
     {
       "id": "endfield-attendance-android",
