@@ -154,15 +154,19 @@ def run() -> dict:
         return result
 
     by_service: dict[str, dict] = {}
+    dep_index: dict[str, dict] = {}  # 서비스별 실제 의존성(전이 포함) 이름→버전. 루틴이 "이 하위 모듈을 정말 쓰는가"를 jq 한 번으로 확인한다
     for res in data.get("results", []) or []:
         path = (res.get("source") or {}).get("path", "")
         rel = os.path.relpath(path, INVENTORY) if path else "?"
         service = rel.split(os.sep)[0]
         svc = by_service.setdefault(service, {"service": service, "lockfiles": set(), "packages": 0, "findings": []})
+        names = dep_index.setdefault(service, {})
         svc["lockfiles"].add(rel)
         svc["packages"] += len(res.get("packages", []) or [])
         for pkg in res.get("packages", []) or []:
             p = pkg.get("package") or {}
+            if p.get("name"):
+                names.setdefault(p["name"], set()).add(p.get("version") or "")
             groups = pkg.get("groups") or []
             for v in pkg.get("vulnerabilities", []) or []:
                 svc["findings"].append({
@@ -188,6 +192,9 @@ def run() -> dict:
     result = {"status": "ok", "scanned_lockfiles": len(lockfiles),
               "total_findings": sum(s["count"] for s in services_out), "services": services_out}
     save_json(out / "library_matches.json", result)
+    save_json(out / "dependency_index.json", {
+        "note": "공개 프로젝트 lock 파일에 실제로 들어 있는 패키지(전이 의존성 포함). 이름에 없으면 그 프로젝트는 그 모듈을 쓰지 않는다.",
+        "services": {svc: {n: sorted(v) for n, v in sorted(d.items())} for svc, d in dep_index.items()}})
     return result
 
 

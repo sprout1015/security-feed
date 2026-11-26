@@ -137,6 +137,12 @@ def build(step_errors: dict) -> str:
 
     # 3층
     L += ["## 4. 라이브러리 대조 (lock 파일 × OSV)", ""]
+    dep = (load_json(out / "dependency_index.json", {}) or {}).get("services", {})
+    if dep:
+        L += ["실제 의존성 목록: `runs/D/dependency_index.json` (서비스별 패키지 이름→버전, 전이 의존성 포함). "
+              "공지 제품이 프레임워크의 하위 모듈(예: Spring Security, Spring LDAP, Twig)일 때 여기서 이름을 찾아 실제로 쓰는지 확인한다. "
+              "예: `jq -r '.services[\"alpha-match\"] | keys[] | select(test(\"spring-security\"))'`",
+              "서비스별 패키지 수: " + ", ".join(f"{k} {len(v)}개" for k, v in dep.items()), ""]
     if prj.get("projects"):
         L += ["감시 프로젝트 (공개 저장소에서 실행 때마다 가져옴):"]
         for p in prj["projects"]:
