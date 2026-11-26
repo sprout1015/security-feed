@@ -1,8 +1,78 @@
 {
-  "catalogVersion": "2026.11.24",
-  "dateReleased": "2026-11-24T17:47:46.199Z",
-  "count": 1795,
+  "catalogVersion": "2026.11.25",
+  "dateReleased": "2026-11-25T19:48:12.4344Z",
+  "count": 1805,
   "cves": {
+    "CVE-2026-103406": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Hewlett Packard Enterprise (HPE)",
+      "product": "Juniper Session Smart Conductor and Session Smart Router",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133469": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Vates",
+      "product": "Xen Orchestra",
+      "ransomware": "Unknown"
+    },
+    "CVE-2025-41450": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-12-09",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "ransomware": "Unknown"
+    },
+    "CVE-2023-25914": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "ransomware": "Unknown"
+    },
+    "CVE-2023-25915": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133324": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133275": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133311": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-12-09",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133303": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "ransomware": "Unknown"
+    },
+    "CVE-2026-133323": {
+      "dateAdded": "2026-11-25",
+      "dueDate": "2026-11-28",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "ransomware": "Unknown"
+    },
     "CVE-2026-132224": {
       "dateAdded": "2026-11-24",
       "dueDate": "2026-11-27",

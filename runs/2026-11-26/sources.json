@@ -1,10 +1,10 @@
 {
   "date": "2026-11-26",
-  "collected_at": "2026-11-26T07:44:00+09:00",
+  "collected_at": "2026-11-26T18:44:33+09:00",
   "total": 32,
   "ok": 32,
-  "changed": 4,
-  "noise": 6,
+  "changed": 3,
+  "noise": 4,
   "error": 0,
   "sources": [
     {
@@ -12,16 +12,13 @@
       "name": "Oracle Security Alerts",
       "products": "Oracle Java SE, GraalVM",
       "url": "https://www.oracle.com/security-alerts/",
-      "sha256": "a70579da5b41d8f6",
+      "sha256": "eabaf3b53e5b86c5",
       "bytes": 52162,
       "text_path": "state/latest/oracle-alerts.txt",
       "raw_path": "state/latest/oracle-alerts.html",
       "id_count": 10,
       "new_ids": [],
-      "status": "noise",
-      "added_lines": 1,
-      "removed_lines": 1,
-      "diff_path": "runs/2026-11-26/diffs/oracle-alerts.diff"
+      "status": "unchanged"
     },
     {
       "id": "oracle-rss",
@@ -41,8 +38,8 @@
       "name": "OpenJDK Vulnerability Advisories",
       "products": "OpenJDK",
       "url": "https://openjdk.org/groups/vulnerability/advisories/",
-      "sha256": "d8b95c38583e9f0a",
-      "bytes": 10210,
+      "sha256": "37ef574ebceaf76e",
+      "bytes": 10219,
       "text_path": "state/latest/openjdk-advisories.txt",
       "raw_path": "state/latest/openjdk-advisories.html",
       "id_count": 0,
@@ -54,7 +51,7 @@
       "name": "Node.js 보안 릴리스 RSS",
       "products": "Node.js",
       "url": "https://nodejs.org/en/feed/vulnerability.xml",
-      "sha256": "2e26321538796b71",
+      "sha256": "013b4445490ff479",
       "bytes": 29277,
       "text_path": "state/latest/nodejs-vuln-rss.txt",
       "raw_path": "state/latest/nodejs-vuln-rss.xml",
@@ -89,23 +86,23 @@
       "raw_path": "state/latest/php-archive.html",
       "id_count": 6,
       "new_ids": [],
-      "status": "noise",
-      "added_lines": 8,
-      "removed_lines": 1,
-      "diff_path": "runs/2026-11-26/diffs/php-archive.diff"
+      "status": "unchanged"
     },
     {
       "id": "php-changelog-8",
       "name": "PHP ChangeLog 8",
       "products": "PHP 8.x",
       "url": "https://www.php.net/ChangeLog-8.php",
-      "sha256": "5a4cf4105d4d6477",
-      "bytes": 868618,
+      "sha256": "d478348e9d76750e",
+      "bytes": 868599,
       "text_path": "state/latest/php-changelog-8.txt",
       "raw_path": "state/latest/php-changelog-8.html",
       "id_count": 179,
       "new_ids": [],
-      "status": "unchanged"
+      "status": "noise",
+      "added_lines": 1,
+      "removed_lines": 1,
+      "diff_path": "runs/2026-11-26/diffs/php-changelog-8.diff"
     },
     {
       "id": "php-src-ghsa",
@@ -125,15 +122,15 @@
       "name": "Spring Security Advisories",
       "products": "Spring Framework, Spring Boot",
       "url": "https://spring.io/security/",
-      "sha256": "0b077b7bd03527da",
-      "bytes": 403057,
+      "sha256": "7c6ed11a5d6a41d0",
+      "bytes": 403058,
       "text_path": "state/latest/spring-security.txt",
       "raw_path": "state/latest/spring-security.html",
       "id_count": 25,
       "new_ids": [],
       "status": "changed",
-      "added_lines": 7,
-      "removed_lines": 7,
+      "added_lines": 4,
+      "removed_lines": 4,
       "diff_path": "runs/2026-11-26/diffs/spring-security.diff"
     },
     {
@@ -193,7 +190,7 @@
       "name": "Laravel 보안 권고 (Packagist)",
       "products": "Laravel",
       "url": "https://packagist.org/packages/laravel/framework/advisories",
-      "sha256": "4a0da1d7a544d445",
+      "sha256": "39561aa2f29915d1",
       "bytes": 64191,
       "text_path": "state/latest/laravel-packagist.txt",
       "raw_path": "state/latest/laravel-packagist.html",
@@ -211,41 +208,23 @@
       "text_path": "state/latest/laravel-ghsa.txt",
       "raw_path": "state/latest/laravel-ghsa.json",
       "id_count": 44,
-      "new_ids": [
-        "GHSA-c25c-x5r7-2v5m"
-      ],
-      "status": "changed",
-      "added_lines": 38,
-      "removed_lines": 0,
-      "diff_path": "runs/2026-11-26/diffs/laravel-ghsa.diff"
+      "new_ids": [],
+      "status": "unchanged"
     },
     {
       "id": "symfony-advisories",
       "name": "Symfony Security Advisories",
       "products": "Symfony, Twig",
       "url": "https://symfony.com/blog/category/security-advisories",
-      "sha256": "30ab11db0b9c5255",
-      "bytes": 132196,
+      "sha256": "409a6e1550f23103",
+      "bytes": 132250,
       "text_path": "state/latest/symfony-advisories.txt",
       "raw_path": "state/latest/symfony-advisories.html",
       "id_count": 12,
-      "new_ids": [
-        "CVE-2017-16652",
-        "CVE-2026-121373",
-        "CVE-2026-133756",
-        "CVE-2026-133757",
-        "CVE-2026-133758",
-        "CVE-2026-133759",
-        "CVE-2026-133760",
-        "CVE-2026-133761",
-        "CVE-2026-133762",
-        "CVE-2026-134790",
-        "CVE-2026-134791",
-        "CVE-2026-134792"
-      ],
-      "status": "changed",
-      "added_lines": 42,
-      "removed_lines": 42,
+      "new_ids": [],
+      "status": "noise",
+      "added_lines": 2,
+      "removed_lines": 2,
       "diff_path": "runs/2026-11-26/diffs/symfony-advisories.diff"
     },
     {
@@ -298,10 +277,7 @@
       "raw_path": "state/latest/django-security.html",
       "id_count": 175,
       "new_ids": [],
-      "status": "noise",
-      "added_lines": 1,
-      "removed_lines": 5,
-      "diff_path": "runs/2026-11-26/diffs/django-security.diff"
+      "status": "unchanged"
     },
     {
       "id": "python-security-announce",
@@ -360,31 +336,31 @@
       "name": ".NET Announcements",
       "products": ".NET, ASP.NET Core",
       "url": "https://github.com/dotnet/announcements/issues?q=is%3Aissue+label%3ASecurity",
-      "sha256": "bbac1e3597e8b76a",
-      "bytes": 350752,
+      "sha256": "8e88376618f294c5",
+      "bytes": 352308,
       "text_path": "state/latest/dotnet-announcements.txt",
       "raw_path": "state/latest/dotnet-announcements.html",
       "id_count": 24,
       "new_ids": [],
-      "status": "unchanged"
+      "status": "changed",
+      "added_lines": 24,
+      "removed_lines": 24,
+      "diff_path": "runs/2026-11-26/diffs/dotnet-announcements.diff"
     },
     {
       "id": "rustsec-feed",
       "name": "RustSec Advisory Database",
       "products": "Rust 크레이트",
       "url": "https://rustsec.org/feed.xml",
-      "sha256": "2632bd26339ed0b5",
-      "bytes": 240385,
+      "sha256": "e500ee6aa001210a",
+      "bytes": 209144,
       "text_path": "state/latest/rustsec-feed.txt",
       "raw_path": "state/latest/rustsec-feed.xml",
-      "id_count": 68,
-      "new_ids": [
-        "GHSA-hm5x-4x3m-4w8m",
-        "RUSTSEC-2026-0600"
-      ],
+      "id_count": 57,
+      "new_ids": [],
       "status": "changed",
-      "added_lines": 147,
-      "removed_lines": 1976,
+      "added_lines": 0,
+      "removed_lines": 657,
       "diff_path": "runs/2026-11-26/diffs/rustsec-feed.diff"
     },
     {
@@ -398,10 +374,7 @@
       "raw_path": "state/latest/nginx-advisories.xml",
       "id_count": 78,
       "new_ids": [],
-      "status": "noise",
-      "added_lines": 0,
-      "removed_lines": 79,
-      "diff_path": "runs/2026-11-26/diffs/nginx-advisories.diff"
+      "status": "unchanged"
     },
     {
       "id": "httpd-24",
@@ -460,7 +433,7 @@
       "name": "Kubernetes Official CVE Feed",
       "products": "Kubernetes",
       "url": "https://kubernetes.io/docs/reference/issues-security/official-cve-feed/index.json",
-      "sha256": "9919b3b634bfa283",
+      "sha256": "903b4ef934a1c8fe",
       "bytes": 288119,
       "text_path": "state/latest/k8s-cve-feed.txt",
       "raw_path": "state/latest/k8s-cve-feed.json",

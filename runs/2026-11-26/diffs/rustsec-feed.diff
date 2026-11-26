@@ -1,275 +1,48 @@
 --- yesterday
 +++ 2026-11-26
-@@ -3,5 +3,5 @@
- <title>RustSec Advisories</title>
- <id>https://rustsec.org/feed.xml</id>
--<updated>2026-11-24T12:00:00+00:00</updated>
-+<updated>2026-11-25T12:00:00+00:00</updated>
- <author>
- <name>RustSec</name>
-@@ -11,4 +11,150 @@
- <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
- <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
-+<entry>
-+<title>RUSTSEC-2026-0600: Vulnerability in kube-client</title>
-+<id>https://rustsec.org/advisories/RUSTSEC-2026-0600.html</id>
-+<updated>2026-11-25T12:00:00+00:00</updated>
-+<category term="crypto-failure"/>
-+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0600.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0600: Vulnerability in kube-client"/>
-+<published>2026-11-25T12:00:00+00:00</published>
-+<summary xml:lang="en">`openssl-tls` trusts OpenSSL&apos;s default CA store in addition to the configured cluster CA</summary>
-+<content xml:lang="en" type="html">
-+<article>
-+<span class="floating-menu">
-+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/kube-client/RUSTSEC-2026-0600.md">History</a> ⋅
-+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/kube-client/RUSTSEC-2026-0600.md">Edit</a> ⋅
-+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0600">JSON (OSV)</a>
-+</span>
-+<header>
-+<h1>
-+RUSTSEC-2026-0600
-+</h1>
-+<span class="subtitle">
-+<p>
-+<code>openssl-tls</code> trusts OpenSSL's default CA store in addition to the configured cluster CA</p>
-+</span>
-+</header>
-+<dl>
-+<dt id="reported">Reported</dt>
-+<dd>
-+<time datetime="2026-11-24">
-+November 24, 2026
-+</time>
-+</dd>
-+<dt id="issued">Issued</dt>
-+<dd>
-+<time datetime="2026-11-25">
-+November 25, 2026
-+</time>
-+</dd>
-+<dt id="package">Package</dt>
-+<dd>
-+<a href="/packages/kube-client.html">kube-client</a>
-+(<a href="https://crates.io/crates/kube-client">crates.io</a>)
-+</dd>
-+<dt id="type">Type</dt>
-+<dd>
-+Vulnerability
-+</dd>
-+<dt id="categories">Categories</dt>
-+<dd>
-+<ul>
-+<li>
-+<a href="/categories/crypto-failure.html">crypto-failure</a>
-+</li>
-+</ul>
-+</dd>
-+<dt id="keywords">Keywords</dt>
-+<dd>
-+<a href="/keywords/tls.html">#tls</a>
-+<a href="/keywords/openssl.html">#openssl</a>
-+<a href="/keywords/certificate.html">#certificate</a>
-+<a href="/keywords/kubernetes.html">#kubernetes</a>
-+</dd>
-+<dt id="aliases">Aliases</dt>
-+<dd>
-+<ul>
-+<li>
-+<a href="https://github.com/advisories/GHSA-hm5x-4x3m-4w8m">GHSA-hm5x-4x3m-4w8m</a>
-+</li>
-+</ul>
-+</dd>
-+<dt id="details">References</dt>
-+<dd>
-+<ul>
-+<li>
-+<a href="https://github.com/kube-rs/kube/commit/bc27fdc58380d8ba78347145999193e00fe1b030">
-+https://github.com/kube-rs/kube/commit/bc27fdc58380d8ba78347145999193e00fe1b030
-+</a>
-+</li>
-+<li>
-+<a href="https://github.com/kube-rs/kube/pull/2170">
-+https://github.com/kube-rs/kube/pull/2170
-+</a>
-+</li>
-+</ul>
-+</dd>
-+<dt id="cvss_score">CVSS Score</dt>
-+<dd>6.8 <span class="tag medium">
-+MEDIUM
-+</span>
-+</dd>
-+<dt id="cvss_details">CVSS Details</dt>
-+<dd>
-+<dl>
-+<dt>Attack Vector</dt>
-+<dd>Adjacent</dd>
-+<dt>Attack Complexity</dt>
-+<dd>High</dd>
-+<dt>Privileges Required</dt>
-+<dd>None</dd>
-+<dt>User Interaction</dt>
-+<dd>None</dd>
-+<dt>Scope</dt>
-+<dd>Unchanged</dd>
-+<dt>Confidentiality Impact</dt>
-+<dd>High</dd>
-+<dt>Integrity Impact</dt>
-+<dd>High</dd>
-+<dt>Availability Impact</dt>
-+<dd>None</dd>
-+</dl>
-+</dd>
-+<dt id="cvss">CVSS Vector</dt>
-+<dd>
-+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N">CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N</a>
-+</dd>
-+<dt id="patched">Patched</dt>
-+<dd>
-+<ul>
-+<li>
-+<code>&#62;=4.2.1, &#60;5.0.0</code>
-+</li>
-+<li>
-+<code>&#62;=5.2.0</code>
-+</li>
-+</ul>
-+</dd>
-+<dt id="unaffected">Unaffected</dt>
-+<dd>
-+<ul>
-+<li>
-+<code>&#60;0.64.0</code>
-+</li>
-+</ul>
-+</dd>
-+</dl>
-+<h3 id="description">Description</h3>
-+<p>With the <code>openssl-tls</code> connector, configuring a cluster CA (<code>certificate-authority</code>, <code>certificate-authority-data</code>, or the in-cluster <code>ca.crt</code>) did not limit which server certificates were trusted. The connector started from OpenSSL's default verify paths and added the configured roots to that store, so a server certificate chaining to any root in OpenSSL's default store passed trust validation. The certificate still had to be valid for the server name the client connects to. client-go and the <code>rustls-tls</code> connector trust only the configured CA.</p>
-+<p>An attacker on the path between the client and the apiserver who presents such a certificate, for example from a TLS inspection proxy whose root is installed on the machine, could complete the handshake and receive the client's requests, including bearer tokens.</p>
-+<p>This advisory covers the <code>openssl-tls</code> connector, added in 0.64.0, when a cluster CA is configured. The connector is used by <code>Client::try_default()</code>, <code>Client::try_from(Config)</code> and <code>ClientBuilder::try_from(Config)</code> whenever they select OpenSSL, by the <code>ConfigExt::openssl_https_connector</code>, <code>openssl_https_connector_with_connector</code> and <code>openssl_ssl_connector_builder</code> methods even when <code>rustls-tls</code> is also enabled, and since 4.2.0 for TLS to an <code>https://</code> proxy.</p>
-+<p>Which connector the constructors select depends on the version. Since 0.86.0, <code>rustls-tls</code> is the default and takes precedence when both features are enabled. From 0.71.0 to 0.85.x, <code>openssl-tls</code> was a default feature of <code>kube</code> (and of <code>kube-client</code> up to 0.82.2) and took precedence over <code>rustls-tls</code>. The <code>kube</code> crate re-exports <code>kube-client</code>, so the same <code>kube</code> versions are affected.</p>
-+<p>The flaw was corrected in 5.2.0 and 4.2.1 by installing a certificate store that holds only the configured root certificates. After upgrading, an <code>https://</code> proxy or a CA bundle that relied on OpenSSL's default store may need its CA added to the kubeconfig CA bundle. On older versions, switching the client to the <code>rustls-tls</code> connector avoids the issue.</p>
-+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-+license.
-+</p>
-+</article>
-+</content>
-+</entry>
- <entry>
- <title>RUSTSEC-2026-0597: Unsoundness in hugepage-rs</title>
-@@ -4975,1978 +5121,3 @@
+@@ -4464,660 +4464,3 @@
  </content>
  </entry>
 -<entry>
--<title>RUSTSEC-2026-0555: chrono-tz is unmaintained</title>
--<id>https://rustsec.org/advisories/RUSTSEC-2026-0555.html</id>
--<updated>2026-11-17T12:00:00+00:00</updated>
--<link href="https://rustsec.org/advisories/RUSTSEC-2026-0555.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0555: chrono-tz is unmaintained"/>
--<published>2026-11-17T12:00:00+00:00</published>
--<summary xml:lang="en">chrono-tz is unmaintained</summary>
+-<title>RUSTSEC-2026-0561: Vulnerability in lettre</title>
+-<id>https://rustsec.org/advisories/RUSTSEC-2026-0561.html</id>
+-<updated>2026-11-18T12:00:00+00:00</updated>
+-<category term="format-injection"/>
+-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0561.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0561: Vulnerability in lettre"/>
+-<published>2026-11-18T12:00:00+00:00</published>
+-<summary xml:lang="en">Missing dot-stuffing after a bare LF or CR allows SMTP command injection</summary>
 -<content xml:lang="en" type="html">
 -<article>
 -<span class="floating-menu">
--<a href="https://github.com/RustSec/advisory-db/commits/main/crates/chrono-tz/RUSTSEC-2026-0555.md">History</a> ⋅
--<a href="https://github.com/RustSec/advisory-db/edit/main/crates/chrono-tz/RUSTSEC-2026-0555.md">Edit</a> ⋅
--<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0555">JSON (OSV)</a>
+-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/lettre/RUSTSEC-2026-0561.md">History</a> ⋅
+-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/lettre/RUSTSEC-2026-0561.md">Edit</a> ⋅
+-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0561">JSON (OSV)</a>
 -</span>
 -<header>
 -<h1>
--RUSTSEC-2026-0555
+-RUSTSEC-2026-0561
 -</h1>
 -<span class="subtitle">
--<p>chrono-tz is unmaintained</p>
+-<p>Missing dot-stuffing after a bare LF or CR allows SMTP command injection</p>
 -</span>
 -</header>
 -<dl>
 -<dt id="reported">Reported</dt>
 -<dd>
--<time datetime="2026-09-14">
--September 14, 2026
--</time>
--</dd>
--<dt id="issued">Issued</dt>
--<dd>
 -<time datetime="2026-11-17">
 -November 17, 2026
 -</time>
 -</dd>
--<dt id="package">Package</dt>
--<dd>
--<a href="/packages/chrono-tz.html">chrono-tz</a>
--(<a href="https://crates.io/crates/chrono-tz">crates.io</a>)
--</dd>
--<dt id="type">Type</dt>
--<dd>
--<span class="tag info">INFO</span>
--Unmaintained
--</dd>
--<dt id="details">References</dt>
--<dd>
--<ul>
--<li>
--<a href="https://github.com/chronotope/chrono/issues/1768">
--https://github.com/chronotope/chrono/issues/1768
--</a>
--</li>
--</ul>
--</dd>
--<dt id="patched">Patched</dt>
--<dd>
--no patched versions
--</dd>
--</dl>
--<h3 id="description">Description</h3>
--<p>The chrono-tz crate is unmaintained; all versions are affected.</p>
--<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
--license.
--</p>
--</article>
--</content>
--</entry>
--<entry>
--<title>RUSTSEC-2026-0548: Vulnerability in zip</title>
--<id>https://rustsec.org/advisories/RUSTSEC-2026-0548.html</id>
--<updated>2026-11-17T12:00:00+00:00</updated>
--<category term="privilege-escalation"/>
--<link href="https://rustsec.org/advisories/RUSTSEC-2026-0548.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0548: Vulnerability in zip"/>
--<published>2026-11-17T12:00:00+00:00</published>
--<summary xml:lang="en">`ZipStreamReader` extracts entries under local-header names that can differ from the central directory</summary>
--<content xml:lang="en" type="html">
--<article>
--<span class="floating-menu">
--<a href="https://github.com/RustSec/advisory-db/commits/main/crates/zip/RUSTSEC-2026-0548.md">History</a> ⋅
--<a href="https://github.com/RustSec/advisory-db/edit/main/crates/zip/RUSTSEC-2026-0548.md">Edit</a> ⋅
--<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0548">JSON (OSV)</a>
--</span>
--<header>
--<h1>
--RUSTSEC-2026-0548
--</h1>
--<span class="subtitle">
--<p>
--<code>ZipStreamReader</code> extracts entries under local-header names that can differ from the central directory</p>
--</span>
--</header>
--<dl>
--<dt id="reported">Reported</dt>
--<dd>
--<time datetime="2026-10-17">
--October 17, 2026
--</time>
--</dd>
 -<dt id="issued">Issued</dt>
 -<dd>
--<time datetime="2026-11-17">
--November 17, 2026
+-<time datetime="2026-11-18">
+-November 18, 2026
 -</time>
 -</dd>
 -<dt id="package">Package</dt>
 -<dd>
--<a href="/packages/zip.html">zip</a>
--(<a href="https://crates.io/crates/zip">crates.io</a>)
+-<a href="/packages/lettre.html">lettre</a>
+-(<a href="https://crates.io/crates/lettre">crates.io</a>)
 -</dd>
 -<dt id="type">Type</dt>
 -<dd>
@@ -279,34 +52,31 @@
 -<dd>
 -<ul>
 -<li>
--<a href="/categories/privilege-escalation.html">privilege-escalation</a>
+-<a href="/categories/format-injection.html">format-injection</a>
 -</li>
 -</ul>
 -</dd>
 -<dt id="keywords">Keywords</dt>
 -<dd>
--<a href="/keywords/parser-differential.html">#parser-differential</a>
--<a href="/keywords/local-file-header.html">#local-file-header</a>
--<a href="/keywords/central-directory.html">#central-directory</a>
--</dd>
--<dt id="aliases">Aliases</dt>
--<dd>
--<ul>
--<li>
--<a href="https://www.cve.org/CVERecord?id=CVE-2026-115905">CVE-2026-115905</a>
--</li>
--<li>
--<a href="https://github.com/advisories/GHSA-m665-v7pm-7grj">GHSA-m665-v7pm-7grj</a>
--</li>
--</ul>
+-<a href="/keywords/smtp.html">#smtp</a>
+-<a href="/keywords/smuggling.html">#smuggling</a>
+-<a href="/keywords/injection.html">#injection</a>
 -</dd>
 -<dt id="details">References</dt>
 -<dd>
 -<ul>
 -<li>
--<a href="https://github.com/zip-rs/zip2/commit/8068ab480ccf8daa7411424e365fcdbe6d09443e">
--https://github.com/zip-rs/zip2/commit/8068ab480ccf8daa7411424e365fcdbe6d09443e
+-<a href="https://github.com/lettre/lettre/commit/3d9a6e6a467c6ce00bd39ada6aa1a00e57540a1d">
+-https://github.com/lettre/lettre/commit/3d9a6e6a467c6ce00bd39ada6aa1a00e57540a1d
 -</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="related">Related</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://rustsec.org/advisories/RUSTSEC-2021-0069">RUSTSEC-2021-0069</a>
 -</li>
 -</ul>
 -</dd>
@@ -314,15 +84,19 @@
 -<dd>
 -<ul>
 -<li>
--<code>&#62;=9.0.5</code>
+-<code>&#62;=0.11.24</code>
 -</li>
 -</ul>
 -</dd>
 -</dl>
 -<h3 id="description">Description</h3>
--<p>A ZIP archive names each entry twice: in the local file header in front of the entry's data, and in the central directory at the end of the archive. <code>ZipArchive</code> lists and opens entries by their central-directory names. <code>ZipStreamReader::visit</code> and <code>ZipStreamReader::extract</code>, like <code>read_zipfile_from_stream</code>, read the local headers in order and use the local-header names without comparing them with the central directory.</p>
--<p>An archive can therefore show one set of file names to code that inspects it with <code>ZipArchive</code> and write files under other names when it is extracted with <code>ZipStreamReader</code>. If an application checks an archive one way and extracts it the other way, an attacker can get files written or overwritten inside the destination directory that the check never saw.</p>
--<p>The fix adds an opt-in check. <code>ZipStreamReader::enforce_header_consistency(true)</code> compares each local header with its central-directory entry (name, sizes, CRC-32, compression method, flags and modification time) and fails extraction on a mismatch; <code>ZipReadOptions::enforce_header_consistency(true)</code> and <code>ZipArchive::validate_header_consistency()</code> do the same for <code>ZipArchive</code>. The check is off by default, so upgrading alone does not change what <code>ZipStreamReader::new(...)</code> extracts: applications that extract untrusted archives with <code>ZipStreamReader</code> need to turn it on.</p>
+-<p>Someone who controls the content of a message with bare LF or CR line endings
+-can end it early with <code>\n.\n</code> on a server that takes a bare LF for a line
+-ending. What follows is read by the server as SMTP commands, which can be used
+-to send other messages over the same authenticated connection.</p>
+-<p>This affects messages passed to <code>send_raw</code>, and message bodies that are sent
+-without being encoded. The LF line endings of a <code>String</code> body are converted to
+-CRLF before it is sent.</p>
 -<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
 -license.
 -</p>
@@ -330,45 +104,45 @@
 -</content>
 -</entry>
 -<entry>
--<title>RUSTSEC-2026-0547: Vulnerability in zip</title>
--<id>https://rustsec.org/advisories/RUSTSEC-2026-0547.html</id>
--<updated>2026-11-17T12:00:00+00:00</updated>
+-<title>RUSTSEC-2026-0565: Vulnerability in lettre</title>
+-<id>https://rustsec.org/advisories/RUSTSEC-2026-0565.html</id>
+-<updated>2026-11-18T12:00:00+00:00</updated>
 -<category term="denial-of-service"/>
--<link href="https://rustsec.org/advisories/RUSTSEC-2026-0547.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0547: Vulnerability in zip"/>
--<published>2026-11-17T12:00:00+00:00</published>
--<summary xml:lang="en">Legacy Shrink, Reduce and Implode decoders preallocate the declared uncompressed size</summary>
+-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0565.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0565: Vulnerability in lettre"/>
+-<published>2026-11-18T12:00:00+00:00</published>
+-<summary xml:lang="en">Unbounded buffering of an SMTP reply allows a malicious server to exhaust memory</summary>
 -<content xml:lang="en" type="html">
 -<article>
 -<span class="floating-menu">
--<a href="https://github.com/RustSec/advisory-db/commits/main/crates/zip/RUSTSEC-2026-0547.md">History</a> ⋅
--<a href="https://github.com/RustSec/advisory-db/edit/main/crates/zip/RUSTSEC-2026-0547.md">Edit</a> ⋅
--<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0547">JSON (OSV)</a>
+-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/lettre/RUSTSEC-2026-0565.md">History</a> ⋅
+-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/lettre/RUSTSEC-2026-0565.md">Edit</a> ⋅
+-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0565">JSON (OSV)</a>
 -</span>
 -<header>
 -<h1>
--RUSTSEC-2026-0547
+-RUSTSEC-2026-0565
 -</h1>
 -<span class="subtitle">
--<p>Legacy Shrink, Reduce and Implode decoders preallocate the declared uncompressed size</p>
+-<p>Unbounded buffering of an SMTP reply allows a malicious server to exhaust memory</p>
 -</span>
 -</header>
 -<dl>
 -<dt id="reported">Reported</dt>
 -<dd>
--<time datetime="2026-10-22">
--October 22, 2026
--</time>
--</dd>
--<dt id="issued">Issued</dt>
--<dd>
 -<time datetime="2026-11-17">
 -November 17, 2026
 -</time>
 -</dd>
+-<dt id="issued">Issued</dt>
+-<dd>
+-<time datetime="2026-11-18">
+-November 18, 2026
+-</time>
+-</dd>
 -<dt id="package">Package</dt>
 -<dd>
--<a href="/packages/zip.html">zip</a>
--(<a href="https://crates.io/crates/zip">crates.io</a>)
+-<a href="/packages/lettre.html">lettre</a>
+-(<a href="https://crates.io/crates/lettre">crates.io</a>)
 -</dd>
 -<dt id="type">Type</dt>
 -<dd>
@@ -384,18 +158,244 @@
 -</dd>
 -<dt id="keywords">Keywords</dt>
 -<dd>
--<a href="/keywords/panic.html">#panic</a>
--<a href="/keywords/allocation.html">#allocation</a>
--<a href="/keywords/legacy-zip.html">#legacy-zip</a>
+-<a href="/keywords/smtp.html">#smtp</a>
+-<a href="/keywords/memory.html">#memory</a>
+-<a href="/keywords/cpu.html">#cpu</a>
 -</dd>
 -<dt id="aliases">Aliases</dt>
 -<dd>
 -<ul>
 -<li>
--<a href="https://www.cve.org/CVERecord?id=CVE-2026-115907">CVE-2026-115907</a>
--</li>
--<li>
--<a href="https://github.com/advisories/GHSA-9hj8-73fh-9963">GHSA-9hj8-73fh-9963</a>
+-<a href="https://github.com/advisories/GHSA-pmvc-x69f-5p9f">GHSA-pmvc-x69f-5p9f</a>
 -</li>
 -</ul>
-... (1739줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)
+-</dd>
+-<dt id="details">References</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/lettre/lettre/commit/075849fb9f2c956202aaaf2ff73e41f995d02f35">
+-https://github.com/lettre/lettre/commit/075849fb9f2c956202aaaf2ff73e41f995d02f35
+-</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="patched">Patched</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#62;=0.11.24</code>
+-</li>
+-</ul>
+-</dd>
+-</dl>
+-<h3 id="description">Description</h3>
+-<p>A malicious or compromised server can send a reply line that never ends, which
+-the client buffers until memory runs out. A reply made of many short lines also
+-keeps a CPU core busy: for a few seconds per reply since 0.11.22, for as long
+-as the server wants before it.</p>
+-<p>Applications that connect only to a trusted server over implicit TLS are not
+-exposed; the risk applies to clients that may connect to untrusted servers, or
+-that use <code>STARTTLS</code> or no TLS, where a man-in-the-middle can forge the reply.</p>
+-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+-license.
+-</p>
+-</article>
+-</content>
+-</entry>
+-<entry>
+-<title>RUSTSEC-2026-0564: Vulnerability in lettre</title>
+-<id>https://rustsec.org/advisories/RUSTSEC-2026-0564.html</id>
+-<updated>2026-11-18T12:00:00+00:00</updated>
+-<category term="denial-of-service"/>
+-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0564.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0564: Vulnerability in lettre"/>
+-<published>2026-11-18T12:00:00+00:00</published>
+-<summary xml:lang="en">Panic on a mailbox display name containing CR or LF allows denial of service</summary>
+-<content xml:lang="en" type="html">
+-<article>
+-<span class="floating-menu">
+-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/lettre/RUSTSEC-2026-0564.md">History</a> ⋅
+-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/lettre/RUSTSEC-2026-0564.md">Edit</a> ⋅
+-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0564">JSON (OSV)</a>
+-</span>
+-<header>
+-<h1>
+-RUSTSEC-2026-0564
+-</h1>
+-<span class="subtitle">
+-<p>Panic on a mailbox display name containing CR or LF allows denial of service</p>
+-</span>
+-</header>
+-<dl>
+-<dt id="reported">Reported</dt>
+-<dd>
+-<time datetime="2026-11-17">
+-November 17, 2026
+-</time>
+-</dd>
+-<dt id="issued">Issued</dt>
+-<dd>
+-<time datetime="2026-11-18">
+-November 18, 2026
+-</time>
+-</dd>
+-<dt id="package">Package</dt>
+-<dd>
+-<a href="/packages/lettre.html">lettre</a>
+-(<a href="https://crates.io/crates/lettre">crates.io</a>)
+-</dd>
+-<dt id="type">Type</dt>
+-<dd>
+-Vulnerability
+-</dd>
+-<dt id="categories">Categories</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="/categories/denial-of-service.html">denial-of-service</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="keywords">Keywords</dt>
+-<dd>
+-<a href="/keywords/email.html">#email</a>
+-<a href="/keywords/header.html">#header</a>
+-<a href="/keywords/panic.html">#panic</a>
+-</dd>
+-<dt id="details">References</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/lettre/lettre/commit/0ad883cdb20c256ab29c9d002fd4cc55c5d8abfe">
+-https://github.com/lettre/lettre/commit/0ad883cdb20c256ab29c9d002fd4cc55c5d8abfe
+-</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="patched">Patched</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#62;=0.11.24</code>
+-</li>
+-</ul>
+-</dd>
+-<dt id="unaffected">Unaffected</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.0-rc.5</code>
+-</li>
+-</ul>
+-</dd>
+-</dl>
+-<h3 id="description">Description</h3>
+-<p>A <code>Mailbox</code> whose display name contains a CR or LF panics when it is formatted
+-or put in a header such as <code>From</code> or <code>To</code>. Someone who can choose a display
+-name, for example the name of a user a message is sent to, can crash the
+-thread or task building the message.</p>
+-<p>Applications that take display names only from trusted input are not exposed.</p>
+-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+-license.
+-</p>
+-</article>
+-</content>
+-</entry>
+-<entry>
+-<title>RUSTSEC-2026-0562: Vulnerability in lettre</title>
+-<id>https://rustsec.org/advisories/RUSTSEC-2026-0562.html</id>
+-<updated>2026-11-18T12:00:00+00:00</updated>
+-<category term="denial-of-service"/>
+-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0562.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0562: Vulnerability in lettre"/>
+-<published>2026-11-18T12:00:00+00:00</published>
+-<summary xml:lang="en">Panic on an `EHLO` reply line of only white space allows denial of service</summary>
+-<content xml:lang="en" type="html">
+-<article>
+-<span class="floating-menu">
+-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/lettre/RUSTSEC-2026-0562.md">History</a> ⋅
+-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/lettre/RUSTSEC-2026-0562.md">Edit</a> ⋅
+-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0562">JSON (OSV)</a>
+-</span>
+-<header>
+-<h1>
+-RUSTSEC-2026-0562
+-</h1>
+-<span class="subtitle">
+-<p>Panic on an <code>EHLO</code> reply line of only white space allows denial of service</p>
+-</span>
+-</header>
+-<dl>
+-<dt id="reported">Reported</dt>
+-<dd>
+-<time datetime="2026-11-17">
+-November 17, 2026
+-</time>
+-</dd>
+-<dt id="issued">Issued</dt>
+-<dd>
+-<time datetime="2026-11-18">
+-November 18, 2026
+-</time>
+-</dd>
+-<dt id="package">Package</dt>
+-<dd>
+-<a href="/packages/lettre.html">lettre</a>
+-(<a href="https://crates.io/crates/lettre">crates.io</a>)
+-</dd>
+-<dt id="type">Type</dt>
+-<dd>
+-Vulnerability
+-</dd>
+-<dt id="categories">Categories</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="/categories/denial-of-service.html">denial-of-service</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="keywords">Keywords</dt>
+-<dd>
+-<a href="/keywords/smtp.html">#smtp</a>
+-<a href="/keywords/panic.html">#panic</a>
+-</dd>
+-<dt id="aliases">Aliases</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/advisories/GHSA-23wm-4vvw-r7p2">GHSA-23wm-4vvw-r7p2</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="details">References</dt>
+-<dd>
+-<ul>
+-<li>
+-<a href="https://github.com/lettre/lettre/commit/4a58794b672542d5bfea5a40505bb20627122086">
+-https://github.com/lettre/lettre/commit/4a58794b672542d5bfea5a40505bb20627122086
+-</a>
+-</li>
+-</ul>
+-</dd>
+-<dt id="patched">Patched</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#62;=0.11.24</code>
+-</li>
+-</ul>
+-</dd>
+-</dl>
+-<dl>
+-<dt>Affected Functions</dt>
+-<dd>Version</dd>
+-<dt>
+-<code>lettre::smtp::extension::ServerInfo::from_response</code>
+-</dt>
+-<dd>
+-<ul>
+-<li>
+-<code>&#60;0.10.0-alpha.1</code>
+-</li>
+-</ul>
+... (263줄 생략. 전체 텍스트: state/latest/rustsec-feed.txt)

@@ -1,107 +1,16 @@
 --- yesterday
 +++ 2026-11-26
-@@ -12,54 +12,54 @@
- Manage your notification preferences
- to receive an email as soon as a Symfony security release is published.
--CVE-2026-133773 Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options
--Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options
--November 24, 2026
-+CVE-2026-134792 HttpClient Lets the Proxy Header of a Request Choose the Proxy of Outgoing Requests in CLI-SAPI HTTP Workers
-+HttpClient Lets the Proxy Header of a Request Choose the Proxy of Outgoing Requests in CLI-SAPI HTTP Workers
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133772 Sandbox Tag Allow-List Bypass via the Branch of a `guard` Tag That Isn't Selected
--Sandbox Tag Allow-List Bypass via the Branch of a `guard` Tag That Isn't Selected
--November 24, 2026
-+#Symfony
-+CVE-2026-134791 Unclosed Comments Make the Lexer of ExpressionLanguage Quadratic, Letting Untrusted Expressions Hold a Process
-+Unclosed Comments Make the Lexer of ExpressionLanguage Quadratic, Letting Untrusted Expressions Hold a Process
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133771 Missing autoescaping for a variable named like a macro import alias of another scope
--Missing autoescaping for a variable named like a macro import alias of another scope
--November 24, 2026
-+#Symfony
-+CVE-2026-134790 Login Redirects Can Still Reach Another Host When the Session Cookie Domain Is Set: Incomplete Fix for CVE-2017-16652
-+Login Redirects Can Still Reach Another Host When the Session Cookie Domain Is Set: Incomplete Fix for CVE-2017-16652
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133770 Sandboxed templates can rewrite application-owned `Markup` objects through their constructor
--Sandboxed templates can rewrite application-owned `Markup` objects through their constructor
--November 24, 2026
-+#Symfony
-+CVE-2026-133762 Without APP_RUNTIME_MODE, HTTP Workers Running Under the CLI SAPI Return Full Exception Dumps in Production
-+Without APP_RUNTIME_MODE, HTTP Workers Running Under the CLI SAPI Return Full Exception Dumps in Production
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133769 Sandbox property allow-list bypass via `html_cva()` variant values
--Sandbox property allow-list bypass via `html_cva()` variant values
--November 24, 2026
-+#Symfony
-+CVE-2026-133761 CsvEncoder Nests Rows Once per Key Separator of a Header, Letting a Small CSV Payload Crash PHP
-+CsvEncoder Nests Rows Once per Key Separator of a Header, Letting a Small CSV Payload Crash PHP
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133768 Sandbox property allow-list bypass via the `join` filter on non-iterable objects
--Sandbox property allow-list bypass via the `join` filter on non-iterable objects
--November 24, 2026
-+#Symfony
-+CVE-2026-133760 Nested Short Ternaries Make the Nesting Check of the Expression Parser Exponential, Letting Expressions Hang It
-+Nested Short Ternaries Make the Nesting Check of the Expression Parser Exponential, Letting Expressions Hang It
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133767 Sandbox allow-list and `__toString()` bypass via a dynamic `embed` parent expression
--Sandbox allow-list and `__toString()` bypass via a dynamic `embed` parent expression
--November 24, 2026
-+#Symfony
-+CVE-2026-133759 Doctrine Remember-Me Token Provider Accepts Outdated Tokens Under the Series of Their Copy, Also After Logout
-+Doctrine Remember-Me Token Provider Accepts Outdated Tokens Under the Series of Their Copy, Also After Logout
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133766 Sandbox `__toString()` policy bypass via spread arguments
--Sandbox `__toString()` policy bypass via spread arguments
--November 24, 2026
-+#Symfony
-+CVE-2026-133758 NoPrivateNetworkHttpClient Makes the Client It Decorates Ignore Its Own Default Options, Like Certificate Pinning
-+NoPrivateNetworkHttpClient Makes the Client It Decorates Ignore Its Own Default Options, Like Certificate Pinning
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133765 Sandbox `__toString()` policy bypass via assignment and destructuring expressions
--Sandbox `__toString()` policy bypass via assignment and destructuring expressions
--November 24, 2026
-+#Symfony
-+CVE-2026-133757 NoPrivateNetworkHttpClient Sends the Default Credentials of the Client It Decorates to Other Origins on Redirects
-+NoPrivateNetworkHttpClient Sends the Default Credentials of the Client It Decorates to Other Origins on Redirects
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
--CVE-2026-133764 Sandbox `__toString()` policy bypass via the input of custom tests
--Sandbox `__toString()` policy bypass via the input of custom tests
--November 24, 2026
-+#Symfony
-+CVE-2026-133756 HtmlSanitizer Misses Meta Refresh URLs Behind a Vertical Tab or a Unicode Space: Incomplete Fix for CVE-2026-121373
-+HtmlSanitizer Misses Meta Refresh URLs Behind a Vertical Tab or a Unicode Space: Incomplete Fix for CVE-2026-121373
-+November 25, 2026
- </blog/category/security-advisories> #Security Advisories
--#Twig
-+#Symfony
- All Blog Posts
- A Week of Symfony
-@@ -78,7 +78,7 @@
- Archives
+@@ -2,5 +2,5 @@
+ Black Friday 2026 deals
+ 40% off SymfonyCasts subscriptions and renewals
+-(ends in 5 days)
++(ends in 4 days)
+ « Security Advisories » blog posts
+ Have found a security issue in Symfony or in one of its projects? Send the details to
+@@ -79,5 +79,5 @@
  Blog Posts RSS
--Code consumes server resources. Blackfire tells you how
  Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
--Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
-+Peruse our complete Symfony & PHP solutions catalog for your web development needs.
-+Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
+-Peruse our complete Symfony & PHP solutions catalog for your web development needs.
++Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
+ Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
  CLOSE
- Search Symfony Docs
