@@ -1,0 +1,18 @@
+--- yesterday
++++ 2026-11-27
+@@ -2,5 +2,5 @@
+ Black Friday 2026 deals
+ 40% off SymfonyCasts subscriptions and renewals
+-(ends in 4 days)
++(ends in 3 days)
+ « Security Advisories » blog posts
+ Have found a security issue in Symfony or in one of its projects? Send the details to
+@@ -78,7 +78,7 @@
+ Archives
+ Blog Posts RSS
++Measure & Improve Symfony Code Performance
+ Black Friday: 30% off Symfony and Twig certifications with the CERTIF_30_BF26 code
+ Be trained by SensioLabs experts (2 to 6 day sessions -- French or English).
+-Black Friday: 30% off SymfonyInsight yearly Business plans with the SFI-BLACKFRIDAY-26 code
+ CLOSE
+ Search Symfony Docs

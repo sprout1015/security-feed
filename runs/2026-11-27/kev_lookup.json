@@ -1,0 +1,26 @@
+{
+  "count": 20,
+  "kev_listed": 0,
+  "cves": {
+    "CVE-2026-123886": null,
+    "CVE-2026-41698": null,
+    "CVE-2026-59273": null,
+    "CVE-2026-59329": null,
+    "CVE-2026-59330": null,
+    "CVE-2026-59331": null,
+    "CVE-2026-59333": null,
+    "CVE-2026-59344": null,
+    "CVE-2026-59345": null,
+    "CVE-2026-59348": null,
+    "CVE-2026-59349": null,
+    "CVE-2026-59350": null,
+    "CVE-2026-59351": null,
+    "CVE-2026-59352": null,
+    "CVE-2026-59353": null,
+    "CVE-2026-59356": null,
+    "CVE-2026-59361": null,
+    "CVE-2026-59362": null,
+    "CVE-2026-59363": null,
+    "CVE-2026-59364": null
+  }
+}

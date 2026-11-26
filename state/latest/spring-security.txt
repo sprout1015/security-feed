@@ -16,10 +16,9 @@ MEDIUM
 LOW
 | Severity | CVE ID | Project | Published | Fix Version
 | HIGH | </security/cve-2026-123886> CVE-2026-123886 | Spring Data Elasticsearch | November 19, 2026 | 2 versions
-| MEDIUM | </security/cve-2026-59273> CVE-2026-59273 | Spring Security | November 19, 2026 | 8 versions
 | LOW | </security/cve-2026-41698> CVE-2026-41698 | Spring Vault | November 19, 2026 | 7 versions
+| MEDIUM | </security/cve-2026-59273> CVE-2026-59273 | Spring Security | November 19, 2026 | 8 versions
 | LOW | </security/cve-2026-59329> CVE-2026-59329 | Spring Security | November 19, 2026 | 8 versions
-| HIGH | </security/cve-2026-59330> CVE-2026-59330 | Spring Security | November 19, 2026 | 4 versions
 | HIGH | </security/cve-2026-59331> CVE-2026-59331 | Spring Security | November 19, 2026 | 8 versions
 | HIGH | </security/cve-2026-59333> CVE-2026-59333 | Spring Security | November 19, 2026 | 2 versions
 | LOW | </security/cve-2026-59336> CVE-2026-59336 | Spring AI | November 19, 2026 | 4 versions
@@ -30,15 +29,16 @@ LOW
 | MEDIUM | </security/cve-2026-59342> CVE-2026-59342 | Spring Data MongoDB | November 19, 2026 | 7 versions
 | HIGH | </security/cve-2026-59344> CVE-2026-59344 | Spring AI | November 19, 2026 | 4 versions
 | HIGH | </security/cve-2026-59345> CVE-2026-59345 | Spring AI | November 19, 2026 | 4 versions
+| MEDIUM | </security/cve-2026-59348> CVE-2026-59348 | Spring AI | November 19, 2026 | 2 versions
 | MEDIUM | </security/cve-2026-59349> CVE-2026-59349 | Spring Web Services | November 19, 2026 | 5 versions
 | MEDIUM | </security/cve-2026-59350> CVE-2026-59350 | Spring Web Services | November 19, 2026 | 5 versions
-| MEDIUM | </security/cve-2026-59348> CVE-2026-59348 | Spring AI | November 19, 2026 | 2 versions
 | MEDIUM | </security/cve-2026-59351> CVE-2026-59351 | Spring Web Services | November 19, 2026 | 5 versions
+| MEDIUM | </security/cve-2026-59352> CVE-2026-59352 | Spring Web Services | November 19, 2026 | 5 versions
 | MEDIUM | </security/cve-2026-59353> CVE-2026-59353 | Spring Web Services | November 19, 2026 | 5 versions
 | LOW | </security/cve-2026-59356> CVE-2026-59356 | Spring for GraphQL | November 19, 2026 | 4 versions
 | HIGH | </security/cve-2026-59361> CVE-2026-59361 | Spring AI | November 19, 2026 | 4 versions
+| MEDIUM | </security/cve-2026-59362> CVE-2026-59362 | Spring Integration | November 19, 2026 | 6 versions
 | MEDIUM | </security/cve-2026-59363> CVE-2026-59363 | Spring Integration | November 19, 2026 | 7 versions
-| MEDIUM | </security/cve-2026-59352> CVE-2026-59352 | Spring Web Services | November 19, 2026 | 5 versions
 | MEDIUM | </security/cve-2026-59364> CVE-2026-59364 | Spring Integration | November 19, 2026 | 7 versions
 Load more
 Get ahead

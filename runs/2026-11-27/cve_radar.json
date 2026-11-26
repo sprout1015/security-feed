@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "since_utc": "2026-11-26T09:38:14.361Z",
+  "until_utc": "2026-11-26T23:01:51.157Z",
+  "new_cves": 388,
+  "fetch_errors": 0,
+  "watch_matched": 0,
+  "below_threshold": 0,
+  "thresholds": {
+    "cvss": 9.0,
+    "inventory_cvss": 7.0,
+    "inventory_unscored": true,
+    "epss": 0.5
+  },
+  "epss_status": "skipped",
+  "hits": [],
+  "matched_below_threshold": []
+}

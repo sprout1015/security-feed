@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "scanned_lockfiles": 4,
+  "total_findings": 0,
+  "services": [
+    {
+      "service": "alpha-match",
+      "lockfiles": [
+        "alpha-match/Backend/Api-Server/gradle.lockfile",
+        "alpha-match/Backend/Batch-Server/gradle.lockfile",
+        "alpha-match/Demo-Python/requirements.txt",
+        "alpha-match/Frontend/Front-Server/package-lock.json"
+      ],
+      "packages": 1014,
+      "findings": [],
+      "count": 0,
+      "by_package": [],
+      "high_or_above_packages": 0,
+      "delta": {
+        "since": "2026-11-26",
+        "first_seen": false,
+        "new": [],
+        "new_advisories": {},
+        "resolved": [],
+        "unchanged": 0
+      }
+    }
+  ]
+}
