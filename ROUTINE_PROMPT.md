@@ -9,7 +9,7 @@
 ## 읽는 곳: 수집 저장소 (웹 가져오기 도구를 쓰지 않는다)
 - 셸에서 curl로 읽는다. 기본 주소: https://raw.githubusercontent.com/sprout1015/security-feed/main/
 - 오늘 날짜를 D(YYYY-MM-DD)라 할 때 먼저 runs/D/status.json 과 runs/D/digest.md 를 한 번의 셸 호출로 받는다.
-  - 오늘 폴더가 없으면(HTTP 404) GitHub 예약 실행이 밀리거나 빠진 것이다. 수집을 직접 시작한다: `gh api -X POST repos/sprout1015/security-feed/actions/workflows/collect.yml/dispatches -f ref=main`. 그다음 5분 간격으로 최대 5번 오늘 폴더를 다시 확인한다(수집은 보통 4~6분). 그래도 없으면 일일 보고서에 판정 "⚪ 실행 실패" 행을 만들고, 한 줄 요약에 "수집 결과 없음(GitHub Actions 확인 필요)"이라고 적고 알림(9단계)을 보낸 뒤 종료한다. 웹에서 직접 수집하지 않는다.
+  - 오늘 폴더가 없으면(HTTP 404) GitHub 예약 실행이 밀리거나 빠진 것이다. 수집을 직접 시작한다: `gh api -X POST repos/sprout1015/security-feed/dispatches -f event_type=collect` (workflow_dispatch는 권한이 없어 쓰지 않는다). 그다음 5분 간격으로 최대 5번 오늘 폴더를 다시 확인한다(수집은 보통 4~6분). 그래도 없으면 일일 보고서에 판정 "⚪ 실행 실패" 행을 만들고, 한 줄 요약에 "수집 결과 없음(GitHub Actions 확인 필요)"이라고 적고 알림(9단계)을 보낸 뒤 종료한다. 웹에서 직접 수집하지 않는다.
 - digest.md 0절 "오늘의 변화"를 먼저 본다. status.json 의 today.quiet 가 true 이면 "조용한 날"이다(아래 절차 2단계).
 - 그 밖에는 digest.md 가 가리키는 파일 중 필요한 것만, 가능한 한 한 번의 셸 호출로 함께 받는다: runs/D/diffs/<소스>.diff, state/latest/<소스>.txt(diff만으로 판단이 안 될 때만), runs/D/kev_recent.json, runs/D/cve_radar.json, runs/D/kev_lookup.json, runs/D/cve_details.json. runs/D/dependency_index.json 은 통째로 읽지 말고 jq로 필요한 이름만 찾는다.
 - CVE 상세 페이지(cve.org)와 벤더 상세 페이지(spring.io 등)는 이 환경에서 막혀 있고, CVE 공식 레코드는 수집기가 이미 요약해 두었으니 따로 열지 않는다. 영향 버전·점수는 digest의 "공식 레코드 요약"과 cve_radar.json 의 affected_versions 를 쓴다. 거기에도 없으면 diff·원문에 적힌 내용으로만 판단하고 "레코드 미공개"라고 적는다.
@@ -48,7 +48,8 @@ Notion 커넥터를 쓸 수 없으면 그 사실만 보고하고 종료한다. �
    - "처음 수집한 소스"는 비교 기준만 생긴 것이므로 새 공지로 세지 않는다. "형식만 바뀜" 소스는 읽지 않는다. "수집 실패" 소스는 "확인 못 함"에 사유와 함께 적는다.
    - 공지에 나온 CVE의 영향 버전·점수는 digest 1절 "오늘 처음 본 CVE — 공식 레코드 요약"을 쓴다.
 4. 넓은 레이더:
-   - KEV(digest 2절): 최근 7일 신규 등재를 보고서 표에 싣는다. 0절의 "새 KEV"가 오늘 처음 보이는 것이다. 사내에 있을 법한 제품이면 "사용 여부 확인"으로 사람 확인 요청에 올린다.
+   - KEV(digest 2절): 최근 7일 신규 등재를 보고서 표에 싣는다. 0절의 "새 KEV"가 오늘 처음 보이는 것이다.
+   - [보완 2, 2026-11-27] 사람 확인 요청에 올리는 KEV는 0절 "새 KEV"(오늘 처음 보인 것)만이다. 그중 사내에 있을 법한 제품이면 "사용 여부 확인"으로 올린다. 이미 지난 보고서에 실린 KEV(최근 7일 표에만 있는 것)는 표에만 두고 확인 요청에 다시 올리지 않는다.
    - 새 CVE(digest 3절): "인벤토리 제품" 항목은 digest에 적힌 "영향 범위(공식 레코드)"를 인벤토리 버전과 대조한다(레코드를 다시 받지 않는다). "기반 구성요소" 항목은 L4 참고로 싣고, KEV 등재나 EPSS 0.5 이상이면 사람 확인 요청에도 올린다.
 5. 라이브러리(digest 4절, 서비스는 config/projects.json 의 실제 공개 프로젝트):
    - "새로 생김"과 "기존 패키지에 권고 추가"만 판단한다. 패키지 단위로, 최고 CVSS 7.0 이상이거나 ⚠️ KEV 표시가 있으면 L1, 그 밖은 L2. 레벨 건수에도 이것만 넣는다.

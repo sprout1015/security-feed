@@ -8,4 +8,5 @@
 | 2026-11-26 | 루틴 부트스트랩: 오늘 날짜 D는 반드시 `TZ=Asia/Seoul date +%F` | 날짜 오류 | Sonnet 첫 실행이 UTC 날짜로 전날 자료 사용 |
 | 2026-11-26 | 오늘 폴더가 없으면 루틴이 수집 워크플로를 직접 시작 | 수집 누락 | 새벽 예약 4회 모두 미실행 |
 | 2026-11-26 | **보완 1**: 하위 모듈 공지는 dependency_index.json 으로 실제 의존 여부를 확인한 뒤 판정 (수집기가 서비스별 실제 의존성 목록 생성) | 의존성 미확인 | Sonnet이 Spring Security HIGH 2건을 Spring Boot 4.0.10 영향 불명으로 L2 처리(실제로는 미사용 → L3) |
-| (예정) 2026-11-27 | 보완 2: 사람 확인 요청에 올리는 KEV는 오늘 새로 등재된 것만 | 오래된 KEV | Sonnet이 6일 전 등재 KEV(vCenter)를 확인 요청에 넣음 |
+| 2026-11-27 | **보완 2**: 사람 확인 요청에 올리는 KEV는 0절 "새 KEV"만 | 오래된 KEV | Sonnet이 6일 전 등재 KEV(vCenter)를 확인 요청에 넣음 |
+| 2026-11-27 | 수집 시작을 repository_dispatch(collect)로 변경 + Claude 예약 작업 05:47 수집 신호 | 수집 누락 | 루틴의 workflow_dispatch 권한 거부, GitHub 예약 실행 약 8시간 지연 |

@@ -3,13 +3,15 @@ name: collect-security-feed
 on:
   schedule:
     # GitHub 예약 실행은 실제로 4~8시간 늦거나(11/21~24 기록: 10:27~14:23 KST 시작) 빠질 수 있다.
-    # 11/26에는 네 번 모두 실행되지 않았다. 그래서 06:50 Claude 루틴이 오늘 결과가 없으면 workflow_dispatch로 직접 시작한다(주 경로).
+    # 실측: 예약 실행이 약 8시간 늦게 돈다(11/26 새벽용 4회가 09:15~12:00 KST에 실행). 주 경로는 Claude 예약 작업(05:47 KST)이 보내는 repository_dispatch(collect).
     # 아래 예약은 보조 경로이며, 이미 오늘 결과가 있으면 건너뛴다.
     - cron: "13 16 * * *"   # 01:13 KST
     - cron: "43 17 * * *"   # 02:43 KST
     - cron: "17 19 * * *"   # 04:17 KST
     - cron: "37 20 * * *"   # 05:37 KST (마지막 기회)
   workflow_dispatch: {}
+  repository_dispatch:
+    types: [collect]   # Claude 예약 작업(05:47)·루틴이 보내는 수집 시작 신호. 루틴 토큰은 workflow_dispatch 권한이 없다(11/27)
 
 permissions:
   contents: write   # runs/·state/ 결과 커밋에만 필요 (다른 권한 없음)
@@ -29,7 +31,7 @@ jobs:
         id: guard
         run: |
           D=$(TZ=Asia/Seoul date +%F)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "runs/$D/status.json" ]; then
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ] && [ -f "runs/$D/status.json" ]; then
             echo "오늘($D) 결과가 이미 있어 예약 실행을 건너뜀"; echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
