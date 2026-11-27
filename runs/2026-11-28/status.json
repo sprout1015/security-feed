@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-28",
+  "finished_at": "2026-11-28T05:48:41+09:00",
+  "step_errors": {},
+  "sources": {
+    "total": 32,
+    "ok": 32,
+    "changed": 3,
+    "noise": 4,
+    "error": 0
+  },
+  "kev": {
+    "status": "ok",
+    "recent": 15
+  },
+  "cve": {
+    "status": "ok",
+    "new": 352,
+    "hits": 0
+  },
+  "libraries": {
+    "status": "ok",
+    "findings": 0
+  },
+  "projects": {
+    "alpha-match": "ok",
+    "endfield-attendance-android": "disabled",
+    "ragdeck": "disabled"
+  },
+  "today": {
+    "quiet": false,
+    "changed_sources": 3,
+    "new_kev": [],
+    "cve_hits": 0,
+    "library_new": 0,
+    "library_resolved": 0
+  }
+}

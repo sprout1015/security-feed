@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>RustSec Advisories</title>
 <id>https://rustsec.org/feed.xml</id>
-<updated>2026-11-25T12:00:00+00:00</updated>
+<updated>2026-11-27T12:00:00+00:00</updated>
 <author>
 <name>RustSec</name>
 </author>
@@ -10,6 +10,761 @@
 <link href="https://rustsec.org/feed.xml" rel="self" type="application/atom+xml"/>
 <link href="https://rustsec.org/" rel="alternate" type="text/html"/>
 <subtitle xml:lang="en">Security advisories filed against Rust crates</subtitle>
+<entry>
+<title>RUSTSEC-2026-0602: Vulnerability in dryoc</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0602.html</id>
+<updated>2026-11-27T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0602.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0602: Vulnerability in dryoc"/>
+<published>2026-11-27T12:00:00+00:00</published>
+<summary xml:lang="en">Ed25519 signing key pairs with an inconsistent embedded public key are accepted</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/dryoc/RUSTSEC-2026-0602.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/dryoc/RUSTSEC-2026-0602.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0602">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0602
+</h1>
+<span class="subtitle">
+<p>Ed25519 signing key pairs with an inconsistent embedded public key are accepted</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-16">
+November 16, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-27">
+November 27, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/dryoc.html">dryoc</a>
+(<a href="https://crates.io/crates/dryoc">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/ed25519.html">#ed25519</a>
+<a href="/keywords/signature.html">#signature</a>
+<a href="/keywords/key-recovery.html">#key-recovery</a>
+<a href="/keywords/keypair-validation.html">#keypair-validation</a>
+<a href="/keywords/serde.html">#serde</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-vc3q-r4qh-vp64">GHSA-vc3q-r4qh-vp64</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/brndnmtthws/dryoc/pull/230">
+https://github.com/brndnmtthws/dryoc/pull/230
+</a>
+</li>
+<li>
+<a href="https://github.com/brndnmtthws/dryoc/releases/tag/v2.0.1">
+https://github.com/brndnmtthws/dryoc/releases/tag/v2.0.1
+</a>
+</li>
+</ul>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=2.0.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>An Ed25519 secret key in <code>dryoc</code> is 64 bytes: the 32-byte seed followed by
+the 32-byte public key. When signing, the public key used in the challenge
+hash <code>k = H(R || A || M)</code> is read from bytes 32..64 of the secret key, while
+the nonce <code>r</code>, and therefore <code>R</code>, is derived only from the seed and the
+message.</p>
+<p>In affected versions, <code>SigningKeyPair::from_slices</code> and, when the <code>serde</code>
+feature is enabled, the derived <code>Deserialize</code> implementation of
+<code>SigningKeyPair</code> store the 64 secret-key bytes as given, without checking
+that the embedded public key matches the one derived from the seed. The
+separate <code>public_key</code> field of the struct is not used for signing, so only
+the embedded half is relevant. <code>SigningKeyPair::from_secret_key</code> re-derives
+the key pair from the seed and is not affected.</p>
+<p>If an attacker can replace bytes 32..64 of a stored secret key without being
+able to read the seed, and can obtain signatures over the same message from
+both the original and the modified key, the two signatures share the same <code>R</code>
+and differ in <code>S</code>. The private scalar can then be computed as
+<code>a = (S1 - S2) / (k1 - k2)</code>, which allows signatures to be forged for
+arbitrary messages under the original public key. Examples of such conditions
+are key storage without integrity protection, or an application that
+assembles the 64 secret-key bytes from two separate sources. The upstream
+advisory rates the issue as low severity.</p>
+<p>This behavior matches libsodium, which also trusts the embedded public key,
+so it is not a compatibility defect; the concern is that the higher-level
+constructors in <code>dryoc</code> did not enforce the consistency that
+<code>from_secret_key</code> already provides.</p>
+<h2>Fix</h2>
+<p>Version 2.0.1 validates imported Ed25519 key pairs in
+<code>SigningKeyPair::from_slices</code> and during serde deserialization, rejecting key
+material whose embedded or separate public key does not match the seed. In
+addition, <code>SigningKeyPair</code> signing and <code>Ed25519phSigner</code> finalization
+re-derive the embedded public key from the seed, since the key pair's fields
+remain publicly mutable.</p>
+<p>The Classic API (<code>dryoc::classic::crypto_sign</code>) keeps libsodium-compatible
+semantics: callers of functions such as <code>crypto_sign_detached</code> must supply
+consistent signing key material.</p>
+<p>Users should upgrade to <code>dryoc</code> 2.0.1 or later.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0603: Vulnerability in dryoc</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0603.html</id>
+<updated>2026-11-27T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0603.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0603: Vulnerability in dryoc"/>
+<published>2026-11-27T12:00:00+00:00</published>
+<summary xml:lang="en">X25519 accepts low-order public keys, yielding session keys computable without a private key</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/dryoc/RUSTSEC-2026-0603.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/dryoc/RUSTSEC-2026-0603.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0603">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0603
+</h1>
+<span class="subtitle">
+<p>X25519 accepts low-order public keys, yielding session keys computable without a private key</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-16">
+November 16, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-27">
+November 27, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/dryoc.html">dryoc</a>
+(<a href="https://crates.io/crates/dryoc">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/x25519.html">#x25519</a>
+<a href="/keywords/curve25519.html">#curve25519</a>
+<a href="/keywords/low-order.html">#low-order</a>
+<a href="/keywords/key-exchange.html">#key-exchange</a>
+<a href="/keywords/diffie-hellman.html">#diffie-hellman</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-6xqm-2982-gvrm">GHSA-6xqm-2982-gvrm</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/brndnmtthws/dryoc/pull/139">
+https://github.com/brndnmtthws/dryoc/pull/139
+</a>
+</li>
+<li>
+<a href="https://github.com/brndnmtthws/dryoc/releases/tag/v1.0.0">
+https://github.com/brndnmtthws/dryoc/releases/tag/v1.0.0
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>4.8 <span class="tag medium">
+MEDIUM
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Attack Complexity</dt>
+<dd>High</dd>
+<dt>Privileges Required</dt>
+<dd>None</dd>
+<dt>User Interaction</dt>
+<dd>None</dd>
+<dt>Scope</dt>
+<dd>Unchanged</dd>
+<dt>Confidentiality Impact</dt>
+<dd>Low</dd>
+<dt>Integrity Impact</dt>
+<dd>Low</dd>
+<dt>Availability Impact</dt>
+<dd>None</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N">CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=1.0.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Affected Functions</dt>
+<dd>Version</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_beforenm</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_detached</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_detached_inplace</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_easy</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_easy_inplace</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_open_detached</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_open_detached_inplace</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_open_easy</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_open_easy_inplace</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_seal</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_box::crypto_box_seal_open</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_core::crypto_scalarmult</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_kx::crypto_kx_client_session_keys</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::classic::crypto_kx::crypto_kx_server_session_keys</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::decrypt</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::decrypt_to_vec</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::encrypt</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::encrypt_to_vecbox</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::seal</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::seal_to_vecbox</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::unseal</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::dryocbox::DryocBox::unseal_to_vec</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::keypair::KeyPair::precalculate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::kx::Session::new_client</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::kx::Session::new_client_with_defaults</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::kx::Session::new_server</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::kx::Session::new_server_with_defaults</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+<dt>
+<code>dryoc::precalc::PrecalcSecretKey::precalculate</code>
+</dt>
+<dd>
+<ul>
+<li>
+<code>&#60;1.0.0</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>Versions of dryoc before 1.0.0 never reject low-order peer public keys or an
+all-zero shared secret. In addition, versions 0.5.1 through 0.9.x compute
+X25519 with the clamped scalar reduced modulo the prime subgroup order ℓ
+(<code>Scalar::from_bytes_mod_order(clamp(n))</code>) instead of the clamped integer
+specified by RFC 7748; earlier versions use the unreduced clamped scalar.
+libsodium, with which these functions are documented as compatible, returns an
+error for all of these inputs.</p>
+<p>This affects <code>crypto_scalarmult</code>, <code>crypto_kx_client_session_keys</code> /
+<code>crypto_kx_server_session_keys</code>, <code>kx::Session::new_*</code>, and
+<code>crypto_box_beforenm</code> together with the box and precalculation APIs built on
+it, whenever the peer public key is not authenticated or can be chosen by a
+malicious party.</p>
+<h2>Impact</h2>
+<ul>
+<li>
+<strong>Predictable session keys.</strong> For the 14 encodings of low-order Curve25519
+points, the X25519 output is always the all-zero value in versions up to
+0.5.0, and one of 5 fixed public values in 0.5.1 through 0.9.x. The
+key-exchange functions return <code>Ok</code>, and anyone who knows the two public keys
+can recompute the resulting session keys (or <code>crypto_box_beforenm</code> key) by
+trying at most 4 candidates. The confidentiality and integrity of that
+session are lost, including against passive observers.</li>
+<li>
+<strong>Small private-key leak (0.5.1 through 0.9.x).</strong> With a peer key that has an
+order-8 torsion component, the output reveals 2 bits of the victim's static
+X25519 scalar to the peer (and, when the peer key is an order-8 low-order
+point, to any observer who can test the candidate session keys). This does
+not meaningfully reduce the hardness of recovering the key.</li>
+<li>
+<strong>Non-standard output (0.5.1 through 0.9.x).</strong> Peer keys with a torsion
+component, and points on the quadratic twist, produce outputs that differ
+from RFC 7748 and libsodium, which breaks interoperability for such keys.</li>
+<li>
+<code>KeyPair::is_valid_public_key</code> accepts 6 of the 14 low-order encodings, so it
+cannot be relied on as a guard.</li>
+</ul>
+<p>Applications that only use authenticated peer keys generated by dryoc or
+libsodium are not affected in practice: honest keys lie in the prime-order
+subgroup, where the reduced and unreduced scalars give the same result.</p>
+<h2>Resolution</h2>
+<p>Upgrade to dryoc 1.0.0 or later. In 1.0.0, X25519 is computed with
+<code>MontgomeryPoint::mul_clamped</code> (the unreduced clamped scalar, as in RFC 7748),
+and an all-zero shared secret is rejected, so low-order public keys now return
+an error from the scalarmult, box, key-exchange and precalculation APIs. Note
+that 1.0.0 is a backward-incompatible release; several of these functions now
+return <code>Result</code>.</p>
+<p>If upgrading is not yet possible, validate every untrusted peer X25519 public
+key before passing it to dryoc 0.9.x, for example by rejecting keys that do not
+map to a torsion-free Edwards point (<code>MontgomeryPoint::to_edwards(0)</code> followed
+by <code>is_torsion_free()</code> in <code>curve25519-dalek</code>; this requires <code>curve25519-dalek</code>
+4.x as a direct dependency). A check based only on <code>is_small_order()</code> prevents
+the predictable session keys but not the 2-bit leak or the non-standard output.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
+<entry>
+<title>RUSTSEC-2026-0601: Vulnerability in wsts</title>
+<id>https://rustsec.org/advisories/RUSTSEC-2026-0601.html</id>
+<updated>2026-11-27T12:00:00+00:00</updated>
+<category term="crypto-failure"/>
+<category term="denial-of-service"/>
+<link href="https://rustsec.org/advisories/RUSTSEC-2026-0601.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0601: Vulnerability in wsts"/>
+<published>2026-11-27T12:00:00+00:00</published>
+<summary xml:lang="en">FROST coordinator accepts unvalidated DKG polynomial commitments</summary>
+<content xml:lang="en" type="html">
+<article>
+<span class="floating-menu">
+<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wsts/RUSTSEC-2026-0601.md">History</a> ⋅
+<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wsts/RUSTSEC-2026-0601.md">Edit</a> ⋅
+<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0601">JSON (OSV)</a>
+</span>
+<header>
+<h1>
+RUSTSEC-2026-0601
+</h1>
+<span class="subtitle">
+<p>FROST coordinator accepts unvalidated DKG polynomial commitments</p>
+</span>
+</header>
+<dl>
+<dt id="reported">Reported</dt>
+<dd>
+<time datetime="2026-11-26">
+November 26, 2026
+</time>
+</dd>
+<dt id="issued">Issued</dt>
+<dd>
+<time datetime="2026-11-27">
+November 27, 2026
+</time>
+</dd>
+<dt id="package">Package</dt>
+<dd>
+<a href="/packages/wsts.html">wsts</a>
+(<a href="https://crates.io/crates/wsts">crates.io</a>)
+</dd>
+<dt id="type">Type</dt>
+<dd>
+Vulnerability
+</dd>
+<dt id="categories">Categories</dt>
+<dd>
+<ul>
+<li>
+<a href="/categories/crypto-failure.html">crypto-failure</a>
+</li>
+<li>
+<a href="/categories/denial-of-service.html">denial-of-service</a>
+</li>
+</ul>
+</dd>
+<dt id="keywords">Keywords</dt>
+<dd>
+<a href="/keywords/frost.html">#frost</a>
+<a href="/keywords/threshold-signature.html">#threshold-signature</a>
+<a href="/keywords/dkg.html">#dkg</a>
+<a href="/keywords/schnorr.html">#schnorr</a>
+</dd>
+<dt id="aliases">Aliases</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/advisories/GHSA-whwx-jj37-4gg5">GHSA-whwx-jj37-4gg5</a>
+</li>
+</ul>
+</dd>
+<dt id="details">References</dt>
+<dd>
+<ul>
+<li>
+<a href="https://github.com/xoloki/wsts/commit/1aa6902f4e8d98460d5a6760a657125670938a48">
+https://github.com/xoloki/wsts/commit/1aa6902f4e8d98460d5a6760a657125670938a48
+</a>
+</li>
+</ul>
+</dd>
+<dt id="cvss_score">CVSS Score</dt>
+<dd>5.9 <span class="tag medium">
+MEDIUM
+</span>
+</dd>
+<dt id="cvss_details">CVSS Details</dt>
+<dd>
+<dl>
+<dt>Attack Vector</dt>
+<dd>Network</dd>
+<dt>Attack Complexity</dt>
+<dd>High</dd>
+<dt>Privileges Required</dt>
+<dd>High</dd>
+<dt>User Interaction</dt>
+<dd>None</dd>
+<dt>Scope</dt>
+<dd>Unchanged</dd>
+<dt>Confidentiality Impact</dt>
+<dd>None</dd>
+<dt>Integrity Impact</dt>
+<dd>High</dd>
+<dt>Availability Impact</dt>
+<dd>High</dd>
+</dl>
+</dd>
+<dt id="cvss">CVSS Vector</dt>
+<dd>
+<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:H">CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:H</a>
+</dd>
+<dt id="patched">Patched</dt>
+<dd>
+<ul>
+<li>
+<code>&#62;=15.0.1</code>
+</li>
+</ul>
+</dd>
+</dl>
+<h3 id="description">Description</h3>
+<p>The FROST coordinator (<code>state_machine::coordinator::frost::Coordinator</code>) did not
+validate the DKG public shares it received. It stored each polynomial commitment
+at receipt without checking it, and computed the aggregate public key from its
+own copy without checking it either. A signer that is a member of the signing
+set could therefore make the coordinator hold a commitment with no valid proof
+of knowledge of its constant term, or with the wrong number of coefficients,
+including none.</p>
+<p>Two consequences, both requiring control of a signer in the set. A malformed
+commitment broadcast to every participant is correctly rejected by honest
+signers, but the coordinator has already stored it; if the coordinator was
+restored from saved state with an existing group key and signing continues under
+that key after the failed re-keying, the next signing round indexes the
+malformed commitment and the coordinator process panics. A commitment delivered
+only to the coordinator, on a transport that does not enforce broadcast, lets the
+signer make the coordinator compute an aggregate public key that no honest
+signer holds and that the signer controls. No key material is disclosed and no
+signature is forged.</p>
+<p>The FIRE coordinator (<code>state_machine::coordinator::fire::Coordinator</code>) validates
+commitments and is not affected.</p>
+<p>Version 15.0.1 validates every commitment at receipt and again before the
+aggregate key is computed, matching the FIRE coordinator. Users of the FROST
+coordinator should upgrade. If that is not possible, use the FIRE coordinator,
+take the group key from the signers' DKG results rather than from the
+coordinator, and run DKG again before signing after any failed round.</p>
+<p>Reported by hokvo (Gleb) through GitHub private vulnerability reporting.</p>
+<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
+license.
+</p>
+</article>
+</content>
+</entry>
 <entry>
 <title>RUSTSEC-2026-0600: Vulnerability in kube-client</title>
 <id>https://rustsec.org/advisories/RUSTSEC-2026-0600.html</id>
@@ -2593,1870 +3348,6 @@ maintained implementation, such as the <a href="https://crates.io/crates/ml-dsa"
 <code>ml-dsa</code>
 </a>
 crate, is recommended.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0578: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0578.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0578.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0578: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">`SortedLinkedList::zeroize` lead to an inconsistent state</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0578.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0578.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0578">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0578
-</h1>
-<span class="subtitle">
-<p>
-<code>SortedLinkedList::zeroize</code> lead to an inconsistent state</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/pull/709">
-https://github.com/rust-embedded/heapless/pull/709
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::sorted_linked_list::SortedLinkedList::zeroize</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>The <code>Zeroize</code> implementation of <code>SortedLinkedList</code> did not properly re-initialize the linked list, leading to broken invariants and memorry corruption.</p>
-<p>Reported by <a href="https://github.com/Eh2406">Jacob Finkelman</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0582: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0582.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0582.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0582: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">On maps of `u16::MAX` elements, `IndexMap::insert` could lead to a broken invariant</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0582.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0582.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0582">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0582
-</h1>
-<span class="subtitle">
-<p>On maps of <code>u16::MAX</code> elements, <code>IndexMap::insert</code> could lead to a broken invariant</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/672">
-https://github.com/rust-embedded/heapless/issues/672
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::index_map::IndexMap::insert</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Note that this required filling up the map and having the last item inserted to hash to <code>u16::MAX</code>. It is therefore very unlikely to be reachable in a real-world scenario.</p>
-<p>Reported by <a href="https://github.com/8rsrf7">8rsrf7</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0580: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0580.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<category term="thread-safety"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0580.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0580: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">The treiber stack implementation in heapless had a race condition</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0580.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0580.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0580">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0580
-</h1>
-<span class="subtitle">
-<p>The treiber stack implementation in heapless had a race condition</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-<li>
-<a href="/categories/thread-safety.html">thread-safety</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/race-condition.html">#race-condition</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/pull/704">
-https://github.com/rust-embedded/heapless/pull/704
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::arc_pool</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::box_pool</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::object_pool</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::pool</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.8.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>In the affected versions, it was possible for two threads or execution contexts running concurrently to race, causing one to read out of a pointer that had been invalidated by another execution context.</p>
-<p>Reported by <a href="https://github.com/Eh2406">Jacob Finkelman</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0579: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0579.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0579.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0579: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">The `Deque` implementation from `TryFrom` was wrong when the `Deque` ended up full</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0579.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0579.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0579">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0579
-</h1>
-<span class="subtitle">
-<p>The <code>Deque</code> implementation from <code>TryFrom</code> was wrong when the <code>Deque</code> ended up full</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/out-of-bounds.html">#out-of-bounds</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/pull/702">
-https://github.com/rust-embedded/heapless/pull/702
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::Deque::try_from</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.2, &#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>If the array passed to <code>Deque::try_from</code> was as long as the capacity of the <code>Deque</code>, it would lead to a invalid state.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0576: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0576.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0576.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0576: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">`IndexMap::truncate` could lead to an inconsistent state</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0576.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0576.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0576">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0576
-</h1>
-<span class="subtitle">
-<p>
-<code>IndexMap::truncate</code> could lead to an inconsistent state</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/674">
-https://github.com/rust-embedded/heapless/issues/674
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::index_map::IndexMap::truncate</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>
-<code>IndexMap::truncate</code> was not rebuilding indices when it should, leading to an inconsistent state and memory corruption.</p>
-<p>Reported by <a href="https://github.com/Eh2406">Jacob Finkelman</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0577: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0577.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0577.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0577: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Panicking `Drop` implementation could lead to UB</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0577.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0577.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0577">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0577
-</h1>
-<span class="subtitle">
-<p>Panicking <code>Drop</code> implementation could lead to UB</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/panic-safety.html">#panic-safety</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/659">
-https://github.com/rust-embedded/heapless/issues/659
-</a>
-</li>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/688">
-https://github.com/rust-embedded/heapless/issues/688
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::deque::Deque::clear</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.3</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::history_buf::HistoryBuf::clear</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.3</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::history_buf::HistoryBuf::write</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::index_map::IndexMap::clear</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.3</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::index_map::IndexMap::retain</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::index_map::IndexMap::truncate</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-<dt>
-<code>heapless::vec::IntoIter::drop</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Multiple functions dropped generic parameters but didn't properly handle the unwinding case, leading to broken invariants.</p>
-<p>Reported by <a href="https://github.com/tooson9010-spec">tooson9010-spec</a> and <a href="https://github.com/Evian-Zhang">Evian-Zhang</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0575: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0575.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="thread-safety"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0575.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0575: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">`Spsc::peek` used `Relaxed` ordering where it should have use `Acquire`</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0575.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0575.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0575">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0575
-</h1>
-<span class="subtitle">
-<p>
-<code>Spsc::peek</code> used <code>Relaxed</code> ordering where it should have use <code>Acquire</code>
-</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/thread-safety.html">thread-safety</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/race-condition.html">#race-condition</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/pull/703">
-https://github.com/rust-embedded/heapless/pull/703
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::spsc::Spsc::peek</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This could lead to UB through a race condition.</p>
-<p>Reported by <a href="https://github.com/Eh2406">Jacob Finkelman</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0581: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0581.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0581.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0581: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">`Deque::make_contiguous` could lead to broken invariants</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0581.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0581.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0581">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0581
-</h1>
-<span class="subtitle">
-<p>
-<code>Deque::make_contiguous</code> could lead to broken invariants</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="keywords">Keywords</dt>
-<dd>
-<a href="/keywords/out-of-bounds.html">#out-of-bounds</a>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/694">
-https://github.com/rust-embedded/heapless/issues/694
-</a>
-</li>
-<li>
-<a href="https://github.com/rust-embedded/heapless/issues/676">
-https://github.com/rust-embedded/heapless/issues/676
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::deque::Deque::make_contiguous</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>In some branches, <code>Deque::make_contiguous</code> set the <code>back</code> value to either <code>0</code> or <code>N</code> when it shouldn't, leading to broken invariants and out-of-bounds writes.</p>
-<p>Reported by <a href="https://github.com/DRMacIver">DRMacIver</a> and <a href="https://github.com/MJUCOM">https://github.com/MJUCOM</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0574: Unsoundness in heapless</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0574.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="memory-corruption"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0574.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0574: Unsoundness in heapless"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">`FindMutView::pop` after mutating the value would lead to a use after free</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/heapless/RUSTSEC-2026-0574.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/heapless/RUSTSEC-2026-0574.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0574">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0574
-</h1>
-<span class="subtitle">
-<p>
-<code>FindMutView::pop</code> after mutating the value would lead to a use after free</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-18">
-November 18, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/heapless.html">heapless</a>
-(<a href="https://crates.io/crates/heapless">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-<span class="tag info">INFO</span>
-Unsound
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/memory-corruption.html">memory-corruption</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/rust-embedded/heapless/pull/710">
-https://github.com/rust-embedded/heapless/pull/710
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<dl>
-<dt>Affected Functions</dt>
-<dd>Version</dd>
-<dt>
-<code>heapless::sorted_linked_list::FindMutView::pop</code>
-</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;0.9.4</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>Reported by <a href="https://github.com/Eh2406">Jacob Finkelman</a>.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0569: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0569.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0569.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0569: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Panic in `Caller::get_module_export` when a host function isn&apos;t called from WebAssembly</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0569.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0569.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0569">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0569
-</h1>
-<span class="subtitle">
-<p>Panic in <code>Caller::get_module_export</code> when a host function isn't called from WebAssembly</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-hj27-mpw9-ff4c">GHSA-hj27-mpw9-ff4c</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15319">
-https://github.com/bytecodealliance/wasmtime/pull/15319
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=36.0.21, &#60;37.0.0</code>
-</li>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hj27-mpw9-ff4c
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0566: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0566.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0566.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0566: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">wasmtime-wasi: Unbounded host memory growth via empty writes to `AsyncWriteStream`</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0566.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0566.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0566">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0566
-</h1>
-<span class="subtitle">
-<p>wasmtime-wasi: Unbounded host memory growth via empty writes to <code>AsyncWriteStream</code>
-</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-5m8g-xhq4-4h93">GHSA-5m8g-xhq4-4h93</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15317">
-https://github.com/bytecodealliance/wasmtime/pull/15317
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=36.0.21, &#60;37.0.0</code>
-</li>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-5m8g-xhq4-4h93
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0573: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0573.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0573.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0573: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Process abort when a GC heap&apos;s reservation isn&apos;t a multiple of the page size</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0573.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0573.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0573">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0573
-</h1>
-<span class="subtitle">
-<p>Process abort when a GC heap's reservation isn't a multiple of the page size</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-wvgq-g5hf-6gm6">GHSA-wvgq-g5hf-6gm6</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15320">
-https://github.com/bytecodealliance/wasmtime/pull/15320
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;47.0.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-wvgq-g5hf-6gm6
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0570: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0570.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0570.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0570: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Abort in Wasmtime builds without the `gc` cargo feature</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0570.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0570.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0570">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0570
-</h1>
-<span class="subtitle">
-<p>Abort in Wasmtime builds without the <code>gc</code> cargo feature</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-rc4p-x33f-vpr2">GHSA-rc4p-x33f-vpr2</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15322">
-https://github.com/bytecodealliance/wasmtime/pull/15322
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>2.2 <span class="tag low">
-LOW
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>High</dd>
-<dt>Privileges Required</dt>
-<dd>High</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>Low</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;47.0.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-rc4p-x33f-vpr2.
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0568: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0568.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0568.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0568: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Stale GC heap base pointer in compiled code lets a Wasm guest abort the host process</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0568.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0568.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0568">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0568
-</h1>
-<span class="subtitle">
-<p>Stale GC heap base pointer in compiled code lets a Wasm guest abort the host process</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-43j2-gcp4-m22g">GHSA-43j2-gcp4-m22g</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15316">
-https://github.com/bytecodealliance/wasmtime/pull/15316
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>4.7 <span class="tag medium">
-MEDIUM
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Local</dd>
-<dt>Attack Complexity</dt>
-<dd>High</dd>
-<dt>Privileges Required</dt>
-<dd>Low</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>High</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H">CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;47.0.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-43j2-gcp4-m22g.
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0567: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0567.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0567.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0567: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Abort in Wasmtime builds without the `threads` cargo feature</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0567.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0567.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0567">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0567
-</h1>
-<span class="subtitle">
-<p>Abort in Wasmtime builds without the <code>threads</code> cargo feature</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-2674-w29h-wqvj">GHSA-2674-w29h-wqvj</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15314">
-https://github.com/bytecodealliance/wasmtime/pull/15314
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;39.0.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-2674-w29h-wqvj
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0572: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0572.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<category term="denial-of-service"/>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0572.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0572: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">Panic when a component cancels a stream or future copy on the wrong end</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0572.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0572.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0572">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0572
-</h1>
-<span class="subtitle">
-<p>Panic when a component cancels a stream or future copy on the wrong end</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="categories">Categories</dt>
-<dd>
-<ul>
-<li>
-<a href="/categories/denial-of-service.html">denial-of-service</a>
-</li>
-</ul>
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-xrvr-8678-5wp8">GHSA-xrvr-8678-5wp8</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15318">
-https://github.com/bytecodealliance/wasmtime/pull/15318
-</a>
-</li>
-</ul>
-</dd>
-<dt id="cvss_score">CVSS Score</dt>
-<dd>3.1 <span class="tag low">
-LOW
-</span>
-</dd>
-<dt id="cvss_details">CVSS Details</dt>
-<dd>
-<dl>
-<dt>Attack Vector</dt>
-<dd>Network</dd>
-<dt>Attack Complexity</dt>
-<dd>High</dd>
-<dt>Privileges Required</dt>
-<dd>Low</dd>
-<dt>User Interaction</dt>
-<dd>None</dd>
-<dt>Scope</dt>
-<dd>Unchanged</dd>
-<dt>Confidentiality Impact</dt>
-<dd>None</dd>
-<dt>Integrity Impact</dt>
-<dd>None</dd>
-<dt>Availability Impact</dt>
-<dd>Low</dd>
-</dl>
-</dd>
-<dt id="cvss">CVSS Vector</dt>
-<dd>
-<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L">CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L</a>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-<dt id="unaffected">Unaffected</dt>
-<dd>
-<ul>
-<li>
-<code>&#60;46.0.0</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-xrvr-8678-5wp8.
-For more information see the GitHub-hosted security advisory.</p>
-<p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
-license.
-</p>
-</article>
-</content>
-</entry>
-<entry>
-<title>RUSTSEC-2026-0571: Vulnerability in wasmtime</title>
-<id>https://rustsec.org/advisories/RUSTSEC-2026-0571.html</id>
-<updated>2026-11-19T12:00:00+00:00</updated>
-<link href="https://rustsec.org/advisories/RUSTSEC-2026-0571.html" rel="alternate" type="text/html" title="RUSTSEC-2026-0571: Vulnerability in wasmtime"/>
-<published>2026-11-19T12:00:00+00:00</published>
-<summary xml:lang="en">wasmtime-wasi-http: Empty Body Writes can result in Unbound Heap Usage with HTTP/2</summary>
-<content xml:lang="en" type="html">
-<article>
-<span class="floating-menu">
-<a href="https://github.com/RustSec/advisory-db/commits/main/crates/wasmtime/RUSTSEC-2026-0571.md">History</a> ⋅
-<a href="https://github.com/RustSec/advisory-db/edit/main/crates/wasmtime/RUSTSEC-2026-0571.md">Edit</a> ⋅
-<a href="https://api.osv.dev/v1/vulns/RUSTSEC-2026-0571">JSON (OSV)</a>
-</span>
-<header>
-<h1>
-RUSTSEC-2026-0571
-</h1>
-<span class="subtitle">
-<p>wasmtime-wasi-http: Empty Body Writes can result in Unbound Heap Usage with HTTP/2</p>
-</span>
-</header>
-<dl>
-<dt id="reported">Reported</dt>
-<dd>
-<time datetime="2026-11-16">
-November 16, 2026
-</time>
-</dd>
-<dt id="issued">Issued</dt>
-<dd>
-<time datetime="2026-11-19">
-November 19, 2026
-</time>
-</dd>
-<dt id="package">Package</dt>
-<dd>
-<a href="/packages/wasmtime.html">wasmtime</a>
-(<a href="https://crates.io/crates/wasmtime">crates.io</a>)
-</dd>
-<dt id="type">Type</dt>
-<dd>
-Vulnerability
-</dd>
-<dt id="aliases">Aliases</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/advisories/GHSA-f8mm-ggr3-89wh">GHSA-f8mm-ggr3-89wh</a>
-</li>
-</ul>
-</dd>
-<dt id="details">References</dt>
-<dd>
-<ul>
-<li>
-<a href="https://github.com/bytecodealliance/wasmtime/pull/15315">
-https://github.com/bytecodealliance/wasmtime/pull/15315
-</a>
-</li>
-</ul>
-</dd>
-<dt id="patched">Patched</dt>
-<dd>
-<ul>
-<li>
-<code>&#62;=36.0.21, &#60;37.0.0</code>
-</li>
-<li>
-<code>&#62;=48.0.9, &#60;49.0.0</code>
-</li>
-<li>
-<code>&#62;=49.0.6, &#60;50.0.0</code>
-</li>
-<li>
-<code>&#62;=50.0.2</code>
-</li>
-</ul>
-</dd>
-</dl>
-<h3 id="description">Description</h3>
-<p>This is an entry in the RustSec database for the Wasmtime security advisory
-located at
-https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-f8mm-ggr3-89wh
-For more information see the GitHub-hosted security advisory.</p>
 <p id="license" class="license">Advisory available under <a href="https://spdx.org/licenses/CC0-1.0.html">CC0-1.0</a>
 license.
 </p>
